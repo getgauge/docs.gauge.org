@@ -4,14 +4,18 @@
    contain the root `toctree` directive.
 
 .. toctree::
-   :maxdepth: 2
    :hidden:
+   :maxdepth: 2
 
    installing
    quickstart
+   longstart
+   plugins
+   syntax
    configuration
    language
    reports
+   troubleshooting
    examples
    faqs
    contribute
