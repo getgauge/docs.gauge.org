@@ -1,17 +1,215 @@
 Installing
 ==========
 
-Download
---------
-
-Install
+Windows
 -------
 
-Windows
-^^^^^^^
+Using the installer
+^^^^^^^^^^^^^^^^^^^
 
-Mac
-^^^
+`Download <http://getgauge.io/get-started>`__ the installer based on
+your system configuration and run it. Click your way through till you're
+asked to select your language.
+
+The Windows installer allows you to select the language plugin(s) as
+part of the the installation process. A language plugin is essentially
+the language(s) that you would use to write your tests in. Check the
+box(es) you want to install. You can select more than one language
+plugin to install.
+
+.. figure:: images/install-lang-runner.jpg
+   :alt: Select language runner
+
+   Select language runner
+
+Gauge is installed in ``%PROGRAMFILES%`` by default. But you can select
+where you want to install Gauge and complete Gauge installation.
+
+Using Chocolatey
+^^^^^^^^^^^^^^^^
+
+You can install Gauge using Chocolatey as well.
+
+::
+
+    > choco install gauge
+
+If you're upgrading to a newer version, then use the command:
+
+::
+
+    > choco upgrade gauge
+
+MacOS
+-----
+
+Home Brew
+^^^^^^^^^
+
+The following command installs Gauge.
+
+For this to work, you will need to install
+`homebrew <http://brew.sh/>`__. If you have brew installed then all you
+need to run is this command; it will download and install Gauge. This
+requires you to be connected to the Internet.
+
+::
+
+    $ brew update
+    $ brew install gauge
+
+If you already have a version of Gauge then the following command will
+update to the latest version of Gauge.
+
+::
+
+    $ brew update
+    $ brew upgrade gauge
+
+Offline Installation
+^^^^^^^^^^^^^^^^^^^^
+
+You can `download the Gauge
+installer <http://getgauge.io/get-started>`__. This is a ``pkg`` file,
+so you can click your way through to finish installing Gauge.
+
+Check the page on `installing language
+runners <../install_language_runners.md>`__ to install language runner
+plugins.
 
 Linux
-^^^^^
+-----
+
+On Debian, Ubuntu
+^^^^^^^^^^^^^^^^^
+
+Setup
+~~~~~
+
+Add Gauge's GPG key:
+
+::
+
+    $ sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
+
+Stable
+~~~~~~
+
+For stable releases, run this command to add URL to repository list:
+
+::
+
+    $ echo deb https://dl.bintray.com/gauge/gauge-deb stable main | sudo tee -a /etc/apt/sources.list
+
+Nightly
+~~~~~~~
+
+Nightly releases are latest development snapshots of Gauge. They have
+the latest features being developed, but are unstable. If you want to
+try out Gauge nightly, do this:
+
+::
+
+    $ echo deb https://dl.bintray.com/gauge/gauge-deb nightly main | sudo tee -a /etc/apt/sources.list
+
+Install
+~~~~~~~
+
+::
+
+    $ sudo apt-get update
+    $ sudo apt-get install gauge
+
+To set up necessary environment variables and download basic reporting
+plugins, run this command as a regular user to complete installation:
+
+::
+
+    $ gauge_setup
+
+On RHEL, Fedora, CentOS
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Setup
+~~~~~
+
+Stable
+~~~~~~
+
+For stable releases, create file ``/etc/yum.repos.d/gauge-stable.repo``
+with the following content:
+
+::
+
+    [gauge-stable]
+    name=gauge-stable
+    baseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-stable
+    gpgcheck=0
+    enabled=1
+
+You can use this command to do it in one step:
+
+::
+
+    $ echo -e "[gauge-stable]\nname=gauge-stable\nbaseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-stable\ngpgcheck=0\nenabled=1" | sudo tee /etc/yum.repos.d/gauge-stable.repo
+
+Nightly
+~~~~~~~
+
+Note: Nightly releases are latest development snapshots and can be
+unstable.
+
+For nightly releases, ``create /etc/yum.repos.d/gauge-nightly.repo``
+with the following content:
+
+::
+
+    [gauge-nightly]
+    name=gauge-nightly
+    baseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-nightly
+    gpgcheck=0
+    enabled=1
+
+You can use this command to do it in one step:
+
+::
+
+    $ echo -e "[gauge-nightly]\nname=gauge-nightly\nbaseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-nightly\ngpgcheck=0\nenabled=1" | sudo tee /etc/yum.repos.d/gauge-nightly.repo
+
+Install
+~~~~~~~
+
+Install on Fedora:
+
+::
+
+    $ sudo dnf install gauge
+
+Install on CentOS/RHEL:
+
+::
+
+    $ sudo yum install gauge
+
+To set up necessary environment variables and download basic reporting
+plugins, run this command as a regular user to complete installation:
+
+::
+
+    $ gauge_setup
+
+Install manually
+----------------
+
+`Download <http://getgauge.io/get-started>`__ the zip file. Choose the
+archive file appropriate for your installation. And run the command
+below to install Gauge.
+
+::
+
+    $ unzip gauge-$VERSION-$OS.$ARCH.zip
+    $ ./install.sh
+
+Having trouble with installation? Here is a detailed `installation
+troubleshooting guide <../../troubleshooting/installation.md>`__ that
+can help you.

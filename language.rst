@@ -19,31 +19,43 @@ Simple step
 
 **Implementation**
 
-{% codetabs name="Java", type="java" -%} // This Method can be written
-in any java class as long as it is in classpath.
+.. code-block:: java
+   :caption: Java
 
-public class StepImplementation {
+   // This Method can be written in any java class 
+   // as long as it is in classpath.
 
-::
+   public class StepImplementation {
 
-    @Step("Say <greeting> to <product name>")
-    public void helloWorld(String greeting, String name) {
-        // Step implementation
-    }
+       @Step("Say <greeting> to <product name>")
+       public void helloWorld(String greeting, String name) {
+           // Step implementation
+       }
 
-} {%- language name="C#", type="csharp" -%} // The Method can be written
-in **any C# class** as long as it is part of the project. public class
-StepImplementation {
+   } 
+   
 
-::
+.. code-block:: java
+   :caption: C#
 
-    [Step("Say <greeting> to <product name>")]
-    public void HelloWorld(string greeting, string name) {
-        // Step implementation
-    }
+   // The Method can be written in **any C# class** 
+   // as long as it is part of the project. public class
+   StepImplementation {
 
-} {%- language name="Ruby", type="ruby" -%} step 'Say to ' do
-\|greeting, name\| # Code for the step end {%- endcodetabs %}
+       [Step("Say <greeting> to <product name>")]
+       public void HelloWorld(string greeting, string name) {
+           // Step implementation
+       }
+
+   } 
+
+
+.. code-block:: ruby 
+   :caption: Ruby 
+
+   step 'Say to ' do \|greeting, name\| 
+   # Code for the step 
+   end 
 
 Step with table
 ^^^^^^^^^^^^^^^
@@ -61,42 +73,46 @@ Step with table
 
 **Implementation:**
 
-{% codetabs name="Java", type="java" -%} // Table is a custom data
-structure defined by gauge. public class Users {
+.. code-block:: java
+   :caption: Java
 
-::
+   // Table is a custom data structure defined by gauge. 
+   public class Users {
 
-    @Step("Create following <race> characters <table>")
-    public void createCharacters(String type, Table table) {
-        // Step implementation
-    }
+      @Step("Create following <race> characters <table>")
+      public void createCharacters(String type, Table table) {
+          // Step implementation
+      }
 
-} {%- language name="C#", type="csharp" -%} // Here Table is a custom
-data structure defined by gauge. // This is available by adding a
-reference to the Gauge.CSharp.Lib. // Refer :
-http://nuget.org/packages/Gauge.CSharp.Lib/ public class Users {
+   } 
 
-::
 
-    [Step("Create following <role> users <table>")]
-    public void HelloWorld(string role, Table table) {
-        // Step implementation
-    }
+.. code-block:: java
+   :caption: C#
 
-} {%- language name="Ruby", type="ruby" -%} # Here table is a custom
-data structure defined by gauge-ruby. step 'Create following characters
+   // Here Table is a custom data structure defined by gauge. 
+   // This is available by adding a reference to the Gauge.CSharp.Lib.
+   // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/ 
+   
+   public class Users {
 
-.. raw:: html
+       [Step("Create following <role> users <table>")]
+       public void HelloWorld(string role, Table table) {
+           // Step implementation
+       }
 
-   <table>
+   } 
+   
 
-' do \|role, table\| puts table.rows puts table.columns end {%-
-endcodetabs %}
+.. code-block:: ruby
+   :caption: Ruby
 
---------------
+   # Here table is a custom
+   # data structure defined by gauge-ruby. step 'Create following characters
 
-Learn More \* `Configuration <configuration.md>`__ \* `Execution
-Hooks <execution_hooks.md>`__ \* `Data Store <data_store.md>`__
+   <table> ' do \|role, table\| puts table.rows puts table.columns end {%-
+   endcodetabs %}
+
 
 Execution hooks
 ---------------

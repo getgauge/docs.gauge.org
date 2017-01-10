@@ -10,9 +10,8 @@
    installing
    quickstart
    longstart
-   plugins
    syntax
-   configuration
+   plugins
    language
    reports
    troubleshooting

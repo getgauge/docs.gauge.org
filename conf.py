@@ -95,6 +95,8 @@ html_theme_options = {
         'github_user': 'getgauge',
         'github_repo': 'gauge',
         'fixed_sidebar': True,
+        'show_powered_by': False,
+        'show_related': True,
         }
 
 html_sidebars = {
