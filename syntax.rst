@@ -2,7 +2,7 @@ Syntax
 ======
 
 Specification
-^^^^^^^^^^^^^
+-------------
 
 ::
 
@@ -10,7 +10,7 @@ Specification
     ==================
 
 Scenario
-^^^^^^^^
+--------
 
 ::
 
@@ -18,7 +18,7 @@ Scenario
     -------------
 
 Tags
-^^^^
+----
 
 ::
 
@@ -28,7 +28,7 @@ Tags
     Tags: login, admin            Tags: login-success, admin
 
 Concept
-^^^^^^^
+-------
 
 ::
 
@@ -36,14 +36,14 @@ Concept
     ===============
 
 Steps
-^^^^^
+-----
 
 ::
 
     * Step Name
 
 Parameters
-^^^^^^^^^^
+----------
 
 -  ``"``\ Static Arg\ ``"``
 
@@ -78,7 +78,7 @@ Parameters
    \`\`\`\`
 
 Comments
-^^^^^^^^
+--------
 
 Comment has no syntax. Any normal line of text is treated as comment.
 
@@ -87,7 +87,7 @@ Comment has no syntax. Any normal line of text is treated as comment.
     Im a comment!!!
 
 Images
-^^^^^^
+------
 
 Inline image syntax looks like this:
 
@@ -100,16 +100,10 @@ Inline image syntax looks like this:
 The path to image file should be relative to current directory.
 
 Links
-^^^^^
+-----
 
 ::
 
     This is [an example](http://getgauge.io "Title") inline link.
 
     [This link](http://github.com/getgauge/gauge) has no title attribute.
-
-Further reading
----------------
-
--  `Markdown <https://en.wikipedia.org/wiki/Markdown>`__.
--  `Examples <../examples/README.md>`__
