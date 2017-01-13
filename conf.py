@@ -93,6 +93,7 @@ html_context = {
     "display_github": True,
     "last_updated": True,
     "commit": False,
+    "extra_css_files" : ['_static/css/gauge.css']
 }
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -100,8 +101,6 @@ html_context = {
 html_static_path = ['_static']
 
 html_favicon = "favicon.ico"
-
-html_style = 'css/gauge.css'
 
 # -- Options for HTMLHelp output ------------------------------------------
 
