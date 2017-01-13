@@ -5,6 +5,9 @@
     background: #f5c10e;
 }
 
+.wy-side-nav-search>a:hover {
+    background: rgba(255,255,255,0);
+}
 .wy-side-nav-search>a img.logo {
     width: 70%;
 }
