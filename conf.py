@@ -101,6 +101,8 @@ html_static_path = ['_static']
 
 html_favicon = "favicon.ico"
 
+html_style = 'css/gauge.css'
+
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
