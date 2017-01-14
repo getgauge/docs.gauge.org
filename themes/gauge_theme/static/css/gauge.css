@@ -27,3 +27,13 @@ body{
 .wy-nav-content {
     max-width: none;
 }
+
+.highlight-console .highlight pre span.go:before{
+    content: '> ';
+}
+
+.wy-menu-vertical a:active {
+    background-color: #f5c10e;
+    cursor: pointer;
+    color: #555555;
+}

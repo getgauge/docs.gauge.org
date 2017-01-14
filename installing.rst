@@ -30,15 +30,15 @@ Using Chocolatey
 
 You can install Gauge using Chocolatey as well.
 
-::
+.. code-block:: console
 
-    > choco install gauge
+    choco install gauge
 
 If you're upgrading to a newer version, then use the command:
 
-::
+.. code-block:: console
 
-    > choco upgrade gauge
+    choco upgrade gauge
 
 MacOS
 -----
@@ -53,18 +53,18 @@ For this to work, you will need to install
 need to run is this command; it will download and install Gauge. This
 requires you to be connected to the Internet.
 
-::
+.. code-block:: console
 
-    $ brew update
-    $ brew install gauge
+    brew update
+    brew install gauge
 
 If you already have a version of Gauge then the following command will
 update to the latest version of Gauge.
 
-::
+.. code-block:: console
 
-    $ brew update
-    $ brew upgrade gauge
+    brew update
+    brew upgrade gauge
 
 Offline Installation
 ^^^^^^^^^^^^^^^^^^^^
@@ -88,18 +88,18 @@ Setup
 
 Add Gauge's GPG key:
 
-::
+.. code-block:: console
 
-    $ sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
+    sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
 
 Stable
 ~~~~~~
 
 For stable releases, run this command to add URL to repository list:
 
-::
+.. code-block:: console
 
-    $ echo deb https://dl.bintray.com/gauge/gauge-deb stable main | sudo tee -a /etc/apt/sources.list
+    echo deb https://dl.bintray.com/gauge/gauge-deb stable main | sudo tee -a /etc/apt/sources.list
 
 Nightly
 ~~~~~~~
@@ -108,24 +108,24 @@ Nightly releases are latest development snapshots of Gauge. They have
 the latest features being developed, but are unstable. If you want to
 try out Gauge nightly, do this:
 
-::
+.. code-block:: console
 
-    $ echo deb https://dl.bintray.com/gauge/gauge-deb nightly main | sudo tee -a /etc/apt/sources.list
+    echo deb https://dl.bintray.com/gauge/gauge-deb nightly main | sudo tee -a /etc/apt/sources.list
 
 Install
 ~~~~~~~
 
-::
+.. code-block:: console
 
-    $ sudo apt-get update
-    $ sudo apt-get install gauge
+    sudo apt-get update
+    sudo apt-get install gauge
 
 To set up necessary environment variables and download basic reporting
 plugins, run this command as a regular user to complete installation:
 
-::
+.. code-block:: console
 
-    $ gauge_setup
+    gauge_setup
 
 On RHEL, Fedora, CentOS
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -149,9 +149,9 @@ with the following content:
 
 You can use this command to do it in one step:
 
-::
+.. code-block:: console
 
-    $ echo -e "[gauge-stable]\nname=gauge-stable\nbaseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-stable\ngpgcheck=0\nenabled=1" | sudo tee /etc/yum.repos.d/gauge-stable.repo
+    echo -e "[gauge-stable]\nname=gauge-stable\nbaseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-stable\ngpgcheck=0\nenabled=1" | sudo tee /etc/yum.repos.d/gauge-stable.repo
 
 Nightly
 ~~~~~~~
@@ -172,31 +172,31 @@ with the following content:
 
 You can use this command to do it in one step:
 
-::
+.. code-block:: console
 
-    $ echo -e "[gauge-nightly]\nname=gauge-nightly\nbaseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-nightly\ngpgcheck=0\nenabled=1" | sudo tee /etc/yum.repos.d/gauge-nightly.repo
+    echo -e "[gauge-nightly]\nname=gauge-nightly\nbaseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-nightly\ngpgcheck=0\nenabled=1" | sudo tee /etc/yum.repos.d/gauge-nightly.repo
 
 Install
 ~~~~~~~
 
 Install on Fedora:
 
-::
+.. code-block:: console
 
-    $ sudo dnf install gauge
+    sudo dnf install gauge
 
 Install on CentOS/RHEL:
 
-::
+.. code-block:: console
 
-    $ sudo yum install gauge
+    sudo yum install gauge
 
 To set up necessary environment variables and download basic reporting
 plugins, run this command as a regular user to complete installation:
 
-::
+.. code-block:: console
 
-    $ gauge_setup
+    gauge_setup
 
 Install manually
 ----------------
@@ -205,10 +205,10 @@ Install manually
 archive file appropriate for your installation. And run the command
 below to install Gauge.
 
-::
+.. code-block:: console
 
-    $ unzip gauge-$VERSION-$OS.$ARCH.zip
-    $ ./install.sh
+    unzip gauge-$VERSION-$OS.$ARCH.zip
+    ./install.sh
 
 Having trouble with installation? Here is a detailed `installation
 troubleshooting guide <../../troubleshooting/installation.md>`__ that
