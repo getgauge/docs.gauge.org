@@ -13,24 +13,24 @@ Install language runner
 C#
 ^^
 
-.. code-block:: bash
+.. code-block:: console
 
-   $ gauge --install csharp
+   gauge --install csharp
 
 Java
 ^^^^
 
-.. code-block:: bash
+.. code-block:: console
 
-   $ gauge --install java
+   gauge --install java
 
 
 Ruby
 ^^^^
 
-.. code-block:: bash
+.. code-block:: console
 
-   $ gauge --install ruby 
+   gauge --install ruby
 
 One can use IDEs to create the projects and run specifications, for this
 example, we are using the command line options.
@@ -41,16 +41,16 @@ Creating a Project
 C#
 ^^
 
-.. code-block:: bash
+.. code-block:: console
 
-   $ gauge --init csharp
+   gauge --init csharp
 
 Java
 ^^^^
 
-.. code-block:: bash
+.. code-block:: console
 
-   $ gauge --init java
+   gauge --init java
 
 
 Ruby
@@ -58,7 +58,7 @@ Ruby
 
 .. code-block:: bash
 
-   $ gauge --init ruby 
+   gauge --init ruby
 
 
 On getting the message of ``Successfully initialized the project``, one
@@ -69,7 +69,7 @@ Running the specs
 
 ::
 
-   $ gauge specs
+   gauge specs
 
 The details of the run are displayed on the command line followed by a
 statistics summary.
