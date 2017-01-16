@@ -15,103 +15,100 @@ Simple step
 
 ::
 
-    * Say "hello" to "gauge"
+  * Say "hello" to "gauge"
 
 **Implementation**
 
 .. code-block:: java
-   :caption: Java
+  :caption: C#
 
-   // This Method can be written in any java class 
-   // as long as it is in classpath.
+  // The Method can be written in **any C# class** as long as it is part of the project. 
+  public class StepImplementation {
 
-   public class StepImplementation {
+     [Step("Say <greeting> to <product name>")]
+     public void HelloWorld(string greeting, string name) {
+         // Step implementation
+     }
 
-       @Step("Say <greeting> to <product name>")
-       public void helloWorld(String greeting, String name) {
-           // Step implementation
-       }
-
-   } 
-   
+  } 
 
 .. code-block:: java
-   :caption: C#
+  :caption: Java
 
-   // The Method can be written in **any C# class** 
-   // as long as it is part of the project. public class
-   StepImplementation {
+  // This Method can be written in any java class as long as it is in classpath.
 
-       [Step("Say <greeting> to <product name>")]
-       public void HelloWorld(string greeting, string name) {
-           // Step implementation
-       }
+  public class StepImplementation {
 
-   } 
+     @Step("Say <greeting> to <product name>")
+     public void helloWorld(String greeting, String name) {
+         // Step implementation
+     }
 
-
+  } 
+ 
 .. code-block:: ruby 
-   :caption: Ruby 
+  :caption: Ruby 
 
-   step 'Say to ' do \|greeting, name\| 
+  step 'Say <greeting> to <product name>' do |greeting, name| 
    # Code for the step 
-   end 
+  end 
 
 Step with table
 ^^^^^^^^^^^^^^^
 
-**Step:**
+Step:
+~~~~~
 
 ::
 
-    * Create following "hobbit" characters
-    |id |name   |
-    |---|-------|
-    |123|frodo  |
-    |456|bilbo  |
-    |789|samwise|
+  * Create following "hobbit" characters
+  |id |name   |
+  |---|-------|
+  |123|frodo  |
+  |456|bilbo  |
+  |789|samwise|
 
-**Implementation:**
-
-.. code-block:: java
-   :caption: Java
-
-   // Table is a custom data structure defined by gauge. 
-   public class Users {
-
-      @Step("Create following <race> characters <table>")
-      public void createCharacters(String type, Table table) {
-          // Step implementation
-      }
-
-   } 
-
+Implementation:
+~~~~~~~~~~~~~~~
 
 .. code-block:: java
-   :caption: C#
-
-   // Here Table is a custom data structure defined by gauge. 
-   // This is available by adding a reference to the Gauge.CSharp.Lib.
-   // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/ 
+  :caption: C#
    
-   public class Users {
+  // Here Table is a custom data structure defined by gauge. 
+  // This is available by adding a reference to the Gauge.CSharp.Lib.
+  // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/ 
 
-       [Step("Create following <role> users <table>")]
-       public void HelloWorld(string role, Table table) {
-           // Step implementation
-       }
+  public class Users {
 
-   } 
-   
+     [Step("Create following <role> users <table>")]
+     public void HelloWorld(string role, Table table) {
+         // Step implementation
+     }
+
+  } 
+
+.. code-block:: java
+  :caption: Java
+
+  // Table is a custom data structure defined by gauge. 
+  public class Users {
+
+    @Step("Create following <race> characters <table>")
+    public void createCharacters(String type, Table table) {
+        // Step implementation
+    }
+
+  } 
 
 .. code-block:: ruby
-   :caption: Ruby
+  :caption: Ruby
 
-   # Here table is a custom
-   # data structure defined by gauge-ruby. step 'Create following characters
+  # Here table is a custom data structure defined by gauge-ruby.
 
-   <table> ' do \|role, table\| puts table.rows puts table.columns end {%-
-   endcodetabs %}
+  step 'Create following <race> characters <table>' do |role, table| 
+    puts table.rows 
+    puts table.columns 
+  end 
 
 
 Execution hooks
@@ -120,95 +117,19 @@ Execution hooks
 Test execution hooks can be used to run arbitrary test code as different
 levels during the test suite execution.
 
-Before Suite Hook
-^^^^^^^^^^^^^^^^^
+Implementation
+^^^^^^^^^^^^^^
 
-Executes before the entire suite execution begins i.e, before the
-execution of all specifications in the project.
+.. code-block:: java
+  :caption: C# 
 
-After Suite Hook
-^^^^^^^^^^^^^^^^
+  public class ExecutionHooks
+  { 
 
-Executes after the entire suite execution finishes i.e, after the
-execution of all specifications in the project.
-
-Before Specification hook
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Executes before every spec executes.
-
-After Specification hook
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Executes after every spec executes.
-
-Before Scenario hook
-^^^^^^^^^^^^^^^^^^^^
-
-Executes before every scenario executes.
-
-After Specification hook
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Executes after every scenario executes.
-
-Before Step hook
-^^^^^^^^^^^^^^^^
-
-Executes before every step executes.
-
-After Step hook
-^^^^^^^^^^^^^^^
-
-Executes after every scenario executes.
-
-Example
-^^^^^^^
-
-{% codetabs name="Java", type="java" -%} public class ExecutionHooks {
-@BeforeSuite public void BeforeSuite() { // Code for before suite }
-
-::
-
-    @AfterSuite
-    public void AfterSuite() {
-      // Code for after suite
+    [BeforeSuite] 
+    public void BeforeSuite() {
+      // Code for before suite 
     }
-
-    @BeforeSpec
-    public void BeforeSpec() {
-      // Code for before spec
-    }
-
-    @AfterSpec
-    public void AfterSpec() {
-      // Code for after spec
-    }
-
-    @BeforeScenario
-    public void BeforeScenario() {
-      // Code for before scenario
-    }
-
-    @AfterScenario
-    public void AfterScenario() {
-      // Code for after scenario
-    }
-
-    @BeforeStep
-    public void BeforeStep() {
-      // Code for before step
-    }
-
-    @AfterStep
-    public void AfterStep() {
-      // Code for after step
-    }
-
-} {%- language name="C#", type="csharp" -%} public class ExecutionHooks
-{ [BeforeSuite] public void BeforeSuite() { // Code for before suite }
-
-::
 
     [AfterSuite]
     public void AfterSuite() {
@@ -245,27 +166,94 @@ Example
       // Code for after step
     }
 
-} {%- language name="Ruby", type="ruby" -%} before\_suite do // Code for
-before suite end
+  } 
 
-after\_suite do // Code for after suite end
+.. code-block:: java
+  :caption: Java
 
-before\_spec do // Code for before spec end
+  public class ExecutionHooks {
 
-after\_spec do // Code for after spec end
+    @BeforeSuite public void BeforeSuite() {
+       // Code for before suite 
+    }
 
-before\_scenario do // Code for before scenario end
+    @AfterSuite
+    public void AfterSuite() {
+       // Code for after suite
+    }
 
-after\_scenario do // Code for after scenario end
+    @BeforeSpec
+    public void BeforeSpec() {
+       // Code for before spec
+    }
 
-before\_step do // Code for before step end
+    @AfterSpec
+    public void AfterSpec() {
+       // Code for after spec
+    }
 
-after\_tep do // Code for after step end {%- endcodetabs %}
+    @BeforeScenario
+    public void BeforeScenario() {
+       // Code for before scenario
+    }
 
-    By default, Gauge clears the state after each scenario so that new
-    objects are created for next scenario execution. You can
-    `configure <../advanced_readings/managing_environments.html#gauge_clear_state_level>`__
-    to change the level at which Gauge clears cache.
+    @AfterScenario
+    public void AfterScenario() {
+       // Code for after scenario
+    }
+
+    @BeforeStep
+    public void BeforeStep() {
+       // Code for before step
+    }
+
+    @AfterStep
+    public void AfterStep() {
+       // Code for after step
+    }
+
+  } 
+
+.. code-block:: ruby
+  :caption: Ruby
+
+  before_suite do 
+    # Code for before suite 
+  end
+
+  after_suite do 
+    # Code for after suite 
+  end
+
+  before_spec do 
+    # Code for before spec 
+  end
+
+  after_spec do 
+    # Code for after spec 
+  end
+
+  before_scenario do 
+    # Code for before scenario 
+  end
+
+  after_scenario do 
+    # Code for after scenario 
+  end
+
+  before_step do 
+    # Code for before step 
+  end
+
+  after_step do 
+    # Code for after step 
+  end 
+
+
+By default, Gauge clears the state after each scenario so that new
+objects are created for next scenario execution. You can
+`configure <../advanced_readings/managing_environments.html#gauge_clear_state_level>`__
+to change the level at which Gauge clears cache.
 
 Data Store
 ----------
@@ -276,108 +264,144 @@ runtime using DataStores exposed by Gauge.
 There are 3 different types of DataStores based on the lifecycle of when
 it gets cleared.
 
-1. ScenarioStore
-^^^^^^^^^^^^^^^^
+ScenarioStore
+^^^^^^^^^^^^^
 
 This data store keeps values added to it in the lifecycle of the
 scenario execution. Values are cleared after every scenario executes
 
-{% codetabs name="Java", type="java" -%} // Import Package import
-com.thoughtworks.gauge.datastore.\*;
+.. code-block:: java
+   :caption: C#
 
-// Adding value DataStore scenarioStore =
-DataStoreFactory.getScenarioDataStore(); scenarioStore.put("element-id",
-"455678");
+   using Gauge.CSharp.Lib;
 
-// Fetching Value DataStore scenarioStore =
-DataStoreFactory.getScenarioDataStore(); String elementId = (String)
-scenarioStore.get("element-id"); {%- language name="C#", type="csharp"
--%} using Gauge.CSharp.Lib;
+   // Adding value 
+   var scenarioStore = DataStoreFactory.ScenarioDataStore;
+   scenarioStore.Add("element-id", "455678");
 
-// Adding value var scenarioStore = DataStoreFactory.ScenarioDataStore;
-scenarioStore.Add("element-id", "455678");
+   // Fetching Value 
+   var elementId = (string) scenarioStore.Get("element-id");
 
-// Fetching Value var scenarioStore =
-DataStoreFactory.ScenarioDataStore; var elementId = (string)
-scenarioStore.Get("element-id");
+   // avoid type cast by using generic Get 
+   var anotherElementId = scenarioStore.Get("element-id"); 
 
-// avoid type cast by using generic Get var anotherElementId =
-scenarioStore.Get("element-id"); {%- language name="Ruby", type="ruby"
--%} // Adding value scenario\_store =
-DataStoreFactory.scenario\_datastore; scenario\_store.put("element-id",
-"455678");
+.. code-block:: java
+  :caption: Java
 
-// Fetching Value scenario\_store =
-DataStoreFactory.scenario\_datastore; element\_id =
-scenario\_store.get("element-id"); {%- endcodetabs %}
+  import com.thoughtworks.gauge.datastore.*; 
 
-2. SpecStore
-^^^^^^^^^^^^
+  // Adding value 
+  DataStore scenarioStore = DataStoreFactory.getScenarioDataStore(); 
+  scenarioStore.put("element-id", "455678");
+
+  // Fetching Value 
+  String elementId = (String) scenarioStore.get("element-id");
+
+.. code-block:: ruby
+  :caption: Ruby
+
+   // Adding value 
+   scenario_store = DataStoreFactory.scenario_datastore; 
+   scenario_store.put("element-id", "455678");
+
+
+   // Fetching Value 
+   element_id = scenario_store.get("element-id"); 
+
+
+SpecStore
+^^^^^^^^^
 
 This data store keeps values added to it during the lifecycle of the
 specification execution. Values are cleared after every specification
 executes
 
-{% codetabs name="Java", type="java" -%} // Import Package import
-com.thoughtworks.gauge.datastore.\*;
+.. code-block:: java
+  :caption: C#
 
-// Adding value DataStore specStore =
-DataStoreFactory.getSpecDataStore(); specStore.put("key", "455678");
+  using Gauge.CSharp.Lib;
 
-// Fetching value DataStore specStore =
-DataStoreFactory.getSpecDataStore(); String elementId = (String)
-specStore.get("key"); {%- language name="C#", type="csharp" -%} using
-Gauge.CSharp.Lib;
+  // Adding value 
+  var specStore = DataStoreFactory.SpecDataStore;
+  specStore.Add("element-id", "455678");
 
-// Adding value var specStore = DataStoreFactory.SpecDataStore;
-specStore.Add("element-id", "455678");
+  // Fetching Value 
+  var elementId = (string) specStore.Get("element-id");
 
-// Fetching Value var specStore = DataStoreFactory.SpecDataStore; var
-elementId = (string) specStore.Get("element-id");
+  // avoid type cast by using generic Get 
+  var anotherElementId = specStore.Get("element-id"); 
+  
+.. code-block:: java
+  :caption: Java
 
-// avoid type cast by using generic Get var anotherElementId =
-specStore.Get("element-id"); {%- language name="Ruby", type="ruby" -%}
-// Adding value spec\_store = DataStoreFactory.spec\_datastore;
-spec\_store.put("element-id", "455678");
+  // Import Package import
+  com.thoughtworks.gauge.datastore.*;
 
-// Fetching Value spec\_store = DataStoreFactory.spec\_datastore;
-element\_id = spec\_store.get("element-id"); {%- endcodetabs %}
+  // Adding value DataStore specStore =
+  DataStoreFactory.getSpecDataStore(); 
+  specStore.put("key", "455678");
 
-3. SuiteStore
-^^^^^^^^^^^^^
+  // Fetching value DataStore specStore =
+  String elementId = (String) specStore.get("key"); 
+
+.. code-block:: ruby
+  :caption: Ruby
+
+  // Adding value 
+  spec_store = DataStoreFactory.spec_datastore;
+  spec_store.put("element-id", "455678");
+
+  // Fetching Value 
+  element_id = spec_store.get("element-id"); 
+
+SuiteStore
+^^^^^^^^^^
 
 This data store keeps values added to it during the lifecycle of entire
 suite execution. Values are cleared after entire suite execution.
 
-    Warning: SuiteStore is not advised to be used when executing specs
-    in parallel. The values are not retained between parallel streams of
-    execution.
+Warning: SuiteStore is not advised to be used when executing specs
+in parallel. The values are not retained between parallel streams of
+execution.
 
-{% codetabs name="Java", type="java" -%} // Import Package import
-com.thoughtworks.gauge.datastore.\*;
+.. code-block::java
+  :caption:C#
 
-// Adding value DataStore suiteStore =
-DataStoreFactory.getSuiteDataStore(); suiteStore.put("element-id",
-"455678");
+  using Gauge.CSharp.Lib;
 
-// Fetching value DataStore suiteStore =
-DataStoreFactory.getSuiteDataStore(); String elementId = (String)
-suiteStore.get("element-id"); {%- language name="C#", type="csharp" -%}
-using Gauge.CSharp.Lib;
+  // Adding value var suiteStore = DataStoreFactory.SuiteDataStore;
+  suiteStore.Add("element-id", "455678");
 
-// Adding value var suiteStore = DataStoreFactory.SuiteDataStore;
-suiteStore.Add("element-id", "455678");
+  // Fetching Value var suiteStore = DataStoreFactory.SuiteDataStore; var
+  elementId = (string) suiteStore.Get("element-id");
 
-// Fetching Value var suiteStore = DataStoreFactory.SuiteDataStore; var
-elementId = (string) suiteStore.Get("element-id");
+  // avoid type cast by using generic Get var anotherElementId =
+  suiteStore.Get("element-id"); 
 
-// avoid type cast by using generic Get var anotherElementId =
-suiteStore.Get("element-id"); {%- language name="Ruby", type="ruby" -%}
-// Adding value suite\_store = DataStoreFactory.suite\_datastore;
-suite\_store.put("element-id", "455678");
+.. code-block:: java
+  :caption: Java
 
-// Fetching Value suite\_store = DataStoreFactory.suite\_datastore;
-element\_id = suite\_store.get("element-id"); {%- endcodetabs %}
+   // Import Package import
+  com.thoughtworks.gauge.datastore.*;
+
+  // Adding value 
+  DataStore suiteStore = DataStoreFactory.getSuiteDataStore(); 
+  suiteStore.put("element-id", "455678");
+
+  // Fetching value 
+  DataStore suiteStore = DataStoreFactory.getSuiteDataStore(); 
+  String elementId = (String) suiteStore.get("element-id"); 
+
+.. code-block:: ruby
+  :caption: Ruby
+
+  // Adding value 
+  suite_store = DataStoreFactory.suite_datastore;
+  suite_store.put("element-id", "455678");
+
+  // Fetching Value 
+  suite_store = DataStoreFactory.suite_datastore;
+  element_id = suite_store.get("element-id"); 
 
 Custom messages in reports
 --------------------------
@@ -387,27 +411,54 @@ API from the step implementations or hooks.
 
 These messages will appear under steps in the execution reports.
 
-{% codetabs name="Java", type="java" -%} Gauge.writeMessage("Custom
-message for report");
+.. code-block:: java
+  :caption: C#
 
-String id = "4567"; Gauge.writeMessage("User id is %s", id);
+  GaugeMessages.WriteMessage("Custom message for report");
+  var id = "4567"; 
+  GaugeMessages.WriteMessage("User id is {0}", id); 
+ 
+.. code-block:: java
+  :caption: Java
 
-{%- language name="C#", type="csharp" -%}
-GaugeMessages.WriteMessage("Custom message for report");
+  Gauge.writeMessage("Custom message for report");
+  String id = "4567"; 
+  Gauge.writeMessage("User id is %s", id);
 
-var id = "4567"; GaugeMessages.WriteMessage("User id is {0}", id); {%-
-language name="Ruby", type="ruby" -%} Gauge.write\_message("Custom
-message for report")
+.. code-block:: ruby
+  :caption: Ruby
 
-id = "4567" Gauge.write\_message("User id is" + id) {%- endcodetabs %}
+  Gauge.write_message("Custom message for report")
+  id = "4567" 
+  Gauge.write_message("User id is" + id)
+
+Enum as Step parameter
+----------------------
+
+The constant values of an Enum data type can be used as parameters to a
+Step. However, the type of parameter should match the Enum name itself
+in step implementation.
+
+Step:
+
+::
+
+  * Navigate towards "SOUTH"
+
+Implementation:
+
+.. code-block:: java
+  :caption: Java
+
+  public enum Direction { NORTH, SOUTH, EAST, WEST; }
+
+  @Step("Navigate towards ") 
+  public void navigate(Direction direction) {
+     //  code here 
+  }
 
 Configuration
 -------------
-
--  `General <#general>`__
--  `Java <#java>`__
--  `CSharp <#csharp>`__
--  `Ruby <#ruby>`__
 
 General
 ^^^^^^^
@@ -421,15 +472,16 @@ Properties are defined in the following format.
 
 ::
 
-    sample_key = sample_value
+   sample_key = sample_value
 
 Java
 ^^^^
 
 Java Specific configuration changes can be made in the
-***env/default/java.properties*** file.
+``env/default/java.properties`` file.
 
-gauge\_java\_home
+gauge_java_home
+~~~~~~~~~~~~~~~~~
 
 Specify an alternate Java home if you want to use a custom version.
 
@@ -437,13 +489,13 @@ Example:
 
 ::
 
-    gauge_java_home = PATH_TO_JAVA_HOME
+   gauge_java_home = PATH_TO_JAVA_HOME
 
-gauge\_custom \_build\_path
+gauge_custom_build_path
+~~~~~~~~~~~~~~~~~~~~~~~
 
-::
 
-    Note: IntelliJ out directory will be usually auto-detected.
+Note: IntelliJ out directory will be usually auto-detected.
 
 Use this property if you need to override the build path for the
 project.
@@ -452,36 +504,36 @@ Example:
 
 ::
 
-    gauge_custom_build_path = PATH_TO_CUSTOM_BUILDPATH
+   gauge_custom_build_path = PATH_TO_CUSTOM_BUILDPATH
 
-gauge\_additional\_libs
+gauge_additional_libs
+~~~~~~~~~~~~~~~~~~~~~
 
--  Specify the directory where additional libraries are kept.
--  You can specify multiple directory names separated with a comma
-   **','**
--  ***libs*** directory in the gauge project is added by default.
+Specify the directory where additional libraries are kept.
+
+-  You can specify multiple directory names separated with a comma ``,``
+-  ``libs`` directory in the gauge project is added by default.
 
 Example:
 
 ::
 
-    gauge_additional_libs = libs/*, PATH_TO_NEW_LIBRARY
+   gauge_additional_libs = libs/*, PATH_TO_NEW_LIBRARY
 
-gauge\_jvm\_args
+gauge_jvm_args
+~~~~~~~~~~~~~~
 
 Specify the JVM arguments passed to java while launching.
 
-gauge\_clear\_state\_level
+gauge_clear_state_level
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Specify the level at which cached objects should get removed while
-execution.
-
-Possible values for this property are ``suite``,\ ``spec`` and
-``scenario``. By default, Gauge clears state at scenario level.
+Specify the level at which cached objects should get removed while execution. Possible values for this property 
+are ``suite``, ``spec`` and ``scenario``. By default, Gauge clears state at scenario level.
 
 Example:
 
-::
+  ::
 
     gauge_clear_state_level = spec
 
@@ -491,63 +543,47 @@ that new objects are created for next execution.
 CSharp
 ^^^^^^
 
-CSharp Specific configuration changes can be made in the
-***env/default/default.properties*** file.
+CSharp Specific configuration changes can be made in the ``env/default/default.properties`` file.
 
-gauge\_reports\_dir
+gauge_reports_dir
+~~~~~~~~~~~~~~~~~
 
 -  The path to the gauge reports directory.
--  Should be either relative to the project directory or an absolute
-   path.
+-  Should be either relative to the project directory or an absolute path.
 
 Example:
 
 ::
 
-    gauge_reports_dir = reports
+   gauge_reports_dir = reports
 
-overwrite\_reports
+overwrite_reports
+~~~~~~~~~~~~~~~~~
 
--  Set as false if gauge reports should not be overwritten on each
-   execution.
+-  Set as false if gauge reports should not be overwritten on each execution.
 -  A new time-stamped directory will be created on each execution.
 
 Example:
 
-::
+  ::
 
-    overwrite_reports = true
+     overwrite_reports = true
 
-screenshot\_on\_failure
+     screenshot\_on\_failure
 
 Set to false to disable screenshots on failure in reports.
 
 Example:
 
-::
+  ::
 
-    screenshot_on_failure = true
+     screenshot_on_failure = true
 
 Ruby
 ^^^^
 
 The default Ruby properties are similar to that of the CSharp
-properties. # Enum as Step parameter
+properties. 
 
-The constant values of an Enum data type can be used as parameters to a
-Step. However, the type of parameter should match the Enum name itself
-in step implementation.
 
-Step:
 
-::
-
-    * Navigate towards "SOUTH"
-
-Implementation:
-
-{% codetabs name="Java", type="java" -%} public enum Direction { NORTH,
-SOUTH, EAST, WEST; }
-
-@Step("Navigate towards ") public void navigate(Direction direction) {
-// code here } {%- endcodetabs %}
