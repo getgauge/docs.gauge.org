@@ -95,5 +95,5 @@ all scenarios passed. \* (y) is the total number specifications with
 atleast one scenario failed. \* (z) is the total number specifications
 with all scenarios skipped.
 
-    Other `formats of reporting <../reporting_features/README.md>`__ are
-    available.
+Other `formats of reporting <../reporting_features/README.md>`__ are
+available.

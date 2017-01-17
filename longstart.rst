@@ -41,8 +41,8 @@ under test.
 -  The Markup for a Specification file is based on
    `markdown <https://en.wikipedia.org/wiki/Markdown>`__ syntax.
 
-A simple Spec
-^^^^^^^^^^^^^
+Example
+^^^^^^^
 
 .. figure:: images/spec.png
    :alt: Specification
@@ -55,7 +55,7 @@ Specification Heading
 A Spec must begins with a spec heading and a single specification can
 contain only one spec heading.
 
-It is written in **``<H1>``** syntax of markdown. This can be in two
+It is written in ``<H1>`` syntax of markdown. This can be in two
 forms:
 
 ::
@@ -79,7 +79,7 @@ Each scenario represents a single flow in a particular specification. A
 specification must contain at least one scenario.
 
 A scenario starts after a scenario heading or a scenario name. The
-scenario heading is written in markdown **``<H2>``** syntax. This can be
+scenario heading is written in markdown ``<H2>`` syntax. This can be
 written in 2 ways:
 
 ::
@@ -96,8 +96,8 @@ or
 -  A scenario contains one or more `steps <steps.md>`__ under it.
 -  A scenario can be tagged using `tags <tags.md>`__.
 
-Example spec with a scenario:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Example
+^^^^^^^
 
 ::
 
@@ -157,8 +157,7 @@ re-used with different parameter values.
     * Check "product 1" exists
     * Check "product 2" exists
 
-The underlying `step
-implementation <../../language_features/step_implementations.md>`__ in
+The underlying `step implementation <../../language_features/step_implementations.md>`__ in
 code must also take the same number of parameters as passed from the
 step.
 
@@ -177,17 +176,16 @@ They are values passed into the steps in double quotes.
     * Create a “gauge-java” project
     * Write “100” line specification
 
-    Note Renaming the parameter will not rename the usages inside the
-    method.
-
-    By design, the renamed parameter is considered as a new parameter.
-    Therefore the usage of the old parameter(if any) has to be fixed
-    manually to resolve the corresponding compilation issue.
+**Note:** Renaming the parameter will not rename the usages inside the
+method. By design, the renamed parameter is considered as a new parameter.
+Therefore the usage of the old parameter(if any) has to be fixed
+manually to resolve the corresponding compilation issue.
 
 Table Parameter
 ^^^^^^^^^^^^^^^
 
--  Table Parameters can be used in two ways
+Table Parameters can be used in two ways
+
 -  When a scenario or multiple scenarios in a specification are to be
    executed for multiple sets of data then Data table execution can be
    used.
@@ -199,7 +197,8 @@ Data Table values in inline tables
 Dynamic values from the data table can also be referred in table
 parameters passed into steps
 
-Example:
+Example
+~~~~~~~
 
 ::
 
@@ -227,30 +226,32 @@ Special Parameters
 ^^^^^^^^^^^^^^^^^^
 
 Special parameters provide the ability to pass larger and richer data
-into the steps as parameters. \* They are entered in angular brackets -
-``<>`` in the step. There are 2 types of special parameters available in
-Gauge \* They contain 2 parts separated by a colon ``:``
+into the steps as parameters. 
+
+   - They are entered in angular brackets - ``<>`` in the step. 
+   - They contain 2 parts separated by a colon ``:``
+
+::
+
+    <prefix:value>
 
 **Prefix** : This defines the type of special parameter. e.g. file,
 table.
 
 **Value** : This defines the value for the type of special parameter.
 
-::
 
-    <prefix:value>
-
-The different special parameter types are:
+There are two types of special paramters:
 
 File
-----
+~~~~
 
 These are used to read files and pass the file content as a string
 parameter to the underlying steps.
 
 The prefix and value are below:
 
-**Prefix** : The prefix is ***file***
+**Prefix** : ``file``
 
 **Value** : The value is the path to the file.
 
@@ -263,20 +264,20 @@ The path to the file can be the relative path from the Gauge project or
 an absolute path to the file.
 
 CSV
----
+~~~
 
 Tables are used to pass table value into steps read from an external CSV
 file. The parameter text in the step contains a prefix table and the
 path to the csv file.
 
-**Prefix** : The prefix is ***table***
+**Prefix** : ``table``
 
 **Value** : The value is the path to the csv file.
 
 ::
 
     * Step that takes a table <table:data.csv>
-    * Check if the following users exist <table : /Users/john/work/users.csv>
+    * Check if the following users exist <table:/Users/john/work/users.csv>
 
 **Sample csv file**:
 
@@ -292,9 +293,7 @@ considered as the row values.
 Tags
 ----
 
-Tags are used to associate labels with specifications or scenarios. Tags
-are written as comma separated values in the spec with a prefix
-**``Tags:``** .
+Tags are used to associate labels with specifications or scenarios. Tags are written as comma separated values in the spec with a prefix ``Tags:`` .
 
 -  Both scenarios and specifications can be separately tagged
 -  Only **one** set of tags can be added to a single specification or
@@ -305,8 +304,8 @@ They help in filtering specs or scenarios based on tags used.
 Example
 ^^^^^^^
 
-Both the *``Login specification``* and the scenario
-*``Successful login scenario``* have tags in the below example.
+Both the ``Login specification`` and the scenario
+``Successful login scenario`` have tags in the below example.
 
 ::
 
@@ -328,7 +327,7 @@ Concepts provide the ability to combine re-usable logical groups of
 steps into a single unit. It provides a higher level abstraction of a
 business intent by combining steps.
 
-They are defined in **``.cpt``** format files in the ``specs`` directory
+They are defined in ``.cpt`` format files in the ``specs`` directory
 in the project. They can be inside nested directories inside the specs
 directory.
 
@@ -337,8 +336,7 @@ directory.
 -  On execution all the steps under the concepts are executed in the
    defined order.
 
-    **Note:** A single .cpt file can contain multiple concept
-    definitions.
+**Note:** A single .cpt file can contain multiple concept definitions.
 
 Defining a concept
 ^^^^^^^^^^^^^^^^^^
@@ -346,10 +344,10 @@ Defining a concept
 Create a ``.cpt`` file under specs directory with the concept
 definition.
 
-The concept definition contains the 2 parts: - Concept header - Steps
+The concept definition contains the 2 parts:
 
 Concept header
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 The concept header defines the name of the concept and the parameters
 that it takes. It is written in the markdown **``H1``** format.
@@ -357,14 +355,12 @@ that it takes. It is written in the markdown **``H1``** format.
 -  All parameters are defined in angular brackets ``< >``.
 -  A concept definition must have a concept header.
 
-Example:
-
 ::
 
     # Concept name with <param0> and <param1>
 
 Steps
------
+~~~~~
 
 The concept header is followed by the steps that are used inside the
 concept. They are defined in the usual `step <steps.md>`__ structure.
@@ -373,9 +369,6 @@ concept. They are defined in the usual `step <steps.md>`__ structure.
    brackets.
 -  Fixed static parameter values are written in quotes ``" "``.
 -  Other concepts can also be called inside the concept definition.
-
-Example of Concept definition
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
@@ -423,13 +416,11 @@ function.
     * Delete all the projects in the list
     * Ensure project list is empty
 
-In the above example spec the context steps are
-**``User is logged in as Mike``** and
-**``Navigate to the project page``**, they are defined before any
+In the above example spec the context steps are ``User is logged in as Mike`` and
+``Navigate to the project page``, they are defined before any
 scenario.
 
-These steps are executed before the execution of each scenario
-``Delete single project`` and ``Delete multiple projects``.
+These steps are executed before the execution of each scenario ``Delete single project`` and ``Delete multiple projects``.
 
 The spec execution flow would be:
 
@@ -491,7 +482,7 @@ Example
     * Delete user "mike"
 
 In the above example spec, the tear down steps are
-**``Logout user "mike"``** and **``Delete user "mike"``**, they are
+``Logout user "mike"`` and ``Delete user "mike"``, they are
 defined after three or more consecutive underscores.
 
 The spec execution flow would be:

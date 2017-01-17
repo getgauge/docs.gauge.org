@@ -18,7 +18,8 @@ The HTML report plugin can be configured by the properties set in the
 
 The configurable properties are:
 
-*gauge\_reports\_dir*
+gauge\_reports\_dir
+~~~~~~~~~~~~~~~~~~~
 
 -  Specifies the path to the directory where the execution reports will
    be generated.
@@ -26,10 +27,11 @@ The configurable properties are:
 -  Should be either relative to the project directory or an absolute
    path. By default it is set to ``reports`` directory in the project
 
-*overwrite\_reports*
+overwrite\_reports
+~~~~~~~~~~~~~~~~~~
 
--  Set to ``true`` if the reports **should be overwritten** on each
-   execution hence maintaining only the latest execution report.
+-  Set to ``true`` if the reports **must be overwritten** on each
+   execution maintaining only the latest execution report.
 
 -  If set to ``false`` then a **new report** will be generated on each
    execution in the reports directory in a nested time-stamped
@@ -43,8 +45,7 @@ XML Report
 XML Report plugin creates JUnit XML test result document that can be
 read by tools such as Go, Jenkins. When the specs are executed, the xml
 report is generated in reports directory in the project. The format of
-XML report is based on `JUnit XML
-Schema <https://windyroad.com.au/dl/Open%20Source/JUnit.xsd>`__
+XML report is based on `JUnit XML Schema <https://windyroad.com.au/dl/Open%20Source/JUnit.xsd>`__
 
 **Sample XML Report Document** :
 
@@ -68,8 +69,7 @@ To install XML Report plugin :
 
     gauge --install xml-report
 
-To install a specific version of XML report plugin use the
-``--plugin-version`` flag.
+To install a specific version of XML report plugin use the ``--plugin-version`` flag.
 
 ::
 
@@ -84,8 +84,7 @@ plugin repository, use the ``--file`` or ``-f`` flag.
 
     gauge --install xml-report --file ZIP_FILE_PATH
 
-Download the plugin zip from the `Github
-Releases <https://github.com/getgauge/xml-report/releases>`__
+Download the plugin zip from the `Github Releases <https://github.com/getgauge/xml-report/releases>`__
 
 Configuration
 ^^^^^^^^^^^^^
@@ -101,14 +100,18 @@ The XML report plugin can be configured by the properties set in the
 
 The configurable properties are:
 
-**gauge\_reports\_dir** \* Specifies the path to the directory where the
-execution reports will be generated.
+gauge_reports_dir
+~~~~~~~~~~~~~~~~~
+
+Specifies the path to the directory where the execution reports will be generated.
 
 -  Should be either relative to the project directory or an absolute
    path. By default it is set to ``reports`` directory in the project
 
-**overwrite\_reports** \* Set to ``true`` if the reports **should be
-overwritten** on each execution hence maintaining only the latest
+overwrite_reports
+~~~~~~~~~~~~~~~~~
+
+Set to ``true`` if the reports **must be overwritten** on each execution hence maintaining only the latest
 execution report.
 
 -  If set to ``false`` then a **new report** will be generated on each
@@ -127,20 +130,19 @@ scenarios are available.
 Installation
 ^^^^^^^^^^^^
 
-To install :
+To install:
 
 ::
 
     gauge --install spectacle
 
-To install a specific version of spectacle plugin use the
-``--plugin-version`` flag.
+To install a specific version of spectacle plugin use the ``--plugin-version`` flag.
 
 ::
 
     gauge --install spectacle --plugin-version 0.0.2
 
-**Offline Installation** :
+**Offline Installation**:
 
 If plugin should be installed from a zip file instead of downloading
 from plugin repository, use the ``--file`` or ``-f`` flag.
@@ -149,8 +151,7 @@ from plugin repository, use the ``--file`` or ``-f`` flag.
 
     gauge --install spectacle --file ZIP_FILE_PATH
 
-Download the plugin zip from the `Github
-Releases <https://github.com/getgauge/spectacle/releases>`__
+Download the plugin zip from the `Github Releases <https://github.com/getgauge/spectacle/releases>`__
 
 Export to HTML
 --------------
@@ -175,8 +176,7 @@ textbox in the report to view all the specs and scenarios which are
 labeled with certain tags. Tag expressions with operators ``|``, ``&``,
 ``!`` are supported.
 
-In the following image, the specs/scenarios are filtered using a tag
-expression(\ ``refactoring & !api``).
+In the following image, the specs/scenarios are filtered using a tag expression(\ ``refactoring & !api``).
 
 .. figure:: images/filter.png
    :alt: Filter Specification/Scenario
