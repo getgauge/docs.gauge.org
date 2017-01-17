@@ -4,85 +4,120 @@ Syntax
 Specification
 -------------
 
-::
+.. code-block:: markdown
 
-    Specification name            # Specification name
+    Specification name            
     ==================
+    
+or 
+
+.. code-block:: markdown
+
+    # Specification name
 
 Scenario
 --------
 
-::
+.. code-block:: markdown
 
-    Scenario name                 ## Scenario name
+    Scenario name                 
     -------------
+
+or
+
+.. code-block:: markdown
+
+    ## Scenario name
 
 Tags
 ----
 
-::
+.. code-block:: markdown
 
-    Specification Level           Scenario Level
-    ===================           --------------
+    Specification Level           
+    ===================           
 
-    Tags: login, admin            Tags: login-success, admin
+    Tags: login, admin            
+    
+    
+    Scenario Level
+    --------------
+
+    Tags: login-success, admin
 
 Concept
 -------
 
-::
+.. code-block:: markdown
 
-    Concept Heading               # Concept Heading
+    Concept Heading 
     ===============
+
+or
+
+.. code-block:: markdown
+   
+    # Concept Heading
 
 Steps
 -----
 
-::
+.. code-block:: markdown
 
     * Step Name
 
 Parameters
 ----------
 
--  ``"``\ Static Arg\ ``"``
+.. code-block:: markdown
+   :caption: ``"Static Arg"``
 
-   ::
+   * Check "product" exists
 
-       * Check "product" exists
 
--  ``<``\ Dynamic Arg\ ``>`` \`\`\`\`
--  Check exists \`\`\`\`
 
--  ``|``\ Table Parameter\ ``|`` \`\`\`\`
--  Step that takes a table \| id \| name \| \| 123 \| John \| \| 456 \|
-   Mcclain \| \`\`\`\` There should be no empty lines between step name
-   and table parameter.
+.. code-block:: markdown
+   :caption: ``<Dynamic Arg>``
 
--  ``<``\ Special\ ``:``\ Parameters\ ``>``
+   * Check <product> exists 
 
-   ::
 
-        <prefix:value>
 
--  *File* \`\`\`\`
--  Check if file:/work/content.txt is visible \`\`\`\`
+.. code-block:: markdown
+   :caption: ``|Table Parameter|``
 
--  *Table* \`\`\`\`
--  Check if the users exist
+   * Step that takes a table 
+      | id  | name    |
+      |-----|---------|
+      | 123 | John    |
+      | 456 | Mcclain | 
+      
+There should be no empty lines between step name and table parameter.
 
-   .. raw:: html
+Special Parameters
+==================
 
-      <table : /Users/john/work/users.csv>
+.. code-block:: markdown
 
-   \`\`\`\`
+   <prefix:value>
+
+.. code-block:: markdown
+   :caption: ``file``
+
+   * Check if <file:/work/content.txt> is visible 
+
+.. code-block:: markdown
+   :caption: ``table``
+
+   * Check if the users exist <table:/Users/john/work/users.csv>
+
 
 Comments
 --------
 
 Comment has no syntax. Any normal line of text is treated as comment.
 
-::
+.. code-block:: markdown
 
     Im a comment!!!
 
@@ -91,7 +126,7 @@ Images
 
 Inline image syntax looks like this:
 
-::
+.. code-block:: markdown
 
     ![Alt text](/path/to/img.jpg)
 
@@ -102,7 +137,7 @@ The path to image file should be relative to current directory.
 Links
 -----
 
-::
+.. code-block:: markdown
 
     This is [an example](http://getgauge.io "Title") inline link.
 
