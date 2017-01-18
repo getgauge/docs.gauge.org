@@ -18,15 +18,15 @@ Some of the **key features** of Gauge that make it stand unique include:
 -  Business Language Tests : Supports the concept of `executable
    documentation <advanced_readings/living_documentation.md>`__
 -  Consistent Cross Platform/Language Support for writing test code.
-   Currently `supported
-   languages <installations/install_language_runners.md>`__.
+   Currently :ref:`supported languages <install-language-runner>`.
 -  Open Source, so it could be shared freely and improved by others as
    well
--  A modular architecture with `plugin <plugins/README.md>`__ support.
--  Extensible through `plugins <plugins/README.md>`__ and Hackable
+-  A modular architecture with :ref:`plugin <plugins-plugins>` support.
+-  Extensible through :ref:`plugins <plugins-plugins>` and Hackable
 -  Supports External Data Sources
 -  Helps you create Maintainable and Understandable test suites
 -  `IDE Support <ide_support/README.md>`__
+
 
 Specifications (spec)
 ---------------------
@@ -69,8 +69,10 @@ or
 
     # Spec Heading
 
--  Every spec must contain one or more `scenarios <scenarios.md>`__.
--  Every spec can be marked with labels using `tags <tags.md>`__.
+-  Every spec must contain one or more :ref:`longstart-scenarios`.
+-  Every spec can be marked with labels using :ref:`longstart-tags`.
+
+.. _longstart-scenarios:
 
 Scenarios
 ---------
@@ -113,23 +115,25 @@ Example
     * Change permissions for user "john" to "admin"
     * User "john" should have admin permissions
 
+.. _longstart-steps:
+
 Steps
 -----
 
 Steps are the executable components of your specification. They are
 written as markdown unordered list items (bulleted points).
 
-They are written inside a specification as - `context
-steps <contexts.md>`__ - `tear down steps <tear_down_steps.md>`__ -
-steps inside a scenario or concepts
+They are written inside a specification as 
+
+   - :ref:`Context Steps<longstart-context>`
+   - :ref:`longstart-teardown`
+   - Steps inside a scenario or concepts
 
 Every step has an underlying code implementation for the programming
 language used. This is executed when the steps inside a spec are
 executed.
 
-See how to write `step
-implementations <../language_features/step_implementations.md>`__ for
-different languages.
+See how to write :ref:`language-steps` for different languages.
 
 Example
 ^^^^^^^
@@ -143,8 +147,12 @@ Example
 The values written in **quotes** are parameters which are passed into
 the underlying step implementation as a language specific structure.
 
-    Note: The following characters are reserved for parameters, these
-    cannot be used in step text. - " - < - >
+Note: The following characters are reserved for parameters, these
+cannot be used in step text. 
+
+   - " 
+   - < 
+   - >
 
 Parameters
 ----------
@@ -157,14 +165,11 @@ re-used with different parameter values.
     * Check "product 1" exists
     * Check "product 2" exists
 
-The underlying `step implementation <../../language_features/step_implementations.md>`__ in
+The underlying :ref:`step implementation <language-steps>` in
 code must also take the same number of parameters as passed from the
 step.
 
-The parameters passed into a step can be of different types: - `Simple
-parameter <simple_parameters.md>`__ - `Table
-parameter <table_parameters.md>`__ - `Special
-parameter <special_parameters.md>`__
+The parameters passed into a step are of the following types:
 
 Simple parameters
 ^^^^^^^^^^^^^^^^^
@@ -290,6 +295,8 @@ path to the csv file.
 The first row is considered as table header. Following rows are
 considered as the row values.
 
+.. _longstart-tags:
+
 Tags
 ----
 
@@ -383,6 +390,8 @@ In the above example:
 -  The first line is the concept header
 -  The following 3 steps are abstracted into the concept
 
+.. _longstart-context:
+
 Contexts
 --------
 
@@ -428,6 +437,8 @@ The spec execution flow would be:
 2. ``Delete single project`` scenario execution
 3. Context steps execution
 4. ``Delete multiple projects`` scenario execution
+
+.. _longstart-teardown:
 
 Tear Down Steps
 ---------------

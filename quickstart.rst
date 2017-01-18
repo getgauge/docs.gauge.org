@@ -7,6 +7,8 @@ Prerequisites
 -  JDK 6+ / .NET framework / Ruby 2.0+ is installed
 -  `Gauge <../../installations/operating_system>`__ is installed.
 
+.. _install-language-runner:
+
 Install language runner
 -----------------------
 
@@ -95,5 +97,4 @@ all scenarios passed. \* (y) is the total number specifications with
 atleast one scenario failed. \* (z) is the total number specifications
 with all scenarios skipped.
 
-Other `formats of reporting <../reporting_features/README.md>`__ are
-available.
+Check supported formats for :ref:`reporting-formats`.

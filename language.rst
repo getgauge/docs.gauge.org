@@ -1,12 +1,12 @@
 Language Features
 =================
 
+.. _language-steps:
+
 Step implementations
 --------------------
 
-Every `step <../gauge_terminologies/steps.md>`__ needs to have a
-language specific implementation that gets executed on the spec
-execution.
+:ref:`longstart-steps` have a language specific implementation that gets executed on the spec execution.
 
 Simple step
 ^^^^^^^^^^^

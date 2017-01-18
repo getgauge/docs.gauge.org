@@ -95,7 +95,7 @@ Parameters
 There should be no empty lines between step name and table parameter.
 
 Special Parameters
-==================
+------------------
 
 .. code-block:: markdown
 

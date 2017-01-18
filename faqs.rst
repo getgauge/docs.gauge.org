@@ -2,6 +2,8 @@
 FAQs
 ====
 
+.. _installation-faq: 
+
 Installation
 ------------
 

@@ -1,3 +1,5 @@
+.. _plugins-plugins:
+
 Plugins
 =======
 
@@ -9,9 +11,8 @@ Language Plugins
 
 Also known as **language runners**, these plugins enable the users to
 write the implementation of specs in a language of their choice. For a
-list of available language runners, see how to `install language
-runners <../installations/install_language_runners.md>`__. Allows you to
-write your tests in
+list of available language runners, see how to :ref:`install language runners <install-language-runner>`. 
+Allows you to write your tests in
 
 -  `Java <http://github.com/getgauge/gauge-java>`__
 -  `CSharp <http://github.com/getgauge/gauge-csharp>`__

@@ -73,9 +73,7 @@ You can `download the Gauge
 installer <http://getgauge.io/get-started>`__. This is a ``pkg`` file,
 so you can click your way through to finish installing Gauge.
 
-Check the page on `installing language
-runners <../install_language_runners.md>`__ to install language runner
-plugins.
+Check the page on :ref:`install-language-runner` to install language runner plugins.
 
 Linux
 -----
@@ -210,6 +208,4 @@ below to install Gauge.
     unzip gauge-$VERSION-$OS.$ARCH.zip
     ./install.sh
 
-Having trouble with installation? Here is a detailed `installation
-troubleshooting guide <../../troubleshooting/installation.md>`__ that
-can help you.
+Having trouble with installation? Head over to our :ref:`installation-faq` FAQ's.
