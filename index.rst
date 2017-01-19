@@ -10,6 +10,7 @@
    installing
    quickstart
    longstart
+   using
    syntax
    plugins
    language
