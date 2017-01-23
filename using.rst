@@ -68,48 +68,44 @@ specifications to be executed. A valid path for executing tests can be
 path to directories that contain specifications or path to specification
 files or path to scenarios or a mix of any of these three methods.
 
-Specify directories
-^^^^^^^^^^^^^^^^^^^
+To execute all the tests in a given folder ``specs``, use
 
-You can specify a single directory in which specifications are stored.
-Gauge scans the directory and picks up valid specification files.
+::
 
-For example:
+    $ gauge specs/
 
-.. code-block:: console
-
-    gauge specs/
-
-You can also specify multiple directories in which specifications are
-stored. Gauge scans all the directories for valid specification files
-and executes them in one run.
-
-For example:
-
-.. code-block:: console
-
-    gauge specs-dir1/ specs-dir2/ specs-dir3/
-
-Specify specification files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You can specify path to a specification files. In that case, Gauge
-executes only the specification files provided.
-
-For example, to execute a single specification file:
-
-.. code-block:: console
-
-    gauge specs/spec1.spec
-
-Or, to execute multiple specification files:
-
-.. code-block:: console
-
-    gauge specs/spec1.spec specs/spec2.spec specs/spec3.spec
+This will give a colored console output with details of the execution as
+well an execution summary.
 
 Specify scenarios
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
+
+A single scenario of a specification can be executed by specifying the
+line number in the span of that scenario in the spec. To execute a
+``Admin Login`` scenario in the following spec use
+``gauge specs/login_test.spec:4`` command.
+
+::
+
+    1>   Configuration
+    2>   =============
+    3>
+    4>   Admin Login
+    5>   -----------
+    6>   * User must login as "admin"
+    7>   * Navigate to the configuration page
+
+This executes only the scenario present at line number ``4`` i.e
+``Admin Login`` in ``login_test.spec``. In the above spec, specifying
+line numbers 4-7 will execute the same scenario because of the span.
+
+Multiple scenarios can be executed selectively as follows :
+
+::
+
+    $ gauge specs/helloworld.spec:4 specs/helloworld.spec:7
+
+These scenarios can also belong to different specifications.
 
 You can also specify a specific
 `scenario <../gauge_terminologies/scenarios.md>`__ or a list of
@@ -132,8 +128,49 @@ to execute the first and third scenarios of a specification file named
 
     gauge specs/spec1.spec:0 specs/spec1.spec:2
 
+Specify directories
+~~~~~~~~~~~~~~~~~~~
+
+You can specify a single directory in which specifications are stored.
+Gauge scans the directory and picks up valid specification files.
+
+For example:
+
+.. code-block:: console
+
+    gauge specs/
+
+You can also specify multiple directories in which specifications are
+stored. Gauge scans all the directories for valid specification files
+and executes them in one run.
+
+For example:
+
+.. code-block:: console
+
+    gauge specs-dir1/ specs-dir2/ specs-dir3/
+
+Specify files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can specify path to a specification files. In that case, Gauge
+executes only the specification files provided.
+
+For example, to execute a single specification file:
+
+.. code-block:: console
+
+    gauge specs/spec1.spec
+
+Or, to execute multiple specification files:
+
+.. code-block:: console
+
+    gauge specs/spec1.spec specs/spec2.spec specs/spec3.spec
+
+
 Verbose reporting
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 By default, ``gauge`` reports at the specification level when executing
 tests. You can enable verbose, step-level reporting by using the
@@ -142,6 +179,376 @@ tests. You can enable verbose, step-level reporting by using the
 .. code-block:: console
 
     gauge --verbose specs/
+
+
+Errors during execution
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Parse error in a spec file:
+""""""""""""""""""""""""""""""
+
+This occurs if the spec file doesn't follow the expected
+`specifications <../../gauge_terminologies/specifications.md>`__ syntax
+or parameters could not be resolved.
+
+**Example**
+
+::
+
+    [ParseError] hello_world.spec : line no: 25, Dynamic parameter <product> could not be resolved
+
+Unimplemented steps present in spec file
+"""""""""""""""""""""""""""""""""""""""""""
+
+If the spec file has a step that does not have an implementation in the
+projects programming language there will be a validation error.
+
+Appropriate underlying code implementation has to be provided for all
+the steps in the specs to be executed.
+
+**Example**
+
+::
+
+    login.spec:33: Step implementation not found. login with "user" and "p@ssword"
+
+Failure to launch the language runner plugin
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+If the language specific plugin for the project has not been installed
+then the execution will fail.
+
+Data driven execution
+~~~~~~~~~~~~~~~~~~~~~
+
+-  A *data table* is defined in markdown table format in the beginning
+   of the spec before any steps.
+-  The data table should have a header row and one or more data rows
+-  The header names from the table can be used in the steps within
+   angular brackets ``< >`` to refer a particular column from the data
+   table as a parameter.
+-  On execution each scenario will be executed for every data row from
+   the table.
+-  Table can be easily created in IDE using template
+   ``table:<no of columns>``, and hit ``Tab``.
+-  Table parameters are written in Multi-markdown table formats.
+
+**Example:**
+
+::
+
+    Table driven execution
+    ======================
+
+         |id| name    |
+         |--|---------|
+         |1 |vishnu   |
+         |2 |prateek  |
+         |3 |navaneeth|
+
+    Scenario
+    --------
+    * Say "hello" to <name>
+
+    Second Scenario
+    ---------------
+    * Say "namaste" to <name>
+
+In the above example the step uses the ``name`` column from the data
+table as a dynamic parameter.
+
+Both ``Scenario`` and ``Second Scenario`` are executed first for the
+first row values ``1, vishnu`` and then consecutively for the second and
+third row values from the table.
+
+Execute selected data table rows
+""""""""""""""""""""""""""""""""
+
+By default, scenarios in a spec are run against all the data table rows.
+It can be run against selected data table rows with flag
+``--table-rows`` and specifying the row numbers against which the
+scenarios should be executed. If there are multiple row numbers, they
+should be separated by commas.
+
+Example:
+
+::
+
+    $ gauge --table-rows "1" specs/hello.spec
+    $ gauge --table-rows "1,4,7" specs/hello.spec
+
+Range of table rows can also be specified, against which the scenarios
+are run.
+
+Example:
+
+::
+
+    $ gauge --table-rows "1-3" specs/hello.spec
+
+This executes the scenarios against table rows 1, 2, 3.
+
+Tagged Execution
+~~~~~~~~~~~~~~~~
+
+Tags allow you to filter the specs and scenarios quickly for execution.
+To execute all the specs and scenarios which are labelled with certain
+tags, use the following command.
+
+::
+
+    $ gauge --tags tag1,tag2 specs
+
+or,
+
+::
+
+    $ gauge --tags "tag1, tag2" specs
+
+This executes only the scenarios and specifications which are tagged
+with ``tag1`` and ``tag2``.
+
+Example:
+
+.. figure:: ../../gauge_terminologies/images/spec.png
+   :alt: Specification
+
+   Spec
+
+In the above spec, if all the scenarios tagged with "search" and "admin"
+should be executed, then use the following command:
+
+::
+
+    $ gauge --tags "search & admin" SPEC_FILE_NAME
+
+Tag expressions
+"""""""""""""""
+
+Tags can be selected using expressions. Like:
+
+-  **!TagA:** Selects specs/scenarios that do not have TagA.
+-  **TagA & TagB:** Selects specs/scenarios that have both TagA and
+   TagB.
+-  **TagA & !TagB:** Selects specs/scenarios that have TagA and not
+   TagB.
+-  **TagA \| TagB:** Selects specs/scenarios that have either TagA or
+   TagB.
+-  **(TagA & TagB) \| TagC:** Selects specs/scenarios that have either
+   TagC or both the tags TagA and TagB
+-  **!(TagA & TagB) \| TagC:** Selects specs/scenarios that have either
+   TagC or do not have both the tags TagA and TagB
+-  **(TagA \| TagB) & TagC:** Selects specs/scenarios that either TagA
+   and TagC or TagB and TagC
+
+Parallel Execution
+~~~~~~~~~~~~~~~~~~
+
+Specs can be executed in parallel to run the tests faster and distribute
+the load.
+
+This can be done by the command:
+
+::
+
+    $ gauge --parallel specs
+
+or,
+
+::
+
+    $ gauge -p specs
+
+This creates a number of execution streams depending on the number of
+cores of the machine and distribute the load among workers.
+
+The number of parallel execution streams can be specified by ``-n``
+flag.
+
+Example:
+
+::
+
+    $ gauge --parallel -n=4 specs
+
+This creates four parallel execution streams.
+
+**Note:** The number of streams should be specified depending on number
+of CPU cores available on the machine, beyond which it could lead to
+undesirable results.
+
+Executing a group of specification
+""""""""""""""""""""""""""""""""""
+
+Specifications can be distributed into groups and ``--group`` \| ``-g``
+flag provides the ability to execute a specific group.
+
+This can be done by the command:
+
+::
+
+    $ gauge -n=4 -g=2 specs
+
+This creates 4 groups (provided by -n flag) of specification and selects
+the 2nd group (provided by -g flag) for execution.
+
+Specifications are sorted by alphabetical order and then distributed
+into groups, which guarantees that every group will have the same set of
+specifications, no matter how many times it is being executed.
+
+Example:
+
+::
+
+    $ gauge -n=4 -g=2 specs
+
+::
+
+    $ gauge -n=4 -g=2 specs
+
+The above two commands will execute the same group of specifications.
+
+Run your test suite with lazy assignment of tests
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+This features allows you to dynamically allocate your specs to streams
+during execution instead of at the start of execution.
+
+This allows Gauge to optimise the resources on your agent/execution
+environment. This is useful because some specs may take much longer than
+other, either because of the number of scenarios in them or the nature
+of the feature under test
+
+The following command will assign tests lazily across the specified
+number of streams:
+
+::
+
+    $ gauge -n=4 --strategy="lazy" specs
+
+or,
+
+::
+
+    $ gauge -n=4 specs
+
+Say you have 100 tests, which you have chosen to run across 4
+streams/cores; lazy assignment will dynamically, during execution,
+assign the next spec in line to the stream that has completed it's
+previous execution and is waiting for more work.
+
+Lazy assignment of tests is the default behaviour.
+
+Another strategy called ``eager`` can also be useful depending on need.
+In this case, the 100 tests are distributed before execution, thus
+making them an equal number based distribution.
+
+::
+
+    $ gauge -n=4 --strategy="eager" specs
+
+**Note:** The 'lazy' assignment strategy only works when you do NOT use
+the -g flag. This is because grouping is dependent on allocation of
+tests before the start of execution. Using this in conjunction with a
+lazy strategy will have no impact on your test suite execution.
+
+Rerun one execution stream
+""""""""""""""""""""""""""
+
+Specifications can be distributed into groups and ``--group`` \| ``-g``
+flag provides the ability to execute a specific group.
+
+This can be done by the command:
+
+::
+
+    $ gauge -n=4 -g=2 specs
+
+This creates 4 groups (provided by ``-n`` flag) of specification and
+selects the 2nd group (provided by ``-g`` flag) for execution.
+
+Specifications are sorted by alphabetical order and then distributed
+into groups, which guarantees that every group will have the same set of
+specifications, no matter how many times it is being executed.
+
+Example:
+
+::
+
+    $ gauge -n=4 -g=2 specs
+
+The above two commands will execute the same group of specifications.
+
+Current Execution Context in the Hook
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  To get additional information about the **current specification,
+   scenario and step** executing, an additional **ExecutionContext**
+   parameter can be added to the
+   `hooks <../../language_features/execution_hooks.md>`__ method.
+
+{% codetabs name="Java", type="java" -%} public class ExecutionHooks {
+
+::
+
+    @BeforeScenario
+    public void loginUser(ExecutionContext context) {
+      String scenarioName = context.getCurrentScenario().getName();
+      // Code for before scenario
+    }
+
+    @AfterSpec
+    public void performAfterSpec(ExecutionContext context) {
+      Specification currentSpecification = context.getCurrentSpecification();
+      // Code for after step
+    }
+
+} {%- language name="C#", type="csharp" -%} This feature is not yet
+supported in Gauge-CSharp. Please refer to
+https://github.com/getgauge/gauge-csharp/issues/53 for updates. {%-
+language name="Ruby", type="ruby" -%} before\_spec do
+\|execution\_info\| puts execution\_info.inspect end
+
+after\_spec do \|execution\_info\| puts execution\_info.inspect end {%-
+endcodetabs %}
+
+Filtering Hooks execution based on tags
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  You can specify tags for which the execution
+   `hooks <../../language_features/execution_hooks.md>`__ can run. This
+   will ensure that the hook runs only on scenarios and specifications
+   that have the required tags.
+
+{% codetabs name="Java", type="java" -%} // A before spec hook that runs
+when tag1 and tag2 // is present in the current scenario and spec.
+@BeforeSpec(tags = {"tag1, tag2"}) public void loginUser() { // Code for
+before scenario }
+
+// A after step hook runs when tag1 or tag2 // is present in the current
+scenario and spec. // Default tagAggregation value is Operator.AND.
+@AfterStep(tags = {"tag1", "tag2"}, tagAggregation = Operator.OR) public
+void performAfterStep() { // Code for after step } {%- language
+name="C#", type="cs" -%} // A before spec hook that runs when tag1 and
+tag2 // is present in the current scenario and spec. [BeforeSpec("tag1,
+tag2")] public void LoginUser() { // Code for before scenario }
+
+// A after step hook runs when tag1 or tag2 // is present in the current
+scenario and spec. // Default tagAggregation value is Operator.AND.
+[AfterStep("tag1", "tag2")][TagAggregationBehaviour(TagAggregation.Or)]
+public void PerformAfterStep() { // Code for after step } {%- language
+name="Ruby", type="ruby" -%} # A before spec hook that runs when tag1
+and tag2 is present in the current scenario and spec.
+before\_spec({tags: ['tag2', 'tag1']}) do // Code for before scenario
+end
+
+// A after step hook runs when tag1 or tag2 is present in the current scenario and spec.
+// Default tagAggregation value is Operator.AND.
+
+after\_spec({tags: ['tag2', 'tag1'], operator: 'OR'}) do // Code for
+after step end {%- endcodetabs %}
+
+    Note: Tags cannot be specified on @BeforeSuite and @AfterSuite hooks
 
 
 IDE Support
