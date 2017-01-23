@@ -310,7 +310,7 @@ with ``tag1`` and ``tag2``.
 
 Example:
 
-.. figure:: ../../gauge_terminologies/images/spec.png
+.. figure:: images/spec.png
    :alt: Specification
 
    Spec

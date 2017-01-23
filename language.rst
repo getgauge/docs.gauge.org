@@ -569,7 +569,8 @@ Example:
 
      overwrite_reports = true
 
-     screenshot\_on\_failure
+screenshot_on_failure
+~~~~~~~~~~~~~~~~~~~~~
 
 Set to false to disable screenshots on failure in reports.
 

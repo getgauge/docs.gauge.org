@@ -15,6 +15,7 @@
    plugins
    language
    reports
+   configuration
    troubleshooting
    examples
    faqs
