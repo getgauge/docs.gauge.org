@@ -925,8 +925,8 @@ Reports
    user-friendly Continuous Integration and Deployment server that works
    out of the box.
 
-Integrating Gauge with TeamCity
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TeamCity
+^^^^^^^^
 
 -  `Download <http://getgauge.io/get-started/index.html>`__ and Install
    Gauge on the agents. Read more on installing Gauge
