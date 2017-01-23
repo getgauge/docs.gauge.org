@@ -150,8 +150,8 @@ IDE Support
 The listed IDE plugins are available for gauge to make writing specs and
 test code simpler.
 
--  `Intellij IDEA <intellij_idea.md>`__
--  `Visual Studio <visual_studio.md>`__
+-  Intellij IDEA
+-  Visual Studio
 
 IntelliJ IDEA
 ^^^^^^^^^^^^^
@@ -159,8 +159,7 @@ IntelliJ IDEA
 Gauge projects can be created and executed from Intellij IDEA. The
 plugin can be downloaded from the JetBrains plugin repository.
 
-This plugin supports only
-`java <../language_features/step_implementations.md>`__.
+This plugin currently supports only Gauge with Java.
 
 Installation
 ~~~~~~~~~~~~
@@ -188,12 +187,11 @@ plugins.
 
 To install plugin by downloading it manually or to update plugin, follow
 the steps
-`here <https://www.jetbrains.com/idea/help/installing-updating-and-uninstalling-repository-plugins.html#d645926e261>`__.
+`here <https://www.jetbrains.com/idea/help/installing-plugin-from-disk.html>`__.
 
 Create a new Gauge project and start writing your tests.
 
-Explore all the `features of Gauge Intellij IDEA plugin <features.md>`__
-now!
+Explore all the :ref:`features of Gauge Intellij IDEA plugin <intellij-features>` now!
 
 Installing Nightly
 ~~~~~~~~~~~~~~~~~~
@@ -238,7 +236,7 @@ Maven project using gauge-maven-plugin
    -  Enter GroupId: com.thoughtworks.gauge.maven
    -  Enter ArtifactId: gauge-archetype-java
    -  Enter Version: 1.0.1 or the `latest version
-      number <http://search.maven.org/#search%7Cga%7C1%7Cgauge-archetype-java>`__
+      number from <https://repo1.maven.org/maven2/com/thoughtworks/gauge/maven/gauge-archetype-java/>`__
 
 .. figure:: images/intellij-screenshots/creation/maven_add_archetype.png
    :alt: maven add archetype
@@ -258,6 +256,8 @@ Maven project using gauge-maven-plugin
 See
 `gauge-maven-plugin <../advanced_readings/dependency_management_plugins/maven-plugin.md>`__
 for more details on using the gauge maven plugin.
+
+.. _intellij-features:
 
 Auto Completion
 ~~~~~~~~~~~~~~~
@@ -521,7 +521,7 @@ Installation
 -  Restart Visual Studio in order for the changes to take effect.
 
 The extension resides on the `Visual Studio
-Gallery <https://visualstudiogallery.msdn.microsoft.com/dd8ea767-aa75-4771-98f4-6c8a9055ca92>`__.
+Gallery <https://marketplace.visualstudio.com/items?itemName=vs-publisher-1071478.GaugepluginforVisualStudio>`__.
 
 .. figure:: images/visual_studio_screenshots/VS_Installation.png
    :alt: install Gauge plugin

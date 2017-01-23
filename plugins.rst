@@ -14,9 +14,9 @@ write the implementation of specs in a language of their choice. For a
 list of available language runners, see how to :ref:`install language runners <install-language-runner>`. 
 Allows you to write your tests in
 
--  `Java <http://github.com/getgauge/gauge-java>`__
--  `CSharp <http://github.com/getgauge/gauge-csharp>`__
--  `Ruby <http://github.com/getgauge/gauge-ruby>`__
+-  `Java <https://github.com/getgauge/gauge-java>`__
+-  `CSharp <https://github.com/getgauge/gauge-csharp>`__
+-  `Ruby <https://github.com/getgauge/gauge-ruby>`__
 
 IDE plugins
 -----------
@@ -30,8 +30,8 @@ IDE. For more details, check `IDE Support <../ide_support/README.md>`__.
 Reporting
 ---------
 
--  `HTML Report <http://github.com/getgauge/html-report>`__
--  `XML Report <http://github.com/getgauge/xml-report>`__
+-  `HTML Report <https://github.com/getgauge/html-report>`__
+-  `XML Report <https://github.com/getgauge/xml-report>`__
 
 Build Tools
 -----------

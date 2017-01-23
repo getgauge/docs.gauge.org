@@ -41,7 +41,7 @@ Windows
 
 -  Gauge plugins are installed at ``%APPDATA%\gauge\plugins`` directory.
 
--  `APPDATA <http://windows.microsoft.com/en-in/windows-8/what-appdata-folder>`__
+-  `APPDATA <https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data>`__
    directory is usually located at
    ``C:\Users\USER_NAME\AppData\Roaming``.
 
@@ -58,7 +58,7 @@ Mac OS X
 -  Run ``brew update`` before installing the latest version of gauge.
 
 -  If installation is failing `Upgrade
-   homebrew <https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/FAQ.md#how-do-i-update-my-local-packages>`__
+   homebrew <http://docs.brew.sh/FAQ.html#how-do-i-update-my-local-packages>`__
 
 -  Gauge plugins are installed under ``~/.gauge/plugins`` directory.
 
