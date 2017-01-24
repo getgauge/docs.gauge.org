@@ -32,7 +32,7 @@ body{
     content: '> ';
 }
 
-.highlight-console .highlight pre span.go{
+.highlight-text .highlight pre, .highlight-console .highlight pre span.go{
     color: #dddddd !important;
 }
 

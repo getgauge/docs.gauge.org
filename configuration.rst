@@ -123,7 +123,7 @@ value pairs which are set as environment variables during execution.
 
 The env directory structure for a ``java`` project:
 
-::
+.. code-block:: text
 
     ├── env
       └── default
@@ -141,7 +141,7 @@ To create an environment called ``ci``:
 -  Create a directory called ``ci`` in ``env`` directory
 -  Add property files (e.g. ``user.properties``)
 
-::
+.. code-block:: text
 
     ├── env
        ├── ci
@@ -355,7 +355,7 @@ The generated **pom.xml** in the project will have the\*\*
 gauge-java\*\* dependency and a **gauge:execute** goal defined in the
 test phase.
 
-.. code:: xml
+.. code-block:: xml
 
     <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -867,41 +867,57 @@ Creating tasks
 
 -  Create a ``.travis.yml`` file in your peoject root.
 -  Add these lines in ``.travis.yml`` according to the platform on which
-   you want to build. {% codetabs name="OS X", type="yml" -%} language:
+   you want to build. 
+   
+.. code-block:: yaml
+  :caption: OS X   
 
-   -  language_name
+    language:
+        -  language_name
 
-os: - osx
+    os: 
+        - osx
 
-install: - brew install gauge - gauge --install - gauge --install
-html-report
+    install: 
+        - brew install gauge 
+        - gauge --install <language>
+        - gauge --install html-report
 
-script: 'gauge specs'
+    script: 'gauge specs'
 
-sudo: false
+    sudo: false
 
-{%- language name="Linux", type="yml" -%} language: - language_name
+.. code-block:: yaml
+  :caption: Linux   
 
-os: - linux
+    language: 
+        - language_name
+    os: 
+        - linux
+    install: 
+        - sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net
+            --recv-keys 023EDB0B - echo deb https://dl.bintray.com/gauge/gauge-deb
+            stable main \| sudo tee -a /etc/apt/sources.list 
+        - sudo apt-get update 
+        - sudo apt-get install gauge 
+        - gauge_setup 
+        - gauge --install <language>
+        - gauge --install html-report
 
-install: - sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net
---recv-keys 023EDB0B - echo deb https://dl.bintray.com/gauge/gauge-deb
-stable main \| sudo tee -a /etc/apt/sources.list - sudo apt-get update -
-sudo apt-get install gauge - gauge_setup - gauge --install - gauge
---install html-report
+    script: 'gauge specs'
 
-script: 'gauge specs'
+    sudo: true
 
-sudo: true
+* If you want to run only a subset of specs, you can use tags. 
+  Example: add ``script: gauge --tags "tag1 & tag2" specs`` in your ``.travis.yml``. 
 
-{%- endcodetabs %} \* If you want to run only a subset of specs, you can
-use tags. Example: add ``script: gauge --tags "tag1 & tag2" specs`` in
-your ``.travis.yml``. \* Adding a flag ``-p`` runs them in
-`parallel <../execution_types/parallel_execution.md>`__. Example:
-``script: gauge -p specs`` in your ``.travis.yml``. \* Run against
-specific `environments <../managing_environments.md>`__ using the
-``--env`` flag. \* See the `Gauge CLI <../../cli/README.md>`__ for list
-of all flags that can be used.
+* Adding a flag ``-p`` runs them in `parallel <../execution_types/parallel_execution.md>`__. 
+  Example: ``script: gauge -p specs`` in your ``.travis.yml``. 
+
+* Run against specific `environments <../managing_environments.md>`__ using the ``--env`` flag. 
+
+* See the `Gauge CLI <../../cli/README.md>`__ for list of all flags that can be used.
+
 
 Reports
 ~~~~~~~
