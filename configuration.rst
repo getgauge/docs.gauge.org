@@ -5,63 +5,50 @@ All the Gauge specific internal configurations are stored in
 ``gauge.properties`` file present in your Gauge install location
 (``GAUGE_ROOT``). These properties are key value pairs.
 
-**gauge_repository_url**
+Global
+------
 
-This property is set to an url, which acts as plugin repository for
-Gauge.
+**gauge_repository_url** : set to a url, which acts as plugin repository for Gauge.
 
 ::
 
     gauge_repository_url = https://downloads.getgauge.io/plugin
 
-**gauge_update_url**
-
-This property is set to an url, which holds version information of Gauge.
+**gauge_update_url** : set to a url, which holds version information of Gauge.
 This is used to determine if an update is available.
 
 ::
 
     gauge_update_url = https://downloads.getgauge.io/gauge
 
-**gauge_templates_url**
-
-This property is set to an url, which acts as template repository for
-Gauge.
+**gauge_templates_url** :  set to an url, which acts as template repository for Gauge.
 
 ::
 
     gauge_templates_url = https://downloads.getgauge.io/templates
 
-**runner_connection_timeout**
-
-This property sets the timeout in milliseconds for making a connection
-to the language runner.
+**runner_connection_timeout** : sets the timeout in milliseconds for making a 
+connection to the language runner.
 
 ::
 
     runner_connection_timeout = 30000
 
-**plugin_connection_timeout**
-
-This property sets the timeout in milliseconds for making a connection
+**plugin_connection_timeout** : sets the timeout in milliseconds for making a connection
 to plugins (except language runner plugins).
 
 ::
 
     plugin_connection_timeout = 10000
 
-**plugin_kill_timeout**
-
-This property sets the timeout in milliseconds for a plugin to stop
+**plugin_kill_timeout** : sets the timeout in milliseconds for a plugin to stop
 after a kill message has been sent.
 
 ::
 
     plugin_kill_timeout = 10000
 
-**runner_request_timeout**
-
-This property sets the timeout in milliseconds for requests from the
+**runner_request_timeout** : sets the timeout in milliseconds for requests from the
 language runner.
 
 If the size of the project is too big, Gauge may timeout before the
@@ -72,9 +59,7 @@ accordingly.
 
     runner_request_timeout = 10000
 
-**gauge_exclude_dirs**
-
-This property sets the excluded dirs for gauge.
+**gauge_exclude_dirs** : sets the excluded dirs for gauge.
 
 Gauge always looks for concepts in the whole project, folders starting
 with dot(.) are excluded and a user can add folders to the excluded
@@ -85,32 +70,67 @@ relative to the path of directory or absolute.
 
     gauge_exclude_dirs = "src/test,bin"
 
-Configure Proxy
----------------
+Local (Project level)
+---------------------
 
-Gauge connects to internet for downloading plugins, templates, etc. If
-you are behind a proxy, you will have to configure the proxy settings so
-that Gauge connects to internet via the proxy server.
+Certain properties can be configured in
+``env/default/default.properties``, which overrides the default
+properties and are scoped only to the current project. These are key
+value pairs.
 
-Without Authentication
-^^^^^^^^^^^^^^^^^^^^^^
+**gauge_reports_dir**
 
-If authentication is not required, set the environment variable
-``HTTP_PROXY`` to proxy server URL.
-
-::
-
-    export HTTP_PROXY=http://10.0.2.2:5678
-
-With Authentication
-^^^^^^^^^^^^^^^^^^^
-
-If authentication is required, set the environment variable
-``HTTP_PROXY`` to proxy server URL along with the credentials.
+The path to the gauge reports directory. Should be either relative to
+the project directory or an absolute path
 
 ::
 
-    export HTTP_PROXY=http://username:password@10.0.2.2:5678
+    gauge_reports_dir = reports
+
+**overwrite_reports**
+
+-  Set as false if gauge reports should not be overwritten on each
+   execution.
+-  If set to true, a new time-stamped directory will be created on each
+   execution.
+
+   ::
+
+       overwrite_reports = true
+
+**screenshot_on_failure**
+
+-  Set to false to disable screenshots on failure in reports.
+
+   ::
+
+       screenshot_on_failure = false
+
+**logs_directory**
+
+The path to the gauge logs directory. Should be either relative to the
+project directory or an absolute path
+
+::
+
+    logs_directory = GaugeLogs
+
+**gauge_clear_state_level**
+
+Specify the level at which cached objects should get removed while
+execution.
+
+Possible values for this property are ``suite``,\ ``spec`` and
+``scenario``. By default, Gauge clears state at scenario level.
+
+Example:
+
+::
+
+    gauge_clear_state_level = spec
+
+This clears the objects after the execution of each specification, so
+that new objects are created for next execution.
 
 Environments
 ------------
@@ -120,6 +140,12 @@ Environment specific
 be managed using property files. The `property
 files <https://en.wikipedia.org/wiki/.properties>`__ have set of key
 value pairs which are set as environment variables during execution.
+
+Gauge allows you to create groups of property files, by defining and environment. 
+
+A project can have multiple environments, and depending on the argument `--env` specified, 
+the corresponding environment is loaded at runtime. `default` is the default environment, 
+which is loaded when no `--env` is specified.
 
 The env directory structure for a ``java`` project:
 
@@ -160,72 +186,6 @@ The environment is specified using the ``env`` flag. For example if
 
     gauge --env ci specs
 
-Configuring the Properties
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Certain properties can be configured in
-``env/default/default.properties``, which overrides the default
-properties and are scoped only to the current project. These are key
-value pairs.
-
-gauge_reports_dir
-~~~~~~~~~~~~~~~~~
-
-The path to the gauge reports directory. Should be either relative to
-the project directory or an absolute path
-
-::
-
-    gauge_reports_dir = reports
-
-overwrite_reports
-~~~~~~~~~~~~~~~~~~
-
--  Set as false if gauge reports should not be overwritten on each
-   execution.
--  If set to true, a new time-stamped directory will be created on each
-   execution.
-
-   ::
-
-       overwrite_reports = true
-
-screenshot_on_failure
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Set to false to disable screenshots on failure in reports.
-
-   ::
-
-       screenshot_on_failure = false
-
-logs_directory
-~~~~~~~~~~~~~~~
-
-The path to the gauge logs directory. Should be either relative to the
-project directory or an absolute path
-
-::
-
-    logs_directory = GaugeLogs
-
-gauge_clear_state_level
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Specify the level at which cached objects should get removed while
-execution.
-
-Possible values for this property are ``suite``,\ ``spec`` and
-``scenario``. By default, Gauge clears state at scenario level.
-
-Example:
-
-::
-
-    gauge_clear_state_level = spec
-
-This clears the objects after the execution of each specification, so
-that new objects are created for next execution.
 
 Precedence of Environments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -312,8 +272,37 @@ Examples
       not be overwritten. This variable's value will still continue to
       be ``newReportsDir``.
 
-Using build tools
------------------
+HTTP Proxy
+----------
+
+Gauge connects to internet for downloading plugins, templates, etc. If
+you are behind a proxy, you will have to configure the proxy settings so
+that Gauge connects to internet via the proxy server.
+
+Without Authentication
+^^^^^^^^^^^^^^^^^^^^^^
+
+If authentication is not required, set the environment variable
+``HTTP_PROXY`` to proxy server URL.
+
+::
+
+    export HTTP_PROXY=http://10.0.2.2:5678
+
+With Authentication
+^^^^^^^^^^^^^^^^^^^
+
+If authentication is required, set the environment variable
+``HTTP_PROXY`` to proxy server URL along with the credentials.
+
+::
+
+    export HTTP_PROXY=http://username:password@10.0.2.2:5678
+
+
+
+Build tools
+-----------
 
 You can use Gauge with any of the build tools that you like.
 
