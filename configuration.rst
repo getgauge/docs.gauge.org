@@ -182,7 +182,7 @@ Executing with environment
 The environment is specified using the ``env`` flag. For example if
 ``ci`` environment is used during execution
 
-::
+.. code-block:: console
 
     gauge --env ci specs
 
@@ -392,42 +392,42 @@ Executing specs using maven
 If the execute goal is added for test phase (see above xml) then running
 maven test phase will also execute gauge specs in the project
 
-::
+.. code-block:: console
 
     mvn test
 
 To only run gauge specs,
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
+.. code-block:: console
 
     mvn gauge:execute -DspecsDir=specs
 
 To only run gauge specs that correspond to a particular test profile in pom.xml,
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
+.. code-block:: console
 
     mvn gauge:execute -P <profile-name>
 
 Execute specs In parallel
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
+.. code-block:: console
 
     mvn gauge:execute -DspecsDir=specs -DinParallel=true
 
 Execute specs by tags
 ~~~~~~~~~~~~~~~~~~~~~
 
-::
+.. code-block:: console
 
     mvn gauge:execute -DspecsDir=specs -Dtags="!in-progress"
 
 Specifying execution environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
+.. code-block:: console
 
     mvn gauge:execute -DspecsDir=specs -Denv="dev"
 
@@ -680,10 +680,10 @@ Steps to Integrate Gauge with CI tool:
 Go.cd
 ^^^^^
 
-`Go <http://www.go.cd/>`__, is a continuous integration and deployment
+`Go.cd <http://www.go.cd/>`__, is a continuous integration and deployment
 tool.
 
-Integrating Gauge with Go
+Integrating Gauge with Go.cd
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  `Setup a new pipeline on

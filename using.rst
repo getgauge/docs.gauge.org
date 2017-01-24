@@ -18,6 +18,16 @@ the flags supported by running.
 The command-line interface works across platforms. On GNU/Linux and OSX,
 you can use any terminal. On Windows, you can use ``cmd`` or Powershell.
 
+Flags
+^^^^^
+
+Since Flags get added/deprecated with versions, it is recommended to get this reference via ``gauge`` itself.
+
+.. code-block:: console
+
+   gauge --help
+
+
 Creating a project
 ^^^^^^^^^^^^^^^^^^
 
@@ -46,7 +56,104 @@ Example
 .. code-block:: console
    :caption: Ruby
 
-   gauge --init ruby 
+   gauge --init ruby
+
+
+.. _project_structure:
+
+Project Structure
+-----------------
+
+On initialization of a gauge project for a particular language a project
+skeleton is created with the following files
+
+Common Gauge files
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: text
+
+    ├── env
+    │  └── default
+    │     └── default.properties
+    ├── manifest.json
+    ├── specs
+       └── example.spec
+
+Env Directory
+~~~~~~~~~~~~~
+
+The env directory contains multiple environment specific directories.
+Each directory has `.property
+files <https://en.wikipedia.org/wiki/.properties>`__ which define the
+environment variables set during execution for that specific
+environment.
+
+A **env/default** directory is created on project initialization which
+contains the default environment variables set during execution.
+
+Learn more about `managing environments <../../advanced_readings/managing_environments.md>`__.
+
+Specs Directory
+~~~~~~~~~~~~~~~
+
+The specs directory contains all the
+`spec <../../gauge_terminologies/specifications.md>`__ files for the
+project. They are the business layer specifications written in simple
+markdown format.
+
+A simple example spec (**example.spec**) is created in the specs
+directory to better understand the format of specifications.
+
+Learn more about
+`specifications <../../gauge_terminologies/specifications.md>`__
+
+Manifest file
+~~~~~~~~~~~~~
+
+The **manifest.json** contains gauge specific configurations which
+includes the information of plugins required in the project.
+
+After project initialization, the ``manifest.json`` will have the
+following content.
+
+.. code:: js
+
+    {
+      "Language": "<language>",
+      "Plugins": [
+        "html-report"
+      ]
+    }
+
+-  **language** : Programming language used for the test code. Gauge
+   uses the corresponding language runner for executing the specs.
+
+-  **Plugins** : The gauge plugins used for the project. Some plugins
+   are used by default on each gauge project. The plugins can be added
+   to project by running the following command :
+
+   .. code:: console
+
+       gauge --add-plugin <plugin-name>
+
+   Example :
+
+   .. code:: console
+
+       gauge --add-plugin xml-report
+
+After running the above command, the manifest.json would have the
+following content:
+
+.. code:: js
+
+    {
+      "Language": "<language>",
+      "Plugins": [
+        "html-report",
+        "xml-report"
+      ]
+    }
 
 Executing tests
 ^^^^^^^^^^^^^^^

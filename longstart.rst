@@ -21,8 +21,8 @@ Some of the **key features** of Gauge that make it stand unique include:
    Currently :ref:`supported languages <install-language-runner>`.
 -  Open Source, so it could be shared freely and improved by others as
    well
--  A modular architecture with :ref:`plugin <plugins-plugins>` support.
--  Extensible through :ref:`plugins <plugins-plugins>` and Hackable
+-  A modular architecture with :doc:`plugins` support.
+-  Extensible through :doc:`plugins` and Hackable
 -  Supports External Data Sources
 -  Helps you create Maintainable and Understandable test suites
 -  `IDE Support <ide_support/README.md>`__
