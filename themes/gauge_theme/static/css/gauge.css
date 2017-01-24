@@ -32,6 +32,14 @@ body{
     content: '> ';
 }
 
+.highlight-console .highlight pre span.go{
+    color: #dddddd !important;
+}
+
+.highlight {
+    background-color: black !important;
+}
+
 .wy-menu-vertical a:active {
     background-color: #f5c10e;
     cursor: pointer;
