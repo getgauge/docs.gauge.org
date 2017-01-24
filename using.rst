@@ -70,9 +70,9 @@ files or path to scenarios or a mix of any of these three methods.
 
 To execute all the tests in a given folder ``specs``, use
 
-::
+.. code-block:: console
 
-    $ gauge specs/
+    gauge specs/
 
 This will give a colored console output with details of the execution as
 well an execution summary.
@@ -85,15 +85,17 @@ line number in the span of that scenario in the spec. To execute a
 ``Admin Login`` scenario in the following spec use
 ``gauge specs/login_test.spec:4`` command.
 
-::
-
-    1>   Configuration
-    2>   =============
-    3>
-    4>   Admin Login
-    5>   -----------
-    6>   * User must login as "admin"
-    7>   * Navigate to the configuration page
+.. code-block:: default
+    :linenos:
+    :emphasize-lines: 4-7
+    
+       Configuration
+       =============
+    
+       Admin Login
+       -----------
+       * User must login as "admin"
+       * Navigate to the configuration page
 
 This executes only the scenario present at line number ``4`` i.e
 ``Admin Login`` in ``login_test.spec``. In the above spec, specifying
@@ -101,9 +103,9 @@ line numbers 4-7 will execute the same scenario because of the span.
 
 Multiple scenarios can be executed selectively as follows :
 
-::
+.. code-block:: console
 
-    $ gauge specs/helloworld.spec:4 specs/helloworld.spec:7
+    gauge specs/helloworld.spec:4 specs/helloworld.spec:7
 
 These scenarios can also belong to different specifications.
 
@@ -235,7 +237,8 @@ Data driven execution
 
 **Example:**
 
-::
+.. code-block:: default
+    :linenos:
 
     Table driven execution
     ======================
@@ -272,19 +275,19 @@ should be separated by commas.
 
 Example:
 
-::
+.. code-block:: console
 
-    $ gauge --table-rows "1" specs/hello.spec
-    $ gauge --table-rows "1,4,7" specs/hello.spec
+    gauge --table-rows "1" specs/hello.spec
+    gauge --table-rows "1,4,7" specs/hello.spec
 
 Range of table rows can also be specified, against which the scenarios
 are run.
 
 Example:
 
-::
+.. code-block:: console
 
-    $ gauge --table-rows "1-3" specs/hello.spec
+    gauge --table-rows "1-3" specs/hello.spec
 
 This executes the scenarios against table rows 1, 2, 3.
 
@@ -295,15 +298,15 @@ Tags allow you to filter the specs and scenarios quickly for execution.
 To execute all the specs and scenarios which are labelled with certain
 tags, use the following command.
 
-::
+.. code-block:: console
 
-    $ gauge --tags tag1,tag2 specs
+    gauge --tags tag1,tag2 specs
 
 or,
 
-::
+.. code-block:: console
 
-    $ gauge --tags "tag1, tag2" specs
+    gauge --tags "tag1, tag2" specs
 
 This executes only the scenarios and specifications which are tagged
 with ``tag1`` and ``tag2``.
@@ -318,9 +321,9 @@ Example:
 In the above spec, if all the scenarios tagged with "search" and "admin"
 should be executed, then use the following command:
 
-::
+.. code-block:: console
 
-    $ gauge --tags "search & admin" SPEC_FILE_NAME
+    gauge --tags "search & admin" SPEC_FILE_NAME
 
 Tag expressions
 """""""""""""""
@@ -349,15 +352,15 @@ the load.
 
 This can be done by the command:
 
-::
+.. code-block:: console
 
-    $ gauge --parallel specs
+    gauge --parallel specs
 
 or,
 
-::
+.. code-block:: console
 
-    $ gauge -p specs
+    gauge -p specs
 
 This creates a number of execution streams depending on the number of
 cores of the machine and distribute the load among workers.
@@ -367,9 +370,9 @@ flag.
 
 Example:
 
-::
+.. code-block:: console
 
-    $ gauge --parallel -n=4 specs
+    gauge --parallel -n=4 specs
 
 This creates four parallel execution streams.
 
@@ -385,9 +388,9 @@ flag provides the ability to execute a specific group.
 
 This can be done by the command:
 
-::
+.. code-block:: console
 
-    $ gauge -n=4 -g=2 specs
+    gauge -n=4 -g=2 specs
 
 This creates 4 groups (provided by -n flag) of specification and selects
 the 2nd group (provided by -g flag) for execution.
@@ -398,13 +401,13 @@ specifications, no matter how many times it is being executed.
 
 Example:
 
-::
+.. code-block:: console
 
-    $ gauge -n=4 -g=2 specs
+    gauge -n=4 -g=2 specs
 
-::
+.. code-block:: console
 
-    $ gauge -n=4 -g=2 specs
+    gauge -n=4 -g=2 specs
 
 The above two commands will execute the same group of specifications.
 
@@ -422,15 +425,15 @@ of the feature under test
 The following command will assign tests lazily across the specified
 number of streams:
 
-::
+.. code-block:: console
 
-    $ gauge -n=4 --strategy="lazy" specs
+    gauge -n=4 --strategy="lazy" specs
 
 or,
 
-::
+.. code-block:: console
 
-    $ gauge -n=4 specs
+    gauge -n=4 specs
 
 Say you have 100 tests, which you have chosen to run across 4
 streams/cores; lazy assignment will dynamically, during execution,
@@ -443,9 +446,9 @@ Another strategy called ``eager`` can also be useful depending on need.
 In this case, the 100 tests are distributed before execution, thus
 making them an equal number based distribution.
 
-::
+.. code-block:: console
 
-    $ gauge -n=4 --strategy="eager" specs
+    gauge -n=4 --strategy="eager" specs
 
 **Note:** The 'lazy' assignment strategy only works when you do NOT use
 the -g flag. This is because grouping is dependent on allocation of
@@ -460,9 +463,9 @@ flag provides the ability to execute a specific group.
 
 This can be done by the command:
 
-::
+.. code-block:: console
 
-    $ gauge -n=4 -g=2 specs
+    gauge -n=4 -g=2 specs
 
 This creates 4 groups (provided by ``-n`` flag) of specification and
 selects the 2nd group (provided by ``-g`` flag) for execution.
@@ -473,9 +476,9 @@ specifications, no matter how many times it is being executed.
 
 Example:
 
-::
+.. code-block:: console
 
-    $ gauge -n=4 -g=2 specs
+    gauge -n=4 -g=2 specs
 
 The above two commands will execute the same group of specifications.
 
@@ -487,9 +490,9 @@ Current Execution Context in the Hook
    parameter can be added to the
    `hooks <../../language_features/execution_hooks.md>`__ method.
 
-{% codetabs name="Java", type="java" -%} public class ExecutionHooks {
 
-::
+.. code-block:: java
+  :caption: Java   
 
     @BeforeScenario
     public void loginUser(ExecutionContext context) {
@@ -503,14 +506,24 @@ Current Execution Context in the Hook
       // Code for after step
     }
 
-} {%- language name="C#", type="csharp" -%} This feature is not yet
-supported in Gauge-CSharp. Please refer to
-https://github.com/getgauge/gauge-csharp/issues/53 for updates. {%-
-language name="Ruby", type="ruby" -%} before\_spec do
-\|execution\_info\| puts execution\_info.inspect end
 
-after\_spec do \|execution\_info\| puts execution\_info.inspect end {%-
-endcodetabs %}
+.. code-block:: java
+  :caption: C#
+
+    This feature is not yet
+    supported in Gauge-CSharp. Please refer to
+    https://github.com/getgauge/gauge-csharp/issues/53 for updates. 
+
+.. code-block:: ruby
+  :caption: ruby
+
+    before_spec do |execution_info| 
+        puts execution_info.inspect 
+    end
+
+    after_spec do |execution_info|
+        puts execution_info.inspect 
+    end 
 
 Filtering Hooks execution based on tags
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -520,35 +533,60 @@ Filtering Hooks execution based on tags
    will ensure that the hook runs only on scenarios and specifications
    that have the required tags.
 
-{% codetabs name="Java", type="java" -%} // A before spec hook that runs
-when tag1 and tag2 // is present in the current scenario and spec.
-@BeforeSpec(tags = {"tag1, tag2"}) public void loginUser() { // Code for
-before scenario }
+.. code-block:: java
+  :caption: Java
+    
+    // A before spec hook that runs when tag1 and tag2 
+    // is present in the current scenario and spec.
+    @BeforeSpec(tags = {"tag1, tag2"}) 
+    public void loginUser() { 
+        // Code forbefore scenario 
+    }
 
-// A after step hook runs when tag1 or tag2 // is present in the current
-scenario and spec. // Default tagAggregation value is Operator.AND.
-@AfterStep(tags = {"tag1", "tag2"}, tagAggregation = Operator.OR) public
-void performAfterStep() { // Code for after step } {%- language
-name="C#", type="cs" -%} // A before spec hook that runs when tag1 and
-tag2 // is present in the current scenario and spec. [BeforeSpec("tag1,
-tag2")] public void LoginUser() { // Code for before scenario }
+    // A after step hook runs when tag1 or tag2 
+    // is present in the currentscenario and spec. 
+    // Default tagAggregation value is Operator.AND.
+    @AfterStep(tags = {"tag1", "tag2"}, tagAggregation = Operator.OR) 
+    public void performAfterStep() { 
+        // Code for after step 
+    } 
 
-// A after step hook runs when tag1 or tag2 // is present in the current
-scenario and spec. // Default tagAggregation value is Operator.AND.
-[AfterStep("tag1", "tag2")][TagAggregationBehaviour(TagAggregation.Or)]
-public void PerformAfterStep() { // Code for after step } {%- language
-name="Ruby", type="ruby" -%} # A before spec hook that runs when tag1
-and tag2 is present in the current scenario and spec.
-before\_spec({tags: ['tag2', 'tag1']}) do // Code for before scenario
-end
+.. code-block:: java
+  :caption: C#
 
-// A after step hook runs when tag1 or tag2 is present in the current scenario and spec.
-// Default tagAggregation value is Operator.AND.
+    // A before spec hook that runs when tag1 and tag2 
+    // is present in the current scenario and spec. 
+    [BeforeSpec("tag1, tag2")] 
+    public void LoginUser() { 
+        // Code for before scenario 
+    }
 
-after\_spec({tags: ['tag2', 'tag1'], operator: 'OR'}) do // Code for
-after step end {%- endcodetabs %}
+    // A after step hook runs when tag1 or tag2 
+    // is present in the current scenario and spec. 
+    // Default tagAggregation value is Operator.AND.
+    [AfterStep("tag1", "tag2")]
+    [TagAggregationBehaviour(TagAggregation.Or)]
+    public void PerformAfterStep() { 
+        // Code for after step 
+    } 
+    
+.. code-block:: ruby
+  :caption: Ruby
 
-    Note: Tags cannot be specified on @BeforeSuite and @AfterSuite hooks
+    # A before spec hook that runs when 
+    # tag1 and tag2 is present in the current scenario and spec.
+    before_spec({tags: ['tag2', 'tag1']}) do 
+        # Code for before scenario
+    end
+
+    # A after step hook runs when tag1 or tag2 is present in the current scenario and spec.
+    # Default tagAggregation value is Operator.AND.
+
+    after_spec({tags: ['tag2', 'tag1'], operator: 'OR'}) do 
+        # Code for after step 
+    end
+
+.. note:: Tags cannot be specified on @BeforeSuite and @AfterSuite hooks
 
 
 IDE Support
@@ -737,9 +775,8 @@ To run multiple specifications in parallel
 -  You can also specify the ``Number of parallel execution streams``.
    This is optional
 
-   ::
-
-       Caution: Select parallel nodes based on current systems performance.
+.. warning::
+       Select parallel nodes based on current systems performance.
        For example on a 2 core machine select upto 4 parallel streams.
        A very large number may affect performance.
 
