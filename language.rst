@@ -403,6 +403,65 @@ execution.
   suite_store = DataStoreFactory.suite_datastore;
   element_id = suite_store.get("element-id"); 
 
+Taking Custom Screenshots
+-------------------------
+
+-  By default gauge captures the display screen on failure it this
+   feature has been enabled.
+
+-  If you need to take CustomScreenshots (using webdriver for example)
+   because you need only a part of the screen captured, this can be done
+   by **implementing** the ``ICustomScreenshotGrabber``
+   (``IScreenGrabber`` in C#) interface;
+
+.. note::
+
+    If multiple custom ScreenGrabber implementations are found in
+    classpath then gauge will pick one randomly to capture the screen.
+    This is because Gauge selects the first ScreenGrabber it finds,
+    which in turn depends on the order of scanning of the libraries.
+
+.. code-block:: java
+  :caption: Java
+
+  // Using Webdriver public class
+  CustomScreenGrabber implements ICustomScreenshotGrabber {
+      // Return a screenshot byte array
+      public byte[] takeScreenshot() {
+          WebDriver driver = DriverFactory.getDriver();
+          return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+      }
+
+  }
+
+.. code-block:: java
+  :caption: C#
+
+  //Using Webdriver public
+  class CustomScreenGrabber : IScreenGrabber {
+
+    // Return a screenshot byte array
+    public byte[] TakeScreenshot() {
+        var driver = DriverFactory.getDriver();
+        return ((ITakesScreenshot) driver).GetScreenshot().AsByteArray;
+    }
+  }
+    
+.. code-block:: ruby
+  :caption: Ruby
+
+  # Using Webdriver
+  Gauge.configure do |config| 
+    # Return a screenshot byte array
+    config.screengrabber = -> {
+      driver.save_screenshot('/tmp/screenshot.png') 
+      return File.binread("/tmp/screenshot.png") 
+    } 
+  end
+
+
+.. _reports_custom_messages:
+
 Custom messages in reports
 --------------------------
 
@@ -441,7 +500,7 @@ in step implementation.
 
 Step:
 
-::
+.. code-block:: gauge
 
   * Navigate towards "SOUTH"
 
@@ -470,7 +529,7 @@ details.
 
 Properties are defined in the following format.
 
-::
+.. code-block:: text
 
    sample_key = sample_value
 
@@ -481,13 +540,13 @@ Java Specific configuration changes can be made in the
 ``env/default/java.properties`` file.
 
 gauge_java_home
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 Specify an alternate Java home if you want to use a custom version.
 
 Example:
 
-::
+.. code-block:: text
 
    gauge_java_home = PATH_TO_JAVA_HOME
 
@@ -502,7 +561,7 @@ project.
 
 Example:
 
-::
+.. code-block:: text
 
    gauge_custom_build_path = PATH_TO_CUSTOM_BUILDPATH
 
@@ -516,7 +575,7 @@ Specify the directory where additional libraries are kept.
 
 Example:
 
-::
+.. code-block:: text
 
    gauge_additional_libs = libs/*, PATH_TO_NEW_LIBRARY
 
@@ -533,7 +592,7 @@ are ``suite``, ``spec`` and ``scenario``. By default, Gauge clears state at scen
 
 Example:
 
-  ::
+.. code-block:: text
 
     gauge_clear_state_level = spec
 
@@ -553,7 +612,7 @@ gauge_reports_dir
 
 Example:
 
-::
+.. code-block:: text
 
    gauge_reports_dir = reports
 
@@ -565,7 +624,7 @@ overwrite_reports
 
 Example:
 
-  ::
+.. code-block:: text
 
      overwrite_reports = true
 
@@ -576,7 +635,7 @@ Set to false to disable screenshots on failure in reports.
 
 Example:
 
-  ::
+.. code-block:: text
 
      screenshot_on_failure = true
 
@@ -585,6 +644,3 @@ Ruby
 
 The default Ruby properties are similar to that of the CSharp
 properties. 
-
-
-

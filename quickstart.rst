@@ -207,4 +207,4 @@ all scenarios passed. \* (y) is the total number specifications with
 atleast one scenario failed. \* (z) is the total number specifications
 with all scenarios skipped.
 
-Check supported formats for :ref:`reporting-formats`.
+Check supported formats for :doc:`reports`.

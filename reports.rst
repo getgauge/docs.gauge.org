@@ -1,16 +1,30 @@
-.. _reporting-formats:
-
 Reports
 =======
+
+The test results report should be easy to comprehend and should be
+useful for all the stakeholders.
 
 HTML Reports
 ------------
 
-Reports are generated using ``html-report`` plugin. By default
-html-report is added to the project.
+Reports are generated using ``html-report`` plugin. By default html-report is added to the project.
 
-When the specs are executed, the html report is generated in ``reports``
-directory in the project by default.
+When the specs are executed, the html report is generated in ``reports`` directory in the project by default.
+
+**Notes**
+
+-  A comprehensive test results report template prepared in a html
+   format providing the overall summary with drill down of the test
+   cases executed and effort spent during the testing for each stage and
+   feature.
+-  It provides the details for the defects found during the run.
+-  It indicates the tests by color code - failed(red), passed(green) and
+   skipped(grey).
+-  The failure can be analyzed with the stacktrace and
+   screenshot(captures unless overwritten not to).
+-  The skipped tests can be analyzed with the given reason.
+-  :ref:`_reports_custom_messages` allows users to add messages at runtime.
+
 
 Configuration
 ^^^^^^^^^^^^^
@@ -20,8 +34,7 @@ The HTML report plugin can be configured by the properties set in the
 
 The configurable properties are:
 
-gauge\_reports\_dir
-~~~~~~~~~~~~~~~~~~~
+**gauge_reports_dir**
 
 -  Specifies the path to the directory where the execution reports will
    be generated.
@@ -29,8 +42,7 @@ gauge\_reports\_dir
 -  Should be either relative to the project directory or an absolute
    path. By default it is set to ``reports`` directory in the project
 
-overwrite\_reports
-~~~~~~~~~~~~~~~~~~
+**overwrite_reports**
 
 -  Set to ``true`` if the reports **must be overwritten** on each
    execution maintaining only the latest execution report.
@@ -102,16 +114,14 @@ The XML report plugin can be configured by the properties set in the
 
 The configurable properties are:
 
-gauge_reports_dir
-~~~~~~~~~~~~~~~~~
+**gauge_reports_dir**
 
 Specifies the path to the directory where the execution reports will be generated.
 
 -  Should be either relative to the project directory or an absolute
    path. By default it is set to ``reports`` directory in the project
 
-overwrite_reports
-~~~~~~~~~~~~~~~~~
+**overwrite_reports**
 
 Set to ``true`` if the reports **must be overwritten** on each execution hence maintaining only the latest
 execution report.
