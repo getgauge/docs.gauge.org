@@ -320,7 +320,7 @@ project and manage dependencies using
 `maven <https://maven.apache.org/>`__.
 
 Creating a new project from archetype
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: bash
 
@@ -335,7 +335,7 @@ docs <https://maven.apache.org/pom.html#Maven_Coordinates>`__ to
 understand what groupId and artifactId mean in a maven project.
 
 Gauge maven project creation in IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  `Intellij
    idea <../../ide_support/features.html#creating-a-maven-project-using-gauge-maven-plugin>`__
@@ -397,42 +397,42 @@ maven test phase will also execute gauge specs in the project
     mvn test
 
 To only run gauge specs,
-~~~~~~~~~~~~~~~~~~~~~~~~
+""""""""""""""""""""""""
 
 .. code-block:: console
 
     mvn gauge:execute -DspecsDir=specs
 
 To only run gauge specs that correspond to a particular test profile in pom.xml,
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 .. code-block:: console
 
     mvn gauge:execute -P <profile-name>
 
 Execute specs In parallel
-~~~~~~~~~~~~~~~~~~~~~~~~~
+"""""""""""""""""""""""""
 
 .. code-block:: console
 
     mvn gauge:execute -DspecsDir=specs -DinParallel=true
 
 Execute specs by tags
-~~~~~~~~~~~~~~~~~~~~~
+"""""""""""""""""""""
 
 .. code-block:: console
 
     mvn gauge:execute -DspecsDir=specs -Dtags="!in-progress"
 
 Specifying execution environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+""""""""""""""""""""""""""""""""
 
 .. code-block:: console
 
     mvn gauge:execute -DspecsDir=specs -Denv="dev"
 
 All additional Properties
-~~~~~~~~~~~~~~~~~~~~~~~~~
+"""""""""""""""""""""""""
 
 The following plugin properties can be additionally set:
 
@@ -489,7 +489,7 @@ Use the gauge-gradle-plugin to execute specifications in your
 using `Gradle <http://gradle.org//>`__.
 
 Using plugin in project
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Apply plugin ***gauge*** and add classpath to your ***build.gradle***.
 Here is a sample gradle file,
@@ -535,8 +535,8 @@ The plugin is also available at `Gradle Plugin
 Portal <https://plugins.gradle.org/>`__. Find more details
 `here <https://plugins.gradle.org/plugin/com.thoughtworks.gauge>`__..
 
-Executing specs using gradle
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Executing specs
+~~~~~~~~~~~~~~~
 
 To execute gauge specs,
 
@@ -545,21 +545,21 @@ To execute gauge specs,
     gradle gauge
 
 Execute specs in parallel
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: groovy
 
     gradle gauge -PinParallel=true -PspecsDir=specs
 
 Execute specs by tags
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: groovy
 
     gradle gauge -Ptags="!in-progress" -PspecsDir=specs
 
 Specifying execution environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: groovy
 
@@ -568,7 +568,7 @@ Specifying execution environment
 Note : Pass specsDir parameter as the last one.
 
 All additional Properties
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following plugin properties can be additionally set:
 
@@ -612,7 +612,7 @@ See gauge's `command line interface <../../cli/README.md>`__ for list of
 all flags that be used with **-PadditionalFlags** option.
 
 Adding/configuring custom Gauge tasks
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It is possible to define new custom Gauge tasks by extending
 ``GaugePlugin`` class. It can be used to create/configure tasks specific
@@ -647,7 +647,10 @@ for different environments. For example,
 Ant Task
 ^^^^^^^^
 
+Gauge specs can be invoked via Ant by adding the below configuration in your ``build.xml``
+
 .. code:: xml
+:caption: build.xml
 
     <target name="specs">
         <exec executable="gauge">
