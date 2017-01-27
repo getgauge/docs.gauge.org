@@ -23,7 +23,7 @@ When the specs are executed, the html report is generated in ``reports`` directo
 -  The failure can be analyzed with the stacktrace and
    screenshot(captures unless overwritten not to).
 -  The skipped tests can be analyzed with the given reason.
--  :ref:`_reports_custom_messages` allows users to add messages at runtime.
+-  :ref:`reports_custom_messages` allows users to add messages at runtime.
 
 
 Configuration

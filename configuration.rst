@@ -649,8 +649,8 @@ Ant Task
 
 Gauge specs can be invoked via Ant by adding the below configuration in your ``build.xml``
 
-.. code:: xml
-:caption: build.xml
+.. code-block:: xml
+    :caption: build.xml
 
     <target name="specs">
         <exec executable="gauge">
