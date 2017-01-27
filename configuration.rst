@@ -10,41 +10,41 @@ Global
 
 **gauge_repository_url** : set to a url, which acts as plugin repository for Gauge.
 
-::
+.. code-block:: text
 
     gauge_repository_url = https://downloads.getgauge.io/plugin
 
 **gauge_update_url** : set to a url, which holds version information of Gauge.
 This is used to determine if an update is available.
 
-::
+.. code-block:: text
 
     gauge_update_url = https://downloads.getgauge.io/gauge
 
 **gauge_templates_url** :  set to an url, which acts as template repository for Gauge.
 
-::
+.. code-block:: text
 
     gauge_templates_url = https://downloads.getgauge.io/templates
 
 **runner_connection_timeout** : sets the timeout in milliseconds for making a 
 connection to the language runner.
 
-::
+.. code-block:: text
 
     runner_connection_timeout = 30000
 
 **plugin_connection_timeout** : sets the timeout in milliseconds for making a connection
 to plugins (except language runner plugins).
 
-::
+.. code-block:: text
 
     plugin_connection_timeout = 10000
 
 **plugin_kill_timeout** : sets the timeout in milliseconds for a plugin to stop
 after a kill message has been sent.
 
-::
+.. code-block:: text
 
     plugin_kill_timeout = 10000
 
@@ -55,7 +55,7 @@ If the size of the project is too big, Gauge may timeout before the
 runner returns the response message. This value can be configured
 accordingly.
 
-::
+.. code-block:: text
 
     runner_request_timeout = 10000
 
@@ -66,7 +66,7 @@ with dot(.) are excluded and a user can add folders to the excluded
 folders list by passing a comma separeted paths of folder.Paths can be
 relative to the path of directory or absolute.
 
-::
+.. code-block:: text
 
     gauge_exclude_dirs = "src/test,bin"
 
@@ -83,7 +83,7 @@ value pairs.
 The path to the gauge reports directory. Should be either relative to
 the project directory or an absolute path
 
-::
+.. code-block:: text
 
     gauge_reports_dir = reports
 
@@ -94,7 +94,7 @@ the project directory or an absolute path
 -  If set to true, a new time-stamped directory will be created on each
    execution.
 
-   ::
+.. code-block:: text
 
        overwrite_reports = true
 
@@ -102,7 +102,7 @@ the project directory or an absolute path
 
 -  Set to false to disable screenshots on failure in reports.
 
-   ::
+.. code-block:: text
 
        screenshot_on_failure = false
 
@@ -111,7 +111,7 @@ the project directory or an absolute path
 The path to the gauge logs directory. Should be either relative to the
 project directory or an absolute path
 
-::
+.. code-block:: text
 
     logs_directory = GaugeLogs
 
@@ -125,7 +125,7 @@ Possible values for this property are ``suite``,\ ``spec`` and
 
 Example:
 
-::
+.. code-block:: text
 
     gauge_clear_state_level = spec
 

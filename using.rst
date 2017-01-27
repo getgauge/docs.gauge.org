@@ -61,100 +61,6 @@ Example
 
 .. _project_structure:
 
-Project Structure
------------------
-
-On initialization of a gauge project for a particular language a project
-skeleton is created with the following files
-
-Common Gauge files
-^^^^^^^^^^^^^^^^^^
-
-.. code-block:: text
-
-    ├── env
-    │  └── default
-    │     └── default.properties
-    ├── manifest.json
-    ├── specs
-       └── example.spec
-
-Env Directory
-~~~~~~~~~~~~~
-
-The env directory contains multiple environment specific directories.
-Each directory has `.property
-files <https://en.wikipedia.org/wiki/.properties>`__ which define the
-environment variables set during execution for that specific
-environment.
-
-A **env/default** directory is created on project initialization which
-contains the default environment variables set during execution.
-
-Learn more about `managing environments <../../advanced_readings/managing_environments.md>`__.
-
-Specs Directory
-~~~~~~~~~~~~~~~
-
-The specs directory contains all the
-`spec <../../gauge_terminologies/specifications.md>`__ files for the
-project. They are the business layer specifications written in simple
-markdown format.
-
-A simple example spec (**example.spec**) is created in the specs
-directory to better understand the format of specifications.
-
-Learn more about
-`specifications <../../gauge_terminologies/specifications.md>`__
-
-Manifest file
-~~~~~~~~~~~~~
-
-The **manifest.json** contains gauge specific configurations which
-includes the information of plugins required in the project.
-
-After project initialization, the ``manifest.json`` will have the
-following content.
-
-.. code:: js
-
-    {
-      "Language": "<language>",
-      "Plugins": [
-        "html-report"
-      ]
-    }
-
--  **language** : Programming language used for the test code. Gauge
-   uses the corresponding language runner for executing the specs.
-
--  **Plugins** : The gauge plugins used for the project. Some plugins
-   are used by default on each gauge project. The plugins can be added
-   to project by running the following command :
-
-   .. code:: console
-
-       gauge --add-plugin <plugin-name>
-
-   Example :
-
-   .. code:: console
-
-       gauge --add-plugin xml-report
-
-After running the above command, the manifest.json would have the
-following content:
-
-.. code:: js
-
-    {
-      "Language": "<language>",
-      "Plugins": [
-        "html-report",
-        "xml-report"
-      ]
-    }
-
 Executing tests
 ^^^^^^^^^^^^^^^
 
@@ -260,7 +166,7 @@ For example:
     gauge specs-dir1/ specs-dir2/ specs-dir3/
 
 Specify files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 You can specify path to a specification files. In that case, Gauge
 executes only the specification files provided.
@@ -695,6 +601,328 @@ Filtering Hooks execution based on tags
 
 .. note:: Tags cannot be specified on @BeforeSuite and @AfterSuite hooks
 
+Gauge Project Templates
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Gauge provides templates that can be used to bootstrap the process of
+initializing a Gauge project along with a suitable build dependency
+tool, webdriver etc.
+
+To list all the Gauge project templates available, run the following
+command:
+
+.. code-block:: console
+
+    gauge --list-templates
+
+These templates can also be found in `Bintray Gauge
+Templates <https://bintray.com/gauge/Templates/gauge-templates/view#files>`__.
+
+Initialize a Gauge project with Template
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Say you want to initialize a Gauge project with Java as language for
+writing test code and Selenium as driver of choice. You can quickly
+setup such project which is ready to start writing tests with selenium
+by using ``java_maven_selenium`` Gauge template.
+
+To initialize a Gauge project with a template, choose a name from the
+list shown on running ``gauge --list-templates`` and pass that name as
+an argument when initializing the Gauge project.
+
+For example, to create a Gauge project with the ``java_maven_selenium``
+template, you need to run this command:
+
+.. code-block:: console
+
+    gauge --init java_maven_selenium
+
+This template creates a Gauge project with Maven as build tool and the
+selenium Webdriver. This will download the Gauge template
+``java_maven_selenium`` and setup your project with useful sample code.
+
+Now, you can start writing
+`Specifications <../gauge_terminologies/specifications.md>`__ and
+execute them.
+
+Step alias
+^^^^^^^^^^
+
+Multiple Step names for the same implementation. The number and type of
+parameters for all the steps names must match the number of parameters
+on the implementation.
+
+Use case
+~~~~~~~~
+
+There may be situations where while authoring the specs, you may want to
+express the same functionality in different ways in order to make the
+specs more readable.
+
+Example 1
+~~~~~~~~~
+
+.. code-block:: gauge
+
+    User Creation
+    =============
+    Multiple Users
+    --------------
+    * Create a user "user 1"
+    * Verify "user 1" has access to dashboard
+    * Create another user "user 2"
+    * Verify "user 2" has access to dashboard
+
+In the scenario named Multiple Users, the underlying functionality of
+the first and the third step is the same. But the way it is expressed is
+different. This helps in conveying the intent and the functionality more
+clearly. In such situations like this, step aliases feature should be
+used so that you can practice DRY principle at code level, while
+ensuring that the functionality is expressed clearly.
+
+Implementation
+""""""""""""""
+
+{% codetabs name="Java", type="java" -%} public class Users {
+
+::
+
+    @Step({"Create a user <user_name>", "Create another user <user_name>"})
+    public void helloWorld(String user_name) {
+        // create user user_name
+    }
+
+} {%- language name="C#", type="csharp" -%} public class Users {
+
+::
+
+    [Step({"Create a user <user_name>", "Create another user <user_name>"})]
+    public void HelloWorld(string user_name) {
+      // create user user_name
+    }
+
+} {%- language name="Ruby", type="ruby" -%} step 'Create a user ',
+'Create another user ' do \|user\_name\| // create user user\_name end
+{%- endcodetabs %}
+
+Example 2
+~~~~~~~~~
+
+::
+
+    User Creation
+    -------------
+    * User creates a new account
+    * A "welcome" email is sent to the user
+
+    Shopping Cart
+    -------------
+    * User checks out the shopping cart
+    * Payment is successfully received
+    * An email confirming the "order" is sent
+
+In this case, the underlying functionality of the last step (sending an
+email) in both the scenarios is the same. But it is expressed more
+clearly with the use of aliases. The underlying step implementation
+could be something like this.
+
+Implementation
+""""""""""""""
+
+{% codetabs name="Java", type="java" -%} public class Users {
+
+::
+
+    @Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})
+    public void helloWorld(String email_type) {
+        // Send email of email_type
+    }
+
+} {%- language name="C#", type="csharp" -%} public class Users {
+
+::
+
+    [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
+    public void HelloWorld(string email_type) {
+        // Send email of email_type
+    }
+
+} {%- language name="Ruby", type="ruby" -%} step 'A email is sent to the
+user', 'An email confirming the is sent' do \|email\_type\|
+
+::
+
+    email_service.send email_type
+
+end {%- endcodetabs %}
+
+Re-run failed tests
+^^^^^^^^^^^^^^^^^^^
+
+Gauge provides you the ability to re-run only the scenarios which failed
+in previous execution. Failed scenarios can be run using the
+``--failed`` flag of Gauge.
+
+Say you run ``gauge specs`` and 3 scenarios failed, you can run re-run
+only failed scenarios instead of executing all scenarios by following
+command.
+
+.. code-block:: console
+
+    gauge --failed
+
+This command will even set the flags which you had provided in your
+previous run. For example, if you had executed command as
+
+.. code-block:: console
+
+    gauge --env="chrome" --verbose specs
+
+and 3 scenarios failed in this run, the ``gauge --failed`` command sets
+the ``--env`` and ``--verbose`` flags to corresponding values and
+executes only the 3 failed scenarios. In this case ``gauge --failed`` is
+equivalent to command
+
+.. code-block:: console
+
+    gauge --env="chrome" --verbose specs <path_to_failed_scenarios>
+
+Refactoring
+^^^^^^^^^^^
+
+Rephrase steps
+~~~~~~~~~~~~~~
+
+Gauge allows you to rephrase a step across the project. To rephrase a
+step run:
+
+.. code-block:: console
+
+    gauge --refactor "old step <name>" "new step name"
+
+Here ``<`` and ``>`` are used to denote parameters in the step.
+**Parameters can be added, removed or changed while rephrasing.**
+
+This will change all spec files and code files (for language plugins
+that support refactoring).
+
+Example
+"""""""
+
+Let's say we have the following steps in our ``spec`` file:
+
+.. code-block:: gauge
+
+    * create user "john" with id "123"
+    * create user "mark" with id "345"
+
+Now, if we now need to add an additional parameter, say ``last name``,
+to this step we can run the command:
+
+.. code-block:: console
+
+    gauge --refactor "create user <name> with id <id>" "create user <name> with <id> and last name <watson>"
+
+This will change all spec files to reflect the change.
+
+.. code-block:: gauge
+
+    * create user "john" with id "123" and last name "watson"
+    * create user "mark" with id "345" and last name "watson"
+
+Project Structure
+-----------------
+
+On initialization of a gauge project for a particular language a project
+skeleton is created with the following files
+
+Common Gauge files
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: text
+
+    ├── env
+    │  └── default
+    │     └── default.properties
+    ├── manifest.json
+    ├── specs
+       └── example.spec
+
+Env Directory
+~~~~~~~~~~~~~
+
+The env directory contains multiple environment specific directories.
+Each directory has `.property
+files <https://en.wikipedia.org/wiki/.properties>`__ which define the
+environment variables set during execution for that specific
+environment.
+
+A **env/default** directory is created on project initialization which
+contains the default environment variables set during execution.
+
+Learn more about `managing environments <../../advanced_readings/managing_environments.md>`__.
+
+Specs Directory
+~~~~~~~~~~~~~~~
+
+The specs directory contains all the
+`spec <../../gauge_terminologies/specifications.md>`__ files for the
+project. They are the business layer specifications written in simple
+markdown format.
+
+A simple example spec (**example.spec**) is created in the specs
+directory to better understand the format of specifications.
+
+Learn more about
+`specifications <../../gauge_terminologies/specifications.md>`__
+
+Manifest file
+~~~~~~~~~~~~~
+
+The **manifest.json** contains gauge specific configurations which
+includes the information of plugins required in the project.
+
+After project initialization, the ``manifest.json`` will have the
+following content.
+
+.. code:: js
+
+    {
+      "Language": "<language>",
+      "Plugins": [
+        "html-report"
+      ]
+    }
+
+-  **language** : Programming language used for the test code. Gauge
+   uses the corresponding language runner for executing the specs.
+
+-  **Plugins** : The gauge plugins used for the project. Some plugins
+   are used by default on each gauge project. The plugins can be added
+   to project by running the following command :
+
+   .. code:: console
+
+       gauge --add-plugin <plugin-name>
+
+   Example :
+
+   .. code:: console
+
+       gauge --add-plugin xml-report
+
+After running the above command, the manifest.json would have the
+following content:
+
+.. code:: js
+
+    {
+      "Language": "<language>",
+      "Plugins": [
+        "html-report",
+        "xml-report"
+      ]
+    }
 
 IDE Support
 -----------
