@@ -10,7 +10,7 @@ Follow the instructions in :doc:`quickstart`
 Web Application
 ---------------
 
-These examples illustrate the use of Gauge with a browser driver. `Clone <http://git-scm.com/docs/git-clone>`__ the github project on your system. Follow the instructions mentioned on the project's page for setup.
+These examples illustrate the use of Gauge with a browser driver. `Clone <https://git-scm.com/docs/git-clone>`__ the github project on your system. Follow the instructions mentioned on the project's page for setup.
 
 +--------------------------+------------------------------------------------------------+--------------------------------------------------------------+------------------------------------------------------------+--------------------------------------------------------------+
 | Features                 | Java                                                       | C#                                                           | Ruby                                                       | Groovy                                                       |

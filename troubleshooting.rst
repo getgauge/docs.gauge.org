@@ -23,6 +23,8 @@ Logs
      MacOS*  - <user_home>/.gauge/logs
      Linux   - <user_home>/.gauge/logs
 
+.. _troubleshoot_gauge_installation:
+
 Gauge Installation
 ------------------
 
@@ -171,8 +173,7 @@ Steps marked as unimplemented
 
 If steps have implementation code and are still marked as unimplemented:
 
-- Ensure that ``src/test/java`` directory is marked as test sources root in the project. Right click on the ``src/test/java`` directory and
-select ``Mark Directory as -> Test sources root``
+- Ensure that ``src/test/java`` directory is marked as test sources root in the project. Right click on the ``src/test/java`` directory and select ``Mark Directory as -> Test sources root``
 - Ensure the project is compiling. Press ctrl/cmd + F9 to build project or select ``Build -> Make project``. 
 - Ensure ``Module SDK`` is set to a valid JDK under ``Module settings``. 
 - Restart Intellij or close and reopen the project.

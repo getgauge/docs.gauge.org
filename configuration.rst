@@ -484,9 +484,7 @@ all flags that be used with **-Dflags** option.
 Gradle
 ^^^^^^
 
-Use the gauge-gradle-plugin to execute specifications in your
-`Gauge <http://getgauge.io>`__ java project and manage dependencies
-using `Gradle <http://gradle.org//>`__.
+Use the gauge-gradle-plugin to execute specifications in your `Gauge <http://getgauge.io>`__ java project and manage dependencies using `Gradle <https://gradle.org//>`__.
 
 Using plugin in project
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -661,9 +659,7 @@ Gauge specs can be invoked via Ant by adding the below configuration in your ``b
 Integration with CI
 -------------------
 
-Gauge can be easily integrated with any `Continuous
-Integration <http://martinfowler.com/articles/continuousIntegration.html>`__
-environment.
+Gauge can be easily integrated with any `Continuous Integration <https://martinfowler.com/articles/continuousIntegration.html>`__ environment.
 
 Since Gauge supports first class command line, invoking it from any
 CI/CD tool is very straightforward.
@@ -683,14 +679,13 @@ Steps to Integrate Gauge with CI tool:
 Go.cd
 ^^^^^
 
-`Go.cd <http://www.go.cd/>`__, is a continuous integration and deployment
+`Go.cd <https://www.gocd.io/>`__, is a continuous integration and deployment
 tool.
 
 Integrating Gauge with Go.cd
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  `Setup a new pipeline on
-   Go <http://www.go.cd/documentation/user/current/configuration/quick_pipeline_setup.html>`__
+-  `Setup a new pipeline on Go <https://docs.gocd.io/current/configuration/quick_pipeline_setup.html>`__
 
    |pipeline|
 -  `Download <http://getgauge.io/get-started/index.html>`__ and Install
@@ -757,9 +752,7 @@ Reports
 
       console
 
--  You can also add a `custom
-   tab <http://www.go.cd/documentation/user/current/configuration/managing_artifacts_and_reports.html#using-tabs>`__
-   to view your html reports generated.
+-  You can also add a `custom tab <https://docs.gocd.io/current/configuration/managing_artifacts_and_reports.html#using-tabs>`__ to view your html reports generated.
 
 Snap
 ^^^^

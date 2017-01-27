@@ -37,6 +37,8 @@ Ruby
 One can use IDEs to create the projects and run specifications, for this
 example, we are using the command line options.
 
+.. _create_a_project:
+
 Creating a Project
 ------------------
 

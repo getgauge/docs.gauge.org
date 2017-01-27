@@ -8,8 +8,7 @@ then Gauge also has excellent integration with multiple IDEs.
 Command Line Interface
 ----------------------
 
-Gauge has **first-class command line support**. With gauge `installed <../installations/README.md>`__, list 
-the flags supported by running.
+Gauge has **first-class command line support**. With gauge `installed <../installations/README.md>`__, list the flags supported by running.
 
 .. code-block:: console
 
@@ -852,10 +851,7 @@ Env Directory
 ~~~~~~~~~~~~~
 
 The env directory contains multiple environment specific directories.
-Each directory has `.property
-files <https://en.wikipedia.org/wiki/.properties>`__ which define the
-environment variables set during execution for that specific
-environment.
+Each directory has `.property files <https://en.wikipedia.org/wiki/.properties>`__ which define the environment variables set during execution for that specific environment.
 
 A **env/default** directory is created on project initialization which
 contains the default environment variables set during execution.
