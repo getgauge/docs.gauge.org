@@ -684,7 +684,7 @@ Go.cd
 tool.
 
 Integrating Gauge with Go.cd
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  `Setup a new pipeline on
    Go <http://www.go.cd/documentation/user/current/configuration/quick_pipeline_setup.html>`__

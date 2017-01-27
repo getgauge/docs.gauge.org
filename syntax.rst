@@ -4,35 +4,35 @@ Syntax
 Specification
 -------------
 
-.. code-block:: markdown
+.. code-block:: gauge
 
     Specification name            
     ==================
     
 or 
 
-.. code-block:: markdown
+.. code-block:: gauge
 
     # Specification name
 
 Scenario
 --------
 
-.. code-block:: markdown
+.. code-block:: gauge
 
     Scenario name                 
     -------------
 
 or
 
-.. code-block:: markdown
+.. code-block:: gauge
 
     ## Scenario name
 
 Tags
 ----
 
-.. code-block:: markdown
+.. code-block:: gauge
 
     Specification Level           
     ===================           
@@ -48,42 +48,42 @@ Tags
 Concept
 -------
 
-.. code-block:: markdown
+.. code-block:: gauge
 
     Concept Heading 
     ===============
 
 or
 
-.. code-block:: markdown
+.. code-block:: gauge
    
     # Concept Heading
 
 Steps
 -----
 
-.. code-block:: markdown
+.. code-block:: gauge
 
     * Step Name
 
 Parameters
 ----------
 
-.. code-block:: markdown
+.. code-block:: gauge
    :caption: ``"Static Arg"``
 
    * Check "product" exists
 
 
 
-.. code-block:: markdown
+.. code-block:: gauge
    :caption: ``<Dynamic Arg>``
 
    * Check <product> exists 
 
 
 
-.. code-block:: markdown
+.. code-block:: gauge
    :caption: ``|Table Parameter|``
 
    * Step that takes a table 
@@ -97,16 +97,16 @@ There should be no empty lines between step name and table parameter.
 Special Parameters
 ------------------
 
-.. code-block:: markdown
+.. code-block:: gauge
 
    <prefix:value>
 
-.. code-block:: markdown
+.. code-block:: gauge
    :caption: ``file``
 
    * Check if <file:/work/content.txt> is visible 
 
-.. code-block:: markdown
+.. code-block:: gauge
    :caption: ``table``
 
    * Check if the users exist <table:/Users/john/work/users.csv>
@@ -117,7 +117,7 @@ Comments
 
 Comment has no syntax. Any normal line of text is treated as comment.
 
-.. code-block:: markdown
+.. code-block:: gauge
 
     Im a comment!!!
 
@@ -126,7 +126,7 @@ Images
 
 Inline image syntax looks like this:
 
-.. code-block:: markdown
+.. code-block:: gauge
 
     ![Alt text](/path/to/img.jpg)
 
@@ -137,7 +137,7 @@ The path to image file should be relative to current directory.
 Links
 -----
 
-.. code-block:: markdown
+.. code-block:: gauge
 
     This is [an example](http://getgauge.io "Title") inline link.
 

@@ -24,20 +24,21 @@ body{
     font-family: 'Open Sans';
 }
 
-.wy-nav-content {
-    max-width: none;
-}
-
 .highlight-console .highlight pre span.go:before{
     content: '> ';
+    color: #aaaaaa;
 }
 
-.highlight-text .highlight pre, .highlight-console .highlight pre span.go{
-    color: #dddddd !important;
+.highlight-md .highlight pre, .highlight-md .highlight pre span.gh, .highlight-text .highlight pre, .highlight-console .highlight pre span.go{
+    color: #f8f8f2 !important;
 }
 
 .highlight {
-    background-color: black !important;
+    background-color: #222222 !important;
+}
+
+.highlight .c1 {
+    color: #aaaaaa;
 }
 
 .wy-menu-vertical a:active {

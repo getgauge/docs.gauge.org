@@ -221,7 +221,7 @@ following command.
 
 .. code-block:: console
 
-    $ gauge -v
+    gauge -v
 
 If this enlists a version then you're intallation and initialisation is
 has been successful. Your output will look like this:
