@@ -920,6 +920,8 @@ following content:
       ]
     }
 
+.. _`ide_support`:
+
 IDE Support
 -----------
 
@@ -928,6 +930,8 @@ test code simpler.
 
 -  Intellij IDEA
 -  Visual Studio
+
+.. _`intellij_idea`:
 
 IntelliJ IDEA
 ^^^^^^^^^^^^^
@@ -1029,9 +1033,7 @@ Maven project using gauge-maven-plugin
    ``File > Settings > Maven > Importing``, mark the checkbox
    ``Import Maven projects automatically``.
 
-See
-`gauge-maven-plugin <../advanced_readings/dependency_management_plugins/maven-plugin.md>`__
-for more details on using the gauge maven plugin.
+See `gauge-maven-plugin <../advanced_readings/dependency_management_plugins/maven-plugin.md>`__ for more details on using the gauge maven plugin.
 
 .. _intellij-features:
 
@@ -1278,6 +1280,8 @@ shows the HTML equivalent preview of spec file.
 
 Since specs are written in markdown, they can be converted to HTML using
 any markdown to HTML convertors.
+
+.. _`visual_studio`:
 
 Visual Studio
 ^^^^^^^^^^^^^

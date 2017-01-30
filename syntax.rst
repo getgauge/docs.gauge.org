@@ -29,6 +29,8 @@ or
 
     ## Scenario name
 
+.. _`tags_syntax`:
+
 Tags
 ----
 
@@ -58,6 +60,8 @@ or
 .. code-block:: gauge
    
     # Concept Heading
+
+.. _`steps_syntax`:
 
 Steps
 -----

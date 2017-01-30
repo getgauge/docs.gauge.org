@@ -106,11 +106,10 @@ Read the `Installation troubleshooting <../troubleshooting/installation.md>`__ f
 IDE plugins
 -----------
 
-Gauge has a bunch of plugins so that users can easily author specs on
-IDE. For more details, check `IDE Support <../ide_support/README.md>`__.
+Gauge has a bunch of plugins so that users can easily author specs on IDE. For more details, check :ref:`IDE Support <ide_support>`.
 
--  Integration with `IntelliJ IDEA <../ide_support/intellij_idea.md>`__
--  Integration with `Visual Studio <../ide_support/visual_studio.md>`__
+-  Integration with :ref: `IntelliJ IDEA <intellij_idea>`__
+-  Integration with :ref: `Visual Studio <visual_studio>`__
 
 
 Build Tools

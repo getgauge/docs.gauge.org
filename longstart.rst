@@ -12,20 +12,16 @@ gap.
 
 Some of the **key features** of Gauge that make it stand unique include:
 
--  A rich markup based on
-   `markdown <https://en.wikipedia.org/wiki/Markdown>`__
+-  A rich markup based on `markdown <https://en.wikipedia.org/wiki/Markdown>`__
 -  Simple, Flexible and Rich Syntax
--  Business Language Tests : Supports the concept of `executable
-   documentation <advanced_readings/living_documentation.md>`__
--  Consistent Cross Platform/Language Support for writing test code.
-   Currently :ref:`supported languages <install-language-runner>`.
--  Open Source, so it could be shared freely and improved by others as
-   well
+-  Business Language Tests : Supports the concept of executable documentation.
+-  Consistent Cross Platform/Language Support for writing test code. Currently :ref:`supported languages <install-language-runner>`.
+-  Open Source, so it could be shared freely and improved by others as well.
 -  A modular architecture with :doc:`plugins` support.
--  Extensible through :doc:`plugins` and Hackable
--  Supports External Data Sources
--  Helps you create Maintainable and Understandable test suites
--  `IDE Support <ide_support/README.md>`__
+-  Extensible through :doc:`plugins` and Hackable.
+-  Supports External Data Sources.
+-  Helps you create Maintainable and Understandable test suites.
+-  :ref:`IDE Support <ide_support>`.
 
 
 Specifications (spec)
@@ -36,10 +32,8 @@ documentation. They are written in the business language. Typically a
 spec or specification describe a particular feature of the application
 under test.
 
--  They are written in a ``.spec`` file. Gauge also supports ``.md``
-   file format.
--  The Markup for a Specification file is based on
-   `markdown <https://en.wikipedia.org/wiki/Markdown>`__ syntax.
+-  They are written in a ``.spec`` file. Gauge also supports ``.md`` file format.
+-  The Markup for a Specification file is based on `markdown <https://en.wikipedia.org/wiki/Markdown>`__ syntax.
 
 Example
 ^^^^^^^
@@ -95,8 +89,8 @@ or
 
     ## Scenario heading
 
--  A scenario contains one or more `steps <steps.md>`__ under it.
--  A scenario can be tagged using `tags <tags.md>`__.
+-  A scenario contains one or more :ref:`steps <steps_syntax>` under it.
+-  A scenario can be tagged using :ref:`tags <tags_tags>`.
 
 Example
 ^^^^^^^
@@ -370,7 +364,7 @@ Steps
 ~~~~~
 
 The concept header is followed by the steps that are used inside the
-concept. They are defined in the usual `step <steps.md>`__ structure.
+concept. They are defined in the usual :ref:`steps <steps_syntax>` structure.
 
 -  All the parameters used from the concept header will be in ``< >``
    brackets.
@@ -403,7 +397,7 @@ executing scenarios in a spec. Context steps can be used to set up data
 before running scenarios. They can also perform a setup or tear down
 function.
 
--  Any regular `step <steps.md>`__ can be used as a context.
+-  Any regular :ref:`steps <steps_syntax>` can be used as a context.
 -  Contexts are executed before every scenario in the spec.
 
 ::
@@ -448,7 +442,7 @@ scenario. They allow you to specify a set of clean-up steps after every
 execution of scenario in a spec. They are used to perform a tear down
 function.
 
--  Any regular `step <steps.md>`__ can be used as a tear down step.
+-  Any regular :ref:`steps <steps_syntax>` can be used as a tear down step.
 -  Tear down steps are executed after every scenario in the spec.
 
 Syntax
