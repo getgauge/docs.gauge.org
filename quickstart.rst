@@ -5,7 +5,7 @@ Prerequisites
 -------------
 
 -  JDK 6+ / .NET framework / Ruby 2.0+ is installed
--  `Gauge <../../installations/operating_system>`__ is installed.
+-  :ref:`Gauge <installing>` is installed.
 
 .. _install-language-runner:
 
@@ -42,8 +42,7 @@ example, we are using the command line options.
 Creating a Project
 ------------------
 
-Follow the instructions for the respective language below. On getting the message of ``Successfully initialized the project``, one
-should be able to run the specifications.
+Follow the instructions for the respective language below. On getting the message of ``Successfully initialized the project``, one should be able to run the specifications.
 
 .. note::
 
@@ -144,8 +143,7 @@ implementations.
 java.properties
 """""""""""""""
 
-This defines configurations for java runner plugin. See
-`configuration <configuration.md>`__ for more details.
+This defines configurations for java runner plugin. See :doc:`configuration` for more details.
 
 Ruby
 ^^^^
@@ -196,17 +194,20 @@ The console report would give you the details of the run
 .. code-block:: text
 
     Specifications: (w) executed    (x) passed  (y) failed  (z) skipped
-    Scenarios:  (a) executed    (b) passed  (c) failed  (d) skipped
+    Scenarios:      (a) executed    (b) passed  (c) failed  (d) skipped
 
-The statistics of the scenarios indicate \* (a) is the total number of
-scenarios executed. \* (b) is the total number of scenarios passed. \*
-(c) is the total number of scenarios failed. \* (d) is the total number
-of scenarios skipped.
+The statistics of the scenarios indicate 
 
-The statistics of the specifications indicate \* (w) is the total number
-specifications executed. \* (x) is the total number specifications with
-all scenarios passed. \* (y) is the total number specifications with
-atleast one scenario failed. \* (z) is the total number specifications
-with all scenarios skipped.
+- (a) is the total number of scenarios executed. 
+- (b) is the total number of scenarios passed. 
+- (c) is the total number of scenarios failed. 
+- (d) is the total number of scenarios skipped.
+
+The statistics of the specifications indicate 
+
+- (w) is the total number specifications executed. 
+- (x) is the total number specifications with all scenarios passed. 
+- (y) is the total number specifications with atleast one scenario failed. 
+- (z) is the total number specifications with all scenarios skipped.
 
 Check supported formats for :doc:`reports`.
