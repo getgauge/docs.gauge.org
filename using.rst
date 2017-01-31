@@ -99,6 +99,7 @@ line number in the span of that scenario in the spec. To execute a
 
 .. code-block:: gauge
     :linenos:
+    :name: specify_scenario
     :emphasize-lines: 4-7
     
     Configuration
@@ -245,6 +246,7 @@ Data driven execution
 
 .. code-block:: gauge
     :linenos:
+    :name: data_driven
 
     Table driven execution
     ======================

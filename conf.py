@@ -29,7 +29,7 @@ sys.path.insert(0, os.path.abspath('_ext'))
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.todo', 'sphinx.ext.ifconfig', 'gauge_lexer']
+extensions = ['sphinx.ext.todo', 'sphinx.ext.ifconfig', 'gauge_lexer', 'code_lineno_highlighter']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
