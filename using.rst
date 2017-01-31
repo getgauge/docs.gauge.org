@@ -97,17 +97,17 @@ line number in the span of that scenario in the spec. To execute a
 ``Admin Login`` scenario in the following spec use
 ``gauge specs/login_test.spec:4`` command.
 
-.. code-block:: default
+.. code-block:: gauge
     :linenos:
     :emphasize-lines: 4-7
     
-       Configuration
-       =============
-    
-       Admin Login
-       -----------
-       * User must login as "admin"
-       * Navigate to the configuration page
+    Configuration
+    =============
+
+    Admin Login
+    -----------
+    * User must login as "admin"
+    * Navigate to the configuration page
 
 This executes only the scenario present at line number ``4`` i.e
 ``Admin Login`` in ``login_test.spec``. In the above spec, specifying
@@ -243,7 +243,7 @@ Data driven execution
 
 **Example:**
 
-.. code-block:: default
+.. code-block:: gauge
     :linenos:
 
     Table driven execution

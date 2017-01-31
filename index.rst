@@ -3,10 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+Welcome
+-------
+
+Gauge is a light-weight cross-platform test automation tool with the ability to author test cases in the business language.
+
 .. toctree::
-   :hidden:
    :maxdepth: 2
 
+   self
    installing
    quickstart
    longstart
@@ -20,8 +25,3 @@
    examples
    faqs
    contribute
-
-Welcome to Gauge
-----------------
-
-Gauge is a light-weight cross-platform test automation tool with the ability to author test cases in the business language.
