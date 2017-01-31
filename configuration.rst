@@ -8,66 +8,44 @@ All the Gauge specific internal configurations are stored in
 Global
 ------
 
-**gauge_repository_url** : set to a url, which acts as plugin repository for Gauge.
+.. code-block:: default
+    :linenos:
+    :name: gauge_properties
 
-.. code-block:: text
-
+    # set to a url, which acts as plugin repository for Gauge.
     gauge_repository_url = https://downloads.getgauge.io/plugin
 
-**gauge_update_url** : set to a url, which holds version information of Gauge.
-This is used to determine if an update is available.
-
-.. code-block:: text
-
+    # set to a url, which holds version information of Gauge.
+    # This is used to determine if an update is available.
     gauge_update_url = https://downloads.getgauge.io/gauge
 
-**gauge_templates_url** :  set to an url, which acts as template repository for Gauge.
-
-.. code-block:: text
-
+    # set to an url, which acts as template repository for Gauge.
     gauge_templates_url = https://downloads.getgauge.io/templates
 
-**runner_connection_timeout** : sets the timeout in milliseconds for making a 
-connection to the language runner.
-
-.. code-block:: text
-
+    # sets the timeout in milliseconds for making a 
+    # connection to the language runner.
     runner_connection_timeout = 30000
 
-**plugin_connection_timeout** : sets the timeout in milliseconds for making a connection
-to plugins (except language runner plugins).
-
-.. code-block:: text
-
+    # sets the timeout in milliseconds for making a connection
+    # to plugins (except language runner plugins).
     plugin_connection_timeout = 10000
 
-**plugin_kill_timeout** : sets the timeout in milliseconds for a plugin to stop
-after a kill message has been sent.
-
-.. code-block:: text
-
+    # sets the timeout in milliseconds for a plugin to stop
+    # after a kill message has been sent.
     plugin_kill_timeout = 10000
 
-**runner_request_timeout** : sets the timeout in milliseconds for requests from the
-language runner.
-
-If the size of the project is too big, Gauge may timeout before the
-runner returns the response message. This value can be configured
-accordingly.
-
-.. code-block:: text
-
+    # sets the timeout in milliseconds for requests from the
+    # language runner.
+    # If the size of the project is too big, Gauge may timeout before the
+    # runner returns the response message. This value can be configured
+    # accordingly.
     runner_request_timeout = 10000
 
-**gauge_exclude_dirs** : sets the excluded dirs for gauge.
-
-Gauge always looks for concepts in the whole project, folders starting
-with dot(.) are excluded and a user can add folders to the excluded
-folders list by passing a comma separeted paths of folder.Paths can be
-relative to the path of directory or absolute.
-
-.. code-block:: text
-
+    # sets the excluded dirs for gauge.
+    # Gauge always looks for concepts in the whole project, folders starting
+    # with dot(.) are excluded and a user can add folders to the excluded
+    # folders list by passing a comma separeted paths of folder.Paths can be
+    # relative to the path of directory or absolute.
     gauge_exclude_dirs = "src/test,bin"
 
 Local (Project level)
@@ -78,61 +56,38 @@ Certain properties can be configured in
 properties and are scoped only to the current project. These are key
 value pairs.
 
-**gauge_reports_dir**
+.. code-block:: default
+    :linenos:
+    :name: default_properties
 
-The path to the gauge reports directory. Should be either relative to
-the project directory or an absolute path
-
-.. code-block:: text
-
+    # The path to the gauge reports directory. Should be either relative to
+    # the project directory or an absolute path
     gauge_reports_dir = reports
 
-**overwrite_reports**
+    # Set as false if gauge reports should not be overwritten 
+    # on each execution.
+    # If set to true, a new time-stamped directory will be 
+    # created on each execution.
+    overwrite_reports = true
 
--  Set as false if gauge reports should not be overwritten on each
-   execution.
--  If set to true, a new time-stamped directory will be created on each
-   execution.
+    # Set to false to disable screenshots on failure in reports.
+    screenshot_on_failure = false
 
-.. code-block:: text
-
-       overwrite_reports = true
-
-**screenshot_on_failure**
-
--  Set to false to disable screenshots on failure in reports.
-
-.. code-block:: text
-
-       screenshot_on_failure = false
-
-**logs_directory**
-
-The path to the gauge logs directory. Should be either relative to the
-project directory or an absolute path
-
-.. code-block:: text
-
+    # The path to the gauge logs directory. Should be either relative to the
+    # project directory or an absolute path
     logs_directory = GaugeLogs
 
-.. _env_gauge_clear_state_level:
+    # Specify the level at which cached objects should get removed while
+    # execution.
 
-**gauge_clear_state_level**
-
-Specify the level at which cached objects should get removed while
-execution.
-
-Possible values for this property are ``suite``,\ ``spec`` and
-``scenario``. By default, Gauge clears state at scenario level.
-
-Example:
-
-.. code-block:: text
-
+    # Possible values for this property are 'suite', 'spec' or 'scenario'.
+    # default: 'scenario'.
     gauge_clear_state_level = spec
+    # The above clears the objects after the execution of each specification, so
+    # that new objects are created for next execution.
 
-This clears the objects after the execution of each specification, so
-that new objects are created for next execution.
+    # Set to false to disable screenshots on failure in reports.
+    screenshot_on_failure = true
 
 .. _environments:
 
@@ -300,111 +255,28 @@ Java
 Java Specific configuration changes can be made in the
 ``env/default/java.properties`` file.
 
-gauge_java_home
-~~~~~~~~~~~~~~~
+.. code-block::
+    :linenos:
+    :name: java_properties
 
-Specify an alternate Java home if you want to use a custom version.
+    # Specify an alternate Java home if you want to use a custom version.
+    gauge_java_home = PATH_TO_JAVA_HOME
 
-Example:
+    # Use this property if you need to override the build path for the
+    # project.
+    # Note: IntelliJ out directory will be usually auto-detected.
+    gauge_custom_build_path = PATH_TO_CUSTOM_BUILDPATH
 
-.. code-block:: text
+    # Specify the directory where additional libraries are kept.
+    #   You can specify multiple directory names separated with a comma `,`
+    #   `libs` directory in the gauge project is added by default.
+    gauge_additional_libs = libs/*, PATH_TO_NEW_LIBRARY
 
-   gauge_java_home = PATH_TO_JAVA_HOME
+    # Specify the JVM arguments passed to java while launching.
+    gauge_jvm_args = <JVM_ARGS>
 
-gauge_custom_build_path
-~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Note: IntelliJ out directory will be usually auto-detected.
-
-Use this property if you need to override the build path for the
-project.
-
-Example:
-
-.. code-block:: text
-
-   gauge_custom_build_path = PATH_TO_CUSTOM_BUILDPATH
-
-gauge_additional_libs
-~~~~~~~~~~~~~~~~~~~~~
-
-Specify the directory where additional libraries are kept.
-
--  You can specify multiple directory names separated with a comma ``,``
--  ``libs`` directory in the gauge project is added by default.
-
-Example:
-
-.. code-block:: text
-
-   gauge_additional_libs = libs/*, PATH_TO_NEW_LIBRARY
-
-gauge_jvm_args
-~~~~~~~~~~~~~~
-
-Specify the JVM arguments passed to java while launching.
-
-gauge_clear_state_level
-~~~~~~~~~~~~~~~~~~~~~~~
-
-Specify the level at which cached objects should get removed while execution. Possible values for this property 
-are ``suite``, ``spec`` and ``scenario``. By default, Gauge clears state at scenario level.
-
-Example:
-
-.. code-block:: text
-
-    gauge_clear_state_level = spec
-
-This clears the objects after the execution of each specification, so
-that new objects are created for next execution.
-
-CSharp
-^^^^^^
-
-CSharp Specific configuration changes can be made in the ``env/default/default.properties`` file.
-
-gauge_reports_dir
-~~~~~~~~~~~~~~~~~
-
--  The path to the gauge reports directory.
--  Should be either relative to the project directory or an absolute path.
-
-Example:
-
-.. code-block:: text
-
-   gauge_reports_dir = reports
-
-overwrite_reports
-~~~~~~~~~~~~~~~~~
-
--  Set as false if gauge reports should not be overwritten on each execution.
--  A new time-stamped directory will be created on each execution.
-
-Example:
-
-.. code-block:: text
-
-     overwrite_reports = true
-
-screenshot_on_failure
-~~~~~~~~~~~~~~~~~~~~~
-
-Set to false to disable screenshots on failure in reports.
-
-Example:
-
-.. code-block:: text
-
-     screenshot_on_failure = true
-
-Ruby
-^^^^
-
-The default Ruby properties are similar to that of the CSharp
-properties. 
+.. note::
+    CSharp and Ruby language runners do not hold any configuration beyond what is listed in :ref:`default properties <default_properties>`.
 
 
 HTTP Proxy

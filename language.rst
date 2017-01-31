@@ -257,7 +257,7 @@ Implementation
 
 
 By default, Gauge clears the state after each scenario so that new
-objects are created for next scenario execution. You can :ref:`configure <env_gauge_clear_state_level>`
+objects are created for next scenario execution. You can :ref:`configure <default_properties>`
 to change the level at which Gauge clears cache.
 
 Data Store
