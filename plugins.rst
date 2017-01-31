@@ -57,7 +57,7 @@ from plugin repository, use the ``--file`` or ``-f`` flag.
     gauge --install html-report --file ZIP_FILE_PATH
 
 Download the latest version of plugin from the ``Releases`` section of
-the respective repository. See `plugin list <../plugins/README.md>`__ to
+the respective repository. See `plugin list <http://getgauge.io/plugins/index.html>`__ to
 find the repositories.
 
 Adding plugins to a project
@@ -101,15 +101,15 @@ You can also update all the installed plugins by running
 
     gauge --update-all
 
-Read the `Installation troubleshooting <../troubleshooting/installation.md>`__ for more.
+Read the :ref:`Installation troubleshooting <troubleshoot_plugin_installation>` for more.
 
 IDE plugins
 -----------
 
 Gauge has a bunch of plugins so that users can easily author specs on IDE. For more details, check :ref:`IDE Support <ide_support>`.
 
--  Integration with :ref: `IntelliJ IDEA <intellij_idea>`__
--  Integration with :ref: `Visual Studio <visual_studio>`__
+-  Integration with :ref:`IntelliJ IDEA <intellij_idea>`
+-  Integration with :ref:`Visual Studio <visual_studio>`
 
 
 Build Tools

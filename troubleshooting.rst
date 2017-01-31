@@ -68,6 +68,8 @@ Linux
 
 -  Gauge plugins are installed under ``~/.gauge/plugins`` directory.
 
+.. _troubleshoot_plugin_installation:
+
 Plugin installation
 -------------------
 

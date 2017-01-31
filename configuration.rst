@@ -115,6 +115,8 @@ project directory or an absolute path
 
     logs_directory = GaugeLogs
 
+.. _env_gauge_clear_state_level:
+
 **gauge_clear_state_level**
 
 Specify the level at which cached objects should get removed while
