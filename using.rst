@@ -676,27 +676,36 @@ ensuring that the functionality is expressed clearly.
 Implementation
 """"""""""""""
 
-{% codetabs name="Java", type="java" -%} public class Users {
+.. code-block:: java
+  :caption: Java
 
-::
+    public class Users {
 
-    @Step({"Create a user <user_name>", "Create another user <user_name>"})
-    public void helloWorld(String user_name) {
-        // create user user_name
+        @Step({"Create a user <user_name>", "Create another user <user_name>"})
+        public void helloWorld(String user_name) {
+            // create user user_name
+        }
+
     }
 
-} {%- language name="C#", type="csharp" -%} public class Users {
+.. code-block:: java
+  :caption: C#
+    
+    public class Users {
 
-::
+        [Step({"Create a user <user_name>", "Create another user <user_name>"})]
+        public void HelloWorld(string user_name) {
+            // create user user_name
+        }
 
-    [Step({"Create a user <user_name>", "Create another user <user_name>"})]
-    public void HelloWorld(string user_name) {
-      // create user user_name
     }
 
-} {%- language name="Ruby", type="ruby" -%} step 'Create a user ',
-'Create another user ' do \|user\_name\| // create user user\_name end
-{%- endcodetabs %}
+.. code-block:: ruby
+  :caption: Ruby
+
+    step 'Create a user ','Create another user ' do |user_name| 
+        // create user user_name 
+    end
 
 Example 2
 ~~~~~~~~~
@@ -722,32 +731,36 @@ could be something like this.
 Implementation
 """"""""""""""
 
-{% codetabs name="Java", type="java" -%} public class Users {
+.. code-block:: java
+  :caption: Java
 
-::
+    public class Users {
 
-    @Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})
-    public void helloWorld(String email_type) {
-        // Send email of email_type
+        @Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})
+        public void helloWorld(String email_type) {
+            // Send email of email_type
+        }
+
     }
 
-} {%- language name="C#", type="csharp" -%} public class Users {
+.. code-block:: java
+  :caption: C#
+    
+    public class Users {
 
-::
+        [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
+        public void HelloWorld(string email_type) {
+            // Send email of email_type
+        }
 
-    [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
-    public void HelloWorld(string email_type) {
-        // Send email of email_type
     }
 
-} {%- language name="Ruby", type="ruby" -%} step 'A email is sent to the
-user', 'An email confirming the is sent' do \|email\_type\|
-
-::
-
-    email_service.send email_type
-
-end {%- endcodetabs %}
+.. code-block:: ruby
+  :caption: Ruby
+    
+    step 'A email is sent to the user', 'An email confirming the is sent' do |email_type|
+        email_service.send email_type
+    end
 
 Re-run failed tests
 ^^^^^^^^^^^^^^^^^^^
