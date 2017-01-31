@@ -84,8 +84,7 @@ Example:
 
     gauge --install html-report -f html-report-1.0.3-darwin.x86.zip
 
--  Find the plugin zip files under ``Releases`` section of the plugin github repositories. 
-See the `gauge plugin list <http://getgauge.io/plugins/index.html>`__ for plugin repositories details.
+-  Find the plugin zip files under ``Releases`` section of the plugin github repositories. See the `gauge plugin list <http://getgauge.io/plugins/index.html>`__ for plugin repositories details.
 
 Plugins directory
 ^^^^^^^^^^^^^^^^^
