@@ -310,11 +310,11 @@ Build tools
 
 You can use Gauge with any of the build tools that you like.
 
-Here are the sample build files for 1. `Maven <#maven>`__ 2.
-`Gradle <#gradle>`__ 3. `Ant <#ant-task>`__
+Here are the sample build files for 
 
-For more details, please take a look at the `Dependency
-Management <dependency_management_plugins/README.md>`__ section.
+1. :ref:`Maven <maven>` 
+2. :ref:`Gradle <gradle>` 
+3. :ref:`Ant <ant_task>`
 
 .. _maven:
 
@@ -322,8 +322,7 @@ Maven
 ^^^^^
 
 Use the gauge-maven-plugin to execute specifications in your gauge java
-project and manage dependencies using
-`maven <https://maven.apache.org/>`__.
+project and manage dependencies using `maven <https://maven.apache.org/>`__.
 
 Creating a new project from archetype
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -336,19 +335,18 @@ Creating a new project from archetype
     -DarchetypeGroupId=com.thoughtworks.gauge.maven
 
 Set **{projectGroupId}** and **{projectArtifactId}** based on your
-project. See `maven
-docs <https://maven.apache.org/pom.html#Maven_Coordinates>`__ to
+project. See `maven docs <https://maven.apache.org/pom.html#Maven_Coordinates>`__ to
 understand what groupId and artifactId mean in a maven project.
 
 Gauge maven project creation in IDE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  `Intellij
-   idea <../../ide_support/features.html#creating-a-maven-project-using-gauge-maven-plugin>`__
+.. note::
 
-The generated **pom.xml** in the project will have the\*\*
-gauge-java\*\* dependency and a **gauge:execute** goal defined in the
-test phase.
+    See :ref:`maven_project_idea_using_plugin`
+
+The generated **pom.xml** in the project will have the **gauge-java** dependency and 
+a **gauge:execute** goal defined in the test phase.
 
 .. code-block:: xml
 
@@ -484,13 +482,15 @@ The following plugin properties can be additionally set:
 |                | "      | to execution |
 +----------------+--------+--------------+
 
-See gauge's `command line interface <../../cli/README.md>`__ for list of
-all flags that be used with **-Dflags** option.
+See gauge's :ref:`cli_flags` for list of all flags that be used with **-Dflags** option.
+
+.. _gradle:
 
 Gradle
 ^^^^^^
 
-Use the gauge-gradle-plugin to execute specifications in your `Gauge <http://getgauge.io>`__ java project and manage dependencies using `Gradle <https://gradle.org//>`__.
+Use the gauge-gradle-plugin to execute specifications in your `Gauge <http://getgauge.io>`__ 
+java project and manage dependencies using `Gradle <https://gradle.org//>`__.
 
 Using plugin in project
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -535,9 +535,8 @@ Here is a sample gradle file,
         additionalFlags = '--verbose'
     }
 
-The plugin is also available at `Gradle Plugin
-Portal <https://plugins.gradle.org/>`__. Find more details
-`here <https://plugins.gradle.org/plugin/com.thoughtworks.gauge>`__..
+The plugin is also available at `Gradle Plugin Portal <https://plugins.gradle.org/>`__. Find more details
+`here <https://plugins.gradle.org/plugin/com.thoughtworks.gauge>`__.
 
 Executing specs
 ~~~~~~~~~~~~~~~
@@ -612,8 +611,7 @@ The following plugin properties can be additionally set:
 |                | bose"  |              |
 +----------------+--------+--------------+
 
-See gauge's `command line interface <../../cli/README.md>`__ for list of
-all flags that be used with **-PadditionalFlags** option.
+See gauge's :ref:`cli_flags` for list of all flags that be used with **-PadditionalFlags** option.
 
 Adding/configuring custom Gauge tasks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -647,6 +645,8 @@ for different environments. For example,
             }
         }
     }
+
+.. _ant_task:
 
 Ant Task
 ^^^^^^^^
@@ -694,11 +694,8 @@ Integrating Gauge with Go.cd
 -  `Setup a new pipeline on Go <https://docs.gocd.io/current/configuration/quick_pipeline_setup.html>`__
 
    |pipeline|
--  `Download <http://getgauge.io/get-started/index.html>`__ and Install
-   Gauge on the Go Agents
--  Install the required gauge `language
-   plugin <../../../installations/install_language_runners.md>`__ on the
-   Go agents.
+-  `Download <http://getgauge.io/get-started/index.html>`__ and Install Gauge on the Go Agents
+-  Install the required gauge :ref:`language plugin <plugins-installation>` on the Go agents.
 
 Tips on Installation
 ~~~~~~~~~~~~~~~~~~~~
@@ -717,15 +714,11 @@ Create execution task
 ~~~~~~~~~~~~~~~~~~~~~
 
 -  Create a new task which will run ``gauge specs``.
--  If you want to run only a subset of specs, you can use
-   `tags <../execution_types/tagged_execution.md>`__. Eg.
-   ``gauge --tags "tag1 & tag2" specs``
--  Adding a flag ``-p`` runs them in
-   `parallel <../execution_types/parallel_execution.md>`__.
--  Run against specific `environments <../managing_environments.md>`__
-   using the ``--env`` flag
--  See the `Gauge CLI <../../cli/README.md>`__ for list of all flags
-   that can be used.
+-  If you want to run only a subset of specs, you can use :ref:`tagged_execution`. 
+    Eg. ``gauge --tags "tag1 & tag2" specs``
+-  Adding a flag ``-p`` runs them using :ref:`parallel_execution`.
+-  Run against specific :ref:`environments` using the ``--env`` flag
+-  See the :ref:`cli_flags` for list of all flags that can be used.
 
    .. figure:: images/Configuring_Gauge.png
       :alt: adding new task
@@ -763,8 +756,7 @@ Reports
 Snap
 ^^^^
 
-`Snap <https://snap-ci.com/>`__, is a continuous integration and
-deployment(in the cloud) tool.
+`Snap <https://snap-ci.com/>`__, is a continuous integration and cloud deployment tool.
 
 Integrating Gauge with Snap
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -802,15 +794,11 @@ Create execution task
 ~~~~~~~~~~~~~~~~~~~~~
 
 -  Add a task which will run ``gauge specs``.
--  If you want to run only a subset of specs, you can use
-   `tags <../execution_types/tagged_execution.md>`__. Eg.
-   ``gauge --tags "tag1 & tag2" specs``
--  Adding a flag ``-p`` runs them in
-   `parallel <../execution_types/parallel_execution.md>`__.
--  Run against specific `environments <../managing_environments.md>`__
-   using the ``--env`` flag
--  See the `Gauge CLI <../../cli/README.md>`__ for list of all flags
-   that can be used.
+-  If you want to run only a subset of specs, you can use :ref:`tagged_execution`. 
+    Eg. ``gauge --tags "tag1 & tag2" specs``
+-  Adding a flag ``-p`` runs them using :ref:`parallel_execution`.
+-  Run against specific :ref:`environments` using the ``--env`` flag.
+-  See the :ref:`cli_flags` for list of all flags that can be used.
 
    .. figure:: images/Snap_Commands.png
       :alt: adding execution task
@@ -899,15 +887,15 @@ Creating tasks
 
     sudo: true
 
-* If you want to run only a subset of specs, you can use tags. 
+* If you want to run only a subset of specs, you can use :ref:`tagged_execution`. 
   Example: add ``script: gauge --tags "tag1 & tag2" specs`` in your ``.travis.yml``. 
 
-* Adding a flag ``-p`` runs them in `parallel <../execution_types/parallel_execution.md>`__. 
+* Adding a flag ``-p`` runs them using :ref:`parallel_execution`. 
   Example: ``script: gauge -p specs`` in your ``.travis.yml``. 
 
-* Run against specific `environments <../managing_environments.md>`__ using the ``--env`` flag. 
+* Run against specific :ref:`environments` using the ``--env`` flag. 
 
-* See the `Gauge CLI <../../cli/README.md>`__ for list of all flags that can be used.
+* See the :ref:`cli_flags` for list of all flags that can be used.
 
 
 Reports
@@ -938,8 +926,7 @@ TeamCity
 -  `Download <http://getgauge.io/get-started/index.html>`__ and Install
    Gauge on the agents. Read more on installing Gauge
    `here <http://getgauge.io/documentation/user/current/installations/operating_system/>`__.
--  Install the required Gauge `language
-   plugins <../../../installations/install_language_runners.md>`__ on
+-  Install the required Gauge :ref:`language plugins <plugins-installation>` on
    the agents as: ``gauge --install <language>``
 
 Tips on Installation
@@ -960,17 +947,14 @@ Create execution task
 
 -  Create a new project in TeamCity pointing to Gauge project repository
    URL.
--  Add a build step which will run ``gauge specs``. |New build step|
+-  Add a build step which will run ``gauge specs``. 
+    |New build step|
 
--  If you want to run only a subset of specs, you can use
-   `tags <../execution_types/tagged_execution.md>`__. Eg.
-   ``gauge --tags "tag1 & tag2" specs``
--  Adding a flag ``-p`` runs them in
-   `parallel <../execution_types/parallel_execution.md>`__.
--  Run against specific `environments <../managing_environments.md>`__
-   using the ``--env`` flag
--  See the `Gauge CLI <../../cli/README.md>`__ for list of all flags
-   that can be used.
+-  If you want to run only a subset of specs, you can use :ref:`tagged_execution`. 
+    Eg. ``gauge --tags "tag1 & tag2" specs``
+-  Adding a flag ``-p`` runs them using :ref:`parallel_execution`.
+-  Run against specific :ref:`environments` using the ``--env`` flag.
+-  See the :ref:`cli_flags` for list of all flags that can be used.
 
 Reports
 ~~~~~~~

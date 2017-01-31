@@ -5,6 +5,8 @@ Gauge is a first class command line tool. This means that you can
 operate entirely from the command line. Or, if you prefer to use an IDE
 then Gauge also has excellent integration with multiple IDEs.
 
+.. _cli:
+
 Command Line Interface
 ----------------------
 
@@ -16,6 +18,8 @@ Gauge has first-class command line support. With gauge :doc:`installed <installi
 
 The command-line interface works across platforms. On GNU/Linux and OSX,
 you can use any terminal. On Windows, you can use ``cmd`` or Powershell.
+
+.. _cli_flags:
 
 Flags
 ^^^^^
@@ -293,6 +297,8 @@ Example:
 
 This executes the scenarios against table rows 1, 2, 3.
 
+.. _tagged_execution:
+
 Tagged Execution
 ~~~~~~~~~~~~~~~~
 
@@ -345,6 +351,8 @@ Tags can be selected using expressions. Like:
    TagC or do not have both the tags TagA and TagB
 -  **(TagA \| TagB) & TagC:** Selects specs/scenarios that either TagA
    and TagC or TagB and TagC
+
+.. _parallel_execution:
 
 Parallel Execution
 ~~~~~~~~~~~~~~~~~~
@@ -986,6 +994,8 @@ first time.
    :alt: project creation
 
    creation
+
+.. _maven_project_idea_using_plugin:
 
 Maven project using gauge-maven-plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
