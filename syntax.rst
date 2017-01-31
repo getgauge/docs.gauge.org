@@ -1,6 +1,8 @@
 Syntax 
 ======
 
+.. _spec_syntax:
+
 Specification
 -------------
 
@@ -14,6 +16,8 @@ or
 .. code-block:: gauge
 
     # Specification name
+
+.. _scenario_syntax:
 
 Scenario
 --------
@@ -29,7 +33,7 @@ or
 
     ## Scenario name
 
-.. _`tags_syntax`:
+.. _tag_syntax:
 
 Tags
 ----
@@ -47,6 +51,8 @@ Tags
 
     Tags: login-success, admin
 
+.. _concept_syntax:
+
 Concept
 -------
 
@@ -61,7 +67,7 @@ or
    
     # Concept Heading
 
-.. _`steps_syntax`:
+.. _step_syntax:
 
 Steps
 -----

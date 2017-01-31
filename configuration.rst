@@ -132,6 +132,8 @@ Example:
 This clears the objects after the execution of each specification, so
 that new objects are created for next execution.
 
+.. _environments:
+
 Environments
 ------------
 
@@ -311,6 +313,8 @@ Here are the sample build files for 1. `Maven <#maven>`__ 2.
 
 For more details, please take a look at the `Dependency
 Management <dependency_management_plugins/README.md>`__ section.
+
+.. _maven:
 
 Maven
 ^^^^^

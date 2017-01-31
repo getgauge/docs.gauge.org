@@ -1,6 +1,8 @@
 Installation
 ============
 
+.. _installing_gauge:
+
 Installing Gauge
 ----------------
 

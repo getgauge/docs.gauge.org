@@ -5,7 +5,7 @@ Prerequisites
 -------------
 
 -  JDK 6+ / .NET framework / Ruby 2.0+ is installed
--  :ref:`Gauge <installing>` is installed.
+-  :ref:`Gauge <installing_gauge>` is installed.
 
 .. _install-language-runner:
 

@@ -8,7 +8,7 @@ then Gauge also has excellent integration with multiple IDEs.
 Command Line Interface
 ----------------------
 
-Gauge has **first-class command line support**. With gauge `installed <../installations/README.md>`__, list the flags supported by running.
+Gauge has first-class command line support. With gauge :doc:`installed <installing>`, list the flags supported by running.
 
 .. code-block:: console
 
@@ -36,7 +36,7 @@ To create or initialize a Gauge project use run
 
    gauge --init
 
-For details, see how to `create a Gauge project <../getting_started/creating_a_gauge_project.md>`__.
+For details, see how to :ref:`create a Gauge project <create_a_project>`.
 
 Example
 ~~~~~~~
@@ -63,11 +63,7 @@ Example
 Executing tests
 ^^^^^^^^^^^^^^^
 
-Inside a Gauge project, you can execute your tests by invoking ``gauge``
-with path to
-`specifications <../gauge_terminologies/specifications.md>`__. By
-convention, specifications are stored in the the ``./specs/``
-sub-directory in the project root. 
+Inside a Gauge project, you can execute your tests by invoking ``gauge`` with path to :ref:`specifications <spec_syntax>`. By convention, specifications are stored in the the ``./specs/`` sub-directory in the project root. 
 
 The syntax is:
 
@@ -121,11 +117,7 @@ Multiple scenarios can be executed selectively as follows :
 
 These scenarios can also belong to different specifications.
 
-You can also specify a specific
-`scenario <../gauge_terminologies/scenarios.md>`__ or a list of
-scenarios to execute. To execute scenarios, ``gauge`` takes path to a
-specification file, followed by a colon and a zero-indexed number of
-scenarios.
+You can also specify a specific :ref:`scenario <scenario_syntax>` or a list of scenarios to execute. To execute scenarios, ``gauge`` takes path to a specification file, followed by a colon and a zero-indexed number of scenarios.
 
 For example, to execute the second scenario of a specification file
 named ``spec1.spec``, you would do:
@@ -201,9 +193,7 @@ Errors during execution
 Parse error in a spec file:
 """"""""""""""""""""""""""""""
 
-This occurs if the spec file doesn't follow the expected
-`specifications <../../gauge_terminologies/specifications.md>`__ syntax
-or parameters could not be resolved.
+This occurs if the spec file doesn't follow the expected :ref:`specifications <spec_syntax>` syntax or parameters could not be resolved.
 
 **Example**
 
@@ -499,8 +489,7 @@ Current Execution Context in the Hook
 
 -  To get additional information about the **current specification,
    scenario and step** executing, an additional **ExecutionContext**
-   parameter can be added to the
-   `hooks <../../language_features/execution_hooks.md>`__ method.
+   parameter can be added to the :ref:`hooks <execution_hooks>` method.
 
 
 .. code-block:: java
@@ -540,8 +529,7 @@ Current Execution Context in the Hook
 Filtering Hooks execution based on tags
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  You can specify tags for which the execution
-   `hooks <../../language_features/execution_hooks.md>`__ can run. This
+-  You can specify tags for which the execution :ref:`hooks <execution_hooks>` can run. This
    will ensure that the hook runs only on scenarios and specifications
    that have the required tags.
 
@@ -614,8 +602,7 @@ command:
 
     gauge --list-templates
 
-These templates can also be found in `Bintray Gauge
-Templates <https://bintray.com/gauge/Templates/gauge-templates/view#files>`__.
+These templates can also be found in `Bintray Gauge Templates <https://bintray.com/gauge/Templates/gauge-templates/view#files>`__.
 
 Initialize a Gauge project with Template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -640,8 +627,7 @@ This template creates a Gauge project with Maven as build tool and the
 selenium Webdriver. This will download the Gauge template
 ``java_maven_selenium`` and setup your project with useful sample code.
 
-Now, you can start writing
-`Specifications <../gauge_terminologies/specifications.md>`__ and
+Now, you can start writing :ref:`Specifications <spec_syntax>` and
 execute them.
 
 Step alias
@@ -856,21 +842,19 @@ Each directory has `.property files <https://en.wikipedia.org/wiki/.properties>`
 A **env/default** directory is created on project initialization which
 contains the default environment variables set during execution.
 
-Learn more about `managing environments <../../advanced_readings/managing_environments.md>`__.
+Learn more about :ref:`managing environments <environments>`.
 
 Specs Directory
 ~~~~~~~~~~~~~~~
 
-The specs directory contains all the
-`spec <../../gauge_terminologies/specifications.md>`__ files for the
+The specs directory contains all :ref:`spec <spec_syntax>` files for the
 project. They are the business layer specifications written in simple
 markdown format.
 
 A simple example spec (**example.spec**) is created in the specs
 directory to better understand the format of specifications.
 
-Learn more about
-`specifications <../../gauge_terminologies/specifications.md>`__
+Learn more about :ref:`spec <spec_syntax>`.
 
 Manifest file
 ~~~~~~~~~~~~~
@@ -1033,7 +1017,7 @@ Maven project using gauge-maven-plugin
    ``File > Settings > Maven > Importing``, mark the checkbox
    ``Import Maven projects automatically``.
 
-See `gauge-maven-plugin <../advanced_readings/dependency_management_plugins/maven-plugin.md>`__ for more details on using the gauge maven plugin.
+See :ref:`gauge-maven-plugin <maven>` for more details on using the gauge maven plugin.
 
 .. _intellij-features:
 
@@ -1122,8 +1106,7 @@ Debugging
 Debugging can be performed the same way spec execution works.
 
 -  Right click on a specification or specs directory -> Debug. Execution
-   will halt on marked
-   `breakpoints <https://www.jetbrains.com/idea/help/breakpoints.html>`__.
+   will halt on marked `breakpoints <https://www.jetbrains.com/idea/help/breakpoints.html>`__.
 
 Run Configuration
 ~~~~~~~~~~~~~~~~~
@@ -1181,8 +1164,7 @@ Create Spec and Concept files
 
 -  You can right-click in under any directory in the specs directory and
    create a new
-   `specification <../gauge_terminologies/specifications.md>`__ or
-   `concept <../gauge_terminologies/concepts.md>`__ file. They will be
+   :ref:`specification <spec_syntax>` or :ref:`concept <concept_syntax>` file. They will be
    created with a template to get you started.
 
 .. figure:: images/intellij-screenshots/additional/create_spec_file.png
@@ -1339,8 +1321,7 @@ Studio.
 Syntax Highlighting
 ~~~~~~~~~~~~~~~~~~~
 
-Gauge specs are in
-`Markdown <http://daringfireball.net/projects/markdown/syntax>`__
+Gauge specs are in `Markdown <https://daringfireball.net/projects/markdown/syntax>`__
 syntax. This plugin highlights Specifications, Scenarios, Steps and
 Tags.
 

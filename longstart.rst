@@ -12,7 +12,7 @@ gap.
 
 Some of the **key features** of Gauge that make it stand unique include:
 
--  A rich markup based on `markdown <https://en.wikipedia.org/wiki/Markdown>`__
+-  A rich markup based on `markdown <https://daringfireball.net/projects/markdown/syntax>`__
 -  Simple, Flexible and Rich Syntax
 -  Business Language Tests : Supports the concept of executable documentation.
 -  Consistent Cross Platform/Language Support for writing test code. Currently :ref:`supported languages <install-language-runner>`.
@@ -33,7 +33,7 @@ spec or specification describe a particular feature of the application
 under test.
 
 -  They are written in a ``.spec`` file. Gauge also supports ``.md`` file format.
--  The Markup for a Specification file is based on `markdown <https://en.wikipedia.org/wiki/Markdown>`__ syntax.
+-  The Markup for a Specification file is based on `markdown syntax <https://daringfireball.net/projects/markdown/syntax>`__.
 
 Example
 ^^^^^^^
@@ -89,8 +89,8 @@ or
 
     ## Scenario heading
 
--  A scenario contains one or more :ref:`steps <steps_syntax>` under it.
--  A scenario can be tagged using :ref:`tags <tags_tags>`.
+-  A scenario contains one or more :ref:`steps <step_syntax>` under it.
+-  A scenario can be tagged using :ref:`tags <tag_syntax>`.
 
 Example
 ^^^^^^^
@@ -364,7 +364,7 @@ Steps
 ~~~~~
 
 The concept header is followed by the steps that are used inside the
-concept. They are defined in the usual :ref:`steps <steps_syntax>` structure.
+concept. They are defined in the usual :ref:`steps <step_syntax>` structure.
 
 -  All the parameters used from the concept header will be in ``< >``
    brackets.
@@ -397,7 +397,7 @@ executing scenarios in a spec. Context steps can be used to set up data
 before running scenarios. They can also perform a setup or tear down
 function.
 
--  Any regular :ref:`steps <steps_syntax>` can be used as a context.
+-  Any regular :ref:`steps <step_syntax>` can be used as a context.
 -  Contexts are executed before every scenario in the spec.
 
 ::
@@ -442,7 +442,7 @@ scenario. They allow you to specify a set of clean-up steps after every
 execution of scenario in a spec. They are used to perform a tear down
 function.
 
--  Any regular :ref:`steps <steps_syntax>` can be used as a tear down step.
+-  Any regular :ref:`steps <step_syntax>` can be used as a tear down step.
 -  Tear down steps are executed after every scenario in the spec.
 
 Syntax
