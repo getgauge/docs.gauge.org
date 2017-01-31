@@ -52,8 +52,7 @@ Mac OS X
 
 -  Run ``brew update`` before installing the latest version of gauge.
 
--  If installation is failing `Upgrade
-   homebrew <http://docs.brew.sh/FAQ.html#how-do-i-update-my-local-packages>`__
+-  If installation is failing `Upgrade homebrew <http://docs.brew.sh/FAQ.html#how-do-i-update-my-local-packages>`__
 
 -  Gauge plugins are installed under ``~/.gauge/plugins`` directory.
 
@@ -73,7 +72,7 @@ Linux
 Plugin installation
 -------------------
 
--  If `plugin installation <../plugins/installation.md>`__ fails due to a network connection issue, you can **manually download** the plugin distributable zip and install it using the ``-f`` flag.
+-  If :ref:`plugin installation <plugins-installation>` fails due to a network connection issue, you can **manually download** the plugin distributable zip and install it using the ``-f`` flag.
 
 .. code-block:: console
 
@@ -85,7 +84,8 @@ Example:
 
     gauge --install html-report -f html-report-1.0.3-darwin.x86.zip
 
--  Find the plugin zip files under ``Releases`` section of the plugin github repositories. See the `gauge plugins list <../plugins/README.md>`__ for plugin repositories details.
+-  Find the plugin zip files under ``Releases`` section of the plugin github repositories. 
+See the `gauge plugin list <http://getgauge.io/plugins/index.html>`__ for plugin repositories details.
 
 Plugins directory
 ^^^^^^^^^^^^^^^^^
@@ -108,7 +108,7 @@ To install plugins at different location, set ``GAUGE_HOME`` environment variabl
 Execution
 ---------
 
-It is advised to use the latest version of gauge and `gauge plugins <../plugins/README.md>`__. See our `download page <http://getgauge.io/get-started/index.html>`__ for links to latest installation
+It is advised to use the latest version of gauge and `gauge plugins <http://getgauge.io/plugins/index.html>`__. See our `download page <http://getgauge.io/get-started/index.html>`__ for links to latest installation
 
 Validation Errors
 ^^^^^^^^^^^^^^^^^
@@ -120,8 +120,8 @@ Validation Errors
 
 These generally occur if step implementation is not found for a particular step. 
 
-- Ensure the `step implementation <../language_features/step_implementations.md>`__ for the step has been added. 
-- The `step template <../language_features/step_implementations.md>`__ marking the step in code is case sensitive and should match the step usage in the spec file.
+- Ensure the :ref:`step implementation <language-steps>` for the step has been added. 
+- The :ref:`step template <language-steps>` marking the step in code is case sensitive and should match the step usage in the spec file.
 
 Compatibility errors
 ^^^^^^^^^^^^^^^^^^^^
@@ -131,7 +131,7 @@ Compatibility errors
     Failed to start a runner. Compatible runner version to 0.0.7 not found
 
 -  The language plugin installed is not compatible with the gauge version installed.
--  Run ``gauge --install language_NAME`` to install the latest compatible version. See `plugin installation <../Installations/install_language_runners.md>`__ for
+-  Run ``gauge --install language_NAME`` to install the latest compatible version. See :ref:`plugin installation <plugins-installation>` for
    more details
 
 Execution Errors
@@ -165,7 +165,7 @@ This can occur because of following reasons :
 
 To Solve this : 
 
-- If gauge is not installed, `install gauge <installation.md>`__ 
+- If gauge is not installed, :ref:`install gauge <installing_gauge>`.
 - If gauge is installed at custom location, add ``custom_install_location/bin`` to ``PATH`` 
 - On custom installation location Set ``GAUGE_ROOT`` to ``custom_install_location``
 - Restart Intellij
