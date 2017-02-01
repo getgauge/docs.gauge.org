@@ -255,7 +255,7 @@ Java
 Java Specific configuration changes can be made in the
 ``env/default/java.properties`` file.
 
-.. code-block::
+.. code-block:: python
     :linenos:
     :name: java_properties
 

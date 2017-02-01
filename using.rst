@@ -202,7 +202,7 @@ This occurs if the spec file doesn't follow the expected :ref:`specifications <s
 
 **Example**
 
-::
+.. code-block:: text
 
     [ParseError] hello_world.spec : line no: 25, Dynamic parameter <product> could not be resolved
 
@@ -217,7 +217,7 @@ the steps in the specs to be executed.
 
 **Example**
 
-::
+.. code-block:: text
 
     login.spec:33: Step implementation not found. login with "user" and "p@ssword"
 

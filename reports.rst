@@ -63,7 +63,7 @@ XML report is based on `JUnit XML Schema <https://windyroad.com.au/dl/Open%20Sou
 
 **Sample XML Report Document** :
 
-::
+.. code-block:: xml
 
     <testsuites>
         <testsuite id="1" tests="1" failures="0" package="specs/hello_world.spec" time="0.002" timestamp="2015-09-09T13:52:00" name="Specification Heading" errors="0" hostname="INcomputer.local">
@@ -79,13 +79,13 @@ Installation
 
 To install XML Report plugin :
 
-::
+.. code-block:: console
 
     gauge --install xml-report
 
 To install a specific version of XML report plugin use the ``--plugin-version`` flag.
 
-::
+.. code-block:: console
 
     gauge --install xml-report --plugin-version 0.0.2
 
@@ -94,7 +94,7 @@ To install a specific version of XML report plugin use the ``--plugin-version`` 
 If plugin should be installed from a zipfile instead of downloading from
 plugin repository, use the ``--file`` or ``-f`` flag.
 
-::
+.. code-block:: console
 
     gauge --install xml-report --file ZIP_FILE_PATH
 
@@ -105,7 +105,7 @@ Configuration
 
 To add XML report plugin to your project, run the following command :
 
-::
+.. code-block:: console
 
     gauge --add-plugin xml-report
 
@@ -144,13 +144,13 @@ Installation
 
 To install:
 
-::
+.. code-block:: console
 
     gauge --install spectacle
 
 To install a specific version of spectacle plugin use the ``--plugin-version`` flag.
 
-::
+.. code-block:: console
 
     gauge --install spectacle --plugin-version 0.0.2
 
@@ -159,7 +159,7 @@ To install a specific version of spectacle plugin use the ``--plugin-version`` f
 If plugin should be installed from a zip file instead of downloading
 from plugin repository, use the ``--file`` or ``-f`` flag.
 
-::
+.. code-block:: console
 
     gauge --install spectacle --file ZIP_FILE_PATH
 
@@ -170,7 +170,7 @@ Export to HTML
 
 Run the following command to export to HTML in a Gauge project
 
-::
+.. code-block:: console
 
     gauge --docs spectacle <path to specs dir>
 

@@ -52,14 +52,14 @@ contain only one spec heading.
 It is written in ``<H1>`` syntax of markdown. This can be in two
 forms:
 
-::
+.. code-block:: gauge
 
     Spec Heading
     ============
 
 or
 
-::
+.. code-block:: gauge
 
     # Spec Heading
 
@@ -78,14 +78,14 @@ A scenario starts after a scenario heading or a scenario name. The
 scenario heading is written in markdown ``<H2>`` syntax. This can be
 written in 2 ways:
 
-::
+.. code-block:: gauge
 
     Scenario heading
     ----------------
 
 or
 
-::
+.. code-block:: gauge
 
     ## Scenario heading
 
@@ -95,7 +95,7 @@ or
 Example
 ^^^^^^^
 
-::
+.. code-block:: gauge
 
     Configuration
     =============
@@ -132,7 +132,7 @@ See how to write :ref:`language-steps` for different languages.
 Example
 ^^^^^^^
 
-::
+.. code-block:: gauge
 
     * Login into my app
     * Search for "gauge"
@@ -144,9 +144,9 @@ the underlying step implementation as a language specific structure.
 Note: The following characters are reserved for parameters, these
 cannot be used in step text. 
 
-   - " 
-   - < 
-   - >
+   - ``"``
+   - ``<``
+   - ``>``
 
 Parameters
 ----------
@@ -154,7 +154,7 @@ Parameters
 Steps can be defined to take values as parameters so that they can be
 re-used with different parameter values.
 
-::
+.. code-block:: gauge
 
     * Check "product 1" exists
     * Check "product 2" exists
@@ -170,7 +170,7 @@ Simple parameters
 
 They are values passed into the steps in double quotes.
 
-::
+.. code-block:: gauge
 
     * Create a “gauge-java” project
     * Write “100” line specification
@@ -199,7 +199,7 @@ parameters passed into steps
 Example
 ~~~~~~~
 
-::
+.. code-block:: gauge
 
     Create projects
     ===============
@@ -230,7 +230,7 @@ into the steps as parameters.
    - They are entered in angular brackets - ``<>`` in the step. 
    - They contain 2 parts separated by a colon ``:``
 
-::
+.. code-block:: gauge
 
     <prefix:value>
 
@@ -254,7 +254,7 @@ The prefix and value are below:
 
 **Value** : The value is the path to the file.
 
-::
+.. code-block:: gauge
 
     * Verify email text is <file:email.txt>
     * Check if <file:/work/content.txt> is visible
@@ -273,7 +273,7 @@ path to the csv file.
 
 **Value** : The value is the path to the csv file.
 
-::
+.. code-block:: gauge
 
     * Step that takes a table <table:data.csv>
     * Check if the following users exist <table:/Users/john/work/users.csv>
@@ -308,7 +308,7 @@ Example
 Both the ``Login specification`` and the scenario
 ``Successful login scenario`` have tags in the below example.
 
-::
+.. code-block:: gauge
 
     Login specification
     ===================
@@ -356,7 +356,7 @@ that it takes. It is written in the markdown **``H1``** format.
 -  All parameters are defined in angular brackets ``< >``.
 -  A concept definition must have a concept header.
 
-::
+.. code-block:: gauge
 
     # Concept name with <param0> and <param1>
 
@@ -371,7 +371,7 @@ concept. They are defined in the usual :ref:`steps <step_syntax>` structure.
 -  Fixed static parameter values are written in quotes ``" "``.
 -  Other concepts can also be called inside the concept definition.
 
-::
+.. code-block:: gauge
 
     # Login as user <username> and create project <project_name>
 
@@ -400,7 +400,7 @@ function.
 -  Any regular :ref:`steps <step_syntax>` can be used as a context.
 -  Contexts are executed before every scenario in the spec.
 
-::
+.. code-block:: gauge
 
     Delete project
     ==============
@@ -452,7 +452,7 @@ Syntax
 of tear down. Steps that are written in tear down(after three or more
 consecutive underscores) will be considered as tear down steps.
 
-::
+.. code-block:: gauge
 
     ___
     * Tear down step 1
@@ -462,7 +462,7 @@ consecutive underscores) will be considered as tear down steps.
 Example
 ^^^^^^^
 
-::
+.. code-block:: gauge
 
     Delete project
     ==============
