@@ -148,7 +148,7 @@ This defines configurations for java runner plugin. See :doc:`configuration` for
 Ruby
 ^^^^
 
-.. code-block:: bash
+.. code-block:: console
 
    gauge --init ruby
 
