@@ -546,28 +546,28 @@ Executing specs
 
 To execute gauge specs,
 
-.. code:: groovy
+.. code-block:: console
 
     gradle gauge
 
 Execute specs in parallel
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: groovy
+.. code-block:: console
 
     gradle gauge -PinParallel=true -PspecsDir=specs
 
 Execute specs by tags
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: groovy
+.. code-block:: console
 
     gradle gauge -Ptags="!in-progress" -PspecsDir=specs
 
 Specifying execution environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: groovy
+.. code-block:: console
 
     gradle gauge -Penv="dev" -PspecsDir=specs
 
@@ -623,7 +623,7 @@ It is possible to define new custom Gauge tasks by extending
 ``GaugePlugin`` class. It can be used to create/configure tasks specific
 for different environments. For example,
 
-.. code:: groovy
+.. code-block:: groovy
 
     task gaugeDev(type: GaugeTask) {
         doFirst {
