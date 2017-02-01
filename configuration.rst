@@ -332,9 +332,9 @@ Creating a new project from archetype
 
 .. code-block:: text
 
-    mvn archetype:generate -DgroupId={projectGroupId}
-    -DartifactId={projectArtifactId}
-    -DarchetypeArtifactId=gauge-archetype-java
+    mvn archetype:generate -DgroupId={projectGroupId} \
+    -DartifactId={projectArtifactId} \
+    -DarchetypeArtifactId=gauge-archetype-java \
     -DarchetypeGroupId=com.thoughtworks.gauge.maven
 
 Set **{projectGroupId}** and **{projectArtifactId}** based on your
