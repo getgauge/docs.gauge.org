@@ -23,5 +23,6 @@ Gauge is a light-weight cross-platform test automation tool with the ability to 
    configuration
    troubleshooting
    examples
+   howto/index
    faqs
    contribute
