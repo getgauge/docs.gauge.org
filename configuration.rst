@@ -501,7 +501,7 @@ Using plugin in project
 Apply plugin ***gauge*** and add classpath to your ***build.gradle***.
 Here is a sample gradle file,
 
-.. code:: groovy
+.. code-block:: groovy
 
     apply plugin: 'java'
     apply plugin: 'gauge'
