@@ -9,20 +9,21 @@ Welcome
 Gauge is a light-weight cross-platform test automation tool with the ability to author test cases in the business language.
 
 .. toctree::
-   :maxdepth: 2
+    :hidden:
+    :maxdepth: 2
 
-   self
-   installing
-   quickstart
-   longstart
-   using
-   syntax
-   plugins
-   language
-   reports
-   configuration
-   troubleshooting
-   examples
-   howto/index
-   faqs
-   contribute
+    self
+    installing
+    quickstart
+    longstart
+    using
+    syntax
+    plugins
+    language
+    reports
+    configuration
+    troubleshooting
+    examples
+    howto/index
+    faqs
+    contribute
