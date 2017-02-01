@@ -198,16 +198,24 @@ The console report would give you the details of the run
 
 The statistics of the scenarios indicate 
 
-- ``(a)`` is the total number of scenarios executed. 
-- ``(b)`` is the total number of scenarios passed. 
-- ``(c)`` is the total number of scenarios failed. 
-- ``(d)`` is the total number of scenarios skipped.
+======== ====================================
+Value    Description
+======== ====================================
+``(a)``  total number of scenarios executed. 
+``(b)``  total number of scenarios passed. 
+``(c)``  total number of scenarios failed. 
+``(d)``  total number of scenarios skipped.
+======== ====================================
 
 The statistics of the specifications indicate 
 
-- ``(w)`` is the total number specifications executed. 
-- ``(x)`` is the total number specifications with all scenarios passed. 
-- ``(y)`` is the total number specifications with atleast one scenario failed. 
-- ``(z)`` is the total number specifications with all scenarios skipped.
+======== ===============================================================
+Value    Description
+======== ===============================================================
+``(w)``  total number specifications executed. 
+``(x)``  total number specifications with all scenarios passed. 
+``(y)``  total number specifications with atleast one scenario failed. 
+``(z)``  total number specifications with all scenarios skipped.
+======== ===============================================================
 
-Check supported formats for :doc:`reports`.
+Check various supported formats for :doc:`reports`.

@@ -1,3 +1,7 @@
+.. contents:: :local:
+
+----
+
 ====
 FAQs
 ====
@@ -7,33 +11,34 @@ FAQs
 Installation
 ------------
 
-Q. **Where's the gauge executable installed by default?**
+Where's the gauge executable installed by default?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+------------+-------------------------------+
-| OS         | Path                          |
-+============+===============================+
-| Windows    | ``%ProgramFiles%\gauge\bin``  |
-+------------+-------------------------------+
-| MacOS/Linux| ``/usr/local/bin``            |
-+------------+-------------------------------+
+============= ================================
+OS            Path
+============= ================================
+Windows       ``%ProgramFiles%\gauge\bin``
+MacOS/Linux   ``/usr/local/bin``  
+============= ================================
 
 
 
 Where are the plugins installed?
 
-+------------+-------------------------------+
-| OS         | Path                          |
-+============+===============================+
-| Windows    | ``%APPDATA%\gauge\plugins``   |
-+------------+-------------------------------+
-| MacOS/Linux| ``~/.gauge/plugins``          |
-+------------+-------------------------------+
+============= ================================
+OS            Path                          
+============= ================================
+Windows       ``%APPDATA%\gauge\plugins``
+MacOS/Linux   ``~/.gauge/plugins``
+============= ================================
 
-Q. **How do I set a custom path for gauge configuration and plugins?**
+How do I set a custom path for gauge configuration and plugins?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Set the ``GAUGE_ROOT`` environment variable to point to your custom location.
 
-Q. **How can I manually install a plugin?**
+How can I manually install a plugin?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Download the plugin distributable zip file and install it using the ``-f`` flag.
 
@@ -44,7 +49,8 @@ Download the plugin distributable zip file and install it using the ``-f`` flag.
 Execution
 ---------
 
-Q. **Why do I get validation failure warning?**
+Why do I get validation failure warning?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: text
 
@@ -54,7 +60,8 @@ Q. **Why do I get validation failure warning?**
 Check if the step is implemented. 
 The steps are case sensitive, check if the cases match.
 
-Q. **Why does the runner fail to start?**
+Why does the runner fail to start?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: text
    
@@ -66,7 +73,8 @@ The language plugin is not compatible with the gauge version installed. Run
 
    gauge --install language_name
    
-Q. **Why are there too many open files?**
+Why are there too many open files?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: text
 
@@ -80,11 +88,14 @@ IDE
 ---
 
 Configuration
--------------
+^^^^^^^^^^^^^
 
-Gauge specific properties are stored in ``gauge.properties`` under gauge configuration folder.
+.. note::
 
-Q. **How can I increase the language runner timeout?**
+    Gauge specific properties are stored in ``gauge.properties`` under gauge configuration folder. Refer to :ref:`Gauge Properties<gauge_properties>`.
+
+How can I increase the language runner timeout?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By setting
 
@@ -93,32 +104,43 @@ By setting
    runner_connection_timeout = 3000
 
 Logs
-----
+^^^^
 
-Q. **Where does gauge log the test execution output. warnings, validation results etc?**
+Where does gauge log the test execution output. warnings, validation results etc?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You'll find the logged at ``logs/gauge.log`` in your projects directory.
 
-Q. **Where can I find gauge core API logs for debugging IDE plugins?**
+.. note::
+
+    ``logs`` is the default location for log files. This can be changed using ``logs_directory`` in :ref:`project's properties<default_properties>`.
+
+Where can I find gauge core API logs for debugging IDE plugins?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You'll find that at ``logs/api.log`` in your projects directory.
 
-Q. **How can I customize the log directory location?**
+.. note::
+
+    ``logs`` is the default location for log files. This can be changed using ``logs_directory`` in :ref:`project's properties<default_properties>`.
+
+How can I customize the log directory location?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can specify a custom directory by changing the ``logs_directory`` property under 
-``env/default/default.properties`` 
+``env/default/default.properties`` Refer to :ref:`project's properties<default_properties>`.
 
 .. code-block:: python
 
    logs_directory = my_custom_log_directory
 
-Q. **Where does gauge non project specific logs like plugin installation etc.?**
+Where does gauge non project specific logs like plugin installation etc.?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------+-------------------------------+
-| OS         | Path                          |
-+============+===============================+
-| Windows    | ``%APPDATA%\gauge\logs``      |
-+------------+-------------------------------+
-| MacOS/Linux| ``~/.gauge/logs``             |
-+------------+-------------------------------+
+============= ===============================
+OS            Path
+============= ===============================
+Windows       ``%APPDATA%\gauge\logs``
+MacOS / Linux ``~/.gauge/logs``
+============= ===============================
 

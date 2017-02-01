@@ -54,3 +54,7 @@ body{
 .admonition, .admonition p {
     font-size: small;
 }
+
+.simple ul > li {
+    padding-left: 0.9em;
+}

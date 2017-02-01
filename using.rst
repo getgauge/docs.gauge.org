@@ -338,21 +338,19 @@ should be executed, then use the following command:
 Tag expressions
 """""""""""""""
 
-Tags can be selected using expressions. Like:
+Tags can be selected using expressions. Examples:
 
--  **!TagA:** Selects specs/scenarios that do not have TagA.
--  **TagA & TagB:** Selects specs/scenarios that have both TagA and
-   TagB.
--  **TagA & !TagB:** Selects specs/scenarios that have TagA and not
-   TagB.
--  **TagA \| TagB:** Selects specs/scenarios that have either TagA or
-   TagB.
--  **(TagA & TagB) \| TagC:** Selects specs/scenarios that have either
-   TagC or both the tags TagA and TagB
--  **!(TagA & TagB) \| TagC:** Selects specs/scenarios that have either
-   TagC or do not have both the tags TagA and TagB
--  **(TagA \| TagB) & TagC:** Selects specs/scenarios that either TagA
-   and TagC or TagB and TagC
+================================== ===============================================================
+Tags                               Selects specs/scenarios that
+================================== ===============================================================
+``!TagA``                          do not have ``TagA``
+``TagA & TagB``                    have both ``TagA`` and ``TagB``.
+``TagA & !TagB``                   have ``TagA`` and not ``TagB``.
+``TagA | TagB``                    have either ``TagA`` or ``TagB``.
+``(TagA & TagB) | TagC``           have either ``TagC`` or both ``TagA`` and ``TagB``
+``!(TagA & TagB) | TagC``          have either ``TagC`` or do not have both TagA and TagB
+``(TagA | TagB) & TagC``           have either [``TagA`` and ``TagC``] or [``TagB`` and ``TagC``]
+================================== ===============================================================
 
 .. _parallel_execution:
 
