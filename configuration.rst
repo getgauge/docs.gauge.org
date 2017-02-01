@@ -8,7 +8,7 @@ All the Gauge specific internal configurations are stored in
 Global
 ------
 
-.. code-block:: default
+.. code-block:: python
     :linenos:
     :name: gauge_properties
 
@@ -56,7 +56,7 @@ Certain properties can be configured in
 properties and are scoped only to the current project. These are key
 value pairs.
 
-.. code-block:: default
+.. code-block:: python
     :linenos:
     :name: default_properties
 

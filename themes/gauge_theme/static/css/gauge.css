@@ -29,7 +29,11 @@ body{
     color: #aaaaaa;
 }
 
-.highlight-md .highlight pre, .highlight-md .highlight pre span.gh, .highlight-text .highlight pre, .highlight-console .highlight pre span.go{
+.highlight-xml .highlight pre, 
+.highlight-md .highlight pre, 
+.highlight-md .highlight pre span.gh, 
+.highlight-text .highlight pre, 
+.highlight-console .highlight pre span.go{
     color: #f8f8f2 !important;
 }
 
@@ -45,4 +49,8 @@ body{
     background-color: #f5c10e;
     cursor: pointer;
     color: #555555;
+}
+
+.admonition, .admonition p {
+    font-size: small;
 }
