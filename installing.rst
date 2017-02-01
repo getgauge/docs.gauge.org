@@ -131,7 +131,7 @@ Setup
 For stable releases, create file ``/etc/yum.repos.d/gauge-stable.repo``
 with the following content:
 
-::
+.. code-block:: text
 
     [gauge-stable]
     name=gauge-stable
@@ -154,7 +154,7 @@ unstable.
 For nightly releases, ``create /etc/yum.repos.d/gauge-nightly.repo``
 with the following content:
 
-::
+.. code-block:: text
 
     [gauge-nightly]
     name=gauge-nightly

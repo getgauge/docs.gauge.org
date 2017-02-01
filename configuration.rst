@@ -778,18 +778,18 @@ Install Gauge
 If your agent is Linux(RHEL, CentOS), you can install gauge via ``yum``
 by adding following commands:
 
-::
+.. code-block:: console
 
-    $ echo -e "[gauge-stable]\nname=gauge-stable\nbaseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-stable\ngpgcheck=0\nenabled=1" | sudo tee /etc/yum.repos.d/gauge-stable.repo
-    $ sudo yum install gauge
-    $ gauge_setup
+    echo -e "[gauge-stable]\nname=gauge-stable\nbaseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-stable\ngpgcheck=0\nenabled=1" | sudo tee /etc/yum.repos.d/gauge-stable.repo
+    sudo yum install gauge
+    gauge_setup
 
 More details on installation on all operating systems can be found
 `here <http://getgauge.io/documentation/user/current/installations/operating_system/>`__.
 
 -  Install Gauge language plugin as:
 
-   ::
+.. code-block:: console
 
        gauge --install <language>
 

@@ -46,7 +46,7 @@ Execution
 
 Q. **Why do I get validation failure warning?**
 
-::
+.. code-block:: text
 
    [WARN] Validation failed. The following steps have errors
    ...
@@ -56,7 +56,7 @@ The steps are case sensitive, check if the cases match.
 
 Q. **Why does the runner fail to start?**
 
-::
+.. code-block:: text
    
    Failed to start a runner. Compatible runner version to 0.0.7 not found
 
@@ -68,7 +68,7 @@ The language plugin is not compatible with the gauge version installed. Run
    
 Q. **Why are there too many open files?**
 
-:: 
+.. code-block:: text
 
    Error: too many open files
 
@@ -88,7 +88,7 @@ Q. **How can I increase the language runner timeout?**
 
 By setting
 
-:: 
+.. code-block:: python
 
    runner_connection_timeout = 3000
 
@@ -108,7 +108,7 @@ Q. **How can I customize the log directory location?**
 You can specify a custom directory by changing the ``logs_directory`` property under 
 ``env/default/default.properties`` 
 
-::
+.. code-block:: python
 
    logs_directory = my_custom_log_directory
 

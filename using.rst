@@ -712,7 +712,7 @@ Implementation
 Example 2
 ~~~~~~~~~
 
-::
+.. code-block:: gauge
 
     User Creation
     -------------
@@ -990,7 +990,7 @@ Nightly builds are also available in IntelliJ plugin repository.
    to add ``Nightly`` channel to IntelliJ Idea.
 -  Add the following repository URL
 
-   ::
+.. code-block:: text
 
        https://plugins.jetbrains.com/plugins/nightly/7535
 

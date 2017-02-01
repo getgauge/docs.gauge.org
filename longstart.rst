@@ -280,7 +280,7 @@ path to the csv file.
 
 **Sample csv file**:
 
-::
+.. code-block:: text
 
     Id,Name
     1,The Way to Go On
