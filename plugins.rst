@@ -6,8 +6,11 @@ various types of plugins that gauge currently supports.
 
 Language/Reporting Plugins
 --------------------------
+.. _language_plugins:
 
-Language plugins, also known as **language runners**, enable the users to
+.. rubric:: Language Plugins
+
+Language plugins, also known as **Language Runners**, enable the users to
 write the implementation of specs in a language of their choice. For a
 list of available language runners, see how to :ref:`install language runners <install-language-runner>`. 
 Allows you to write your tests in
@@ -16,12 +19,20 @@ Allows you to write your tests in
 -  `CSharp <https://github.com/getgauge/gauge-csharp>`__
 -  `Ruby <https://github.com/getgauge/gauge-ruby>`__
 
-Reporting plugins, as the name suggests, generate execution reports in various formats.
+.. _reporting_plugins:
+
+.. rubric:: Reporting Plugins
+
+Reporting plugins generate execution reports in various formats.
 
 -  `HTML Report <https://github.com/getgauge/html-report>`__
 -  `XML Report <https://github.com/getgauge/xml-report>`__
 
-Documentation plugins, generate readable and easy to navigate documentation from the specs.
+.. _documentation_plugins:
+
+.. rubric:: Documentation Plugins
+
+Documentation plugins generate readable and easy to navigate documentation from the specs.
 
 -  `Spectacle <https://github.com/getgauge/spectacle>`__
 

@@ -1,6 +1,8 @@
 Long Start
 ==========
 
+.. _why_gauge:
+
 Why Gauge?
 ----------
 

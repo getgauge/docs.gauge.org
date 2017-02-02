@@ -58,3 +58,38 @@ body{
 .simple ul > li {
     padding-left: 0.9em;
 }
+
+ul#resources li {
+    list-style: none;
+}
+
+ul#resources li dl dt{
+    font-size: larger;
+}
+
+ul#resources li dl dd{
+    margin-left: -2em;
+}
+
+ul#resources > li ul > li{
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+span.resource-description {
+    display: block;
+    font-size: smaller;
+    padding-left: 0.2em;
+    font-style: italic;
+}
+
+@media only screen and (min-width: 768px){
+    ul#resources{
+        -moz-column-count: 2;
+        -moz-column-gap: 2.5em;
+        -webkit-column-count: 2;
+        -webkit-column-gap: 2.5em;
+        column-count: 2;
+        column-gap: 2.5em;
+    }
+}
