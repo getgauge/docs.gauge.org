@@ -55,12 +55,13 @@ body{
     font-size: small;
 }
 
-.simple ul > li {
+#contents .simple ul > li {
     padding-left: 0.9em;
 }
 
 ul#resources li {
     list-style: none;
+    margin-left: 0px;
 }
 
 ul#resources li dl dt{
@@ -68,7 +69,7 @@ ul#resources li dl dt{
 }
 
 ul#resources li dl dd{
-    margin-left: -15px;
+    margin-left: 5px;
 }
 
 ul#resources > li ul > li{
