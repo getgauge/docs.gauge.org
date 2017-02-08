@@ -162,3 +162,4 @@ scv_banner_greatest_tag = True
 scv_grm_exclude = ('.gitignore', '.nojekyll', 'README.rst')
 scv_show_banner = True
 scv_sort = ('semver', 'time')
+scv_greatest_tag = True

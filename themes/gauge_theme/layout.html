@@ -46,6 +46,14 @@
             {%- endfor %}
         </dl>
         {%- endif %}
+        {%- if versions.branches %}
+        <dl>
+            <dt>Branches</dt>
+            {%- for name, url in versions.branches %}
+            <dd><a href="{{ url }}">{{ name }}</a></dd>
+            {%- endfor %}
+        </dl>
+        {%- endif %}
     </div>
 </div>
 {% endblock %}
