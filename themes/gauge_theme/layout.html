@@ -20,7 +20,7 @@
 
 {% if theme_display_version %}
   {%- set nav_version = version %}
-  {% if READTHEDOCS and current_version %}
+  {% if current_version %}
     {%- set nav_version = current_version %}
   {% endif %}
   {% if nav_version %}
@@ -40,16 +40,8 @@
     <div class="rst-other-versions">
         {%- if versions.tags %}
         <dl>
-            <dt>Tags</dt>
+            <dt>Versions</dt>
             {%- for name, url in versions.tags %}
-            <dd><a href="{{ url }}">{{ name }}</a></dd>
-            {%- endfor %}
-        </dl>
-        {%- endif %}
-        {%- if versions.branches %}
-        <dl>
-            <dt>Branches</dt>
-            {%- for name, url in versions.branches %}
             <dd><a href="{{ url }}">{{ name }}</a></dd>
             {%- endfor %}
         </dl>
