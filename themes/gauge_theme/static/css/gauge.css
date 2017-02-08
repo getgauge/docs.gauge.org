@@ -94,3 +94,11 @@ span.resource-description {
         column-gap: 2.5em;
     }
 }
+
+.scv-banner > a, .scv-banner > a:visited {
+    color: #555555;
+}
+
+.scv-banner {
+    background-color: #f5c10e;
+}
