@@ -8,6 +8,19 @@ SPHINXPROJ    = Gauge
 SOURCEDIR     = .
 BUILDDIR      = _build
 
+EXCLUDES      = _images _static .doctrees
+
+versions:
+	sphinx-versioning build . _build/html
+	sphinx-versioning build . _build/singlehtml -- -b singlehtml -A SINGLEHTML=true
+
+zip:
+	$(foreach folder,$(filter-out $(EXCLUDES), $(notdir $(shell find _build/singlehtml -maxdepth 1 -mindepth 1 -type d))), \
+		echo "Using $(folder) "; \
+		mkdir -p "_build/html/$(folder)/downloads"; \
+		(cd "_build/singlehtml/$(folder)" && zip -r -D "../../../_build/html/$(folder)/downloads/gauge-v-$(folder).zip" *) ; \
+	)
+
 # Put it first so that "make" without argument is like "make help".
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
