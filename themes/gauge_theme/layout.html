@@ -31,7 +31,7 @@
 {% endif %}
 
 {% include "searchbox.html" %}
-{%- if versions and not SINGLEHTML %}
+{%- if not SINGLEHTML %}
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
         <span class="fa fa-book"> Other Versions</span>
@@ -39,14 +39,22 @@
         <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
-        {%- if versions.branches %}
+        {%- if versions and versions.branches %}
         <dl>
             <dt>Versions</dt>
             {%- for name, url in versions.branches %}
-            <dd><a href="{{ url }}">{{ name }}</a></dd>
+            <dd>
+              <a href="{{ url }}">{{ name }}</a>
+            </dd>
             {%- endfor %}
         </dl>
         {%- endif %}
+        <dl>
+            <dt>Downloads</dt>
+            <dd>
+              <a href="{{ pathto('downloads/gauge-v-' + nav_version + '.zip', 1) }}">htmlzip</a>
+            </dd>
+        </dl>
     </div>
 </div>
 {%- endif %}
