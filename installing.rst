@@ -1,35 +1,56 @@
 Installation
 ============
 
-.. _installing_gauge:
+.. _installing_gauge_recomd_options:
 
 Installing Gauge
 ----------------
 
-.. note::
-    Refer :ref:`Installing Plugins <plugins-installation>` for instructions on installing a Gauge plugin.
-
-Windows
-^^^^^^^
-
-Using the installer
+Recommended options
 ~~~~~~~~~~~~~~~~~~~
 
+Windows - Using the installer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 `Download <http://getgauge.io/get-started>`__ the installer based on your system configuration and run it. Click your way through till you're asked to select your language.
-
-The Windows installer allows you to select the language plugin(s) as part of the the installation process. A language plugin is essentially the language(s) that you would use to write your tests in. Check the box(es) you want to install. You can select more than one language plugin to install.
-
-.. figure:: images/install-lang-runner.jpg
-   :alt: Select language runner
-
-   Select language runner
 
 Gauge is installed in ``%PROGRAMFILES%`` by default. But you can select
 where you want to install Gauge and complete Gauge installation.
 
-Using Chocolatey
-~~~~~~~~~~~~~~~~
+MacOS - Home Brew
+^^^^^^^^^^^^^^^^^
 
+The following command installs Gauge.
+
+For this to work, you will need to install `homebrew <http://brew.sh/>`__. If you have brew installed then all you need to run is this command; it will download and install Gauge. This requires you to be connected to the Internet.
+
+.. code-block:: console
+
+    brew update
+    brew install gauge
+
+Linux - Install manually
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`Download <http://getgauge.io/get-started>`__ the zip file. Choose the
+archive file appropriate for your installation. And run the command
+below to install Gauge.
+
+.. code-block:: console
+
+    unzip gauge-$VERSION-$OS.$ARCH.zip
+    ./install.sh
+
+Having trouble with installation? Head over to our :ref:`installation-faq` FAQ's.
+
+Other Options
+~~~~~~~~~~~~~
+
+Windows
+^^^^^^^
+
+Using Chocolatey
+++++++++++++++++
 You can install Gauge using Chocolatey as well.
 
 .. code-block:: console
@@ -45,28 +66,8 @@ If you're upgrading to a newer version, then use the command:
 MacOS
 ^^^^^
 
-Home Brew
-~~~~~~~~~
-
-The following command installs Gauge.
-
-For this to work, you will need to install `homebrew <http://brew.sh/>`__. If you have brew installed then all you need to run is this command; it will download and install Gauge. This requires you to be connected to the Internet.
-
-.. code-block:: console
-
-    brew update
-    brew install gauge
-
-If you already have a version of Gauge then the following command will
-update to the latest version of Gauge.
-
-.. code-block:: console
-
-    brew update
-    brew upgrade gauge
-
 Offline Installation (pkg installer)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++++++++++
 
 You can `download the Gauge installer <http://getgauge.io/get-started>`__. This is a ``pkg`` file, so you can click your way through to finish installing Gauge.
 
@@ -76,10 +77,10 @@ Linux
 ^^^^^
 
 On Debian, Ubuntu
-~~~~~~~~~~~~~~~~~
++++++++++++++++++
 
 Setup
-"""""
+#####
 
 Add Gauge's GPG key:
 
@@ -106,7 +107,7 @@ try out Gauge nightly, do this:
     echo deb https://dl.bintray.com/gauge/gauge-deb nightly main | sudo tee -a /etc/apt/sources.list
 
 Install
-"""""""
+#######
 
 .. code-block:: console
 
@@ -121,10 +122,10 @@ plugins, run this command as a regular user to complete installation:
     gauge_setup
 
 On RHEL, Fedora, CentOS
-~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++
 
 Setup
-"""""
+#####
 
 **Stable**
 
@@ -169,7 +170,7 @@ You can use this command to do it in one step:
     echo -e "[gauge-nightly]\nname=gauge-nightly\nbaseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-nightly\ngpgcheck=0\nenabled=1" | sudo tee /etc/yum.repos.d/gauge-nightly.repo
 
 Install
-"""""""
+#######
 
 Install on Fedora:
 
@@ -191,7 +192,7 @@ plugins, run this command as a regular user to complete installation:
     gauge_setup
 
 Install manually
-~~~~~~~~~~~~~~~~
+################
 
 `Download <http://getgauge.io/get-started>`__ the zip file. Choose the
 archive file appropriate for your installation. And run the command
@@ -203,6 +204,51 @@ below to install Gauge.
     ./install.sh
 
 Having trouble with installation? Head over to our :ref:`installation-faq` FAQ's.
+
+Install language runner
+-----------------------
+
+C#
+~~
+
+.. code-block:: console
+
+   gauge --install csharp
+
+Java
+~~~~
+
+.. code-block:: console
+
+   gauge --install java
+
+
+Ruby
+~~~~
+
+.. code-block:: console
+
+   gauge --install ruby
+
+One can use IDEs to create the projects and run specifications, for this
+example, we are using the command line options.
+
+Install Reporting plugin
+------------------------
+
+HTML Reports
+~~~~~~~~~~~~
+
+.. code-block:: console
+
+   gauge --install html-report
+
+XML Reports
+~~~~~~~~~~~
+
+.. code-block:: console
+
+   gauge --install xml-report
 
 Verify your installation
 ------------------------
@@ -223,19 +269,18 @@ has been successful. Your output will look like this:
 
     Plugins
     -------
-    language(<version number>)
+    plugin(<version number>)
 
 You can read more about plugins :doc:`here <plugins>`.
 
 If you have Gauge and your language runner installed, then see how you can :ref:`create a Gauge project <create_a_project>`.
 
 
-
 Uninstallation
 --------------
 
 Uninstalling Gauge
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 .. warning::
     If you plan to remove Gauge and the installed plugins, follow the steps in :ref:`plugins-uninstallation` first.
@@ -244,7 +289,7 @@ Uninstalling Gauge
 To uninstall Gauge, run the following commands:
 
 OS X/Linux
-~~~~~~~~~~
+^^^^^^^^^^
 
 .. code-block:: console
 
@@ -254,7 +299,7 @@ If Gauge is installed in custom location, user will have to remove
 corresponding files/directory.
 
 Windows
-~~~~~~~
+^^^^^^^
 
 Run the executable ``uninst.exe`` found in Gauge install location.
 
@@ -263,7 +308,7 @@ More on Gauge install location can be found `here <troubleshoot_gauge_installati
 .. _plugins-uninstallation:
 
 Uninstalling plugins
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 Plugins can be uninstalled using the ``uninstall`` flag. The command is
 

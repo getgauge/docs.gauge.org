@@ -49,12 +49,14 @@
             {%- endfor %}
         </dl>
         {%- endif %}
+        {%- if current_version %}
         <dl>
             <dt>Downloads</dt>
             <dd>
               <a href="{{ pathto('downloads/gauge-v-' + current_version + '.zip', 1) }}">htmlzip</a>
             </dd>
         </dl>
+        {%- endif %}
     </div>
 </div>
 {%- endif %}

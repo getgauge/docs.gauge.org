@@ -9,34 +9,6 @@ Prerequisites
 
 .. _install-language-runner:
 
-Install language runner
------------------------
-
-C#
-^^
-
-.. code-block:: console
-
-   gauge --install csharp
-
-Java
-^^^^
-
-.. code-block:: console
-
-   gauge --install java
-
-
-Ruby
-^^^^
-
-.. code-block:: console
-
-   gauge --install ruby
-
-One can use IDEs to create the projects and run specifications, for this
-example, we are using the command line options.
-
 .. _create_a_project:
 
 Creating a Project
@@ -196,25 +168,25 @@ The console report would give you the details of the run
     Specifications: (w) executed    (x) passed  (y) failed  (z) skipped
     Scenarios:      (a) executed    (b) passed  (c) failed  (d) skipped
 
-The statistics of the scenarios indicate 
+The statistics of the scenarios indicate
 
 ======== ====================================
 Value    Description
 ======== ====================================
-``(a)``  total number of scenarios executed. 
-``(b)``  total number of scenarios passed. 
-``(c)``  total number of scenarios failed. 
+``(a)``  total number of scenarios executed.
+``(b)``  total number of scenarios passed.
+``(c)``  total number of scenarios failed.
 ``(d)``  total number of scenarios skipped.
 ======== ====================================
 
-The statistics of the specifications indicate 
+The statistics of the specifications indicate
 
 ======== ===============================================================
 Value    Description
 ======== ===============================================================
-``(w)``  total number specifications executed. 
-``(x)``  total number specifications with all scenarios passed. 
-``(y)``  total number specifications with atleast one scenario failed. 
+``(w)``  total number specifications executed.
+``(x)``  total number specifications with all scenarios passed.
+``(y)``  total number specifications with atleast one scenario failed.
 ``(z)``  total number specifications with all scenarios skipped.
 ======== ===============================================================
 
