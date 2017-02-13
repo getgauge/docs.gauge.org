@@ -3,7 +3,7 @@ Installation
 
 .. _installing_gauge_recomd_options:
 
-Installing Gauge
+Install Gauge
 ----------------
 
 Recommended options
