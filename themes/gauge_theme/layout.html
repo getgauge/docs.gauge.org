@@ -61,12 +61,4 @@
 </div>
 {%- endif %}
 {% endblock %}
-{% block extrahead %}
-<script type="text/javascript">
-  document.onreadystatechange = function(){
-      if(document.readyState === 'complete'){
-          DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = '{{ sourcelink_suffix }}';
-      }
-  }
-</script>
-{% endblock %}
+{% set script_files = script_files + ["_static/suffix.js"] %}
