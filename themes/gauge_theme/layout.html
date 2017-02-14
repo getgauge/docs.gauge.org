@@ -23,6 +23,9 @@
   {% if current_version %}
     {%- set nav_version = current_version %}
   {% endif %}
+  {% if latest_version and nav_version == 'latest' %}
+    {%- set nav_version = latest_version %}
+  {% endif %}
   {% if nav_version %}
     <div class="gauge-version">
       {{ nav_version }}
@@ -39,12 +42,16 @@
         <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
-        {%- if versions and versions.branches %}
+        {%- if versions %}
         <dl>
             <dt>Versions</dt>
-            {%- for name, url in versions.branches %}
+            {%- for v in versions.split(' ') %}
             <dd>
-              <a href="{{ url }}">{{ name }}</a>
+              {%- if v == 'latest' %}
+                <a href="/">{{ v }}</a>
+              {% else %}
+                <a href="/{{v}}">{{ v }}</a>
+              {% endif %}
             </dd>
             {%- endfor %}
         </dl>

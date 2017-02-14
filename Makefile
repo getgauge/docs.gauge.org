@@ -6,15 +6,42 @@ SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = Gauge
 SOURCEDIR     = .
-BUILDDIR      = _build
+BUILDDIR      = _build	
 
 EXCLUDES      = _images _static .doctrees
 
-versions:
-	sphinx-versioning build . _build/html
-	sphinx-versioning build . _build/singlehtml -- -b singlehtml -A SINGLEHTML=true
+REMOTEBRANCHES = $(shell git for-each-ref --format='%(refname:strip=3)' refs/remotes/) 
+LOCALBRANCHES = $(shell git for-each-ref --format='%(refname:strip=2)' refs/heads/)
+LATESTBRANCH = $(shell git for-each-ref --sort='-*authordate' --format='%(refname:strip=3)' --count=3 refs/remotes/ | grep -v "master\|HEAD")
+VERSIONS = $(filter-out $(LATESTBRANCH) HEAD, $(REMOTEBRANCHES))
 
-zip:
+versions: prune
+	
+	# sync local with remote
+	$(foreach version, $(filter-out $(LOCALBRANCHES) HEAD, $(REMOTEBRANCHES)),\
+		echo "Fetching $(version) from remote"; \
+		git checkout -b $(version) origin/$(version); \
+		git pull; \
+	)
+	# for each branches, generate html, singlehtml
+	$(foreach version, $(VERSIONS), \
+		git checkout $(version);\
+		sphinx-build -b html . _build/html/$(version) -A current_version=$(version) \
+		   -A latest_version=$(LATESTBRANCH) -A versions="$(VERSIONS) latest";\
+		sphinx-build -b singlehtml . _build/singlehtml/$(version) -A SINGLEHTML=true;\
+	)
+	git checkout $(LATESTBRANCH);\
+	sphinx-build -b html . _build/html/ -A current_version=latest \
+		-A latest_version=$(LATESTBRANCH) -A versions="$(VERSIONS) latest";\
+	git checkout master
+
+prune: clean
+	git checkout master;\
+	$(foreach branch, $(filter-out master, $(LOCALBRANCHES)),\
+		git branch -D $(branch); \
+	)
+
+zip: versions
 	$(foreach folder,$(filter-out $(EXCLUDES), $(notdir $(shell find _build/singlehtml -maxdepth 1 -mindepth 1 -type d))), \
 		echo "Using $(folder) "; \
 		mkdir -p "_build/html/$(folder)/downloads"; \
