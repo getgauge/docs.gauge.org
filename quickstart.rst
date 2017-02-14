@@ -34,7 +34,7 @@ Follow the instructions for the respective language below. On getting the messag
 
 .. note::
 
-   Refer :ref:`executing_tests` for files that get created for all languages.
+   Refer :ref:`project_structure` for files that get created for all languages.
 
 Running the specs
 -----------------
@@ -45,6 +45,10 @@ Running the specs
 
 The details of the run are displayed on the command line followed by a
 statistics summary.
+
+.. note::
+
+   Refer :ref:`executing_tests` for more details.
 
 Interpret results
 -----------------

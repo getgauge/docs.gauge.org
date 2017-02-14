@@ -1,8 +1,5 @@
-
-.. _installing_gauge_alternate_options:
-
-Alternate Install Options
-=========================
+Other Installation Options
+==========================
 Windows
 ^^^^^^^
 

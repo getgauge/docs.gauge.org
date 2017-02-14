@@ -1,21 +1,20 @@
+.. _installing_gauge_recomd_options:
+
 Installation
 ============
 
-.. _installing_gauge_recomd_options:
+Here is the recommended installation steps for all OS.
 
-Install Gauge
-----------------
-
-Windows - Using the installer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Windows
+-------
 
 `Download <http://getgauge.io/get-started>`__ the installer based on your system configuration and run it. Click your way through till you're asked to select your language.
 
 Gauge is installed in ``%PROGRAMFILES%`` by default. But you can select
 where you want to install Gauge and complete Gauge installation.
 
-MacOS - Home Brew
-~~~~~~~~~~~~~~~~~
+MacOS
+-----
 
 The following command installs Gauge.
 
@@ -26,8 +25,8 @@ For this to work, you will need to install `homebrew <http://brew.sh/>`__. If yo
     brew update
     brew install gauge
 
-Linux - Install manually
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Linux
+-----
 
 `Download <http://getgauge.io/get-started>`__ the zip file. Choose the
 archive file appropriate for your installation. And run the command
@@ -41,9 +40,9 @@ below to install Gauge.
 Having trouble with installation? Head over to our :ref:`installation-faq` FAQ's.
 
 Other Options
-~~~~~~~~~~~~~
+---------------
 
-There are alternate ways to install Gauge. Read our :ref:`installing_gauge_alternate_options` to know more
+Read our :ref:`installing_gauge_other_options` to know more
 
 Verify your installation
 ------------------------

@@ -816,6 +816,8 @@ This will change all spec files to reflect the change.
     * create user "john" with id "123" and last name "watson"
     * create user "mark" with id "345" and last name "watson"
 
+.. _project_structure:
+
 Project Structure
 -----------------
 
@@ -868,44 +870,143 @@ following content.
 
 .. code:: js
 
-    {
-      "Language": "<language>",
-      "Plugins": [
-        "html-report"
-      ]
-    }
+   {
+     "Language": "<language>",
+     "Plugins": [
+       "html-report"
+     ]
+   }
 
--  **language** : Programming language used for the test code. Gauge
-   uses the corresponding language runner for executing the specs.
+-  **language** : Programming language used for the test code. Gauge uses the corresponding language runner for executing the specs.
 
--  **Plugins** : The gauge plugins used for the project. Some plugins
-   are used by default on each gauge project. The plugins can be added
-   to project by running the following command :
+-  **Plugins** : The gauge plugins used for the project. Some plugins are used by default on each gauge project. The plugins can be added to project by running the following command :
 
-   .. code:: console
+  .. code:: console
 
-       gauge --add-plugin <plugin-name>
+      gauge --add-plugin <plugin-name>
 
-   Example :
+  Example :
 
-   .. code:: console
+  .. code:: console
 
-       gauge --add-plugin xml-report
+      gauge --add-plugin xml-report
 
 After running the above command, the manifest.json would have the
 following content:
 
 .. code:: js
 
-    {
-      "Language": "<language>",
-      "Plugins": [
-        "html-report",
-        "xml-report"
-      ]
-    }
+   {
+     "Language": "<language>",
+     "Plugins": [
+       "html-report",
+       "xml-report"
+     ]
+   }
 
 .. _`ide_support`:
+
+C# Project files
+^^^^^^^^^^^^^^^^
+
+When creating a new Gauge C# project, the csharp specific project files
+created in the project are:
+
+.. code-block:: text
+
+   ├── foo.csproj
+   ├── foo.sln
+   ├── manifest.json
+   ├── packages.config
+   ├── StepImplementation.cs
+   │
+   ├── env
+   │   └───default
+   │           default.properties
+   │
+   ├───packages
+       └───<Nuget Package Binaries>
+   ├───Properties
+   │       AssemblyInfo.cs
+   │
+   └───specs
+           hello_world.spec
+
+packages.config
+~~~~~~~~~~~~~~~
+
+For ``nuget``. Contains the dependencies for Gauge. One can add more to
+this list, depending on your project needs.
+
+StepImplementation.cs
+~~~~~~~~~~~~~~~~~~~~~
+
+Contains the implementations for the sample steps defined in
+``hello_world.spec``.
+
+default.properties
+~~~~~~~~~~~~~~~~~~
+
+This defines default configurations for gauge csharp runner plugin.
+Currently the configuration parameters are:
+
+-  ``gauge_reports_dir`` - The path to the gauge reports directory. Should be either relative to the project directory or an absolute path
+-  ``overwrite_reports`` - Set as false if gauge reports should not be overwritten on each execution. A new time-stamped directory will be created on each execution. This is ``true`` by default.
+
+Java project files
+^^^^^^^^^^^^^^^^^^
+
+The java specific project files create in the project are:
+
+.. code-block:: text
+
+   ├── libs
+   └── src
+       └── test
+           └── java
+               └── StepImplementation.java
+   ├── env
+       └── default
+           └── java.properties
+
+libs
+~~~~
+
+This contains the additional java dependencies for the project.
+
+src
+~~~~
+
+Src directory contains the classes the test code including step
+implementations.
+
+java.properties
+~~~~~~~~~~~~~~~~
+
+This defines configurations for java runner plugin. See :doc:`configuration` for more details.
+
+Ruby Project files
+^^^^^^^^^^^^^^^^^^
+
+The ruby specific project files create in the project are:
+
+.. code-block:: text
+
+   ├── env
+   │   └── default
+   │       └── ruby.properties
+   └── step_implementations
+       └── step_implementation.rb
+
+step_implementations directory
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This contains all the ``.rb`` files with the test code including step implementations in ruby
+
+ruby.properties
+~~~~~~~~~~~~~~~
+
+This defines configurations for ruby runner plugin.
 
 IDE Support
 -----------
