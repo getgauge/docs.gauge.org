@@ -34,7 +34,7 @@ Since Flags get added/deprecated with versions, it is recommended to get this re
 Creating a project
 ^^^^^^^^^^^^^^^^^^
 
-To create or initialize a Gauge project use run 
+To create or initialize a Gauge project use run
 
 .. code-block:: console
 
@@ -42,32 +42,12 @@ To create or initialize a Gauge project use run
 
 For details, see how to :ref:`create a Gauge project <create_a_project>`.
 
-Example
-~~~~~~~
-
-.. code-block:: console
-   :caption: C#
-
-   gauge --init csharp 
- 
-.. code-block:: console
-   :caption: Java
-
-   gauge --init java 
-
-  
-.. code-block:: console
-   :caption: Ruby
-
-   gauge --init ruby
-
-
-.. _project_structure:
+.. _executing_tests:
 
 Executing tests
 ^^^^^^^^^^^^^^^
 
-Inside a Gauge project, you can execute your tests by invoking ``gauge`` with path to :ref:`specifications <spec_syntax>`. By convention, specifications are stored in the the ``./specs/`` sub-directory in the project root. 
+Inside a Gauge project, you can execute your tests by invoking ``gauge`` with path to :ref:`specifications <spec_syntax>`. By convention, specifications are stored in the the ``./specs/`` sub-directory in the project root.
 
 The syntax is:
 
@@ -101,7 +81,7 @@ line number in the span of that scenario in the spec. To execute a
     :linenos:
     :name: specify_scenario
     :emphasize-lines: 4-7
-    
+
     Configuration
     =============
 
@@ -501,7 +481,7 @@ Current Execution Context in the Hook
 
 
 .. code-block:: java
-  :caption: Java   
+  :caption: Java
 
     @BeforeScenario
     public void loginUser(ExecutionContext context) {
@@ -521,18 +501,18 @@ Current Execution Context in the Hook
 
     This feature is not yet
     supported in Gauge-CSharp. Please refer to
-    https://github.com/getgauge/gauge-csharp/issues/53 for updates. 
+    https://github.com/getgauge/gauge-csharp/issues/53 for updates.
 
 .. code-block:: ruby
   :caption: ruby
 
-    before_spec do |execution_info| 
-        puts execution_info.inspect 
+    before_spec do |execution_info|
+        puts execution_info.inspect
     end
 
     after_spec do |execution_info|
-        puts execution_info.inspect 
-    end 
+        puts execution_info.inspect
+    end
 
 Filtering Hooks execution based on tags
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -543,55 +523,55 @@ Filtering Hooks execution based on tags
 
 .. code-block:: java
   :caption: Java
-    
-    // A before spec hook that runs when tag1 and tag2 
+
+    // A before spec hook that runs when tag1 and tag2
     // is present in the current scenario and spec.
-    @BeforeSpec(tags = {"tag1, tag2"}) 
-    public void loginUser() { 
-        // Code forbefore scenario 
+    @BeforeSpec(tags = {"tag1, tag2"})
+    public void loginUser() {
+        // Code forbefore scenario
     }
 
-    // A after step hook runs when tag1 or tag2 
-    // is present in the currentscenario and spec. 
+    // A after step hook runs when tag1 or tag2
+    // is present in the currentscenario and spec.
     // Default tagAggregation value is Operator.AND.
-    @AfterStep(tags = {"tag1", "tag2"}, tagAggregation = Operator.OR) 
-    public void performAfterStep() { 
-        // Code for after step 
-    } 
+    @AfterStep(tags = {"tag1", "tag2"}, tagAggregation = Operator.OR)
+    public void performAfterStep() {
+        // Code for after step
+    }
 
 .. code-block:: java
   :caption: C#
 
-    // A before spec hook that runs when tag1 and tag2 
-    // is present in the current scenario and spec. 
-    [BeforeSpec("tag1, tag2")] 
-    public void LoginUser() { 
-        // Code for before scenario 
+    // A before spec hook that runs when tag1 and tag2
+    // is present in the current scenario and spec.
+    [BeforeSpec("tag1, tag2")]
+    public void LoginUser() {
+        // Code for before scenario
     }
 
-    // A after step hook runs when tag1 or tag2 
-    // is present in the current scenario and spec. 
+    // A after step hook runs when tag1 or tag2
+    // is present in the current scenario and spec.
     // Default tagAggregation value is Operator.AND.
     [AfterStep("tag1", "tag2")]
     [TagAggregationBehaviour(TagAggregation.Or)]
-    public void PerformAfterStep() { 
-        // Code for after step 
-    } 
-    
+    public void PerformAfterStep() {
+        // Code for after step
+    }
+
 .. code-block:: ruby
   :caption: Ruby
 
-    # A before spec hook that runs when 
+    # A before spec hook that runs when
     # tag1 and tag2 is present in the current scenario and spec.
-    before_spec({tags: ['tag2', 'tag1']}) do 
+    before_spec({tags: ['tag2', 'tag1']}) do
         # Code for before scenario
     end
 
     # A after step hook runs when tag1 or tag2 is present in the current scenario and spec.
     # Default tagAggregation value is Operator.AND.
 
-    after_spec({tags: ['tag2', 'tag1'], operator: 'OR'}) do 
-        # Code for after step 
+    after_spec({tags: ['tag2', 'tag1'], operator: 'OR'}) do
+        # Code for after step
     end
 
 .. note:: Tags cannot be specified on @BeforeSuite and @AfterSuite hooks
@@ -690,7 +670,7 @@ Implementation
 
 .. code-block:: java
   :caption: C#
-    
+
     public class Users {
 
         [Step({"Create a user <user_name>", "Create another user <user_name>"})]
@@ -703,8 +683,8 @@ Implementation
 .. code-block:: ruby
   :caption: Ruby
 
-    step 'Create a user ','Create another user ' do |user_name| 
-        // create user user_name 
+    step 'Create a user ','Create another user ' do |user_name|
+        // create user user_name
     end
 
 Example 2
@@ -745,7 +725,7 @@ Implementation
 
 .. code-block:: java
   :caption: C#
-    
+
     public class Users {
 
         [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
@@ -757,7 +737,7 @@ Implementation
 
 .. code-block:: ruby
   :caption: Ruby
-    
+
     step 'A email is sent to the user', 'An email confirming the is sent' do |email_type|
         email_service.send email_type
     end
@@ -1430,4 +1410,3 @@ Create Spec and Concept files
 
 .. |install plugin| image:: images/intellij-screenshots/add_plugin.png
 .. |extract concept| image:: images/intellij-screenshots/etc.gif
-

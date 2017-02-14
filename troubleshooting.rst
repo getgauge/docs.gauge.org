@@ -117,9 +117,9 @@ Validation Errors
     [WARN] Validation failed. The following steps have errors
     ...
 
-These generally occur if step implementation is not found for a particular step. 
+These generally occur if step implementation is not found for a particular step.
 
-- Ensure the :ref:`step implementation <language-steps>` for the step has been added. 
+- Ensure the :ref:`step implementation <language-steps>` for the step has been added.
 - The :ref:`step template <language-steps>` marking the step in code is case sensitive and should match the step usage in the spec file.
 
 Compatibility errors
@@ -157,15 +157,15 @@ Gauge API error
 
     Could not start gauge api: Could not find executable in PATH or GAUGE_ROOT. Gauge is not installed.
 
-This can occur because of following reasons : 
+This can occur because of following reasons :
 
 - Gauge is not installed
 - Gauge is installed at custom location and ``custom_install_location/bin`` is not in ``PATH``.
 
-To Solve this : 
+To Solve this :
 
-- If gauge is not installed, :ref:`install gauge <installing_gauge>`.
-- If gauge is installed at custom location, add ``custom_install_location/bin`` to ``PATH`` 
+- If gauge is not installed, :ref:`install gauge <installing_gauge_recomd_options>`.
+- If gauge is installed at custom location, add ``custom_install_location/bin`` to ``PATH``
 - On custom installation location Set ``GAUGE_ROOT`` to ``custom_install_location``
 - Restart Intellij
 
@@ -175,8 +175,8 @@ Steps marked as unimplemented
 If steps have implementation code and are still marked as unimplemented:
 
 - Ensure that ``src/test/java`` directory is marked as test sources root in the project. Right click on the ``src/test/java`` directory and select ``Mark Directory as -> Test sources root``
-- Ensure the project is compiling. Press ctrl/cmd + F9 to build project or select ``Build -> Make project``. 
-- Ensure ``Module SDK`` is set to a valid JDK under ``Module settings``. 
+- Ensure the project is compiling. Press ctrl/cmd + F9 to build project or select ``Build -> Make project``.
+- Ensure ``Module SDK`` is set to a valid JDK under ``Module settings``.
 - Restart Intellij or close and reopen the project.
 
 Check dependencies

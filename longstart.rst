@@ -25,9 +25,120 @@ Some of the **key features** of Gauge that make it stand unique include:
 -  Helps you create Maintainable and Understandable test suites.
 -  :ref:`IDE Support <ide_support>`.
 
+Project structure
+-----------------
+C# Project files
+~~~~~~~~~~~~~~~~
 
+When creating a new Gauge C# project, the csharp specific project files
+created in the project are:
+
+.. code-block:: text
+
+    ├── foo.csproj
+    ├── foo.sln
+    ├── manifest.json
+    ├── packages.config
+    ├── StepImplementation.cs
+    │
+    ├── env
+    │   └───default
+    │           default.properties
+    │
+    ├───packages
+        └───<Nuget Package Binaries>
+    ├───Properties
+    │       AssemblyInfo.cs
+    │
+    └───specs
+            hello_world.spec
+
+packages.config
+^^^^^^^^^^^^^^^
+
+For ``nuget``. Contains the dependencies for Gauge. One can add more to
+this list, depending on your project needs.
+
+StepImplementation.cs
+^^^^^^^^^^^^^^^^^^^^^
+
+Contains the implementations for the sample steps defined in
+``hello_world.spec``.
+
+default.properties
+^^^^^^^^^^^^^^^^^^
+
+This defines default configurations for gauge csharp runner plugin.
+Currently the configuration parameters are:
+
+-  ``gauge_reports_dir`` - The path to the gauge reports directory.
+   Should be either relative to the project directory or an absolute
+   path
+-  ``overwrite_reports`` - Set as false if gauge reports should not be
+   overwritten on each execution. A new time-stamped directory will be
+   created on each execution. This is ``true`` by default.
+
+
+Java project files
+~~~~~~~~~~~~~~~~~~
+
+The java specific project files create in the project are:
+
+.. code-block:: text
+
+    ├── libs
+    └── src
+        └── test
+            └── java
+                └── StepImplementation.java
+    ├── env
+        └── default
+            └── java.properties
+
+libs
+^^^^
+
+This contains the additional java dependencies for the project.
+
+src
+^^^
+
+Src directory contains the classes the test code including step
+implementations.
+
+java.properties
+^^^^^^^^^^^^^^^
+
+This defines configurations for java runner plugin. See :doc:`configuration` for more details.
+
+Ruby Project files
+~~~~~~~~~~~~~~~~~~
+
+The ruby specific project files create in the project are:
+
+.. code-block:: text
+
+    ├── env
+    │   └── default
+    │       └── ruby.properties
+    └── step_implementations
+        └── step_implementation.rb
+
+step_implementations directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This contains all the ``.rb`` files with the test code including step implementations in ruby
+
+ruby.properties
+^^^^^^^^^^^^^^^
+
+This defines configurations for ruby runner plugin.
+
+
+Gauge Terminologies
+-------------------
 Specifications (spec)
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 They are business layer test cases which can also act as your feature
 documentation. They are written in the business language. Typically a
@@ -46,7 +157,7 @@ Example
    Spec
 
 Specification Heading
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 A Spec must begins with a spec heading and a single specification can
 contain only one spec heading.
@@ -71,7 +182,7 @@ or
 .. _longstart-scenarios:
 
 Scenarios
----------
+~~~~~~~~~
 
 Each scenario represents a single flow in a particular specification. A
 specification must contain at least one scenario.
@@ -114,12 +225,12 @@ Example
 .. _longstart-steps:
 
 Steps
------
+~~~~~
 
 Steps are the executable components of your specification. They are
 written as markdown unordered list items (bulleted points).
 
-They are written inside a specification as 
+They are written inside a specification as
 
    - :ref:`Context Steps<longstart-context>`
    - :ref:`longstart-teardown`
@@ -144,14 +255,14 @@ The values written in **quotes** are parameters which are passed into
 the underlying step implementation as a language specific structure.
 
 Note: The following characters are reserved for parameters, these
-cannot be used in step text. 
+cannot be used in step text.
 
    - ``"``
    - ``<``
    - ``>``
 
 Parameters
-----------
+~~~~~~~~~~
 
 Steps can be defined to take values as parameters so that they can be
 re-used with different parameter values.
@@ -199,7 +310,7 @@ Dynamic values from the data table can also be referred in table
 parameters passed into steps
 
 Example
-~~~~~~~
++++++++
 
 .. code-block:: gauge
 
@@ -224,12 +335,12 @@ In the above example the table parameter uses a dynamic value from the
 data table.
 
 Special Parameters
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 Special parameters provide the ability to pass larger and richer data
-into the steps as parameters. 
+into the steps as parameters.
 
-   - They are entered in angular brackets - ``<>`` in the step. 
+   - They are entered in angular brackets - ``<>`` in the step.
    - They contain 2 parts separated by a colon ``:``
 
 .. code-block:: gauge
@@ -245,7 +356,7 @@ table.
 There are two types of special paramters:
 
 File
-~~~~
+^^^^
 
 These are used to read files and pass the file content as a string
 parameter to the underlying steps.
@@ -265,7 +376,7 @@ The path to the file can be the relative path from the Gauge project or
 an absolute path to the file.
 
 CSV
-~~~
+^^^
 
 Tables are used to pass table value into steps read from an external CSV
 file. The parameter text in the step contains a prefix table and the
@@ -294,7 +405,7 @@ considered as the row values.
 .. _longstart-tags:
 
 Tags
-----
+~~~~
 
 Tags are used to associate labels with specifications or scenarios. Tags are written as comma separated values in the spec with a prefix ``Tags:`` .
 
@@ -324,7 +435,7 @@ Both the ``Login specification`` and the scenario
 A tag applied to a spec automatically applies to a scenario.
 
 Concepts
---------
+~~~~~~~~
 
 Concepts provide the ability to combine re-usable logical groups of
 steps into a single unit. It provides a higher level abstraction of a
@@ -350,7 +461,7 @@ definition.
 The concept definition contains the 2 parts:
 
 Concept header
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^
 
 The concept header defines the name of the concept and the parameters
 that it takes. It is written in the markdown **``H1``** format.
@@ -363,7 +474,7 @@ that it takes. It is written in the markdown **``H1``** format.
     # Concept name with <param0> and <param1>
 
 Steps
-~~~~~
+^^^^^
 
 The concept header is followed by the steps that are used inside the
 concept. They are defined in the usual :ref:`steps <step_syntax>` structure.
@@ -389,7 +500,7 @@ In the above example:
 .. _longstart-context:
 
 Contexts
---------
+~~~~~~~~
 
 **Contexts** or **Context steps** are steps defined in a spec before any
 scenario.
@@ -437,7 +548,7 @@ The spec execution flow would be:
 .. _longstart-teardown:
 
 Tear Down Steps
----------------
+~~~~~~~~~~~~~~~
 
 **Tear Down Steps** are the steps defined in a spec after the last
 scenario. They allow you to specify a set of clean-up steps after every
