@@ -154,12 +154,3 @@ texinfo_documents = [
             author, 'Gauge', 'One line description of project.',
             'Miscellaneous'),
         ]
-
-
-# SCVersioning settings
-
-scv_grm_exclude = ('.gitignore', '.nojekyll', 'README.rst')
-scv_show_banner = True
-scv_sort = ('semver', 'time')
-scv_banner_main_ref = release
-scv_root_ref = release
