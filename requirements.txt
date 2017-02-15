@@ -1,3 +1,2 @@
 sphinx>=1.5.2
-sphinxcontrib-versioning
 sphinx_rtd_theme
