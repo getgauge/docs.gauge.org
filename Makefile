@@ -48,6 +48,9 @@ zip: versions
 		(cd "_build/singlehtml/$(folder)" && zip -r -D "../../../_build/html/$(folder)/downloads/gauge-v-$(folder).zip" *) ; \
 	)
 
+serve: zip
+	(cd _build/html/ && python -m http.server)
+
 # Put it first so that "make" without argument is like "make help".
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
