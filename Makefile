@@ -1,6 +1,3 @@
-# Minimal makefile for Sphinx documentation
-#
-
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
@@ -33,6 +30,7 @@ versions: prune
 	git checkout $(LATESTBRANCH);\
 	sphinx-build -b html . _build/html/ -A current_version=latest \
 		-A latest_version=$(LATESTBRANCH) -A versions="$(VERSIONS) latest";\
+	sphinx-build -b singlehtml . _build/singlehtml/latest -A SINGLEHTML=true;\
 	git checkout master
 
 prune: clean
@@ -44,8 +42,9 @@ prune: clean
 zip: versions
 	$(foreach folder,$(filter-out $(EXCLUDES), $(notdir $(shell find _build/singlehtml -maxdepth 1 -mindepth 1 -type d))), \
 		echo "Using $(folder) "; \
-		mkdir -p "_build/html/$(folder)/downloads"; \
-		(cd "_build/singlehtml/$(folder)" && zip -r -D "../../../_build/html/$(folder)/downloads/gauge-v-$(folder).zip" *) ; \
+		mkdir -p _build/html$(if $(folder:latest=),/$(folder)/,/)downloads; \
+		(cd "_build/singlehtml/$(folder)" && zip -r -D \
+		  ../../../_build/html$(if $(folder:latest=),/$(folder)/,/)downloads/gauge-v-$(folder:latest=$(LATESTBRANCH)).zip *) ; \
 	)
 
 serve: zip
