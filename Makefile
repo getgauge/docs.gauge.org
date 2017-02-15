@@ -24,12 +24,14 @@ versions: prune
 	$(foreach version, $(VERSIONS), \
 		git checkout $(version);\
 		sphinx-build -b html . _build/html/$(version) -A current_version=$(version) \
-		   -A latest_version=$(LATESTBRANCH) -A versions="$(VERSIONS) latest";\
+		   -A latest_version=$(LATESTBRANCH) -A versions="$(VERSIONS) latest"\
+		   -A commit=$(shell git rev-parse --short HEAD);\
 		sphinx-build -b singlehtml . _build/singlehtml/$(version) -A SINGLEHTML=true;\
 	)
 	git checkout $(LATESTBRANCH);\
 	sphinx-build -b html . _build/html/ -A current_version=latest \
-		-A latest_version=$(LATESTBRANCH) -A versions="$(VERSIONS) latest";\
+		-A latest_version=$(LATESTBRANCH) -A versions="$(VERSIONS) latest"\
+		-A commit=$(shell git rev-parse --short HEAD);\
 	sphinx-build -b singlehtml . _build/singlehtml/latest -A SINGLEHTML=true;\
 	git checkout master
 
