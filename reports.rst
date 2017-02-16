@@ -1,3 +1,5 @@
+.. _gauge_reports:
+
 Reports
 =======
 
