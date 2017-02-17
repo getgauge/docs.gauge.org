@@ -89,8 +89,7 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path(), "themes"]
 html_context = {
     "display_github": True,
     "last_updated": True,
-    "commit": False,
-    "extra_css_files" : ['_static/css/gauge.css']
+    "commit": False
 }
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
