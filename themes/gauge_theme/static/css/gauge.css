@@ -84,6 +84,10 @@ span.resource-description {
     font-style: italic;
 }
 
+ul.current {
+    margin-bottom: 1em;
+}
+
 @media only screen and (min-width: 768px){
     ul#resources{
         -moz-column-count: 2;
