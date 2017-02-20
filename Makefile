@@ -11,46 +11,52 @@ REMOTEBRANCHES = $(shell git for-each-ref --format='%(refname:strip=3)' refs/rem
 LOCALBRANCHES = $(shell git for-each-ref --format='%(refname:strip=2)' refs/heads/)
 LATESTBRANCH = $(shell git for-each-ref --sort='-*authordate' --format='%(refname:strip=3)' --count=3 refs/remotes/ | grep -v "master\|HEAD")
 VERSIONS = $(filter-out $(LATESTBRANCH) HEAD, $(REMOTEBRANCHES))
+WORKDIR = $(BUILDDIR)/src
 
 versions: prune
+	# copy master
+	mkdir -p $(WORKDIR)/master; \
+	cp -r `ls -SF | grep -v '$(BUILDDIR)'` $(WORKDIR)/master/;
 	
 	# sync local with remote
 	$(foreach version, $(filter-out $(LOCALBRANCHES) HEAD, $(REMOTEBRANCHES)),\
 		echo "Fetching $(version) from remote"; \
-		git checkout -b $(version) origin/$(version); \
-		git pull; \
+		mkdir -p $(WORKDIR)/$(version); \
+		git worktree add -b $(version) $(WORKDIR)/$(version) origin/$(version); \
 	)
+	
 	# for each branches, generate html, singlehtml
 	$(foreach version, $(VERSIONS), \
-		git checkout $(version);\
-		sphinx-build -b html . _build/html/$(version) -A current_version=$(version) \
+		(cd $(WORKDIR)/$(version);\
+		$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../$(version) -A current_version=$(version) \
 		   -A latest_version=$(LATESTBRANCH) -A versions="$(VERSIONS) latest"\
 		   -A commit=$(shell git rev-parse --short HEAD);\
-		sphinx-build -b singlehtml . _build/singlehtml/$(version) -A SINGLEHTML=true;\
+		$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../$(version) -A SINGLEHTML=true;)\
 	)
-	git checkout $(LATESTBRANCH);\
-	sphinx-build -b html . _build/html/ -A current_version=latest \
+	(cd $(WORKDIR)/$(LATESTBRANCH);\
+	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../ -A current_version=latest \
 		-A latest_version=$(LATESTBRANCH) -A versions="$(VERSIONS) latest"\
 		-A commit=$(shell git rev-parse --short HEAD);\
-	sphinx-build -b singlehtml . _build/singlehtml/latest -A SINGLEHTML=true;\
+	$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../latest -A SINGLEHTML=true;); \
 	git checkout master
 
 prune: clean
 	git checkout master;\
+	git worktree prune;\
 	$(foreach branch, $(filter-out master, $(LOCALBRANCHES)),\
 		git branch -D $(branch); \
 	)
 
 zip: versions
-	$(foreach folder,$(filter-out $(EXCLUDES), $(notdir $(shell find _build/singlehtml -maxdepth 1 -mindepth 1 -type d))), \
+	$(foreach folder,$(filter-out $(EXCLUDES), $(notdir $(shell find $(BUILDDIR)/singlehtml -maxdepth 1 -mindepth 1 -type d))), \
 		echo "Using $(folder) "; \
-		mkdir -p _build/html$(if $(folder:latest=),/$(folder)/,/)downloads; \
-		(cd "_build/singlehtml/$(folder)" && zip -r -D \
-		  ../../../_build/html$(if $(folder:latest=),/$(folder)/,/)downloads/gauge-v-$(folder:latest=$(LATESTBRANCH)).zip *) ; \
+		mkdir -p $(BUILDDIR)/html$(if $(folder:latest=),/$(folder)/,/)downloads; \
+		(cd "$(BUILDDIR)/singlehtml/$(folder)" && zip -r -D \
+		  ../../../$(BUILDDIR)/html$(if $(folder:latest=),/$(folder)/,/)downloads/gauge-v-$(folder:latest=$(LATESTBRANCH)).zip *) ; \
 	)
 
 serve: zip
-	(cd _build/html/ && python -m http.server)
+	(cd $(BUILDDIR)/html/ && python -m http.server)
 
 # Put it first so that "make" without argument is like "make help".
 help:
