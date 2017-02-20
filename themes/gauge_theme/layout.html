@@ -68,6 +68,7 @@
 </div>
 {%- endif %}
 {% endblock %}
+{% set script_files = script_files + ["_static/suffix.js"] %}
 
 {% block footer %}
 {{ super() }}
