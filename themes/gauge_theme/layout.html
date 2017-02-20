@@ -27,26 +27,13 @@
   {% endif %}
 
   {# CSS #}
-
-  {# OPENSEARCH #}
-  {% if not embedded %}
-    {% if use_opensearch %}
-      <link rel="search" type="application/opensearchdescription+xml" title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}" href="{{ pathto('_static/opensearch.xml', 1) }}"/>
-    {% endif %}
-
-  {% endif %}
-
-  {# RTD hosts this file, so just load on non RTD builds #}
-  {% if not READTHEDOCS %}
-    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-  {% endif %}
-
+  <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" async="async"/>
   {% for cssfile in css_files %}
-    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" async="async"/>
   {% endfor %}
 
   {% for cssfile in extra_css_files %}
-    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" async="async"/>
   {% endfor %}
 
   {%- block linktags %}
