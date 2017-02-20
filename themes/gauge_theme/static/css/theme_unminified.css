@@ -3985,7 +3985,7 @@ a .icon {
 .rst-content .wy-alert-neutral.warning a,
 .rst-content .wy-alert-neutral.seealso a,
 .rst-content .wy-alert-neutral.admonition-todo a {
-    color: #f5c10e
+    color: #2980B9
 }
 
 .wy-alert p:last-child,
@@ -5288,7 +5288,7 @@ input[type="checkbox"][disabled] {
 }
 
 a {
-    color: #f5c10e;
+    color: #2980B9;
     text-decoration: none;
     cursor: pointer
 }
