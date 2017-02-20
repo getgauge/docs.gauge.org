@@ -80,8 +80,6 @@ todo_include_todos = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-import sphinx_rtd_theme
-
 html_theme = "gauge_theme"
 
 html_theme_path = ["themes"]
