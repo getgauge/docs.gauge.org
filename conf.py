@@ -84,7 +84,7 @@ import sphinx_rtd_theme
 
 html_theme = "gauge_theme"
 
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path(), "themes"]
+html_theme_path = ["themes"]
 
 html_context = {
     "display_github": True,

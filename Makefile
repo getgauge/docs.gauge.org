@@ -3,7 +3,7 @@ SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = Gauge
 SOURCEDIR     = .
-BUILDDIR      = _build	
+BUILDDIR      = _build
 
 EXCLUDES      = _images _static .doctrees
 
