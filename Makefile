@@ -16,7 +16,7 @@ WORKDIR = $(BUILDDIR)/src
 versions: prune
 	# copy master
 	mkdir -p $(WORKDIR)/master; \
-	cp -r `ls -SF | grep -v '$(BUILDDIR)'` $(WORKDIR)/master/;
+	cp -r `ls | grep -v '$(BUILDDIR)'` $(WORKDIR)/master/;
 	
 	# sync local with remote
 	$(foreach version, $(filter-out $(LOCALBRANCHES) HEAD, $(REMOTEBRANCHES)),\
