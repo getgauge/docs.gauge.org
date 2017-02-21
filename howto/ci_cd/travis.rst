@@ -14,19 +14,19 @@ Creating tasks
 
 -  Create a ``.travis.yml`` file in your peoject root.
 -  Add these lines in ``.travis.yml`` according to the platform on which
-   you want to build. 
-   
+   you want to build.
+
 .. code-block:: yaml
-  :caption: OS X   
+  :caption: OS X
 
     language:
         -  language_name
 
-    os: 
+    os:
         - osx
 
-    install: 
-        - brew install gauge 
+    install:
+        - brew install gauge
         - gauge --install <language>
         - gauge --install html-report
 
@@ -35,19 +35,20 @@ Creating tasks
     sudo: false
 
 .. code-block:: yaml
-  :caption: Linux   
+  :caption: Linux
 
-    language: 
+    language:
         - language_name
-    os: 
+    os:
         - linux
-    install: 
+    install:
         - sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net
-            --recv-keys 023EDB0B - echo deb https://dl.bintray.com/gauge/gauge-deb
-            stable main \| sudo tee -a /etc/apt/sources.list 
-        - sudo apt-get update 
-        - sudo apt-get install gauge 
-        - gauge_setup 
+            --recv-keys 023EDB0B
+        - echo deb https://dl.bintray.com/gauge/gauge-deb
+            stable main \| sudo tee -a /etc/apt/sources.list
+        - sudo apt-get update
+        - sudo apt-get install gauge
+        - gauge_setup
         - gauge --install <language>
         - gauge --install html-report
 
@@ -55,13 +56,13 @@ Creating tasks
 
     sudo: true
 
-* If you want to run only a subset of specs, you can use :ref:`tagged_execution`. 
-  Example: add ``script: gauge --tags "tag1 & tag2" specs`` in your ``.travis.yml``. 
+* If you want to run only a subset of specs, you can use :ref:`tagged_execution`.
+  Example: add ``script: gauge --tags "tag1 & tag2" specs`` in your ``.travis.yml``.
 
-* Adding a flag ``-p`` runs them using :ref:`parallel_execution`. 
-  Example: ``script: gauge -p specs`` in your ``.travis.yml``. 
+* Adding a flag ``-p`` runs them using :ref:`parallel_execution`.
+  Example: ``script: gauge -p specs`` in your ``.travis.yml``.
 
-* Run against specific :ref:`environments` using the ``--env`` flag. 
+* Run against specific :ref:`environments` using the ``--env`` flag.
 
 * See the :ref:`cli_flags` for list of all flags that can be used.
 
