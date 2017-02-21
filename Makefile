@@ -28,16 +28,16 @@ versions: prune
 	# for each branches, generate html, singlehtml
 	$(foreach version, $(VERSIONS), \
 		(cd $(WORKDIR)/$(version);\
-		$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../$(version) -A current_version=$(version) \
+		$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/$(version) -A current_version=$(version) \
 		   -A latest_version=$(LATESTBRANCH) -A versions="$(VERSIONS) latest"\
 		   -A commit=$(shell git rev-parse --short HEAD);\
-		$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../$(version) -A SINGLEHTML=true;)\
+		$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/$(version) -A SINGLEHTML=true;)\
 	)
 	(cd $(WORKDIR)/$(LATESTBRANCH);\
-	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../ -A current_version=latest \
+	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html -A current_version=latest \
 		-A latest_version=$(LATESTBRANCH) -A versions="$(VERSIONS) latest"\
 		-A commit=$(shell git rev-parse --short HEAD);\
-	$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../latest -A SINGLEHTML=true;); \
+	$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/latest -A SINGLEHTML=true;); \
 	git checkout master
 
 prune: clean
