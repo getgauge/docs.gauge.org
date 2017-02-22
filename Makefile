@@ -36,7 +36,7 @@ versions: prune
 	(cd $(WORKDIR)/$(LATESTBRANCH);\
 	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html -A current_version=latest \
 		-A latest_version=$(LATESTBRANCH) -A versions="$(VERSIONS) latest"\
-		-A commit=$(shell git rev-parse --short HEAD) -A github_version=$(version);\
+		-A commit=$(shell git rev-parse --short HEAD) -A github_version=$(LATESTBRANCH);\
 	$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/latest -A SINGLEHTML=true;); \
 	git checkout master
 
