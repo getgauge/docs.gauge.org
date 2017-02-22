@@ -87,7 +87,9 @@ html_theme_path = ["themes"]
 html_context = {
     "display_github": True,
     "last_updated": True,
-    "commit": False
+    "github_user": "getgauge",
+    "github_repo": "docs.getgauge.io",
+    "conf_py_path": "/",
 }
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
