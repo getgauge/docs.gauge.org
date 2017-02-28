@@ -443,47 +443,17 @@ All additional Properties
 
 The following plugin properties can be additionally set:
 
-+----------------+--------+--------------+
-| Property name  | Usage  | Description  |
-+================+========+==============+
-| specsDir       | -Dspec | Gauge specs  |
-|                | sDir=s | directory    |
-|                | pecs   | path.        |
-|                |        | Required for |
-|                |        | executing    |
-|                |        | specs        |
-+----------------+--------+--------------+
-| tags           | -Dtags | Filter specs |
-|                | ="tag1 | by specified |
-|                | &      | tags         |
-|                | tag2"  | expression   |
-+----------------+--------+--------------+
-| inParallel     | -DinPa | Execute      |
-|                | rallel | specs in     |
-|                | =true  | parallel     |
-+----------------+--------+--------------+
-| nodes          | -Dnode | Number of    |
-|                | s=3    | parallel     |
-|                |        | execution    |
-|                |        | streams. Use |
-|                |        | with         |
-|                |        | ``parallel`` |
-+----------------+--------+--------------+
-| env            | -Denv= | gauge env to |
-|                | qa     | run against  |
-+----------------+--------+--------------+
-| dir            | -Ddir= | Set working  |
-|                | .      | directory    |
-|                |        | for gauge.   |
-|                |        | Default is   |
-|                |        | project.base |
-|                |        | dir.         |
-+----------------+--------+--------------+
-| flags          | -Dflag | Add          |
-|                | s="--v | additional   |
-|                | erbose | gauge flags  |
-|                | "      | to execution |
-+----------------+--------+--------------+
+=============== ======================== ===============================================================
+Property        Usage                    Description
+=============== ======================== ===============================================================
+``specsDir``    ``-DspecsDir=specs``     Gauge specs directory path. Required for executing specs.
+``tags``        ``-Dtags=tag1 & tag2``   Filter specs by specified tag expression.
+``inParallel``  ``-DinParallel=true``    Execute specs in parallel.
+``nodes``       ``-Dnodes=3``            Number of parallel execution streams. Use with ``parallel``.
+``env``         ``-Denv=qa``             gauge env to run against.
+``dir``         ``-Ddir=.``              Set working directory for gauge. Default is project.base.dir.
+``flags``       ``-Dflags="--verbose"``  Add additional gauge flags to execution.
+=============== ======================== ===============================================================
 
 See gauge's :ref:`cli_flags` for list of all flags that be used with **-Dflags** option.
 
@@ -578,41 +548,17 @@ All additional Properties
 
 The following plugin properties can be additionally set:
 
-+----------------+--------+--------------+
-| Property name  | Usage  | Description  |
-+================+========+==============+
-| specsDir       | -Pspec | Gauge specs  |
-|                | sDir=s | directory    |
-|                | pecs   | path.        |
-|                |        | Required for |
-|                |        | executing    |
-|                |        | specs        |
-+----------------+--------+--------------+
-| tags           | -Ptags | Filter specs |
-|                | ="tag1 | by specified |
-|                | &      | tags         |
-|                | tag2"  | expression   |
-+----------------+--------+--------------+
-| inParallel     | -PinPa | Execute      |
-|                | rallel | specs in     |
-|                | =true  | parallel     |
-+----------------+--------+--------------+
-| nodes          | -Pnode | Number of    |
-|                | s=3    | parallel     |
-|                |        | execution    |
-|                |        | streams. Use |
-|                |        | with         |
-|                |        | ``parallel`` |
-+----------------+--------+--------------+
-| env            | -Penv= | gauge env to |
-|                | qa     | run against  |
-+----------------+--------+--------------+
-| additionalFlag | -Paddi | Add          |
-| s              | tional | additional   |
-|                | Flags= | gauge flags  |
-|                | "--ver | to execution |
-|                | bose"  |              |
-+----------------+--------+--------------+
+=============== ======================== ===============================================================
+Property        Usage                    Description
+=============== ======================== ===============================================================
+``specsDir``    ``-PspecsDir=specs``     Gauge specs directory path. Required for executing specs.
+``tags``        ``-Ptags=tag1 & tag2``   Filter specs by specified tag expression.
+``inParallel``  ``-PinParallel=true``    Execute specs in parallel.
+``nodes``       ``-Pnodes=3``            Number of parallel execution streams. Use with ``parallel``.
+``env``         ``-Penv=qa``             gauge env to run against.
+``dir``         ``-Pdir=.``              Set working directory for gauge. Default is project.base.dir.
+``flags``       ``-Pflags="--verbose"``  Add additional gauge flags to execution.
+=============== ======================== ===============================================================
 
 See gauge's :ref:`cli_flags` for list of all flags that be used with **-PadditionalFlags** option.
 
