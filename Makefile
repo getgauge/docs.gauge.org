@@ -31,7 +31,7 @@ versions: prune
 		$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/$(version) -A current_version=$(version) \
 		   -A latest_version=$(LATESTBRANCH) -A versions="$(VERSIONS) latest"\
 		   -A commit=$(shell git rev-parse --short HEAD) -A github_version=$(version);\
-		$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/$(version) -A SINGLEHTML=true;)\
+		$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/$(version) -A SINGLEHTML=true;);\
 	)
 	(cd $(WORKDIR)/$(LATESTBRANCH);\
 	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html -A current_version=latest \
