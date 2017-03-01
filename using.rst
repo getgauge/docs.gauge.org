@@ -370,7 +370,27 @@ This creates four parallel execution streams.
 
 **Note:** The number of streams should be specified depending on number
 of CPU cores available on the machine, beyond which it could lead to
-undesirable results.
+undesirable results. For optimizations, try `parallel execution using threads`_.
+
+.. _parallel execution using threads:
+
+Parallel Execution using threads
+""""""""""""""""""""""""""""""""
+
+In parallel execution, every stream starts a new worker process. This can be optimized by using multithreading instead of processes. This uses only one worker process and starts multiple threads for parallel execution.
+
+To use this, Set `enable_multithreading` env var to true. This property can also be added to the default/custom env.
+
+.. code-block:: text
+
+    enable_multithreading = true
+
+**Requirements:**
+
+* Thread safe test code.
+* Language runner should support multithreading.
+
+**Note:** Currently, this feature is only supported by Java langauge runner/plugin.
 
 Executing a group of specification
 """"""""""""""""""""""""""""""""""
