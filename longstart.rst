@@ -183,8 +183,37 @@ method. By design, the renamed parameter is considered as a new parameter.
 Therefore the usage of the old parameter(if any) has to be fixed
 manually to resolve the corresponding compilation issue.
 
-Table Parameter
-^^^^^^^^^^^^^^^
+Dynamic Parameters
+^^^^^^^^^^^^^^^^^^
+
+Dynamic parameters are used as placeholder for values.
+
+**Syntax**: ``<dynamic_param>``.
+
+Dynamic parameters are primarily used when referring to a table column value in :ref:`table_driven_execution`,
+or while passing values to :ref:`concept`.
+
+Example
++++++++
+
+.. code-block:: gauge
+    :caption: example.cpt
+
+    # A sample concept that takes a <parameter>
+
+    * And used the <parameter> in a step.
+
+The above concept can be invoked and a value can be passed to the concept against ``<parameter>`` at the time of invocation.
+
+.. code-block:: gauge
+
+    * A sample concept that takes a "dummy value"
+
+.. note:: Refer to this :ref:`example_inline_table` for illustration on how table cell values can be referred using dynamic parameters.
+
+
+Table Parameters
+^^^^^^^^^^^^^^^^
 
 Table Parameters can be used in two ways
 
@@ -198,6 +227,8 @@ Data Table values in inline tables
 
 Dynamic values from the data table can also be referred in table
 parameters passed into steps
+
+.. _example_inline_table:
 
 Example
 +++++++
@@ -328,6 +359,8 @@ Both the ``Login specification`` and the scenario
      Tags: login-success, admin
 
 A tag applied to a spec automatically applies to a scenario.
+
+.. _concept:
 
 Concepts
 ~~~~~~~~
