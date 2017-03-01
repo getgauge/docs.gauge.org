@@ -189,7 +189,7 @@ Table Parameter
 Table Parameters can be used in two ways
 
 -  When a scenario or multiple scenarios in a specification are to be
-   executed for multiple sets of data then Data table execution can be
+   executed for multiple sets of data then :ref:`table_driven_execution` can be
    used.
 -  Tables or inline tables can be passed to steps as parameters.
 
@@ -243,19 +243,22 @@ table.
 **Value** : This defines the value for the type of special parameter.
 
 
-There are two types of special paramters:
+There are two types of special parameters:
 
-File
-^^^^
+1. :ref:`File<special_parameter_file>`
+2. :ref:`CSV<special_parameter_csv>`
+
+.. _special_parameter_file:
+
+Special Parameter: File
+^^^^^^^^^^^^^^^^^^^^^^^
 
 These are used to read files and pass the file content as a string
 parameter to the underlying steps.
 
-The prefix and value are below:
+**Syntax** : ``<file:[value]>`` where ``[value]`` is the path to the file.
 
-**Prefix** : ``file``
-
-**Value** : The value is the path to the file.
+.. note:: ``[value]`` can be an absolute or relative path. Relative paths are resolved relative to :ref:`GAUGE_PROJECT_ROOT<gauge_project_root>`.
 
 .. code-block:: gauge
 
@@ -265,16 +268,18 @@ The prefix and value are below:
 The path to the file can be the relative path from the Gauge project or
 an absolute path to the file.
 
-CSV
-^^^
+.. _special_parameter_csv:
+
+Special Parameter: CSV
+^^^^^^^^^^^^^^^^^^^^^^
 
 Tables are used to pass table value into steps read from an external CSV
 file. The parameter text in the step contains a prefix table and the
 path to the csv file.
 
-**Prefix** : ``table``
+**Syntax** : ``<table:[value]>`` where ``[value]`` is the path to the csv file.
 
-**Value** : The value is the path to the csv file.
+.. note:: ``[value]`` can be an absolute or relative path. Relative paths are resolved relative to :ref:`GAUGE_PROJECT_ROOT<gauge_project_root>`.
 
 .. code-block:: gauge
 

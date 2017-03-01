@@ -207,6 +207,8 @@ Failure to launch the language runner plugin
 If the language specific plugin for the project has not been installed
 then the execution will fail.
 
+.. _table_driven_execution:
+
 Data driven execution
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -826,6 +828,10 @@ skeleton is created with the following files
 
 Common Gauge files
 ^^^^^^^^^^^^^^^^^^
+
+.. _gauge_project_root:
+
+``GAUGE_PROJECT_ROOT`` environment variable holds the path in which the Gauge project is created.
 
 .. code-block:: text
 
