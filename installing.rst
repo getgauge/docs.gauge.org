@@ -8,7 +8,7 @@ Here is the recommended installation steps for all OS.
 Windows
 -------
 
-`Download <http://getgauge.io/get-started>`__ the installer based on your system configuration and run it. Click your way through till you're asked to select your language.
+`Download <http://getgauge.io/get-started.html>`__ the installer based on your system configuration and run it. Click your way through till you're asked to select your language.
 
 Gauge is installed in ``%PROGRAMFILES%`` by default. But you can select
 where you want to install Gauge and complete Gauge installation.
@@ -28,7 +28,7 @@ For this to work, you will need to install `homebrew <http://brew.sh/>`__. If yo
 Linux
 -----
 
-`Download <http://getgauge.io/get-started>`__ the zip file. Choose the
+`Download <http://getgauge.io/get-started.html>`__ the zip file. Choose the
 archive file appropriate for your installation. And run the command
 below to install Gauge.
 
@@ -64,7 +64,7 @@ MacOS
 Offline Installation (pkg installer)
 ++++++++++++++++++++++++++++++++++++
 
-You can `download the Gauge installer <http://getgauge.io/get-started>`__. This is a ``pkg`` file, so you can click your way through to finish installing Gauge.
+You can `download the Gauge installer <http://getgauge.io/get-started.html>`__. This is a ``pkg`` file, so you can click your way through to finish installing Gauge.
 
 Check the :ref:`install-language-runner` to install language runner plugins.
 
@@ -189,7 +189,7 @@ plugins, run this command as a regular user to complete installation:
 Install manually
 ################
 
-`Download <http://getgauge.io/get-started>`__ the zip file. Choose the
+`Download <http://getgauge.io/get-started.html>`__ the zip file. Choose the
 archive file appropriate for your installation. And run the command
 below to install Gauge.
 
