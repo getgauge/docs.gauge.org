@@ -1509,8 +1509,16 @@ Jump from Step text to it's implementation.
 
 Usage: ``Right Click`` -> ``Go to Declaration`` or hit F12
 
-Test Runner
-~~~~~~~~~~~
+Formatting
+~~~~~~~~~~
+
+-  A specification file can be formatted easily using ``Right Click`` -> ``Format File``
+
+This formats the specification including indentation of tables and
+steps.
+
+Execution with Test Runner
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Open the Test Explorer : ``Menu`` -> ``Test`` -> ``Windows`` ->
 ``Test Explorer`` All the scenarios in the project should be listed. Run
@@ -1521,10 +1529,25 @@ one or more of these tests.
 
    Test Explorer
 
+.. figure:: images/visual_studio_screenshots/features/TestExplorerOptions.png
+  :alt: Test Explorer Options
+
+  Test Explorer options
+
+Test Explorer options to run `Failed/Passed/Not Run/Last Run` can be used to run the required scenarios.
+
+Debugging
+~~~~~~~~~
+
+Debugging can be performed the same way spec execution works.
+
+-  ``Right click`` -> ``Debug Selected Tests`` on a scenario(s) in the Test explorer. Execution
+  will halt on marked `breakpoints <https://msdn.microsoft.com/en-us/library/5557y8b4.aspx>`__.
+
 Rephrase Steps
 ~~~~~~~~~~~~~~
 
--  Press **F2** on a step to rephrase it.
+-  ``right click`` -> ``Rename`` on a step to rephrase it.
 -  The parameters can also be reordered,removed or new parameters can be
    added.
 -  The rephrase change will reflect across **all the specs** in the
