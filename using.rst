@@ -1160,7 +1160,7 @@ Tags.
 
 Steps with missing implementation are also highlighted.
 
-.. figure:: images/intellij-screenshots/syntax_highlighting.png
+.. figure:: images/intellij-screenshots/syntax_highlight.png
    :alt: syntax highlighting
 
    syntax highlighting
@@ -1497,7 +1497,7 @@ On clicking the Smart Tag a pop up opens. The destination of the implementation 
 a new class or from a list of existing classes. It will then generate
 the step with required annotation and parameters.
 
-.. figure:: images/visual_studio_screenshots/quick_fix/QuickFix.gif
+.. figure:: images/visual_studio_screenshots/features/quickfix/QuickFix.gif
    :alt: step quick fix
 
    step quick fix
@@ -1518,7 +1518,7 @@ This formats the specification including indentation of tables and
 steps.
 
 Execution with Test Runner
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Open the Test Explorer : ``Menu`` -> ``Test`` -> ``Windows`` ->
 ``Test Explorer`` All the scenarios in the project should be listed. Run
@@ -1541,8 +1541,8 @@ Debugging
 
 Debugging can be performed the same way spec execution works.
 
--  ``Right click`` -> ``Debug Selected Tests`` on a scenario(s) in the Test explorer. Execution
-  will halt on marked `breakpoints <https://msdn.microsoft.com/en-us/library/5557y8b4.aspx>`__.
+``Right click`` -> ``Debug Selected Tests`` on a scenario(s) in the Test explorer. Execution
+will halt on marked `breakpoints <https://msdn.microsoft.com/en-us/library/5557y8b4.aspx>`__.
 
 Rephrase Steps
 ~~~~~~~~~~~~~~
