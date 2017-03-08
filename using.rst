@@ -1178,12 +1178,13 @@ cycle between the parameters and edit them.
 
    creation
 
-Step Quick Fix
+Implement Step
 ~~~~~~~~~~~~~~
 
 If you have an unimplemented step in the spec file, it will be annotated
-saying 'undefined step'. ``alt+enter`` can be pressed to open the quick
-fix pop up. The destination of the implementation can be chosen, either
+saying 'undefined step'. A smart tag appears when you hover on the step.
+Clicking the smart tag opens the quick fix pop up.
+The destination of the implementation can be chosen, either
 a new class or from a list of existing classes. It will then generate
 the step with required annotation and parameters.
 
@@ -1192,12 +1193,18 @@ the step with required annotation and parameters.
 
    step quick fix
 
+Navigation
+~~~~~~~~~~
+
+Jump from Step text to it's implementation.
+
+Usage: ``right Click`` -> ``Go to`` -> ``Declaration``
+
 Formatting
 ~~~~~~~~~~
 
 -  A specification file can be formatted easily using the keyboard
-   shortcut ``ctrl+alt+shift+l`` (in windows and linux) and
-   ``cmd+alt+shift+l``\ (in Mac).
+   shortcut of `Spec Format` in the action menu ``ctrl+shift+a``.
 
 This formats the specification including indentation of tables and
 steps.
@@ -1268,7 +1275,7 @@ tag filter to the execution \* Choose the number of parallel streams
 Rephrase Steps
 ~~~~~~~~~~~~~~
 
--  Press **Shift+F6** on a step to rephrase it.
+- ``right click -> Refactor -> Rename`` on a step to rephrase it.
 -  The parameters will be in ``< >`` in the rephrase dialog. They can be
    reordered,removed or new parameters can be added.
 -  The rephrase change will reflect across **all the specs** in the
@@ -1277,7 +1284,7 @@ Rephrase Steps
 Find Usages
 ~~~~~~~~~~~
 
--  Press **cmd/ctrl+alt+F7** on step/concept to see the usages.
+-  ``right click -> Find Usages`` on step/concept to see the usages.
 
 .. figure:: images/intellij-screenshots/find_usages/find_usages.gif
    :alt: find usages
@@ -1482,23 +1489,25 @@ implementation.
 
    AutoComplete
 
+Implement Step
+~~~~~~~~~~~~~~~
+If you have an unimplemented step in the spec file, it will be get highlighted with a red underline.
+Hover over towards the end of step text to get the Smart Tag to implement it.
+On clicking the Smart Tag a pop up opens. The destination of the implementation can be chosen, either
+a new class or from a list of existing classes. It will then generate
+the step with required annotation and parameters.
+
+.. figure:: images/visual_studio_screenshots/quick_fix/QuickFix.gif
+   :alt: step quick fix
+
+   step quick fix
+
 Navigation
 ~~~~~~~~~~
 
 Jump from Step text to it's implementation.
 
 Usage: ``Right Click`` -> ``Go to Declaration`` or hit F12
-
-Smart Tag
-~~~~~~~~~
-
-Implement an unimplemented step - generates a method template, with a
-``Step`` attribute having this Step Text.
-
-.. figure:: images/visual_studio_screenshots/features/quickfix/QuickFix.gif
-   :alt: Quick Fix
-
-   Quick fix
 
 Test Runner
 ~~~~~~~~~~~
