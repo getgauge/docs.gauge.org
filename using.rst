@@ -1151,6 +1151,20 @@ See :ref:`gauge-maven-plugin <maven>` for more details on using the gauge maven 
 
 .. _intellij-features:
 
+Syntax Highlighting
+~~~~~~~~~~~~~~~~~~~
+
+Gauge specs are in `Markdown <https://daringfireball.net/projects/markdown/syntax>`__
+syntax. This plugin highlights Specifications, Scenarios, Steps and
+Tags.
+
+Steps with missing implementation are also highlighted.
+
+.. figure:: images/intellij-screenshots/syntax_highlighting.png
+   :alt: syntax highlighting
+
+   syntax highlighting
+
 Auto Completion
 ~~~~~~~~~~~~~~~
 
@@ -1181,11 +1195,12 @@ the step with required annotation and parameters.
 Formatting
 ~~~~~~~~~~
 
-A spec file can be formatted by pressing ``ctrl+alt+shift l`` (in
-windows and linux) and ``cmd+alt+shift l``\ (in mac).
+-  A specification file can be formatted easily using the keyboard
+   shortcut ``ctrl+alt+shift+l`` (in windows and linux) and
+   ``cmd+alt+shift+l``\ (in Mac).
 
-This formats all the elements of current spec including indentation of
-tables and steps.
+This formats the specification including indentation of tables and
+steps.
 
 Execution
 ~~~~~~~~~
@@ -1358,16 +1373,6 @@ Then fill the scenario name in the template.
    :alt: sce heading fill
 
    scenario heading fill
-
-Format Specification
-~~~~~~~~~~~~~~~~~~~~
-
--  A specification file can be formatted easily using the keyboard
-   shortcut ``ctrl+alt+shift+l`` (in windows and linux) and
-   ``cmd+alt+shift+l``\ (in Mac).
-
-This formats the specification including indentation of tables and
-steps.
 
 HTML Preview Tab
 ~~~~~~~~~~~~~~~~
