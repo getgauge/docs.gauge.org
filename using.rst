@@ -1517,24 +1517,54 @@ Formatting
 This formats the specification including indentation of tables and
 steps.
 
-Execution with Test Runner
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Execution with Test Explorer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Open the Test Explorer : ``Menu`` -> ``Test`` -> ``Windows`` ->
-``Test Explorer`` All the scenarios in the project should be listed. Run
-one or more of these tests.
+When you build the test project, all the test scenarios appear in Test Explorer.
+If Test Explorer is not visible, choose Test on the Visual Studio menu, choose Windows, and then choose Test Explorer.
 
 .. figure:: images/visual_studio_screenshots/features/TestExplorer.png
    :alt: Test Explorer
 
    Test Explorer
 
+Run tests
+"""""""""
+
+* To run all the scenarios in a solution, choose Run All.
+* To run all the scenarios of a specification, choose Run... and then choose the group on the menu.
+* To run one or more scenarios, select the individual scenarios that you want to run, open the context menu for a selected scenario and then choose Run Selected Tests.
+
+Run tests in parallel
+"""""""""""""""""""""
+
+If individual scenarios have no dependencies that prevent them from being run in any order,
+turn on parallel test execution with the UTE_parallelicon-small toggle button on the toolbar.
+
+If you want to use the parallel run of Gauge please refer the :ref:`command line parallel execution <parallel_execution>`.
+
+Test results
+""""""""""""
+
+The pass/fail bar at the top of the Test Explorer window is animated as the scenarios run.
+At the conclusion of the run, the pass/fail bar turns green if all tests passed or turns red if any test failed.
+
+As you run, write, and rerun your tests, Test Explorer displays the results in default groups of Failed Tests,
+Passed Tests, Skipped Tests and Not Run Tests. You can change the way Test Explorer groups your tests.
+You can perform much of the work of finding, organizing and running tests from the Test Explorer toolbar.
+
 .. figure:: images/visual_studio_screenshots/features/TestExplorerOptions.png
   :alt: Test Explorer Options
 
   Test Explorer options
 
-Test Explorer options to run `Failed/Passed/Not Run/Last Run` can be used to run the required scenarios.
+Traits
+""""""
+Groups of scenarios by specification, tags that are defined.
+
+Search and filter the test list
+"""""""""""""""""""""""""""""""
+This Test Explorer feature can be used as mentioned in `Search and filter the test list <https://msdn.microsoft.com/en-us/library/hh270865.aspx#BKMK_Search_and_filter_the_test_list>`__ of Visual Studio documentation.
 
 Debugging
 ~~~~~~~~~
