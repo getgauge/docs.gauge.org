@@ -1520,6 +1520,11 @@ steps.
 Execution with Test Explorer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. note:: 
+    Refer `MSDN Documentation on Unit Test Explorer <https://msdn.microsoft.com/en-us/library/hh270865.aspx#Anchor_2>`__ for 
+    all features of Unit Test Explorer.
+
+
 When you build the test project, all the test scenarios appear in Test Explorer.
 If Test Explorer is not visible, choose Test on the Visual Studio menu, choose Windows, and then choose Test Explorer.
 
@@ -1539,7 +1544,7 @@ Run tests in parallel
 """""""""""""""""""""
 
 If individual scenarios have no dependencies that prevent them from being run in any order,
-turn on parallel test execution with the UTE_parallelicon-small toggle button on the toolbar.
+turn on parallel test execution with the |ute_parallel| toggle button on the toolbar.
 
 If you want to use the parallel run of Gauge please refer the :ref:`command line parallel execution <parallel_execution>`.
 
@@ -1604,3 +1609,4 @@ Create Spec and Concept files
 
 .. |install plugin| image:: images/intellij-screenshots/add_plugin.png
 .. |extract concept| image:: images/intellij-screenshots/etc.gif
+.. |ute_parallel| image:: images/visual_studio_screenshots/UTE_parallelicon-small.png
