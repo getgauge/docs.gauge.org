@@ -86,6 +86,29 @@ The upper limit to the number of open files is low.
 Increase the upper limit by adding a command ``ulimit -S -n 2048`` to you ~/.profile.
 Don't forget to re-login for the changes to take effect.
 
+Why I add custom gradle task like document, but gradle can't execute?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    * What went wrong:
+    A problem occurred evaluating root project 'INDYGauge'.
+    > Could not get unknown property 'GaugeTask' for root project 'INDYGauge' of type org.gradle.api.Project.
+
+That's because Gradle can't recognize what GaugeTask is, you need change to it's qulified name like this
+
+.. code-block:: console
+  
+  task customGauge(type: com.thoughtworks.gauge.gradle.GaugeTask) {
+    gauge {
+        specsDir = 'specs'
+        env = 'default'
+        tags = 'tag1'
+        inParallel = true
+        nodes = 4
+        additionalFlags = '--verbose'
+    }
+  }
+   
 IDE
 ---
 
