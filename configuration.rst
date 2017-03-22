@@ -2,8 +2,7 @@ Configuration
 =============
 
 All the Gauge specific internal configurations are stored in
-``gauge.properties`` file present in your Gauge install location
-(``GAUGE_ROOT``). These properties are key value pairs.
+``gauge.properties`` file present in ``~/.gauge/config`` in Mac/Linux and in ``%APPDATA%\Gauge\config`` in windows (or ``GAUGE_ROOT``) repository. These properties are key value pairs.
 
 Global
 ------
