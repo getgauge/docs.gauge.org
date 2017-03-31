@@ -11,7 +11,8 @@ Steps to Integrate Gauge with CI tool:
 -  Add gauge commands as tasks in CI to run tests.
 
 For example, to run the specs use ``gauge specs``
--  If you want to run specific instance of gauge on CI, set ``GAUGE_ROOT`` as environment variable to the path of specific instance.
+
+-  If you want to run specific instance of gauge on CI, add it in ``PATH`` env or use absolute path of specific instance.
 -  Gauge returns html-reports, console output as result of execution which can be configured to view on CI.
 
 .. toctree::

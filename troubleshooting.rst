@@ -31,8 +31,6 @@ Gauge Installation
 Windows
 ^^^^^^^
 
--  ``GAUGE_ROOT`` environment variable should be set to the gauge installation path.
-
 -  The default installation location is ``%ProgramFiles%\gauge``.
 
 -  ``gauge_install_location\bin`` should be in PATH to run from command line.
@@ -46,9 +44,7 @@ Mac OS X
 
 -  The default installation location is ``/usr/local/``.
 
--  On custom installation location set the environment variable ``GAUGE_ROOT`` to custom\_install\_location.
-
--  ``usr/local/bin/`` should be in PATH.
+-  ``usr/local/bin/`` or ``custom_install_location/bin`` should be in PATH.
 
 -  Run ``brew update`` before installing the latest version of gauge.
 
@@ -60,8 +56,6 @@ Linux
 ^^^^^
 
 -  The default installation location is ``/usr/local/``.
-
--  On custom installation location Set the environment variable ``GAUGE_ROOT`` to custom\_install\_location.
 
 -  ``usr/local/bin/`` or ``custom_install_location/bin`` should be in PATH.
 

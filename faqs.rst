@@ -24,6 +24,7 @@ MacOS/Linux   ``/usr/local/bin``
 
 
 Where are the plugins installed?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ============= ================================
 OS            Path                          
@@ -35,7 +36,8 @@ MacOS/Linux   ``~/.gauge/plugins``
 How do I set a custom path for gauge configuration and plugins?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Set the ``GAUGE_ROOT`` environment variable to point to your custom location.
+- Set the environment variable ``GAUGE_ROOT`` to point to your custom configuration location.
+- Set the environment variable ``GAUGE_HOME`` to install plugins at custom location.
 
 How can I manually install a plugin?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

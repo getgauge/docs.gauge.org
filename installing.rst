@@ -37,6 +37,14 @@ below to install Gauge.
     unzip gauge-$VERSION-$OS.$ARCH.zip
     ./install.sh
 
+Gauge Plugins also can be installed along with ``gauge`` ( requires Internet). Set ``GAUGE_PLUGINS`` ( comma separated list of plugins) env to install plugins.
+
+Example :-
+
+.. code-block:: console
+
+    GAUGE_PLUGINS=java,xml-report ./install.sh
+
 Having trouble with installation? Head over to our :ref:`installation-faq` FAQ's.
 
 Alternate Methods
@@ -291,7 +299,7 @@ OS X/Linux
 
 .. code-block:: console
 
-   rm -rf /usr/local/bin/gauge /usr/local/share/gauge /usr/local/share/gauge_screenshot ~/.gauge
+   rm -rf /usr/local/bin/gauge /usr/local/bin/gauge_screenshot ~/.gauge
 
 If Gauge is installed in custom location, user will have to remove
 corresponding files/directory.
@@ -301,7 +309,7 @@ Windows
 
 Run the executable ``uninst.exe`` found in Gauge install location.
 
-More on Gauge install location can be found `here <troubleshoot_gauge_installation>`.
+More on Gauge install location can be found :ref:`here <troubleshoot_gauge_installation>`.
 
 .. _plugins-uninstallation:
 

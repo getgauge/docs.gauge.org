@@ -82,7 +82,4 @@ Reports
 -  You can upload Gauge execution reports to your choice of hosted web
    server. Read
    `more <https://docs.travis-ci.com/user/uploading-artifacts/>`__ for
-   uploading artifacts. # TeamCity
-   `TeamCity <https://www.jetbrains.com/teamcity/>`__ is a powerful and
-   user-friendly Continuous Integration and Deployment server that works
-   out of the box.
+   uploading artifacts.
