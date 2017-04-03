@@ -21,10 +21,10 @@ Tips on Installation
    plugins are installed per user. So plugins should be installed via
    user account with which the Go agent executes. Refer default install
    location of Gauge and its plugins
-   `here <http://getgauge.io/documentation/user/current/troubleshooting/installation.html>`__.
+   `here <https://docs.getgauge.io/troubleshooting.html#gauge-installation>`__.
 
 -  Alternately, you can set `custom location for
-   plugins <http://getgauge.io/documentation/user/current/troubleshooting/installation.html#custom-plugin-install-location>`__
+   plugins <https://docs.getgauge.io/troubleshooting.html#custom-plugin-install-location>`__
    so that its accessible to Go agent running as a different user.
 
 Create execution task

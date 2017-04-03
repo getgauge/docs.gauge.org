@@ -1079,7 +1079,7 @@ plugins.
 
 To install plugin by downloading it manually or to update plugin, follow
 the steps
-`here <https://www.jetbrains.com/idea/help/installing-plugin-from-disk.html>`__.
+`here <https://www.jetbrains.com/help/idea/2017.1/installing-a-plugin-from-the-disk.html>`__.
 
 Create a new Gauge project and start writing your tests.
 

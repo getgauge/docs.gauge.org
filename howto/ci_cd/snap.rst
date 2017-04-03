@@ -24,7 +24,7 @@ by adding following commands:
     gauge_setup
 
 More details on installation on all operating systems can be found
-`here <http://getgauge.io/documentation/user/current/installations/operating_system/>`__.
+`here <https://docs.getgauge.io/installing.html#installation>`__.
 
 -  Install Gauge language plugin as:
 
