@@ -55,6 +55,21 @@ The configurable properties are:
 
 Default value is ``true``
 
+Report re-generation
+^^^^^^^^^^^^^^^^^^^^
+
+If report generation fails due to some reason, we don't have to re-run the tests again.
+
+The html-report plugin now generates a last_run_result.json file in the root of the reports directory.
+There is also a symlink to the html-report executable in the same location.
+
+**To regenerate the report**
+
+- Navigate to the reports directory
+- run ./html-report --input=last_run_result.json --output="/some/path"
+
+**Note:** The output directory is created. Take care not to overwrite an existing directory
+
 XML Report
 ----------
 
