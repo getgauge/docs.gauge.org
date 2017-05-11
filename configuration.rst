@@ -88,6 +88,11 @@ value pairs.
     # Set to false to disable screenshots on failure in reports.
     screenshot_on_failure = true
 
+    # Path to generate custom report theme. 
+    # Should be either relative to the project directory or an absolute path.
+    # Default theme is used if not set
+    GAUGE_HTML_REPORT_THEME_PATH = custom_theme_path
+
 .. _environments:
 
 Environments

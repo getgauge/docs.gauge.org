@@ -55,6 +55,15 @@ The configurable properties are:
 
 Default value is ``true``
 
+**GAUGE_HTML_REPORT_THEME_PATH**
+
+-  Specifies the path to the custom reports directory.
+
+-  Should be either relative to the project directory or an absolute
+   path. 
+
+By default, ``default`` theme shipped with gauge is used.
+
 Report re-generation
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -69,6 +78,8 @@ There is also a symlink to the html-report executable in the same location.
 - run ./html-report --input=last_run_result.json --output="/some/path"
 
 **Note:** The output directory is created. Take care not to overwrite an existing directory
+
+While regenerating a report, the default theme is used. A custom can be used if ``--theme`` flag is specified with the path to the custom theme.
 
 XML Report
 ----------
