@@ -193,8 +193,8 @@ from plugin repository, use the ``--file`` or ``-f`` flag.
 
 Download the plugin zip from the `Github Releases <https://github.com/getgauge/spectacle/releases>`__
 
-Export to HTML
---------------
+Usage
+^^^^^
 
 Run the following command to export to HTML in a Gauge project
 
@@ -222,3 +222,57 @@ In the following image, the specs/scenarios are filtered using a tag expression(
    :alt: Filter Specification/Scenario
 
    Filter Specification/Scenario
+
+Flash
+-----
+
+Real-time execution reporting plugin! Watch test runs go green or red.
+Install it in your CI/CD setup and connect to Flash using your browser to see what your test suites are doing.
+
+Installation
+^^^^^^^^^^^^
+
+To install Flash plugin :
+
+.. code-block:: console
+
+    gauge --install flash
+
+To install a specific version of the plugin use the ``--plugin-version`` flag.
+
+.. code-block:: console
+
+    gauge --install flash --plugin-version 0.0.1
+
+**Offline Installation** :
+
+If plugin should be installed from a zipfile instead of downloading from
+plugin repository, use the ``--file`` or ``-f`` flag.
+
+.. code-block:: console
+
+    gauge --install flash --file ZIP_FILE_PATH
+
+Download the plugin zip from the `Github Releases <https://github.com/getgauge/flash/releases>`__
+
+Usage
+^^^^^
+To add Flash plugin to your project, run the following command :
+
+.. code-block:: console
+
+    gauge --add-plugin flash
+
+Execute specs and open the URL in browser shown in console output.
+
+Configuration
+^^^^^^^^^^^^^
+
+The Flash plugin can be configured by the properties set in the
+``env/default.properties`` file in the project.
+
+The configurable properties are:
+
+**FLASH_SERVER_PORT**
+
+To use a specific port, set ``FLASH_SERVER_PORT={port}`` as environment variable or in ``env/default/flash.properties`` file.
