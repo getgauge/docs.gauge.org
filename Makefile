@@ -56,7 +56,7 @@ zip: versions
 	)
 
 serve: zip
-	(cd $(BUILDDIR)/html/ && python -m http.server)
+	(cd $(BUILDDIR)/html/ && python3 -m http.server)
 
 # Put it first so that "make" without argument is like "make help".
 help:
