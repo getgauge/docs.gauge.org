@@ -147,7 +147,7 @@ The environment is specified using the ``env`` flag. For example if
 
 .. code-block:: console
 
-    gauge --env ci specs
+    gauge run --env ci specs
 
 
 Precedence of Environments
@@ -192,7 +192,7 @@ Gauge loads the enviroment variables as below.
 Examples
 ~~~~~~~~
 
--  User executes ``gauge specs``
+-  User executes ``gauge run specs``
 
    -  If ``<project_root>/env/default`` is **not** present, Gauge will
       set the default env variables with values mentioned in the table
@@ -202,7 +202,7 @@ Examples
       then set any env variable (which is not already set) as per the
       table above.
 
--  User executes ``gauge --env=java_ci specs``
+-  User executes ``gauge run --env=java_ci specs``
 
    -  If ``<project_root>/env/java_ci`` is **not** present, Gauge will
       end with a non-zero exit code.
@@ -212,9 +212,9 @@ Examples
       are not already set. Finally, it will the set the env vars with
       values mentioned in the table above (if they are not already set).
 
--  User executes ``gauge_reports_dir=newReportsDir gauge specs`` or user
+-  User executes ``gauge_reports_dir=newReportsDir gauge run specs`` or user
    explicitly sets ``gauge_reports_dir=newReportsDir`` in shell and then
-   runs ``gauge specs``
+   runs ``gauge run specs``
 
    -  Gauge will set all the default env variables from ``env/default``
       directory and then from the above table, except for the variable
@@ -222,9 +222,9 @@ Examples
       to be ``newReportsDir``.
 
 -  User executes
-   ``gauge_reports_dir=newReportsDir gauge --env=java_ci specs`` or user
+   ``gauge_reports_dir=newReportsDir gauge run --env=java_ci specs`` or user
    explicitly sets ``gauge_reports_dir=newReportsDir`` in shell and then
-   runs ``gauge --env=java_ci specs``
+   runs ``gauge run --env=java_ci specs``
 
    -  Gauge will set the env variables mentioned in the ``java_ci``
       environment. It will then load other variables from the
@@ -459,7 +459,7 @@ Property        Usage                    Description
 ``flags``       ``-Dflags="--verbose"``  Add additional gauge flags to execution.
 =============== ======================== ===============================================================
 
-See gauge's :ref:`cli_flags` for list of all flags that be used with **-Dflags** option.
+See gauge's :ref:`cli_interface` for list of all flags that be used with **-Dflags** option.
 
 .. _gradle:
 
@@ -564,7 +564,7 @@ Property        Usage                    Description
 ``flags``       ``-Pflags="--verbose"``  Add additional gauge flags to execution.
 =============== ======================== ===============================================================
 
-See gauge's :ref:`cli_flags` for list of all flags that be used with **-PadditionalFlags** option.
+See gauge's :ref:`cli_interface` for list of all flags that be used with **-PadditionalFlags** option.
 
 Adding/configuring custom Gauge tasks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -220,14 +220,14 @@ C#
 
 .. code-block:: console
 
-   gauge --install csharp
+   gauge install csharp
 
 Java
 ++++
 
 .. code-block:: console
 
-   gauge --install java
+   gauge install java
 
 
 Ruby
@@ -235,7 +235,7 @@ Ruby
 
 .. code-block:: console
 
-   gauge --install ruby
+   gauge install ruby
 
 One can use IDEs to create the projects and run specifications, for this
 example, we are using the command line options.
@@ -248,14 +248,14 @@ HTML Reports
 
 .. code-block:: console
 
-   gauge --install html-report
+   gauge install html-report
 
 XML Reports
 ++++++++++++
 
 .. code-block:: console
 
-   gauge --install xml-report
+   gauge install xml-report
 
 Verify your installation
 ------------------------
@@ -265,7 +265,7 @@ following command.
 
 .. code-block:: console
 
-   gauge -v
+   gauge version
 
 If this enlists a version then you're intallation and initialisation is
 has been successful. Your output will look like this:
@@ -316,21 +316,21 @@ More on Gauge install location can be found :ref:`here <troubleshoot_gauge_insta
 Plugins
 ^^^^^^^^
 
-Plugins can be uninstalled using the ``uninstall`` flag. The command is
+Plugins can be uninstalled using the ``uninstall`` subcommand. The command is
 
-``gauge --uninstall <plugin-id>``
+``gauge uninstall <plugin-id>``
 
 Example:
 
 .. code-block:: console
 
-   gauge --uninstall java
+   gauge uninstall java
 
 To uninstall a specific version of the plugin, use the
-``--plugin-version`` flag.
+``--version`` flag.
 
 Example:
 
 .. code-block:: console
 
-   gauge --uninstall java --plugin-version 0.3.2
+   gauge uninstall java --version 0.3.2

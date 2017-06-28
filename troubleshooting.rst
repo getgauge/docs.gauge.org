@@ -70,13 +70,13 @@ Plugin installation
 
 .. code-block:: console
 
-    gauge --install plugin_name -f path_to_zip_file
+    gauge install plugin_name -f path_to_zip_file
 
 Example:
 
 .. code-block:: console
 
-    gauge --install html-report -f html-report-1.0.3-darwin.x86.zip
+    gauge install html-report -f html-report-1.0.3-darwin.x86.zip
 
 -  Find the plugin zip files under ``Releases`` section of the plugin github repositories. See the `gauge plugin list <http://getgauge.io/plugins/index.html>`__ for plugin repositories details.
 
@@ -124,7 +124,7 @@ Compatibility errors
     Failed to start a runner. Compatible runner version to 0.0.7 not found
 
 -  The language plugin installed is not compatible with the gauge version installed.
--  Run ``gauge --install language_NAME`` to install the latest compatible version. See :ref:`plugin installation <plugins-installation>` for
+-  Run ``gauge install language_NAME`` to install the latest compatible version. See :ref:`plugin installation <plugins-installation>` for
    more details
 
 Execution Errors

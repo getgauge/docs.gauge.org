@@ -1,7 +1,7 @@
-HOWTO: Integrating Gauge with Go.cd
+HOWTO: Integrating Gauge with GoCD
 ===================================
 
-`Go.cd <https://www.gocd.io/>`__ is a continuous integration and deployment
+`GoCD <https://www.gocd.io/>`__ is a continuous integration and deployment
 tool.
 
 
@@ -30,12 +30,12 @@ Tips on Installation
 Create execution task
 ---------------------
 
--  Create a new task which will run ``gauge specs``.
+-  Create a new task which will run ``gauge run specs``.
 -  If you want to run only a subset of specs, you can use :ref:`tagged_execution`. 
-    Eg. ``gauge --tags "tag1 & tag2" specs``
+    Eg. ``gauge run --tags "tag1 & tag2" specs``
 -  Adding a flag ``-p`` runs them using :ref:`parallel_execution`.
 -  Run against specific :ref:`environments` using the ``--env`` flag
--  See the :ref:`cli_flags` for list of all flags that can be used.
+-  See the :ref:`cli_interface` for list of all the flags that can be used.
 
    .. figure:: images/Configuring_Gauge.png
       :alt: adding new task

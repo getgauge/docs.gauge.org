@@ -18,18 +18,18 @@ Follow the instructions for the respective language below. On getting the messag
 .. code-block:: console
    :caption: C#
 
-   gauge --init csharp
+   gauge init csharp
 
 .. code-block:: console
    :caption: Java
 
-   gauge --init java
+   gauge init java
 
 
 .. code-block:: console
    :caption: Ruby
 
-   gauge --init ruby
+   gauge init ruby
 
 .. note::
 
@@ -40,7 +40,7 @@ Running the specs
 
 .. code-block:: console
 
-   gauge specs
+   gauge run specs
 
 The details of the run are displayed on the command line followed by a
 statistics summary.

@@ -10,7 +10,7 @@ then Gauge also has excellent integration with multiple IDEs.
 Command Line Interface
 ----------------------
 
-Gauge has first-class command line support. With gauge :doc:`installed <installing>`, list the flags supported by running.
+Gauge has first-class command line support. With gauge :doc:`installed <installing>`, list the subcommands/flags supported by running.
 
 .. code-block:: console
 
@@ -19,16 +19,16 @@ Gauge has first-class command line support. With gauge :doc:`installed <installi
 The command-line interface works across platforms. On GNU/Linux and OSX,
 you can use any terminal. On Windows, you can use ``cmd`` or Powershell.
 
-.. _cli_flags:
+.. _cli_interface:
 
-Flags
-^^^^^
+Help
+^^^^
 
-Since Flags get added/deprecated with versions, it is recommended to get this reference via ``gauge`` itself.
+Since subcommands/flags get added/deprecated with versions, it is recommended to get this reference via ``gauge`` itself.
 
 .. code-block:: console
 
-   gauge --help
+   gauge help
 
 
 Creating a project
@@ -38,7 +38,7 @@ To create or initialize a Gauge project use run
 
 .. code-block:: console
 
-   gauge --init
+   gauge init <template>
 
 For details, see how to :ref:`create a Gauge project <create_a_project>`.
 
@@ -53,7 +53,7 @@ The syntax is:
 
 .. code-block:: console
 
-    gauge [options] <path-to-specs>
+    gauge run [flags] <path-to-specs>
 
 The ``gauge`` command-line utility allows multiple ways to specify the
 specifications to be executed. A valid path for executing tests can be
@@ -64,7 +64,7 @@ To execute all the tests in a given folder ``specs``, use
 
 .. code-block:: console
 
-    gauge specs/
+    gauge run specs/
 
 This will give a colored console output with details of the execution as
 well an execution summary.
@@ -75,7 +75,7 @@ Specify scenarios
 A single scenario of a specification can be executed by specifying the
 line number in the span of that scenario in the spec. To execute a
 ``Admin Login`` scenario in the following spec use
-``gauge specs/login_test.spec:4`` command.
+``gauge run specs/login_test.spec:4`` command.
 
 .. code-block:: gauge
     :linenos:
@@ -98,7 +98,7 @@ Multiple scenarios can be executed selectively as follows :
 
 .. code-block:: console
 
-    gauge specs/helloworld.spec:4 specs/helloworld.spec:7
+    gauge run specs/helloworld.spec:4 specs/helloworld.spec:7
 
 These scenarios can also belong to different specifications.
 
@@ -109,7 +109,7 @@ named ``spec1.spec``, you would do:
 
 .. code-block:: console
 
-    gauge specs/spec1.spec:1
+    gauge run specs/spec1.spec:1
 
 To specify multiple scenarios, add multiple such arguments. For example,
 to execute the first and third scenarios of a specification file named
@@ -117,7 +117,7 @@ to execute the first and third scenarios of a specification file named
 
 .. code-block:: console
 
-    gauge specs/spec1.spec:0 specs/spec1.spec:2
+    gauge run specs/spec1.spec:0 specs/spec1.spec:2
 
 Specify directories
 ~~~~~~~~~~~~~~~~~~~
@@ -129,7 +129,7 @@ For example:
 
 .. code-block:: console
 
-    gauge specs/
+    gauge run specs/
 
 You can also specify multiple directories in which specifications are
 stored. Gauge scans all the directories for valid specification files
@@ -139,7 +139,7 @@ For example:
 
 .. code-block:: console
 
-    gauge specs-dir1/ specs-dir2/ specs-dir3/
+    gauge run specs-dir1/ specs-dir2/ specs-dir3/
 
 Specify files
 ~~~~~~~~~~~~~
@@ -151,13 +151,13 @@ For example, to execute a single specification file:
 
 .. code-block:: console
 
-    gauge specs/spec1.spec
+    gauge run specs/spec1.spec
 
 Or, to execute multiple specification files:
 
 .. code-block:: console
 
-    gauge specs/spec1.spec specs/spec2.spec specs/spec3.spec
+    gauge run specs/spec1.spec specs/spec2.spec specs/spec3.spec
 
 
 Verbose reporting
@@ -169,7 +169,7 @@ tests. You can enable verbose, step-level reporting by using the
 
 .. code-block:: console
 
-    gauge --verbose specs/
+    gauge run --verbose specs/
 
 
 Errors during execution
@@ -267,8 +267,8 @@ Example:
 
 .. code-block:: console
 
-    gauge --table-rows "1" specs/hello.spec
-    gauge --table-rows "1,4,7" specs/hello.spec
+    gauge run --table-rows "1" specs/hello.spec
+    gauge run --table-rows "1,4,7" specs/hello.spec
 
 Range of table rows can also be specified, against which the scenarios
 are run.
@@ -277,7 +277,7 @@ Example:
 
 .. code-block:: console
 
-    gauge --table-rows "1-3" specs/hello.spec
+    gauge run --table-rows "1-3" specs/hello.spec
 
 This executes the scenarios against table rows 1, 2, 3.
 
@@ -292,13 +292,13 @@ tags, use the following command.
 
 .. code-block:: console
 
-    gauge --tags tag1,tag2 specs
+    gauge run --tags tag1,tag2 specs
 
 or,
 
 .. code-block:: console
 
-    gauge --tags "tag1, tag2" specs
+    gauge run --tags "tag1, tag2" specs
 
 This executes only the scenarios and specifications which are tagged
 with ``tag1`` and ``tag2``.
@@ -315,7 +315,7 @@ should be executed, then use the following command:
 
 .. code-block:: console
 
-    gauge --tags "search & admin" SPEC_FILE_NAME
+    gauge run --tags "search & admin" SPEC_FILE_NAME
 
 Tag expressions
 """""""""""""""
@@ -346,13 +346,13 @@ This can be done by the command:
 
 .. code-block:: console
 
-    gauge --parallel specs
+    gauge run --parallel specs
 
 or,
 
 .. code-block:: console
 
-    gauge -p specs
+    gauge run -p specs
 
 This creates a number of execution streams depending on the number of
 cores of the machine and distribute the load among workers.
@@ -364,7 +364,7 @@ Example:
 
 .. code-block:: console
 
-    gauge --parallel -n=4 specs
+    gauge run --parallel -n=4 specs
 
 This creates four parallel execution streams.
 
@@ -402,7 +402,7 @@ This can be done by the command:
 
 .. code-block:: console
 
-    gauge -n=4 -g=2 specs
+    gauge run -n=4 -g=2 specs
 
 This creates 4 groups (provided by -n flag) of specification and selects
 the 2nd group (provided by -g flag) for execution.
@@ -415,11 +415,11 @@ Example:
 
 .. code-block:: console
 
-    gauge -n=4 -g=2 specs
+    gauge run -n=4 -g=2 specs
 
 .. code-block:: console
 
-    gauge -n=4 -g=2 specs
+    gauge run -n=4 -g=2 specs
 
 The above two commands will execute the same group of specifications.
 
@@ -439,13 +439,13 @@ number of streams:
 
 .. code-block:: console
 
-    gauge -n=4 --strategy="lazy" specs
+    gauge run -n=4 --strategy="lazy" specs
 
 or,
 
 .. code-block:: console
 
-    gauge -n=4 specs
+    gauge run -n=4 specs
 
 Say you have 100 tests, which you have chosen to run across 4
 streams/cores; lazy assignment will dynamically, during execution,
@@ -460,7 +460,7 @@ making them an equal number based distribution.
 
 .. code-block:: console
 
-    gauge -n=4 --strategy="eager" specs
+    gauge run -n=4 --strategy="eager" specs
 
 **Note:** The 'lazy' assignment strategy only works when you do NOT use
 the -g flag. This is because grouping is dependent on allocation of
@@ -477,7 +477,7 @@ This can be done by the command:
 
 .. code-block:: console
 
-    gauge -n=4 -g=2 specs
+    gauge run -n=4 -g=2 specs
 
 This creates 4 groups (provided by ``-n`` flag) of specification and
 selects the 2nd group (provided by ``-g`` flag) for execution.
@@ -490,7 +490,7 @@ Example:
 
 .. code-block:: console
 
-    gauge -n=4 -g=2 specs
+    gauge run -n=4 -g=2 specs
 
 The above two commands will execute the same group of specifications.
 
@@ -610,7 +610,7 @@ command:
 
 .. code-block:: console
 
-    gauge --list-templates
+    gauge list-templates
 
 These templates can also be found in `Bintray Gauge Templates <https://bintray.com/gauge/Templates/gauge-templates/view#files>`__.
 
@@ -623,7 +623,7 @@ setup such project which is ready to start writing tests with selenium
 by using ``java_maven_selenium`` Gauge template.
 
 To initialize a Gauge project with a template, choose a name from the
-list shown on running ``gauge --list-templates`` and pass that name as
+list shown on running ``gauge list-templates`` and pass that name as
 an argument when initializing the Gauge project.
 
 For example, to create a Gauge project with the ``java_maven_selenium``
@@ -631,7 +631,7 @@ template, you need to run this command:
 
 .. code-block:: console
 
-    gauge --init java_maven_selenium
+    gauge init java_maven_selenium
 
 This template creates a Gauge project with Maven as build tool and the
 selenium Webdriver. This will download the Gauge template
@@ -771,29 +771,29 @@ Gauge provides you the ability to re-run only the scenarios which failed
 in previous execution. Failed scenarios can be run using the
 ``--failed`` flag of Gauge.
 
-Say you run ``gauge specs`` and 3 scenarios failed, you can run re-run
+Say you run ``gauge run specs`` and 3 scenarios failed, you can run re-run
 only failed scenarios instead of executing all scenarios by following
 command.
 
 .. code-block:: console
 
-    gauge --failed
+    gauge run --failed
 
 This command will even set the flags which you had provided in your
 previous run. For example, if you had executed command as
 
 .. code-block:: console
 
-    gauge --env="chrome" --verbose specs
+    gauge run --env="chrome" --verbose specs
 
-and 3 scenarios failed in this run, the ``gauge --failed`` command sets
+and 3 scenarios failed in this run, the ``gauge run --failed`` command sets
 the ``--env`` and ``--verbose`` flags to corresponding values and
-executes only the 3 failed scenarios. In this case ``gauge --failed`` is
+executes only the 3 failed scenarios. In this case ``gauge run --failed`` is
 equivalent to command
 
 .. code-block:: console
 
-    gauge --env="chrome" --verbose specs <path_to_failed_scenarios>
+    gauge run --env="chrome" --verbose specs <path_to_failed_scenarios>
 
 Refactoring
 ^^^^^^^^^^^
@@ -806,7 +806,7 @@ step run:
 
 .. code-block:: console
 
-    gauge --refactor "old step <name>" "new step name"
+    gauge refactor "old step <name>" "new step name"
 
 Here ``<`` and ``>`` are used to denote parameters in the step.
 **Parameters can be added, removed or changed while rephrasing.**
@@ -829,7 +829,7 @@ to this step we can run the command:
 
 .. code-block:: console
 
-    gauge --refactor "create user <name> with id <id>" "create user <name> with <id> and last name <watson>"
+    gauge refactor "create user <name> with id <id>" "create user <name> with <id> and last name <watson>"
 
 This will change all spec files to reflect the change.
 
@@ -909,13 +909,13 @@ following content.
 
   .. code:: console
 
-      gauge --add-plugin <plugin-name>
+      gauge add <plugin-name>
 
   Example :
 
   .. code:: console
 
-      gauge --add-plugin xml-report
+      gauge add xml-report
 
 After running the above command, the manifest.json would have the
 following content:
@@ -1455,7 +1455,7 @@ Alternately, you can create a Gauge project from command-line as:
 
     mkdir <project_name>
     cd <project_name>
-    gauge --init csharp
+    gauge init csharp
 
 This creates ``<project_name>.sln`` file which can be opened with Visual
 Studio.

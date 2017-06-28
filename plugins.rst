@@ -41,21 +41,21 @@ Documentation plugins generate readable and easy to navigate documentation from 
 Installation
 ^^^^^^^^^^^^
 
-Plugins are installed using the flag ``install``, this checks our plugin
-repository and downloads them. ``gauge --install <plugin_name>``
+Plugins are installed using the subcommand ``install``, this checks our plugin
+repository and downloads them. ``gauge install <plugin_name>``
 
 **Example:**
 
 .. code-block:: console
 
-    gauge --install html-report
+    gauge install html-report
 
-To install a specific version of a plugin use the ``--plugin-version``
+To install a specific version of a plugin use the ``--version``
 flag.
 
 .. code-block:: console
 
-    gauge --install html-report --plugin-version 2.1.0
+    gauge install html-report --version 2.1.0
 
 Offline Installation
 ~~~~~~~~~~~~~~~~~~~~
@@ -65,7 +65,7 @@ from plugin repository, use the ``--file`` or ``-f`` flag.
 
 .. code-block:: console
 
-    gauge --install html-report --file ZIP_FILE_PATH
+    gauge install html-report --file ZIP_FILE_PATH
 
 Download the latest version of plugin from the ``Releases`` section of
 the respective repository. See `plugin list <http://getgauge.io/plugins/index.html>`__ to
@@ -75,42 +75,42 @@ Adding plugins to a project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once plugins are installed, they can be added to the project by using
-the ``add-plugin`` flag i.e. 
+the ``add`` subcommand i.e. 
 
-``gauge --add-plugin <plugin_name>``
+``gauge add <plugin_name>``
 
 Example:
 
 .. code-block:: console
 
-    gauge --add-plugin xml-report
+    gauge add xml-report
 
 Updating plugins
 ^^^^^^^^^^^^^^^^
 
-To update a plugin to the latest version of it, use the ``--update``
-flag. This downloads the latest plugin from our plugin repository.
+To update a plugin to the latest version of it, use the ``update``
+subcommand. This downloads the latest plugin from our plugin repository.
 
-``gauge --update <plugin_name>``
+``gauge update <plugin_name>``
 
 Example:
 
 .. code-block:: console
 
-    gauge --update java
+    gauge update java
 
-To update a plugin to a specific version, use the ``--plugin-version``
+To update a plugin to a specific version, use the ``--version``
 flag.
 
 .. code-block:: console
 
-    gauge --update java --plugin-version 0.3.2
+    gauge update java --version 0.3.2
 
 You can also update all the installed plugins by running
 
 .. code-block:: console
 
-    gauge --update-all
+    gauge update --all
 
 Read the :ref:`Installation troubleshooting <troubleshoot_plugin_installation>` for more.
 

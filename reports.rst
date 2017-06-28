@@ -109,13 +109,13 @@ To install XML Report plugin :
 
 .. code-block:: console
 
-    gauge --install xml-report
+    gauge install xml-report
 
-To install a specific version of XML report plugin use the ``--plugin-version`` flag.
+To install a specific version of XML report plugin use the ``--version`` flag.
 
 .. code-block:: console
 
-    gauge --install xml-report --plugin-version 0.0.2
+    gauge install xml-report --version 0.0.2
 
 **Offline Installation** :
 
@@ -124,7 +124,7 @@ plugin repository, use the ``--file`` or ``-f`` flag.
 
 .. code-block:: console
 
-    gauge --install xml-report --file ZIP_FILE_PATH
+    gauge install xml-report --file ZIP_FILE_PATH
 
 Download the plugin zip from the `Github Releases <https://github.com/getgauge/xml-report/releases>`__
 
@@ -135,7 +135,7 @@ To add XML report plugin to your project, run the following command :
 
 .. code-block:: console
 
-    gauge --add-plugin xml-report
+    gauge add xml-report
 
 The XML report plugin can be configured by the properties set in the
 ``env/default.properties`` file in the project.
@@ -174,13 +174,13 @@ To install:
 
 .. code-block:: console
 
-    gauge --install spectacle
+    gauge install spectacle
 
-To install a specific version of spectacle plugin use the ``--plugin-version`` flag.
+To install a specific version of spectacle plugin use the ``--version`` flag.
 
 .. code-block:: console
 
-    gauge --install spectacle --plugin-version 0.0.2
+    gauge install spectacle --version 0.0.2
 
 **Offline Installation**:
 
@@ -189,7 +189,7 @@ from plugin repository, use the ``--file`` or ``-f`` flag.
 
 .. code-block:: console
 
-    gauge --install spectacle --file ZIP_FILE_PATH
+    gauge install spectacle --file ZIP_FILE_PATH
 
 Download the plugin zip from the `Github Releases <https://github.com/getgauge/spectacle/releases>`__
 
@@ -200,7 +200,7 @@ Run the following command to export to HTML in a Gauge project
 
 .. code-block:: console
 
-    gauge --docs spectacle <path to specs dir>
+    gauge docs spectacle <path to specs dir>
 
 **Sample Spectacle Report**
 
@@ -236,13 +236,13 @@ To install Flash plugin :
 
 .. code-block:: console
 
-    gauge --install flash
+    gauge install flash
 
-To install a specific version of the plugin use the ``--plugin-version`` flag.
+To install a specific version of the plugin use the ``--version`` flag.
 
 .. code-block:: console
 
-    gauge --install flash --plugin-version 0.0.1
+    gauge install flash --version 0.0.1
 
 **Offline Installation** :
 
@@ -251,7 +251,7 @@ plugin repository, use the ``--file`` or ``-f`` flag.
 
 .. code-block:: console
 
-    gauge --install flash --file ZIP_FILE_PATH
+    gauge install flash --file ZIP_FILE_PATH
 
 Download the plugin zip from the `Github Releases <https://github.com/getgauge/flash/releases>`__
 
@@ -261,7 +261,7 @@ To add Flash plugin to your project, run the following command :
 
 .. code-block:: console
 
-    gauge --add-plugin flash
+    gauge add flash
 
 Execute specs and open the URL in browser shown in console output.
 

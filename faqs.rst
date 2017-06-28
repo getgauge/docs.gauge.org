@@ -46,7 +46,7 @@ Download the plugin distributable zip file and install it using the ``-f`` flag.
 
 .. code-block:: console
 
-   gauge --install plugin_name -f path_to_zip_file
+   gauge install plugin_name -f path_to_zip_file
 
 Execution
 ---------
@@ -73,7 +73,7 @@ The language plugin is not compatible with the gauge version installed. Run
 
 .. code-block:: console
 
-   gauge --install language_name
+   gauge install language_name
    
 Why are there too many open files?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

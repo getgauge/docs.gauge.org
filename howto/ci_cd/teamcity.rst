@@ -5,7 +5,7 @@ HOWTO: Integrating Gauge with TeamCity
    Gauge on the agents. Read more on installing Gauge
    `here <https://docs.getgauge.io/installing.html#installation>`__.
 -  Install the required Gauge :ref:`language plugins <plugins-installation>` on
-   the agents as: ``gauge --install <language>``
+   the agents as: ``gauge install <language>``
 
 Tips on Installation
 --------------------
@@ -25,14 +25,14 @@ Create execution task
 
 -  Create a new project in TeamCity pointing to Gauge project repository
    URL.
--  Add a build step which will run ``gauge specs``. 
+-  Add a build step which will run ``gauge run specs``. 
     image:: images/TeamCity_buildStep.png
 
 -  If you want to run only a subset of specs, you can use :ref:`tagged_execution`. 
-    Eg. ``gauge --tags "tag1 & tag2" specs``
+    Eg. ``gauge run --tags "tag1 & tag2" specs``
 -  Adding a flag ``-p`` runs them using :ref:`parallel_execution`.
 -  Run against specific :ref:`environments` using the ``--env`` flag.
--  See the :ref:`cli_flags` for list of all flags that can be used.
+-  See the :ref:`cli_interface` for list of all the flags that can be used.
 
 Reports
 -------

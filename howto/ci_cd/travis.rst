@@ -27,10 +27,10 @@ Creating tasks
 
     install:
         - brew install gauge
-        - gauge --install <language>
-        - gauge --install html-report
+        - gauge install <language>
+        - gauge install html-report
 
-    script: 'gauge specs'
+    script: 'gauge run specs'
 
     sudo: false
 
@@ -47,22 +47,21 @@ Creating tasks
         - sudo apt-get update
         - sudo apt-get install gauge
         - gauge_setup
-        - gauge --install <language>
-        - gauge --install html-report
+        - gauge install html-report
 
-    script: 'gauge specs'
+    script: 'gauge run specs'
 
     sudo: true
 
 * If you want to run only a subset of specs, you can use :ref:`tagged_execution`.
-  Example: add ``script: gauge --tags "tag1 & tag2" specs`` in your ``.travis.yml``.
+  Example: add ``script: gauge run --tags "tag1 & tag2" specs`` in your ``.travis.yml``.
 
 * Adding a flag ``-p`` runs them using :ref:`parallel_execution`.
-  Example: ``script: gauge -p specs`` in your ``.travis.yml``.
+  Example: ``script: gauge run -p specs`` in your ``.travis.yml``.
 
 * Run against specific :ref:`environments` using the ``--env`` flag.
 
-* See the :ref:`cli_flags` for list of all flags that can be used.
+* See the :ref:`cli_interface` for list of all the flags that can be used.
 
 
 Reports
