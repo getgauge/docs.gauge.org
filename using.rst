@@ -368,9 +368,7 @@ Example:
 
 This creates four parallel execution streams.
 
-**Note:** The number of streams should be specified depending on number
-of CPU cores available on the machine, beyond which it could lead to
-undesirable results. For optimizations, try `parallel execution using threads`_.
+.. note:: The number of streams should be specified depending on number of CPU cores available on the machine, beyond which it could lead to undesirable results. For optimizations, try `parallel execution using threads`_.
 
 .. _parallel execution using threads:
 
