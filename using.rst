@@ -608,7 +608,7 @@ command:
 
 .. code-block:: console
 
-    gauge list-templates
+    gauge init --templates
 
 These templates can also be found in `Bintray Gauge Templates <https://bintray.com/gauge/Templates/gauge-templates/view#files>`__.
 
@@ -621,7 +621,7 @@ setup such project which is ready to start writing tests with selenium
 by using ``java_maven_selenium`` Gauge template.
 
 To initialize a Gauge project with a template, choose a name from the
-list shown on running ``gauge list-templates`` and pass that name as
+list shown on running ``gauge init --templates`` and pass that name as
 an argument when initializing the Gauge project.
 
 For example, to create a Gauge project with the ``java_maven_selenium``

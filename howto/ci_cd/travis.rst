@@ -27,7 +27,6 @@ Creating tasks
 
     install:
         - brew install gauge
-        - gauge install <language>
         - gauge install html-report
 
     script: 'gauge run specs'
