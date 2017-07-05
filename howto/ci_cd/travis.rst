@@ -12,7 +12,7 @@ hosted at GitHub.
 Creating tasks
 --------------
 
--  Create a ``.travis.yml`` file in your peoject root.
+-  Create a ``.travis.yml`` file in your project root.
 -  Add these lines in ``.travis.yml`` according to the platform on which
    you want to build.
 
