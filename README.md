@@ -2,7 +2,7 @@
 
 This is the repository for [Gauge documentation](https://docs.getgauge.io).
 
-The documents are writted in RST and are build using [Sphinx](http://www.sphinx-doc.org/), a theme based on [readthedocs](https://github.com/snide/sphinx_rtd_theme/).
+The documents are written in RST and are built using [Sphinx](http://www.sphinx-doc.org/), a theme based on [readthedocs](https://github.com/snide/sphinx_rtd_theme/).
 
 ## Conventions
 
