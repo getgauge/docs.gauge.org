@@ -411,7 +411,7 @@ execution.
 Taking Custom Screenshots
 -------------------------
 
--  By default gauge captures the display screen on failure it this
+-  By default gauge captures the display screen on failure if this
    feature has been enabled.
 
 -  If you need to take CustomScreenshots (using webdriver for example)
