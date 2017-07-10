@@ -22,3 +22,4 @@ For example, to run the specs use ``gauge run specs``
     GoCD<gocd>
     TeamCity<teamcity>
     Travis-CI<travis>
+    CircleCI<circle>
