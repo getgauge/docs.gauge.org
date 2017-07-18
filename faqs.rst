@@ -33,11 +33,10 @@ Windows       ``%APPDATA%\gauge\plugins``
 MacOS/Linux   ``~/.gauge/plugins``
 ============= ================================
 
-How do I set a custom path for gauge configuration and plugins?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+What is GAUGE_HOME?
+^^^^^^^^^^^^^^^^^^^^^^
 
-- Set the environment variable ``GAUGE_ROOT`` to point to your custom configuration location.
-- Set the environment variable ``GAUGE_HOME`` to install plugins at custom location.
+``GAUGE_HOME`` environment variable can be used to customize configs files and plugins installation location.
 
 How can I manually install a plugin?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
