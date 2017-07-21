@@ -7,7 +7,7 @@ hosted at GitHub.
 
 -  Login to Travis CI and goto ``accounts`` menu.
 -  Choose your project repository to be built and flick that switch on.
-    image:: images/travis_account.png
+    .. figure:: images/travis_account.png
 
 Creating tasks
 --------------
