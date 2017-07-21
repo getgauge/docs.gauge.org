@@ -71,8 +71,6 @@ Reports
    .. figure:: images/travis_console.png
       :alt: console output
 
-      console
-
 -  Gauge generates ``html-report`` after execution whose location can be
    set by environment variable ``gauge_reports_dir``. This defaults to
    ``reports`` directory in the Gauge project.

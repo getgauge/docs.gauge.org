@@ -36,7 +36,7 @@ MacOS/Linux   ``~/.gauge/plugins``
 What is GAUGE_HOME?
 ^^^^^^^^^^^^^^^^^^^^^^
 
-``GAUGE_HOME`` environment variable can be used to customize configs files and plugins installation location.
+``GAUGE_HOME`` environment variable can be used to customize config files and plugins installation location.
 
 How can I manually install a plugin?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

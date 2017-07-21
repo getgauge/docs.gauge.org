@@ -57,6 +57,17 @@ flag.
 
     gauge install html-report --version 2.1.0
 
+To add a plugin to project, issue subcommand ``install`` inside the project, this installs
+the plugin and add it to project. If plugin is already installed it just add it to the  project i.e.
+
+``gauge install <plugin_name>``
+
+**Example:**
+
+.. code-block:: console
+
+    gauge install xml-report
+
 Offline Installation
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -71,20 +82,6 @@ Download the latest version of plugin from the ``Releases`` section of
 the respective repository. See `plugin list <http://getgauge.io/plugins/index.html>`__ to
 find the repositories.
 
-Adding plugins to a project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Once plugins are installed, they can be added to the project by using
-the ``add`` subcommand i.e. 
-
-``gauge add <plugin_name>``
-
-Example:
-
-.. code-block:: console
-
-    gauge add xml-report
-
 Updating plugins
 ^^^^^^^^^^^^^^^^
 
@@ -93,7 +90,7 @@ subcommand. This downloads the latest plugin from our plugin repository.
 
 ``gauge update <plugin_name>``
 
-Example:
+**Example:**
 
 .. code-block:: console
 
