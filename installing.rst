@@ -117,12 +117,6 @@ Install
     sudo apt-get update
     sudo apt-get install gauge
 
-To set up necessary environment variables and download basic reporting
-plugins, run this command as a regular user to complete installation:
-
-.. code-block:: console
-
-    gauge_setup
 
 On RHEL, Fedora, CentOS
 +++++++++++++++++++++++
@@ -186,13 +180,6 @@ Install on CentOS/RHEL:
 .. code-block:: console
 
     sudo yum install gauge
-
-To set up necessary environment variables and download basic reporting
-plugins, run this command as a regular user to complete installation:
-
-.. code-block:: console
-
-    gauge_setup
 
 Install manually
 ################
