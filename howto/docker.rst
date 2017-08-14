@@ -1,4 +1,4 @@
-Gauge tests in docker
+Gauge tests on docker
 =====================
 
 Gauge can be easily installed on `Docker <https://www.docker.com/what-docker>`__ container.
@@ -10,8 +10,8 @@ Prerequisites
 
 -  `Docker <https://docs.docker.com/engine/installation/>`__
 
-Install Gauge on Docker
------------------------
+Docker image for Gauge
+----------------------
 
 -  Create a ``Dockerfile`` file in your project root.
 -  Add these lines in ``Dockerfile`` according to the platform on which
@@ -43,5 +43,5 @@ Run Gauge specs on Docker
 - Build the docker image tagged as test
     docker build . -t test
 
-- Mount the docker image and run the specs
-    docker run -v `pwd`:/<project_dir> -w="/<project_dir>" test gauge run specs
+- Mount the docker image with the <project_directory> and run the specs in the container
+    docker run -v `pwd`:/<project_directory> -w="/<project_directory>" test gauge run specs
