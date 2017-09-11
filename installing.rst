@@ -298,6 +298,17 @@ Run the executable ``uninst.exe`` found in Gauge install location.
 
 More on Gauge install location can be found :ref:`here <troubleshoot_gauge_installation>`.
 
+Alternate Methods
+++++++++++++++++
+If you have installed Gauge using some package manager please refer their documentation to uninstall package.
+
+Example:
+
+        * `brew <https://docs.brew.sh/FAQ.html#how-do-i-uninstall-a-formula>`__
+        * `apt-get <https://linux.die.net/man/8/apt-get>`__
+        * `yum <https://www.centos.org/docs/5/html/5.1/Deployment_Guide/s1-yum-useful-commands.html>`__
+        * `choco <https://github.com/chocolatey/choco/wiki/CommandsUninstall>`__
+
 .. _plugins-uninstallation:
 
 Plugins
