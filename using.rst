@@ -1382,23 +1382,22 @@ Then fill the scenario name in the template.
 HTML Preview Tab
 ~~~~~~~~~~~~~~~~
 
--  A specification file, written in markdown can be viewed as an HTML
-   preview.
+-  A specification file, written in markdown can be viewed as HTML in browser.
 
 This is a spec file in markdown.
 
-.. figure:: images/intellij-screenshots/html_preview/spec_text.png
+.. figure:: images/intellij-screenshots/html_preview/specfile.png
    :alt: spec text
 
    spec text
 
-On click of the ``HTML Preview`` tab at the bottom of the editor, it
-shows the HTML equivalent preview of spec file.
+Press `alt + F2` or right click and select `open in Browser` option. It gives option to choose a browser.
+On choosig a browser, it opens a browser window with HTML equivalent preview of spec file.
 
-.. figure:: images/intellij-screenshots/html_preview/spec_markdown.png
-   :alt: spec text
+.. figure:: images/intellij-screenshots/html_preview/browser_preview.png
+   :alt: browser preview
 
-   spec text
+   browser preview
 
 Since specs are written in markdown, they can be converted to HTML using
 any markdown to HTML convertors.

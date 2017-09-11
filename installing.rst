@@ -299,7 +299,7 @@ Run the executable ``uninst.exe`` found in Gauge install location.
 More on Gauge install location can be found :ref:`here <troubleshoot_gauge_installation>`.
 
 Alternate Methods
-++++++++++++++++
++++++++++++++++++
 If you have installed Gauge using some package manager please refer their documentation to uninstall package.
 
 Example:
