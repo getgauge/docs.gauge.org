@@ -8,24 +8,24 @@ tool.
 Setup
 -----
 
--  `Setup a new pipeline on Go <https://docs.gocd.io/current/configuration/quick_pipeline_setup.html>`__
+-  `Setup a new pipeline on GoCD <https://docs.gocd.org/current/configuration/quick_pipeline_setup.html>`__
 
    .. image:: images/Gauge_Pipeline.png
--  `Download <http://getgauge.io/get-started/index.html>`__ and Install Gauge on the Go Agents
--  Install the required gauge :ref:`language plugin <plugins-installation>` on the Go agents.
+-  `Download <http://getgauge.io/get-started/index.html>`__ and Install Gauge on the GoCD Agents
+-  Install the required gauge :ref:`language plugin <plugins-installation>` on the GoCD agents.
 
 Tips on Installation
 --------------------
 
 -  Gauge is installed system wide by default and not user wide. However,
    plugins are installed per user. So plugins should be installed via
-   user account with which the Go agent executes. Refer default install
+   user account with which the GoCD agent executes. Refer default install
    location of Gauge and its plugins
    `here <https://docs.getgauge.io/troubleshooting.html#gauge-installation>`__.
 
 -  Alternately, you can set `custom location for
    plugins <https://docs.getgauge.io/troubleshooting.html#custom-plugin-install-location>`__
-   so that its accessible to Go agent running as a different user.
+   so that its accessible to GoCD agent running as a different user.
 
 Create execution task
 ---------------------
@@ -68,4 +68,4 @@ Reports
 
       console
 
--  You can also add a `custom tab <https://docs.gocd.io/current/configuration/managing_artifacts_and_reports.html#using-tabs>`__ to view your html reports generated.
+-  You can also add a `custom tab <https://docs.gocd.org/current/configuration/managing_artifacts_and_reports.html#using-tabs>`__ to view your html reports generated.
