@@ -1264,11 +1264,13 @@ Run Configuration
 You can edit the run configuration to make changes to:
 
     - The scenario or spec file to be executed
+    - Choose table-rows to be executed
     - The environment to run against
     - Add a tag filter to the execution
     - Choose the number of parallel streams
+    - Add program arguments (Example: --log-level)
 
-.. figure:: images/intellij-screenshots/execution/config.gif
+.. figure:: images/intellij-screenshots/execution/intelliJRunConfig.gif
    :alt: run configuration
 
    run configuration
