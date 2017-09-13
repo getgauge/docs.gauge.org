@@ -1261,14 +1261,30 @@ Debugging can be performed the same way spec execution works.
 Run Configuration
 ~~~~~~~~~~~~~~~~~
 
-You can edit the run configuration to make changes to: \* The scenario
-or spec file to be executed \* The environment to run against \* Add a
-tag filter to the execution \* Choose the number of parallel streams
+You can edit the run configuration to make changes to:
+
+    - The scenario or spec file to be executed
+    - The environment to run against
+    - Add a tag filter to the execution
+    - Choose the number of parallel streams
 
 .. figure:: images/intellij-screenshots/execution/config.gif
    :alt: run configuration
 
    run configuration
+
+Multiple Spec Files Execution
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To execute multiple specs/scenarios add ``||`` seperated list of spec/scenarios in `Specification to execute` section
+
+.. figure:: images/intellij-screenshots/execution/multipleSpec.png
+   :alt: multiple spec run configuration
+
+   multiple spec run configuration
+
+.. warning::
+   The delimiter for multiple spec files in run config has been changed from comma (``,``) to double bar (``||``). Until v0.1.0 of IntelliJ plugin, the delimiter is ``,``. Any higher version will have delimiter ``||``.
 
 Rephrase Steps
 ~~~~~~~~~~~~~~
@@ -1517,8 +1533,8 @@ steps.
 Execution with Test Explorer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: 
-    Refer `MSDN Documentation on Unit Test Explorer <https://msdn.microsoft.com/en-us/library/hh270865.aspx#Anchor_2>`__ for 
+.. note::
+    Refer `MSDN Documentation on Unit Test Explorer <https://msdn.microsoft.com/en-us/library/hh270865.aspx#Anchor_2>`__ for
     all features of Unit Test Explorer.
 
 
