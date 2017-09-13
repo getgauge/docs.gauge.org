@@ -37,6 +37,14 @@ below to install Gauge.
     unzip gauge-$VERSION-$OS.$ARCH.zip
     ./install.sh
 
+Gauge can be installed at custom location by using ``GAUGE_PREFIX`` env.
+
+Example :-
+
+.. code-block:: console
+
+    GAUGE_PREFIX=my/custom/location ./install.sh
+
 Gauge Plugins also can be installed along with ``gauge`` ( requires Internet). Set ``GAUGE_PLUGINS`` ( comma separated list of plugins) env to install plugins.
 
 Example :-
