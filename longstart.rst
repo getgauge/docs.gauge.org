@@ -214,19 +214,7 @@ The above concept can be invoked and a value can be passed to the concept agains
 
 Table Parameters
 ^^^^^^^^^^^^^^^^
-
-Table Parameters can be used in two ways
-
--  When a scenario or multiple scenarios in a specification are to be
-   executed for multiple sets of data then :ref:`table_driven_execution` can be
-   used.
--  Tables or inline tables can be passed to steps as parameters.
-
-Data Table values in inline tables
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Dynamic values from the data table can also be referred in table
-parameters passed into steps
+Table parameters are used when a step is to be exucuted for multiple values. The step having a inline table parameter will be executed for each table row
 
 .. _example_inline_table:
 
@@ -238,22 +226,16 @@ Example
     Create projects
     ===============
 
-    |id| name |
-    |--|------|
-    |1 | john |
-    |2 | mike |
-
     First scenario
     --------------
 
     * Create the following projects
          |project name| username |
          |------------|----------|
-         | Gauge java | <name>   |
-         | Gauge ruby | <name>   |
+         | Gauge java | Daredevil|
+         | Gauge ruby | Iron Fist|
 
-In the above example the table parameter uses a dynamic value from the
-data table.
+Iniline data tables can be externalized as :ref:`special csv paramter<special_parameter_csv>`
 
 Special Parameters
 ~~~~~~~~~~~~~~~~~~
@@ -327,6 +309,40 @@ path to the csv file.
 
 The first row is considered as table header. Following rows are
 considered as the row values.
+
+Data Table values in inline tables
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Dynamic values from the data table can also be referred in table
+parameters passed into steps
+
+.. _example_inline_table:
+
+Example
++++++++
+
+.. code-block:: gauge
+
+    Create projects
+    ===============
+
+    |id| name |
+    |--|------|
+    |1 | john |
+    |2 | mike |
+
+    First scenario
+    --------------
+
+    * Create the following projects
+         |project name| username |
+         |------------|----------|
+         | Gauge java | <name>   |
+         | Gauge ruby | <name>   |
+
+In the above example the table parameter uses a dynamic value from the
+data table.
+
 
 .. _longstart-tags:
 

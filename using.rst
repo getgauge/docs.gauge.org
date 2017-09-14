@@ -254,6 +254,37 @@ Both ``Scenario`` and ``Second Scenario`` are executed first for the
 first row values ``1, vishnu`` and then consecutively for the second and
 third row values from the table.
 
+External CSV for data table
+"""""""""""""""""""""""""""
+Data Tables for a specification can also be passed from an external CSV file. The parameter contains a prefix table and the path to the csv file.
+
+**Prefix** : The prefix is table
+
+**Value** : The value is the path to the csv file. This can be absolute file path or relative to project.
+
+
+**Example:**
+
+.. code-block:: gauge
+    :linenos:
+    :name: data_driven
+
+    Table driven execution
+    ======================
+
+    table: /system/users.csv
+
+    Scenario
+    --------
+    * Say "hello" to <name>
+
+    Second Scenario
+    ---------------
+    * Say "namaste" to <name>
+
+
+In the above example the step uses the ``name`` column from the csv file.
+
 Execute selected data table rows
 """"""""""""""""""""""""""""""""
 
