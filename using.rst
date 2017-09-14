@@ -175,31 +175,102 @@ tests. You can enable verbose, step-level reporting by using the
 Errors during execution
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Parse error in a spec file:
-""""""""""""""""""""""""""""""
+Parse errors
+""""""""""""
 
-This occurs if the spec file doesn't follow the expected :ref:`specifications <spec_syntax>` syntax or parameters could not be resolved.
+This occurs if the spec or concept file doesn't follow the expected :ref:`specifications <spec_syntax>` or :ref:`concepts <concept_syntax>` syntax.
 
-**Example**
+**Example:**
 
 .. code-block:: text
 
     [ParseError] hello_world.spec : line no: 25, Dynamic parameter <product> could not be resolved
 
-Unimplemented steps present in spec file
-"""""""""""""""""""""""""""""""""""""""""""
+List of various Parse errors:
 
-If the spec file has a step that does not have an implementation in the
-projects programming language there will be a validation error.
++-------------------------------------------+--------------------------------+
+| Parse Error                               | Gauge Execution Behaviour      |
++===========================================+================================+
+| Step is not defined inside a concept      | Stops                          |
+| heading                                   |                                |
++-------------------------------------------+--------------------------------+
+| Circular reference found in concept       | Stops                          |
++-------------------------------------------+--------------------------------+
+| Concept heading can only have dynamic     | Stops                          |
+| parameters                                |                                |
++-------------------------------------------+--------------------------------+
+| Concept should have at least one step     | Stops                          |
++-------------------------------------------+--------------------------------+
+| Duplicate concept definition found        | Stops                          |
++-------------------------------------------+--------------------------------+
+| Scenario heading is not allowed in        | Stops                          |
+| concept file                              |                                |
++-------------------------------------------+--------------------------------+
+| Table doesn’t belong to any step          | Ignores table,Continue         |
++-------------------------------------------+--------------------------------+
+| Table header cannot have repeated column  | Mark that spec as              |
+| values                                    | failed,Continues for others    |
++-------------------------------------------+--------------------------------+
+| Teardown should have at least three       | Mark that spec as              |
+| underscore characters                     | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Scenario heading should have at least one | Mark that spec as              |
+| character                                 | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Table header should be not blank          | Mark that spec as              |
+|                                           | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Multiple spec headings found in the same  | Mark that spec as              |
+| file                                      | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Scenario should be defined after the spec | Mark that spec as              |
+| heading                                   | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Could not resolve table from file         | Mark that spec as              |
+|                                           | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Spec does not have any element            | Mark that spec as              |
+|                                           | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Spec heading not found                    | Mark that spec as              |
+|                                           | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Spec heading should have at least one     | Mark that spec as              |
+| character                                 | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Dynamic param could not be resolved       | Mark that spec as              |
+|                                           | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Step should not be blank                  | Mark that spec as              |
+|                                           | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Duplicate scenario definition found in    | Mark that spec as              |
+| the same specification                    | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
 
-Appropriate underlying code implementation has to be provided for all
-the steps in the specs to be executed.
+Validation Errors
+""""""""""""""""""
+
+These are errors for which `Gauge` skips executing the spec where the error occurs.
+
+There are two types of validation error which can occurs
+
+    1. Step implementation not found
+        If the spec file has a step that does not have an implementation in the projects programming language.
+    2. Duplicate step implementation
+        If the spec file has a step that is imlpemented multiple times in the projects.
 
 **Example**
 
 .. code-block:: text
 
-    login.spec:33: Step implementation not found. login with "user" and "p@ssword"
+    [ValidationError] login.spec:33: Step implementation not found. login with "user" and "p@ssword"
+
+.. code-block:: text
+
+    [ValidationError] foo.spec:11 Duplicate step implementation => 'Vowels in English language are <table>'
+
+
 
 Failure to launch the language runner plugin
 """""""""""""""""""""""""""""""""""""""""""""""
