@@ -58,7 +58,7 @@ flag.
     gauge install html-report --version 2.1.0
 
 To add a plugin to project, issue subcommand ``install`` inside the project, this installs
-the plugin and add it to project. If plugin is already installed it just add it to the  project i.e.
+the plugin and add it to project. If plugin is already installed it just add it to the project i.e.
 
 ``gauge install <plugin_name>``
 

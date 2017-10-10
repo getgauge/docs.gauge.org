@@ -135,7 +135,7 @@ To add XML report plugin to your project, run the following command :
 
 .. code-block:: console
 
-    gauge add xml-report
+    gauge install xml-report
 
 The XML report plugin can be configured by the properties set in the
 ``env/default.properties`` file in the project.
@@ -261,7 +261,7 @@ To add Flash plugin to your project, run the following command :
 
 .. code-block:: console
 
-    gauge add flash
+    gauge install flash
 
 Execute specs and open the URL in browser shown in console output.
 

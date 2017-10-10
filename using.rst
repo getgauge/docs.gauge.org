@@ -1009,13 +1009,13 @@ following content.
 
   .. code:: console
 
-      gauge add <plugin-name>
+      gauge install <plugin-name>
 
   Example :
 
   .. code:: console
 
-      gauge add xml-report
+      gauge install xml-report
 
 After running the above command, the manifest.json would have the
 following content:
