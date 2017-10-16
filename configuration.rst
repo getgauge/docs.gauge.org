@@ -40,13 +40,6 @@ Global
     # accordingly.
     runner_request_timeout = 10000
 
-    # sets the excluded dirs for gauge.
-    # Gauge always looks for concepts in the whole project, folders starting
-    # with dot(.) are excluded and a user can add folders to the excluded
-    # folders list by passing a comma separeted paths of folder.Paths can be
-    # relative to the path of directory or absolute.
-    gauge_exclude_dirs = "src/test,bin"
-
 Local (Project level)
 ---------------------
 
@@ -92,6 +85,13 @@ value pairs.
     # Should be either relative to the project directory or an absolute path.
     # Default theme is used if not set
     GAUGE_HTML_REPORT_THEME_PATH = custom_theme_path
+
+    # sets the excluded dirs for gauge.
+    # Gauge always looks for concepts in the whole project, folders starting
+    # with dot(.) are excluded and a user can add folders to the excluded
+    # folders list by passing a comma separeted paths of folder.Paths can be
+    # relative to the path of directory or absolute.
+    gauge_exclude_dirs = src/test,bin
 
 .. _environments:
 
