@@ -404,6 +404,11 @@ definition.
 
 The concept definition contains the 2 parts:
 
+- :ref:`Concept header<concept_header>`
+- :ref:`Steps<concept_steps>`
+
+.. _concept_header:
+
 Concept header
 ^^^^^^^^^^^^^^
 
@@ -416,6 +421,8 @@ that it takes. It is written in the markdown **``H1``** format.
 .. code-block:: gauge
 
     # Concept name with <param0> and <param1>
+
+.. _concept_steps:
 
 Steps
 ^^^^^
@@ -436,12 +443,23 @@ concept. They are defined in the usual :ref:`steps <step_syntax>` structure.
     * Navigate to project page
     * Create a project <project_name>
 
-In the above example:
+In the example above:
 
 -  The first line is the concept header
 -  The following 3 steps are abstracted into the concept
 
 .. _longstart-context:
+
+The concept above can now be used in any spec as shown below
+
+.. code-block:: gauge
+
+    Login specification
+    ===================
+
+    Successful login scenario
+    -------------------------
+    * Login as user "john" and create project "Gauge java"
 
 Contexts
 ~~~~~~~~
