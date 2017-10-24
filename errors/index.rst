@@ -6,3 +6,5 @@ Errors
     :titlesonly:
 
     gauge-vs-001
+    gauge-vs-002
+    gauge-vs-003
