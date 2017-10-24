@@ -21,6 +21,7 @@
     examples
     howto/index
     faqs
+    errors/index
 
 .. role:: description
     :class: resource-description
