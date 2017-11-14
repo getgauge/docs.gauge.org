@@ -9,7 +9,7 @@ Required Plugins
 
 -  `screenshot <https://github.com/getgauge/gauge_screenshot>`__
 
-The screenshot plugin is installed at first run automatically.
+The screenshot plugin is installed automatically on the first run.
 
 Language/Reporting Plugins
 --------------------------
