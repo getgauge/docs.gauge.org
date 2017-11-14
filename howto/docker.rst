@@ -23,18 +23,18 @@ Docker image for Gauge
     FROM ubuntu
 
     # Install Java.
-    RUN apt-get update
-    RUN apt-get -y install sudo
-    RUN apt-get -q -y install default-jdk
-    RUN apt-get install apt-transport-https -y
+    RUN apt-get update && apt-get install -q -y \
+        default-jdk \
+        sudo \
+        apt-transport-https
 
     # Install gauge
-    RUN apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
-    RUN echo deb https://dl.bintray.com/gauge/gauge-deb stable main | sudo tee -a /etc/apt/sources.list
-    RUN apt-get update
-    RUN apt-get install gauge
+    RUN apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B && \
+        echo deb https://dl.bintray.com/gauge/gauge-deb stable main | sudo tee -a /etc/apt/sources.list
+
+    RUN apt-get update && apt-get install gauge
+
     # Install gauge plugins
-    # screenshot plugin needs to be installed so that it does not try to install on every run.
     RUN gauge install java && \
         gauge install screenshot
 
