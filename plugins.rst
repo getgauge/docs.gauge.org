@@ -4,6 +4,13 @@ Plugins
 Plugins are an easy way to extend the features of gauge. There are
 various types of plugins that gauge currently supports.
 
+Required Plugins
+----------------
+
+-  `screenshot <https://github.com/getgauge/gauge_screenshot>`__
+
+The screenshot plugin is installed automatically on the first run.
+
 Language/Reporting Plugins
 --------------------------
 .. _language_plugins:
@@ -12,7 +19,7 @@ Language/Reporting Plugins
 
 Language plugins, also known as **Language Runners**, enable the users to
 write the implementation of specs in a language of their choice. For a
-list of available language runners, see how to :ref:`install language runners <install-language-runner>`. 
+list of available language runners, see how to :ref:`install language runners <install-language-runner>`.
 Allows you to write your tests in
 
 -  `Java <https://github.com/getgauge/gauge-java>`__
