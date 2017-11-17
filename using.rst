@@ -1142,6 +1142,7 @@ test code simpler.
 
 -  Intellij IDEA
 -  Visual Studio
+-  Visual Studio Code
 
 .. _`intellij_idea`:
 
@@ -1734,3 +1735,139 @@ Create Spec and Concept files
 .. |install plugin| image:: images/intellij-screenshots/add_plugin.png
 .. |extract concept| image:: images/intellij-screenshots/etc.gif
 .. |ute_parallel| image:: images/visual_studio_screenshots/UTE_parallelicon-small.png
+
+Visual Studio Code
+^^^^^^^^^^^^^^^^^^
+
+Gauge projects can be created and executed in Visual Studio Code using the
+Gauge extension for VSCode. This plugin can be installed from Visual
+Studio Gallery.
+
+Installation
+~~~~~~~~~~~~
+The Gauge extension can be installed via VScode's Install from `VSIX <https://code.visualstudio.com/docs/editor/extension-gallery#_install-from-a-vsix>`__.
+
+Install released version
+""""""""""""""""""""""""
+The released versions are available `here <https://github.com/getgauge/gauge-vscode/releases>`__
+
+Install from source
+"""""""""""""""""""
+$ npm run build
+This will create gauge-<version>.vsix file which can be installed via VScode's Install from `VSIX <https://code.visualstudio.com/docs/editor/extension-gallery#_install-from-a-vsix>`__.
+
+Install Nightly version
+"""""""""""""""""""""""
+Nightly version of vscode is available in bintray. To install a nightly version,
+
+Uninstall existing version of gauge extension.
+Download the `latest nightly version <https://bintray.com/gauge/gauge-vscode/Nightly/>`__ of gauge extension from bintray.
+
+Uninstall
+"""""""""
+To uninstall existing version `follow these instructions <https://code.visualstudio.com/docs/editor/extension-gallery#_manage-extensions>`__
+
+Syntax Highlighting
+~~~~~~~~~~~~~~~~~~~
+
+Gauge specs are in `Markdown <https://daringfireball.net/projects/markdown/syntax>`__
+syntax. This plugin highlights Specifications, Scenarios, Steps and
+Tags.
+
+Steps with missing implementation are also highlighted.
+
+.. figure:: images/vscode_screenshots/features/diagnostics.gif
+   :alt: syntax highlighting
+
+   syntax highlighting
+
+Auto Completion
+~~~~~~~~~~~~~~~
+
+This plugin hooks into VSCode LSP, and brings in
+autocompletion of Step text. The step texts brought in is a union of
+steps already defined, concepts defined, and step text from
+implementation.
+
+*Hint:* Hit Ctrl + Space to bring up the Intellisense menu.
+
+.. figure:: images/vscode_screenshots/features/AutoComplete.gif
+   :alt: Auto Complete
+
+   AutoComplete
+
+Implement Step
+~~~~~~~~~~~~~~~
+If you have an unimplemented step in the spec file, it will be get highlighted with a red underline.
+Hover over towards the end of step text to get the Smart Tag to implement it.
+On clicking the Smart Tag the implementation is copied to the clipboard. Pasting this in the desired code file will then generate
+the step with required annotation and parameters.
+
+.. figure:: images/vscode_screenshots/features/GenerateImplementationStub.gif
+   :alt: step quick fix
+
+   step quick fix
+
+Navigation
+~~~~~~~~~~
+
+Jump from Step text to it's implementation.
+
+Usage: ``Right Click`` -> ``Go to Declaration`` or hit F12
+
+.. figure:: images/vscode_screenshots/features/GotoDefinition.gif
+   :alt: goto definition
+
+   goto definition
+
+Formatting
+~~~~~~~~~~
+
+-  A specification file can be formatted easily using ``Right Click`` -> ``Format File``
+
+This formats the specification including indentation of tables and
+steps.
+
+.. figure:: images/vscode_screenshots/format.gif
+   :alt: format
+
+   format
+
+Execution with Code Lens
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When you open a specification, the code lens `Run Spec` appears near the specification heading.
+Clicking this will run all the scenarios in the specification.
+
+.. figure:: images/visual_studio_screenshots/execute.gif
+   :alt: Execute Specification
+
+   Code Lens
+
+Similarly, scenarios can be executed with the code lens `Run Scenario` near the scenario heading
+
+Run from Command palette
+""""""""""""""""""""""""
+
+To invoke the command palette use - (Ctrl+Shift+P)
+
+* To run all the scenarios in a solution, choose `Run All Specfications` from the palette.
+* To run all the scenarios of a specification, choose Run Specification from the palette
+* To choose and run a scenario, use `Run Scenario` from the palette.
+
+Run tests cases in parallel
+"""""""""""""""""""""""""""
+
+If a specification has scenarios driven by data they can be run in parallel.
+Use the code lens `Run parallel` near the scenario heading that appears only when there is a data table at the specification level.
+
+Test results
+""""""""""""
+
+As you run, write, and rerun your tests, VS Code displays the results in the Output panel.
+
+Find Usages
+~~~~~~~~~~~
+
+-  The number of times the step is used can be seen in the definition of the step.
+The usages are displayed against the step annotated methods in the implementation file(currently js files only).
