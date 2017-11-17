@@ -1552,6 +1552,13 @@ Gallery <https://marketplace.visualstudio.com/items?itemName=vs-publisher-107147
 Creating a new Gauge Project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Install project and item templates from Visual Studio Marketplace
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+-  Download the templates from `Visual Studio MarketPlace <https://marketplace.visualstudio.com/items?itemName=vs-publisher-1071478.gauge-visualstudio-templates`__.
+-  Install the Gauge VisualStudio Templates - vsix
+
+Create Gauge Project
+""""""""""""""""""""
 -  Go to ``File`` -> ``New Project``.
 -  Choose ``Gauge Test Project`` under Visual C# Test category.
 
