@@ -1803,7 +1803,7 @@ Hover over towards the end of step text to get the Smart Tag to implement it.
 On clicking the Smart Tag the implementation is copied to the clipboard. Pasting this in the desired code file will then generate
 the step with required annotation and parameters.
 
-.. figure:: images/vscode_screenshots/features/GenerateImplementationStub.gif
+.. figure:: images/vscode_screenshots/generate_stubs/implementation.gif
    :alt: step quick fix
 
    step quick fix
@@ -1828,7 +1828,7 @@ Formatting
 This formats the specification including indentation of tables and
 steps.
 
-.. figure:: images/vscode_screenshots/format.gif
+.. figure:: images/vscode_screenshots/features/format.gif
    :alt: format
 
    format
@@ -1839,7 +1839,7 @@ Execution with Code Lens
 When you open a specification, the code lens `Run Spec` appears near the specification heading.
 Clicking this will run all the scenarios in the specification.
 
-.. figure:: images/visual_studio_screenshots/execute.gif
+.. figure:: images/vscode_screenshots/run_specification/execute.gif
    :alt: Execute Specification
 
    Code Lens
@@ -1854,6 +1854,11 @@ To invoke the command palette use - (Ctrl+Shift+P)
 * To run all the scenarios in a solution, choose `Run All Specfications` from the palette.
 * To run all the scenarios of a specification, choose Run Specification from the palette
 * To choose and run a scenario, use `Run Scenario` from the palette.
+
+.. figure:: images/vscode_screenshots/command_palette/run_commands.gif
+   :alt: Execute Specification
+
+   Command palette
 
 Run tests cases in parallel
 """""""""""""""""""""""""""
