@@ -4,7 +4,7 @@ Quick start
 Prerequisites
 -------------
 
--  JDK 6+ / .NET framework / Ruby 2.0+ is installed
+-  JDK 8+ / .NET framework / Ruby 2.0+ is installed
 -  :doc:`Gauge <installing>` is installed.
 -  :ref:`Language runner <install-language-runner>` is installed.
 
