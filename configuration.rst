@@ -407,12 +407,26 @@ maven test phase will also execute gauge specs in the project
 
     mvn test
 
-To only run gauge specs,
-""""""""""""""""""""""""
+To only run gauge specs in a particular directory,
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 .. code-block:: console
 
     mvn gauge:execute -DspecsDir=specs
+
+To run one gauge spec,
+""""""""""""""""""""""
+
+.. code-block:: console
+
+    mvn gauge:execute -DspecsDir=specs/example.spec
+
+To run multiple gauge specs,
+""""""""""""""""""""""""""""
+
+.. code-block:: console
+
+    mvn gauge:execute -DspecsDir="specs/example.spec,specs/example2.spec"
 
 To only run gauge specs that correspond to a particular test profile in pom.xml,
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -450,7 +464,7 @@ The following plugin properties can be additionally set:
 =============== ======================== ===============================================================
 Property        Usage                    Description
 =============== ======================== ===============================================================
-``specsDir``    ``-DspecsDir=specs``     Gauge specs directory path. Required for executing specs.
+``specsDir``    ``-DspecsDir=specs``     Gauge specs directory path. Required for executing specs. Takes a comma separeted list of spec files/directories.
 ``tags``        ``-Dtags=tag1 & tag2``   Filter specs by specified tag expression.
 ``inParallel``  ``-DinParallel=true``    Execute specs in parallel.
 ``nodes``       ``-Dnodes=3``            Number of parallel execution streams. Use with ``parallel``.
