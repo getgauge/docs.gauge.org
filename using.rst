@@ -603,6 +603,13 @@ Current Execution Context in the Hook
 
 
 .. code-block:: java
+  :caption: C#
+
+    This feature is not yet
+    supported in Gauge-CSharp. Please refer to
+    https://github.com/getgauge/gauge-csharp/issues/53 for updates.
+
+.. code-block:: java
   :caption: Java
 
     @BeforeScenario
@@ -617,13 +624,24 @@ Current Execution Context in the Hook
       // Code for after step
     }
 
+.. code-block:: js
+  :caption: Javascipt
 
-.. code-block:: java
-  :caption: C#
+    hooks.beforeScenario(fn, [opts]) { ... }
+    hooks.afterSpec(fn, [opts]) { ... }
 
-    This feature is not yet
-    supported in Gauge-CSharp. Please refer to
-    https://github.com/getgauge/gauge-csharp/issues/53 for updates.
+.. code-block:: python
+  :caption: Python
+
+    from getgauge.python import before_step, after_scenario
+
+    @before_scenario
+    def before_scenario_hook():
+        print("before scenario hook")
+
+    @after_spec
+    def after_spec_hook():
+        print("after spec hook")
 
 .. code-block:: ruby
   :caption: ruby
@@ -644,24 +662,6 @@ Filtering Hooks execution based on tags
    that have the required tags.
 
 .. code-block:: java
-  :caption: Java
-
-    // A before spec hook that runs when tag1 and tag2
-    // is present in the current scenario and spec.
-    @BeforeSpec(tags = {"tag1, tag2"})
-    public void loginUser() {
-        // Code forbefore scenario
-    }
-
-    // A after step hook runs when tag1 or tag2
-    // is present in the currentscenario and spec.
-    // Default tagAggregation value is Operator.AND.
-    @AfterStep(tags = {"tag1", "tag2"}, tagAggregation = Operator.OR)
-    public void performAfterStep() {
-        // Code for after step
-    }
-
-.. code-block:: java
   :caption: C#
 
     // A before spec hook that runs when tag1 and tag2
@@ -679,6 +679,56 @@ Filtering Hooks execution based on tags
     public void PerformAfterStep() {
         // Code for after step
     }
+
+.. code-block:: java
+  :caption: Java
+
+    // A before spec hook that runs when tag1 and tag2
+    // is present in the current scenario and spec.
+    @BeforeSpec(tags = {"tag1, tag2"})
+    public void loginUser() {
+        // Code forbefore scenario
+    }
+
+    // A after step hook runs when tag1 or tag2
+    // is present in the currentscenario and spec.
+    // Default tagAggregation value is Operator.AND.
+    @AfterStep(tags = {"tag1", "tag2"}, tagAggregation = Operator.OR)
+    public void performAfterStep() {
+        // Code for after step
+    }
+
+.. code-block:: js
+  :caption: Javascipt
+
+    // A before spec hook that runs when tag1 and tag2
+    // is present in the current scenario and spec.
+    hooks.beforeSpec(function () {
+        //implementation
+    }, { tags: [ "tag1","tag2" ]});
+
+    // A after step hook runs when tag1 or tag2
+    // is present in the currentscenario and spec.
+    // Default tagAggregation value is Operator.AND.
+    hooks.afterStep(function () {
+        //implementation
+    }, { tags: [ "tag1","tag2" ]});
+
+.. code-block:: python
+  :caption: Python
+
+    // A before spec hook that runs when tag1 and tag2
+    // is present in the current scenario and spec.
+    @before_spec("<tag1> and <tag2>")
+    def before_spec_hook():
+        print("before spec hook with tag")
+
+    // A after step hook runs when tag1 or tag2
+    // is present in the currentscenario and spec.
+    // Default tagAggregation value is Operator.AND.
+    @after_step("<tag1> and <tag2>")
+    def after_step_hook():
+        print("after step hook with tag")
 
 .. code-block:: ruby
   :caption: Ruby
@@ -779,6 +829,18 @@ Implementation
 """"""""""""""
 
 .. code-block:: java
+  :caption: C#
+
+    public class Users {
+
+        [Step({"Create a user <user_name>", "Create another user <user_name>"})]
+        public void HelloWorld(string user_name) {
+            // create user user_name
+        }
+
+    }
+
+.. code-block:: java
   :caption: Java
 
     public class Users {
@@ -790,17 +852,21 @@ Implementation
 
     }
 
-.. code-block:: java
-  :caption: C#
+.. code-block:: js
+  :caption: Javascipt
 
-    public class Users {
+    step(["Create a user <username>", "Create another user <username>"], function (username) {
+    // do cool stuff
+    });
 
-        [Step({"Create a user <user_name>", "Create another user <user_name>"})]
-        public void HelloWorld(string user_name) {
-            // create user user_name
-        }
+.. code-block:: python
+  :caption: Python
 
-    }
+    from getgauge.python import step
+
+    @step(["Create a user <user name>", "Create another user <user name>"])
+    def hello(user_name):
+        print("create {}.".format(user_name))
 
 .. code-block:: ruby
   :caption: Ruby
@@ -834,6 +900,18 @@ Implementation
 """"""""""""""
 
 .. code-block:: java
+  :caption: C#
+
+    public class Users {
+
+        [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
+        public void HelloWorld(string email_type) {
+            // Send email of email_type
+        }
+
+    }
+
+.. code-block:: java
   :caption: Java
 
     public class Users {
@@ -845,17 +923,21 @@ Implementation
 
     }
 
-.. code-block:: java
-  :caption: C#
+.. code-block:: js
+  :caption: Javascipt
 
-    public class Users {
+    step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"], function (email_type) {
+        // do cool stuff
+    });
 
-        [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
-        public void HelloWorld(string email_type) {
-            // Send email of email_type
-        }
+.. code-block:: python
+  :caption: Python
 
-    }
+    from getgauge.python import step
+
+    @step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"])
+    def email(email_type):
+        print("create {}.".format(email_type))
 
 .. code-block:: ruby
   :caption: Ruby
@@ -1110,6 +1192,52 @@ java.properties
 ~~~~~~~~~~~~~~~~
 
 This defines configurations for java runner plugin. See :doc:`configuration` for more details.
+
+Javascript project files
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Javascipt specific project files create in the project are:
+
+.. code-block:: text
+
+   └── tests
+        └── step_implementation.js
+   ├── env
+       └── default
+           └── js.properties
+
+tests
+~~~~~
+
+tests directory contains the test code including step implementations.
+
+js.properties
+~~~~~~~~~~~~~~~~
+
+This defines configurations for Javascipt runner plugin. See :doc:`configuration` for more details.
+
+Python project files
+^^^^^^^^^^^^^^^^^^^^
+
+The Python specific project files create in the project are:
+
+.. code-block:: text
+
+   └── step_impl
+        └── step_impl.py
+   ├── env
+       └── default
+           └── python.properties
+
+step_impl
+~~~~~~~~~
+
+step_impl directory contains the test code including step implementations.
+
+python.properties
+~~~~~~~~~~~~~~~~
+
+This defines configurations for Python runner plugin. See :doc:`configuration` for more details.
 
 Ruby Project files
 ^^^^^^^^^^^^^^^^^^

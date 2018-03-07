@@ -77,7 +77,7 @@ Implementation:
 
 .. code-block:: java
   :caption: C#
-   
+
   // Here Table is a custom data structure defined by gauge. 
   // This is available by adding a reference to the Gauge.CSharp.Lib.
   // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/ 
@@ -89,7 +89,7 @@ Implementation:
          // Step implementation
      }
 
-  } 
+  }
 
 .. code-block:: java
   :caption: Java
@@ -102,7 +102,23 @@ Implementation:
         // Step implementation
     }
 
-  } 
+  }
+
+.. code-block:: java
+  :caption: js
+
+  step("Create following <arg0> characters <arg1>", async function(arg0, arg1) {
+    throw 'Unimplemented Step';
+  });
+
+.. code-block:: java
+  :caption: python
+
+  // Here Table is a custom data structure defined by gauge. 
+
+  @step("Create following <hobbit> characters <table>")
+  def create_following_characters(hobbit, table):
+      assert False, "Add implementation code"
 
 .. code-block:: ruby
   :caption: Ruby
@@ -280,38 +296,57 @@ scenario execution. Values are cleared after every scenario executes
 
    using Gauge.CSharp.Lib;
 
-   // Adding value 
+   // Adding value
    var scenarioStore = DataStoreFactory.ScenarioDataStore;
    scenarioStore.Add("element-id", "455678");
 
-   // Fetching Value 
+   // Fetching Value
    var elementId = (string) scenarioStore.Get("element-id");
 
-   // avoid type cast by using generic Get 
-   var anotherElementId = scenarioStore.Get("element-id"); 
+   // avoid type cast by using generic Get
+   var anotherElementId = scenarioStore.Get("element-id");
 
 .. code-block:: java
   :caption: Java
 
-  import com.thoughtworks.gauge.datastore.*; 
+  import com.thoughtworks.gauge.datastore.*;
 
-  // Adding value 
-  DataStore scenarioStore = DataStoreFactory.getScenarioDataStore(); 
+  // Adding value
+  DataStore scenarioStore = DataStoreFactory.getScenarioDataStore();
   scenarioStore.put("element-id", "455678");
 
-  // Fetching Value 
+  // Fetching Value
   String elementId = (String) scenarioStore.get("element-id");
+
+.. code-block:: js
+   :caption: js
+
+   // Adding value
+  gauge.dataStore.scenarioStore.put(key, value);
+
+  // Fetching Value
+  gauge.dataStore.scenarioStore.get(key);
+
+.. code-block:: python
+   :caption: python
+
+  from getgauge.python import DataStoreFactory
+  // Adding value
+  DataStoreFactory.scenario_data_store().put(key, value)
+
+  // Fetching Value
+  DataStoreFactory.scenario_data_store().get(key)
 
 .. code-block:: ruby
   :caption: Ruby
 
-   // Adding value 
-   scenario_store = DataStoreFactory.scenario_datastore; 
+   // Adding value
+   scenario_store = DataStoreFactory.scenario_datastore;
    scenario_store.put("element-id", "455678");
 
 
-   // Fetching Value 
-   element_id = scenario_store.get("element-id"); 
+   // Fetching Value
+   element_id = scenario_store.get("element-id");
 
 
 SpecStore
@@ -326,16 +361,16 @@ executes
 
   using Gauge.CSharp.Lib;
 
-  // Adding value 
+  // Adding value
   var specStore = DataStoreFactory.SpecDataStore;
   specStore.Add("element-id", "455678");
 
-  // Fetching Value 
+  // Fetching Value
   var elementId = (string) specStore.Get("element-id");
 
-  // avoid type cast by using generic Get 
-  var anotherElementId = specStore.Get("element-id"); 
-  
+  // avoid type cast by using generic Get
+  var anotherElementId = specStore.Get("element-id");
+
 .. code-block:: java
   :caption: Java
 
@@ -348,6 +383,25 @@ executes
 
   // Fetching value DataStore specStore =
   String elementId = (String) specStore.get("key"); 
+
+.. code-block:: js
+  :caption: Javascript
+
+  // Adding value DataStore specStore =
+  gauge.dataStore.specStore.put(key, value);
+  // Fetching value DataStore specStore =
+  gauge.dataStore.specStore.get(key);
+
+.. code-block:: python
+  :caption: Python
+
+  // Import Package import
+  from getgauge.python import DataStoreFactory
+  // Adding value DataStore specStore =
+  DataStoreFactory.spec_data_store().put(key, value)
+
+  // Fetching value DataStore specStore =
+  DataStoreFactory.spec_data_store().get(key)
 
 .. code-block:: ruby
   :caption: Ruby
@@ -397,16 +451,35 @@ execution.
   DataStore suiteStore = DataStoreFactory.getSuiteDataStore(); 
   String elementId = (String) suiteStore.get("element-id"); 
 
+.. code-block:: js
+  :caption: Javascript
+
+  // Adding value DataStore suiteStore =
+  gauge.dataStore.suiteStore.put(key, value);
+  // Fetching value DataStore specStore =
+  gauge.dataStore.suiteStore.get(key);
+
+.. code-block:: python
+  :caption: python
+
+  // Import Package import
+  from getgauge.python import DataStoreFactory
+  // Adding value DataStore suiteStore =
+  DataStoreFactory.suite_data_store().put(key, value)
+
+  // Fetching value DataStore specStore =
+  DataStoreFactory.suite_data_store().get(key)
+
 .. code-block:: ruby
   :caption: Ruby
 
-  // Adding value 
+  // Adding value
   suite_store = DataStoreFactory.suite_datastore;
   suite_store.put("element-id", "455678");
 
-  // Fetching Value 
+  // Fetching Value
   suite_store = DataStoreFactory.suite_datastore;
-  element_id = suite_store.get("element-id"); 
+  element_id = suite_store.get("element-id");
 
 Taking Custom Screenshots
 -------------------------
@@ -427,6 +500,19 @@ Taking Custom Screenshots
     which in turn depends on the order of scanning of the libraries.
 
 .. code-block:: java
+  :caption: C#
+
+  //Using Webdriver public
+  class CustomScreenGrabber : IScreenGrabber {
+
+    // Return a screenshot byte array
+    public byte[] TakeScreenshot() {
+        var driver = DriverFactory.getDriver();
+        return ((ITakesScreenshot) driver).GetScreenshot().AsByteArray;
+    }
+  }
+
+.. code-block:: java
   :caption: Java
 
   // Using Webdriver public class
@@ -439,19 +525,21 @@ Taking Custom Screenshots
 
   }
 
-.. code-block:: java
-  :caption: C#
+.. code-block:: js
+  :caption: Javascript
 
-  //Using Webdriver public
-  class CustomScreenGrabber : IScreenGrabber {
+  gauge.screenshotFn = function () {
+    return "base64encodedstring";
+  };
 
-    // Return a screenshot byte array
-    public byte[] TakeScreenshot() {
-        var driver = DriverFactory.getDriver();
-        return ((ITakesScreenshot) driver).GetScreenshot().AsByteArray;
-    }
-  }
-    
+.. code-block:: python
+  :caption: Python
+
+  from getgauge.python import screenshot
+  @screenshot
+  def take_screenshot():
+      return "base64encodedstring"
+
 .. code-block:: ruby
   :caption: Ruby
 
