@@ -625,7 +625,7 @@ Current Execution Context in the Hook
     }
 
 .. code-block:: javascript
-  :caption: Javascipt
+  :caption: Javascript
 
     hooks.beforeScenario(fn, [opts]) { ... }
     hooks.afterSpec(fn, [opts]) { ... }
@@ -699,7 +699,7 @@ Filtering Hooks execution based on tags
     }
 
 .. code-block:: javascript
-  :caption: Javascipt
+  :caption: Javascript
 
     // A before spec hook that runs when tag1 and tag2
     // is present in the current scenario and spec.
@@ -853,7 +853,7 @@ Implementation
     }
 
 .. code-block:: javascript
-  :caption: Javascipt
+  :caption: Javascript
 
     step(["Create a user <username>", "Create another user <username>"], function (username) {
     // do cool stuff
@@ -924,7 +924,7 @@ Implementation
     }
 
 .. code-block:: javascript
-  :caption: Javascipt
+  :caption: Javascript
 
     step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"], function (email_type) {
         // do cool stuff
@@ -1196,7 +1196,7 @@ This defines configurations for java runner plugin. See :doc:`configuration` for
 Javascript project files
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Javascipt specific project files create in the project are:
+The Javascript specific project files create in the project are:
 
 .. code-block:: text
 
@@ -1214,7 +1214,7 @@ tests directory contains the test code including step implementations.
 js.properties
 ~~~~~~~~~~~~~~~~
 
-This defines configurations for Javascipt runner plugin. See :doc:`configuration` for more details.
+This defines configurations for Javascript runner plugin. See :doc:`configuration` for more details.
 
 Python project files
 ^^^^^^^^^^^^^^^^^^^^
