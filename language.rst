@@ -319,6 +319,7 @@ scenario execution. Values are cleared after every scenario executes
   String elementId = (String) scenarioStore.get("element-id");
 
 .. code-block:: javascript
+   :linenos:
    :caption: Javascript
 
    // Adding value
@@ -385,6 +386,7 @@ executes
   String elementId = (String) specStore.get("key"); 
 
 .. code-block:: javascript
+  :linenos:
   :caption: Javascript
 
   // Adding value DataStore specStore =
@@ -452,6 +454,7 @@ execution.
   String elementId = (String) suiteStore.get("element-id"); 
 
 .. code-block:: javascript
+  :linenos:
   :caption: Javascript
 
   // Adding value DataStore suiteStore =
@@ -526,6 +529,7 @@ Taking Custom Screenshots
   }
 
 .. code-block:: javascript
+  :linenos:
   :caption: Javascript
 
   gauge.screenshotFn = function () {
