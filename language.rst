@@ -34,7 +34,7 @@ Simple step
          // Step implementation
      }
 
-  } 
+  }
 
 .. code-block:: java
   :caption: Java
@@ -48,8 +48,8 @@ Simple step
          // Step implementation
      }
 
-  } 
- 
+  }
+
 .. code-block:: javascript
   :linenos:
   :caption: Javascript
@@ -59,7 +59,7 @@ Simple step
   });
 
 .. code-block:: python
-    :caption: python
+  :caption: Python
 
   @step("Say <greeting> to <product name>")
   def create_following_characters(greeting, name):
@@ -408,8 +408,8 @@ scenario execution. Values are cleared after every scenario executes
   String elementId = (String) scenarioStore.get("element-id");
 
 .. code-block:: javascript
-   :linenos:
-   :caption: Javascript
+  :linenos:
+  :caption: Javascript
 
    // Adding value
   gauge.dataStore.scenarioStore.put(key, value);
@@ -418,7 +418,7 @@ scenario execution. Values are cleared after every scenario executes
   gauge.dataStore.scenarioStore.get(key);
 
 .. code-block:: python
-   :caption: python
+  :caption: python
 
   from getgauge.python import DataStoreFactory
   // Adding value
