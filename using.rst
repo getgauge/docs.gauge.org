@@ -625,7 +625,6 @@ Current Execution Context in the Hook
     }
 
 .. code-block:: javascript
-  :linenos:
   :caption: Javascipt
 
     hooks.beforeScenario(fn, [opts]) { ... }
@@ -700,7 +699,6 @@ Filtering Hooks execution based on tags
     }
 
 .. code-block:: javascript
-  :linenos:
   :caption: Javascipt
 
     // A before spec hook that runs when tag1 and tag2
@@ -855,7 +853,6 @@ Implementation
     }
 
 .. code-block:: javascript
-  :linenos:
   :caption: Javascipt
 
     step(["Create a user <username>", "Create another user <username>"], function (username) {
@@ -927,7 +924,6 @@ Implementation
     }
 
 .. code-block:: javascript
-  :linenos:
   :caption: Javascipt
 
     step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"], function (email_type) {

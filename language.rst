@@ -51,7 +51,6 @@ Simple step
   }
 
 .. code-block:: javascript
-  :linenos:
   :caption: Javascript
 
   step("Say <greeting> to <name>", async function(greeting, name) {
@@ -120,7 +119,6 @@ Implementation:
   }
 
 .. code-block:: javascript
-  :linenos:
   :caption: Javascript
 
   step("Create following <arg0> characters <arg1>", async function(arg0, arg1) {
@@ -253,7 +251,6 @@ Implementation
   }
 
 .. code-block:: javascript
-  :linenos:
   :caption: Javascript
 
   hooks.beforeSuite(fn, [opts]) {
@@ -408,7 +405,6 @@ scenario execution. Values are cleared after every scenario executes
   String elementId = (String) scenarioStore.get("element-id");
 
 .. code-block:: javascript
-  :linenos:
   :caption: Javascript
 
    // Adding value
@@ -475,7 +471,6 @@ executes
   String elementId = (String) specStore.get("key"); 
 
 .. code-block:: javascript
-  :linenos:
   :caption: Javascript
 
   // Adding value DataStore specStore =
@@ -543,7 +538,6 @@ execution.
   String elementId = (String) suiteStore.get("element-id"); 
 
 .. code-block:: javascript
-  :linenos:
   :caption: Javascript
 
   // Adding value DataStore suiteStore =
@@ -618,7 +612,6 @@ Taking Custom Screenshots
   }
 
 .. code-block:: javascript
-  :linenos:
   :caption: Javascript
 
   gauge.screenshotFn = function () {
@@ -662,13 +655,25 @@ These messages will appear under steps in the execution reports.
   GaugeMessages.WriteMessage("Custom message for report");
   var id = "4567"; 
   GaugeMessages.WriteMessage("User id is {0}", id); 
- 
+
 .. code-block:: java
   :caption: Java
 
   Gauge.writeMessage("Custom message for report");
   String id = "4567"; 
   Gauge.writeMessage("User id is %s", id);
+
+.. code-block:: javascript
+  :caption: Javascript
+
+  gauge.message("Custom message for report");
+
+.. code-block:: python
+  :caption: Python
+
+  from getgauge.python import Messages
+
+  Messages.write_message("Custom message for report")
 
 .. code-block:: ruby
   :caption: Ruby
@@ -718,6 +723,20 @@ implementation asks for it explicitly. Each language runner uses
 different syntax, depending on the language idioms, to allow a step
 implementation to be marked to continue on failure.
 
+.. code-block:: java
+  :caption: C#
+
+  // The ``[ContinueOnFailure]`` attribute tells Gauge to continue executing others
+  // steps even if the current step fails.
+
+  public class StepImplementation {
+      [ContinueOnFailure]
+      [Step("Say <greeting> to <product name>")]
+      public void HelloWorld(string greeting, string name) {
+          // If there is an error here, Gauge will still execute next steps
+      }
+
+  }
 
 .. code-block:: java
   :caption: Java
@@ -734,20 +753,25 @@ implementation to be marked to continue on failure.
 
   }
 
-.. code-block:: java
-  :caption: C#
+.. code-block:: javascript
+  :caption: Javascript
 
-  // The ``[ContinueOnFailure]`` attribute tells Gauge to continue executing others
+  // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other 
   // steps even if the current step fails.
 
-  public class StepImplementation {
-      [ContinueOnFailure]
-      [Step("Say <greeting> to <product name>")]
-      public void HelloWorld(string greeting, string name) {
-          // If there is an error here, Gauge will still execute next steps
-      }
+  gauge.step("Say <greeting> to <product>.", { continueOnFailure: true}, function (greeting,product) {
+  });
 
-  }
+.. code-block:: python
+  :caption: Python
+
+  // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other 
+  // steps even if the current step fails.
+
+  @continue_on_failure([RuntimeError])
+  @step("Say <greeting> to <product>")
+  def step2(greeting,product):
+    pass
 
 .. code-block:: ruby
   :caption: Ruby
@@ -762,28 +786,36 @@ implementation to be marked to continue on failure.
 
 Continue on Failure can take an optional parameter to specify the list
 of error classes on which it would continue to execute further steps in
-case of failure. This is currently supported only with Java runner.
+case of failure. This is currently supported only with the following runners.
 
 .. code-block:: java
   :caption: Java
 
   @ContinueOnFailure({AssertionError.class, CustomError.class})
   @Step("hello")
-  public void sayHello() { 
-    // code here 
+  public void sayHello() {
+    // code here
   }
 
   @ContinueOnFailure(AssertionError.class)
   @Step("hello")
-  public void sayHello() { 
-    // code here 
+  public void sayHello() {
+    // code here
   }
 
   @ContinueOnFailure
   @Step("hello")
-  public void sayHello() { 
-    // code here 
+  public void sayHello() {
+    // code here
   }
+
+.. code-block:: python
+  :caption: Python
+
+  @continue_on_failure([RuntimeError])
+  @step("Step 2")
+  def step2():
+      pass
 
 In case no parameters are passed to ``@ContinueOnFailure``, on any type
 of error it continues with execution of further steps by default.
