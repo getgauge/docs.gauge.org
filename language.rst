@@ -51,6 +51,7 @@ Simple step
   } 
  
 .. code-block:: javascript
+  :linenos:
   :caption: Javascript
 
   step("Say <greeting> to <name>", async function(greeting, name) {
@@ -119,6 +120,7 @@ Implementation:
   }
 
 .. code-block:: javascript
+  :linenos:
   :caption: Javascript
 
   step("Create following <arg0> characters <arg1>", async function(arg0, arg1) {
@@ -251,6 +253,7 @@ Implementation
   }
 
 .. code-block:: javascript
+  :linenos:
   :caption: Javascript
 
   hooks.beforeSuite(fn, [opts]) {
