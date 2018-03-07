@@ -50,6 +50,20 @@ Simple step
 
   } 
  
+.. code-block:: javascript
+  :caption: Javascript
+
+  step("Say <greeting> to <name>", async function(greeting, name) {
+    throw 'Unimplemented Step';
+  });
+
+.. code-block:: python
+    :caption: python
+
+  @step("Say <greeting> to <product name>")
+  def create_following_characters(greeting, name):
+      assert False, "Add implementation code"
+
 .. code-block:: ruby 
   :caption: Ruby 
 
@@ -104,8 +118,8 @@ Implementation:
 
   }
 
-.. code-block:: java
-  :caption: js
+.. code-block:: javascript
+  :caption: Javascript
 
   step("Create following <arg0> characters <arg1>", async function(arg0, arg1) {
     throw 'Unimplemented Step';
@@ -234,7 +248,79 @@ Implementation
        // Code for after step
     }
 
-  } 
+  }
+
+.. code-block:: javascript
+  :caption: Javascript
+
+  hooks.beforeSuite(fn, [opts]) {
+    // Code for before suite
+  }
+
+  hooks.beforeSpec(fn, [opts]) {
+    // Code for before spec
+  }
+
+  hooks.beforeScenario(fn, [opts]) {
+    // Code for before scenario
+  }
+
+  hooks.beforeStep(fn, [opts]) {
+    // Code for before step
+  }
+
+  hooks.afterSuite(fn, [opts]) {
+    // Code for after suite
+  }
+
+  hooks.afterSpec(fn, [opts]) {
+    // Code for after spec
+  }
+
+  hooks.afterScenario(fn, [opts]) {
+    // Code for after scenario
+  }
+
+  hooks.afterStep(fn, [opts]) {
+    // Code for after step
+  }
+
+.. code-block:: python
+  :caption: Python
+
+  from getgauge.python import before_step, after_step, before_scenario, after_scenario, before_spec, after_spec, before_suite, after_suite
+
+  @before_step
+  def before_step_hook():
+      print("before step hook")
+
+  @after_step
+  def after_step_hook():
+      print("after step hook")
+
+  @before_scenario
+  def before_scenario_hook():
+      print("before scenario hook")
+
+  @after_scenario
+  def after_scenario_hook():
+      print("after scenario hook")
+
+  @before_spec
+  def before_spec_hook():
+      print("before spec hook")
+
+  @after_spec
+  def after_spec_hook():
+      print("after spec hook")
+
+  @before_suite
+  def before_suite_hook():
+      print("before suite hook")
+
+  @after_suite
+  def after_spec_hook():
+      print("after suite hook")
 
 .. code-block:: ruby
   :caption: Ruby
