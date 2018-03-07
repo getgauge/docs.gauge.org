@@ -624,7 +624,7 @@ Current Execution Context in the Hook
       // Code for after step
     }
 
-.. code-block:: js
+.. code-block:: javascript
   :caption: Javascipt
 
     hooks.beforeScenario(fn, [opts]) { ... }
@@ -698,7 +698,7 @@ Filtering Hooks execution based on tags
         // Code for after step
     }
 
-.. code-block:: js
+.. code-block:: javascript
   :caption: Javascipt
 
     // A before spec hook that runs when tag1 and tag2
@@ -852,7 +852,7 @@ Implementation
 
     }
 
-.. code-block:: js
+.. code-block:: javascript
   :caption: Javascipt
 
     step(["Create a user <username>", "Create another user <username>"], function (username) {
@@ -923,7 +923,7 @@ Implementation
 
     }
 
-.. code-block:: js
+.. code-block:: javascript
   :caption: Javascipt
 
     step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"], function (email_type) {
@@ -1235,7 +1235,7 @@ step_impl
 step_impl directory contains the test code including step implementations.
 
 python.properties
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 This defines configurations for Python runner plugin. See :doc:`configuration` for more details.
 
