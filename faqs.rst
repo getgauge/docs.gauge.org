@@ -58,22 +58,22 @@ Why do I get validation failure warning?
    [WARN] Validation failed. The following steps have errors
    ...
 
-Check if the step is implemented. 
+Check if the step is implemented.
 The steps are case sensitive, check if the cases match.
 
 Why does the runner fail to start?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: text
-   
+
    Failed to start a runner. Compatible runner version to 0.0.7 not found
 
-The language plugin is not compatible with the gauge version installed. Run 
+The language plugin is not compatible with the gauge version installed. Run
 
 .. code-block:: console
 
    gauge install language_name
-   
+
 Why are there too many open files?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -81,7 +81,7 @@ Why are there too many open files?
 
    Error: too many open files
 
-The upper limit to the number of open files is low. 
+The upper limit to the number of open files is low.
 Increase the upper limit by adding a command ``ulimit -S -n 2048`` to you ~/.profile.
 Don't forget to re-login for the changes to take effect.
 
@@ -95,7 +95,7 @@ Why can't gradle execute gauge specs, despite adding a task as per the document?
 
 This can happen when gradle is unable to recognize the GaugeTask. Try using the fully qualified name for GaugeTask as below:
 .. code-block:: console
-  
+
   task customGauge(type: com.thoughtworks.gauge.gradle.GaugeTask) {
     gauge {
         specsDir = 'specs'
@@ -150,7 +150,7 @@ You'll find that at ``logs/api.log`` in your projects directory.
 How can I customize the log directory location?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can specify a custom directory by changing the ``logs_directory`` property under 
+You can specify a custom directory by changing the ``logs_directory`` property under
 ``env/default/default.properties`` Refer to :ref:`project's properties<default_properties>`.
 
 .. code-block:: python
@@ -167,3 +167,71 @@ Windows       ``%APPDATA%\gauge\logs``
 MacOS / Linux ``~/.gauge/logs``
 ============= ===============================
 
+.. _python_faq:
+
+Python FAQs
+-----------
+
+Errors
+^^^^^^
+
+ImportError: No module named getgauge
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Installing the getgauge package using pip should fix this. You can install the package by running the following command
+
+::
+
+    [sudo] pip install getgauge
+
+
+Failed to start gauge API: Plugin 'python' not installed on following locations : [PATH]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Installing the gauge-python plugin should fix this. You can install the plugin by running the following command
+
+::
+
+    gauge --install python
+
+
+Make sure you have the getgauge package. If you don't have, run the following command to install
+::
+
+    [sudo] pip install getgauge
+
+For more details, refer Installation_ docs.
+
+.. _Installation: ./installation.html
+
+ImportError: No module named step_impl.<file_name>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This error happens on older versions of Python(2.7, 3.2). Create ``step_impl/__init__.py`` to fix this.
+
+How to
+^^^^^^
+
+Change/Rename default step implementation(``step_impl``) directory
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Create ``python.properties`` file in the ``<PROJECT_DIR>/env/default`` directory and add the following line to it.
+
+::
+
+    STEP_IMPL_DIR = PATH_TO_STEP_IMPLEMENTATION_DIR
+
+.. note::
+   The path specified in ``STEP_IMPL_DIR`` property should be relative to project root.
+
+
+Use different version of python while running specs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default the language runner uses ``python`` command to run specs. To change the default behaviour, add ``GAUGE_PYTHON_COMMAND`` property to the ``python.properties`` file in the ``<PROJECT_DIR>/env/default`` directory.
+
+::
+
+    GAUGE_PYTHON_COMMAND = <python_command>
+    GAUGE_PYTHON_COMMAND = python3
+    GAUGE_PYTHON_COMMAND = python2
