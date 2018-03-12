@@ -25,6 +25,15 @@ Follow the instructions for the respective language below. On getting the messag
 
    gauge init java
 
+.. code-block:: console
+   :caption: Javascript
+
+   gauge init js
+
+.. code-block:: console
+   :caption: Python
+
+   gauge init python
 
 .. code-block:: console
    :caption: Ruby

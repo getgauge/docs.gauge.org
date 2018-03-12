@@ -224,6 +224,19 @@ Java
 
    gauge install java
 
+Javascript
+++++++++++
+
+.. code-block:: console
+
+   gauge install js
+
+Python
+++++++
+
+.. code-block:: console
+
+   gauge install python
 
 Ruby
 ++++

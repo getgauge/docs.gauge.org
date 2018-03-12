@@ -22,8 +22,10 @@ write the implementation of specs in a language of their choice. For a
 list of available language runners, see how to :ref:`install language runners <install-language-runner>`.
 Allows you to write your tests in
 
--  `Java <https://github.com/getgauge/gauge-java>`__
 -  `CSharp <https://github.com/getgauge/gauge-csharp>`__
+-  `Java <https://github.com/getgauge/gauge-java>`__
+-  `Javascript <https://github.com/getgauge/gauge-js>`__
+-  `Python <https://github.com/getgauge/gauge-python>`__
 -  `Ruby <https://github.com/getgauge/gauge-ruby>`__
 
 .. _reporting_plugins:

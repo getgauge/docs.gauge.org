@@ -34,7 +34,7 @@ Simple step
          // Step implementation
      }
 
-  } 
+  }
 
 .. code-block:: java
   :caption: Java
@@ -48,8 +48,22 @@ Simple step
          // Step implementation
      }
 
-  } 
- 
+  }
+
+.. code-block:: javascript
+  :caption: Javascript
+
+  step("Say <greeting> to <name>", async function(greeting, name) {
+    throw 'Unimplemented Step';
+  });
+
+.. code-block:: python
+  :caption: Python
+
+  @step("Say <greeting> to <product name>")
+  def create_following_characters(greeting, name):
+      assert False, "Add implementation code"
+
 .. code-block:: ruby 
   :caption: Ruby 
 
@@ -77,7 +91,7 @@ Implementation:
 
 .. code-block:: java
   :caption: C#
-   
+
   // Here Table is a custom data structure defined by gauge. 
   // This is available by adding a reference to the Gauge.CSharp.Lib.
   // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/ 
@@ -89,7 +103,7 @@ Implementation:
          // Step implementation
      }
 
-  } 
+  }
 
 .. code-block:: java
   :caption: Java
@@ -102,7 +116,23 @@ Implementation:
         // Step implementation
     }
 
-  } 
+  }
+
+.. code-block:: javascript
+  :caption: Javascript
+
+  step("Create following <arg0> characters <arg1>", async function(arg0, arg1) {
+    throw 'Unimplemented Step';
+  });
+
+.. code-block:: java
+  :caption: python
+
+  // Here Table is a custom data structure defined by gauge. 
+
+  @step("Create following <hobbit> characters <table>")
+  def create_following_characters(hobbit, table):
+      assert False, "Add implementation code"
 
 .. code-block:: ruby
   :caption: Ruby
@@ -218,7 +248,79 @@ Implementation
        // Code for after step
     }
 
-  } 
+  }
+
+.. code-block:: javascript
+  :caption: Javascript
+
+  hooks.beforeSuite(fn, [opts]) {
+    // Code for before suite
+  }
+
+  hooks.beforeSpec(fn, [opts]) {
+    // Code for before spec
+  }
+
+  hooks.beforeScenario(fn, [opts]) {
+    // Code for before scenario
+  }
+
+  hooks.beforeStep(fn, [opts]) {
+    // Code for before step
+  }
+
+  hooks.afterSuite(fn, [opts]) {
+    // Code for after suite
+  }
+
+  hooks.afterSpec(fn, [opts]) {
+    // Code for after spec
+  }
+
+  hooks.afterScenario(fn, [opts]) {
+    // Code for after scenario
+  }
+
+  hooks.afterStep(fn, [opts]) {
+    // Code for after step
+  }
+
+.. code-block:: python
+  :caption: Python
+
+  from getgauge.python import before_step, after_step, before_scenario, after_scenario, before_spec, after_spec, before_suite, after_suite
+
+  @before_step
+  def before_step_hook():
+      print("before step hook")
+
+  @after_step
+  def after_step_hook():
+      print("after step hook")
+
+  @before_scenario
+  def before_scenario_hook():
+      print("before scenario hook")
+
+  @after_scenario
+  def after_scenario_hook():
+      print("after scenario hook")
+
+  @before_spec
+  def before_spec_hook():
+      print("before spec hook")
+
+  @after_spec
+  def after_spec_hook():
+      print("after spec hook")
+
+  @before_suite
+  def before_suite_hook():
+      print("before suite hook")
+
+  @after_suite
+  def after_spec_hook():
+      print("after suite hook")
 
 .. code-block:: ruby
   :caption: Ruby
@@ -280,38 +382,57 @@ scenario execution. Values are cleared after every scenario executes
 
    using Gauge.CSharp.Lib;
 
-   // Adding value 
+   // Adding value
    var scenarioStore = DataStoreFactory.ScenarioDataStore;
    scenarioStore.Add("element-id", "455678");
 
-   // Fetching Value 
+   // Fetching Value
    var elementId = (string) scenarioStore.Get("element-id");
 
-   // avoid type cast by using generic Get 
-   var anotherElementId = scenarioStore.Get("element-id"); 
+   // avoid type cast by using generic Get
+   var anotherElementId = scenarioStore.Get("element-id");
 
 .. code-block:: java
   :caption: Java
 
-  import com.thoughtworks.gauge.datastore.*; 
+  import com.thoughtworks.gauge.datastore.*;
 
-  // Adding value 
-  DataStore scenarioStore = DataStoreFactory.getScenarioDataStore(); 
+  // Adding value
+  DataStore scenarioStore = DataStoreFactory.getScenarioDataStore();
   scenarioStore.put("element-id", "455678");
 
-  // Fetching Value 
+  // Fetching Value
   String elementId = (String) scenarioStore.get("element-id");
+
+.. code-block:: javascript
+  :caption: Javascript
+
+   // Adding value
+  gauge.dataStore.scenarioStore.put(key, value);
+
+  // Fetching Value
+  gauge.dataStore.scenarioStore.get(key);
+
+.. code-block:: python
+  :caption: python
+
+  from getgauge.python import DataStoreFactory
+  // Adding value
+  DataStoreFactory.scenario_data_store().put(key, value)
+
+  // Fetching Value
+  DataStoreFactory.scenario_data_store().get(key)
 
 .. code-block:: ruby
   :caption: Ruby
 
-   // Adding value 
-   scenario_store = DataStoreFactory.scenario_datastore; 
+   // Adding value
+   scenario_store = DataStoreFactory.scenario_datastore;
    scenario_store.put("element-id", "455678");
 
 
-   // Fetching Value 
-   element_id = scenario_store.get("element-id"); 
+   // Fetching Value
+   element_id = scenario_store.get("element-id");
 
 
 SpecStore
@@ -326,16 +447,16 @@ executes
 
   using Gauge.CSharp.Lib;
 
-  // Adding value 
+  // Adding value
   var specStore = DataStoreFactory.SpecDataStore;
   specStore.Add("element-id", "455678");
 
-  // Fetching Value 
+  // Fetching Value
   var elementId = (string) specStore.Get("element-id");
 
-  // avoid type cast by using generic Get 
-  var anotherElementId = specStore.Get("element-id"); 
-  
+  // avoid type cast by using generic Get
+  var anotherElementId = specStore.Get("element-id");
+
 .. code-block:: java
   :caption: Java
 
@@ -348,6 +469,25 @@ executes
 
   // Fetching value DataStore specStore =
   String elementId = (String) specStore.get("key"); 
+
+.. code-block:: javascript
+  :caption: Javascript
+
+  // Adding value DataStore specStore =
+  gauge.dataStore.specStore.put(key, value);
+  // Fetching value DataStore specStore =
+  gauge.dataStore.specStore.get(key);
+
+.. code-block:: python
+  :caption: Python
+
+  // Import Package import
+  from getgauge.python import DataStoreFactory
+  // Adding value DataStore specStore =
+  DataStoreFactory.spec_data_store().put(key, value)
+
+  // Fetching value DataStore specStore =
+  DataStoreFactory.spec_data_store().get(key)
 
 .. code-block:: ruby
   :caption: Ruby
@@ -397,16 +537,35 @@ execution.
   DataStore suiteStore = DataStoreFactory.getSuiteDataStore(); 
   String elementId = (String) suiteStore.get("element-id"); 
 
+.. code-block:: javascript
+  :caption: Javascript
+
+  // Adding value DataStore suiteStore =
+  gauge.dataStore.suiteStore.put(key, value);
+  // Fetching value DataStore specStore =
+  gauge.dataStore.suiteStore.get(key);
+
+.. code-block:: python
+  :caption: python
+
+  // Import Package import
+  from getgauge.python import DataStoreFactory
+  // Adding value DataStore suiteStore =
+  DataStoreFactory.suite_data_store().put(key, value)
+
+  // Fetching value DataStore specStore =
+  DataStoreFactory.suite_data_store().get(key)
+
 .. code-block:: ruby
   :caption: Ruby
 
-  // Adding value 
+  // Adding value
   suite_store = DataStoreFactory.suite_datastore;
   suite_store.put("element-id", "455678");
 
-  // Fetching Value 
+  // Fetching Value
   suite_store = DataStoreFactory.suite_datastore;
-  element_id = suite_store.get("element-id"); 
+  element_id = suite_store.get("element-id");
 
 Taking Custom Screenshots
 -------------------------
@@ -427,6 +586,19 @@ Taking Custom Screenshots
     which in turn depends on the order of scanning of the libraries.
 
 .. code-block:: java
+  :caption: C#
+
+  //Using Webdriver public
+  class CustomScreenGrabber : IScreenGrabber {
+
+    // Return a screenshot byte array
+    public byte[] TakeScreenshot() {
+        var driver = DriverFactory.getDriver();
+        return ((ITakesScreenshot) driver).GetScreenshot().AsByteArray;
+    }
+  }
+
+.. code-block:: java
   :caption: Java
 
   // Using Webdriver public class
@@ -439,19 +611,21 @@ Taking Custom Screenshots
 
   }
 
-.. code-block:: java
-  :caption: C#
+.. code-block:: javascript
+  :caption: Javascript
 
-  //Using Webdriver public
-  class CustomScreenGrabber : IScreenGrabber {
+  gauge.screenshotFn = function () {
+    return "base64encodedstring";
+  };
 
-    // Return a screenshot byte array
-    public byte[] TakeScreenshot() {
-        var driver = DriverFactory.getDriver();
-        return ((ITakesScreenshot) driver).GetScreenshot().AsByteArray;
-    }
-  }
-    
+.. code-block:: python
+  :caption: Python
+
+  from getgauge.python import screenshot
+  @screenshot
+  def take_screenshot():
+      return "base64encodedstring"
+
 .. code-block:: ruby
   :caption: Ruby
 
@@ -481,13 +655,25 @@ These messages will appear under steps in the execution reports.
   GaugeMessages.WriteMessage("Custom message for report");
   var id = "4567"; 
   GaugeMessages.WriteMessage("User id is {0}", id); 
- 
+
 .. code-block:: java
   :caption: Java
 
   Gauge.writeMessage("Custom message for report");
   String id = "4567"; 
   Gauge.writeMessage("User id is %s", id);
+
+.. code-block:: javascript
+  :caption: Javascript
+
+  gauge.message("Custom message for report");
+
+.. code-block:: python
+  :caption: Python
+
+  from getgauge.python import Messages
+
+  Messages.write_message("Custom message for report")
 
 .. code-block:: ruby
   :caption: Ruby
@@ -537,6 +723,20 @@ implementation asks for it explicitly. Each language runner uses
 different syntax, depending on the language idioms, to allow a step
 implementation to be marked to continue on failure.
 
+.. code-block:: java
+  :caption: C#
+
+  // The ``[ContinueOnFailure]`` attribute tells Gauge to continue executing others
+  // steps even if the current step fails.
+
+  public class StepImplementation {
+      [ContinueOnFailure]
+      [Step("Say <greeting> to <product name>")]
+      public void HelloWorld(string greeting, string name) {
+          // If there is an error here, Gauge will still execute next steps
+      }
+
+  }
 
 .. code-block:: java
   :caption: Java
@@ -553,20 +753,25 @@ implementation to be marked to continue on failure.
 
   }
 
-.. code-block:: java
-  :caption: C#
+.. code-block:: javascript
+  :caption: Javascript
 
-  // The ``[ContinueOnFailure]`` attribute tells Gauge to continue executing others
+  // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other 
   // steps even if the current step fails.
 
-  public class StepImplementation {
-      [ContinueOnFailure]
-      [Step("Say <greeting> to <product name>")]
-      public void HelloWorld(string greeting, string name) {
-          // If there is an error here, Gauge will still execute next steps
-      }
+  gauge.step("Say <greeting> to <product>.", { continueOnFailure: true}, function (greeting,product) {
+  });
 
-  }
+.. code-block:: python
+  :caption: Python
+
+  // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other 
+  // steps even if the current step fails.
+
+  @continue_on_failure([RuntimeError])
+  @step("Say <greeting> to <product>")
+  def step2(greeting,product):
+    pass
 
 .. code-block:: ruby
   :caption: Ruby
@@ -581,28 +786,36 @@ implementation to be marked to continue on failure.
 
 Continue on Failure can take an optional parameter to specify the list
 of error classes on which it would continue to execute further steps in
-case of failure. This is currently supported only with Java runner.
+case of failure. This is currently supported only with the following runners.
 
 .. code-block:: java
   :caption: Java
 
   @ContinueOnFailure({AssertionError.class, CustomError.class})
   @Step("hello")
-  public void sayHello() { 
-    // code here 
+  public void sayHello() {
+    // code here
   }
 
   @ContinueOnFailure(AssertionError.class)
   @Step("hello")
-  public void sayHello() { 
-    // code here 
+  public void sayHello() {
+    // code here
   }
 
   @ContinueOnFailure
   @Step("hello")
-  public void sayHello() { 
-    // code here 
+  public void sayHello() {
+    // code here
   }
+
+.. code-block:: python
+  :caption: Python
+
+  @continue_on_failure([RuntimeError])
+  @step("Step 2")
+  def step2():
+      pass
 
 In case no parameters are passed to ``@ContinueOnFailure``, on any type
 of error it continues with execution of further steps by default.

@@ -279,6 +279,32 @@ Java Specific configuration changes can be made in the
     # Specify the JVM arguments passed to java while launching.
     gauge_jvm_args = <JVM_ARGS>
 
+Javascript
+^^^^^^^^^^
+
+Javascript Specific configuration changes can be made in the
+``env/default/js.properties`` file.
+
+.. code-block:: python
+    :linenos:
+    :name: js
+
+    # Use this property if you need to override the timeout of step
+    test_timeout = 10000
+
+Python
+^^^^^^
+
+Python Specific configuration changes can be made in the
+``env/default/python.properties`` file.
+
+.. code-block:: python
+    :linenos:
+    :name: python
+
+    # Override this if you want to use a different command
+    GAUGE_PYTHON_COMMAND = python
+
 .. note::
     CSharp and Ruby language runners do not hold any configuration beyond what is listed in :ref:`default properties <default_properties>`.
 

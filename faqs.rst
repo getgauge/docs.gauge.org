@@ -6,7 +6,7 @@
 FAQs
 ====
 
-.. _installation-faq: 
+.. _installation-faq:
 
 Installation
 ------------
@@ -18,7 +18,7 @@ Where's the gauge executable installed by default?
 OS            Path
 ============= ================================
 Windows       ``%ProgramFiles%\gauge\bin``
-MacOS/Linux   ``/usr/local/bin``  
+MacOS/Linux   ``/usr/local/bin``
 ============= ================================
 
 
@@ -27,7 +27,7 @@ Where are the plugins installed?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ============= ================================
-OS            Path                          
+OS            Path
 ============= ================================
 Windows       ``%APPDATA%\gauge\plugins``
 MacOS/Linux   ``~/.gauge/plugins``
