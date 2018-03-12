@@ -1,6 +1,6 @@
-# User Documentation for [Gauge](http://getgauge.io)
+# User Documentation for [Gauge](http://gauge.org)
 
-This is the repository for [Gauge documentation](https://docs.getgauge.io).
+This is the repository for [Gauge documentation](https://docs.gauge.org).
 
 The documents are written in RST and are built using [Sphinx](http://www.sphinx-doc.org/), a theme based on [readthedocs](https://github.com/snide/sphinx_rtd_theme/).
 

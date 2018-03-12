@@ -149,6 +149,6 @@ Links
 
 .. code-block:: gauge
 
-    This is [an example](http://getgauge.io "Title") inline link.
+    This is [an example](http://gauge.org "Title") inline link.
 
     [This link](http://github.com/getgauge/gauge) has no title attribute.

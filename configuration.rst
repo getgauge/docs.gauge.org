@@ -12,16 +12,16 @@ Global
     :name: gauge_properties
 
     # set to a url, which acts as plugin repository for Gauge.
-    gauge_repository_url = https://downloads.getgauge.io/plugin
+    gauge_repository_url = https://downloads.gauge.org/plugin
 
     # set to a url, which holds version information of Gauge.
     # This is used to determine if an update is available.
-    gauge_update_url = https://downloads.getgauge.io/gauge
+    gauge_update_url = https://downloads.gauge.org/gauge
 
     # set to an url, which acts as template repository for Gauge.
-    gauge_templates_url = https://downloads.getgauge.io/templates
+    gauge_templates_url = https://downloads.gauge.org/templates
 
-    # sets the timeout in milliseconds for making a 
+    # sets the timeout in milliseconds for making a
     # connection to the language runner.
     runner_connection_timeout = 30000
 
@@ -506,7 +506,7 @@ See gauge's :ref:`cli_interface` for list of all flags that be used with **-Dfla
 Gradle
 ^^^^^^
 
-Use the gauge-gradle-plugin to execute specifications in your `Gauge <http://getgauge.io>`__ 
+Use the gauge-gradle-plugin to execute specifications in your `Gauge <https://gauge.org>`__ 
 java project and manage dependencies using `Gradle <https://gradle.org//>`__.
 
 Using plugin in project

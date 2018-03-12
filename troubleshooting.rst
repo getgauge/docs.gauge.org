@@ -78,7 +78,7 @@ Example:
 
     gauge install html-report -f html-report-1.0.3-darwin.x86.zip
 
--  Find the plugin zip files under ``Releases`` section of the plugin github repositories. See the `gauge plugin list <http://getgauge.io/plugins/index.html>`__ for plugin repositories details.
+-  Find the plugin zip files under ``Releases`` section of the plugin github repositories. See the `gauge plugin list <http://gauge.org/plugins.html>`__ for plugin repositories details.
 
 Plugins directory
 ^^^^^^^^^^^^^^^^^
@@ -101,7 +101,7 @@ To install plugins at different location, set ``GAUGE_HOME`` environment variabl
 Execution
 ---------
 
-It is advised to use the latest version of gauge and `gauge plugins <http://getgauge.io/plugins/index.html>`__. See our `download page <http://getgauge.io/get-started/index.html>`__ for links to latest installation
+It is advised to use the latest version of gauge and `gauge plugins <http://gauge.org/plugins.html>`__. See our `download page <http://gauge.org/get-started.html>`__ for links to latest installation
 
 Validation Errors
 ^^^^^^^^^^^^^^^^^
@@ -139,7 +139,7 @@ Execution Errors
 Intellij idea plugin
 --------------------
 
-It is advised to use the latest version of `gauge <http://getgauge.io/download>`__ and `Intellij-gauge <https://plugins.jetbrains.com/plugin/7535?pr=idea>`__.
+It is advised to use the latest version of `gauge <http://gauge.org/download>`__ and `Intellij-gauge <https://plugins.jetbrains.com/plugin/7535?pr=idea>`__.
 
 Intellij idea Errors
 ^^^^^^^^^^^^^^^^^^^^

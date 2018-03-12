@@ -2,7 +2,7 @@ from pygments.lexer import RegexLexer, bygroups, include
 from pygments.token import *
 
 
-__url__             = "https://github.com/getgauge/docs.getgauge.io"
+__url__             = "https://github.com/getgauge/docs.gauge.org"
 __version__         = "0.0.1"
 __license__         = "GPL v3"
 __author__          = "sriv"

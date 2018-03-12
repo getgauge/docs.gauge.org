@@ -40,7 +40,7 @@ Gauge is a light-weight cross-platform test automation tool with the ability to 
     * :ref:`language_plugins` :description:`Choose a language for automation.`
     * :ref:`reporting_plugins` :description:`View results and statistics in various formats.`
     * :ref:`IDE Support<ide_support>` :description:`Help author and maintain Gauge specs.`
-    * `Explore All <http://getgauge.io/plugins/index.html>`__
+    * `Explore All <https://gauge.org/plugins.html>`__
 * Resources
     * :doc:`examples` :description:`Reference implementation using Gauge`
     * :doc:`howto/index` :description:`Recipes for specific use cases.`

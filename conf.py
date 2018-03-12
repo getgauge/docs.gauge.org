@@ -88,7 +88,7 @@ html_context = {
     "display_github": True,
     "last_updated": True,
     "github_user": "getgauge",
-    "github_repo": "docs.getgauge.io",
+    "github_repo": "docs.gauge.org",
     "conf_py_path": "/",
 }
 # Add any paths that contain custom static files (such as style sheets) here,

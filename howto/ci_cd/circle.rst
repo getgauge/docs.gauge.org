@@ -4,7 +4,7 @@ HOWTO: Integrating Gauge with CircleCI
 `CircleCI <https://circleci.com/>`__ is a cloud hosted, continuous integration and delivery
 platform.
 
-Configure gauge as a dependency in ``circle.yml`` and add  `xml report <https://docs.getgauge.io/reports.html?highlight=xml%20report#installation>`__
+Configure gauge as a dependency in ``circle.yml`` and add  `xml report <https://docs.gauge.org/reports.html?#installation>`__
 plugin to your gauge project.
 
 .. code-block:: yaml

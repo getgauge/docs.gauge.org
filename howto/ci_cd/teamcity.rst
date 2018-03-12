@@ -1,9 +1,9 @@
 HOWTO: Integrating Gauge with TeamCity
 ======================================
 
--  `Download <http://getgauge.io/get-started/index.html>`__ and Install
+-  `Download <http://gauge.org/get-started.html>`__ and Install
    Gauge on the agents. Read more on installing Gauge
-   `here <https://docs.getgauge.io/installing.html#installation>`__.
+   `here <https://docs.gauge.org/installing.html#installation>`__.
 -  Install the required Gauge :ref:`language plugins <plugins-installation>` on
    the agents as: ``gauge install <language>``
 
@@ -14,10 +14,10 @@ Tips on Installation
    plugins are installed per user. So plugins should be installed via
    user account with which the TeamCity agent executes. Refer default
    install location of Gauge and its plugins
-   `here <https://docs.getgauge.io/troubleshooting.html#gauge-installation>`__.
+   `here <https://docs.gauge.org/troubleshooting.html#gauge-installation>`__.
 
 -  Alternately, you can set `custom location for
-   plugins <https://docs.getgauge.io/troubleshooting.html#custom-plugin-install-location>`__
+   plugins <https://docs.gauge.org/troubleshooting.html#custom-plugin-install-location>`__
    so that its accessible to TeamCity agent running as a different user.
 
 Create execution task
