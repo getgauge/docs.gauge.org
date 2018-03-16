@@ -1,7 +1,7 @@
 HOWTO: Integrating Gauge with TeamCity
 ======================================
 
--  `Download <http://gauge.org/get-started.html>`__ and Install
+-  `Download <https://gauge.org/get-started.html>`__ and Install
    Gauge on the agents. Read more on installing Gauge
    `here <https://docs.gauge.org/installing.html#installation>`__.
 -  Install the required Gauge :ref:`language plugins <plugins-installation>` on

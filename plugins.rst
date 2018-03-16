@@ -88,7 +88,7 @@ from plugin repository, use the ``--file`` or ``-f`` flag.
     gauge install html-report --file ZIP_FILE_PATH
 
 Download the latest version of plugin from the ``Releases`` section of
-the respective repository. See `plugin list <http://gauge.org/plugins.html>`__ to
+the respective repository. See `plugin list <https://gauge.org/plugins.html>`__ to
 find the repositories.
 
 Updating plugins

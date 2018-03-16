@@ -1,4 +1,4 @@
-# User Documentation for [Gauge](http://gauge.org)
+# User Documentation for [Gauge](https://gauge.org)
 
 This is the repository for [Gauge documentation](https://docs.gauge.org).
 
