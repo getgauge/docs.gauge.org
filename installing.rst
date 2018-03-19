@@ -290,7 +290,7 @@ Uninstallation
 
 .. warning::
    - If you plan to remove Gauge and the installed plugins, follow the steps in :ref:`plugins-uninstallation` first.
-   - The Gauge folder(~/.gauge/config in Mac/Linux and in %APPDATA%\Gauge\config in windows) has to be removed manually.
+   - The Gauge folder(~/.gauge in Mac/Linux and in %APPDATA%\Gauge in windows) has to be removed manually.
 
 Gauge
 ^^^^^
