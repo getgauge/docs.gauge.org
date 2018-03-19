@@ -137,7 +137,7 @@ try out Gauge nightly, do this:
 Windows/MacOS
 +++++++++++++
 
-Based on your system requirement, you can `download the Gauge executable <https://bintray.com/gauge/Gauge/Nightly/>`__. This is a ``zip`` file. Extract it to a folder and add this to your system path.
+Based on your system requirement, you can `download the Gauge archive <https://bintray.com/gauge/Gauge/Nightly/>`__. This is a ``zip`` file. Extract it to a folder and add this to your system path.
 
 Linux
 +++++
@@ -289,7 +289,8 @@ Uninstallation
 --------------
 
 .. warning::
-   If you plan to remove Gauge and the installed plugins, follow the steps in :ref:`plugins-uninstallation` first.
+   - If you plan to remove Gauge and the installed plugins, follow the steps in :ref:`plugins-uninstallation` first.
+   - The Gauge folder(~/.gauge/config in Mac/Linux and in %APPDATA%\Gauge\config in windows) has to be removed manually.
 
 Gauge
 ^^^^^
