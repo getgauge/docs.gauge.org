@@ -289,8 +289,9 @@ Uninstallation
 --------------
 
 .. warning::
-   - If you plan to remove Gauge and the installed plugins, follow the steps in :ref:`plugins-uninstallation` first.
    - The Gauge folder(~/.gauge in Mac/Linux and in %APPDATA%\Gauge in windows) has to be removed manually.
+        This folder contains Gauge config, logs and plugins.
+   - If you plan to remove the installed plugins explicitly, follow the steps in :ref:`plugins-uninstallation` first.
 
 Gauge
 ^^^^^
