@@ -125,8 +125,9 @@ IDE plugins
 
 Gauge has a bunch of plugins so that users can easily author specs on IDE. For more details, check :ref:`IDE Support <ide_support>`.
 
--  Integration with :ref:`IntelliJ IDEA <intellij_idea>`
--  Integration with :ref:`Visual Studio <visual_studio>`
+- Integration with :ref:`Visual Studio Code <vs_code>`
+- Integration with :ref:`IntelliJ IDEA <intellij_idea>`
+- Integration with :ref:`Visual Studio <visual_studio>`
 
 
 Build Tools
