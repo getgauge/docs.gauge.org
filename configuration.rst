@@ -104,7 +104,7 @@ be managed using property files. The `property
 files <https://en.wikipedia.org/wiki/.properties>`__ have set of key
 value pairs which are set as environment variables during execution.
 
-Gauge allows you to create groups of property files, by defining and environment. 
+Gauge allows you to create groups of property files, by defining environments. 
 
 A project can have multiple environments, and depending on the argument `--env` specified, 
 the corresponding environment is loaded at runtime. `default` is the default environment, 
