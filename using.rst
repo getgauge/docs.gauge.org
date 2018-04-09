@@ -98,11 +98,17 @@ Multiple scenarios can be executed selectively as follows :
 
 .. code-block:: console
 
-    gauge run specs/helloworld.spec:4 specs/helloworld.spec:7
+    gauge run specs/helloworld.spec:4 specs/anotherhelloworld.spec:7
 
 These scenarios can also belong to different specifications.
 
-You can also specify a specific :ref:`scenario <scenario_syntax>` or a list of scenarios to execute. To execute scenarios, ``gauge`` takes path to a specification file, followed by a colon and a zero-indexed number of scenarios.
+You can also specify a specific :ref:`scenario <scenario_syntax>` or a list of scenarios to execute. To execute scenarios, ``gauge`` takes path to a specification file, followed by a colon and the line number of the scenario. You may specify any line number which the scenario spans across. For example, in the above spec file, both the below commands will run the same scenario.
+
+.. code-block:: console
+
+    gauge run specs/helloworld.spec:4 # Runs scenario 'Admin Login'
+    gauge run specs/helloworld.spec:6 # Runs scenario 'Admin Login'
+
 
 For example, to execute the second scenario of a specification file
 named ``spec1.spec``, you would do:
