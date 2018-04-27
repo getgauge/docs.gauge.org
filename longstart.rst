@@ -235,7 +235,7 @@ Example
          | Gauge java | Daredevil|
          | Gauge ruby | Iron Fist|
 
-Iniline data tables can be externalized as :ref:`special csv paramter<special_parameter_csv>`
+Inline data tables can be externalized as :ref:`special csv paramter<special_parameter_csv>`
 
 Special Parameters
 ~~~~~~~~~~~~~~~~~~
