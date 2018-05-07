@@ -23,53 +23,59 @@ Simple step
 
 **Implementation**
 
-.. code-block:: java
-  :caption: C#
+.. tabs::
 
-  // The Method can be written in **any C# class** as long as it is part of the project. 
-  public class StepImplementation {
+   .. group-tab:: c#
+     
+     .. code-block:: java 
 
-     [Step("Say <greeting> to <product name>")]
-     public void HelloWorld(string greeting, string name) {
-         // Step implementation
-     }
+        // The Method can be written in **any C# class** as long as it is part of the project. 
+        public class StepImplementation {
 
-  }
+          [Step("Say <greeting> to <product name>")]
+          public void HelloWorld(string greeting, string name) {
+              // Step implementation
+          }
+        }
 
-.. code-block:: java
-  :caption: Java
+   .. group-tab:: java
 
-  // This Method can be written in any java class as long as it is in classpath.
+     .. code-block:: java 
 
-  public class StepImplementation {
+        // This Method can be written in any java class as long as it is in classpath.
 
-     @Step("Say <greeting> to <product name>")
-     public void helloWorld(String greeting, String name) {
-         // Step implementation
-     }
+        public class StepImplementation {
 
-  }
+          @Step("Say <greeting> to <product name>")
+          public void helloWorld(String greeting, String name) {
+              // Step implementation
+          }
 
-.. code-block:: javascript
-  :caption: Javascript
+        }
 
-  step("Say <greeting> to <name>", async function(greeting, name) {
-    throw 'Unimplemented Step';
-  });
+   .. group-tab:: javascript
 
-.. code-block:: python
-  :caption: Python
+     .. code-block:: javascript 
 
-  @step("Say <greeting> to <product name>")
-  def create_following_characters(greeting, name):
-      assert False, "Add implementation code"
+        step("Say <greeting> to <name>", async function(greeting, name) {
+          throw 'Unimplemented Step';
+        });
 
-.. code-block:: ruby 
-  :caption: Ruby 
+   .. group-tab:: python
 
-  step 'Say <greeting> to <product name>' do |greeting, name| 
-   # Code for the step 
-  end 
+     .. code-block:: python
+
+        @step("Say <greeting> to <product name>")
+        def create_following_characters(greeting, name):
+            assert False, "Add implementation code"
+
+   .. group-tab:: ruby 
+
+     .. code-block:: ruby
+
+        step 'Say <greeting> to <product name>' do |greeting, name| 
+        # Code for the step 
+        end 
 
 Step with table
 ^^^^^^^^^^^^^^^
@@ -87,60 +93,58 @@ Step with table
 
 **Implementation**
 
-.. code-block:: java
-  :caption: C#
+.. tabs::
 
-  // Here Table is a custom data structure defined by gauge. 
-  // This is available by adding a reference to the Gauge.CSharp.Lib.
-  // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/ 
+  .. code-tab:: csharp
 
-  public class Users {
+    // Here Table is a custom data structure defined by gauge. 
+    // This is available by adding a reference to the Gauge.CSharp.Lib.
+    // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/ 
 
-     [Step("Create following <role> users <table>")]
-     public void HelloWorld(string role, Table table) {
-         // Step implementation
-     }
+    public class Users {
 
-  }
+      [Step("Create following <role> users <table>")]
+      public void HelloWorld(string role, Table table) {
+          // Step implementation
+      }
 
-.. code-block:: java
-  :caption: Java
-
-  // Table is a custom data structure defined by gauge. 
-  public class Users {
-
-    @Step("Create following <race> characters <table>")
-    public void createCharacters(String type, Table table) {
-        // Step implementation
     }
 
-  }
+  .. code-tab:: java
 
-.. code-block:: javascript
-  :caption: Javascript
+    // Table is a custom data structure defined by gauge. 
+    public class Users {
 
-  step("Create following <arg0> characters <arg1>", async function(arg0, arg1) {
-    throw 'Unimplemented Step';
-  });
+      @Step("Create following <race> characters <table>")
+      public void createCharacters(String type, Table table) {
+          // Step implementation
+      }
 
-.. code-block:: java
-  :caption: python
+    }
 
-  // Here Table is a custom data structure defined by gauge. 
+  .. code-tab:: javascript
 
-  @step("Create following <hobbit> characters <table>")
-  def create_following_characters(hobbit, table):
-      assert False, "Add implementation code"
+    step("Create following <arg0> characters <arg1>", async function(arg0, arg1) {
+      throw 'Unimplemented Step';
+    });
 
-.. code-block:: ruby
-  :caption: Ruby
+  .. code-tab:: python
 
-  # Here table is a custom data structure defined by gauge-ruby.
+    // Here Table is a custom data structure defined by gauge. 
 
-  step 'Create following <race> characters <table>' do |role, table| 
-    puts table.rows 
-    puts table.columns 
-  end 
+    @step("Create following <hobbit> characters <table>")
+    def create_following_characters(hobbit, table):
+        assert False, "Add implementation code"
+
+  .. code-tab:: ruby
+    :caption: Ruby
+
+    # Here table is a custom data structure defined by gauge-ruby.
+
+    step 'Create following <race> characters <table>' do |role, table| 
+      puts table.rows 
+      puts table.columns 
+    end 
 
 
 .. _execution_hooks:
@@ -153,7 +157,7 @@ levels during the test suite execution.
 
 **Implementation**
 
-.. code-block:: java
+.. code-tab:: java
   :caption: C# 
 
   public class ExecutionHooks
