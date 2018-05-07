@@ -7,9 +7,10 @@ various types of plugins that gauge currently supports.
 Required Plugins
 ----------------
 
+-  `html-report <https://github.com/getgauge/html-report>`__
 -  `screenshot <https://github.com/getgauge/gauge_screenshot>`__
 
-The screenshot plugin is installed automatically on the first run.
+The html-report and screenshot plugins are installed automatically on the first run.
 
 Language/Reporting Plugins
 --------------------------

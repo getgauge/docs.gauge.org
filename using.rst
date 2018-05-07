@@ -1297,8 +1297,10 @@ The released versions are available `here <https://github.com/getgauge/gauge-vsc
 
 Install from source
 """""""""""""""""""
-$ npm run build
-This will create gauge-<version>.vsix file which can be installed via VScode's Install from `VSIX <https://code.visualstudio.com/docs/editor/extension-gallery#_install-from-a-vsix>`__.
+.. code-block:: console
+
+    npm run build
+This will create ``gauge-<version>.vsix`` file which can be installed via VScode's Install from `VSIX <https://code.visualstudio.com/docs/editor/extension-gallery#_install-from-a-vsix>`__.
 
 Install Nightly version
 """""""""""""""""""""""
@@ -1359,7 +1361,7 @@ Jump from Step text to it's implementation.
 
 Usage: ``Right Click`` -> ``Go to Declaration`` or hit F12
 
-.. figure:: images/vscode_screenshots/features/GotoDefinition.gif
+.. figure:: images/vscode_screenshots/features/gotoDefinition.gif
    :alt: goto definition
 
    goto definition
