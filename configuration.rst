@@ -279,6 +279,9 @@ Java Specific configuration changes can be made in the
     # Specify the JVM arguments passed to java while launching.
     gauge_jvm_args = <JVM_ARGS>
 
+    # Comma seperated list of dirs. path should be relative to project root.
+    STEP_IMPL_DIR = tests
+
 Javascript
 ^^^^^^^^^^
 
@@ -292,6 +295,12 @@ Javascript Specific configuration changes can be made in the
     # Use this property if you need to override the timeout of step
     test_timeout = 10000
 
+    # Change this to true to enable browser debugging support
+    DEBUG = false
+
+    # Comma seperated list of dirs. path should be relative to project root.
+    STEP_IMPL_DIR = tests
+
 Python
 ^^^^^^
 
@@ -304,6 +313,9 @@ Python Specific configuration changes can be made in the
 
     # Override this if you want to use a different command
     GAUGE_PYTHON_COMMAND = python
+
+    # Comma seperated list of dirs. path should be relative to project root.
+    STEP_IMPL_DIR = tests
 
 .. note::
     CSharp and Ruby language runners do not hold any configuration beyond what is listed in :ref:`default properties <default_properties>`.
