@@ -572,8 +572,7 @@ Taking Custom Screenshots
 
 -  If you need to take CustomScreenshots (using webdriver for example)
    because you need only a part of the screen captured, this can be done
-   by **implementing** the ``ICustomScreenshotGrabber``
-   (``IScreenGrabber`` in C#) interface;
+   by **implementing** the ``ICustomScreenshotGrabber`` interface;
 
 .. note::
 
@@ -586,7 +585,7 @@ Taking Custom Screenshots
   :caption: C#
 
   //Using Webdriver public
-  class CustomScreenGrabber : IScreenGrabber {
+  class CustomScreenGrabber : ICustomScreenshotGrabber {
 
     // Return a screenshot byte array
     public byte[] TakeScreenshot() {
@@ -682,20 +681,19 @@ These messages will appear under steps in the execution reports.
 Enum as Step parameter
 ----------------------
 
-.. note::
-   This feature is currently only supported for Java.
+.. note:: This feature is currently only supported for Java.
 
 The constant values of an Enum data type can be used as parameters to a
 Step. However, the type of parameter should match the Enum name itself
 in step implementation.
 
-Step:
+**Step**
 
 .. code-block:: gauge
 
   * Navigate towards "SOUTH"
 
-Implementation:
+**Implementation**
 
 .. code-block:: java
   :caption: Java
