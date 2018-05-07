@@ -74,8 +74,7 @@ Simple step
 Step with table
 ^^^^^^^^^^^^^^^
 
-Step:
-~~~~~
+**Step**
 
 .. code-block:: gauge
 
@@ -86,8 +85,7 @@ Step:
     |456|bilbo  |
     |789|samwise|
 
-Implementation:
-~~~~~~~~~~~~~~~
+**Implementation**
 
 .. code-block:: java
   :caption: C#
@@ -153,8 +151,7 @@ Execution hooks
 Test execution hooks can be used to run arbitrary test code as different
 levels during the test suite execution.
 
-Implementation
-^^^^^^^^^^^^^^
+**Implementation**
 
 .. code-block:: java
   :caption: C# 
@@ -505,9 +502,9 @@ SuiteStore
 This data store keeps values added to it during the lifecycle of entire
 suite execution. Values are cleared after entire suite execution.
 
-Warning: SuiteStore is not advised to be used when executing specs
-in parallel. The values are not retained between parallel streams of
-execution.
+.. warning::
+   SuiteStore is not advised to be used when executing specs in parallel. 
+   The values are not retained between parallel streams of execution.
 
 .. code-block::java
   :caption:C#
@@ -684,6 +681,9 @@ These messages will appear under steps in the execution reports.
 
 Enum as Step parameter
 ----------------------
+
+.. note::
+   This feature is currently only supported for Java.
 
 The constant values of an Enum data type can be used as parameters to a
 Step. However, the type of parameter should match the Enum name itself
