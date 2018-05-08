@@ -6205,31 +6205,18 @@ div[class^='highlight'] pre {
 .wy-side-nav-search {
     display: block;
     width: 300px;
-    padding: .809em;
-    margin-bottom: .809em;
     z-index: 200;
     background-color: #f5c10e;
     text-align: center;
     padding: .809em;
     display: block;
     color: #fcfcfc;
-    margin-bottom: .809em
-}
-
-.wy-side-nav-search input[type=text] {
-    width: 100%;
-    border-radius: 50px;
-    padding: 6px 12px;
-    border-color: #2472a4
 }
 
 .wy-side-nav-search img {
     display: block;
     margin: auto auto .809em auto;
-    height: 45px;
-    width: 45px;
     background-color: #f5c10e;
-    padding: 5px;
     border-radius: 100%
 }
 
@@ -6249,7 +6236,7 @@ div[class^='highlight'] pre {
 .wy-side-nav-search .wy-dropdown>a img.logo {
     display: block;
     margin: 0 auto;
-    height: auto;
+    height: 5em;
     width: auto;
     border-radius: 0;
     max-width: 100%;
