@@ -5434,7 +5434,6 @@ hr {
     height: 1px;
     border: 0;
     border-top: 1px solid #e1e4e5;
-    margin: 24px 0;
     padding: 0
 }
 
@@ -6236,12 +6235,9 @@ div[class^='highlight'] pre {
 
 .wy-side-nav-search>a,
 .wy-side-nav-search .wy-dropdown>a {
-    color: #fcfcfc;
     font-size: 100%;
     font-weight: bold;
     display: inline-block;
-    padding: 4px 6px;
-    margin-bottom: .809em
 }
 
 .wy-side-nav-search>a:hover,
@@ -7340,4 +7336,22 @@ ul.current {
         column-count: 2;
         column-gap: 2.5em;
     }
+}
+
+/* overrides */
+
+.edit-github {
+    float: right;
+    font-size: 0.8em;
+}
+
+#search {
+    border-radius: 5px;
+    width: 20em;
+    background-image: url(../img/search.svg);
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 5px;
+    padding: 5px 5px 5px 29px;
 }

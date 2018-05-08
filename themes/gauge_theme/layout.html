@@ -38,13 +38,6 @@
         <link rel="author" title="{{ _('About these documents') }}"
               href="{{ pathto('about') }}"/>
     {%- endif %}
-    {%- if hasdoc('genindex') %}
-        <link rel="index" title="{{ _('Index') }}"
-              href="{{ pathto('genindex') }}"/>
-    {%- endif %}
-    {%- if hasdoc('search') %}
-        <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}"/>
-    {%- endif %}
     {%- if hasdoc('copyright') %}
         <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}"/>
     {%- endif %}
@@ -64,10 +57,11 @@
   {# Keep modernizr in head - http://modernizr.com/docs/#installing #}
   <script async="async" src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
 
+  <!-- algolia search -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 </head>
 
 <body class="wy-body-for-nav" role="document">
-
   {% block extrabody %} {% endblock %}
   <div class="wy-grid-for-nav">
 
@@ -96,7 +90,6 @@
               {% endif %}
             {% endif %}
 
-            {% include "searchbox.html" %}
             {%- if not SINGLEHTML %}
             <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
                 <span class="rst-current-version" data-toggle="rst-current-version">
@@ -131,7 +124,6 @@
             </div>
             {%- endif %}
           {% endblock %}
-          {% set script_files = script_files + ["_static/suffix.js"] %}          
         </div>
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
@@ -178,7 +170,6 @@
     </section>
 
   </div>
-  {% include "versions.html" %}
 
   {% if not embedded %}
 
@@ -189,7 +180,7 @@
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'{{ '' if no_search_suffix else file_suffix }}',
             HAS_SOURCE:  {{ has_source|lower }},
-            SOURCELINK_SUFFIX: '{{ sourcelink_suffix }}'
+            SOURCELINK_SUFFIX: '{{ sourcelink_suffix }}',
         };
     </script>
     {%- for scriptfile in script_files %}
@@ -222,7 +213,17 @@
       ga('create', 'UA-54838477-1', 'auto');
       ga('send', 'pageview');
 
-    </script>  
+    </script> 
+    <!-- algolia search -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+    <script type="text/javascript"> docsearch({
+      apiKey: '5008b0d9ea4d9e639a17a123bea077fe',
+      indexName: 'gauge',
+      inputSelector: '#search',
+      debug: false // Set debug to true if you want to inspect the dropdown
+      });
+    </script>     
+    <!-- algolia search snippet end -->
   {% endblock %}
 
 </body>

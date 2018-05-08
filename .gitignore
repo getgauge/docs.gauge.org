@@ -4,3 +4,4 @@ _ext/__pycache__
 tags
 .DS_STORE
 .idea
+*.pyc
