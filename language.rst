@@ -25,7 +25,7 @@ Simple step
 
 .. tabs::
 
-   .. group-tab:: c#
+   .. group-tab:: C#
      
      .. code-block:: java 
 
@@ -38,7 +38,7 @@ Simple step
           }
         }
 
-   .. group-tab:: java
+   .. group-tab:: Java
 
      .. code-block:: java 
 
@@ -53,7 +53,7 @@ Simple step
 
         }
 
-   .. group-tab:: javascript
+   .. group-tab:: JavaScript
 
      .. code-block:: javascript 
 
@@ -61,7 +61,7 @@ Simple step
           throw 'Unimplemented Step';
         });
 
-   .. group-tab:: python
+   .. group-tab:: Python
 
      .. code-block:: python
 
@@ -69,7 +69,7 @@ Simple step
         def create_following_characters(greeting, name):
             assert False, "Add implementation code"
 
-   .. group-tab:: ruby 
+   .. group-tab:: Ruby 
 
      .. code-block:: ruby
 
@@ -95,56 +95,66 @@ Step with table
 
 .. tabs::
 
-  .. code-tab:: csharp
+  .. group-tab:: C#
 
-    // Here Table is a custom data structure defined by gauge. 
-    // This is available by adding a reference to the Gauge.CSharp.Lib.
-    // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/ 
+    .. code-block:: java
 
-    public class Users {
+      // Here Table is a custom data structure defined by gauge. 
+      // This is available by adding a reference to the Gauge.CSharp.Lib.
+      // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/ 
 
-      [Step("Create following <role> users <table>")]
-      public void HelloWorld(string role, Table table) {
-          // Step implementation
+      public class Users {
+
+        [Step("Create following <role> users <table>")]
+        public void HelloWorld(string role, Table table) {
+            // Step implementation
+        }
+
       }
 
-    }
+  .. group-tab:: Java
 
-  .. code-tab:: java
+    .. code-block:: java
 
-    // Table is a custom data structure defined by gauge. 
-    public class Users {
+      // Table is a custom data structure defined by gauge. 
+      public class Users {
 
-      @Step("Create following <race> characters <table>")
-      public void createCharacters(String type, Table table) {
-          // Step implementation
+        @Step("Create following <race> characters <table>")
+        public void createCharacters(String type, Table table) {
+            // Step implementation
+        }
+
       }
 
-    }
+  .. group-tab:: JavaScript
 
-  .. code-tab:: javascript
+    .. code-block:: javascript
 
-    step("Create following <arg0> characters <arg1>", async function(arg0, arg1) {
-      throw 'Unimplemented Step';
-    });
+      step("Create following <arg0> characters <arg1>", async function(arg0, arg1) {
+        throw 'Unimplemented Step';
+      });
 
-  .. code-tab:: python
+  .. group-tab:: Python
 
-    // Here Table is a custom data structure defined by gauge. 
+    .. code-block:: python
 
-    @step("Create following <hobbit> characters <table>")
-    def create_following_characters(hobbit, table):
-        assert False, "Add implementation code"
+      // Here Table is a custom data structure defined by gauge. 
 
-  .. code-tab:: ruby
-    :caption: Ruby
+      @step("Create following <hobbit> characters <table>")
+      def create_following_characters(hobbit, table):
+          assert False, "Add implementation code"
 
-    # Here table is a custom data structure defined by gauge-ruby.
+  .. group-tab:: Ruby
 
-    step 'Create following <race> characters <table>' do |role, table| 
-      puts table.rows 
-      puts table.columns 
-    end 
+    .. code-block:: ruby
+      :caption: Ruby
+
+      # Here table is a custom data structure defined by gauge-ruby.
+
+      step 'Create following <race> characters <table>' do |role, table| 
+        puts table.rows 
+        puts table.columns 
+      end 
 
 
 .. _execution_hooks:

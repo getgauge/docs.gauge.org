@@ -222,8 +222,14 @@
       inputSelector: '#search',
       debug: false // Set debug to true if you want to inspect the dropdown
       });
-    </script>     
+    </script>
     <!-- algolia search snippet end -->
+    <script type="text/javascript">
+      // another hack, sphinx-tabs has !important on color
+      $(document).ready(() => {
+        $('head').append("<style>.sphinx-tabs .sphinx-menu a.item{color: #404040 !important;}</style>")
+      })
+    </script>
   {% endblock %}
 
 </body>

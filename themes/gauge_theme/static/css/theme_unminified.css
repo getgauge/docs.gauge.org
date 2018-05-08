@@ -7355,3 +7355,44 @@ ul.current {
     background-position-x: 5px;
     padding: 5px 5px 5px 29px;
 }
+
+.sphinx-tabs a.item {
+    font-family: monospace;
+    color: #404040 !important;
+}
+
+.sphinx-tabs a.item .container {
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 5px;
+    padding-left: 26px;
+}
+
+.sphinx-tabs a.item:nth-child(1) .container {
+    background-image: url(../img/csharp-logo.svg) !important;
+}
+.sphinx-tabs a.item:nth-child(2) .container {
+    background-image: url(../img/java-logo.svg) !important;
+}
+.sphinx-tabs a.item:nth-child(3) .container {
+    background-image: url(../img/javascript-logo.svg) !important;
+}
+.sphinx-tabs a.item:nth-child(4) .container {
+    background-image: url(../img/python-logo.svg) !important;
+}
+.sphinx-tabs a.item:nth-child(5) .container {
+    background-image: url(../img/ruby-logo.svg) !important;
+}
+
+.ui.segment {
+    padding: 2px !important;
+}
+
+.ui.menu {
+    min-height: 2em !important;
+}
+
+.ui.menu.tabular .item {
+    padding: 5px !important;
+}
