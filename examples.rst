@@ -2,20 +2,37 @@
 Examples
 ========
 
-Basic
------
+Java
+++++
 
-Follow the instructions in :doc:`quickstart`
+* `Java + Maven + Selenium <https://github.com/getgauge-examples/java-maven-selenium>`_
+* `Gradle + Selenium <https://github.com/getgauge-examples/java-gradle-selenium>`_
+* `Sahi <https://github.com/getgauge-examples/gauge-example-sahi>`_
+* `Selendroid <https://github.com/getgauge-examples/gauge_selendroid>`_
+* `Guice <https://github.com/getgauge-examples/gauge-guice>`_
+* `Spring <https://github.com/getgauge-examples/ioc-spring>`_
+* `Perfecto <https://github.com/AmirAtPerfecto/Gauge-Perfecto-Sample>`_
 
-Web Application
----------------
+Ruby
+++++
 
-These examples illustrate the use of Gauge with a browser driver. `Clone <https://git-scm.com/docs/git-clone>`__ the github project on your system. Follow the instructions mentioned on the project's page for setup.
+* `Selenium <https://github.com/getgauge-examples/ruby-selenium>`_
+* `Selenium + Capybara <https://github.com/getgauge-examples/gauge-example-ruby>`_
 
-+--------------------------+----------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------+
-| Features                 | Java                                                                 | C#                                                               | Ruby                                                               | Groovy                                                       |
-+==========================+======================================================================+==================================================================+====================================================================+==============================================================+
-| Web app using Selenium   | `Yes <https://github.com/getgauge-examples/java-maven-selenium>`__   | `Yes <https://github.com/getgauge-examples/csharp-selenium>`__   | `Yes <https://github.com/getgauge-examples/ruby-selenium>`__       | `Yes <https://github.com/getgauge/gauge-example-groovy>`__   |
-+--------------------------+----------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------+
-| Web app using Sahi       | `Yes <https://github.com/getgauge/gauge-example-sahi>`__             | No                                                               | No                                                                 | No                                                           |
-+--------------------------+----------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------+
+C#
++++
+
+* `Selenium <https://github.com/getgauge-examples/csharp-selenium>`_
+* `Selenium With Page Objects <https://github.com/getgauge-examples/gauge-example-csharp>`_
+
+Javascript
+++++++++++
+
+* `Selenium Webdriver <https://github.com/renjithgr/gauge-js-selenium-webdriver>`_
+* `Taiko <https://github.com/getgauge-examples/js-taiko>`_
+
+Python
+++++++
+
+* `Selenium <https://github.com/getgauge-examples/python-selenium>`_
+* `Selenium With Page Objects <https://github.com/kashishm/gauge-example-python>`_
