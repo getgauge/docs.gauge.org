@@ -14,11 +14,7 @@ Gauge Core
 
       **Using Chocolatey**
 
-      
-      .. note:: 
-        Requires 
-          - `chocolatey <https://chocolatey.org//>`__.
-          - Internet Connection
+      Requires `chocolatey <https://chocolatey.org//>`__, and Internet Connection.
 
       .. code-block:: console
 
@@ -29,28 +25,22 @@ Gauge Core
 
         **Offline Installation**
         
-        You can `download the Gauge archive <https://gauge.org/get-started.html>`__. 
-        This is a ``zip`` file. Extract it to a folder and add this to your system path.
+        `Download the Gauge archive <https://gauge.org/get-started.html>`__. Extract it to a location and add it to system path.
 
       .. container:: toggle
 
         **Nightly installation**
 
-        .. note:: Nightly releases are latest development snapshots of Gauge. They have
-        the latest features being developed, but are unstable. If you want to
-        try out Gauge nightly, do this.
+        Nightly releases are latest development snapshots of Gauge. They have
+        the latest features being developed, but are unstable. 
 
-        Based on your system requirement, you can `download the Gauge archive <https://bintray.com/gauge/Gauge/Nightly/>`__. 
-        This is a ``zip`` file. Extract it to a folder and add this to your system path.
+        `Download the Gauge archive <https://bintray.com/gauge/Gauge/Nightly/>`__. Extract it to a location and add it to system path.
 
     .. tab:: macOS
 
       **Using HomeBrew**
 
-      .. note:: 
-        Requires 
-          - `homebrew <https://brew.sh/>`__.
-          - Internet Connection
+      Requires `homebrew <https://brew.sh/>`__ and Internet Connection
 
       .. code-block:: console
 
@@ -61,19 +51,16 @@ Gauge Core
 
         **Offline Installation**
         
-        You can `download the Gauge archive <https://gauge.org/get-started.html>`__. 
-        This is a ``zip`` file. Extract it to a folder and add this to your system path.
+        `Download the Gauge archive <https://gauge.org/get-started.html>`__. Extract it to a location and add it to system path.
 
       .. container:: toggle
 
         **Nightly installation**
 
-        .. note:: Nightly releases are latest development snapshots of Gauge. They have
-        the latest features being developed, but are unstable. If you want to
-        try out Gauge nightly, do this.
+        Nightly releases are latest development snapshots of Gauge. They have
+        the latest features being developed, but are unstable. 
 
-        Based on your system requirement, you can `download the Gauge archive <https://bintray.com/gauge/Gauge/Nightly/>`__. 
-        This is a ``zip`` file. Extract it to a folder and add this to your system path.
+        `Download the Gauge archive <https://bintray.com/gauge/Gauge/Nightly/>`__. Extract it to a location and add it to system path.
 
     .. tab:: Linux (Debian/Ubuntu)
 
@@ -90,8 +77,7 @@ Gauge Core
 
           **Offline Installation**
 
-          `Download <https://gauge.org/get-started.html>`__ the zip file. Choose the
-          archive file appropriate for your installation. And run the command
+          `Download <https://gauge.org/get-started.html>`__ the archive, run the command
           below to install Gauge.
 
           .. code-block:: console
@@ -99,7 +85,7 @@ Gauge Core
               unzip gauge-$VERSION-$OS.$ARCH.zip
               ./install.sh
 
-          Gauge can be installed at custom location by using ``GAUGE_PREFIX`` env.
+          Set ``GAUGE_PREFIX`` env to install Gauge to a custom location.
 
           Example :-
 
@@ -107,15 +93,14 @@ Gauge Core
 
               GAUGE_PREFIX=my/custom/location ./install.sh
 
-          Gauge Plugins also can be installed along with ``gauge`` ( requires Internet). Set ``GAUGE_PLUGINS`` ( comma separated list of plugins) env to install plugins.
+          Set ``GAUGE_PLUGINS`` ( comma separated list of plugins) env to install plugins along with ``gauge`` ( requires Internet). 
 
         .. container:: toggle
 
           **Nightly Installation**
 
-          .. note:: Nightly releases are latest development snapshots of Gauge. They have
-          the latest features being developed, but are unstable. If you want to
-          try out Gauge nightly, do this.
+          Nightly releases are latest development snapshots of Gauge. They have
+          the latest features being developed, but are unstable.
 
           Add Gauge's GPG key:
 
@@ -123,7 +108,7 @@ Gauge Core
 
               sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
 
-          Run this command to add URL to repository list:
+          Add to repository list:
 
           .. code-block:: console
 
@@ -148,7 +133,7 @@ Gauge Core
           gpgcheck=0
           enabled=1
 
-      You can use this command to do it in one step:
+      Use this command to do it in one step:
 
       .. code-block:: console
 
@@ -164,8 +149,7 @@ Gauge Core
 
         **Offline Installation**
 
-        `Download <https://gauge.org/get-started.html>`__ the zip file. Choose the
-        archive file appropriate for your installation. And run the command
+        `Download <https://gauge.org/get-started.html>`__ and run the command
         below to install Gauge.
 
         .. code-block:: console
@@ -173,7 +157,7 @@ Gauge Core
             unzip gauge-$VERSION-$OS.$ARCH.zip
             ./install.sh
 
-        Gauge can be installed at custom location by using ``GAUGE_PREFIX`` env.
+        Set ``GAUGE_PREFIX`` env to install Gauge at custom location.
 
         Example :-
 
@@ -181,15 +165,14 @@ Gauge Core
 
             GAUGE_PREFIX=my/custom/location ./install.sh
 
-        Gauge Plugins also can be installed along with ``gauge`` ( requires Internet). Set ``GAUGE_PLUGINS`` ( comma separated list of plugins) env to install plugins.
+        Set ``GAUGE_PLUGINS`` ( comma separated list of plugins) env to install plugins along with ``gauge`` ( requires Internet). 
 
       .. container:: toggle
 
         **Nightly Installation**
 
-        .. note:: Nightly releases are latest development snapshots of Gauge. They have
-        the latest features being developed, but are unstable. If you want to
-        try out Gauge nightly, do this.
+        Nightly releases are latest development snapshots of Gauge. They have
+        the latest features being developed, but are unstable. 
 
         ``create /etc/yum.repos.d/gauge-nightly.repo`` with the following content:
 
@@ -201,7 +184,7 @@ Gauge Core
             gpgcheck=0
             enabled=1
 
-        You can use this command to do it in one step:
+        Use this command to do it in one step:
 
         .. code-block:: console
 
@@ -225,7 +208,7 @@ Gauge Core
           gpgcheck=0
           enabled=1
 
-      You can use this command to do it in one step:
+      Use this command to do it in one step:
 
       .. code-block:: console
 
@@ -241,8 +224,7 @@ Gauge Core
 
         **Offline Installation**
 
-        `Download <https://gauge.org/get-started.html>`__ the zip file. Choose the
-        archive file appropriate for your installation. And run the command
+        `Download <https://gauge.org/get-started.html>`__ and run the command
         below to install Gauge.
 
         .. code-block:: console
@@ -250,7 +232,7 @@ Gauge Core
             unzip gauge-$VERSION-$OS.$ARCH.zip
             ./install.sh
 
-        Gauge can be installed at custom location by using ``GAUGE_PREFIX`` env.
+        Set ``GAUGE_PREFIX`` env to install Gauge at custom location.
 
         Example :-
 
@@ -258,14 +240,14 @@ Gauge Core
 
             GAUGE_PREFIX=my/custom/location ./install.sh
 
-        Gauge Plugins also can be installed along with ``gauge`` ( requires Internet). Set ``GAUGE_PLUGINS`` ( comma separated list of plugins) env to install plugins.
+        Set ``GAUGE_PLUGINS`` ( comma separated list of plugins) env to install plugins along with ``gauge`` ( requires Internet). 
+
       .. container:: toggle
 
         **Nightly Installation**
 
         .. note:: Nightly releases are latest development snapshots of Gauge. They have
-        the latest features being developed, but are unstable. If you want to
-        try out Gauge nightly, do this.
+        the latest features being developed, but are unstable.
 
         ``create /etc/yum.repos.d/gauge-nightly.repo`` with the following content:
 
@@ -277,7 +259,7 @@ Gauge Core
             gpgcheck=0
             enabled=1
 
-        You can use this command to do it in one step:
+        Use this command to do it in one step:
 
         .. code-block:: console
 
@@ -355,15 +337,13 @@ XML Report
 Verify your installation
 ------------------------
 
-You can check the version of your plugin and Gauge core by executing the
-following command.
+Check the version of your plugin and Gauge core by running:
 
 .. code-block:: console
 
    gauge version
 
-If this enlists a version then you're intallation and initialisation is
-has been successful. Your output will look like this:
+The output should look like:
 
 .. code-block:: console
 
@@ -375,7 +355,7 @@ has been successful. Your output will look like this:
 
 You can read more about plugins :doc:`here <plugins>`.
 
-If you have Gauge and your language runner installed, then see how you can :ref:`create a Gauge project <create_a_project>`.
+After Gauge and a language runner is installed, see :ref:`create a Gauge project <create_a_project>`.
 
 Uninstallation
 --------------
@@ -383,7 +363,7 @@ Uninstallation
 .. warning::
    - The Gauge folder(~/.gauge in Mac/Linux and in %APPDATA%\Gauge in windows) has to be removed manually.
         This folder contains Gauge config, logs and plugins.
-   - If you plan to remove the installed plugins explicitly, follow the steps in :ref:`plugins-uninstallation` first.
+   - Plugins should be removed before uninstalling gauge. Follow the steps in :ref:`plugins-uninstallation`.
 
 Gauge
 ^^^^^
