@@ -226,6 +226,13 @@
     <!-- algolia search snippet end -->
     <script type="text/javascript">
       $(document).ready(() => {
+        $(".toggle > *").hide();
+        $(".toggle > p:nth-child(1)").show();
+        $(".toggle p:nth-child(1)").click(function() {
+            $(this).parent().children().not("p:nth-child(1)").toggle(400);
+            $(this).parent().children("p:nth-child(1)").toggleClass("open");
+        });
+
         // another hack, sphinx-tabs has !important on color
         $('head').append("<style>.sphinx-tabs .sphinx-menu a.item{color: #404040 !important;}</style>");
         $('.code-snippet .sphinx-tabs .item').click((e) => {

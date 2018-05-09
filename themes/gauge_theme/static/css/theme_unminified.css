@@ -7406,3 +7406,17 @@ ul.current {
 .ui.menu.tabular .item {
     padding: 5px !important;
 }
+
+.toggle p:nth-child(1):after {
+    content: "Show";
+    font-family: "Open Sans";
+    text-decoration: underline;
+    cursor: pointer;
+    padding-left: 10px;
+    font-size: 0.7em;
+    margin-bottom: 0.1em;
+}
+
+.toggle p:nth-child(1).open:after {
+    content: "Hide";
+}
