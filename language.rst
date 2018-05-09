@@ -388,6 +388,175 @@ By default, Gauge clears the state after each scenario so that new
 objects are created for next scenario execution. You can :ref:`configure <default_properties>`
 to change the level at which Gauge clears cache.
 
+Current Execution Context in the Hook
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  To get additional information about the **current specification,
+   scenario and step** executing, an additional **ExecutionContext**
+   parameter can be added to the :ref:`hooks <execution_hooks>` method.
+
+.. container:: code-snippet
+    .. tabs::
+
+        .. group-tab:: C#
+
+            .. code-block:: java 
+
+                This feature is not yet
+                supported in Gauge-CSharp. Please refer to
+                https://github.com/getgauge/gauge-csharp/issues/53 for updates.
+
+        .. group-tab:: Java
+
+            .. code-block:: java
+
+                @BeforeScenario
+                public void loginUser(ExecutionContext context) {
+                String scenarioName = context.getCurrentScenario().getName();
+                // Code for before scenario
+                }
+
+                @AfterSpec
+                public void performAfterSpec(ExecutionContext context) {
+                Specification currentSpecification = context.getCurrentSpecification();
+                // Code for after step
+                }
+
+        .. group-tab:: JavaScript
+
+            .. code-block:: javascript
+
+                hooks.beforeScenario(fn, [opts]) { ... }
+                hooks.afterSpec(fn, [opts]) { ... }
+
+        .. group-tab:: Python
+
+            .. code-block:: python
+
+                from getgauge.python import before_step, after_scenario
+
+                @before_scenario
+                def before_scenario_hook():
+                    print("before scenario hook")
+
+                @after_spec
+                def after_spec_hook():
+                    print("after spec hook")
+
+        .. group-tab:: Ruby
+
+            .. code-block:: ruby
+
+                before_spec do |execution_info|
+                    puts execution_info.inspect
+                end
+
+                after_spec do |execution_info|
+                    puts execution_info.inspect
+                end
+
+
+Filtering Hooks execution based on tags
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  You can specify tags for which the execution :ref:`hooks <execution_hooks>` can run. This
+   will ensure that the hook runs only on scenarios and specifications
+   that have the required tags.
+.. container:: code-snippet
+
+    .. tabs::
+
+        .. group-tab:: C#
+
+            .. code-block:: java
+
+                // A before spec hook that runs when tag1 and tag2
+                // is present in the current scenario and spec.
+                [BeforeSpec("tag1, tag2")]
+                public void LoginUser() {
+                    // Code for before scenario
+                }
+
+                // A after step hook runs when tag1 or tag2
+                // is present in the current scenario and spec.
+                // Default tagAggregation value is Operator.AND.
+                [AfterStep("tag1", "tag2")]
+                [TagAggregationBehaviour(TagAggregation.Or)]
+                public void PerformAfterStep() {
+                    // Code for after step
+                }
+        .. group-tab:: Java
+
+            .. code-block:: java
+
+                // A before spec hook that runs when tag1 and tag2
+                // is present in the current scenario and spec.
+                @BeforeSpec(tags = {"tag1, tag2"})
+                public void loginUser() {
+                    // Code forbefore scenario
+                }
+
+                // A after step hook runs when tag1 or tag2
+                // is present in the currentscenario and spec.
+                // Default tagAggregation value is Operator.AND.
+                @AfterStep(tags = {"tag1", "tag2"}, tagAggregation = Operator.OR)
+                public void performAfterStep() {
+                    // Code for after step
+                }
+
+        .. group-tab:: JavaScript
+
+            .. code-block:: javascript
+
+                // A before spec hook that runs when tag1 and tag2
+                // is present in the current scenario and spec.
+                hooks.beforeSpec(function () {
+                    //implementation
+                }, { tags: [ "tag1","tag2" ]});
+
+                // A after step hook runs when tag1 or tag2
+                // is present in the currentscenario and spec.
+                // Default tagAggregation value is Operator.AND.
+                hooks.afterStep(function () {
+                    //implementation
+                }, { tags: [ "tag1","tag2" ]});
+
+        .. group-tab:: Python
+
+            .. code-block:: python
+
+                // A before spec hook that runs when tag1 and tag2
+                // is present in the current scenario and spec.
+                @before_spec("<tag1> and <tag2>")
+                def before_spec_hook():
+                    print("before spec hook with tag")
+
+                // A after step hook runs when tag1 or tag2
+                // is present in the currentscenario and spec.
+                // Default tagAggregation value is Operator.AND.
+                @after_step("<tag1> and <tag2>")
+                def after_step_hook():
+                    print("after step hook with tag")
+        .. group-tab:: Ruby
+
+            .. code-block:: ruby
+
+                # A before spec hook that runs when
+                # tag1 and tag2 is present in the current scenario and spec.
+                before_spec({tags: ['tag2', 'tag1']}) do
+                    # Code for before scenario
+                end
+
+                # A after step hook runs when tag1 or tag2 is present in the current scenario and spec.
+                # Default tagAggregation value is Operator.AND.
+
+                after_spec({tags: ['tag2', 'tag1'], operator: 'OR'}) do
+                    # Code for after step
+                end
+
+.. note:: Tags cannot be specified on @BeforeSuite and @AfterSuite hooks
+
+
 Data Store
 ----------
 
@@ -915,3 +1084,173 @@ to continue execution.
   -  Step implementations are still non-recoverable by default and Gauge does not execute subsequent steps upon failure. To make a step implementation continue on failure, it needs to be explicitly marked in the test code.
   -  There is no way to globally mark a test run to treat all steps to continue on failure. Each step implementation has to be marked explicitly.
   -  If an implementation uses step aliases, marking that implementation to continue on failure will also make all the aliases to continue on failure. So, if a step alias is supposed to break on failure and another step alias is supposed to continue on failure, they need to be extracted to two different step implementations.
+
+
+Step alias
+----------
+
+Multiple Step names for the same implementation. The number and type of
+parameters for all the steps names must match the number of parameters
+on the implementation.
+
+Use case
+^^^^^^^^
+
+There may be situations where while authoring the specs, you may want to
+express the same functionality in different ways in order to make the
+specs more readable.
+
+Example 1
+~~~~~~~~~
+
+.. code-block:: gauge
+
+    User Creation
+    =============
+    Multiple Users
+    --------------
+    * Create a user "user 1"
+    * Verify "user 1" has access to dashboard
+    * Create another user "user 2"
+    * Verify "user 2" has access to dashboard
+
+In the scenario named Multiple Users, the underlying functionality of
+the first and the third step is the same. But the way it is expressed is
+different. This helps in conveying the intent and the functionality more
+clearly. In such situations like this, step aliases feature should be
+used so that you can practice DRY principle at code level, while
+ensuring that the functionality is expressed clearly.
+
+Implementation
+""""""""""""""
+.. tabs::
+
+    .. group-tab:: C#
+
+        .. code-block:: java
+
+            public class Users {
+
+                [Step({"Create a user <user_name>", "Create another user <user_name>"})]
+                public void HelloWorld(string user_name) {
+                    // create user user_name
+                }
+
+            }
+
+    .. group-tab:: Java
+
+        .. code-block:: java
+
+            public class Users {
+
+                @Step({"Create a user <user_name>", "Create another user <user_name>"})
+                public void helloWorld(String user_name) {
+                    // create user user_name
+                }
+
+            }
+
+    .. group-tab:: JavaScript
+
+        .. code-block:: javascript
+
+            step(["Create a user <username>", "Create another user <username>"], function (username) {
+            // do cool stuff
+            });
+
+    .. group-tab:: Python
+
+        .. code-block:: python
+
+            from getgauge.python import step
+
+            @step(["Create a user <user name>", "Create another user <user name>"])
+            def hello(user_name):
+                print("create {}.".format(user_name))
+
+    .. group-tab:: Ruby
+
+        .. code-block:: ruby
+
+            step 'Create a user ','Create another user ' do |user_name|
+                // create user user_name
+            end
+
+Example 2
+~~~~~~~~~
+
+.. code-block:: gauge
+
+    User Creation
+    -------------
+    * User creates a new account
+    * A "welcome" email is sent to the user
+
+    Shopping Cart
+    -------------
+    * User checks out the shopping cart
+    * Payment is successfully received
+    * An email confirming the "order" is sent
+
+In this case, the underlying functionality of the last step (sending an
+email) in both the scenarios is the same. But it is expressed more
+clearly with the use of aliases. The underlying step implementation
+could be something like this.
+
+Implementation
+""""""""""""""
+
+.. tabs::
+
+    .. group-tab:: C#
+
+        .. code-block:: java
+
+            public class Users {
+
+                [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
+                public void HelloWorld(string email_type) {
+                    // Send email of email_type
+                }
+
+            }
+
+    .. group-tab:: Java
+
+        .. code-block:: java
+
+            public class Users {
+
+                @Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})
+                public void helloWorld(String email_type) {
+                    // Send email of email_type
+                }
+
+            }
+
+    .. group-tab:: JavaScript
+
+        .. code-block:: javascript
+
+            step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"], function (email_type) {
+                // do cool stuff
+            });
+
+    .. group-tab:: Python
+
+        .. code-block:: python
+
+            from getgauge.python import step
+
+            @step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"])
+            def email(email_type):
+                print("create {}.".format(email_type))
+
+    .. group-tab:: Ruby
+
+        .. code-block:: ruby
+
+            step 'A email is sent to the user', 'An email confirming the is sent' do |email_type|
+                email_service.send email_type
+            end

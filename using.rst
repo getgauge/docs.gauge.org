@@ -5,34 +5,22 @@ Gauge is a first class command line tool. This means that you can
 operate entirely from the command line. Or, if you prefer to use an IDE
 then Gauge also has excellent integration with multiple IDEs.
 
-.. _cli:
-
-Command Line Interface
-----------------------
-
-Gauge has first-class command line support. With gauge :doc:`installed <installing>`, list the subcommands/flags supported by running.
-
-.. code-block:: console
-
-   gauge
-
-The command-line interface works across platforms. On GNU/Linux and OSX,
-you can use any terminal. On Windows, you can use ``cmd`` or Powershell.
-
-.. _cli_interface:
-
 Help
-^^^^
+----
 
-Since subcommands/flags get added/deprecated with versions, it is recommended to get this reference via ``gauge`` itself.
+To find all the Gauge commands and their usages, have a look at Gauge's `manpage <https://manpage.gauge.org/>`__.
+
+``gauge`` command can be used to find the command references.
 
 .. code-block:: console
 
    gauge help
 
+The command-line interface works across platforms. On GNU/Linux and OSX,
+you can use any terminal. On Windows, you can use ``cmd`` or Powershell.
 
 Creating a project
-^^^^^^^^^^^^^^^^^^
+------------------
 
 To create or initialize a Gauge project use run
 
@@ -40,14 +28,62 @@ To create or initialize a Gauge project use run
 
    gauge init <template>
 
-For details, see how to :ref:`create a Gauge project <create_a_project>`.
+You can also create a project right from your the 
+IDE(`VS Code <https://github.com/getgauge/gauge-vscode/blob/master/README.md#create-new-project>`__,
+Intellij, Visual Studio).
+
+Gauge Project Templates
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Gauge provides templates that can be used to bootstrap the process of
+initializing a Gauge project along with a suitable build dependency
+tool, webdriver etc.
+
+To list all the Gauge project templates available, run the following
+command:
+
+.. code-block:: console
+
+    gauge init --templates
+
+These templates can also be found in `Bintray Gauge Templates <https://bintray.com/gauge/Templates/gauge-templates/view#files>`__.
+
+Initialize a Gauge project with Template
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For example, to start writing a Gauge project with Java as language for
+writing test code and Selenium as driver, a Gauge template 
+``java_maven_selenium`` is available.These templates help getting started
+to write tests easily.
+
+To initialize a Gauge project with a template, choose a name from the
+list shown on running ``gauge init --templates`` and pass that name as
+an argument when initializing the Gauge project.
+
+For example, to create a Gauge project with the ``java_maven_selenium``
+template, run this command:
+
+.. code-block:: console
+
+    gauge init java_maven_selenium
+
+This template creates a Gauge project with Maven as build tool and the
+selenium Webdriver. This will download the Gauge template
+``java_maven_selenium`` and setup your project with useful sample code.
+
+Now, you can start writing :ref:`Specifications <spec_syntax>` and
+execute them.
+
 
 .. _executing_tests:
 
 Executing tests
-^^^^^^^^^^^^^^^
+---------------
 
-Inside a Gauge project, you can execute your tests by invoking ``gauge`` with path to :ref:`specifications <spec_syntax>`. By convention, specifications are stored in the the ``./specs/`` sub-directory in the project root.
+Inside a Gauge project, you can execute your tests by invoking 
+``gauge`` with path to :ref:`specifications <spec_syntax>`. 
+By convention, specifications are stored in the the ``./specs/`` 
+sub-directory in the project root.
 
 The syntax is:
 
@@ -69,8 +105,16 @@ To execute all the tests in a given folder ``specs``, use
 This will give a colored console output with details of the execution as
 well an execution summary.
 
+The path of specifications can also be specified through an environment variable <path>.
+This changes the default specification directory from ``specs`` to the value defined in the enviroment variable. 
+
+Gauge specifications can also be run from within the IDE
+(`Visual Studio Code <https://github.com/getgauge/gauge-vscode/blob/master/README.md#run-specifications-and-scenarios>`__,
+IntelliJ IDEA, Visual Studio)
+
+
 Specify scenarios
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 A single scenario of a specification can be executed by specifying the
 line number in the span of that scenario in the spec. To execute a
@@ -80,58 +124,77 @@ line number in the span of that scenario in the spec. To execute a
 .. code-block:: gauge
     :linenos:
     :name: specify_scenario
-    :emphasize-lines: 4-7
+    :emphasize-lines: 3-5
 
-    Configuration
-    =============
+    # Configuration    
 
-    Admin Login
-    -----------
+    ## Admin Login
     * User must login as "admin"
     * Navigate to the configuration page
 
-This executes only the scenario present at line number ``4`` i.e
+This executes only the scenario present at line number ``3`` i.e
 ``Admin Login`` in ``login_test.spec``. In the above spec, specifying
-line numbers 4-7 will execute the same scenario because of the span.
+line numbers 3-5 will execute the same scenario because of the span.
 
 Multiple scenarios can be executed selectively as follows :
 
 .. code-block:: console
 
-    gauge run specs/helloworld.spec:4 specs/anotherhelloworld.spec:7
+    gauge run specs/helloworld.spec:3 specs/anotherhelloworld.spec:5
 
 These scenarios can also belong to different specifications.
 
-You can also specify a specific :ref:`scenario <scenario_syntax>` or a list of scenarios to execute. To execute scenarios, ``gauge`` takes path to a specification file, followed by a colon and the line number of the scenario. You may specify any line number which the scenario spans across. For example, in the above spec file, both the below commands will run the same scenario.
+You can also specify a specific :ref:`scenario <scenario_syntax>` or a 
+list of scenarios to execute. To execute scenarios, ``gauge`` takes 
+path to a specification file, followed by a colon and the line number 
+of the scenario. You may specify any line number which the scenario 
+spans across. For example, in the above spec file, both the below 
+commands will run the same scenario.
 
 .. code-block:: console
 
-    gauge run specs/helloworld.spec:4 # Runs scenario 'Admin Login'
-    gauge run specs/helloworld.spec:6 # Runs scenario 'Admin Login'
+    gauge run specs/helloworld.spec:3 # Runs scenario 'Admin Login'
+    gauge run specs/helloworld.spec:5 # Runs scenario 'Admin Login'
 
+Consider a specification file, ``spec1.spec`` defined as such,
+
+.. code-block:: gauge
+    :linenos:
+    :name: specify_scenario
+    :emphasize-lines: 3-5
+
+    # Configuration    
+
+    ## Admin Login
+    * User must login as "admin"
+    * Navigate to the configuration page
+
+    ## User Login
+    * User must login as "user1"
+    * Navigation to configuration page is restricted.
 
 For example, to execute the second scenario of a specification file
 named ``spec1.spec``, you would do:
 
 .. code-block:: console
 
-    gauge run specs/spec1.spec:1
+    gauge run specs/spec1.spec:3
 
 To specify multiple scenarios, add multiple such arguments. For example,
-to execute the first and third scenarios of a specification file named
+to execute the first and second scenarios of a specification file named
 ``spec1.spec``, you would do:
 
 .. code-block:: console
 
-    gauge run specs/spec1.spec:0 specs/spec1.spec:2
+    gauge run specs/spec1.spec:3 specs/spec1.spec:7
 
 Specify directories
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
 You can specify a single directory in which specifications are stored.
 Gauge scans the directory and picks up valid specification files.
 
-For example:
+For example,
 
 .. code-block:: console
 
@@ -141,14 +204,14 @@ You can also specify multiple directories in which specifications are
 stored. Gauge scans all the directories for valid specification files
 and executes them in one run.
 
-For example:
+For example,
 
 .. code-block:: console
 
     gauge run specs-dir1/ specs-dir2/ specs-dir3/
 
 Specify files
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 You can specify path to a specification files. In that case, Gauge
 executes only the specification files provided.
@@ -167,128 +230,21 @@ Or, to execute multiple specification files:
 
 
 Verbose reporting
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 By default, ``gauge`` reports at the specification level when executing
 tests. You can enable verbose, step-level reporting by using the
-``--verbose`` flag. For example:
+``--verbose`` flag. For example,
 
 .. code-block:: console
 
     gauge run --verbose specs/
 
 
-Errors during execution
-~~~~~~~~~~~~~~~~~~~~~~~
-
-Parse errors
-""""""""""""
-
-This occurs if the spec or concept file doesn't follow the expected :ref:`specifications <spec_syntax>` or :ref:`concepts <concept_syntax>` syntax.
-
-**Example:**
-
-.. code-block:: text
-
-    [ParseError] hello_world.spec : line no: 25, Dynamic parameter <product> could not be resolved
-
-List of various Parse errors:
-
-+-------------------------------------------+--------------------------------+
-| Parse Error                               | Gauge Execution Behaviour      |
-+===========================================+================================+
-| Step is not defined inside a concept      | Stops                          |
-| heading                                   |                                |
-+-------------------------------------------+--------------------------------+
-| Circular reference found in concept       | Stops                          |
-+-------------------------------------------+--------------------------------+
-| Concept heading can only have dynamic     | Stops                          |
-| parameters                                |                                |
-+-------------------------------------------+--------------------------------+
-| Concept should have at least one step     | Stops                          |
-+-------------------------------------------+--------------------------------+
-| Duplicate concept definition found        | Stops                          |
-+-------------------------------------------+--------------------------------+
-| Scenario heading is not allowed in        | Stops                          |
-| concept file                              |                                |
-+-------------------------------------------+--------------------------------+
-| Table doesn’t belong to any step          | Ignores table,Continue         |
-+-------------------------------------------+--------------------------------+
-| Table header cannot have repeated column  | Mark that spec as              |
-| values                                    | failed,Continues for others    |
-+-------------------------------------------+--------------------------------+
-| Teardown should have at least three       | Mark that spec as              |
-| underscore characters                     | failed,Continues for other     |
-+-------------------------------------------+--------------------------------+
-| Scenario heading should have at least one | Mark that spec as              |
-| character                                 | failed,Continues for other     |
-+-------------------------------------------+--------------------------------+
-| Table header should be not blank          | Mark that spec as              |
-|                                           | failed,Continues for other     |
-+-------------------------------------------+--------------------------------+
-| Multiple spec headings found in the same  | Mark that spec as              |
-| file                                      | failed,Continues for other     |
-+-------------------------------------------+--------------------------------+
-| Scenario should be defined after the spec | Mark that spec as              |
-| heading                                   | failed,Continues for other     |
-+-------------------------------------------+--------------------------------+
-| Could not resolve table from file         | Mark that spec as              |
-|                                           | failed,Continues for other     |
-+-------------------------------------------+--------------------------------+
-| Spec does not have any element            | Mark that spec as              |
-|                                           | failed,Continues for other     |
-+-------------------------------------------+--------------------------------+
-| Spec heading not found                    | Mark that spec as              |
-|                                           | failed,Continues for other     |
-+-------------------------------------------+--------------------------------+
-| Spec heading should have at least one     | Mark that spec as              |
-| character                                 | failed,Continues for other     |
-+-------------------------------------------+--------------------------------+
-| Dynamic param could not be resolved       | Mark that spec as              |
-|                                           | failed,Continues for other     |
-+-------------------------------------------+--------------------------------+
-| Step should not be blank                  | Mark that spec as              |
-|                                           | failed,Continues for other     |
-+-------------------------------------------+--------------------------------+
-| Duplicate scenario definition found in    | Mark that spec as              |
-| the same specification                    | failed,Continues for other     |
-+-------------------------------------------+--------------------------------+
-
-Validation Errors
-""""""""""""""""""
-
-These are errors for which `Gauge` skips executing the spec where the error occurs.
-
-There are two types of validation error which can occurs
-
-    1. Step implementation not found
-        If the spec file has a step that does not have an implementation in the projects programming language.
-    2. Duplicate step implementation
-        If the spec file has a step that is imlpemented multiple times in the projects.
-
-**Example**
-
-.. code-block:: text
-
-    [ValidationError] login.spec:33: Step implementation not found. login with "user" and "p@ssword"
-
-.. code-block:: text
-
-    [ValidationError] foo.spec:11 Duplicate step implementation => 'Vowels in English language are <table>'
-
-
-
-Failure to launch the language runner plugin
-"""""""""""""""""""""""""""""""""""""""""""""""
-
-If the language specific plugin for the project has not been installed
-then the execution will fail.
-
 .. _table_driven_execution:
 
 Data driven execution
-~~~~~~~~~~~~~~~~~~~~~
-
+^^^^^^^^^^^^^^^^^^^^^
 -  A *data table* is defined in markdown table format in the beginning
    of the spec before any steps.
 -  The data table should have a header row and one or more data rows
@@ -301,14 +257,13 @@ Data driven execution
    ``table:<no of columns>``, and hit ``Tab``.
 -  Table parameters are written in Multi-markdown table formats.
 
-**Example:**
+For example,
 
 .. code-block:: gauge
     :linenos:
     :name: data_driven
 
-    Table driven execution
-    ======================
+    # Table driven execution
 
          |id| name    |
          |--|---------|
@@ -316,12 +271,10 @@ Data driven execution
          |2 |prateek  |
          |3 |navaneeth|
 
-    Scenario
-    --------
+    ## Scenario
     * Say "hello" to <name>
 
-    Second Scenario
-    ---------------
+    ## Second Scenario
     * Say "namaste" to <name>
 
 In the above example the step uses the ``name`` column from the data
@@ -332,38 +285,37 @@ first row values ``1, vishnu`` and then consecutively for the second and
 third row values from the table.
 
 External CSV for data table
-"""""""""""""""""""""""""""
-Data Tables for a specification can also be passed from an external CSV file. The parameter contains a prefix table and the path to the csv file.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Data Tables for a specification can also be passed from an external CSV file. 
+The parameter contains a prefix table and the path to the csv file.
 
 **Prefix** : The prefix is table
 
 **Value** : The value is the path to the csv file. This can be absolute file path or relative to project.
 
 
-**Example:**
+For example,
 
 .. code-block:: gauge
     :linenos:
     :name: data_driven
 
-    Table driven execution
-    ======================
+    # Table driven execution
 
     table: /system/users.csv
 
-    Scenario
-    --------
+    ## Scenario
     * Say "hello" to <name>
 
-    Second Scenario
-    ---------------
+    ## Second Scenario
     * Say "namaste" to <name>
 
 
 In the above example the step uses the ``name`` column from the csv file.
 
 Execute selected data table rows
-""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default, scenarios in a spec are run against all the data table rows.
 It can be run against selected data table rows with flag
@@ -371,7 +323,7 @@ It can be run against selected data table rows with flag
 scenarios should be executed. If there are multiple row numbers, they
 should be separated by commas.
 
-Example:
+For example,
 
 .. code-block:: console
 
@@ -381,7 +333,7 @@ Example:
 Range of table rows can also be specified, against which the scenarios
 are run.
 
-Example:
+For example,
 
 .. code-block:: console
 
@@ -392,7 +344,7 @@ This executes the scenarios against table rows 1, 2, 3.
 .. _tagged_execution:
 
 Tagged Execution
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 Tags allow you to filter the specs and scenarios quickly for execution.
 To execute all the specs and scenarios which are labelled with certain
@@ -451,7 +403,7 @@ should be executed, then use the following command:
     gauge run --tags "search & successful" SPEC_FILE_NAME # Runs scenario 'Successful search' only
 
 Tag expressions
-"""""""""""""""
+~~~~~~~~~~~~~~~
 
 Tags can be selected using expressions. Examples:
 
@@ -470,7 +422,7 @@ Tags                               Selects specs/scenarios that
 .. _parallel_execution:
 
 Parallel Execution
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 Specs can be executed in parallel to run the tests faster and distribute
 the load.
@@ -501,16 +453,21 @@ Example:
 
 This creates four parallel execution streams.
 
-.. note:: The number of streams should be specified depending on number of CPU cores available on the machine, beyond which it could lead to undesirable results. For optimizations, try `parallel execution using threads`_.
+.. note:: The number of streams should be specified depending on number of CPU 
+cores available on the machine, beyond which it could lead to undesirable results. 
+For optimizations, try `parallel execution using threads`_.
 
 .. _parallel execution using threads:
 
 Parallel Execution using threads
-""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In parallel execution, every stream starts a new worker process. This can be optimized by using multithreading instead of processes. This uses only one worker process and starts multiple threads for parallel execution.
+In parallel execution, every stream starts a new worker process. This can be optimized 
+by using multithreading instead of processes. This uses only one worker process and 
+starts multiple threads for parallel execution.
 
-To use this, Set `enable_multithreading` env var to true. This property can also be added to the default/custom env.
+To use this, Set `enable_multithreading` env var to true. 
+This property can also be added to the default/custom env.
 
 .. code-block:: text
 
@@ -521,10 +478,10 @@ To use this, Set `enable_multithreading` env var to true. This property can also
 * Thread safe test code.
 * Language runner should support multithreading.
 
-**Note:** Currently, this feature is only supported by Java langauge runner/plugin.
+.. note:: Currently, this feature is only supported by Java langauge runner/plugin.
 
 Executing a group of specification
-""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Specifications can be distributed into groups and ``--group`` \| ``-g``
 flag provides the ability to execute a specific group.
@@ -554,8 +511,36 @@ Example:
 
 The above two commands will execute the same group of specifications.
 
+Rerun one execution stream
+""""""""""""""""""""""""""
+
+Specifications can be distributed into groups and ``--group`` \| ``-g``
+flag provides the ability to execute a specific group.
+
+This can be done by the command:
+
+.. code-block:: console
+
+    gauge run -n=4 -g=2 specs
+
+This creates 4 groups (provided by ``-n`` flag) of specification and
+selects the 2nd group (provided by ``-g`` flag) for execution.
+
+Specifications are sorted by alphabetical order and then distributed
+into groups, which guarantees that every group will have the same set of
+specifications, no matter how many times it is being executed.
+
+Example:
+
+.. code-block:: console
+
+    gauge run -n=4 -g=2 specs
+
+The above two commands will execute the same group of specifications.
+
+
 Run your test suite with lazy assignment of tests
-"""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This features allows you to dynamically allocate your specs to streams
 during execution instead of at the start of execution.
@@ -593,423 +578,11 @@ making them an equal number based distribution.
 
     gauge run -n=4 --strategy="eager" specs
 
-**Note:** The 'lazy' assignment strategy only works when you do NOT use
+.. note:: The 'lazy' assignment strategy only works when you do NOT use
 the -g flag. This is because grouping is dependent on allocation of
 tests before the start of execution. Using this in conjunction with a
 lazy strategy will have no impact on your test suite execution.
 
-Rerun one execution stream
-""""""""""""""""""""""""""
-
-Specifications can be distributed into groups and ``--group`` \| ``-g``
-flag provides the ability to execute a specific group.
-
-This can be done by the command:
-
-.. code-block:: console
-
-    gauge run -n=4 -g=2 specs
-
-This creates 4 groups (provided by ``-n`` flag) of specification and
-selects the 2nd group (provided by ``-g`` flag) for execution.
-
-Specifications are sorted by alphabetical order and then distributed
-into groups, which guarantees that every group will have the same set of
-specifications, no matter how many times it is being executed.
-
-Example:
-
-.. code-block:: console
-
-    gauge run -n=4 -g=2 specs
-
-The above two commands will execute the same group of specifications.
-
-Current Execution Context in the Hook
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  To get additional information about the **current specification,
-   scenario and step** executing, an additional **ExecutionContext**
-   parameter can be added to the :ref:`hooks <execution_hooks>` method.
-
-.. container:: code-snippet
-
-    .. tabs::
-
-        .. group-tab:: C#
-
-            .. code-block:: java 
-
-                This feature is not yet
-                supported in Gauge-CSharp. Please refer to
-                https://github.com/getgauge/gauge-csharp/issues/53 for updates.
-
-        .. group-tab:: Java
-
-            .. code-block:: java
-
-                @BeforeScenario
-                public void loginUser(ExecutionContext context) {
-                String scenarioName = context.getCurrentScenario().getName();
-                // Code for before scenario
-                }
-
-                @AfterSpec
-                public void performAfterSpec(ExecutionContext context) {
-                Specification currentSpecification = context.getCurrentSpecification();
-                // Code for after step
-                }
-
-        .. group-tab:: JavaScript
-
-            .. code-block:: javascript
-
-                hooks.beforeScenario(fn, [opts]) { ... }
-                hooks.afterSpec(fn, [opts]) { ... }
-
-        .. group-tab:: Python
-
-            .. code-block:: python
-
-                from getgauge.python import before_step, after_scenario
-
-                @before_scenario
-                def before_scenario_hook():
-                    print("before scenario hook")
-
-                @after_spec
-                def after_spec_hook():
-                    print("after spec hook")
-
-        .. group-tab:: Ruby
-
-            .. code-block:: ruby
-
-                before_spec do |execution_info|
-                    puts execution_info.inspect
-                end
-
-                after_spec do |execution_info|
-                    puts execution_info.inspect
-                end
-
-
-Filtering Hooks execution based on tags
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  You can specify tags for which the execution :ref:`hooks <execution_hooks>` can run. This
-   will ensure that the hook runs only on scenarios and specifications
-   that have the required tags.
-
-.. container:: code-snippet
-
-    .. tabs::
-
-        .. group-tab:: C#
-
-            .. code-block:: java
-
-                // A before spec hook that runs when tag1 and tag2
-                // is present in the current scenario and spec.
-                [BeforeSpec("tag1, tag2")]
-                public void LoginUser() {
-                    // Code for before scenario
-                }
-
-                // A after step hook runs when tag1 or tag2
-                // is present in the current scenario and spec.
-                // Default tagAggregation value is Operator.AND.
-                [AfterStep("tag1", "tag2")]
-                [TagAggregationBehaviour(TagAggregation.Or)]
-                public void PerformAfterStep() {
-                    // Code for after step
-                }
-        .. group-tab:: Java
-
-            .. code-block:: java
-
-                // A before spec hook that runs when tag1 and tag2
-                // is present in the current scenario and spec.
-                @BeforeSpec(tags = {"tag1, tag2"})
-                public void loginUser() {
-                    // Code forbefore scenario
-                }
-
-                // A after step hook runs when tag1 or tag2
-                // is present in the currentscenario and spec.
-                // Default tagAggregation value is Operator.AND.
-                @AfterStep(tags = {"tag1", "tag2"}, tagAggregation = Operator.OR)
-                public void performAfterStep() {
-                    // Code for after step
-                }
-
-        .. group-tab:: JavaScript
-
-            .. code-block:: javascript
-
-                // A before spec hook that runs when tag1 and tag2
-                // is present in the current scenario and spec.
-                hooks.beforeSpec(function () {
-                    //implementation
-                }, { tags: [ "tag1","tag2" ]});
-
-                // A after step hook runs when tag1 or tag2
-                // is present in the currentscenario and spec.
-                // Default tagAggregation value is Operator.AND.
-                hooks.afterStep(function () {
-                    //implementation
-                }, { tags: [ "tag1","tag2" ]});
-
-        .. group-tab:: Python
-
-            .. code-block:: python
-
-                // A before spec hook that runs when tag1 and tag2
-                // is present in the current scenario and spec.
-                @before_spec("<tag1> and <tag2>")
-                def before_spec_hook():
-                    print("before spec hook with tag")
-
-                // A after step hook runs when tag1 or tag2
-                // is present in the currentscenario and spec.
-                // Default tagAggregation value is Operator.AND.
-                @after_step("<tag1> and <tag2>")
-                def after_step_hook():
-                    print("after step hook with tag")
-        .. group-tab:: Ruby
-
-            .. code-block:: ruby
-
-                # A before spec hook that runs when
-                # tag1 and tag2 is present in the current scenario and spec.
-                before_spec({tags: ['tag2', 'tag1']}) do
-                    # Code for before scenario
-                end
-
-                # A after step hook runs when tag1 or tag2 is present in the current scenario and spec.
-                # Default tagAggregation value is Operator.AND.
-
-                after_spec({tags: ['tag2', 'tag1'], operator: 'OR'}) do
-                    # Code for after step
-                end
-
-.. note:: Tags cannot be specified on @BeforeSuite and @AfterSuite hooks
-
-Gauge Project Templates
-^^^^^^^^^^^^^^^^^^^^^^^
-
-Gauge provides templates that can be used to bootstrap the process of
-initializing a Gauge project along with a suitable build dependency
-tool, webdriver etc.
-
-To list all the Gauge project templates available, run the following
-command:
-
-.. code-block:: console
-
-    gauge init --templates
-
-These templates can also be found in `Bintray Gauge Templates <https://bintray.com/gauge/Templates/gauge-templates/view#files>`__.
-
-Initialize a Gauge project with Template
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Say you want to initialize a Gauge project with Java as language for
-writing test code and Selenium as driver of choice. You can quickly
-setup such project which is ready to start writing tests with selenium
-by using ``java_maven_selenium`` Gauge template.
-
-To initialize a Gauge project with a template, choose a name from the
-list shown on running ``gauge init --templates`` and pass that name as
-an argument when initializing the Gauge project.
-
-For example, to create a Gauge project with the ``java_maven_selenium``
-template, you need to run this command:
-
-.. code-block:: console
-
-    gauge init java_maven_selenium
-
-This template creates a Gauge project with Maven as build tool and the
-selenium Webdriver. This will download the Gauge template
-``java_maven_selenium`` and setup your project with useful sample code.
-
-Now, you can start writing :ref:`Specifications <spec_syntax>` and
-execute them.
-
-Step alias
-^^^^^^^^^^
-
-Multiple Step names for the same implementation. The number and type of
-parameters for all the steps names must match the number of parameters
-on the implementation.
-
-Use case
-~~~~~~~~
-
-There may be situations where while authoring the specs, you may want to
-express the same functionality in different ways in order to make the
-specs more readable.
-
-Example 1
-~~~~~~~~~
-
-.. code-block:: gauge
-
-    User Creation
-    =============
-    Multiple Users
-    --------------
-    * Create a user "user 1"
-    * Verify "user 1" has access to dashboard
-    * Create another user "user 2"
-    * Verify "user 2" has access to dashboard
-
-In the scenario named Multiple Users, the underlying functionality of
-the first and the third step is the same. But the way it is expressed is
-different. This helps in conveying the intent and the functionality more
-clearly. In such situations like this, step aliases feature should be
-used so that you can practice DRY principle at code level, while
-ensuring that the functionality is expressed clearly.
-
-Implementation
-""""""""""""""
-
-.. container:: code-snippet
-
-    .. tabs::
-
-        .. group-tab:: C#
-
-            .. code-block:: java
-
-                public class Users {
-
-                    [Step({"Create a user <user_name>", "Create another user <user_name>"})]
-                    public void HelloWorld(string user_name) {
-                        // create user user_name
-                    }
-
-                }
-
-        .. group-tab:: Java
-
-            .. code-block:: java
-
-                public class Users {
-
-                    @Step({"Create a user <user_name>", "Create another user <user_name>"})
-                    public void helloWorld(String user_name) {
-                        // create user user_name
-                    }
-
-                }
-
-        .. group-tab:: JavaScript
-
-            .. code-block:: javascript
-
-                step(["Create a user <username>", "Create another user <username>"], function (username) {
-                // do cool stuff
-                });
-
-        .. group-tab:: Python
-
-            .. code-block:: python
-
-                from getgauge.python import step
-
-                @step(["Create a user <user name>", "Create another user <user name>"])
-                def hello(user_name):
-                    print("create {}.".format(user_name))
-
-        .. group-tab:: Ruby
-
-            .. code-block:: ruby
-
-                step 'Create a user ','Create another user ' do |user_name|
-                    // create user user_name
-                end
-
-Example 2
-~~~~~~~~~
-
-.. code-block:: gauge
-
-    User Creation
-    -------------
-    * User creates a new account
-    * A "welcome" email is sent to the user
-
-    Shopping Cart
-    -------------
-    * User checks out the shopping cart
-    * Payment is successfully received
-    * An email confirming the "order" is sent
-
-In this case, the underlying functionality of the last step (sending an
-email) in both the scenarios is the same. But it is expressed more
-clearly with the use of aliases. The underlying step implementation
-could be something like this.
-
-Implementation
-""""""""""""""
-
-.. container:: code-snippet
-
-    .. tabs::
-
-        .. group-tab:: C#
-
-            .. code-block:: java
-
-                public class Users {
-
-                    [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
-                    public void HelloWorld(string email_type) {
-                        // Send email of email_type
-                    }
-
-                }
-
-        .. group-tab:: Java
-
-            .. code-block:: java
-
-                public class Users {
-
-                    @Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})
-                    public void helloWorld(String email_type) {
-                        // Send email of email_type
-                    }
-
-                }
-
-        .. group-tab:: JavaScript
-
-            .. code-block:: javascript
-
-                step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"], function (email_type) {
-                    // do cool stuff
-                });
-
-        .. group-tab:: Python
-
-            .. code-block:: python
-
-                from getgauge.python import step
-
-                @step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"])
-                def email(email_type):
-                    print("create {}.".format(email_type))
-
-        .. group-tab:: Ruby
-
-            .. code-block:: ruby
-
-                step 'A email is sent to the user', 'An email confirming the is sent' do |email_type|
-                    email_service.send email_type
-                end
 
 Re-run failed tests
 ^^^^^^^^^^^^^^^^^^^
@@ -1042,11 +615,112 @@ equivalent to command
 
     gauge run --env="chrome" --verbose specs <path_to_failed_scenarios>
 
+
+Errors during execution
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Parse errors
+~~~~~~~~~~~~
+
+This occurs if the spec or concept file doesn't follow the 
+expected :ref:`specifications <spec_syntax>` or :ref:`concepts <concept_syntax>` syntax.
+
+**Example:**
+
+.. code-block:: text
+
+    [ParseError] hello_world.spec : line no: 25, Dynamic parameter <product> could not be resolved
+
+List of various Parse errors:
+
++-------------------------------------------+--------------------------------+
+| Parse Error                               | Gauge Execution Behaviour      |
++===========================================+================================+
+| Step is not defined inside a concept      | Stops                          |
+| heading                                   |                                |
++-------------------------------------------+--------------------------------+
+| Circular reference found in concept       | Stops                          |
++-------------------------------------------+--------------------------------+
+| Concept heading can only have dynamic     | Stops                          |
+| parameters                                |                                |
++-------------------------------------------+--------------------------------+
+| Concept should have at least one step     | Stops                          |
++-------------------------------------------+--------------------------------+
+| Duplicate concept definition found        | Stops                          |
++-------------------------------------------+--------------------------------+
+| Scenario heading is not allowed in        | Stops                          |
+| concept file                              |                                |
++-------------------------------------------+--------------------------------+
+| Table doesn’t belong to any step          | Ignores table,Continue         |
++-------------------------------------------+--------------------------------+
+| Table header cannot have repeated column  | Marks that spec as             |
+| values                                    | failed,Continues for others    |
++-------------------------------------------+--------------------------------+
+| Teardown should have at least three       | Marks that spec as             |
+| underscore characters                     | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Scenario heading should have at least one | Marks that spec as             |
+| character                                 | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Table header should be not blank          | Marks that spec as             |
+|                                           | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Multiple spec headings found in the same  | Marks that spec as             |
+| file                                      | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Scenario should be defined after the spec | Marks that spec as             |
+| heading                                   | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Could not resolve table from file         | Marks that spec as             |
+|                                           | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Spec does not have any element            | Marks that spec as             |
+|                                           | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Spec heading not found                    | Marks that spec as             |
+|                                           | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Spec heading should have at least one     | Marks that spec as             |
+| character                                 | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Dynamic param could not be resolved       | Marks that spec as             |
+|                                           | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Step should not be blank                  | Marks that spec as             |
+|                                           | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+| Duplicate scenario definition found in    | Marks that spec as             |
+| the same specification                    | failed,Continues for other     |
++-------------------------------------------+--------------------------------+
+
+Validation Errors
+~~~~~~~~~~~~~~~~~
+
+These are errors for which `Gauge` skips executing the spec where the error occurs.
+
+There are two types of validation error which can occurs
+
+    1. Step implementation not found
+        If the spec file has a step that does not have an implementation in the projects programming language.
+    2. Duplicate step implementation
+        If the spec file has a step that is imlpemented multiple times in the projects.
+
+**Example**
+
+.. code-block:: text
+
+    [ValidationError] login.spec:33: Step implementation not found. login with "user" and "p@ssword"
+
+.. code-block:: text
+
+    [ValidationError] foo.spec:11 Duplicate step implementation => 'Vowels in English language are <table>'
+
+
 Refactoring
-^^^^^^^^^^^
+-----------
 
 Rephrase steps
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^
 
 Gauge allows you to rephrase a step across the project. To rephrase a
 step run:
@@ -1061,8 +735,7 @@ Here ``<`` and ``>`` are used to denote parameters in the step.
 This will change all spec files and code files (for language plugins
 that support refactoring).
 
-Example
-"""""""
+For example,
 
 Let's say we have the following steps in our ``spec`` file:
 
@@ -1512,7 +1185,7 @@ Steps to install Gauge Intellij IDEA plugin from IDE:
 -  Click OK in the Settings dialog and restart IntelliJ IDEA for the
    changes to take effect.
 
-*Note:* The plugin you have installed is automatically enabled. When
+.. note:: The plugin you have installed is automatically enabled. When
 necessary, you can disable it as described in Enabling and Disabling
 plugins.
 
@@ -1546,7 +1219,7 @@ Creating a Java project
 -  Choose the project location and java sdk
 -  Finish
 
-*Note:* If ``gauge-java`` is not installed, it will download it for the
+.. note:: If ``gauge-java`` is not installed, it will download it for the
 first time.
 
 .. figure:: images/intellij-screenshots/creation/creation.gif
@@ -1662,7 +1335,7 @@ A single scenario can be executed by doing a right click on the scenario
 which should be executed and choosing the scenario.
 ``right click -> run -> Scenario Name``
 
-*Note:* If the right click is done in context other than that of
+.. note:: If the right click is done in context other than that of
 scenario, by default, first scenario will be executed.
 
 .. figure:: images/intellij-screenshots/execution/scenario.gif
@@ -1757,7 +1430,7 @@ Extract Concept
 -  In the Extract Concept dialog box that opens
 
    -  Specify the concept name with parameters to be passed from the
-      usage. For Example: Say "hello" to "gauge".
+      usage. Example: Say "hello" to "gauge".
    -  Select the file name from the spec file dropdown list or specify
       the new file name/path relative to the project.
    -  Click OK.
