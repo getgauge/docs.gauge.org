@@ -413,17 +413,41 @@ with ``tag1`` and ``tag2``.
 
 Example:
 
-.. figure:: images/spec.png
-   :alt: Specification
+.. code-block:: gauge
+    :linenos:
+    :name: tagged_execution
 
-   Spec
+    # Search Specification
 
-In the above spec, if all the scenarios tagged with "search" and "admin"
+    The admin user must be able to search for available products on the search page.
+
+    Tags: search,  admin
+
+    * User must be logged in as "admin"
+    * Open the product search page
+
+    ## Successful search
+
+    Tags: successful
+
+    For an existing product name, the search result will contain the product name.
+
+    * Search for product "Die Hard"
+    * "Die Hard should show up in the search results
+
+    ## Unsuccessful search
+     On an unknown product name search, the search results will be empty
+
+     * Search for product "unknown"
+     * The search results will be empty
+
+
+In the above spec, if all the scenarios tagged with "search" and "successful"
 should be executed, then use the following command:
 
 .. code-block:: console
 
-    gauge run --tags "search & admin" SPEC_FILE_NAME
+    gauge run --tags "search & successful" SPEC_FILE_NAME # Runs scenario 'Successful search' only
 
 Tag expressions
 """""""""""""""
