@@ -5,9 +5,11 @@ Logs
 ----
 
 -  Gauge logs are created under the ``logs`` directory in the project.
--  Two log files are created
+-  Three log files are created
     -  **gauge.log** - logs for test execution
     -  **api.log** - logs for gauge core api exposed for plugins
+    -  **lsp.log** - logs for gauge when launched in LSP mode.
+
 -  To customize logs directory set the ``logs_directory`` property in the ``env/default/default.properties`` file to a custom logs directory path.
 
 .. code-block:: text
@@ -162,6 +164,21 @@ To Solve this :
 - If gauge is installed at custom location, add ``custom_install_location/bin`` to ``PATH``
 - On custom installation location Set ``GAUGE_ROOT`` to ``custom_install_location``
 - Restart Intellij
+
+Error adding module to project
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+    Given location is already a Gauge Project. Please try to initialize a Gauge project in a different location.
+
+This can occur because of following reason :
+
+- Opening an existing gauge project from the ``create new project`` option of Intellij.
+
+To Solve this :
+
+- Use the ``open`` option of Intellij to open an exixting gauge project.
 
 Steps marked as unimplemented
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

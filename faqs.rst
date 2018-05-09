@@ -200,12 +200,13 @@ You can set debugger; inside step implementation or hook callbacks to pause exec
 
 Example:
 
-```
-gauge.step("There are <num> vowels.", function (num) {
-  debugger;
-  assert.equal(num, 5);
-});
-```
+.. code-block:: text
+
+    gauge.step("There are <num> vowels.", function (num) {
+    debugger;
+    assert.equal(num, 5);
+    });
+
 This will pause the debugger when this step's callback is executed by gauge-js.
 
 Caveats
