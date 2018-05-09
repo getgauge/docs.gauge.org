@@ -12,4 +12,5 @@ Errors
     gauge-intelliJ-002
     gauge-intelliJ-003
     gauge-intelliJ-004
+    gauge-vscode-001
 

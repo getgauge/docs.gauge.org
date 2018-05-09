@@ -94,18 +94,19 @@ Why can't gradle execute gauge specs, despite adding a task as per the document?
     > Could not get unknown property 'GaugeTask' for root project 'INDYGauge' of type org.gradle.api.Project.
 
 This can happen when gradle is unable to recognize the GaugeTask. Try using the fully qualified name for GaugeTask as below:
+
 .. code-block:: console
 
-  task customGauge(type: com.thoughtworks.gauge.gradle.GaugeTask) {
-    gauge {
-        specsDir = 'specs'
-        env = 'default'
-        tags = 'tag1'
-        inParallel = true
-        nodes = 4
-        additionalFlags = '--verbose'
+    task customGauge(type: com.thoughtworks.gauge.gradle.GaugeTask) {
+        gauge {
+            specsDir = 'specs'
+            env = 'default'
+            tags = 'tag1'
+            inParallel = true
+            nodes = 4
+            additionalFlags = '--verbose'
+        }
     }
-  }
 
 IDE
 ---
@@ -125,6 +126,14 @@ By setting
 .. code-block:: python
 
    runner_connection_timeout = 3000
+
+VSCode
+^^^^^^
+Functionalities (goto definition, codelense of implementation files, find usages) not working?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Make sure the required language runner is installed. By running ``gauge version``.
+If not installed, install using ``gauge install <plugin_name>``.
 
 Logs
 ^^^^
