@@ -10,34 +10,33 @@ EXCLUDES      = _images _static .doctrees
 REMOTEBRANCHES = $(shell git for-each-ref --format='%(refname:strip=3)' refs/remotes/) 
 LOCALBRANCHES = $(shell git for-each-ref --format='%(refname:strip=2)' refs/heads/)
 LATESTBRANCH = $(shell git for-each-ref --sort='-*authordate' --format='%(refname:strip=3)' --count=3 refs/remotes/ | grep -v "master\|HEAD")
-VERSIONS = $(filter-out $(LATESTBRANCH) HEAD, $(REMOTEBRANCHES))
 WORKDIR = $(BUILDDIR)/src
+MASTERSHA = $(shell git rev-parse --short HEAD)
+LATESTSHA = $(shell git rev-parse --short origin/$(LATESTBRANCH))
 
 versions: prune
 	# copy master
 	mkdir -p $(WORKDIR)/master; \
 	cp -r `ls | grep -v '$(BUILDDIR)'` $(WORKDIR)/master/;
 	
-	# sync local with remote
-	$(foreach version, $(filter-out $(LOCALBRANCHES) HEAD, $(REMOTEBRANCHES)),\
-		echo "Fetching $(version) from remote"; \
-		mkdir -p $(WORKDIR)/$(version); \
-		git worktree add -b $(version) $(WORKDIR)/$(version) origin/$(version); \
-	)
+	echo "Fetching $(LATESTBRANCH) from remote"; \
+	mkdir -p $(WORKDIR)/$(LATESTBRANCH); \
+	git worktree add -b $(LATESTBRANCH) $(WORKDIR)/$(LATESTBRANCH) origin/$(LATESTBRANCH); \
 	
 	# for each branches, generate html, singlehtml
-	$(foreach version, $(VERSIONS), \
-		(cd $(WORKDIR)/$(version);\
-		$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/$(version) -A current_version=$(version) \
-		   -A latest_version=$(LATESTBRANCH) -A versions="$(VERSIONS) latest"\
-		   -A commit=$(shell git rev-parse --short HEAD) -A github_version=$(version);\
-		$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/$(version) -A SINGLEHTML=true;);\
-	)
+	(cd $(WORKDIR)/master;\
+	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/master -A current_version=master \
+		-A latest_version=$(LATESTBRANCH) -A versions="master latest"\
+		-A commit=$(MASTERSHA) -A github_version=master;\
+	$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/master -A SINGLEHTML=true;);\
+
 	(cd $(WORKDIR)/$(LATESTBRANCH);\
 	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html -A current_version=latest \
-		-A latest_version=$(LATESTBRANCH) -A versions="$(VERSIONS) latest"\
-		-A commit=$(shell git rev-parse --short HEAD) -A github_version=$(LATESTBRANCH);\
+		-A latest_version=$(LATESTBRANCH) -A versions="master latest"\
+		-A commit=$(LATESTSHA) -A github_version=$(LATESTBRANCH);\
 	$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/latest -A SINGLEHTML=true;); \
+
+	rm -rf $(WORKDIR); \
 	git checkout master
 
 prune: clean
