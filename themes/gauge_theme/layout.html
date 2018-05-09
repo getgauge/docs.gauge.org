@@ -228,7 +228,7 @@
       $(document).ready(() => {
         // another hack, sphinx-tabs has !important on color
         $('head').append("<style>.sphinx-tabs .sphinx-menu a.item{color: #404040 !important;}</style>");
-        $('.sphinx-tabs .item').click((e) => {
+        $('.code-snippet .sphinx-tabs .item').click((e) => {
           var lang = $(e.currentTarget).find('.container').text().trim().toLowerCase();
           if(lang === 'c#') {
             lang = "csharp";
@@ -248,7 +248,7 @@
         }
         if(lang){
           lang = lang.replace("csharp", "c#")
-          $('.sphinx-tabs .item .container').each((i,x) =>{
+          $('.code-snippet .sphinx-tabs .item .container').each((i,x) =>{
             if($(x).text().trim().toLowerCase() === lang){
               $(x).parent().click();
               return false;

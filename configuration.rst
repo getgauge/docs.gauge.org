@@ -253,69 +253,68 @@ Properties are defined in the following format.
 
    sample_key = sample_value
 
-Java
-^^^^
+.. tabs::
 
-Java Specific configuration changes can be made in the
-``env/default/java.properties`` file.
+  .. tab:: Java
+      
+    Java Specific configuration changes can be made in the
+    ``env/default/java.properties`` file.
 
-.. code-block:: python
-    :linenos:
-    :name: java_properties
+    .. code-block:: python
+        :linenos:
+        :name: java.properties
 
-    # Specify an alternate Java home if you want to use a custom version.
-    gauge_java_home = PATH_TO_JAVA_HOME
+        # Specify an alternate Java home if you want to use a custom version.
+        gauge_java_home = PATH_TO_JAVA_HOME
 
-    # Use this property if you need to override the build path for the
-    # project.
-    # Note: IntelliJ out directory will be usually auto-detected.
-    gauge_custom_build_path = PATH_TO_CUSTOM_BUILDPATH
+        # Use this property if you need to override the build path for the
+        # project.
+        # Note: IntelliJ out directory will be usually auto-detected.
+        gauge_custom_build_path = PATH_TO_CUSTOM_BUILDPATH
 
-    # Specify the directory where additional libraries are kept.
-    #   You can specify multiple directory names separated with a comma `,`
-    #   `libs` directory in the gauge project is added by default.
-    gauge_additional_libs = libs/*, PATH_TO_NEW_LIBRARY
+        # Specify the directory where additional libraries are kept.
+        #   You can specify multiple directory names separated with a comma `,`
+        #   `libs` directory in the gauge project is added by default.
+        gauge_additional_libs = libs/*, PATH_TO_NEW_LIBRARY
 
-    # Specify the JVM arguments passed to java while launching.
-    gauge_jvm_args = <JVM_ARGS>
+        # Specify the JVM arguments passed to java while launching.
+        gauge_jvm_args = <JVM_ARGS>
 
-    # Comma seperated list of dirs. path should be relative to project root.
-    STEP_IMPL_DIR = tests
+        # Comma seperated list of dirs. path should be relative to project root.
+        STEP_IMPL_DIR = tests
 
-Javascript
-^^^^^^^^^^
+  .. tab:: JavaScript
 
-Javascript Specific configuration changes can be made in the
-``env/default/js.properties`` file.
+    Javascript Specific configuration changes can be made in the
+    ``env/default/js.properties`` file.
 
-.. code-block:: python
-    :linenos:
-    :name: js
+    .. code-block:: python
+        :linenos:
+        :name: js.properties
 
-    # Use this property if you need to override the timeout of step
-    test_timeout = 10000
+        # Use this property if you need to override the timeout of step
+        test_timeout = 10000
 
-    # Change this to true to enable browser debugging support
-    DEBUG = false
+        # Change this to true to enable browser debugging support
+        DEBUG = false
 
-    # Comma seperated list of dirs. path should be relative to project root.
-    STEP_IMPL_DIR = tests
+        # Comma seperated list of dirs. path should be relative to project root.
+        STEP_IMPL_DIR = tests
 
-Python
-^^^^^^
+  .. tab:: Python
 
-Python Specific configuration changes can be made in the
-``env/default/python.properties`` file.
+    Python Specific configuration changes can be made in the
+    ``env/default/python.properties`` file.
 
-.. code-block:: python
-    :linenos:
-    :name: python
+    .. code-block:: python
+        :linenos:
+        :name: python
 
-    # Override this if you want to use a different command
-    GAUGE_PYTHON_COMMAND = python
+        # Override this if you want to use a different command
+        GAUGE_PYTHON_COMMAND = python
 
-    # Comma seperated list of dirs. path should be relative to project root.
-    STEP_IMPL_DIR = tests
+        # Comma seperated list of dirs. path should be relative to project root.
+        STEP_IMPL_DIR = tests
 
 .. note::
     CSharp and Ruby language runners do not hold any configuration beyond what is listed in :ref:`default properties <default_properties>`.

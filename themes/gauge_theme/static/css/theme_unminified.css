@@ -7344,8 +7344,15 @@ ul.current {
 }
 
 .sphinx-tabs a.item {
-    font-family: monospace;
     color: #404040 !important;
+}
+
+.code-snippet .sphinx-tabs a.item {
+    font-family: monospace;
+}
+
+.platform-install .sphinx-tabs a.item {
+    font-family: "Open Sans";
 }
 
 .sphinx-tabs a.item .container {
@@ -7356,22 +7363,38 @@ ul.current {
     padding-left: 26px;
 }
 
-.sphinx-tabs a.item:nth-child(1) .container {
+.code-snippet .sphinx-tabs a.item:nth-child(1) .container {
     background-image: url(../img/csharp-logo.svg) !important;
 }
-.sphinx-tabs a.item:nth-child(2) .container {
+.code-snippet .sphinx-tabs a.item:nth-child(2) .container {
     background-image: url(../img/java-logo.svg) !important;
 }
-.sphinx-tabs a.item:nth-child(3) .container {
+.code-snippet .sphinx-tabs a.item:nth-child(3) .container {
     background-image: url(../img/javascript-logo.svg) !important;
 }
-.sphinx-tabs a.item:nth-child(4) .container {
+.code-snippet .sphinx-tabs a.item:nth-child(4) .container {
     background-image: url(../img/python-logo.svg) !important;
 }
-.sphinx-tabs a.item:nth-child(5) .container {
+.code-snippet .sphinx-tabs a.item:nth-child(5) .container {
     background-image: url(../img/ruby-logo.svg) !important;
 }
 
+
+.platform-install .sphinx-tabs a.item:nth-child(1) .container {
+    background-image: url(../img/windows-logo.svg) !important;
+}
+.platform-install .sphinx-tabs a.item:nth-child(2) .container {
+    background-image: url(../img/apple-logo.svg) !important;
+}
+.platform-install .sphinx-tabs a.item:nth-child(3) .container {
+    background-image: url(../img/linux-logo.svg) !important;
+}
+.platform-install .sphinx-tabs a.item:nth-child(4) .container {
+    background-image: url(../img/linux-logo.svg) !important;
+}
+.platform-install .sphinx-tabs a.item:nth-child(5) .container {
+    background-image: url(../img/linux-logo.svg) !important;
+}
 .ui.segment {
     padding: 2px !important;
 }
