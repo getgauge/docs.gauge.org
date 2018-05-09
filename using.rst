@@ -433,13 +433,14 @@ Example:
     For an existing product name, the search result will contain the product name.
 
     * Search for product "Die Hard"
-    * "Die Hard should show up in the search results
+    * "Die Hard" should show up in the search results
 
     ## Unsuccessful search
-     On an unknown product name search, the search results will be empty
 
-     * Search for product "unknown"
-     * The search results will be empty
+    On an unknown product name search, the search results will be empty
+
+    * Search for product "unknown"
+    * The search results will be empty
 
 
 In the above spec, if all the scenarios tagged with "search" and "successful"
@@ -631,58 +632,65 @@ Current Execution Context in the Hook
    scenario and step** executing, an additional **ExecutionContext**
    parameter can be added to the :ref:`hooks <execution_hooks>` method.
 
+.. tabs::
 
-.. code-block:: java
-  :caption: C#
+    .. group-tab:: C#
 
-    This feature is not yet
-    supported in Gauge-CSharp. Please refer to
-    https://github.com/getgauge/gauge-csharp/issues/53 for updates.
+        .. code-block:: java 
 
-.. code-block:: java
-  :caption: Java
+            This feature is not yet
+            supported in Gauge-CSharp. Please refer to
+            https://github.com/getgauge/gauge-csharp/issues/53 for updates.
 
-    @BeforeScenario
-    public void loginUser(ExecutionContext context) {
-      String scenarioName = context.getCurrentScenario().getName();
-      // Code for before scenario
-    }
+    .. group-tab:: Java
 
-    @AfterSpec
-    public void performAfterSpec(ExecutionContext context) {
-      Specification currentSpecification = context.getCurrentSpecification();
-      // Code for after step
-    }
+        .. code-block:: java
 
-.. code-block:: javascript
-  :caption: Javascript
+            @BeforeScenario
+            public void loginUser(ExecutionContext context) {
+            String scenarioName = context.getCurrentScenario().getName();
+            // Code for before scenario
+            }
 
-    hooks.beforeScenario(fn, [opts]) { ... }
-    hooks.afterSpec(fn, [opts]) { ... }
+            @AfterSpec
+            public void performAfterSpec(ExecutionContext context) {
+            Specification currentSpecification = context.getCurrentSpecification();
+            // Code for after step
+            }
 
-.. code-block:: python
-  :caption: Python
+    .. group-tab:: JavaScript
 
-    from getgauge.python import before_step, after_scenario
+        .. code-block:: javascript
 
-    @before_scenario
-    def before_scenario_hook():
-        print("before scenario hook")
+            hooks.beforeScenario(fn, [opts]) { ... }
+            hooks.afterSpec(fn, [opts]) { ... }
 
-    @after_spec
-    def after_spec_hook():
-        print("after spec hook")
+    .. group-tab:: Python
 
-.. code-block:: ruby
-  :caption: ruby
+        .. code-block:: python
 
-    before_spec do |execution_info|
-        puts execution_info.inspect
-    end
+            from getgauge.python import before_step, after_scenario
 
-    after_spec do |execution_info|
-        puts execution_info.inspect
-    end
+            @before_scenario
+            def before_scenario_hook():
+                print("before scenario hook")
+
+            @after_spec
+            def after_spec_hook():
+                print("after spec hook")
+
+    .. group-tab:: Ruby
+
+        .. code-block:: ruby
+
+            before_spec do |execution_info|
+                puts execution_info.inspect
+            end
+
+            after_spec do |execution_info|
+                puts execution_info.inspect
+            end
+
 
 Filtering Hooks execution based on tags
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -691,90 +699,95 @@ Filtering Hooks execution based on tags
    will ensure that the hook runs only on scenarios and specifications
    that have the required tags.
 
-.. code-block:: java
-  :caption: C#
+.. tabs::
 
-    // A before spec hook that runs when tag1 and tag2
-    // is present in the current scenario and spec.
-    [BeforeSpec("tag1, tag2")]
-    public void LoginUser() {
-        // Code for before scenario
-    }
+    .. group-tab:: C#
 
-    // A after step hook runs when tag1 or tag2
-    // is present in the current scenario and spec.
-    // Default tagAggregation value is Operator.AND.
-    [AfterStep("tag1", "tag2")]
-    [TagAggregationBehaviour(TagAggregation.Or)]
-    public void PerformAfterStep() {
-        // Code for after step
-    }
+        .. code-block:: java
 
-.. code-block:: java
-  :caption: Java
+            // A before spec hook that runs when tag1 and tag2
+            // is present in the current scenario and spec.
+            [BeforeSpec("tag1, tag2")]
+            public void LoginUser() {
+                // Code for before scenario
+            }
 
-    // A before spec hook that runs when tag1 and tag2
-    // is present in the current scenario and spec.
-    @BeforeSpec(tags = {"tag1, tag2"})
-    public void loginUser() {
-        // Code forbefore scenario
-    }
+            // A after step hook runs when tag1 or tag2
+            // is present in the current scenario and spec.
+            // Default tagAggregation value is Operator.AND.
+            [AfterStep("tag1", "tag2")]
+            [TagAggregationBehaviour(TagAggregation.Or)]
+            public void PerformAfterStep() {
+                // Code for after step
+            }
+    .. group-tab:: Java
 
-    // A after step hook runs when tag1 or tag2
-    // is present in the currentscenario and spec.
-    // Default tagAggregation value is Operator.AND.
-    @AfterStep(tags = {"tag1", "tag2"}, tagAggregation = Operator.OR)
-    public void performAfterStep() {
-        // Code for after step
-    }
+        .. code-block:: java
 
-.. code-block:: javascript
-  :caption: Javascript
+            // A before spec hook that runs when tag1 and tag2
+            // is present in the current scenario and spec.
+            @BeforeSpec(tags = {"tag1, tag2"})
+            public void loginUser() {
+                // Code forbefore scenario
+            }
 
-    // A before spec hook that runs when tag1 and tag2
-    // is present in the current scenario and spec.
-    hooks.beforeSpec(function () {
-        //implementation
-    }, { tags: [ "tag1","tag2" ]});
+            // A after step hook runs when tag1 or tag2
+            // is present in the currentscenario and spec.
+            // Default tagAggregation value is Operator.AND.
+            @AfterStep(tags = {"tag1", "tag2"}, tagAggregation = Operator.OR)
+            public void performAfterStep() {
+                // Code for after step
+            }
 
-    // A after step hook runs when tag1 or tag2
-    // is present in the currentscenario and spec.
-    // Default tagAggregation value is Operator.AND.
-    hooks.afterStep(function () {
-        //implementation
-    }, { tags: [ "tag1","tag2" ]});
+    .. group-tab:: JavaScript
 
-.. code-block:: python
-  :caption: Python
+        .. code-block:: javascript
 
-    // A before spec hook that runs when tag1 and tag2
-    // is present in the current scenario and spec.
-    @before_spec("<tag1> and <tag2>")
-    def before_spec_hook():
-        print("before spec hook with tag")
+            // A before spec hook that runs when tag1 and tag2
+            // is present in the current scenario and spec.
+            hooks.beforeSpec(function () {
+                //implementation
+            }, { tags: [ "tag1","tag2" ]});
 
-    // A after step hook runs when tag1 or tag2
-    // is present in the currentscenario and spec.
-    // Default tagAggregation value is Operator.AND.
-    @after_step("<tag1> and <tag2>")
-    def after_step_hook():
-        print("after step hook with tag")
+            // A after step hook runs when tag1 or tag2
+            // is present in the currentscenario and spec.
+            // Default tagAggregation value is Operator.AND.
+            hooks.afterStep(function () {
+                //implementation
+            }, { tags: [ "tag1","tag2" ]});
 
-.. code-block:: ruby
-  :caption: Ruby
+    .. group-tab:: Python
 
-    # A before spec hook that runs when
-    # tag1 and tag2 is present in the current scenario and spec.
-    before_spec({tags: ['tag2', 'tag1']}) do
-        # Code for before scenario
-    end
+        .. code-block:: python
 
-    # A after step hook runs when tag1 or tag2 is present in the current scenario and spec.
-    # Default tagAggregation value is Operator.AND.
+            // A before spec hook that runs when tag1 and tag2
+            // is present in the current scenario and spec.
+            @before_spec("<tag1> and <tag2>")
+            def before_spec_hook():
+                print("before spec hook with tag")
 
-    after_spec({tags: ['tag2', 'tag1'], operator: 'OR'}) do
-        # Code for after step
-    end
+            // A after step hook runs when tag1 or tag2
+            // is present in the currentscenario and spec.
+            // Default tagAggregation value is Operator.AND.
+            @after_step("<tag1> and <tag2>")
+            def after_step_hook():
+                print("after step hook with tag")
+    .. group-tab:: Ruby
+
+        .. code-block:: ruby
+
+            # A before spec hook that runs when
+            # tag1 and tag2 is present in the current scenario and spec.
+            before_spec({tags: ['tag2', 'tag1']}) do
+                # Code for before scenario
+            end
+
+            # A after step hook runs when tag1 or tag2 is present in the current scenario and spec.
+            # Default tagAggregation value is Operator.AND.
+
+            after_spec({tags: ['tag2', 'tag1'], operator: 'OR'}) do
+                # Code for after step
+            end
 
 .. note:: Tags cannot be specified on @BeforeSuite and @AfterSuite hooks
 
@@ -857,53 +870,59 @@ ensuring that the functionality is expressed clearly.
 
 Implementation
 """"""""""""""
+.. tabs::
 
-.. code-block:: java
-  :caption: C#
+    .. group-tab:: C#
 
-    public class Users {
+        .. code-block:: java
 
-        [Step({"Create a user <user_name>", "Create another user <user_name>"})]
-        public void HelloWorld(string user_name) {
-            // create user user_name
-        }
+            public class Users {
 
-    }
+                [Step({"Create a user <user_name>", "Create another user <user_name>"})]
+                public void HelloWorld(string user_name) {
+                    // create user user_name
+                }
 
-.. code-block:: java
-  :caption: Java
+            }
 
-    public class Users {
+    .. group-tab:: Java
 
-        @Step({"Create a user <user_name>", "Create another user <user_name>"})
-        public void helloWorld(String user_name) {
-            // create user user_name
-        }
+        .. code-block:: java
 
-    }
+            public class Users {
 
-.. code-block:: javascript
-  :caption: Javascript
+                @Step({"Create a user <user_name>", "Create another user <user_name>"})
+                public void helloWorld(String user_name) {
+                    // create user user_name
+                }
 
-    step(["Create a user <username>", "Create another user <username>"], function (username) {
-    // do cool stuff
-    });
+            }
 
-.. code-block:: python
-  :caption: Python
+    .. group-tab:: JavaScript
 
-    from getgauge.python import step
+        .. code-block:: javascript
 
-    @step(["Create a user <user name>", "Create another user <user name>"])
-    def hello(user_name):
-        print("create {}.".format(user_name))
+            step(["Create a user <username>", "Create another user <username>"], function (username) {
+            // do cool stuff
+            });
 
-.. code-block:: ruby
-  :caption: Ruby
+    .. group-tab:: Python
 
-    step 'Create a user ','Create another user ' do |user_name|
-        // create user user_name
-    end
+        .. code-block:: python
+
+            from getgauge.python import step
+
+            @step(["Create a user <user name>", "Create another user <user name>"])
+            def hello(user_name):
+                print("create {}.".format(user_name))
+
+    .. group-tab:: Ruby
+
+        .. code-block:: ruby
+
+            step 'Create a user ','Create another user ' do |user_name|
+                // create user user_name
+            end
 
 Example 2
 ~~~~~~~~~
@@ -929,52 +948,59 @@ could be something like this.
 Implementation
 """"""""""""""
 
-.. code-block:: java
-  :caption: C#
+.. tabs::
 
-    public class Users {
+    .. group-tab:: C#
 
-        [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
-        public void HelloWorld(string email_type) {
-            // Send email of email_type
-        }
+        .. code-block:: java
 
-    }
+            public class Users {
 
-.. code-block:: java
-  :caption: Java
+                [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
+                public void HelloWorld(string email_type) {
+                    // Send email of email_type
+                }
 
-    public class Users {
+            }
 
-        @Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})
-        public void helloWorld(String email_type) {
-            // Send email of email_type
-        }
+    .. group-tab:: Java
 
-    }
+        .. code-block:: java
 
-.. code-block:: javascript
-  :caption: Javascript
+            public class Users {
 
-    step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"], function (email_type) {
-        // do cool stuff
-    });
+                @Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})
+                public void helloWorld(String email_type) {
+                    // Send email of email_type
+                }
 
-.. code-block:: python
-  :caption: Python
+            }
 
-    from getgauge.python import step
+    .. group-tab:: JavaScript
 
-    @step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"])
-    def email(email_type):
-        print("create {}.".format(email_type))
+        .. code-block:: javascript
 
-.. code-block:: ruby
-  :caption: Ruby
+            step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"], function (email_type) {
+                // do cool stuff
+            });
 
-    step 'A email is sent to the user', 'An email confirming the is sent' do |email_type|
-        email_service.send email_type
-    end
+    .. group-tab:: Python
+
+        .. code-block:: python
+
+            from getgauge.python import step
+
+            @step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"])
+            def email(email_type):
+                print("create {}.".format(email_type))
+
+    .. group-tab:: Ruby
+
+        .. code-block:: ruby
+
+            step 'A email is sent to the user', 'An email confirming the is sent' do |email_type|
+                email_service.send email_type
+            end
 
 Re-run failed tests
 ^^^^^^^^^^^^^^^^^^^
