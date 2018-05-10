@@ -456,6 +456,8 @@ Current Execution Context in the Hook
                 end
 
 
+.. _filtering_hooks_with_tags:
+
 Filtering Hooks execution based on tags
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
