@@ -7396,7 +7396,7 @@ ul.current {
     background-image: url(../img/linux-logo.svg) !important;
 }
 .ui.segment {
-    padding: 2px !important;
+    padding: 10px !important;
 }
 
 .ui.menu {
