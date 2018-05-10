@@ -25,7 +25,7 @@ Gauge Core
 
       **Offline Installation**
 
-      `Download the Gauge archive <https://gauge.org/get-started.html>`__. Extract it to a location and add it to system path.
+      Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
 
 
 
@@ -34,7 +34,7 @@ Gauge Core
       Nightly releases are latest development snapshots of Gauge. They have
       the latest features being developed, but are unstable.
 
-      `Download the Gauge archive <https://bintray.com/gauge/Gauge/Nightly/>`__. Extract it to a location and add it to system path.
+      Download the Gauge archive from `here <https://bintray.com/gauge/Gauge/Nightly/>`__. Extract it to a location and add it to system path.
 
     .. group-tab:: macOS
 
@@ -50,7 +50,7 @@ Gauge Core
 
       **Offline Installation**
 
-      `Download the Gauge archive <https://gauge.org/get-started.html>`__. Extract it to a location and add it to system path.
+      Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
 
 
       **Nightly installation**
@@ -58,7 +58,7 @@ Gauge Core
       Nightly releases are latest development snapshots of Gauge. They have
       the latest features being developed, but are unstable.
 
-      `Download the Gauge archive <https://bintray.com/gauge/Gauge/Nightly/>`__. Extract it to a location and add it to system path.
+      Download the Gauge archive from `here <https://bintray.com/gauge/Gauge/Nightly/>`__. Extract it to a location and add it to system path.
 
     .. group-tab:: Linux (Debian/Ubuntu)
 
@@ -74,25 +74,7 @@ Gauge Core
 
         **Offline Installation**
 
-        `Download <https://gauge.org/get-started.html>`__ the archive, run the command
-        below to install Gauge.
-
-        .. code-block:: console
-
-            unzip gauge-$VERSION-$OS.$ARCH.zip
-            ./install.sh
-
-        Set ``GAUGE_PREFIX`` env to install Gauge to a custom location.
-
-        Example :-
-
-        .. code-block:: console
-
-            GAUGE_PREFIX=my/custom/location ./install.sh
-
-        Set ``GAUGE_PLUGINS`` ( comma separated list of plugins) env to install plugins along with ``gauge`` ( requires Internet).
-
-
+        Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
 
         **Nightly Installation**
 
@@ -146,24 +128,7 @@ Gauge Core
 
       **Offline Installation**
 
-      `Download <https://gauge.org/get-started.html>`__ and run the command
-      below to install Gauge.
-
-      .. code-block:: console
-
-          unzip gauge-$VERSION-$OS.$ARCH.zip
-          ./install.sh
-
-      Set ``GAUGE_PREFIX`` env to install Gauge at custom location.
-
-      Example :-
-
-      .. code-block:: console
-
-          GAUGE_PREFIX=my/custom/location ./install.sh
-
-      Set ``GAUGE_PLUGINS`` ( comma separated list of plugins) env to install plugins along with ``gauge`` ( requires Internet).
-
+      Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
 
       **Nightly Installation**
 
@@ -217,28 +182,9 @@ Gauge Core
         sudo dnf install gauge
 
 
-
       **Offline Installation**
 
-      `Download <https://gauge.org/get-started.html>`__ and run the command
-      below to install Gauge.
-
-      .. code-block:: console
-
-          unzip gauge-$VERSION-$OS.$ARCH.zip
-          ./install.sh
-
-      Set ``GAUGE_PREFIX`` env to install Gauge at custom location.
-
-      Example :-
-
-      .. code-block:: console
-
-          GAUGE_PREFIX=my/custom/location ./install.sh
-
-      Set ``GAUGE_PLUGINS`` ( comma separated list of plugins) env to install plugins along with ``gauge`` ( requires Internet).
-
-
+      Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
 
       **Nightly Installation**
 
