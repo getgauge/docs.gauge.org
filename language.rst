@@ -2,7 +2,7 @@ Language Features
 =================
 
 .. note::
-  
+
   Some behaviour of the language runners can be configured. See :ref:`Configuring Langauge Runner <language_config>` for details.
 
 .. _language-steps:
@@ -28,10 +28,10 @@ Simple step
   .. tabs::
 
     .. group-tab:: C#
-      
-      .. code-block:: java 
 
-          // The Method can be written in **any C# class** as long as it is part of the project. 
+      .. code-block:: java
+
+          // The Method can be written in **any C# class** as long as it is part of the project.
           public class StepImplementation {
 
             [Step("Say <greeting> to <product name>")]
@@ -42,7 +42,7 @@ Simple step
 
     .. group-tab:: Java
 
-      .. code-block:: java 
+      .. code-block:: java
 
           // This Method can be written in any java class as long as it is in classpath.
 
@@ -57,7 +57,7 @@ Simple step
 
     .. group-tab:: JavaScript
 
-      .. code-block:: javascript 
+      .. code-block:: javascript
 
           step("Say <greeting> to <name>", async function(greeting, name) {
             throw 'Unimplemented Step';
@@ -71,13 +71,13 @@ Simple step
           def create_following_characters(greeting, name):
               assert False, "Add implementation code"
 
-    .. group-tab:: Ruby 
+    .. group-tab:: Ruby
 
       .. code-block:: ruby
 
-          step 'Say <greeting> to <product name>' do |greeting, name| 
-          # Code for the step 
-          end 
+          step 'Say <greeting> to <product name>' do |greeting, name|
+          # Code for the step
+          end
 
 Step with table
 ^^^^^^^^^^^^^^^
@@ -103,9 +103,9 @@ Step with table
 
       .. code-block:: java
 
-        // Here Table is a custom data structure defined by gauge. 
+        // Here Table is a custom data structure defined by gauge.
         // This is available by adding a reference to the Gauge.CSharp.Lib.
-        // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/ 
+        // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/
 
         public class Users {
 
@@ -120,7 +120,7 @@ Step with table
 
       .. code-block:: java
 
-        // Table is a custom data structure defined by gauge. 
+        // Table is a custom data structure defined by gauge.
         public class Users {
 
           @Step("Create following <race> characters <table>")
@@ -142,7 +142,7 @@ Step with table
 
       .. code-block:: python
 
-        # Here Table is a custom data structure defined by gauge. 
+        # Here Table is a custom data structure defined by gauge.
 
         @step("Create following <hobbit> characters <table>")
         def create_following_characters(hobbit, table):
@@ -155,10 +155,10 @@ Step with table
 
         # Here table is a custom data structure defined by gauge-ruby.
 
-        step 'Create following <race> characters <table>' do |role, table| 
-          puts table.rows 
-          puts table.columns 
-        end 
+        step 'Create following <race> characters <table>' do |role, table|
+          puts table.rows
+          puts table.columns
+        end
 
 
 
@@ -182,11 +182,11 @@ levels during the test suite execution.
       .. code-block:: java
 
         public class ExecutionHooks
-        { 
+        {
 
-          [BeforeSuite] 
+          [BeforeSuite]
           public void BeforeSuite() {
-            // Code for before suite 
+            // Code for before suite
           }
 
           [AfterSuite]
@@ -224,7 +224,7 @@ levels during the test suite execution.
             // Code for after step
           }
 
-        } 
+        }
 
     .. group-tab:: Java
 
@@ -233,7 +233,7 @@ levels during the test suite execution.
         public class ExecutionHooks {
 
           @BeforeSuite public void BeforeSuite() {
-            // Code for before suite 
+            // Code for before suite
           }
 
           @AfterSuite
@@ -351,37 +351,37 @@ levels during the test suite execution.
 
       .. code-block:: ruby
 
-        before_suite do 
-          # Code for before suite 
+        before_suite do
+          # Code for before suite
         end
 
-        after_suite do 
-          # Code for after suite 
+        after_suite do
+          # Code for after suite
         end
 
-        before_spec do 
-          # Code for before spec 
+        before_spec do
+          # Code for before spec
         end
 
-        after_spec do 
-          # Code for after spec 
+        after_spec do
+          # Code for after spec
         end
 
-        before_scenario do 
-          # Code for before scenario 
+        before_scenario do
+          # Code for before scenario
         end
 
-        after_scenario do 
-          # Code for after scenario 
+        after_scenario do
+          # Code for after scenario
         end
 
-        before_step do 
-          # Code for before step 
+        before_step do
+          # Code for before step
         end
 
-        after_step do 
-          # Code for after step 
-        end 
+        after_step do
+          # Code for after step
+        end
 
 
 By default, Gauge clears the state after each scenario so that new
@@ -400,7 +400,7 @@ Current Execution Context in the Hook
 
         .. group-tab:: C#
 
-            .. code-block:: java 
+            .. code-block:: java
 
                 This feature is not yet
                 supported in Gauge-CSharp. Please refer to
@@ -579,7 +579,7 @@ scenario execution. Values are cleared after every scenario executes
   .. tabs::
 
     .. group-tab:: C#
-    
+
       .. code-block:: java
 
         using Gauge.CSharp.Lib;
@@ -677,11 +677,11 @@ executes
         com.thoughtworks.gauge.datastore.*;
 
         // Adding value DataStore specStore =
-        DataStoreFactory.getSpecDataStore(); 
+        DataStoreFactory.getSpecDataStore();
         specStore.put("key", "455678");
 
         // Fetching value DataStore specStore =
-        String elementId = (String) specStore.get("key"); 
+        String elementId = (String) specStore.get("key");
 
     .. group-tab:: JavaScript
 
@@ -708,12 +708,12 @@ executes
 
       .. code-block:: ruby
 
-        // Adding value 
+        // Adding value
         spec_store = DataStoreFactory.spec_datastore;
         spec_store.put("element-id", "455678");
 
-        // Fetching Value 
-        element_id = spec_store.get("element-id"); 
+        // Fetching Value
+        element_id = spec_store.get("element-id");
 
 SuiteStore
 ^^^^^^^^^^
@@ -722,7 +722,7 @@ This data store keeps values added to it during the lifecycle of entire
 suite execution. Values are cleared after entire suite execution.
 
 .. warning::
-   ``SuiteStore`` is not advised to be used when executing specs in parallel. 
+   ``SuiteStore`` is not advised to be used when executing specs in parallel.
    The values are not retained between parallel streams of execution.
 
 .. container:: code-snippet
@@ -742,7 +742,7 @@ suite execution. Values are cleared after entire suite execution.
         elementId = (string) suiteStore.Get("element-id");
 
         // avoid type cast by using generic Get var anotherElementId =
-        suiteStore.Get("element-id"); 
+        suiteStore.Get("element-id");
 
     .. group-tab:: Java
 
@@ -751,13 +751,13 @@ suite execution. Values are cleared after entire suite execution.
         // Import Package import
         com.thoughtworks.gauge.datastore.*;
 
-        // Adding value 
-        DataStore suiteStore = DataStoreFactory.getSuiteDataStore(); 
+        // Adding value
+        DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
         suiteStore.put("element-id", "455678");
 
-        // Fetching value 
-        DataStore suiteStore = DataStoreFactory.getSuiteDataStore(); 
-        String elementId = (String) suiteStore.get("element-id"); 
+        // Fetching value
+        DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
+        String elementId = (String) suiteStore.get("element-id");
 
     .. group-tab:: JavaScript
 
@@ -863,12 +863,12 @@ Taking Custom Screenshots
       .. code-block:: ruby
 
         # Using Webdriver
-        Gauge.configure do |config| 
+        Gauge.configure do |config|
           # Return a screenshot byte array
           config.screengrabber = -> {
-            driver.save_screenshot('/tmp/screenshot.png') 
-            return File.binread("/tmp/screenshot.png") 
-          } 
+            driver.save_screenshot('/tmp/screenshot.png')
+            return File.binread("/tmp/screenshot.png")
+          }
         end
 
 
@@ -891,15 +891,15 @@ These messages will appear under steps in the execution reports.
       .. code-block:: java
 
         GaugeMessages.WriteMessage("Custom message for report");
-        var id = "4567"; 
-        GaugeMessages.WriteMessage("User id is {0}", id); 
+        var id = "4567";
+        GaugeMessages.WriteMessage("User id is {0}", id);
 
     .. group-tab:: Java
 
       .. code-block:: java
 
         Gauge.writeMessage("Custom message for report");
-        String id = "4567"; 
+        String id = "4567";
         Gauge.writeMessage("User id is %s", id);
 
     .. group-tab:: JavaScript
@@ -921,7 +921,7 @@ These messages will appear under steps in the execution reports.
       .. code-block:: ruby
 
         Gauge.write_message("Custom message for report")
-        id = "4567" 
+        id = "4567"
         Gauge.write_message("User id is" + id)
 
 Enum as Step parameter
@@ -946,9 +946,9 @@ in step implementation.
 
   public enum Direction { NORTH, SOUTH, EAST, WEST; }
 
-  @Step("Navigate towards ") 
+  @Step("Navigate towards ")
   public void navigate(Direction direction) {
-     //  code here 
+     //  code here
   }
 
 Continue on Failure
@@ -991,7 +991,7 @@ implementation to be marked to continue on failure.
 
       .. code-block:: java
 
-        // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other 
+        // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
         // steps even if the current step fails.
 
         public class StepImplementation {
@@ -1007,7 +1007,7 @@ implementation to be marked to continue on failure.
 
       .. code-block:: javascript
 
-        // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other 
+        // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
         // steps even if the current step fails.
 
         gauge.step("Say <greeting> to <product>.", { continueOnFailure: true}, function (greeting,product) {
@@ -1017,7 +1017,7 @@ implementation to be marked to continue on failure.
 
       .. code-block:: python
 
-        // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other 
+        // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
         // steps even if the current step fails.
 
         @continue_on_failure([RuntimeError])
@@ -1029,12 +1029,12 @@ implementation to be marked to continue on failure.
 
       .. code-block:: ruby
 
-        # The ``:continue_on_failure => true`` keyword argument 
-        # tells Gauge to continue executing other steps even 
+        # The ``:continue_on_failure => true`` keyword argument
+        # tells Gauge to continue executing other steps even
         # if the current step fails.
 
         step 'Say <greeting> to <name>', :continue_on_failure => true do |greeting, name|
-          # If there is an error here, Gauge will still execute next steps 
+          # If there is an error here, Gauge will still execute next steps
         end
 
 Continue on Failure can take an optional parameter to specify the list
@@ -1107,10 +1107,10 @@ Example 1
 
 .. code-block:: gauge
 
-    User Creation
-    =============
-    Multiple Users
-    --------------
+    # User Creation
+
+    ## Multiple Users
+
     * Create a user "user 1"
     * Verify "user 1" has access to dashboard
     * Create another user "user 2"
@@ -1184,13 +1184,13 @@ Example 2
 
 .. code-block:: gauge
 
-    User Creation
-    -------------
+    ## User Creation
+
     * User creates a new account
     * A "welcome" email is sent to the user
 
-    Shopping Cart
-    -------------
+    ## Shopping Cart
+
     * User checks out the shopping cart
     * Payment is successfully received
     * An email confirming the "order" is sent

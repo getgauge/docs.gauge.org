@@ -1,4 +1,4 @@
-Syntax 
+Syntax
 ======
 
 .. _spec_syntax:
@@ -8,14 +8,14 @@ Specification
 
 .. code-block:: gauge
 
-    Specification name            
-    ==================
-    
-or 
+    # Specification name
+
+or
 
 .. code-block:: gauge
 
-    # Specification name
+    Specification name
+    ==================
 
 .. _scenario_syntax:
 
@@ -24,14 +24,14 @@ Scenario
 
 .. code-block:: gauge
 
-    Scenario name                 
-    -------------
+    ## Scenario name
 
 or
 
 .. code-block:: gauge
 
-    ## Scenario name
+    Scenario name
+    -------------
 
 .. _tag_syntax:
 
@@ -40,14 +40,12 @@ Tags
 
 .. code-block:: gauge
 
-    Specification Level           
-    ===================           
+    # Specification Level
 
-    Tags: login, admin            
-    
-    
-    Scenario Level
-    --------------
+    Tags: login, admin
+
+
+    ## Scenario Level
 
     Tags: login-success, admin
 
@@ -58,14 +56,14 @@ Concept
 
 .. code-block:: gauge
 
-    Concept Heading 
-    ===============
+    # Concept Heading
 
 or
 
 .. code-block:: gauge
-   
-    # Concept Heading
+
+    Concept Heading
+    ===============
 
 .. _step_syntax:
 
@@ -89,19 +87,19 @@ Parameters
 .. code-block:: gauge
    :caption: ``<Dynamic Arg>``
 
-   * Check <product> exists 
+   * Check <product> exists
 
 
 
 .. code-block:: gauge
    :caption: ``|Table Parameter|``
 
-   * Step that takes a table 
+   * Step that takes a table
       | id  | name    |
       |-----|---------|
       | 123 | John    |
-      | 456 | Mcclain | 
-      
+      | 456 | Mcclain |
+
 There should be no empty lines between step name and table parameter.
 
 Special Parameters
@@ -114,7 +112,7 @@ Special Parameters
 .. code-block:: gauge
    :caption: ``file``
 
-   * Check if <file:/work/content.txt> is visible 
+   * Check if <file:/work/content.txt> is visible
 
 .. code-block:: gauge
    :caption: ``table``

@@ -41,10 +41,31 @@ under test.
 Example
 ^^^^^^^
 
-.. figure:: images/spec.png
-   :alt: Specification
+.. code-block:: gauge
 
-   Spec
+    # Search specification
+    Tags: search, admin
+
+    The admin user must be able to search for available products on the search page
+
+    * User must be logged in as "admin"
+    * Open the product search page
+
+    ## Successful search
+    Tags: successful
+
+    For an existing product name, the search result will contain the product name
+
+    * Search for product "Die Hard"
+    * "Die hard" should ahow up in the search results
+
+    ## Unsuccessfull search
+
+    On an unknown product name search the search results will be empty
+
+    * Search for product "unknown"
+    * The search results will be empty
+
 
 Specification Heading
 ^^^^^^^^^^^^^^^^^^^^^
@@ -57,14 +78,14 @@ forms:
 
 .. code-block:: gauge
 
-    Spec Heading
-    ============
+    # Spec Heading
 
 or
 
 .. code-block:: gauge
 
-    # Spec Heading
+    Spec Heading
+    ============
 
 -  Every spec must contain one or more :ref:`longstart-scenarios`.
 -  Every spec can be marked with labels using :ref:`longstart-tags`.
@@ -83,14 +104,14 @@ written in 2 ways:
 
 .. code-block:: gauge
 
-    Scenario heading
-    ----------------
+    ## Scenario heading
 
 or
 
 .. code-block:: gauge
 
-    ## Scenario heading
+    Scenario heading
+    ----------------
 
 -  A scenario contains one or more :ref:`steps <step_syntax>` under it.
 -  A scenario can be tagged using :ref:`tags <tag_syntax>`.
@@ -100,13 +121,12 @@ Example
 
 .. code-block:: gauge
 
-    Configuration
-    =============
+    # Configuration
 
     The Admin user should be able to switch permissions for other users.
 
-    Admin Login
-    -----------
+    ## Admin Login
+
     * User must login as "admin"
     * Navigate to the configuration page
     * Change permissions for user "john" to "admin"
@@ -223,11 +243,9 @@ Example
 
 .. code-block:: gauge
 
-    Create projects
-    ===============
+    # Create projects
 
-    First scenario
-    --------------
+    ## First scenario
 
     * Create the following projects
          |project name| username |
@@ -323,22 +341,20 @@ Example
 
 .. code-block:: gauge
 
-    Create projects
-    ===============
+    # Create projects
 
-    |id| name |
-    |--|------|
-    |1 | john |
-    |2 | mike |
+        |id| name |
+        |--|------|
+        |1 | john |
+        |2 | mike |
 
-    First scenario
-    --------------
+    ## First scenario
 
     * Create the following projects
-         |project name| username |
-         |------------|----------|
-         | Gauge java | <name>   |
-         | Gauge ruby | <name>   |
+        |project name| username |
+        |------------|----------|
+        | Gauge java | <name>   |
+        | Gauge ruby | <name>   |
 
 In the above example the table parameter uses a dynamic value from the
 data table.
@@ -365,13 +381,12 @@ Both the ``Login specification`` and the scenario
 
 .. code-block:: gauge
 
-    Login specification
-    ===================
+    # Login specification
+
      Tags: login, admin, user-abc
 
+    ## Successful login scenario
 
-    Successful login scenario
-    -------------------------
      Tags: login-success, admin
 
 A tag applied to a spec automatically applies to a scenario.
@@ -454,11 +469,10 @@ The concept above can now be used in any spec as shown below
 
 .. code-block:: gauge
 
-    Login specification
-    ===================
+    # Login specification
 
-    Successful login scenario
-    -------------------------
+    ## Successful login scenario
+
     * Login as user "john" and create project "Gauge java"
 
 Contexts
@@ -477,20 +491,20 @@ function.
 
 .. code-block:: gauge
 
-    Delete project
-    ==============
+    # Delete project
+
     These are context steps
 
     * User is logged in as "mike"
     * Navigate to the project page
 
-    Delete single project
-    ---------------------
+    ## Delete single project
+
     * Delete the "example" project
     * Ensure "example" project has been deleted
 
-    Delete multiple projects
-    ------------------------
+    ## Delete multiple projects
+
     * Delete all the projects in the list
     * Ensure project list is empty
 
@@ -539,19 +553,18 @@ Example
 
 .. code-block:: gauge
 
-    Delete project
-    ==============
+    # Delete project
 
     * Sign up for user "mike"
     * Log in as "mike"
 
-    Delete single project
-    ---------------------
+    ## Delete single project
+
     * Delete the "example" project
     * Ensure "example" project has been deleted
 
-    Delete multiple projects
-    ------------------------
+    ## Delete multiple projects
+
     * Delete all the projects in the list
     * Ensure project list is empty
 
