@@ -340,7 +340,7 @@ This will give a colored console output with details of the execution as
 well an execution summary.
 
 The path of specifications can also be specified through an environment variable <path>.
-This changes the default specification directory from ``specs`` to the value defined in the enviroment variable. 
+This changes the default specification directory from ``specs`` to the value defined in the environment variable. 
 
 Gauge specifications can also be run from within the IDE
 (`Visual Studio Code <https://github.com/getgauge/gauge-vscode/blob/master/README.md#run-specifications-and-scenarios>`__,
@@ -717,7 +717,7 @@ This property can also be added to the default/custom env.
 * Thread safe test code.
 * Language runner should support multithreading.
 
-.. note:: Currently, this feature is only supported by Java langauge runner/plugin.
+.. note:: Currently, this feature is only supported by Java language runner/plugin.
 
 Executing a group of specification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -942,7 +942,7 @@ There are two types of validation error which can occurs
     1. Step implementation not found
         If the spec file has a step that does not have an implementation in the projects programming language.
     2. Duplicate step implementation
-        If the spec file has a step that is imlpemented multiple times in the projects.
+        If the spec file has a step that is implemented multiple times in the projects.
 
 **Example**
 

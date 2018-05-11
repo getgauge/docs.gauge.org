@@ -170,7 +170,7 @@ User shell / OS env variable values 2. Project environment passed in the
 | logs_directory            | logs      |
 +---------------------------+-----------+
 
-Gauge loads the enviroment variables as below.
+Gauge loads the environment variables as below.
 
 -  When Gauge starts, the environment passed by the user in the
    ``--env`` flag will be loaded. If this flag is not passed by the
@@ -280,7 +280,7 @@ Properties are defined in the following format.
         # Specify the JVM arguments passed to java while launching.
         gauge_jvm_args = <JVM_ARGS>
 
-        # Comma seperated list of dirs. path should be relative to project root.
+        # Comma separated list of dirs. path should be relative to project root.
         STEP_IMPL_DIR = tests
 
   .. tab:: JavaScript
@@ -298,7 +298,7 @@ Properties are defined in the following format.
         # Change this to true to enable browser debugging support
         DEBUG = false
 
-        # Comma seperated list of dirs. path should be relative to project root.
+        # Comma separated list of dirs. path should be relative to project root.
         STEP_IMPL_DIR = tests
 
   .. tab:: Python
@@ -313,7 +313,7 @@ Properties are defined in the following format.
         # Override this if you want to use a different command
         GAUGE_PYTHON_COMMAND = python
 
-        # Comma seperated list of dirs. path should be relative to project root.
+        # Comma separated list of dirs. path should be relative to project root.
         STEP_IMPL_DIR = tests
 
 .. note::
