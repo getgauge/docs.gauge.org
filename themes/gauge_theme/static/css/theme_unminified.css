@@ -7367,6 +7367,10 @@ ul.current {
     font-family: "Open Sans";
 }
 
+.ide-support .sphinx-tabs a.item {
+    font-family: "Open Sans";
+}
+
 .sphinx-tabs a.item .container {
     background-size: 16px 16px;
     background-repeat: no-repeat;
@@ -7407,10 +7411,20 @@ ul.current {
 .platform-install .sphinx-tabs a.item:nth-child(5) .container {
     background-image: url(../img/zip-logo.svg) !important;
 }
-
 .platform-install .sphinx-tabs a.item:nth-child(6) .container {
     background-image: url(../img/curl-logo.svg) !important;
 }
+
+.ide-support .sphinx-tabs a.item:nth-child(1) .container {
+    background-image: url(../img/vscode-logo.svg) !important;
+}
+.ide-support .sphinx-tabs a.item:nth-child(2) .container {
+    background-image: url(../img/idea-logo.svg) !important;
+}
+.ide-support .sphinx-tabs a.item:nth-child(3) .container {
+    background-image: url(../img/vs-logo.svg) !important;
+}
+
 .ui.segment {
     padding: 10px !important;
 }
