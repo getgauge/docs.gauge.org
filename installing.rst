@@ -60,7 +60,7 @@ Gauge Core
 
       Download the Gauge archive from `here <https://bintray.com/gauge/Gauge/Nightly/>`__. Extract it to a location and add it to system path.
 
-    .. group-tab:: Linux (Debian/Ubuntu)
+    .. group-tab:: Debian/APT
 
         Add Gauge's GPG key, URL to repository list and install Gauge.
 
@@ -100,7 +100,7 @@ Gauge Core
             sudo apt-get update
             sudo apt-get install gauge
 
-    .. group-tab:: Linux (RHEL/CentOS)
+    .. group-tab:: YUM/DNF
 
       Create file ``/etc/yum.repos.d/gauge-stable.repo`` with the following content:
 
@@ -124,7 +124,11 @@ Gauge Core
 
         sudo yum install gauge
 
+      or
 
+      .. code-block:: console
+
+        sudo dnf install gauge
 
       **Offline Installation**
 
@@ -157,61 +161,39 @@ Gauge Core
 
           sudo yum install gauge
 
-    .. group-tab:: Linux (Fedora)
-
-      Create file ``/etc/yum.repos.d/gauge-stable.repo`` with the following content:
-
-      .. code-block:: text
-
-          [gauge-stable]
-          name=gauge-stable
-          baseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-stable
-          gpgcheck=0
-          enabled=1
-
-      Use this command to do it in one step:
-
-      .. code-block:: console
-
-          echo -e "[gauge-stable]\nname=gauge-stable\nbaseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-stable\ngpgcheck=0\nenabled=1" | sudo tee /etc/yum.repos.d/gauge-stable.repo
-
-      Install
-
-      .. code-block:: console
-
-        sudo dnf install gauge
-
-
-      **Offline Installation**
-
-      Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
-
-      **Nightly Installation**
-
-      .. note:: Nightly releases are latest development snapshots of Gauge. They have
-      the latest features being developed, but are unstable.
-
-      ``create /etc/yum.repos.d/gauge-nightly.repo`` with the following content:
-
-      .. code-block:: text
-
-          [gauge-nightly]
-          name=gauge-nightly
-          baseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-nightly
-          gpgcheck=0
-          enabled=1
-
-      Use this command to do it in one step:
-
-      .. code-block:: console
-
-          echo -e "[gauge-nightly]\nname=gauge-nightly\nbaseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-nightly\ngpgcheck=0\nenabled=1" | sudo tee /etc/yum.repos.d/gauge-nightly.repo
-
-      Install
+      or
 
       .. code-block:: console
 
           sudo dnf install gauge
+
+    .. group-tab:: zip
+
+      Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
+
+      Example
+
+      .. code-block:: console
+
+        unzip gauge.$OS.$ARCH.zip -d $location
+
+      **Nightly Installation**
+
+      Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
+
+    .. group-tab:: curl
+
+      Install Gauge to /usr/local/bin by running
+
+      .. code-block:: console
+
+        curl -SsL https://downloads.gauge.org/stable | sh
+
+      To install at custom location
+
+      .. code-block:: console
+
+        curl -SsL https://downloads.gauge.org/stable | sh -s -- --location=[custom path]
 
   .. note:: Having trouble with installation? Head over to our :ref:`installation-faq` FAQ's.
 
@@ -331,7 +313,7 @@ To uninstall Gauge, run the following commands:
 
           brew uninstall gauge
 
-    .. group-tab:: Linux (Debian/Ubuntu)
+    .. group-tab:: Debian/APT
 
       Uninstallation using `apt-get <https://linux.die.net/man/8/apt-get>`__
 
@@ -339,7 +321,7 @@ To uninstall Gauge, run the following commands:
 
           sudo apt-get remove gauge
 
-    .. group-tab:: Linux (CentOS/RHEL)
+    .. group-tab:: YUM/DNF
 
       Uninstallation using `yum <https://www.centos.org/docs/5/html/5.1/Deployment_Guide/s1-yum-useful-commands.html>`__
 
@@ -347,11 +329,20 @@ To uninstall Gauge, run the following commands:
 
           yum remove gauge
 
-    .. group-tab:: Linux (Fedora)
+      or
 
       .. code-block:: console
 
           dnf remove gauge
+
+    .. group-tab:: zip
+
+      Remove the `gauge` binary from installed location.
+
+    .. group-tab:: curl
+
+      Remove the `gauge` binary from installed location.
+
 
 .. note:: If Gauge is installed in custom location, remove corresponding files/directory.
   More on Gauge install location can be found :ref:`here <troubleshoot_gauge_installation>`.
