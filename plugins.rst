@@ -23,11 +23,11 @@ write the implementation of specs in a language of their choice. For a
 list of available language runners, see how to :ref:`install language runners <install-language-runner>`.
 Allows you to write your tests in
 
--  `CSharp <https://github.com/getgauge/gauge-csharp>`__
--  `Java <https://github.com/getgauge/gauge-java>`__
--  `Javascript <https://github.com/getgauge/gauge-js>`__
--  `Python <https://github.com/getgauge/gauge-python>`__
--  `Ruby <https://github.com/getgauge/gauge-ruby>`__
+-  `CSharp <https://github.com/getgauge/gauge-csharp#gauge-csharp>`__
+-  `Java <https://github.com/getgauge/gauge-java#gauge-java>`__
+-  `Javascript <https://github.com/getgauge/gauge-js#gauge-js>`__
+-  `Python <https://github.com/getgauge/gauge-python#gauge-python>`__
+-  `Ruby <https://github.com/getgauge/gauge-ruby#gauge-ruby>`__
 
 .. _reporting_plugins:
 
@@ -35,10 +35,10 @@ Allows you to write your tests in
 
 Reporting plugins generate execution reports in various formats.
 
--  `HTML Report <https://github.com/getgauge/html-report>`__
--  `XML Report <https://github.com/getgauge/xml-report>`__
--  `Flash <https://github.com/getgauge/flash>`__
--  `JSON Report <https://github.com/getgauge-contrib/json-report>`__
+-  `HTML Report <https://github.com/getgauge/html-report#html-report>`__
+-  `XML Report <https://github.com/getgauge/xml-report#xml-report>`__
+-  `Flash <https://github.com/getgauge/flash#flash>`__
+-  `JSON Report <https://github.com/apoorvam/json-report#json-report>`__
 
 .. _documentation_plugins:
 
