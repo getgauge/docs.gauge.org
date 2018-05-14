@@ -244,19 +244,34 @@ Language runner
 Reporting plugin
 ^^^^^^^^^^^^^^^^^
 
-HTML Report
-++++++++++++
+.. container:: reporting-plugin
 
-.. code-block:: console
+  .. tabs::
 
-   gauge install html-report
+    .. tab:: HTML-Report
 
-XML Report
-++++++++++++
+      .. code-block:: console
 
-.. code-block:: console
+        gauge install html-report
 
-   gauge install xml-report
+    .. tab:: XML-Report
+
+      .. code-block:: console
+
+        gauge install xml-report
+
+    .. tab:: Flash
+
+      .. code-block:: console
+
+        gauge install flash
+
+    .. tab:: JSON-Report
+
+      .. code-block:: console
+
+        gauge install json-report
+
 
 Verify your installation
 ------------------------

@@ -37,6 +37,8 @@ Reporting plugins generate execution reports in various formats.
 
 -  `HTML Report <https://github.com/getgauge/html-report>`__
 -  `XML Report <https://github.com/getgauge/xml-report>`__
+- `Flash <https://github.com/getgauge/flash>`__
+- `JSON Report <https://github.com/getgauge-contrib/json-report>`__
 
 .. _documentation_plugins:
 

@@ -1125,7 +1125,10 @@ ensuring that the functionality is expressed clearly.
 
 Implementation
 """"""""""""""
-.. tabs::
+
+.. container:: code-snippet
+
+  .. tabs::
 
     .. group-tab:: C#
 
@@ -1202,8 +1205,9 @@ could be something like this.
 
 Implementation
 """"""""""""""
+.. container:: code-snippet
 
-.. tabs::
+  .. tabs::
 
     .. group-tab:: C#
 

@@ -15,30 +15,39 @@ Creating a Project
 
 Follow the instructions for the respective language below. On getting the message of ``Successfully initialized the project``, one should be able to run the specifications.
 
-.. code-block:: console
-   :caption: C#
+.. container:: code-snippet
 
-   gauge init csharp
+  .. tabs::
 
-.. code-block:: console
-   :caption: Java
+    .. group-tab:: C#
 
-   gauge init java
+      .. code-block:: console
 
-.. code-block:: console
-   :caption: Javascript
+        gauge init csharp
 
-   gauge init js
+    .. group-tab:: Java
 
-.. code-block:: console
-   :caption: Python
+      .. code-block:: console
 
-   gauge init python
+        gauge init java
 
-.. code-block:: console
-   :caption: Ruby
+    .. group-tab:: Javascript
 
-   gauge init ruby
+      .. code-block:: console
+
+        gauge init js
+
+    .. group-tab:: Python
+
+      .. code-block:: console
+
+        gauge init python
+
+    .. group-tab:: Ruby
+
+      .. code-block:: console
+
+        gauge init ruby
 
 .. note::
 

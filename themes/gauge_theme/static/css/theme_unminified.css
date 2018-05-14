@@ -7425,6 +7425,19 @@ ul.current {
     background-image: url(../img/vs-logo.svg) !important;
 }
 
+.reporting-plugin .sphinx-tabs a.item:nth-child(1) .container {
+    background-image: url(../img/html-logo.svg) !important;
+}
+.reporting-plugin .sphinx-tabs a.item:nth-child(2) .container {
+    background-image: url(../img/xml-logo.svg) !important;
+}
+.reporting-plugin .sphinx-tabs a.item:nth-child(3) .container {
+    background-image: url(../img/flash-logo.svg) !important;
+}
+.reporting-plugin .sphinx-tabs a.item:nth-child(4) .container {
+    background-image: url(../img/json-logo.svg) !important;
+}
+
 .ui.segment {
     padding: 10px !important;
 }
