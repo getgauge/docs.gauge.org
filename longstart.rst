@@ -6,11 +6,7 @@ Long Start
 Why Gauge?
 ----------
 
-The communication breakdowns between Developers and Business
-Stakeholders is a common risk of software development. Gauge is an
-advanced automation tool that allows requirements to be written in a way
-that will be understood by all roles in a project and help bridge the
-gap.
+Read our article, `Why we built Gauge! <https://blog.getgauge.io/why-we-built-gauge-6e31bb4848cd>`__
 
 Some of the **key features** of Gauge that make it stand unique include:
 
