@@ -6,196 +6,198 @@ Installation
 Gauge Core
 ----------
 
-.. container:: platform-install
+Windows
+^^^^^^^
 
-  .. tabs::
+**Using Chocolatey**
 
-    .. group-tab:: Windows
+Requires `chocolatey <https://chocolatey.org//>`__, and Internet Connection.
 
-      **Using Chocolatey**
+.. code-block:: console
 
-      Requires `chocolatey <https://chocolatey.org//>`__, and Internet Connection.
+    choco install gauge # New Installation
+    choco upgrade gauge # Upgrade current installation
 
-      .. code-block:: console
 
-          choco install gauge # New Installation
-          choco upgrade gauge # Upgrade current installation
 
+**Offline Installation**
 
+Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
 
-      **Offline Installation**
 
-      Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
 
+**Nightly installation**
 
+Nightly releases are latest development snapshots of Gauge. They have
+the latest features being developed, but are unstable.
 
-      **Nightly installation**
+Download the Gauge archive from `here <https://bintray.com/gauge/Gauge/Nightly/>`__. Extract it to a location and add it to system path.
 
-      Nightly releases are latest development snapshots of Gauge. They have
-      the latest features being developed, but are unstable.
+macOS
+^^^^^
 
-      Download the Gauge archive from `here <https://bintray.com/gauge/Gauge/Nightly/>`__. Extract it to a location and add it to system path.
+**Using HomeBrew**
 
-    .. group-tab:: macOS
+Requires `homebrew <https://brew.sh/>`__ and Internet Connection
 
-      **Using HomeBrew**
+.. code-block:: console
 
-      Requires `homebrew <https://brew.sh/>`__ and Internet Connection
+    brew update
+    brew install gauge
 
-      .. code-block:: console
 
-          brew update
-          brew install gauge
+**Offline Installation**
 
+Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
 
-      **Offline Installation**
 
-      Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
+**Nightly installation**
 
+Nightly releases are latest development snapshots of Gauge. They have
+the latest features being developed, but are unstable.
 
-      **Nightly installation**
+Download the Gauge archive from `here <https://bintray.com/gauge/Gauge/Nightly/>`__. Extract it to a location and add it to system path.
 
-      Nightly releases are latest development snapshots of Gauge. They have
-      the latest features being developed, but are unstable.
+Debian/APT
+^^^^^^^^^^
 
-      Download the Gauge archive from `here <https://bintray.com/gauge/Gauge/Nightly/>`__. Extract it to a location and add it to system path.
+Add Gauge's GPG key, URL to repository list and install Gauge.
 
-    .. group-tab:: Debian/APT
+.. code-block:: console
 
-        Add Gauge's GPG key, URL to repository list and install Gauge.
+    sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
+    echo deb https://dl.bintray.com/gauge/gauge-deb stable main | sudo tee -a /etc/apt/sources.list
+    sudo apt-get update
+    sudo apt-get install gauge
 
-        .. code-block:: console
 
-            sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
-            echo deb https://dl.bintray.com/gauge/gauge-deb stable main | sudo tee -a /etc/apt/sources.list
-            sudo apt-get update
-            sudo apt-get install gauge
+**Offline Installation**
 
+Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
 
-        **Offline Installation**
+**Nightly Installation**
 
-        Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
+Nightly releases are latest development snapshots of Gauge. They have
+the latest features being developed, but are unstable.
 
-        **Nightly Installation**
+Add Gauge's GPG key:
 
-        Nightly releases are latest development snapshots of Gauge. They have
-        the latest features being developed, but are unstable.
+.. code-block:: console
 
-        Add Gauge's GPG key:
+    sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
 
-        .. code-block:: console
+Add to repository list:
 
-            sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
+.. code-block:: console
 
-        Add to repository list:
+    echo deb https://dl.bintray.com/gauge/gauge-deb nightly main | sudo tee -a /etc/apt/sources.list
 
-        .. code-block:: console
+Install
 
-            echo deb https://dl.bintray.com/gauge/gauge-deb nightly main | sudo tee -a /etc/apt/sources.list
+.. code-block:: console
 
-        Install
+    sudo apt-get update
+    sudo apt-get install gauge
 
-        .. code-block:: console
+YUM/DNF
+^^^^^^^
 
-            sudo apt-get update
-            sudo apt-get install gauge
+Create file ``/etc/yum.repos.d/gauge-stable.repo`` with the following content:
 
-    .. group-tab:: YUM/DNF
+.. code-block:: text
 
-      Create file ``/etc/yum.repos.d/gauge-stable.repo`` with the following content:
+    [gauge-stable]
+    name=gauge-stable
+    baseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-stable
+    gpgcheck=0
+    enabled=1
 
-      .. code-block:: text
+Use this command to do it in one step:
 
-          [gauge-stable]
-          name=gauge-stable
-          baseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-stable
-          gpgcheck=0
-          enabled=1
+.. code-block:: console
 
-      Use this command to do it in one step:
+    echo -e "[gauge-stable]\nname=gauge-stable\nbaseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-stable\ngpgcheck=0\nenabled=1" | sudo tee /etc/yum.repos.d/gauge-stable.repo
 
-      .. code-block:: console
+Install
 
-          echo -e "[gauge-stable]\nname=gauge-stable\nbaseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-stable\ngpgcheck=0\nenabled=1" | sudo tee /etc/yum.repos.d/gauge-stable.repo
+.. code-block:: console
 
-      Install
+  sudo yum install gauge
 
-      .. code-block:: console
+or
 
-        sudo yum install gauge
+.. code-block:: console
 
-      or
+  sudo dnf install gauge
 
-      .. code-block:: console
+**Offline Installation**
 
-        sudo dnf install gauge
+Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
 
-      **Offline Installation**
+**Nightly Installation**
 
-      Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
+Nightly releases are latest development snapshots of Gauge. They have
+the latest features being developed, but are unstable.
 
-      **Nightly Installation**
+``create /etc/yum.repos.d/gauge-nightly.repo`` with the following content:
 
-      Nightly releases are latest development snapshots of Gauge. They have
-      the latest features being developed, but are unstable.
+.. code-block:: text
 
-      ``create /etc/yum.repos.d/gauge-nightly.repo`` with the following content:
+    [gauge-nightly]
+    name=gauge-nightly
+    baseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-nightly
+    gpgcheck=0
+    enabled=1
 
-      .. code-block:: text
+Use this command to do it in one step:
 
-          [gauge-nightly]
-          name=gauge-nightly
-          baseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-nightly
-          gpgcheck=0
-          enabled=1
+.. code-block:: console
 
-      Use this command to do it in one step:
+    echo -e "[gauge-nightly]\nname=gauge-nightly\nbaseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-nightly\ngpgcheck=0\nenabled=1" | sudo tee /etc/yum.repos.d/gauge-nightly.repo
 
-      .. code-block:: console
+Install
 
-          echo -e "[gauge-nightly]\nname=gauge-nightly\nbaseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-nightly\ngpgcheck=0\nenabled=1" | sudo tee /etc/yum.repos.d/gauge-nightly.repo
+.. code-block:: console
 
-      Install
+    sudo yum install gauge
 
-      .. code-block:: console
+or
 
-          sudo yum install gauge
+.. code-block:: console
 
-      or
+    sudo dnf install gauge
 
-      .. code-block:: console
+Zip
+^^^
 
-          sudo dnf install gauge
+Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
 
-    .. group-tab:: zip
+Example
 
-      Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
+.. code-block:: console
 
-      Example
+  unzip gauge.$OS.$ARCH.zip -d $location
 
-      .. code-block:: console
+**Nightly Installation**
 
-        unzip gauge.$OS.$ARCH.zip -d $location
+Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
 
-      **Nightly Installation**
+Curl
+^^^^
 
-      Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
+Install Gauge to /usr/local/bin by running
 
-    .. group-tab:: curl
+.. code-block:: console
 
-      Install Gauge to /usr/local/bin by running
+  curl -SsL https://downloads.gauge.org/stable | sh
 
-      .. code-block:: console
+To install at custom location
 
-        curl -SsL https://downloads.gauge.org/stable | sh
+.. code-block:: console
 
-      To install at custom location
+  curl -SsL https://downloads.gauge.org/stable | sh -s -- --location=[custom path]
 
-      .. code-block:: console
-
-        curl -SsL https://downloads.gauge.org/stable | sh -s -- --location=[custom path]
-
-  .. note:: Having trouble with installation? Head over to our :ref:`installation-faq` FAQ's.
+.. note:: Having trouble with installation? Head over to our :ref:`installation-faq` FAQ's.
 
 
 Plugins
@@ -205,39 +207,40 @@ Plugins
 Language runner
 ^^^^^^^^^^^^^^^
 
-.. container:: code-snippet
+C#
+^^
 
-  .. tabs::
+.. code-block:: console
 
-    .. group-tab:: C#
+  gauge install csharp
 
-      .. code-block:: console
+Java
+^^^^
 
-        gauge install csharp
+.. code-block:: console
 
-    .. group-tab:: Java
+  gauge install java
 
-      .. code-block:: console
+JavaScript
+^^^^^^^^^^
 
-        gauge install java
+.. code-block:: console
 
-    .. group-tab:: JavaScript
+  gauge install js
 
-      .. code-block:: console
+Python
+^^^^^^
 
-        gauge install js
+.. code-block:: console
 
-    .. group-tab:: Python
+  gauge install python
 
-      .. code-block:: console
+Ruby
+^^^^
 
-        gauge install python
+.. code-block:: console
 
-    .. group-tab:: Ruby
-
-      .. code-block:: console
-
-        gauge install ruby
+  gauge install ruby
 
 .. note:: IDEs can be used to create the projects and run specifications, this example illustrates the command line usage.
 
@@ -293,55 +296,57 @@ Gauge
 ^^^^^
 To uninstall Gauge, run the following commands:
 
-.. container:: platform-install
+Windows
+^^^^^^^
 
-  .. tabs::
+Uninstallation using `chocolatey <https://github.com/chocolatey/choco/wiki/CommandsUninstall>`__
 
-    .. group-tab:: Windows
+.. code-block:: console
 
-      Uninstallation using `chocolatey <https://github.com/chocolatey/choco/wiki/CommandsUninstall>`__
+    choco uninstall gauge
 
-      .. code-block:: console
+macOS
+^^^^^
 
-          choco uninstall gauge
+Uninstallation using `HomeBrew <https://docs.brew.sh/FAQ.html#how-do-i-uninstall-a-formula>`__
 
-    .. group-tab:: macOS
+.. code-block:: console
 
-      Uninstallation using `HomeBrew <https://docs.brew.sh/FAQ.html#how-do-i-uninstall-a-formula>`__
+    brew uninstall gauge
 
-      .. code-block:: console
+Debian/APT
+^^^^^^^^^^
 
-          brew uninstall gauge
+Uninstallation using `apt-get <https://linux.die.net/man/8/apt-get>`__
 
-    .. group-tab:: Debian/APT
+.. code-block:: console
 
-      Uninstallation using `apt-get <https://linux.die.net/man/8/apt-get>`__
+    sudo apt-get remove gauge
 
-      .. code-block:: console
+YUM/DNF
+^^^^^^^
 
-          sudo apt-get remove gauge
+Uninstallation using `yum <https://www.centos.org/docs/5/html/5.1/Deployment_Guide/s1-yum-useful-commands.html>`__
 
-    .. group-tab:: YUM/DNF
+.. code-block:: console
 
-      Uninstallation using `yum <https://www.centos.org/docs/5/html/5.1/Deployment_Guide/s1-yum-useful-commands.html>`__
+    yum remove gauge
 
-      .. code-block:: console
+or
 
-          yum remove gauge
+.. code-block:: console
 
-      or
+    dnf remove gauge
 
-      .. code-block:: console
+Zip
+^^^
 
-          dnf remove gauge
+Remove the `gauge` binary from installed location.
 
-    .. group-tab:: zip
+Curl
+^^^^
 
-      Remove the `gauge` binary from installed location.
-
-    .. group-tab:: curl
-
-      Remove the `gauge` binary from installed location.
+Remove the `gauge` binary from installed location.
 
 
 .. note:: If Gauge is installed in custom location, remove corresponding files/directory.

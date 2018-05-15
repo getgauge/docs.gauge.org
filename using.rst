@@ -31,7 +31,7 @@ To create or initialize a Gauge project use run
 You can also create a project right from your the 
 IDE(`Visual Studio Code <https://github.com/getgauge/gauge-vscode/blob/master/README.md#create-new-project>`__,
 `Intellij <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md#creating-a-java-project>`__,
- Visual Studio).
+Visual Studio).
 
 Gauge Project Templates
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -175,138 +175,139 @@ Project files
 
 Creating a new project adds some language specific files.
 
-.. container:: code-snippet
+C#
+^^
 
-    .. tabs::
+.. code-block:: text
 
-        .. tab:: C#
+    ├── foo.csproj
+    ├── foo.sln
+    ├── manifest.json
+    ├── packages.config
+    ├── StepImplementation.cs
+    │
+    ├── env
+    │   └───default
+    │           default.properties
+    │
+    ├───packages
+        └───<Nuget Package Binaries>
+    ├───Properties
+    │       AssemblyInfo.cs
+    │
+    └───specs
+            hello_world.spec
 
-            .. code-block:: text
+**packages.config**
 
-                ├── foo.csproj
-                ├── foo.sln
-                ├── manifest.json
-                ├── packages.config
-                ├── StepImplementation.cs
-                │
-                ├── env
-                │   └───default
-                │           default.properties
-                │
-                ├───packages
-                    └───<Nuget Package Binaries>
-                ├───Properties
-                │       AssemblyInfo.cs
-                │
-                └───specs
-                        hello_world.spec
+For ``nuget``. Contains the dependencies for Gauge. One can add more to
+this list, depending on project needs.
 
-            **packages.config**
+**StepImplementation.cs**
 
-            For ``nuget``. Contains the dependencies for Gauge. One can add more to
-            this list, depending on project needs.
+Contains the implementations for the sample steps defined in
+``hello_world.spec``.
 
-            **StepImplementation.cs**
+Java
+^^^^
 
-            Contains the implementations for the sample steps defined in
-            ``hello_world.spec``.
+.. code-block:: text
 
-        .. tab:: Java
-
-            .. code-block:: text
-
-                ├── manifest.json
-                ├── libs
-                └── src
-                    └── test
-                        └── java
-                            └── StepImplementation.java
-                ├── env
-                    └── default
-                        └── java.properties
-                └───specs
-                    example.spec
+    ├── manifest.json
+    ├── libs
+    └── src
+        └── test
+            └── java
+                └── StepImplementation.java
+    ├── env
+        └── default
+            └── java.properties
+    └───specs
+        example.spec
 
 
-            **libs**
+**libs**
 
-            This contains the additional java dependencies required for the project.
+This contains the additional java dependencies required for the project.
 
-            **src**
+**src**
 
-            Src directory contains the classes the test code including step
-            implementations.
+Src directory contains the classes the test code including step
+implementations.
 
-            **java.properties**
+**java.properties**
 
-            This defines configurations for java runner plugin.
-            See :doc:`configuration` for more details.
+This defines configurations for java runner plugin.
+See :doc:`configuration` for more details.
 
-        .. tab:: JavaScript
+JavaScript
+^^^^^^^^^^
 
-            .. code-block:: text
+.. code-block:: text
 
-                ├── manifest.json
-                └── tests
-                        └── step_implementation.js
-                ├── env
-                    └── default
-                        └── js.properties
-                └───specs
-                        example.spec
+    ├── manifest.json
+    └── tests
+            └── step_implementation.js
+    ├── env
+        └── default
+            └── js.properties
+    └───specs
+            example.spec
 
-            **tests**
+**tests**
 
-            tests directory contains the test code including step implementations.
+tests directory contains the test code including step implementations.
 
-            **js.properties**
+**js.properties**
 
-            This defines configurations for Javascript runner plugin.
-            See :doc:`configuration` for more details.
+This defines configurations for Javascript runner plugin.
+See :doc:`configuration` for more details.
 
-        .. tab:: Python
+Python
+^^^^^^
 
-            .. code-block:: text
+.. code-block:: text
 
-                ├── manifest.json
-                └── step_impl
-                        └── step_impl.py
-                ├── env
-                    └── default
-                        └── python.properties
-                └───specs
-                    example.spec
+    ├── manifest.json
+    └── step_impl
+            └── step_impl.py
+    ├── env
+        └── default
+            └── python.properties
+    └───specs
+        example.spec
 
-            **step_impl**
+**step_impl**
 
-            step_impl directory contains the test code including step implementations.
+step_impl directory contains the test code including step implementations.
 
-            **python.properties**
+**python.properties**
 
-            This defines configurations for Python runner plugin.
-            See :doc:`configuration` for more details.
+This defines configurations for Python runner plugin.
+See :doc:`configuration` for more details.
 
-        .. tab:: Ruby
+Ruby
+^^^^
 
-            .. code-block:: text
+.. code-block:: text
 
-                ├── manifest.json
-                ├── env
-                │   └── default
-                │       └── ruby.properties
-                └── step_implementations
-                    └── step_implementation.rb
-                └───specs
-                        example.spec
+    ├── manifest.json
+    ├── env
+    │   └── default
+    │       └── ruby.properties
+    └── step_implementations
+        └── step_implementation.rb
+    └───specs
+            example.spec
 
-            **step_implementations directory**
+**step_implementations directory**
 
-            This contains all the ``.rb`` files with the test code including step implementations in ruby
+This contains all the ``.rb`` files with the test code including step implementations in ruby
 
-            **ruby.properties**
+**ruby.properties**
 
-            This defines configurations for ruby runner plugin.
-            See :doc:`configuration` for more details.
+This defines configurations for ruby runner plugin.
+See :doc:`configuration` for more details.
 
 
 .. _executing_tests:
@@ -344,9 +345,7 @@ This changes the default specification directory from ``specs`` to the value def
 
 Gauge specifications can also be run from within the IDE
 (`Visual Studio Code <https://github.com/getgauge/gauge-vscode/blob/master/README.md#run-specifications-and-scenarios>`__,
-`IntelliJ IDEA <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md#execution>`__,
- Visual Studio)
-
+`IntelliJ IDEA <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md#execution>`__, Visual Studio)
 
 Specify scenarios
 ^^^^^^^^^^^^^^^^^
@@ -1006,29 +1005,28 @@ IDE Support
 The listed IDE plugins are available for gauge to make writing specs and
 test code simpler.
 
-.. container:: ide-support
+Visual Studio Code
+^^^^^^^^^^^^^^^^^^
 
-  .. tabs::
+Gauge projects can be created and executed in Visual Studio Code using the `Gauge extension for VSCode <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__.
+This plugin currently supports Gauge with JavaScript, Ruby and Python.
 
-    .. tab:: Visual Studio Code
-
-      Gauge projects can be created and executed in Visual Studio Code using the `Gauge extension for VSCode <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__.
-      This plugin currently supports Gauge with JavaScript, Ruby and Python.
-
-      More information on IDE features and how to use it can be found `here <https://github.com/getgauge/gauge-vscode/blob/master/README.md>`__.
+More information on IDE features and how to use it can be found `here <https://github.com/getgauge/gauge-vscode/blob/master/README.md>`__.
 
 
-    .. tab:: InteliJ Idea
+InteliJ Idea
+^^^^^^^^^^^^
 
-      Gauge projects can be created and executed in IntelliJ IDEA using the `Gauge plugin for IntelliJ IDEA <https://plugins.jetbrains.com/plugin/7535-gauge>`__.
-      This plugin only supports Gauge with Java.
+Gauge projects can be created and executed in IntelliJ IDEA using the `Gauge plugin for IntelliJ IDEA <https://plugins.jetbrains.com/plugin/7535-gauge>`__.
+This plugin only supports Gauge with Java.
 
-      More information on IDE features and how to use it can be found `here <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__.
+More information on IDE features and how to use it can be found `here <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__.
 
-    .. tab:: Visual Studio
+Visual Studio
+^^^^^^^^^^^^^
 
-      Gauge projects can be created and executed in Visual Studio using the `Gauge extension for Visual Studio <https://marketplace.visualstudio.com/items?itemName=vs-publisher-1071478.GaugepluginforVisualStudio>`__.
-      This plugin currently supports Gauge with C#.
+Gauge projects can be created and executed in Visual Studio using the `Gauge extension for Visual Studio <https://marketplace.visualstudio.com/items?itemName=vs-publisher-1071478.GaugepluginforVisualStudio>`__.
+This plugin currently supports Gauge with C#.
 
-      More information on IDE features and how to use it can be found `here <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__.
+More information on IDE features and how to use it can be found `here <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__.
 

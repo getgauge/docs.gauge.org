@@ -23,61 +23,62 @@ Simple step
 
 **Implementation**
 
-.. container:: code-snippet
+C#
+^^
 
-  .. tabs::
+.. code-block:: java
 
-    .. group-tab:: C#
+    // The Method can be written in **any C# class** as long as it is part of the project.
+    public class StepImplementation {
 
-      .. code-block:: java
+      [Step("Say <greeting> to <product name>")]
+      public void HelloWorld(string greeting, string name) {
+          // Step implementation
+      }
+    }
 
-          // The Method can be written in **any C# class** as long as it is part of the project.
-          public class StepImplementation {
+Java
+^^^^
 
-            [Step("Say <greeting> to <product name>")]
-            public void HelloWorld(string greeting, string name) {
-                // Step implementation
-            }
-          }
+.. code-block:: java
 
-    .. group-tab:: Java
+    // This Method can be written in any java class as long as it is in classpath.
 
-      .. code-block:: java
+    public class StepImplementation {
 
-          // This Method can be written in any java class as long as it is in classpath.
+      @Step("Say <greeting> to <product name>")
+      public void helloWorld(String greeting, String name) {
+          // Step implementation
+      }
 
-          public class StepImplementation {
+    }
 
-            @Step("Say <greeting> to <product name>")
-            public void helloWorld(String greeting, String name) {
-                // Step implementation
-            }
+JavaScript
+^^^^^^^^^^
 
-          }
+.. code-block:: javascript
 
-    .. group-tab:: JavaScript
+    step("Say <greeting> to <name>", async function(greeting, name) {
+      throw 'Unimplemented Step';
+    });
 
-      .. code-block:: javascript
+Python
+^^^^^^
 
-          step("Say <greeting> to <name>", async function(greeting, name) {
-            throw 'Unimplemented Step';
-          });
+.. code-block:: python
 
-    .. group-tab:: Python
+    @step("Say <greeting> to <product name>")
+    def create_following_characters(greeting, name):
+        assert False, "Add implementation code"
 
-      .. code-block:: python
+Ruby
+^^^^
 
-          @step("Say <greeting> to <product name>")
-          def create_following_characters(greeting, name):
-              assert False, "Add implementation code"
+.. code-block:: ruby
 
-    .. group-tab:: Ruby
-
-      .. code-block:: ruby
-
-          step 'Say <greeting> to <product name>' do |greeting, name|
-          # Code for the step
-          end
+    step 'Say <greeting> to <product name>' do |greeting, name|
+    # Code for the step
+    end
 
 Step with table
 ^^^^^^^^^^^^^^^
@@ -95,73 +96,71 @@ Step with table
 
 **Implementation**
 
-.. container:: code-snippet
+C#
+^^
 
-  .. tabs::
+.. code-block:: java
 
-    .. group-tab:: C#
+  // Here Table is a custom data structure defined by gauge.
+  // This is available by adding a reference to the Gauge.CSharp.Lib.
+  // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/
 
-      .. code-block:: java
+  public class Users {
 
-        // Here Table is a custom data structure defined by gauge.
-        // This is available by adding a reference to the Gauge.CSharp.Lib.
-        // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/
+    [Step("Create following <role> users <table>")]
+    public void HelloWorld(string role, Table table) {
+        // Step implementation
+    }
 
-        public class Users {
+  }
 
-          [Step("Create following <role> users <table>")]
-          public void HelloWorld(string role, Table table) {
-              // Step implementation
-          }
+Java
+^^^^
 
-        }
+.. code-block:: java
 
-    .. group-tab:: Java
+  // Table is a custom data structure defined by gauge.
+  public class Users {
 
-      .. code-block:: java
+    @Step("Create following <race> characters <table>")
+    public void createCharacters(String type, Table table) {
+        // Step implementation
+    }
 
-        // Table is a custom data structure defined by gauge.
-        public class Users {
+  }
 
-          @Step("Create following <race> characters <table>")
-          public void createCharacters(String type, Table table) {
-              // Step implementation
-          }
+JavaScript
+^^^^^^^^^^
 
-        }
+.. code-block:: javascript
 
-    .. group-tab:: JavaScript
+  step("Create following <arg0> characters <arg1>", async function(arg0, arg1) {
+    throw 'Unimplemented Step';
+  });
 
-      .. code-block:: javascript
+Python
+^^^^^^
 
-        step("Create following <arg0> characters <arg1>", async function(arg0, arg1) {
-          throw 'Unimplemented Step';
-        });
+.. code-block:: python
 
-    .. group-tab:: Python
+  # Here Table is a custom data structure defined by gauge.
 
-      .. code-block:: python
+  @step("Create following <hobbit> characters <table>")
+  def create_following_characters(hobbit, table):
+      assert False, "Add implementation code"
 
-        # Here Table is a custom data structure defined by gauge.
+Ruby
+^^^^
 
-        @step("Create following <hobbit> characters <table>")
-        def create_following_characters(hobbit, table):
-            assert False, "Add implementation code"
+.. code-block:: ruby
+  :caption: Ruby
 
-    .. group-tab:: Ruby
+  # Here table is a custom data structure defined by gauge-ruby.
 
-      .. code-block:: ruby
-        :caption: Ruby
-
-        # Here table is a custom data structure defined by gauge-ruby.
-
-        step 'Create following <race> characters <table>' do |role, table|
-          puts table.rows
-          puts table.columns
-        end
-
-
-
+  step 'Create following <race> characters <table>' do |role, table|
+    puts table.rows
+    puts table.columns
+  end
 
 .. _execution_hooks:
 
@@ -173,215 +172,216 @@ levels during the test suite execution.
 
 **Implementation**
 
-.. container:: code-snippet
+C#
+^^
 
-  .. tabs::
+.. code-block:: java
 
-    .. group-tab:: C#
+  public class ExecutionHooks
+  {
 
-      .. code-block:: java
+    [BeforeSuite]
+    public void BeforeSuite() {
+      // Code for before suite
+    }
 
-        public class ExecutionHooks
-        {
+    [AfterSuite]
+    public void AfterSuite() {
+      // Code for after suite
+    }
 
-          [BeforeSuite]
-          public void BeforeSuite() {
-            // Code for before suite
-          }
+    [BeforeSpec]
+    public void BeforeSpec() {
+      // Code for before spec
+    }
 
-          [AfterSuite]
-          public void AfterSuite() {
-            // Code for after suite
-          }
+    [AfterSpec]
+    public void AfterSpec() {
+      // Code for after spec
+    }
 
-          [BeforeSpec]
-          public void BeforeSpec() {
-            // Code for before spec
-          }
+    [BeforeScenario]
+    public void BeforeScenario() {
+      // Code for before scenario
+    }
 
-          [AfterSpec]
-          public void AfterSpec() {
-            // Code for after spec
-          }
+    [AfterScenario]
+    public void AfterScenario() {
+      // Code for after scenario
+    }
 
-          [BeforeScenario]
-          public void BeforeScenario() {
-            // Code for before scenario
-          }
+    [BeforeStep]
+    public void BeforeStep() {
+      // Code for before step
+    }
 
-          [AfterScenario]
-          public void AfterScenario() {
-            // Code for after scenario
-          }
+    [AfterStep]
+    public void AfterStep() {
+      // Code for after step
+    }
 
-          [BeforeStep]
-          public void BeforeStep() {
-            // Code for before step
-          }
+  }
 
-          [AfterStep]
-          public void AfterStep() {
-            // Code for after step
-          }
+Java
+^^^^
 
-        }
+.. code-block:: java
 
-    .. group-tab:: Java
+  public class ExecutionHooks {
 
-      .. code-block:: java
+    @BeforeSuite public void BeforeSuite() {
+      // Code for before suite
+    }
 
-        public class ExecutionHooks {
+    @AfterSuite
+    public void AfterSuite() {
+      // Code for after suite
+    }
 
-          @BeforeSuite public void BeforeSuite() {
-            // Code for before suite
-          }
+    @BeforeSpec
+    public void BeforeSpec() {
+      // Code for before spec
+    }
 
-          @AfterSuite
-          public void AfterSuite() {
-            // Code for after suite
-          }
+    @AfterSpec
+    public void AfterSpec() {
+      // Code for after spec
+    }
 
-          @BeforeSpec
-          public void BeforeSpec() {
-            // Code for before spec
-          }
+    @BeforeScenario
+    public void BeforeScenario() {
+      // Code for before scenario
+    }
 
-          @AfterSpec
-          public void AfterSpec() {
-            // Code for after spec
-          }
+    @AfterScenario
+    public void AfterScenario() {
+      // Code for after scenario
+    }
 
-          @BeforeScenario
-          public void BeforeScenario() {
-            // Code for before scenario
-          }
+    @BeforeStep
+    public void BeforeStep() {
+      // Code for before step
+    }
 
-          @AfterScenario
-          public void AfterScenario() {
-            // Code for after scenario
-          }
+    @AfterStep
+    public void AfterStep() {
+      // Code for after step
+    }
 
-          @BeforeStep
-          public void BeforeStep() {
-            // Code for before step
-          }
+  }
 
-          @AfterStep
-          public void AfterStep() {
-            // Code for after step
-          }
+JavaScript
+^^^^^^^^^^
 
-        }
+.. code-block:: javascript
 
-    .. group-tab:: JavaScript
+  hooks.beforeSuite(fn, [opts]) {
+    // Code for before suite
+  }
 
-      .. code-block:: javascript
+  hooks.beforeSpec(fn, [opts]) {
+    // Code for before spec
+  }
 
-        hooks.beforeSuite(fn, [opts]) {
-          // Code for before suite
-        }
+  hooks.beforeScenario(fn, [opts]) {
+    // Code for before scenario
+  }
 
-        hooks.beforeSpec(fn, [opts]) {
-          // Code for before spec
-        }
+  hooks.beforeStep(fn, [opts]) {
+    // Code for before step
+  }
 
-        hooks.beforeScenario(fn, [opts]) {
-          // Code for before scenario
-        }
+  hooks.afterSuite(fn, [opts]) {
+    // Code for after suite
+  }
 
-        hooks.beforeStep(fn, [opts]) {
-          // Code for before step
-        }
+  hooks.afterSpec(fn, [opts]) {
+    // Code for after spec
+  }
 
-        hooks.afterSuite(fn, [opts]) {
-          // Code for after suite
-        }
+  hooks.afterScenario(fn, [opts]) {
+    // Code for after scenario
+  }
 
-        hooks.afterSpec(fn, [opts]) {
-          // Code for after spec
-        }
+  hooks.afterStep(fn, [opts]) {
+    // Code for after step
+  }
 
-        hooks.afterScenario(fn, [opts]) {
-          // Code for after scenario
-        }
+Python
+^^^^^^
 
-        hooks.afterStep(fn, [opts]) {
-          // Code for after step
-        }
+.. code-block:: python
 
-    .. group-tab:: Python
+  from getgauge.python import before_step, after_step, before_scenario, after_scenario, before_spec, after_spec, before_suite, after_suite
 
-      .. code-block:: python
+  @before_step
+  def before_step_hook():
+      print("before step hook")
 
-        from getgauge.python import before_step, after_step, before_scenario, after_scenario, before_spec, after_spec, before_suite, after_suite
+  @after_step
+  def after_step_hook():
+      print("after step hook")
 
-        @before_step
-        def before_step_hook():
-            print("before step hook")
+  @before_scenario
+  def before_scenario_hook():
+      print("before scenario hook")
 
-        @after_step
-        def after_step_hook():
-            print("after step hook")
+  @after_scenario
+  def after_scenario_hook():
+      print("after scenario hook")
 
-        @before_scenario
-        def before_scenario_hook():
-            print("before scenario hook")
+  @before_spec
+  def before_spec_hook():
+      print("before spec hook")
 
-        @after_scenario
-        def after_scenario_hook():
-            print("after scenario hook")
+  @after_spec
+  def after_spec_hook():
+      print("after spec hook")
 
-        @before_spec
-        def before_spec_hook():
-            print("before spec hook")
+  @before_suite
+  def before_suite_hook():
+      print("before suite hook")
 
-        @after_spec
-        def after_spec_hook():
-            print("after spec hook")
+  @after_suite
+  def after_spec_hook():
+      print("after suite hook")
 
-        @before_suite
-        def before_suite_hook():
-            print("before suite hook")
+Ruby
+^^^^
 
-        @after_suite
-        def after_spec_hook():
-            print("after suite hook")
+.. code-block:: ruby
 
-    .. group-tab:: Ruby
+  before_suite do
+    # Code for before suite
+  end
 
-      .. code-block:: ruby
+  after_suite do
+    # Code for after suite
+  end
 
-        before_suite do
-          # Code for before suite
-        end
+  before_spec do
+    # Code for before spec
+  end
 
-        after_suite do
-          # Code for after suite
-        end
+  after_spec do
+    # Code for after spec
+  end
 
-        before_spec do
-          # Code for before spec
-        end
+  before_scenario do
+    # Code for before scenario
+  end
 
-        after_spec do
-          # Code for after spec
-        end
+  after_scenario do
+    # Code for after scenario
+  end
 
-        before_scenario do
-          # Code for before scenario
-        end
+  before_step do
+    # Code for before step
+  end
 
-        after_scenario do
-          # Code for after scenario
-        end
-
-        before_step do
-          # Code for before step
-        end
-
-        after_step do
-          # Code for after step
-        end
+  after_step do
+    # Code for after step
+  end
 
 
 By default, Gauge clears the state after each scenario so that new
@@ -395,65 +395,67 @@ Current Execution Context in the Hook
    scenario and step** executing, an additional **ExecutionContext**
    parameter can be added to the :ref:`hooks <execution_hooks>` method.
 
-.. container:: code-snippet
-    .. tabs::
+C#
+^^
 
-        .. group-tab:: C#
+.. code-block:: java
 
-            .. code-block:: java
+    This feature is not yet
+    supported in Gauge-CSharp. Please refer to
+    https://github.com/getgauge/gauge-csharp/issues/53 for updates.
 
-                This feature is not yet
-                supported in Gauge-CSharp. Please refer to
-                https://github.com/getgauge/gauge-csharp/issues/53 for updates.
+Java
+^^^^
 
-        .. group-tab:: Java
+.. code-block:: java
 
-            .. code-block:: java
+    @BeforeScenario
+    public void loginUser(ExecutionContext context) {
+    String scenarioName = context.getCurrentScenario().getName();
+    // Code for before scenario
+    }
 
-                @BeforeScenario
-                public void loginUser(ExecutionContext context) {
-                String scenarioName = context.getCurrentScenario().getName();
-                // Code for before scenario
-                }
+    @AfterSpec
+    public void performAfterSpec(ExecutionContext context) {
+    Specification currentSpecification = context.getCurrentSpecification();
+    // Code for after step
+    }
 
-                @AfterSpec
-                public void performAfterSpec(ExecutionContext context) {
-                Specification currentSpecification = context.getCurrentSpecification();
-                // Code for after step
-                }
+JavaScript
+^^^^^^^^^^
 
-        .. group-tab:: JavaScript
+.. code-block:: javascript
 
-            .. code-block:: javascript
+    hooks.beforeScenario(fn, [opts]) { ... }
+    hooks.afterSpec(fn, [opts]) { ... }
 
-                hooks.beforeScenario(fn, [opts]) { ... }
-                hooks.afterSpec(fn, [opts]) { ... }
+Python
+^^^^^^
 
-        .. group-tab:: Python
+.. code-block:: python
 
-            .. code-block:: python
+    from getgauge.python import before_step, after_scenario
 
-                from getgauge.python import before_step, after_scenario
+    @before_scenario
+    def before_scenario_hook():
+        print("before scenario hook")
 
-                @before_scenario
-                def before_scenario_hook():
-                    print("before scenario hook")
+    @after_spec
+    def after_spec_hook():
+        print("after spec hook")
 
-                @after_spec
-                def after_spec_hook():
-                    print("after spec hook")
+Ruby
+^^^^
 
-        .. group-tab:: Ruby
+.. code-block:: ruby
 
-            .. code-block:: ruby
+    before_spec do |execution_info|
+        puts execution_info.inspect
+    end
 
-                before_spec do |execution_info|
-                    puts execution_info.inspect
-                end
-
-                after_spec do |execution_info|
-                    puts execution_info.inspect
-                end
+    after_spec do |execution_info|
+        puts execution_info.inspect
+    end
 
 
 .. _filtering_hooks_with_tags:
@@ -464,97 +466,94 @@ Filtering Hooks execution based on tags
 -  You can specify tags for which the execution :ref:`hooks <execution_hooks>` can run. This
    will ensure that the hook runs only on scenarios and specifications
    that have the required tags.
-.. container:: code-snippet
 
-    .. tabs::
+C#
+^^
+.. code-block:: java
 
-        .. group-tab:: C#
+    // A before spec hook that runs when tag1 and tag2
+    // is present in the current scenario and spec.
+    [BeforeSpec("tag1, tag2")]
+    public void LoginUser() {
+        // Code for before scenario
+    }
 
-            .. code-block:: java
+    // A after step hook runs when tag1 or tag2
+    // is present in the current scenario and spec.
+    // Default tagAggregation value is Operator.AND.
+    [AfterStep("tag1", "tag2")]
+    [TagAggregationBehaviour(TagAggregation.Or)]
+    public void PerformAfterStep() {
+        // Code for after step
+    }
+Java
+^^^^
+.. code-block:: java
 
-                // A before spec hook that runs when tag1 and tag2
-                // is present in the current scenario and spec.
-                [BeforeSpec("tag1, tag2")]
-                public void LoginUser() {
-                    // Code for before scenario
-                }
+    // A before spec hook that runs when tag1 and tag2
+    // is present in the current scenario and spec.
+    @BeforeSpec(tags = {"tag1, tag2"})
+    public void loginUser() {
+        // Code forbefore scenario
+    }
 
-                // A after step hook runs when tag1 or tag2
-                // is present in the current scenario and spec.
-                // Default tagAggregation value is Operator.AND.
-                [AfterStep("tag1", "tag2")]
-                [TagAggregationBehaviour(TagAggregation.Or)]
-                public void PerformAfterStep() {
-                    // Code for after step
-                }
-        .. group-tab:: Java
+    // A after step hook runs when tag1 or tag2
+    // is present in the currentscenario and spec.
+    // Default tagAggregation value is Operator.AND.
+    @AfterStep(tags = {"tag1", "tag2"}, tagAggregation = Operator.OR)
+    public void performAfterStep() {
+        // Code for after step
+    }
 
-            .. code-block:: java
+JavaScript
+^^^^^^^^^^
+.. code-block:: javascript
 
-                // A before spec hook that runs when tag1 and tag2
-                // is present in the current scenario and spec.
-                @BeforeSpec(tags = {"tag1, tag2"})
-                public void loginUser() {
-                    // Code forbefore scenario
-                }
+    // A before spec hook that runs when tag1 and tag2
+    // is present in the current scenario and spec.
+    hooks.beforeSpec(function () {
+        //implementation
+    }, { tags: [ "tag1","tag2" ]});
 
-                // A after step hook runs when tag1 or tag2
-                // is present in the currentscenario and spec.
-                // Default tagAggregation value is Operator.AND.
-                @AfterStep(tags = {"tag1", "tag2"}, tagAggregation = Operator.OR)
-                public void performAfterStep() {
-                    // Code for after step
-                }
+    // A after step hook runs when tag1 or tag2
+    // is present in the currentscenario and spec.
+    // Default tagAggregation value is Operator.AND.
+    hooks.afterStep(function () {
+        //implementation
+    }, { tags: [ "tag1","tag2" ]});
 
-        .. group-tab:: JavaScript
+Python
+^^^^^^
+.. code-block:: python
 
-            .. code-block:: javascript
+    // A before spec hook that runs when tag1 and tag2
+    // is present in the current scenario and spec.
+    @before_spec("<tag1> and <tag2>")
+    def before_spec_hook():
+        print("before spec hook with tag")
 
-                // A before spec hook that runs when tag1 and tag2
-                // is present in the current scenario and spec.
-                hooks.beforeSpec(function () {
-                    //implementation
-                }, { tags: [ "tag1","tag2" ]});
+    // A after step hook runs when tag1 or tag2
+    // is present in the currentscenario and spec.
+    // Default tagAggregation value is Operator.AND.
+    @after_step("<tag1> and <tag2>")
+    def after_step_hook():
+        print("after step hook with tag")
+Ruby
+^^^^
+.. code-block:: ruby
 
-                // A after step hook runs when tag1 or tag2
-                // is present in the currentscenario and spec.
-                // Default tagAggregation value is Operator.AND.
-                hooks.afterStep(function () {
-                    //implementation
-                }, { tags: [ "tag1","tag2" ]});
+    # A before spec hook that runs when
+    # tag1 and tag2 is present in the current scenario and spec.
+    before_spec({tags: ['tag2', 'tag1']}) do
+        # Code for before scenario
+    end
 
-        .. group-tab:: Python
+    # A after step hook runs when tag1 or tag2 is present in the current scenario and spec.
+    # Default tagAggregation value is Operator.AND.
 
-            .. code-block:: python
-
-                // A before spec hook that runs when tag1 and tag2
-                // is present in the current scenario and spec.
-                @before_spec("<tag1> and <tag2>")
-                def before_spec_hook():
-                    print("before spec hook with tag")
-
-                // A after step hook runs when tag1 or tag2
-                // is present in the currentscenario and spec.
-                // Default tagAggregation value is Operator.AND.
-                @after_step("<tag1> and <tag2>")
-                def after_step_hook():
-                    print("after step hook with tag")
-        .. group-tab:: Ruby
-
-            .. code-block:: ruby
-
-                # A before spec hook that runs when
-                # tag1 and tag2 is present in the current scenario and spec.
-                before_spec({tags: ['tag2', 'tag1']}) do
-                    # Code for before scenario
-                end
-
-                # A after step hook runs when tag1 or tag2 is present in the current scenario and spec.
-                # Default tagAggregation value is Operator.AND.
-
-                after_spec({tags: ['tag2', 'tag1'], operator: 'OR'}) do
-                    # Code for after step
-                end
+    after_spec({tags: ['tag2', 'tag1'], operator: 'OR'}) do
+        # Code for after step
+    end
 
 .. note:: Tags cannot be specified on @BeforeSuite and @AfterSuite hooks
 
@@ -574,73 +573,72 @@ ScenarioStore
 This data store keeps values added to it in the lifecycle of the
 scenario execution. Values are cleared after every scenario executes
 
-.. container:: code-snippet
+C#
+^^
+.. code-block:: java
 
-  .. tabs::
+  using Gauge.CSharp.Lib;
 
-    .. group-tab:: C#
+  // Adding value
+  var scenarioStore = DataStoreFactory.ScenarioDataStore;
+  scenarioStore.Add("element-id", "455678");
 
-      .. code-block:: java
+  // Fetching Value
+  var elementId = (string) scenarioStore.Get("element-id");
 
-        using Gauge.CSharp.Lib;
+  // avoid type cast by using generic Get
+  var anotherElementId = scenarioStore.Get("element-id");
 
-        // Adding value
-        var scenarioStore = DataStoreFactory.ScenarioDataStore;
-        scenarioStore.Add("element-id", "455678");
+Java
+^^^^
 
-        // Fetching Value
-        var elementId = (string) scenarioStore.Get("element-id");
+.. code-block:: java
 
-        // avoid type cast by using generic Get
-        var anotherElementId = scenarioStore.Get("element-id");
+  import com.thoughtworks.gauge.datastore.*;
 
-    .. group-tab:: Java
+  // Adding value
+  DataStore scenarioStore = DataStoreFactory.getScenarioDataStore();
+  scenarioStore.put("element-id", "455678");
 
-      .. code-block:: java
+  // Fetching Value
+  String elementId = (String) scenarioStore.get("element-id");
 
-        import com.thoughtworks.gauge.datastore.*;
+JavaScript
+^^^^^^^^^^
 
-        // Adding value
-        DataStore scenarioStore = DataStoreFactory.getScenarioDataStore();
-        scenarioStore.put("element-id", "455678");
+.. code-block:: javascript
 
-        // Fetching Value
-        String elementId = (String) scenarioStore.get("element-id");
+  // Adding value
+  gauge.dataStore.scenarioStore.put(key, value);
 
-    .. group-tab:: JavaScript
+  // Fetching Value
+  gauge.dataStore.scenarioStore.get(key);
 
-      .. code-block:: javascript
+Python
+^^^^^^
 
-        // Adding value
-        gauge.dataStore.scenarioStore.put(key, value);
+.. code-block:: python
+  :caption: python
 
-        // Fetching Value
-        gauge.dataStore.scenarioStore.get(key);
+  from getgauge.python import DataStoreFactory
+  // Adding value
+  DataStoreFactory.scenario_data_store().put(key, value)
 
-    .. group-tab:: Python
+  // Fetching Value
+  DataStoreFactory.scenario_data_store().get(key)
 
-      .. code-block:: python
-        :caption: python
+Ruby
+^^^^
 
-        from getgauge.python import DataStoreFactory
-        // Adding value
-        DataStoreFactory.scenario_data_store().put(key, value)
+.. code-block:: ruby
 
-        // Fetching Value
-        DataStoreFactory.scenario_data_store().get(key)
-
-    .. group-tab:: Ruby
-
-      .. code-block:: ruby
-
-        // Adding value
-        scenario_store = DataStoreFactory.scenario_datastore;
-        scenario_store.put("element-id", "455678");
+  // Adding value
+  scenario_store = DataStoreFactory.scenario_datastore;
+  scenario_store.put("element-id", "455678");
 
 
-        // Fetching Value
-        element_id = scenario_store.get("element-id");
-
+  // Fetching Value
+  element_id = scenario_store.get("element-id");
 
 SpecStore
 ^^^^^^^^^
@@ -649,71 +647,72 @@ This data store keeps values added to it during the lifecycle of the
 specification execution. Values are cleared after every specification
 executes
 
-.. container:: code-snippet
+C#
+^^
 
-  .. tabs::
+  .. code-block:: java
 
-    .. group-tab:: C#
+    using Gauge.CSharp.Lib;
 
-      .. code-block:: java
+    // Adding value
+    var specStore = DataStoreFactory.SpecDataStore;
+    specStore.Add("element-id", "455678");
 
-        using Gauge.CSharp.Lib;
+    // Fetching Value
+    var elementId = (string) specStore.Get("element-id");
 
-        // Adding value
-        var specStore = DataStoreFactory.SpecDataStore;
-        specStore.Add("element-id", "455678");
+    // avoid type cast by using generic Get
+    var anotherElementId = specStore.Get("element-id");
 
-        // Fetching Value
-        var elementId = (string) specStore.Get("element-id");
+Java
+^^^^
 
-        // avoid type cast by using generic Get
-        var anotherElementId = specStore.Get("element-id");
+  .. code-block:: java
 
-    .. group-tab:: Java
+    // Import Package import
+    com.thoughtworks.gauge.datastore.*;
 
-      .. code-block:: java
+    // Adding value DataStore specStore =
+    DataStoreFactory.getSpecDataStore();
+    specStore.put("key", "455678");
 
-        // Import Package import
-        com.thoughtworks.gauge.datastore.*;
+    // Fetching value DataStore specStore =
+    String elementId = (String) specStore.get("key");
 
-        // Adding value DataStore specStore =
-        DataStoreFactory.getSpecDataStore();
-        specStore.put("key", "455678");
+JavaScript
+^^^^^^^^^^
 
-        // Fetching value DataStore specStore =
-        String elementId = (String) specStore.get("key");
+  .. code-block:: javascript
 
-    .. group-tab:: JavaScript
+    // Adding value DataStore specStore =
+    gauge.dataStore.specStore.put(key, value);
+    // Fetching value DataStore specStore =
+    gauge.dataStore.specStore.get(key);
 
-      .. code-block:: javascript
+Python
+^^^^^^
 
-        // Adding value DataStore specStore =
-        gauge.dataStore.specStore.put(key, value);
-        // Fetching value DataStore specStore =
-        gauge.dataStore.specStore.get(key);
+  .. code-block:: python
 
-    .. group-tab:: Python
+    // Import Package import
+    from getgauge.python import DataStoreFactory
+    // Adding value DataStore specStore =
+    DataStoreFactory.spec_data_store().put(key, value)
 
-      .. code-block:: python
+    // Fetching value DataStore specStore =
+    DataStoreFactory.spec_data_store().get(key)
 
-        // Import Package import
-        from getgauge.python import DataStoreFactory
-        // Adding value DataStore specStore =
-        DataStoreFactory.spec_data_store().put(key, value)
+Ruby
+^^^^
 
-        // Fetching value DataStore specStore =
-        DataStoreFactory.spec_data_store().get(key)
+  .. code-block:: ruby
 
-    .. group-tab:: Ruby
+    // Adding value
+    spec_store = DataStoreFactory.spec_datastore;
+    spec_store.put("element-id", "455678");
 
-      .. code-block:: ruby
-
-        // Adding value
-        spec_store = DataStoreFactory.spec_datastore;
-        spec_store.put("element-id", "455678");
-
-        // Fetching Value
-        element_id = spec_store.get("element-id");
+    // Fetching Value
+    element_id = spec_store.get("element-id");
 
 SuiteStore
 ^^^^^^^^^^
@@ -725,72 +724,73 @@ suite execution. Values are cleared after entire suite execution.
    ``SuiteStore`` is not advised to be used when executing specs in parallel.
    The values are not retained between parallel streams of execution.
 
-.. container:: code-snippet
+C#
+^^
 
-  .. tabs::
+  .. code-block:: java
 
-    .. group-tab:: C#
+    using Gauge.CSharp.Lib;
 
-      .. code-block:: java
+    // Adding value var suiteStore = DataStoreFactory.SuiteDataStore;
+    suiteStore.Add("element-id", "455678");
 
-        using Gauge.CSharp.Lib;
+    // Fetching Value var suiteStore = DataStoreFactory.SuiteDataStore; var
+    elementId = (string) suiteStore.Get("element-id");
 
-        // Adding value var suiteStore = DataStoreFactory.SuiteDataStore;
-        suiteStore.Add("element-id", "455678");
+    // avoid type cast by using generic Get var anotherElementId =
+    suiteStore.Get("element-id");
 
-        // Fetching Value var suiteStore = DataStoreFactory.SuiteDataStore; var
-        elementId = (string) suiteStore.Get("element-id");
+Java
+^^^^
 
-        // avoid type cast by using generic Get var anotherElementId =
-        suiteStore.Get("element-id");
+  .. code-block:: java
 
-    .. group-tab:: Java
+    // Import Package import
+    com.thoughtworks.gauge.datastore.*;
 
-      .. code-block:: java
+    // Adding value
+    DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
+    suiteStore.put("element-id", "455678");
 
-        // Import Package import
-        com.thoughtworks.gauge.datastore.*;
+    // Fetching value
+    DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
+    String elementId = (String) suiteStore.get("element-id");
 
-        // Adding value
-        DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
-        suiteStore.put("element-id", "455678");
+JavaScript
+^^^^^^^^^^
 
-        // Fetching value
-        DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
-        String elementId = (String) suiteStore.get("element-id");
+  .. code-block:: javascript
 
-    .. group-tab:: JavaScript
+    // Adding value DataStore suiteStore =
+    gauge.dataStore.suiteStore.put(key, value);
+    // Fetching value DataStore specStore =
+    gauge.dataStore.suiteStore.get(key);
 
-      .. code-block:: javascript
+Python
+^^^^^^
 
-        // Adding value DataStore suiteStore =
-        gauge.dataStore.suiteStore.put(key, value);
-        // Fetching value DataStore specStore =
-        gauge.dataStore.suiteStore.get(key);
+  .. code-block:: python
 
-    .. group-tab:: Python
+    // Import Package import
+    from getgauge.python import DataStoreFactory
+    // Adding value DataStore suiteStore =
+    DataStoreFactory.suite_data_store().put(key, value)
 
-      .. code-block:: python
+    // Fetching value DataStore specStore =
+    DataStoreFactory.suite_data_store().get(key)
 
-        // Import Package import
-        from getgauge.python import DataStoreFactory
-        // Adding value DataStore suiteStore =
-        DataStoreFactory.suite_data_store().put(key, value)
+Ruby
+^^^^
 
-        // Fetching value DataStore specStore =
-        DataStoreFactory.suite_data_store().get(key)
+  .. code-block:: ruby
 
-    .. group-tab:: Ruby
+    // Adding value
+    suite_store = DataStoreFactory.suite_datastore;
+    suite_store.put("element-id", "455678");
 
-      .. code-block:: ruby
-
-        // Adding value
-        suite_store = DataStoreFactory.suite_datastore;
-        suite_store.put("element-id", "455678");
-
-        // Fetching Value
-        suite_store = DataStoreFactory.suite_datastore;
-        element_id = suite_store.get("element-id");
+    // Fetching Value
+    suite_store = DataStoreFactory.suite_datastore;
+    element_id = suite_store.get("element-id");
 
 Taking Custom Screenshots
 -------------------------
@@ -809,67 +809,68 @@ Taking Custom Screenshots
     This is because Gauge selects the first ScreenGrabber it finds,
     which in turn depends on the order of scanning of the libraries.
 
-.. container:: code-snippet
+C#
+^^
 
-  .. tabs::
+.. code-block:: java
 
-    .. group-tab:: C#
+  //Using Webdriver public
+  class CustomScreenGrabber : ICustomScreenshotGrabber {
 
-      .. code-block:: java
+    // Return a screenshot byte array
+    public byte[] TakeScreenshot() {
+        var driver = DriverFactory.getDriver();
+        return ((ITakesScreenshot) driver).GetScreenshot().AsByteArray;
+    }
+  }
 
-        //Using Webdriver public
-        class CustomScreenGrabber : ICustomScreenshotGrabber {
+Java
+^^^^
 
-          // Return a screenshot byte array
-          public byte[] TakeScreenshot() {
-              var driver = DriverFactory.getDriver();
-              return ((ITakesScreenshot) driver).GetScreenshot().AsByteArray;
-          }
-        }
+.. code-block:: java
 
-    .. group-tab:: Java
+  // Using Webdriver public class
+  CustomScreenGrabber implements ICustomScreenshotGrabber {
+      // Return a screenshot byte array
+      public byte[] takeScreenshot() {
+          WebDriver driver = DriverFactory.getDriver();
+          return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+      }
 
-      .. code-block:: java
+  }
 
-        // Using Webdriver public class
-        CustomScreenGrabber implements ICustomScreenshotGrabber {
-            // Return a screenshot byte array
-            public byte[] takeScreenshot() {
-                WebDriver driver = DriverFactory.getDriver();
-                return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-            }
+JavaScript
+^^^^^^^^^^
 
-        }
+.. code-block:: javascript
 
-    .. group-tab:: JavaScript
+  gauge.screenshotFn = function () {
+    return "base64encodedstring";
+  };
 
-      .. code-block:: javascript
+Python
+^^^^^^
 
-        gauge.screenshotFn = function () {
-          return "base64encodedstring";
-        };
+.. code-block:: python
 
-    .. group-tab:: Python
+  from getgauge.python import screenshot
+  @screenshot
+  def take_screenshot():
+      return "base64encodedstring"
 
-      .. code-block:: python
+Ruby
+^^^^
 
-        from getgauge.python import screenshot
-        @screenshot
-        def take_screenshot():
-            return "base64encodedstring"
+.. code-block:: ruby
 
-    .. group-tab:: Ruby
-
-      .. code-block:: ruby
-
-        # Using Webdriver
-        Gauge.configure do |config|
-          # Return a screenshot byte array
-          config.screengrabber = -> {
-            driver.save_screenshot('/tmp/screenshot.png')
-            return File.binread("/tmp/screenshot.png")
-          }
-        end
+  # Using Webdriver
+  Gauge.configure do |config|
+    # Return a screenshot byte array
+    config.screengrabber = -> {
+      driver.save_screenshot('/tmp/screenshot.png')
+      return File.binread("/tmp/screenshot.png")
+    }
+  end
 
 
 .. _reports_custom_messages:
@@ -882,47 +883,48 @@ API from the step implementations or hooks.
 
 These messages will appear under steps in the execution reports.
 
-.. container:: code-snippet
+C#
+^^
 
-  .. tabs::
+.. code-block:: java
 
-    .. group-tab:: C#
+  GaugeMessages.WriteMessage("Custom message for report");
+  var id = "4567";
+  GaugeMessages.WriteMessage("User id is {0}", id);
 
-      .. code-block:: java
+Java
+^^^^
 
-        GaugeMessages.WriteMessage("Custom message for report");
-        var id = "4567";
-        GaugeMessages.WriteMessage("User id is {0}", id);
+.. code-block:: java
 
-    .. group-tab:: Java
+  Gauge.writeMessage("Custom message for report");
+  String id = "4567";
+  Gauge.writeMessage("User id is %s", id);
 
-      .. code-block:: java
+JavaScript
+^^^^^^^^^^
 
-        Gauge.writeMessage("Custom message for report");
-        String id = "4567";
-        Gauge.writeMessage("User id is %s", id);
+.. code-block:: javascript
 
-    .. group-tab:: JavaScript
+  gauge.message("Custom message for report");
 
-      .. code-block:: javascript
+Python
+^^^^^^
 
-        gauge.message("Custom message for report");
+.. code-block:: python
 
-    .. group-tab:: Python
+  from getgauge.python import Messages
 
-      .. code-block:: python
+  Messages.write_message("Custom message for report")
 
-        from getgauge.python import Messages
+Ruby
+^^^^
 
-        Messages.write_message("Custom message for report")
+.. code-block:: ruby
 
-    .. group-tab:: Ruby
-
-      .. code-block:: ruby
-
-        Gauge.write_message("Custom message for report")
-        id = "4567"
-        Gauge.write_message("User id is" + id)
+  Gauge.write_message("Custom message for report")
+  id = "4567"
+  Gauge.write_message("User id is" + id)
 
 Enum as Step parameter
 ----------------------
@@ -967,75 +969,76 @@ implementation asks for it explicitly. Each language runner uses
 different syntax, depending on the language idioms, to allow a step
 implementation to be marked to continue on failure.
 
-.. container:: code-snippet
+C#
+^^
 
-  .. tabs::
+.. code-block:: java
 
-    .. group-tab:: C#
+  // The ``[ContinueOnFailure]`` attribute tells Gauge to continue executing others
+  // steps even if the current step fails.
 
-      .. code-block:: java
+  public class StepImplementation {
+      [ContinueOnFailure]
+      [Step("Say <greeting> to <product name>")]
+      public void HelloWorld(string greeting, string name) {
+          // If there is an error here, Gauge will still execute next steps
+      }
 
-        // The ``[ContinueOnFailure]`` attribute tells Gauge to continue executing others
-        // steps even if the current step fails.
+  }
 
-        public class StepImplementation {
-            [ContinueOnFailure]
-            [Step("Say <greeting> to <product name>")]
-            public void HelloWorld(string greeting, string name) {
-                // If there is an error here, Gauge will still execute next steps
-            }
+Java
+^^^^
 
-        }
+.. code-block:: java
 
-    .. group-tab:: Java
+  // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
+  // steps even if the current step fails.
 
-      .. code-block:: java
+  public class StepImplementation {
+      @ContinueOnFailure
+      @Step("Say <greeting> to <product name>")
+      public void helloWorld(String greeting, String name) {
+          // If there is an error here, Gauge will still execute next steps
+      }
 
-        // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
-        // steps even if the current step fails.
+  }
 
-        public class StepImplementation {
-            @ContinueOnFailure
-            @Step("Say <greeting> to <product name>")
-            public void helloWorld(String greeting, String name) {
-                // If there is an error here, Gauge will still execute next steps
-            }
+JavaScript
+^^^^^^^^^^
 
-        }
+.. code-block:: javascript
 
-    .. group-tab:: JavaScript
+  // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
+  // steps even if the current step fails.
 
-      .. code-block:: javascript
+  gauge.step("Say <greeting> to <product>.", { continueOnFailure: true}, function (greeting,product) {
+  });
 
-        // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
-        // steps even if the current step fails.
+Python
+^^^^^^
 
-        gauge.step("Say <greeting> to <product>.", { continueOnFailure: true}, function (greeting,product) {
-        });
+.. code-block:: python
 
-    .. group-tab:: Python
+  // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
+  // steps even if the current step fails.
 
-      .. code-block:: python
+  @continue_on_failure([RuntimeError])
+  @step("Say <greeting> to <product>")
+  def step2(greeting,product):
+    pass
 
-        // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
-        // steps even if the current step fails.
+Ruby
+^^^^
 
-        @continue_on_failure([RuntimeError])
-        @step("Say <greeting> to <product>")
-        def step2(greeting,product):
-          pass
+.. code-block:: ruby
 
-    .. group-tab:: Ruby
+  # The ``:continue_on_failure => true`` keyword argument
+  # tells Gauge to continue executing other steps even
+  # if the current step fails.
 
-      .. code-block:: ruby
-
-        # The ``:continue_on_failure => true`` keyword argument
-        # tells Gauge to continue executing other steps even
-        # if the current step fails.
-
-        step 'Say <greeting> to <name>', :continue_on_failure => true do |greeting, name|
-          # If there is an error here, Gauge will still execute next steps
-        end
+  step 'Say <greeting> to <name>', :continue_on_failure => true do |greeting, name|
+    # If there is an error here, Gauge will still execute next steps
+  end
 
 Continue on Failure can take an optional parameter to specify the list
 of error classes on which it would continue to execute further steps in
@@ -1125,59 +1128,63 @@ ensuring that the functionality is expressed clearly.
 
 Implementation
 """"""""""""""
-.. tabs::
 
-    .. group-tab:: C#
+C#
+^^
 
-        .. code-block:: java
+  .. code-block:: java
 
-            public class Users {
+      public class Users {
 
-                [Step({"Create a user <user_name>", "Create another user <user_name>"})]
-                public void HelloWorld(string user_name) {
-                    // create user user_name
-                }
+          [Step({"Create a user <user_name>", "Create another user <user_name>"})]
+          public void HelloWorld(string user_name) {
+              // create user user_name
+          }
 
-            }
+      }
 
-    .. group-tab:: Java
+Java
+^^^^
 
-        .. code-block:: java
+  .. code-block:: java
 
-            public class Users {
+      public class Users {
 
-                @Step({"Create a user <user_name>", "Create another user <user_name>"})
-                public void helloWorld(String user_name) {
-                    // create user user_name
-                }
+          @Step({"Create a user <user_name>", "Create another user <user_name>"})
+          public void helloWorld(String user_name) {
+              // create user user_name
+          }
 
-            }
+      }
 
-    .. group-tab:: JavaScript
+JavaScript
+^^^^^^^^^^
 
-        .. code-block:: javascript
+  .. code-block:: javascript
 
-            step(["Create a user <username>", "Create another user <username>"], function (username) {
-            // do cool stuff
-            });
+      step(["Create a user <username>", "Create another user <username>"], function (username) {
+      // do cool stuff
+      });
 
-    .. group-tab:: Python
+Python
+^^^^^^
 
-        .. code-block:: python
+  .. code-block:: python
 
-            from getgauge.python import step
+      from getgauge.python import step
 
-            @step(["Create a user <user name>", "Create another user <user name>"])
-            def hello(user_name):
-                print("create {}.".format(user_name))
+      @step(["Create a user <user name>", "Create another user <user name>"])
+      def hello(user_name):
+          print("create {}.".format(user_name))
 
-    .. group-tab:: Ruby
+Ruby
+^^^^
 
-        .. code-block:: ruby
+  .. code-block:: ruby
 
-            step 'Create a user ','Create another user ' do |user_name|
-                // create user user_name
-            end
+      step 'Create a user ','Create another user ' do |user_name|
+          // create user user_name
+      end
 
 Example 2
 ~~~~~~~~~
@@ -1205,54 +1212,59 @@ Implementation
 
 .. tabs::
 
-    .. group-tab:: C#
+C#
+^^
 
-        .. code-block:: java
+.. code-block:: java
 
-            public class Users {
+    public class Users {
 
-                [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
-                public void HelloWorld(string email_type) {
-                    // Send email of email_type
-                }
+        [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
+        public void HelloWorld(string email_type) {
+            // Send email of email_type
+        }
 
-            }
+    }
 
-    .. group-tab:: Java
+Java
+^^^^
 
-        .. code-block:: java
+.. code-block:: java
 
-            public class Users {
+    public class Users {
 
-                @Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})
-                public void helloWorld(String email_type) {
-                    // Send email of email_type
-                }
+        @Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})
+        public void helloWorld(String email_type) {
+            // Send email of email_type
+        }
 
-            }
+    }
 
-    .. group-tab:: JavaScript
+JavaScript
+^^^^^^^^^^
 
-        .. code-block:: javascript
+.. code-block:: javascript
 
-            step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"], function (email_type) {
-                // do cool stuff
-            });
+    step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"], function (email_type) {
+        // do cool stuff
+    });
 
-    .. group-tab:: Python
+Python
+^^^^^^
 
-        .. code-block:: python
+.. code-block:: python
 
-            from getgauge.python import step
+    from getgauge.python import step
 
-            @step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"])
-            def email(email_type):
-                print("create {}.".format(email_type))
+    @step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"])
+    def email(email_type):
+        print("create {}.".format(email_type))
 
-    .. group-tab:: Ruby
+Ruby
+^^^^
 
-        .. code-block:: ruby
+.. code-block:: ruby
 
-            step 'A email is sent to the user', 'An email confirming the is sent' do |email_type|
-                email_service.send email_type
-            end
+    step 'A email is sent to the user', 'An email confirming the is sent' do |email_type|
+        email_service.send email_type
+    end

@@ -30,7 +30,7 @@ needs_sphinx = '1.5.2'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.todo', 'sphinx.ext.ifconfig', 'gauge_lexer', 'code_lineno_highlighter', 'sphinx_tabs.tabs']
+extensions = ['sphinx.ext.todo', 'sphinx.ext.ifconfig', 'gauge_lexer', 'code_lineno_highlighter']
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -70,7 +70,7 @@ language = None
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'README.md']
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'monokai'
+pygments_style = 'pastie'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
@@ -116,7 +116,7 @@ html_theme_options = {
     'navbar_sidebarrel': False,
 
     # Render the current pages TOC in the navbar. (Default: true)
-    'navbar_pagenav': True,
+    'navbar_pagenav': False,
 
     # Tab name for the current pages TOC. (Default: "Page")
     'navbar_pagenav_name': "In this Page",
@@ -136,7 +136,7 @@ html_theme_options = {
 
     # HTML navbar class (Default: "navbar") to attach to <div> element.
     # For black navbar, do "navbar navbar-inverse"
-    'navbar_class': "navbar navbar-inverse",
+    'navbar_class': "navbar navbar-gauge",
 
     # Fix navigation bar to top of page?
     # Values: "true" (default) or "false"
@@ -157,7 +157,7 @@ html_theme_options = {
     # Currently, the supported themes are:
     # - Bootstrap 2: https://bootswatch.com/2
     # - Bootstrap 3: https://bootswatch.com/3
-    'bootswatch_theme': "yeti",
+    'bootswatch_theme': "simplex",
 
     # Choose Bootstrap version.
     # Values: "3" (default) or "2" (in quotes)
@@ -171,6 +171,7 @@ html_context = {
     "github_repo": "docs.gauge.org",
     "conf_py_path": "/",
 }
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
@@ -182,7 +183,6 @@ html_favicon = "favicon.ico"
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'Gaugedoc'
-
 
 # -- Options for LaTeX output ---------------------------------------------
 

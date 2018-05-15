@@ -1,0 +1,21 @@
+{% extends "!layout.html" %}
+
+{% set css_files = css_files + ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css'] %}
+
+{% set script_files = script_files + ["https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"] %}
+
+{%- block footer %}
+{{ super() }}
+<script type="text/javascript"> docsearch({
+    apiKey: '5008b0d9ea4d9e639a17a123bea077fe',
+    indexName: 'gauge',
+    inputSelector: 'input[name="q"]',
+    debug: false // Set debug to true if you want to inspect the dropdown
+    });
+</script>    
+{%- endblock %}
+
+{% block header %}
+    {{ super() }}
+    <link rel="stylesheet" href="_static/gauge.css">
+{% endblock %}
