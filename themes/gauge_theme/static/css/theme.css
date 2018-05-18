@@ -1,10 +1,9 @@
-#sidebar-wrapper > div > ul > li > a {
-  font-weight: bold;
+#rightNav {
+  padding-top: 12px;
 }
 
-#sidebar-wrapper ul {
-  list-style: none;
-  padding: 0;
+#rightNav #search {
+  margin-bottom: 12px;
 }
 
 #rightNav ul {
