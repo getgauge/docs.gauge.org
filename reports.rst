@@ -1,3 +1,5 @@
+:page_header: Reports
+
 .. _gauge_reports:
 
 Reports

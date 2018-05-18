@@ -1,5 +1,7 @@
-HOWTOs
-------
+:page_header: Tutorials
+
+Tutorials
+=========
 
 .. toctree::
     :caption: Examples demonstrating specific use cases using/setting up Gauge.

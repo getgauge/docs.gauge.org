@@ -1,32 +1,6 @@
-Long Start
-==========
+Writing Specifications
+======================
 
-.. _why_gauge:
-
-Why Gauge?
-----------
-
-The communication breakdowns between Developers and Business
-Stakeholders is a common risk of software development. Gauge is an
-advanced automation tool that allows requirements to be written in a way
-that will be understood by all roles in a project and help bridge the
-gap.
-
-Some of the **key features** of Gauge that make it stand unique include:
-
--  A rich markup based on `markdown <https://daringfireball.net/projects/markdown/syntax>`__
--  Simple, Flexible and Rich Syntax
--  Business Language Tests : Supports the concept of executable documentation.
--  Consistent Cross Platform/Language Support for writing test code. Currently :ref:`supported languages <install-language-runner>`.
--  Open Source, so it could be shared freely and improved by others as well.
--  A modular architecture with :doc:`plugins` support.
--  Extensible through :doc:`plugins` and Hackable.
--  Supports External Data Sources.
--  Helps you create Maintainable and Understandable test suites.
--  :ref:`IDE Support <ide_support>`.
-
-Gauge Terminologies
--------------------
 Specifications (spec)
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -586,3 +560,413 @@ The spec execution flow would be:
 4. Context steps execution
 5. ``Delete multiple projects`` scenario execution
 6. Tear down steps execution
+
+
+.. _language-steps:
+
+Step implementations
+^^^^^^^^^^^^^^^^^^^^
+
+:ref:`longstart-steps` have a language specific implementation that gets executed on the spec execution.
+
+Simple step
++++++++++++
+
+**Step name**
+
+.. code-block:: gauge
+
+  * Say "hello" to "gauge"
+
+**Implementation**
+
+C#
+~~
+
+.. code-block:: java
+
+    // The Method can be written in **any C# class** as long as it is part of the project.
+    public class StepImplementation {
+
+      [Step("Say <greeting> to <product name>")]
+      public void HelloWorld(string greeting, string name) {
+          // Step implementation
+      }
+    }
+
+Java
+~~~~
+
+.. code-block:: java
+
+    // This Method can be written in any java class as long as it is in classpath.
+
+    public class StepImplementation {
+
+      @Step("Say <greeting> to <product name>")
+      public void helloWorld(String greeting, String name) {
+          // Step implementation
+      }
+
+    }
+
+JavaScript
+~~~~~~~~~~
+
+.. code-block:: javascript
+
+    step("Say <greeting> to <name>", async function(greeting, name) {
+      throw 'Unimplemented Step';
+    });
+
+Python
+~~~~~~
+
+.. code-block:: python
+
+    @step("Say <greeting> to <product name>")
+    def create_following_characters(greeting, name):
+        assert False, "Add implementation code"
+
+Ruby
+~~~~
+
+.. code-block:: ruby
+
+    step 'Say <greeting> to <product name>' do |greeting, name|
+    # Code for the step
+    end
+
+Step with table
++++++++++++++++
+
+**Step**
+
+.. code-block:: gauge
+
+  * Create following "hobbit" characters
+    |id |name   |
+    |---|-------|
+    |123|frodo  |
+    |456|bilbo  |
+    |789|samwise|
+
+**Implementation**
+
+C#
+~~
+
+.. code-block:: java
+
+  // Here Table is a custom data structure defined by gauge.
+  // This is available by adding a reference to the Gauge.CSharp.Lib.
+  // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/
+
+  public class Users {
+
+    [Step("Create following <role> users <table>")]
+    public void HelloWorld(string role, Table table) {
+        // Step implementation
+    }
+
+  }
+
+Java
+~~~~
+
+.. code-block:: java
+
+  // Table is a custom data structure defined by gauge.
+  public class Users {
+
+    @Step("Create following <race> characters <table>")
+    public void createCharacters(String type, Table table) {
+        // Step implementation
+    }
+
+  }
+
+JavaScript
+~~~~~~~~~~
+
+.. code-block:: javascript
+
+  step("Create following <arg0> characters <arg1>", async function(arg0, arg1) {
+    throw 'Unimplemented Step';
+  });
+
+Python
+~~~~~~
+
+.. code-block:: python
+
+  # Here Table is a custom data structure defined by gauge.
+
+  @step("Create following <hobbit> characters <table>")
+  def create_following_characters(hobbit, table):
+      assert False, "Add implementation code"
+
+Ruby
+~~~~
+
+.. code-block:: ruby
+  :caption: Ruby
+
+  # Here table is a custom data structure defined by gauge-ruby.
+
+  step 'Create following <race> characters <table>' do |role, table|
+    puts table.rows
+    puts table.columns
+  end
+
+Step alias
+^^^^^^^^^^
+
+Multiple Step names for the same implementation. The number and type of
+parameters for all the steps names must match the number of parameters
+on the implementation.
+
+Use case
+~~~~~~~~
+
+There may be situations where while authoring the specs, you may want to
+express the same functionality in different ways in order to make the
+specs more readable.
+
+Example 1
+~~~~~~~~~
+
+.. code-block:: gauge
+
+    # User Creation
+
+    ## Multiple Users
+
+    * Create a user "user 1"
+    * Verify "user 1" has access to dashboard
+    * Create another user "user 2"
+    * Verify "user 2" has access to dashboard
+
+In the scenario named Multiple Users, the underlying functionality of
+the first and the third step is the same. But the way it is expressed is
+different. This helps in conveying the intent and the functionality more
+clearly. In such situations like this, step aliases feature should be
+used so that you can practice DRY principle at code level, while
+ensuring that the functionality is expressed clearly.
+
+Implementation
+""""""""""""""
+
+**C#**
+
+
+  .. code-block:: java
+
+      public class Users {
+
+          [Step({"Create a user <user_name>", "Create another user <user_name>"})]
+          public void HelloWorld(string user_name) {
+              // create user user_name
+          }
+
+      }
+
+**Java**
+
+  .. code-block:: java
+
+      public class Users {
+
+          @Step({"Create a user <user_name>", "Create another user <user_name>"})
+          public void helloWorld(String user_name) {
+              // create user user_name
+          }
+
+      }
+
+**JavaScript**
+
+  .. code-block:: javascript
+
+      step(["Create a user <username>", "Create another user <username>"], function (username) {
+      // do cool stuff
+      });
+
+**Python**
+
+  .. code-block:: python
+
+      from getgauge.python import step
+
+      @step(["Create a user <user name>", "Create another user <user name>"])
+      def hello(user_name):
+          print("create {}.".format(user_name))
+
+**Ruby**
+
+  .. code-block:: ruby
+
+      step 'Create a user ','Create another user ' do |user_name|
+          // create user user_name
+      end
+
+Example 2
+~~~~~~~~~
+
+.. code-block:: gauge
+
+    ## User Creation
+
+    * User creates a new account
+    * A "welcome" email is sent to the user
+
+    ## Shopping Cart
+
+    * User checks out the shopping cart
+    * Payment is successfully received
+    * An email confirming the "order" is sent
+
+In this case, the underlying functionality of the last step (sending an
+email) in both the scenarios is the same. But it is expressed more
+clearly with the use of aliases. The underlying step implementation
+could be something like this.
+
+Implementation
+""""""""""""""
+
+.. tabs::
+
+C#
+^^
+
+.. code-block:: java
+
+    public class Users {
+
+        [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
+        public void HelloWorld(string email_type) {
+            // Send email of email_type
+        }
+
+    }
+
+Java
+^^^^
+
+.. code-block:: java
+
+    public class Users {
+
+        @Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})
+        public void helloWorld(String email_type) {
+            // Send email of email_type
+        }
+
+    }
+
+JavaScript
+^^^^^^^^^^
+
+.. code-block:: javascript
+
+    step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"], function (email_type) {
+        // do cool stuff
+    });
+
+Python
+^^^^^^
+
+.. code-block:: python
+
+    from getgauge.python import step
+
+    @step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"])
+    def email(email_type):
+        print("create {}.".format(email_type))
+
+Ruby
+^^^^
+
+.. code-block:: ruby
+
+    step 'A email is sent to the user', 'An email confirming the is sent' do |email_type|
+        email_service.send email_type
+    end
+
+Enum as Step parameter
+----------------------
+
+.. note:: This feature is currently only supported for ``Java``.
+
+The constant values of an Enum data type can be used as parameters to a
+Step. However, the type of parameter should match the Enum name itself
+in step implementation.
+
+**Step**
+
+.. code-block:: gauge
+
+  * Navigate towards "SOUTH"
+
+**Implementation**
+
+.. code-block:: java
+  :caption: Java
+
+  public enum Direction { NORTH, SOUTH, EAST, WEST; }
+
+  @Step("Navigate towards ")
+  public void navigate(Direction direction) {
+     //  code here
+  }
+
+Advanced
+--------
+
+Refactoring
+^^^^^^^^^^^
+
+Rephrase steps
+++++++++++++++
+
+Gauge allows you to rephrase a step across the project. To rephrase a
+step run:
+
+.. code-block:: console
+
+    gauge refactor "old step <name>" "new step name"
+
+Here ``<`` and ``>`` are used to denote parameters in the step.
+**Parameters can be added, removed or changed while rephrasing.**
+
+This will change all spec files and code files (for language plugins
+that support refactoring).
+
+For example,
+
+Let's say we have the following steps in our ``spec`` file:
+
+.. code-block:: gauge
+
+    * create user "john" with id "123"
+    * create user "mark" with id "345"
+
+Now, if we now need to add an additional parameter, say ``last name``,
+to this step we can run the command:
+
+.. code-block:: console
+
+    gauge refactor "create user <name> with id <id>" "create user <name> with <id> and last name <watson>"
+
+This will change all spec files to reflect the change.
+
+.. code-block:: gauge
+
+    * create user "john" with id "123" and last name "watson"
+    * create user "mark" with id "345" and last name "watson"
+
+
+Troubleshooting
+---------------
+
+TODO

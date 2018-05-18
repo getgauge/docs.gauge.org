@@ -1,3 +1,5 @@
+:page_header: Configuration
+
 Configuration
 =============
 

@@ -1,8 +1,9 @@
+:page_header: FAQs
+
 .. contents:: :local:
 
 ----
 
-====
 FAQs
 ====
 

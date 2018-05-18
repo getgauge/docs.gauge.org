@@ -1,5 +1,4 @@
-HOWTO: Integrating Gauge with CircleCI
-=======================================
+:page_header: Tutorial: Integrating Gauge with CircleCI
 
 `CircleCI <https://circleci.com/>`__ is a cloud hosted, continuous integration and delivery
 platform.

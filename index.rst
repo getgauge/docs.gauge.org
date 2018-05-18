@@ -4,25 +4,16 @@ Gauge Documentation
 Gauge is a light-weight cross-platform test automation tool with the ability to author test cases in the business language.
 
 
-.. toctree::
-    :hidden:
+.. container:: index-page
+
+  .. toctree::
     :maxdepth: 1
 
-    self
-    installing
-    quickstart
-    longstart
-    using
-    syntax
-    plugins
-    language
+    getting-started
+    writing-specifications
+    execution
     reports
     configuration
-    troubleshooting
-    examples
-    howto/index
     faqs
-    errors/index
-
-.. role:: description
-    :class: resource-description
+    howto/index
+    examples

@@ -1,13 +1,18 @@
+:page_header: Getting Started
+
 .. _installing_gauge_recomd_options:
 
+Getting Started
+===============
+
 Installation
-============
+------------
 
 Gauge Core
-----------
+^^^^^^^^^^
 
 Windows
-^^^^^^^
++++++++
 
 **Using Chocolatey**
 
@@ -34,7 +39,7 @@ the latest features being developed, but are unstable.
 Download the Gauge archive from `here <https://bintray.com/gauge/Gauge/Nightly/>`__. Extract it to a location and add it to system path.
 
 macOS
-^^^^^
++++++
 
 **Using HomeBrew**
 
@@ -59,7 +64,7 @@ the latest features being developed, but are unstable.
 Download the Gauge archive from `here <https://bintray.com/gauge/Gauge/Nightly/>`__. Extract it to a location and add it to system path.
 
 Debian/APT
-^^^^^^^^^^
+++++++++++
 
 Add Gauge's GPG key, URL to repository list and install Gauge.
 
@@ -100,7 +105,7 @@ Install
     sudo apt-get install gauge
 
 YUM/DNF
-^^^^^^^
++++++++
 
 Create file ``/etc/yum.repos.d/gauge-stable.repo`` with the following content:
 
@@ -168,7 +173,7 @@ or
     sudo dnf install gauge
 
 Zip
-^^^
++++
 
 Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
 
@@ -183,7 +188,7 @@ Example
 Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
 
 Curl
-^^^^
+++++
 
 Install Gauge to /usr/local/bin by running
 
@@ -204,8 +209,34 @@ Plugins
 --------
 .. _install-language-runner:
 
-Language runner
-^^^^^^^^^^^^^^^
+
+Plugins are an easy way to extend the features of gauge. There are
+various types of plugins that gauge currently supports.
+
+Required Plugins
+----------------
+
+-  `html-report <https://github.com/getgauge/html-report>`__
+-  `screenshot <https://github.com/getgauge/gauge_screenshot>`__
+
+The html-report and screenshot plugins are installed automatically on the first run.
+
+Language/Reporting Plugins
+--------------------------
+.. _language_plugins:
+
+.. rubric:: Language Plugins
+
+Language plugins, also known as **Language Runners**, enable the users to
+write the implementation of specs in a language of their choice. For a
+list of available language runners, see how to :ref:`install language runners <install-language-runner>`.
+Allows you to write your tests in
+
+-  `CSharp <https://github.com/getgauge/gauge-csharp>`__
+-  `Java <https://github.com/getgauge/gauge-java>`__
+-  `Javascript <https://github.com/getgauge/gauge-js>`__
+-  `Python <https://github.com/getgauge/gauge-python>`__
+-  `Ruby <https://github.com/getgauge/gauge-ruby>`__
 
 C#
 ^^
@@ -242,7 +273,115 @@ Ruby
 
   gauge install ruby
 
-.. note:: IDEs can be used to create the projects and run specifications, this example illustrates the command line usage.
+
+.. _reporting_plugins:
+
+.. rubric:: Reporting Plugins
+
+Reporting plugins generate execution reports in various formats.
+
+-  `HTML Report <https://github.com/getgauge/html-report>`__
+-  `XML Report <https://github.com/getgauge/xml-report>`__
+
+.. _documentation_plugins:
+
+.. rubric:: Documentation Plugins
+
+Documentation plugins generate readable and easy to navigate documentation from the specs.
+
+-  `Spectacle <https://github.com/getgauge/spectacle>`__
+
+.. _plugins-installation:
+
+Installation
+^^^^^^^^^^^^
+
+Plugins are installed using the subcommand ``install``, this checks our plugin
+repository and downloads them. ``gauge install <plugin_name>``
+
+**Example:**
+
+.. code-block:: console
+
+    gauge install html-report
+
+To install a specific version of a plugin use the ``--version``
+flag.
+
+.. code-block:: console
+
+    gauge install html-report --version 2.1.0
+
+To add a plugin to project, issue subcommand ``install`` inside the project, this installs
+the plugin and add it to project. If plugin is already installed it just add it to the project i.e.
+
+``gauge install <plugin_name>``
+
+**Example:**
+
+.. code-block:: console
+
+    gauge install xml-report
+
+Offline Installation
+~~~~~~~~~~~~~~~~~~~~
+
+If plugin should be installed from a zip file instead of downloading
+from plugin repository, use the ``--file`` or ``-f`` flag.
+
+.. code-block:: console
+
+    gauge install html-report --file ZIP_FILE_PATH
+
+Download the latest version of plugin from the ``Releases`` section of
+the respective repository. See `plugin list <https://gauge.org/plugins.html>`__ to
+find the repositories.
+
+Updating plugins
+^^^^^^^^^^^^^^^^
+
+To update a plugin to the latest version of it, use the ``update``
+subcommand. This downloads the latest plugin from our plugin repository.
+
+``gauge update <plugin_name>``
+
+**Example:**
+
+.. code-block:: console
+
+    gauge update java
+
+To update a plugin to a specific version, use the ``--version``
+flag.
+
+.. code-block:: console
+
+    gauge update java --version 0.3.2
+
+You can also update all the installed plugins by running
+
+.. code-block:: console
+
+    gauge update --all
+
+Read the :ref:`Installation troubleshooting <troubleshoot_plugin_installation>` for more.
+
+IDE plugins
+-----------
+
+Gauge has a bunch of plugins so that users can easily author specs on IDE. For more details, check :ref:`IDE Support <ide_support>`.
+
+- Integration with :ref:`Visual Studio Code <vs_code>`
+- Integration with :ref:`IntelliJ IDEA <intellij_idea>`
+- Integration with :ref:`Visual Studio <visual_studio>`
+
+
+Build Tools
+-----------
+
+-  `Maven <https://github.com/getgauge/gauge-maven-plugin>`__
+-  `Gradle <https://github.com/manupsunny/gauge-gradle-plugin>`__
+
 
 Reporting plugin
 ^^^^^^^^^^^^^^^^^
@@ -375,3 +514,96 @@ Example:
 .. code-block:: console
 
    gauge uninstall java --version 0.3.2
+
+
+Plugins
+-------
+
+-  JDK 8+ / .NET framework / Node 8.0+ / Python 2 or 3 / Ruby 2.0+ is installed
+-  :doc:`Gauge <installing>` is installed.
+-  :ref:`Language runner <install-language-runner>` is installed.
+
+.. _create_a_project:
+
+Creating a Project
+^^^^^^^^^^^^^^^^^^
+
+Follow the instructions for the respective language below. On getting the message of ``Successfully initialized the project``, one should be able to run the specifications.
+
+.. code-block:: console
+   :caption: C#
+
+   gauge init csharp
+
+.. code-block:: console
+   :caption: Java
+
+   gauge init java
+
+.. code-block:: console
+   :caption: Javascript
+
+   gauge init js
+
+.. code-block:: console
+   :caption: Python
+
+   gauge init python
+
+.. code-block:: console
+   :caption: Ruby
+
+   gauge init ruby
+
+.. note::
+
+   Refer :ref:`project_structure` for files that get created for all languages.
+
+Running the specs
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   gauge run specs
+
+The details of the run are displayed on the command line followed by a
+statistics summary.
+
+.. note::
+
+   Refer :ref:`executing_tests` for more details.
+
+Interpret results
+^^^^^^^^^^^^^^^^^
+
+The console report would give you the details of the run
+
+.. code-block:: text
+
+    Specifications: (w) executed    (x) passed  (y) failed  (z) skipped
+    Scenarios:      (a) executed    (b) passed  (c) failed  (d) skipped
+
+The statistics of the scenarios indicate
+
+======== ====================================
+Value    Description
+======== ====================================
+``(a)``  total number of scenarios executed.
+``(b)``  total number of scenarios passed.
+``(c)``  total number of scenarios failed.
+``(d)``  total number of scenarios skipped.
+======== ====================================
+
+The statistics of the specifications indicate
+
+======== ===============================================================
+Value    Description
+======== ===============================================================
+``(w)``  total number specifications executed.
+``(x)``  total number specifications with all scenarios passed.
+``(y)``  total number specifications with atleast one scenario failed.
+``(z)``  total number specifications with all scenarios skipped.
+======== ===============================================================
+
+Check various supported formats for :doc:`reports`.
+   
