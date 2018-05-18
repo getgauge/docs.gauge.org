@@ -27,7 +27,7 @@
 {%- endif %}
 
 {% set css_files = ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css', 'https://gauge.org/assets/stylesheets/application.css'] %}
-
+{% set script_files = script_files + ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js'] %}
 
 {%- macro script() %}
   <script type="text/javascript" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
@@ -132,17 +132,21 @@
     {% if pagename == 'index' %}
     <div class="col-md-12 content">
     {% else %}
-    <div class="col-md-10 content">
+    <div class="col-md-9 content">
     {% endif %}
         {% block body %}{% endblock %}
     </div>
 
     {% block sidebar2 %} 
-      {% if pagename != 'index' %}
-        <nav class="col-md-2" id="rightNav">
-            <ul class="localtoc nav nav-pills nav-stacked" data-spy="affix">
-              {{ toc }}
-            </ul>
+      {% if pagename != 'index' %}        
+        <nav class="col-md-3" id="rightNav">
+          <div class="text-center">
+            <input type="text" id="search" name="search" placeholder="Search Docs"/>
+          </div>
+          <hr/>
+          <ul class="localtoc nav nav-pills nav-stacked" data-spy="affix">
+            {{ toc }}
+          </ul>
         </nav>
       {% endif %}
     {% endblock %}
@@ -170,7 +174,7 @@
     docsearch({
       apiKey: '5008b0d9ea4d9e639a17a123bea077fe',
       indexName: 'gauge',
-      inputSelector: 'input[name="q"]',
+      inputSelector: '#search',
       debug: false // Set debug to true if you want to inspect the dropdown
       });
   </script>   

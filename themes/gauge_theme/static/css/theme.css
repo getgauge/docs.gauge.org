@@ -106,3 +106,28 @@ body {
   width: 20px;
   transition: all 0.3s ease;
 }
+
+#search {
+  border-radius: 5px;
+  width: 20em;
+  background-image: url(../img/search.svg);
+  padding: 5px 5px 5px 29px;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 5px;
+  font-size: 80%;
+}
+
+.headerlink {
+  visibility: hidden;
+}
+
+a.headerlink:hover {
+  color: #337ab7;
+}
+
+h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .headerlink, h5:hover .headerlink, h6:hover .headerlink, 
+.h1:hover .headerlink, .h2:hover .headerlink, .h3:hover .headerlink, .h4:hover .headerlink, .h5:hover .headerlink, .h6:hover .headerlink {
+  visibility: visible;
+}
