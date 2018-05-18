@@ -373,9 +373,40 @@ Plugins can be uninstalled using the ``uninstall`` subcommand. The command is
 
 Example:
 
-.. code-block:: console
+.. container:: code-snippet
 
-   gauge uninstall java
+  .. tabs::
+
+    .. group-tab:: C#
+
+      .. code-block:: console
+
+        gauge uninstall csharp
+
+    .. group-tab:: Java
+
+      .. code-block:: console
+
+        gauge uninstall java
+
+    .. group-tab:: JavaScript
+
+      .. code-block:: console
+
+        gauge uninstall js
+
+    .. group-tab:: Python
+
+      .. code-block:: console
+
+        gauge uninstall python
+        pip uninstall getgauge
+
+    .. group-tab:: Ruby
+
+      .. code-block:: console
+
+        gauge uninstall ruby
 
 To uninstall a specific version of the plugin, use the
 ``--version`` flag.
