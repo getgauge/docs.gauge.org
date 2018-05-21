@@ -1,31 +1,6 @@
 Writing Specifications
 ======================
 
-<<<<<<< HEAD:writing-specifications.rst
-=======
-.. _why_gauge:
-
-Why Gauge?
-----------
-
-Read our article, `Why we built Gauge! <https://blog.getgauge.io/why-we-built-gauge-6e31bb4848cd>`__
-
-Some of the **key features** of Gauge that make it stand unique include:
-
--  A rich markup based on `markdown <https://daringfireball.net/projects/markdown/syntax>`__
--  Simple, Flexible and Rich Syntax
--  Business Language Tests : Supports the concept of executable documentation.
--  Consistent Cross Platform/Language Support for writing test code. Currently :ref:`supported languages <install-language-runner>`.
--  Open Source, so it could be shared freely and improved by others as well.
--  A modular architecture with :doc:`plugins` support.
--  Extensible through :doc:`plugins` and Hackable.
--  Supports External Data Sources.
--  Helps you create Maintainable and Understandable test suites.
--  :ref:`IDE Support <ide_support>`.
-
-Gauge Terminologies
--------------------
->>>>>>> 0d69e126086e5ad762c1bac4c5240d537765d3af:longstart.rst
 Specifications (spec)
 ---------------------
 
@@ -116,7 +91,7 @@ or
 -  A scenario can be tagged using :ref:`tags <tag_syntax>`.
 
 Example
-^^^^^^^
++++++++
 
 .. code-block:: gauge
 
@@ -152,7 +127,7 @@ executed.
 See how to write :ref:`language-steps` for different languages.
 
 Example
-^^^^^^^
++++++++
 
 .. code-block:: gauge
 
@@ -188,7 +163,7 @@ step.
 The parameters passed into a step are of the following types:
 
 Simple parameters
-^^^^^^^^^^^^^^^^^
++++++++++++++++++
 
 They are values passed into the steps in double quotes.
 
@@ -203,7 +178,7 @@ Therefore the usage of the old parameter(if any) has to be fixed
 manually to resolve the corresponding compilation issue.
 
 Dynamic Parameters
-^^^^^^^^^^^^^^^^^^
+++++++++++++++++++
 
 Dynamic parameters are used as placeholder for values.
 
@@ -255,7 +230,7 @@ Example
 Iniline data tables can be externalized as :ref:`special csv paramter<special_parameter_csv>`
 
 Special Parameters
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 Special parameters provide the ability to pass larger and richer data
 into the steps as parameters.
@@ -373,7 +348,7 @@ Tags are used to associate labels with specifications or scenarios. Tags are wri
 They help in filtering specs or scenarios based on tags used.
 
 Example
-^^^^^^^
++++++++
 
 Both the ``Login specification`` and the scenario
 ``Successful login scenario`` have tags in the below example.
@@ -411,7 +386,7 @@ directory.
 **Note:** A single .cpt file can contain multiple concept definitions.
 
 Defining a concept
-^^^^^^^^^^^^^^^^^^
+++++++++++++++++++
 
 Create a ``.cpt`` file under specs directory with the concept
 definition.
@@ -424,7 +399,7 @@ The concept definition contains the 2 parts:
 .. _concept_header:
 
 Concept header
-^^^^^^^^^^^^^^
+++++++++++++++
 
 The concept header defines the name of the concept and the parameters
 that it takes. It is written in the markdown **``H1``** format.
@@ -439,7 +414,7 @@ that it takes. It is written in the markdown **``H1``** format.
 .. _concept_steps:
 
 Steps
-^^^^^
++++++
 
 The concept header is followed by the steps that are used inside the
 concept. They are defined in the usual :ref:`steps <step_syntax>` structure.
@@ -534,7 +509,7 @@ function.
 -  Tear down steps are executed after every scenario in the spec.
 
 Syntax
-^^^^^^
+++++++
 
 ``___``: Three or more consecutive underscores will indicate the start
 of tear down. Steps that are written in tear down(after three or more
@@ -548,7 +523,7 @@ consecutive underscores) will be considered as tear down steps.
     * Tear down step 3
 
 Example
-^^^^^^^
++++++++
 
 .. code-block:: gauge
 
