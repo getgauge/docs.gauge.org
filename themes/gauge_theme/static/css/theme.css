@@ -88,7 +88,7 @@ body {
   margin-top: 0 !important;
 }
 
-.content .section h1:nth-child(1) {
+.content > .section > h1 {
   border-bottom: 1px solid;
   padding-bottom: 10px;
 }
@@ -194,4 +194,8 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 .localtoc {
   border-left: 0.5px solid #222222;
   padding-left: 10px !important;
+}
+
+code {
+  font-size: 80%
 }

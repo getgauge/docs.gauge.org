@@ -51,7 +51,10 @@ $(document).ready(() => {
     debug: false // Set debug to true if you want to inspect the dropdown
   });
 
-  $('ul.localtoc ul ul ul').remove();
+  $('ul.localtoc ul ul ul, ul.localtoc > ul > li > a').remove();
+  
+  // remove nested container classes.
+  $('.container .container').removeClass('container');
 
   var lastId,
   rightNav = $("#rightNav"),

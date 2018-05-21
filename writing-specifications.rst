@@ -2,7 +2,7 @@ Writing Specifications
 ======================
 
 Specifications (spec)
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 They are business layer test cases which can also act as your feature
 documentation. They are written in the business language. Typically a
@@ -13,7 +13,7 @@ under test.
 -  The Markup for a Specification file is based on `markdown syntax <https://daringfireball.net/projects/markdown/syntax>`__.
 
 Example
-^^^^^^^
++++++++
 
 .. code-block:: gauge
 
@@ -67,7 +67,7 @@ or
 .. _longstart-scenarios:
 
 Scenarios
-~~~~~~~~~
+---------
 
 Each scenario represents a single flow in a particular specification. A
 specification must contain at least one scenario.
@@ -109,7 +109,7 @@ Example
 .. _longstart-steps:
 
 Steps
-~~~~~
+-----
 
 Steps are the executable components of your specification. They are
 written as markdown unordered list items (bulleted points).
@@ -146,7 +146,7 @@ cannot be used in step text.
    - ``>``
 
 Parameters
-~~~~~~~~~~
+----------
 
 Steps can be defined to take values as parameters so that they can be
 re-used with different parameter values.
@@ -337,7 +337,7 @@ data table.
 .. _longstart-tags:
 
 Tags
-~~~~
+----
 
 Tags are used to associate labels with specifications or scenarios. Tags are written as comma separated values in the spec with a prefix ``Tags:`` .
 
@@ -368,7 +368,7 @@ A tag applied to a spec automatically applies to a scenario.
 .. _concept:
 
 Concepts
-~~~~~~~~
+--------
 
 Concepts provide the ability to combine re-usable logical groups of
 steps into a single unit. It provides a higher level abstraction of a
@@ -450,7 +450,7 @@ The concept above can now be used in any spec as shown below
     * Login as user "john" and create project "Gauge java"
 
 Contexts
-~~~~~~~~
+--------
 
 **Contexts** or **Context steps** are steps defined in a spec before any
 scenario.
@@ -498,7 +498,7 @@ The spec execution flow would be:
 .. _longstart-teardown:
 
 Tear Down Steps
-~~~~~~~~~~~~~~~
+---------------
 
 **Tear Down Steps** are the steps defined in a spec after the last
 scenario. They allow you to specify a set of clean-up steps after every
@@ -565,7 +565,7 @@ The spec execution flow would be:
 .. _language-steps:
 
 Step implementations
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 
 :ref:`longstart-steps` have a language specific implementation that gets executed on the spec execution.
 
@@ -580,62 +580,58 @@ Simple step
 
 **Implementation**
 
-C#
-~~
+.. tab-container:: languages
 
-.. code-block:: java
+    .. tab:: C#
 
-    // The Method can be written in **any C# class** as long as it is part of the project.
-    public class StepImplementation {
+        .. code-block:: java
 
-      [Step("Say <greeting> to <product name>")]
-      public void HelloWorld(string greeting, string name) {
-          // Step implementation
-      }
-    }
+            // The Method can be written in **any C# class** as long as it is part of the project.
+            public class StepImplementation {
 
-Java
-~~~~
+                [Step("Say <greeting> to <product name>")]
+                public void HelloWorld(string greeting, string name) {
+                    // Step implementation
+                }
+            }
 
-.. code-block:: java
+    .. tab:: Java
 
-    // This Method can be written in any java class as long as it is in classpath.
+        .. code-block:: java
 
-    public class StepImplementation {
+            // This Method can be written in any java class as long as it is in classpath.
 
-      @Step("Say <greeting> to <product name>")
-      public void helloWorld(String greeting, String name) {
-          // Step implementation
-      }
+            public class StepImplementation {
 
-    }
+                @Step("Say <greeting> to <product name>")
+                public void helloWorld(String greeting, String name) {
+                    // Step implementation
+                }
+            }
 
-JavaScript
-~~~~~~~~~~
+    .. tab:: JavaScript
 
-.. code-block:: javascript
+        .. code-block:: javascript
 
-    step("Say <greeting> to <name>", async function(greeting, name) {
-      throw 'Unimplemented Step';
-    });
+            step("Say <greeting> to <name>", async function(greeting, name) {
+                throw 'Unimplemented Step';
+            });
 
-Python
-~~~~~~
+    .. tab:: Python
 
-.. code-block:: python
+        .. code-block:: python
 
-    @step("Say <greeting> to <product name>")
-    def create_following_characters(greeting, name):
-        assert False, "Add implementation code"
+            @step("Say <greeting> to <product name>")
+            def create_following_characters(greeting, name):
+                assert False, "Add implementation code"
 
-Ruby
-~~~~
+    .. tab:: Ruby
 
-.. code-block:: ruby
+        .. code-block:: ruby
 
-    step 'Say <greeting> to <product name>' do |greeting, name|
-    # Code for the step
-    end
+            step 'Say <greeting> to <product name>' do |greeting, name|
+                # Code for the step
+            end
 
 Step with table
 +++++++++++++++
@@ -653,71 +649,67 @@ Step with table
 
 **Implementation**
 
-C#
-~~
+.. tab-container:: languages
 
-.. code-block:: java
+    .. tab:: CSharp
 
-  // Here Table is a custom data structure defined by gauge.
-  // This is available by adding a reference to the Gauge.CSharp.Lib.
-  // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/
+        .. code-block:: java
 
-  public class Users {
+            // Here Table is a custom data structure defined by gauge.
+            // This is available by adding a reference to the Gauge.CSharp.Lib.
+            // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/
 
-    [Step("Create following <role> users <table>")]
-    public void HelloWorld(string role, Table table) {
-        // Step implementation
-    }
+            public class Users {
 
-  }
+                [Step("Create following <role> users <table>")]
+                public void HelloWorld(string role, Table table) {
+                    // Step implementation
+                }
 
-Java
-~~~~
+            }
 
-.. code-block:: java
+    .. tab:: Java
 
-  // Table is a custom data structure defined by gauge.
-  public class Users {
+        .. code-block:: java
 
-    @Step("Create following <race> characters <table>")
-    public void createCharacters(String type, Table table) {
-        // Step implementation
-    }
+            // Table is a custom data structure defined by gauge.
+            public class Users {
 
-  }
+                @Step("Create following <race> characters <table>")
+                public void createCharacters(String type, Table table) {
+                    // Step implementation
+                }
 
-JavaScript
-~~~~~~~~~~
+            }
 
-.. code-block:: javascript
+    .. tab:: JavaScript
 
-  step("Create following <arg0> characters <arg1>", async function(arg0, arg1) {
-    throw 'Unimplemented Step';
-  });
+        .. code-block:: javascript
 
-Python
-~~~~~~
+            step("Create following <arg0> characters <arg1>", async function(arg0, arg1) {
+                throw 'Unimplemented Step';
+            });
 
-.. code-block:: python
+    .. tab:: Python
 
-  # Here Table is a custom data structure defined by gauge.
+        .. code-block:: python
 
-  @step("Create following <hobbit> characters <table>")
-  def create_following_characters(hobbit, table):
-      assert False, "Add implementation code"
+            # Here Table is a custom data structure defined by gauge.
 
-Ruby
-~~~~
+            @step("Create following <hobbit> characters <table>")
+            def create_following_characters(hobbit, table):
+                assert False, "Add implementation code"
 
-.. code-block:: ruby
-  :caption: Ruby
+    .. tab:: Ruby
 
-  # Here table is a custom data structure defined by gauge-ruby.
+        .. code-block:: ruby
 
-  step 'Create following <race> characters <table>' do |role, table|
-    puts table.rows
-    puts table.columns
-  end
+            # Here table is a custom data structure defined by gauge-ruby.
+
+            step 'Create following <race> characters <table>' do |role, table|
+                puts table.rows
+                puts table.columns
+            end
 
 Step alias
 ^^^^^^^^^^
@@ -757,58 +749,59 @@ ensuring that the functionality is expressed clearly.
 Implementation
 """"""""""""""
 
-**C#**
+.. tab-container:: languages
 
+    .. tab:: CSharp
 
-  .. code-block:: java
+        .. code-block:: java
 
-      public class Users {
+            public class Users {
 
-          [Step({"Create a user <user_name>", "Create another user <user_name>"})]
-          public void HelloWorld(string user_name) {
-              // create user user_name
-          }
+                [Step({"Create a user <user_name>", "Create another user <user_name>"})]
+                public void HelloWorld(string user_name) {
+                    // create user user_name
+                }
 
-      }
+            }
 
-**Java**
+    .. tab:: Java
 
-  .. code-block:: java
+        .. code-block:: java
 
-      public class Users {
+            public class Users {
 
-          @Step({"Create a user <user_name>", "Create another user <user_name>"})
-          public void helloWorld(String user_name) {
-              // create user user_name
-          }
+                @Step({"Create a user <user_name>", "Create another user <user_name>"})
+                public void helloWorld(String user_name) {
+                    // create user user_name
+                }
 
-      }
+            }
 
-**JavaScript**
+    .. tab:: JavaScript
 
-  .. code-block:: javascript
+        .. code-block:: javascript
 
-      step(["Create a user <username>", "Create another user <username>"], function (username) {
-      // do cool stuff
-      });
+            step(["Create a user <username>", "Create another user <username>"], function (username) {
+            // do cool stuff
+            });
 
-**Python**
+    .. tab:: Python
 
-  .. code-block:: python
+        .. code-block:: python
 
-      from getgauge.python import step
+            from getgauge.python import step
 
-      @step(["Create a user <user name>", "Create another user <user name>"])
-      def hello(user_name):
-          print("create {}.".format(user_name))
+            @step(["Create a user <user name>", "Create another user <user name>"])
+            def hello(user_name):
+                print("create {}.".format(user_name))
 
-**Ruby**
+    .. tab:: Ruby
 
-  .. code-block:: ruby
+        .. code-block:: ruby
 
-      step 'Create a user ','Create another user ' do |user_name|
-          // create user user_name
-      end
+            step 'Create a user ','Create another user ' do |user_name|
+                // create user user_name
+            end
 
 Example 2
 ~~~~~~~~~
@@ -834,64 +827,59 @@ could be something like this.
 Implementation
 """"""""""""""
 
-.. tabs::
+.. tab-container:: languages
 
-C#
-^^
+    .. tab:: CSharp
 
-.. code-block:: java
+        .. code-block:: java
 
-    public class Users {
+            public class Users {
 
-        [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
-        public void HelloWorld(string email_type) {
-            // Send email of email_type
-        }
+                [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
+                public void HelloWorld(string email_type) {
+                    // Send email of email_type
+                }
 
-    }
+            }
 
-Java
-^^^^
+    .. tab:: Java
 
-.. code-block:: java
+        .. code-block:: java
 
-    public class Users {
+            public class Users {
 
-        @Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})
-        public void helloWorld(String email_type) {
-            // Send email of email_type
-        }
+                @Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})
+                public void helloWorld(String email_type) {
+                    // Send email of email_type
+                }
 
-    }
+            }
 
-JavaScript
-^^^^^^^^^^
+    .. tab:: JavaScript
 
-.. code-block:: javascript
+        .. code-block:: javascript
 
-    step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"], function (email_type) {
-        // do cool stuff
-    });
+            step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"], function (email_type) {
+                // do cool stuff
+            });
 
-Python
-^^^^^^
+    .. tab:: Python
 
-.. code-block:: python
+        .. code-block:: python
 
-    from getgauge.python import step
+            from getgauge.python import step
 
-    @step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"])
-    def email(email_type):
-        print("create {}.".format(email_type))
+            @step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"])
+            def email(email_type):
+                print("create {}.".format(email_type))
 
-Ruby
-^^^^
+    .. tab:: Ruby
 
-.. code-block:: ruby
+        .. code-block:: ruby
 
-    step 'A email is sent to the user', 'An email confirming the is sent' do |email_type|
-        email_service.send email_type
-    end
+            step 'A email is sent to the user', 'An email confirming the is sent' do |email_type|
+                email_service.send email_type
+            end
 
 Enum as Step parameter
 ----------------------
@@ -911,60 +899,14 @@ in step implementation.
 **Implementation**
 
 .. code-block:: java
-  :caption: Java
+    :caption: Java
 
-  public enum Direction { NORTH, SOUTH, EAST, WEST; }
+    public enum Direction { NORTH, SOUTH, EAST, WEST; }
 
-  @Step("Navigate towards ")
-  public void navigate(Direction direction) {
-     //  code here
-  }
-
-Advanced
---------
-
-Refactoring
-^^^^^^^^^^^
-
-Rephrase steps
-++++++++++++++
-
-Gauge allows you to rephrase a step across the project. To rephrase a
-step run:
-
-.. code-block:: console
-
-    gauge refactor "old step <name>" "new step name"
-
-Here ``<`` and ``>`` are used to denote parameters in the step.
-**Parameters can be added, removed or changed while rephrasing.**
-
-This will change all spec files and code files (for language plugins
-that support refactoring).
-
-For example,
-
-Let's say we have the following steps in our ``spec`` file:
-
-.. code-block:: gauge
-
-    * create user "john" with id "123"
-    * create user "mark" with id "345"
-
-Now, if we now need to add an additional parameter, say ``last name``,
-to this step we can run the command:
-
-.. code-block:: console
-
-    gauge refactor "create user <name> with id <id>" "create user <name> with <id> and last name <watson>"
-
-This will change all spec files to reflect the change.
-
-.. code-block:: gauge
-
-    * create user "john" with id "123" and last name "watson"
-    * create user "mark" with id "345" and last name "watson"
-
+    @Step("Navigate towards ")
+    public void navigate(Direction direction) {
+        //  code here
+    }
 
 Troubleshooting
 ---------------
