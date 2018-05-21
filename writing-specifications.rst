@@ -1,6 +1,31 @@
 Writing Specifications
 ======================
 
+<<<<<<< HEAD:writing-specifications.rst
+=======
+.. _why_gauge:
+
+Why Gauge?
+----------
+
+Read our article, `Why we built Gauge! <https://blog.getgauge.io/why-we-built-gauge-6e31bb4848cd>`__
+
+Some of the **key features** of Gauge that make it stand unique include:
+
+-  A rich markup based on `markdown <https://daringfireball.net/projects/markdown/syntax>`__
+-  Simple, Flexible and Rich Syntax
+-  Business Language Tests : Supports the concept of executable documentation.
+-  Consistent Cross Platform/Language Support for writing test code. Currently :ref:`supported languages <install-language-runner>`.
+-  Open Source, so it could be shared freely and improved by others as well.
+-  A modular architecture with :doc:`plugins` support.
+-  Extensible through :doc:`plugins` and Hackable.
+-  Supports External Data Sources.
+-  Helps you create Maintainable and Understandable test suites.
+-  :ref:`IDE Support <ide_support>`.
+
+Gauge Terminologies
+-------------------
+>>>>>>> 0d69e126086e5ad762c1bac4c5240d537765d3af:longstart.rst
 Specifications (spec)
 ---------------------
 
