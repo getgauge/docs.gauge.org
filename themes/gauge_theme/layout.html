@@ -128,11 +128,13 @@
   <div class="row col-md-12">
     {% if pagename == 'index' %}
     <div class="col-md-12 content">
+      {% include '_landing.html' %}
+    </div>      
     {% else %}
     <div class="col-md-9 content">
-    {% endif %}
-        {% block body %}{% endblock %}
+      {% block body %}{% endblock %}
     </div>
+    {% endif %}
 
     {% block sidebar2 %} 
       {% if pagename != 'index' %}        
@@ -153,7 +155,7 @@
 {%- endblock %}
 
 {%- block footer %}
-  <div class="footer" role="contentinfo">
+  <div class="footer text-center" role="contentinfo">
   {%- if show_copyright %}
     {%- if hasdoc('copyright') %}
       {% trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
