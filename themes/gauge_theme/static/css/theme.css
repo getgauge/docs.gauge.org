@@ -50,6 +50,14 @@
   padding: 5px;
   height: 100%;
   cursor: pointer;
+  position: relative;
+}
+
+.feature-wrapper:hover {
+  background-color: #eeeeee;
+}
+.feature-wrapper a, .feature-wrapper a:hover {
+  color: rgb(51,51,51);
 }
 
 .highlight-console .highlight pre span.go:before{
@@ -221,4 +229,8 @@ code {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.feature-desc > span {
+  border-bottom: 0.5px solid;
 }
