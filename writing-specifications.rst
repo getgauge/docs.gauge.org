@@ -903,7 +903,7 @@ in step implementation.
 
     public enum Direction { NORTH, SOUTH, EAST, WEST; }
 
-    @Step("Navigate towards ")
+    @Step("Navigate towards <direction>")
     public void navigate(Direction direction) {
         //  code here
     }
