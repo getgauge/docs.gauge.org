@@ -3,44 +3,86 @@
 Execution
 =========
 
-Inside a Gauge project, you can execute your tests by invoking 
-``gauge`` with path to :ref:`specifications <spec_syntax>`. 
-By convention, specifications are stored in the the ``./specs/`` 
-sub-directory in the project root.
+Specify Directory
+-----------------
 
-The syntax is:
+By convention, specifications are stored in the the ``./specs/`` 
+sub-directory in the project root.Gauge scans the directory(ies) passed 
+and picks up valid specification files.
+
+Multiple arguments can be passed to ``run`` subcommand by separating them with a space. 
+The values can be either
+
+- path to directories that contain specifications 
+- path to specification files
+- path to scenarios (see :ref:`scenario <scenario_syntax>`)
+- mix of above.
+
+To run all the specifications in a given folder ``specs``:
 
 .. code-block:: console
 
-    gauge run [flags] <path-to-specs>
+    gauge run specs
 
-The ``gauge`` command-line utility allows multiple ways to specify the
-specifications to be executed. A valid path for executing tests can be
-path to directories that contain specifications or path to specification
-files or path to scenarios or a mix of any of these three methods.
 
-To execute all the tests in a given folder ``specs``, use
+To specify a single directory in which specifications are stored:
+
+For example,
 
 .. code-block:: console
 
     gauge run specs/
 
-This will give a colored console output with details of the execution as
-well an execution summary.
+To specify multiple directories in which specifications are
+stored. 
 
-The path of specifications can also be specified through an environment variable <path>.
-This changes the default specification directory from ``specs`` to the value defined in the environment variable. 
+For example,
 
-Gauge specifications can also be run from within the IDE
-(`Visual Studio Code <https://github.com/getgauge/gauge-vscode/blob/master/README.md#run-specifications-and-scenarios>`__,
-`IntelliJ IDEA <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md#execution>`__, Visual Studio)
+.. code-block:: console
 
-Specify scenarios
-^^^^^^^^^^^^^^^^^
+    gauge run specs-dir1/ specs-dir2/ specs-dir3/
+
+.. note::
+    The path of specifications can also be specified through an environment variable <path>.
+    This changes the default specification directory from ``specs`` to the value defined in the environment variable. 
+
+.. note::
+    Gauge specifications can also be run from within the IDE
+    (`Visual Studio Code <https://github.com/getgauge/gauge-vscode/blob/master/README.md#run-specifications-and-scenarios>`__,
+    `IntelliJ IDEA <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md#execution>`__, Visual Studio)
+
+Specify files
+-------------
+
+Gauge executes only the specification file(s) provided.
+
+Run one (or a list of) specifications.
+
+.. code-block:: console
+
+    gauge run [flags] <path-to-specs>
+
+For example, execute a single specification file:
+
+.. code-block:: console
+
+    gauge run specs/spec1.spec
+
+Or, execute multiple specification files:
+
+.. code-block:: console
+
+    gauge run specs/spec1.spec specs/spec2.spec specs/spec3.spec
+
+Specify Scenarios
+-----------------
 
 A single scenario of a specification can be executed by specifying the
-line number in the span of that scenario in the spec. To execute a
-``Admin Login`` scenario in the following spec use
+line number in the span of that scenario in the spec. 
+The argument can be a specific :ref:`scenario <scenario_syntax>` or a 
+list of scenarios to execute. 
+
+To execute a ``Admin Login`` scenario in the following spec use
 ``gauge run specs/login_test.spec:4`` command.
 
 .. code-block:: gauge
@@ -66,11 +108,11 @@ Multiple scenarios can be executed selectively as follows :
 
 These scenarios can also belong to different specifications.
 
-You can also specify a specific :ref:`scenario <scenario_syntax>` or a 
-list of scenarios to execute. To execute scenarios, ``gauge`` takes 
-path to a specification file, followed by a colon and the line number 
-of the scenario. You may specify any line number which the scenario 
-spans across. For example, in the above spec file, both the below 
+To execute scenarios, ``gauge`` takes path to a specification file, 
+followed by a colon and the line number of the scenario. 
+Any line number which the scenario spans across can be used. 
+
+For example, in the above spec file, both the below 
 commands will run the same scenario.
 
 .. code-block:: console
@@ -78,7 +120,7 @@ commands will run the same scenario.
     gauge run specs/helloworld.spec:3 # Runs scenario 'Admin Login'
     gauge run specs/helloworld.spec:5 # Runs scenario 'Admin Login'
 
-Consider a specification file, ``spec1.spec`` defined as such,
+Consider a specification file, ``spec1.spec``:
 
 .. code-block:: gauge
     :linenos:
@@ -95,8 +137,8 @@ Consider a specification file, ``spec1.spec`` defined as such,
     * User must login as "user1"
     * Navigation to configuration page is restricted.
 
-For example, to execute the second scenario of a specification file
-named ``spec1.spec``, you would do:
+To execute the second scenario of a specification file
+named ``spec1.spec``:
 
 .. code-block:: console
 
@@ -104,58 +146,17 @@ named ``spec1.spec``, you would do:
 
 To specify multiple scenarios, add multiple such arguments. For example,
 to execute the first and second scenarios of a specification file named
-``spec1.spec``, you would do:
+``spec1.spec``:
 
 .. code-block:: console
 
     gauge run specs/spec1.spec:3 specs/spec1.spec:7
 
-Specify directories
-^^^^^^^^^^^^^^^^^^^
-
-You can specify a single directory in which specifications are stored.
-Gauge scans the directory and picks up valid specification files.
-
-For example,
-
-.. code-block:: console
-
-    gauge run specs/
-
-You can also specify multiple directories in which specifications are
-stored. Gauge scans all the directories for valid specification files
-and executes them in one run.
-
-For example,
-
-.. code-block:: console
-
-    gauge run specs-dir1/ specs-dir2/ specs-dir3/
-
-Specify files
-^^^^^^^^^^^^^
-
-You can specify path to a specification files. In that case, Gauge
-executes only the specification files provided.
-
-For example, to execute a single specification file:
-
-.. code-block:: console
-
-    gauge run specs/spec1.spec
-
-Or, to execute multiple specification files:
-
-.. code-block:: console
-
-    gauge run specs/spec1.spec specs/spec2.spec specs/spec3.spec
-
-
 Verbose reporting
-^^^^^^^^^^^^^^^^^
+-----------------
 
 By default, ``gauge`` reports at the specification level when executing
-tests. You can enable verbose, step-level reporting by using the
+tests. Enable verbose step-level reporting by using the
 ``--verbose`` flag. For example,
 
 .. code-block:: console
@@ -166,7 +167,7 @@ tests. You can enable verbose, step-level reporting by using the
 .. _table_driven_execution:
 
 Data driven execution
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 -  A *data table* is defined in markdown table format in the beginning
    of the spec before any steps.
 -  The data table should have a header row and one or more data rows
@@ -207,7 +208,7 @@ first row values ``1, vishnu`` and then consecutively for the second and
 third row values from the table.
 
 External CSV for data table
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Data Tables for a specification can also be passed from an external CSV file. 
 The parameter contains a prefix table and the path to the csv file.
@@ -237,7 +238,7 @@ For example,
 In the above example the step uses the ``name`` column from the csv file.
 
 Execute selected data table rows
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By default, scenarios in a spec are run against all the data table rows.
 It can be run against selected data table rows with flag
@@ -263,14 +264,19 @@ For example,
 
 This executes the scenarios against table rows 1, 2, 3.
 
+.. note::
+
+    This flag does not work well for multiple specifications, since there is no way to choose 
+    different table rows for different specifications.
+
 .. _tagged_execution:
 
-Tagged Execution
-^^^^^^^^^^^^^^^^
+Specify Tags
+------------
 
-Tags allow you to filter the specs and scenarios quickly for execution.
-To execute all the specs and scenarios which are labelled with certain
-tags, use the following command.
+Tags allow filtering the specs and scenarios to be executed.
+The following command executes all the specs and scenarios which are labelled with certain
+tags:
 
 .. code-block:: console
 
@@ -328,7 +334,7 @@ Execution hooks can also be filtered based on tags.
 See :ref:`filtering hooks with tags <_filtering_hooks_with_tags>` for more information.
 
 Tag expressions
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
 Tags can be selected using expressions. Examples:
 
@@ -348,7 +354,7 @@ Tags                               Selects specs/scenarios that
 .. _parallel_execution:
 
 Parallel Execution
-^^^^^^^^^^^^^^^^^^
+------------------
 
 Specs can be executed in parallel to run the tests faster and distribute
 the load.
@@ -386,7 +392,7 @@ For optimizations, try `parallel execution using threads`_.
 .. _parallel execution using threads:
 
 Parallel Execution using threads
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In parallel execution, every stream starts a new worker process. This can be optimized 
 by using multithreading instead of processes. This uses only one worker process and 
@@ -407,7 +413,7 @@ This property can also be added to the default/custom env.
 .. note:: Currently, this feature is only supported by Java language runner/plugin.
 
 Executing a group of specification
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Specifications can be distributed into groups and ``--group`` \| ``-g``
 flag provides the ability to execute a specific group.
@@ -438,38 +444,24 @@ Example:
 The above two commands will execute the same group of specifications.
 
 Rerun one execution stream
-""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Specifications can be distributed into groups and ``--group`` \| ``-g``
-flag provides the ability to execute a specific group.
+Executing specs with ``-n`` and `--g`` flags guarantee the same execution. 
 
-This can be done by the command:
-
-.. code-block:: console
-
-    gauge run -n=4 -g=2 specs
-
-This creates 4 groups (provided by ``-n`` flag) of specification and
-selects the 2nd group (provided by ``-g`` flag) for execution.
-
-Specifications are sorted by alphabetical order and then distributed
-into groups, which guarantees that every group will have the same set of
-specifications, no matter how many times it is being executed.
-
-Example:
+Example, execute the below command twice:
 
 .. code-block:: console
 
     gauge run -n=4 -g=2 specs
 
-The above two commands will execute the same group of specifications.
+On both occassions, gauge will execute the same group of specifications, in the same order.
 
 
 Run your test suite with lazy assignment of tests
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This features allows you to dynamically allocate your specs to streams
-during execution instead of at the start of execution.
+This features dynamically allocates specs to streams during execution instead 
+of at the start of execution.
 
 This allows Gauge to optimise the resources on your agent/execution
 environment. This is useful because some specs may take much longer than
@@ -489,10 +481,10 @@ or,
 
     gauge run -n=4 specs
 
-Say you have 100 tests, which you have chosen to run across 4
-streams/cores; lazy assignment will dynamically, during execution,
-assign the next spec in line to the stream that has completed it's
-previous execution and is waiting for more work.
+As an example, if there are 100 tests, which have to be run across 4
+streams/cores; lazy assignment will dynamically assign the next spec 
+in line to the stream that has completed it's previous execution and 
+is waiting for more work.
 
 Lazy assignment of tests is the default behaviour.
 
@@ -511,22 +503,21 @@ lazy strategy will have no impact on your test suite execution.
 
 
 Re-run failed tests
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
-Gauge provides you the ability to re-run only the scenarios which failed
+Gauge provides the ability to re-run only the scenarios which failed
 in previous execution. Failed scenarios can be run using the
 ``--failed`` flag of Gauge.
 
-Say you run ``gauge run specs`` and 3 scenarios failed, you can run re-run
-only failed scenarios instead of executing all scenarios by following
-command.
+As an example if 3 scenarios failed during ``gauge run specs`` , the failed scenarios can be re-run
+instead of executing all scenarios by following command.
 
 .. code-block:: console
 
     gauge run --failed
 
 This command will even set the flags which you had provided in your
-previous run. For example, if you had executed command as
+previous run. For example, if previous command was
 
 .. code-block:: console
 
@@ -543,10 +534,10 @@ equivalent to command
 
 
 Errors during execution
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 Parse errors
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 This occurs if the spec or concept file doesn't follow the 
 expected :ref:`specifications <spec_syntax>` or :ref:`concepts <concept_syntax>` syntax.
@@ -620,7 +611,7 @@ List of various Parse errors:
 +-------------------------------------------+--------------------------------+
 
 Validation Errors
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 These are errors for which `Gauge` skips executing the spec where the error occurs.
 
