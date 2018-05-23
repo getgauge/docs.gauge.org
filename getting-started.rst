@@ -264,8 +264,8 @@ Follow further instructions on the console to proceed with execution.
 Refer :ref:`project_structure` for files that get created for all languages.
 
 
-Running the specs
-^^^^^^^^^^^^^^^^^
+Running Specifications
+----------------------
 
 .. code-block:: console
 
@@ -279,7 +279,7 @@ statistics summary.
    Refer :ref:`executing_tests` for more details.
 
 Interpret results
-^^^^^^^^^^^^^^^^^
+-----------------
 
 The console report would give you the details of the run
 
