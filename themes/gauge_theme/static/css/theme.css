@@ -234,3 +234,13 @@ code {
 .feature-desc > span {
   border-bottom: 0.5px solid;
 }
+
+.faq-toc > ul {
+  font-size: 80%;
+  line-height: 1.3em;
+}
+
+.faq-toc ul {
+  list-style: none;
+  padding-left: 0.8em;
+}

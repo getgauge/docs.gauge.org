@@ -1,9 +1,5 @@
 :page_header: FAQs
 
-.. contents:: :local:
-
-----
-
 FAQs
 ====
 
@@ -25,7 +21,7 @@ MacOS/Linux   ``/usr/local/bin``
 
 
 Where are the plugins installed?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ============= ================================
 OS            Path
@@ -109,18 +105,15 @@ This can happen when gradle is unable to recognize the GaugeTask. Try using the 
         }
     }
 
-IDE
----
-
 Configuration
-^^^^^^^^^^^^^
+-------------
 
 .. note::
 
     Gauge specific properties are stored in ``gauge.properties`` under gauge configuration folder. Refer to :ref:`Gauge Properties<gauge_properties>`.
 
 How can I increase the language runner timeout?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By setting
 
@@ -128,19 +121,11 @@ By setting
 
    runner_connection_timeout = 3000
 
-VSCode
-^^^^^^
-Functionalities (goto definition, codelense of implementation files, find usages) not working?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Make sure the required language runner is installed. By running ``gauge version``.
-If not installed, install using ``gauge install <plugin_name>``.
-
 Logs
-^^^^
+----
 
 Where does gauge log the test execution output. warnings, validation results etc?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You'll find the logged at ``logs/gauge.log`` in your projects directory.
 
@@ -149,7 +134,7 @@ You'll find the logged at ``logs/gauge.log`` in your projects directory.
     ``logs`` is the default location for log files. This can be changed using ``logs_directory`` in :ref:`project's properties<default_properties>`.
 
 Where can I find gauge core API logs for debugging IDE plugins?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You'll find that at ``logs/api.log`` in your projects directory.
 
@@ -158,7 +143,7 @@ You'll find that at ``logs/api.log`` in your projects directory.
     ``logs`` is the default location for log files. This can be changed using ``logs_directory`` in :ref:`project's properties<default_properties>`.
 
 How can I customize the log directory location?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can specify a custom directory by changing the ``logs_directory`` property under
 ``env/default/default.properties`` Refer to :ref:`project's properties<default_properties>`.
@@ -168,7 +153,7 @@ You can specify a custom directory by changing the ``logs_directory`` property u
    logs_directory = my_custom_log_directory
 
 Where does gauge non project specific logs like plugin installation etc.?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ============= ===============================
 OS            Path
@@ -179,14 +164,11 @@ MacOS / Linux ``~/.gauge/logs``
 
 .. _js_faq:
 
-JS FAQs
--------
+Gauge Javascript
+----------------
 
-How to
-^^^^^^
-
-Debug without IDE
-~~~~~~~~~~~~~~~~~
+How to debug without IDE
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 gauge-js supports debugging your test implementation code using node-inspector.
 
@@ -227,14 +209,11 @@ You need to be quick enough to hit continue in the browser when node-inspector l
 
 .. _python_faq:
 
-Python FAQs
------------
-
-Errors
-^^^^^^
+Gauge Python
+------------
 
 ImportError: No module named getgauge
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Installing the getgauge package using pip should fix this. You can install the package by running the following command
 
@@ -244,13 +223,13 @@ Installing the getgauge package using pip should fix this. You can install the p
 
 
 Failed to start gauge API: Plugin 'python' not installed on following locations : [PATH]
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Installing the gauge-python plugin should fix this. You can install the plugin by running the following command
 
 ::
 
-    gauge --install python
+    gauge install python
 
 
 Make sure you have the getgauge package. If you don't have, run the following command to install
@@ -263,15 +242,12 @@ For more details, refer Installation_ docs.
 .. _Installation: ./installation.html
 
 ImportError: No module named step_impl.<file_name>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This error happens on older versions of Python(2.7, 3.2). Create ``step_impl/__init__.py`` to fix this.
 
-How to
-^^^^^^
-
-Change/Rename default step implementation(``step_impl``) directory
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How to change/rename default step implementation(``step_impl``) directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create ``python.properties`` file in the ``<PROJECT_DIR>/env/default`` directory and add the following line to it.
 
@@ -283,8 +259,8 @@ Create ``python.properties`` file in the ``<PROJECT_DIR>/env/default`` directory
    The path specified in ``STEP_IMPL_DIR`` property should be relative to project root.
 
 
-Use different version of python while running specs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How to use different version of python while running specs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By default the language runner uses ``python`` command to run specs. To change the default behaviour, add ``GAUGE_PYTHON_COMMAND`` property to the ``python.properties`` file in the ``<PROJECT_DIR>/env/default`` directory.
 
@@ -294,8 +270,9 @@ By default the language runner uses ``python`` command to run specs. To change t
     GAUGE_PYTHON_COMMAND = python3
     GAUGE_PYTHON_COMMAND = python2
 
-Debug without IDE
-~~~~~~~~~~~~~~~~~
+How to debug gauge-python without using an IDE
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Gauge-Python supports debugging your test implementation code using `pbd`_.
 
 .. _pbd: https://docs.python.org/2/library/pdb.html
@@ -311,3 +288,12 @@ The typical usage to break into the debugger from a running program is to insert
        pdb.set_trace()
 
 Execution will stop where it finds the above statement and you can debug.
+
+VSCode
+------
+Why are some functionalities not working?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you notice that any of the documented functionalities (ex. goto definition, codelense of implementation files, find usages)
+are not working then make sure the required language runner is installed, by running ``gauge version``.
+If not installed, install using ``gauge install <plugin_name>``.
