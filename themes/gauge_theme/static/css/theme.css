@@ -201,9 +201,13 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
   background-image: url("../img/curl-logo.svg");
 }
 
-.localtoc {
+.sidebar-wrapper {
   border-left: 0.5px solid #222222;
   padding-left: 10px !important;
+}
+
+.sidebar-wrapper .separator {
+  border-bottom: 0.5px solid #222222;
 }
 
 code {

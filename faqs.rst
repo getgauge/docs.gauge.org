@@ -277,15 +277,15 @@ Gauge-Python supports debugging your test implementation code using `pbd`_.
 
 .. _pbd: https://docs.python.org/2/library/pdb.html
 
-   ::
+::
 
-       import pdb
+    import pdb
 
 The typical usage to break into the debugger from a running program is to insert
 
-   ::
+::
 
-       pdb.set_trace()
+    pdb.set_trace()
 
 Execution will stop where it finds the above statement and you can debug.
 

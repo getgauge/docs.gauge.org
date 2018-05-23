@@ -98,7 +98,7 @@
 <header class="top">
   <div class="container">
     <a class="logo" href="//gauge.org">
-      <img alt="Gauge logo" id="thumb" src="_static/img/Gauge-Logo-White.svg" width="150" height="38">
+      <img alt="Gauge logo" id="thumb" src="{{ pathto('_static/img/Gauge-Logo-White.svg', 1) }}" width="150" height="38">
     </a>
     <span class="beta">Preview</span>
     <nav class="mainnav">
@@ -148,9 +148,28 @@
             <div class="text-center">
               <input type="text" id="search" name="search" placeholder="Search Docs"/>
             </div>
-            <ul class="localtoc">
-              {{ toc }}
-            </ul>
+            <div class="sidebar-wrapper">
+              <ul class="localtoc">
+                {{ toc }}
+              </ul>
+              <div class="separator"></div>
+              <div class="links">
+                <ul>
+                  <li><a href="/">Docs Home</a></li>
+                  <li>
+                    <a href="https://github.com/getgauge/docs.gauge.org/blob/{{ github_version|default("master") }}{{ conf_py_path }}{{ pagename }}{{ source_suffix|default(".rst") }}"> Edit on GitHub</a> 
+                  </li>
+                </ul>
+                  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+                    {% if prev %}
+                      <a href="{{ prev.link|e }}" class="btn btn-neutral" title="{{ prev.title|striptags|e }}" accesskey="p">Previous</a>
+                    {% endif %}
+                    {% if next %}
+                      <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n">Next</a>
+                    {% endif %}
+                  </div>
+              </div>
+            </div>
           </nav>
         </div>
       {% endif %}
@@ -160,24 +179,36 @@
 {%- endblock %}
 
 {%- block footer %}
-  <div class="footer text-center" role="contentinfo">
-  {%- if show_copyright %}
-    {%- if hasdoc('copyright') %}
-      {% trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
-    {%- else %}
-      {% trans copyright=copyright|e %}&#169; Copyright {{ copyright }}.{% endtrans %}
-    {%- endif %}
-  {%- endif %}
-  {%- if last_updated %}
-    {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
-  {%- endif %}
-  {%- if show_sphinx %}
-    {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx-doc.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
-  {%- endif %}
-  </div>
-  {%- block scripts %}
-  {{- script() }}
-  {%- endblock %}
+  <footer>
+    <div class="powered-by">
+      <div class="container">
+        <a href="https://www.thoughtworks.com/products">
+          <img alt="Thoughtworks logo" src="{{ pathto('_static/img/thoughtworks-logo.svg', 1) }}" height="44">
+        </a>
+        <div class="disclamer">
+          Gauge is an open source project, sponsored by ThoughtWorks Inc. under the GPL License, Version 3.0
+        </div>
+      </div>
+      <div class="footer text-center" role="contentinfo">
+      {%- if show_copyright %}
+        {%- if hasdoc('copyright') %}
+          {% trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
+        {%- else %}
+          {% trans copyright=copyright|e %}&#169; Copyright {{ copyright }}.{% endtrans %}
+        {%- endif %}
+      {%- endif %}
+      {%- if last_updated %}
+        {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
+      {%- endif %}
+      {%- if show_sphinx %}
+        {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx-doc.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
+      {%- endif %}
+      </div>
+    </div>
+    {%- block scripts %}
+    {{- script() }}
+    {%- endblock %}
+  </footer>
 {%- endblock %}
 </body>
 </html>

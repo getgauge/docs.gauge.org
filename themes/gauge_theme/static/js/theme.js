@@ -75,7 +75,7 @@ $(document).ready(() => {
 
   // sidebar menu scroll spy.
   var lastId,
-  rightNav = $("#rightNav"),
+  rightNav = $("#rightNav .localtoc"),
   rightNavHeight = rightNav.outerHeight()+15,
   menuItems = rightNav.find("a").not("[href='#']"),
   scrollItems = menuItems.map(function(){
