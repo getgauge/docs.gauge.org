@@ -12,7 +12,7 @@ Install Gauge
 
         **Using Chocolatey**
 
-        Requires `chocolatey <https://chocolatey.org//>`__, and Internet Connection.
+        Requires `chocolatey <https://chocolatey.org//>`__, and an internet connection.
 
         .. code-block:: console
 
@@ -118,8 +118,8 @@ Install Gauge
 Install Plugins
 ---------------
 
-Plugins are an easy way to extend the features of gauge. There are
-various types of plugins that gauge currently supports.
+Plugins are an easy way to extend the features of Gauge. There are
+various types of plugins that Gauge currently supports.
 
 Language Runner
 ^^^^^^^^^^^^^^^
@@ -273,8 +273,7 @@ Running Specifications
 
    gauge run specs
 
-The details of the run are displayed on the command line followed by a
-statistics summary.
+The details of the run are displayed on the command line followed by a summary.
 
 .. note::
 
@@ -290,7 +289,7 @@ The console report would give you the details of the run
     Specifications: (w) executed    (x) passed  (y) failed  (z) skipped
     Scenarios:      (a) executed    (b) passed  (c) failed  (d) skipped
 
-The statistics of the scenarios indicate
+The summary of the scenarios indicate
 
 ======== ====================================
 Value    Description
@@ -301,7 +300,7 @@ Value    Description
 ``(d)``  total number of scenarios skipped.
 ======== ====================================
 
-The statistics of the specifications indicate
+The summary of the specifications indicate
 
 ======== ===============================================================
 Value    Description
