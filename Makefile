@@ -31,7 +31,7 @@ versions: prune
 	$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/master -A SINGLEHTML=true;);\
 
 	(cd $(WORKDIR)/$(LATESTBRANCH);\
-	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html -A current_version=latest \
+	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/latest -A current_version=latest \
 		-A latest_version=$(LATESTBRANCH) -A versions="master latest"\
 		-A commit=$(LATESTSHA) -A github_version=$(LATESTBRANCH);\
 	$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/latest -A SINGLEHTML=true;); \
@@ -49,9 +49,9 @@ prune: clean
 zip: versions
 	$(foreach folder,$(filter-out $(EXCLUDES), $(notdir $(shell find $(BUILDDIR)/singlehtml -maxdepth 1 -mindepth 1 -type d))), \
 		echo "Using $(folder) "; \
-		mkdir -p $(BUILDDIR)/html$(if $(folder:latest=),/$(folder)/,/)downloads; \
+		mkdir -p $(BUILDDIR)/html/$(folder)/downloads; \
 		(cd "$(BUILDDIR)/singlehtml/$(folder)" && zip -r -D \
-		  ../../../$(BUILDDIR)/html$(if $(folder:latest=),/$(folder)/,/)downloads/gauge-v-$(folder:latest=$(LATESTBRANCH)).zip *) ; \
+		  ../../../$(BUILDDIR)/html/$(folder)/downloads/gauge-v-$(folder:latest=$(LATESTBRANCH)).zip *) ; \
 	)
 
 serve: zip
