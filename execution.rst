@@ -349,6 +349,9 @@ Tags                               Selects specs/scenarios that
 ``(TagA | TagB) & TagC``           have either [``TagA`` and ``TagC``] or [``TagB`` and ``TagC``]
 ================================== ===============================================================
 
+.. note::
+
+    In the command line tagged execution, the not symbol(!) has to be escaped.
 
 .. _parallel_execution:
 
