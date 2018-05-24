@@ -1,8 +1,14 @@
-Advanced
-========
+.. _advanced_installation:
 
-Install Gauge (Alternate methods)
----------------------------------
+Advanced Installation
+======================
+
+.. note:: 
+    For recommended installation, refer :ref:`getting_started`.
+    This page lists alternate methods of installing Gauge and plugins.
+
+Gauge
+-----
 
 .. tab-container:: platforms
 
@@ -116,10 +122,10 @@ Install Gauge (Alternate methods)
 
             curl -SsL https://downloads.gauge.org/stable | sh -s -- --location=[custom path]
 
-        .. note:: Having trouble with installation? Head over to our :ref:`installation-faq` FAQ's.
+    .. note:: Having trouble with installation? Head over to our :ref:`installation-faq` FAQ's.
 
-Install Other Plugins
----------------------
+Plugins
+-------
 
 .. _documentation_plugins:
 
@@ -177,9 +183,8 @@ Run ``gauge update <plugin_name>`` to update the plugin.
 This downloads the latest compatible plugin from our plugin repository.
 
 .. note:: 
-
-Every Gauge plugin when published, has metadata indicating the ``min`` and ``max`` version of Gauge that
-it is compatible with. This is used when installing plugin on a system running a particular gauge version.
+    Every Gauge plugin when published, has metadata indicating the ``min`` and ``max`` version of Gauge that
+    it is compatible with. This is used when installing plugin on a system running a particular gauge version.
 
 **Example:**
 
@@ -279,8 +284,9 @@ Uninstall Gauge
         The entry from `PATH` that was added during installation, can also be removed.
 
 
-.. note:: If Gauge is installed in custom location, remove corresponding files/directory.
-More on Gauge install location can be found :ref:`here <troubleshoot_gauge_installation>`.
+.. note:: 
+    If Gauge is installed in custom location, remove corresponding files/directory.
+    More on Gauge install location can be found :ref:`here <troubleshoot_gauge_installation>`.
 
 .. _plugins-uninstallation:
 
@@ -306,54 +312,104 @@ Example:
 
    gauge uninstall java --version 0.3.2
 
-Refactoring
------------
+Troubleshooting
+===============
 
-Rephrase steps
-^^^^^^^^^^^^^^
+Logs
+----
 
-Gauge allows you to rephrase a step across the project. To rephrase a
-step run:
+-  Gauge logs are created under the ``logs`` directory in the project.
+-  Three log files are created
+    -  **gauge.log** - logs for test execution
+    -  **api.log** - logs for gauge core api exposed for plugins
+    -  **lsp.log** - logs for gauge when launched in LSP mode.
+
+-  To customize logs directory set the ``logs_directory`` property in the ``env/default/default.properties`` file to a custom logs directory path.
+
+.. code-block:: text
+
+    logs_directory = my_logs_dir
+
+-  For **non-project specific actions** like plugin installation log
+   files are created in the following location.
+
+.. code-block:: text
+
+     Windows - %APPDATA%\gauge\logs
+     MacOS*  - <user_home>/.gauge/logs
+     Linux   - <user_home>/.gauge/logs
+
+.. _troubleshoot_gauge_installation:
+
+Gauge Installation
+------------------
+
+Windows
+^^^^^^^
+
+-  The default installation location is ``%ProgramFiles%\gauge``.
+
+-  ``gauge_install_location\bin`` should be in PATH to run from command line.
+
+-  Gauge plugins are installed at ``%APPDATA%\gauge\plugins`` directory.
+
+-  `APPDATA <https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data>`__ directory is usually located at ``C:\Users\USER_NAME\AppData\Roaming``.
+
+Mac OS X
+^^^^^^^^
+
+-  The default installation location is ``/usr/local/``.
+
+-  ``usr/local/bin/`` or ``custom_install_location/bin`` should be in PATH.
+
+-  Run ``brew update`` before installing the latest version of gauge.
+
+-  If installation is failing `Upgrade homebrew <http://docs.brew.sh/FAQ.html#how-do-i-update-my-local-packages>`__
+
+-  Gauge plugins are installed under ``~/.gauge/plugins`` directory.
+
+Linux
+^^^^^
+
+-  The default installation location is ``/usr/local/``.
+
+-  ``usr/local/bin/`` or ``custom_install_location/bin`` should be in PATH.
+
+-  Gauge plugins are installed under ``~/.gauge/plugins`` directory.
+
+.. _troubleshoot_plugin_installation:
+
+Plugin installation
+-------------------
+
+-  If :ref:`plugin installation <plugins-installation>` fails due to a network connection issue, you can **manually download** the plugin distributable zip and install it using the ``-f`` flag.
 
 .. code-block:: console
 
-    gauge refactor "old step <name>" "new step name"
+    gauge install plugin_name -f path_to_zip_file
 
-Here ``<`` and ``>`` are used to denote parameters in the step.
-**Parameters can be added, removed or changed while rephrasing.**
-
-This will change all spec files and code files (for language plugins
-that support refactoring).
-
-For example,
-
-Let's say we have the following steps in our ``spec`` file:
-
-.. code-block:: gauge
-
-    * create user "john" with id "123"
-    * create user "mark" with id "345"
-
-Now, if we now need to add an additional parameter, say ``last name``,
-to this step we can run the command:
+Example:
 
 .. code-block:: console
 
-    gauge refactor "create user <name> with id <id>" "create user <name> with <id> and last name <watson>"
+    gauge install html-report -f html-report-1.0.3-darwin.x86.zip
 
-This will change all spec files to reflect the change.
+-  Find the plugin zip files under ``Releases`` section of the plugin github repositories. See the `gauge plugin list <https://gauge.org/plugins.html>`__ for plugin repositories details.
 
-.. code-block:: gauge
+Plugins directory
+^^^^^^^^^^^^^^^^^
 
-    * create user "john" with id "123" and last name "watson"
-    * create user "mark" with id "345" and last name "watson"
+Plugins are installed in the ``.gauge/plugins`` directory in user's home. You can check this directory to manually install / uninstall plugins as well as to verify the installed plugins.
 
-IDE plugins
------------
+The plugin installation directory for various operating systems are listed below.
 
-Gauge has a bunch of plugins so that users can easily author specs on IDE. For more details, check :ref:`IDE Support <ide_support>`.
+-  **Windows:** ``%APPDATA%\.gauge\plugins``
+-  **Mac OS X:** ``~/.gauge/plugins``
+-  **Linux:** ``~/.gauge/plugins``
 
-- Integration with :ref:`Visual Studio Code <vs_code>`
-- Integration with :ref:`IntelliJ IDEA <intellij_idea>`
-- Integration with :ref:`Visual Studio <visual_studio>`
+Custom Plugin Install location
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+By default the plugins are stored at ``%APPDATA%\gauge\plugins`` for windows and ``~/.gauge/plugins`` in mac and linux.
+
+To install plugins at different location, set ``GAUGE_HOME`` environment variable to the custom location. After setting the ``GAUGE_HOME`` env, run the install command. The plugin will get installed at the ``GAUGE_HOME`` custom location.

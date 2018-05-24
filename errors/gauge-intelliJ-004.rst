@@ -1,5 +1,5 @@
 GAUGE-IntelliJ-004 : Project Build failing with compilation error but the Java Files do not mark any errors.
------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
 
 -  The project compilation fails however the java files do not mark any
    errors in the file.

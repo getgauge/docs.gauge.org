@@ -31,7 +31,8 @@ class TabDirective(Directive):
     """
 
     has_content = True
-    required_arguments = 1
+    required_arguments = 1  
+    final_argument_whitespace = True
 
     def run(self):
         self.assert_has_content()

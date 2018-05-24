@@ -1,4 +1,4 @@
-.. _installing_gauge_recomd_options:
+.. _getting_started:
 
 Getting Started
 ===============
@@ -111,7 +111,9 @@ Install Gauge
 
             curl -SsL https://downloads.gauge.org/stable | sh
 
-    .. note:: Having trouble with installation? Head over to our :ref:`installation-faq` FAQ's.
+.. note:: 
+    - Gauge can be installed using other methods. See :ref:`advanced_installation`.
+    - Having trouble with installation? Head over to our :ref:`installation-faq` FAQ's.
 
 Install Plugins
 ---------------

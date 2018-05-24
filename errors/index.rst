@@ -2,15 +2,15 @@ Errors
 ------
 
 .. toctree::
-    :caption: Examples demonstrating specific use cases using/setting up Gauge.
+    :caption: Known Gauge errors and causes.
     :titlesonly:
 
-    gauge-vs-001
-    gauge-vs-002
-    gauge-vs-003
-    gauge-intelliJ-001
-    gauge-intelliJ-002
-    gauge-intelliJ-003
-    gauge-intelliJ-004
-    gauge-vscode-001
+    errors/gauge-vs-001.rst
+    errors/gauge-vs-002.rst
+    errors/gauge-vs-003.rst
+    errors/gauge-intelliJ-001
+    errors/gauge-intelliJ-002
+    errors/gauge-intelliJ-003
+    errors/gauge-intelliJ-004
+    errors/gauge-vscode-001
 

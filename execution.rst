@@ -124,7 +124,7 @@ Consider a specification file, ``spec1.spec``:
 
 .. code-block:: gauge
     :linenos:
-    :name: specify_scenario
+    :name: specify_multiple_scenarios
     :emphasize-lines: 3-5
 
     # Configuration    
@@ -142,7 +142,7 @@ named ``spec1.spec``:
 
 .. code-block:: console
 
-    gauge run specs/spec1.spec:3
+    gauge run specs/spec1.spec:7
 
 To specify multiple scenarios, add multiple such arguments. For example,
 to execute the first and second scenarios of a specification file named
@@ -222,7 +222,7 @@ For example,
 
 .. code-block:: gauge
     :linenos:
-    :name: data_driven
+    :name: data_driven_external
 
     # Table driven execution
 
@@ -295,7 +295,6 @@ Example:
 
 .. code-block:: gauge
     :linenos:
-    :name: tagged_execution
 
     # Search Specification
 
@@ -385,9 +384,10 @@ Example:
 
 This creates four parallel execution streams.
 
-.. note:: The number of streams should be specified depending on number of CPU 
-cores available on the machine, beyond which it could lead to undesirable results. 
-For optimizations, try `parallel execution using threads`_.
+.. note:: 
+    The number of streams should be specified depending on number of CPU 
+    cores available on the machine, beyond which it could lead to undesirable results. 
+    For optimizations, try `parallel execution using threads`_.
 
 .. _parallel execution using threads:
 
@@ -496,10 +496,11 @@ making them an equal number based distribution.
 
     gauge run -n=4 --strategy="eager" specs
 
-.. note:: The 'lazy' assignment strategy only works when you do NOT use
-the -g flag. This is because grouping is dependent on allocation of
-tests before the start of execution. Using this in conjunction with a
-lazy strategy will have no impact on your test suite execution.
+.. note:: 
+    The 'lazy' assignment strategy only works when you do NOT use
+    the -g flag. This is because grouping is dependent on allocation of
+    tests before the start of execution. Using this in conjunction with a
+    lazy strategy will have no impact on your test suite execution.
 
 
 Re-run failed tests
@@ -631,4 +632,45 @@ There are two types of validation error which can occurs
 .. code-block:: text
 
     [ValidationError] foo.spec:11 Duplicate step implementation => 'Vowels in English language are <table>'
+
+
+Troubleshooting
+===============
+
+Ensure that the latest version of gauge and `gauge plugins <https://gauge.org/plugins.html>`__. 
+
+Run ``gauge update -c`` to check if there are updates available for gauge and the plugins.
+
+Validation Errors
+-----------------
+
+.. code-block:: text
+
+    [WARN] Validation failed. The following steps have errors
+    ...
+
+These generally occur if step implementation is not found for a particular step.
+
+- Ensure the :ref:`step implementation <language-steps>` for the step has been added.
+- The :ref:`step template <language-steps>` marking the step in code is case sensitive and should match the step usage in the spec file.
+
+Compatibility errors
+--------------------
+
+.. code-block:: text
+
+    Failed to start a runner. Compatible runner version to 0.0.7 not found
+
+-  The language plugin installed is not compatible with the gauge version installed.
+-  Run ``gauge install language_NAME`` to install the latest compatible version. See :ref:`plugin installation <plugins-installation>` for
+   more details
+
+Execution Errors
+----------------
+
+.. code-block:: text
+
+    Error: too many open files
+
+-  This error occurs when the upper limit to open the number of files is too low. To fix the error, increase the upper limit by adding the command ``ulimit -S -n 2048`` to your ``~/.profile`` file and relogin.
 

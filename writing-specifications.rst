@@ -203,7 +203,7 @@ The above concept can be invoked and a value can be passed to the concept agains
 
     * A sample concept that takes a "dummy value"
 
-.. note:: Refer to this :ref:`example_inline_table` for illustration on how table cell values can be referred using dynamic parameters.
+.. note:: Refer to this :ref:`example_inline_data_driven_table` for illustration on how table cell values can be referred using dynamic parameters.
 
 
 Table Parameters
@@ -308,7 +308,7 @@ Data Table values in inline tables
 Dynamic values from the data table can also be referred in table
 parameters passed into steps
 
-.. _example_inline_table:
+.. _example_inline_data_driven_table:
 
 Example
 +++++++
@@ -908,7 +908,82 @@ in step implementation.
         //  code here
     }
 
-Troubleshooting
----------------
 
-TODO
+Advanced
+========
+
+Using IDE plugins
+-----------------
+
+The listed IDE plugins are available for gauge to make writing specs and test code simpler.
+
+.. tab-container:: ide
+
+    .. tab:: Visual Studio Code
+
+        Gauge projects can be created and executed in Visual Studio Code using the `Gauge extension for VSCode <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__.
+        This plugin currently supports Gauge with JavaScript, Ruby and Python.
+
+        More information on IDE features and how to use it can be found `here <https://github.com/getgauge/gauge-vscode/blob/master/README.md>`__.
+
+
+    .. tab:: IntelliJ Idea
+
+        Gauge projects can be created and executed in IntelliJ IDEA using the `Gauge plugin for IntelliJ IDEA <https://plugins.jetbrains.com/plugin/7535-gauge>`__.
+        This plugin only supports Gauge with Java.
+
+        More information on IDE features and how to use it can be found `here <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__.
+
+    .. tab:: Visual Studio
+
+        Gauge projects can be created and executed in Visual Studio using the `Gauge extension for Visual Studio <https://marketplace.visualstudio.com/items?itemName=vs-publisher-1071478.GaugepluginforVisualStudio>`__.
+        This plugin currently supports Gauge with C#.
+
+        More information on IDE features and how to use it can be found `here <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__.
+
+Refactoring
+-----------
+
+Rephrase steps
+^^^^^^^^^^^^^^
+
+Gauge allows you to rephrase a step across the project. To rephrase a
+step run:
+
+.. code-block:: console
+
+    gauge refactor "old step <name>" "new step name"
+
+Here ``<`` and ``>`` are used to denote parameters in the step.
+**Parameters can be added, removed or changed while rephrasing.**
+
+This will change all spec files and code files (for language plugins
+that support refactoring).
+
+For example,
+
+Let's say we have the following steps in our ``spec`` file:
+
+.. code-block:: gauge
+
+    * create user "john" with id "123"
+    * create user "mark" with id "345"
+
+Now, if we now need to add an additional parameter, say ``last name``,
+to this step we can run the command:
+
+.. code-block:: console
+
+    gauge refactor "create user <name> with id <id>" "create user <name> with <id> and last name <watson>"
+
+This will change all spec files to reflect the change.
+
+.. code-block:: gauge
+
+    * create user "john" with id "123" and last name "watson"
+    * create user "mark" with id "345" and last name "watson"
+
+Troubleshooting
+===============
+
+.. include:: errors/index.rst

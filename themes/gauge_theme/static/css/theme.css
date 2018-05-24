@@ -12,6 +12,14 @@
   list-style: none;
 }
 
+.localtoc > ul > li > a {
+  border-bottom: 0.5px solid rgba(85, 85, 85, 0.3);
+}
+
+.localtoc > ul > li > ul {
+  padding-left: 5px !important;
+}
+
 #rightNav a {
   padding-left: 3px;
   color: rgb(85, 85, 85);
