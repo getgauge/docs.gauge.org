@@ -10,7 +10,7 @@ spec or specification describe a particular feature of the application
 under test.
 
 -  They are written in a ``.spec`` file. Gauge also supports ``.md`` file format.
--  The Markup for a Specification file is based on `markdown syntax <https://daringfireball.net/projects/markdown/syntax>`__.
+-  The markup for a specification file is based on `markdown syntax <https://daringfireball.net/projects/markdown/syntax>`__.
 
 Example
 +++++++
@@ -44,7 +44,7 @@ Example
 Specification Heading
 ^^^^^^^^^^^^^^^^^^^^^
 
-A Spec must begins with a spec heading and a single specification can
+A spec must begins with a spec heading and a single specification can
 contain only one spec heading.
 
 It is written in ``<H1>`` syntax of markdown. This can be in two
@@ -173,8 +173,8 @@ They are values passed into the steps in double quotes.
     * Write “100” line specification
 
 **Note:** Renaming the parameter will not rename the usages inside the
-method. By design, the renamed parameter is considered as a new parameter.
-Therefore the usage of the old parameter(if any) has to be fixed
+method. By design, the renamed parameter is considered a new parameter.
+Therefore the usage of the old parameter (if any) has to be fixed
 manually to resolve the corresponding compilation issue.
 
 Dynamic Parameters
