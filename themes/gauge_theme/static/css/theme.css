@@ -437,25 +437,3 @@ table {
  tr:hover {
   background: #d1d1d1;
  }
-
- /* Table of Content Styling */
- aside.main-toc {
-  position:  fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  border: 1px solid #ccc;
-  padding: 20px;
-}
-
-aside ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-aside ul a {
-  color: rgb(85, 85, 85);
-  display: block;
-  padding: 5px 0;
-  border-bottom: 1px solid #ccc;
-}
