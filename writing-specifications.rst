@@ -49,6 +49,8 @@ contain only one spec heading.
 It is written in ``<H1>`` syntax of markdown. This can be in two
 forms:
 
+.. _spec_syntax:
+
 .. code-block:: gauge
 
     # Spec Heading
@@ -74,6 +76,8 @@ specification must contain at least one scenario.
 A scenario starts after a scenario heading or a scenario name. The
 scenario heading is written in markdown ``<H2>`` syntax. This can be
 written in 2 ways:
+
+.. _scenario_syntax:
 
 .. code-block:: gauge
 
@@ -124,6 +128,8 @@ language used. This is executed when the steps inside a spec are
 executed.
 
 See how to write :ref:`language-steps` for different languages.
+
+.. _step_syntax:
 
 Example
 +++++++
@@ -581,7 +587,7 @@ Simple step
 
 .. tab-container:: languages
 
-    .. tab:: C#
+    .. tab:: CSharp
 
         .. code-block:: java
 
@@ -908,8 +914,1119 @@ in step implementation.
     }
 
 
+.. _project_structure:
+
+Project Structure
+-----------------
+
+On initialization of a gauge project for a particular language a project
+skeleton is created with the following files
+
+Common Gauge files
+++++++++++++++++++
+
+.. _gauge_project_root:
+
+``GAUGE_PROJECT_ROOT`` environment variable holds the path in which the Gauge project is created.
+
+.. code-block:: text
+
+    ├── env
+    │  └── default
+    │     └── default.properties
+    ├── manifest.json
+    ├── specs
+       └── example.spec
+
+Env Directory
+^^^^^^^^^^^^^
+
+The env directory contains multiple environment specific directories.
+Each directory has `.property files <https://en.wikipedia.org/wiki/.properties>`__ which define the environment variables set during execution for that specific environment.
+
+A **env/default** directory is created on project initialization which
+contains the default environment variables set during execution.
+
+Learn more about :ref:`managing environments <environments>`.
+
+Specs Directory
+^^^^^^^^^^^^^^^
+
+The specs directory contains all :ref:`spec <spec_syntax>` files for the
+project. They are the business layer specifications written in simple
+markdown format.
+
+A simple example spec (**example.spec**) is created in the specs
+directory to better understand the format of specifications.
+
+Learn more about :ref:`spec <spec_syntax>`.
+
+Manifest file
+^^^^^^^^^^^^^
+
+The **manifest.json** contains gauge specific configurations which
+includes the information of plugins required in the project.
+
+After project initialization, the ``manifest.json`` will have the
+following content.
+
+.. code:: js
+
+   {
+     "Language": "<language>",
+     "Plugins": [
+       "html-report"
+     ]
+   }
+
+-  **language** : Programming language used for the test code. Gauge uses the corresponding language runner for executing the specs.
+
+-  **Plugins** : The gauge plugins used for the project. Some plugins are used by default on each gauge project. The plugins can be added to project by running the following command :
+
+  .. code:: console
+
+      gauge install <plugin-name>
+
+  Example :
+
+  .. code:: console
+
+      gauge install xml-report
+
+After running the above command, the manifest.json would have the
+following content:
+
+.. code:: js
+
+   {
+     "Language": "<language>",
+     "Plugins": [
+       "html-report",
+       "xml-report"
+     ]
+   }
+
+Project files
++++++++++++++
+
+Creating a new project adds some language specific files.
+
+.. tab-container:: languages
+
+    .. tab:: CSharp
+
+        .. code-block:: text
+
+            ├── foo.csproj
+            ├── foo.sln
+            ├── manifest.json
+            ├── packages.config
+            ├── StepImplementation.cs
+            │
+            ├── env
+            │   └───default
+            │           default.properties
+            │
+            ├───packages
+                └───<Nuget Package Binaries>
+            ├───Properties
+            │       AssemblyInfo.cs
+            │
+            └───specs
+                    hello_world.spec
+
+        **packages.config**
+
+        For ``nuget``. Contains the dependencies for Gauge. One can add more to
+        this list, depending on project needs.
+
+        **StepImplementation.cs**
+
+        Contains the implementations for the sample steps defined in
+        ``hello_world.spec``.
+
+    .. tab:: Java
+
+        .. code-block:: text
+
+            ├── manifest.json
+            ├── libs
+            └── src
+                └── test
+                    └── java
+                        └── StepImplementation.java
+            ├── env
+                └── default
+                    └── java.properties
+            └───specs
+                example.spec
+
+
+        **libs**
+
+        This contains the additional java dependencies required for the project.
+
+        **src**
+
+        Src directory contains the classes the test code including step
+        implementations.
+
+        **java.properties**
+
+        This defines configurations for java runner plugin.
+        See :doc:`configuration` for more details.
+
+    .. tab:: JavaScript
+
+        .. code-block:: text
+
+            ├── manifest.json
+            └── tests
+                    └── step_implementation.js
+            ├── env
+                └── default
+                    └── js.properties
+            └───specs
+                    example.spec
+
+        **tests**
+
+        tests directory contains the test code including step implementations.
+
+        **js.properties**
+
+        This defines configurations for Javascript runner plugin.
+        See :doc:`configuration` for more details.
+
+    .. tab:: Python
+
+        .. code-block:: text
+
+            ├── manifest.json
+            └── step_impl
+                    └── step_impl.py
+            ├── env
+                └── default
+                    └── python.properties
+            └───specs
+                example.spec
+
+        **step_impl**
+
+        step_impl directory contains the test code including step implementations.
+
+        **python.properties**
+
+        This defines configurations for Python runner plugin.
+        See :doc:`configuration` for more details.
+
+    .. tab:: Ruby
+
+        .. code-block:: text
+
+            ├── manifest.json
+            ├── env
+            │   └── default
+            │       └── ruby.properties
+            └── step_implementations
+                └── step_implementation.rb
+            └───specs
+                    example.spec
+
+        **step_implementations directory**
+
+        This contains all the ``.rb`` files with the test code including step implementations in ruby
+
+        **ruby.properties**
+
+        This defines configurations for ruby runner plugin.
+        See :doc:`configuration` for more details.
+
 Advanced
 ========
+
+.. _execution_hooks:
+
+Execution hooks
+---------------
+
+Test execution hooks can be used to run arbitrary test code as different
+levels during the test suite execution.
+
+**Implementation**
+
+.. tab-container:: languages
+
+    .. tab:: CSharp
+
+        .. code-block:: java
+
+            public class ExecutionHooks
+            {
+
+                [BeforeSuite]
+                public void BeforeSuite() {
+                // Code for before suite
+                }
+
+                [AfterSuite]
+                public void AfterSuite() {
+                // Code for after suite
+                }
+
+                [BeforeSpec]
+                public void BeforeSpec() {
+                // Code for before spec
+                }
+
+                [AfterSpec]
+                public void AfterSpec() {
+                // Code for after spec
+                }
+
+                [BeforeScenario]
+                public void BeforeScenario() {
+                // Code for before scenario
+                }
+
+                [AfterScenario]
+                public void AfterScenario() {
+                // Code for after scenario
+                }
+
+                [BeforeStep]
+                public void BeforeStep() {
+                // Code for before step
+                }
+
+                [AfterStep]
+                public void AfterStep() {
+                // Code for after step
+                }
+
+            }
+
+    .. tab:: Java
+
+        .. code-block:: java
+
+            public class ExecutionHooks {
+
+                @BeforeSuite public void BeforeSuite() {
+                // Code for before suite
+                }
+
+                @AfterSuite
+                public void AfterSuite() {
+                // Code for after suite
+                }
+
+                @BeforeSpec
+                public void BeforeSpec() {
+                // Code for before spec
+                }
+
+                @AfterSpec
+                public void AfterSpec() {
+                // Code for after spec
+                }
+
+                @BeforeScenario
+                public void BeforeScenario() {
+                // Code for before scenario
+                }
+
+                @AfterScenario
+                public void AfterScenario() {
+                // Code for after scenario
+                }
+
+                @BeforeStep
+                public void BeforeStep() {
+                // Code for before step
+                }
+
+                @AfterStep
+                public void AfterStep() {
+                // Code for after step
+                }
+
+            }
+
+    .. tab:: JavaScript
+
+        .. code-block:: javascript
+
+            hooks.beforeSuite(fn, [opts]) {
+                // Code for before suite
+            }
+
+            hooks.beforeSpec(fn, [opts]) {
+                // Code for before spec
+            }
+
+            hooks.beforeScenario(fn, [opts]) {
+                // Code for before scenario
+            }
+
+            hooks.beforeStep(fn, [opts]) {
+                // Code for before step
+            }
+
+            hooks.afterSuite(fn, [opts]) {
+                // Code for after suite
+            }
+
+            hooks.afterSpec(fn, [opts]) {
+                // Code for after spec
+            }
+
+            hooks.afterScenario(fn, [opts]) {
+                // Code for after scenario
+            }
+
+            hooks.afterStep(fn, [opts]) {
+                // Code for after step
+            }
+
+    .. tab:: Python
+
+        .. code-block:: python
+
+            from getgauge.python import before_step, after_step, before_scenario, after_scenario, before_spec, after_spec, before_suite, after_suite
+
+            @before_step
+            def before_step_hook():
+                print("before step hook")
+
+            @after_step
+            def after_step_hook():
+                print("after step hook")
+
+            @before_scenario
+            def before_scenario_hook():
+                print("before scenario hook")
+
+            @after_scenario
+            def after_scenario_hook():
+                print("after scenario hook")
+
+            @before_spec
+            def before_spec_hook():
+                print("before spec hook")
+
+            @after_spec
+            def after_spec_hook():
+                print("after spec hook")
+
+            @before_suite
+            def before_suite_hook():
+                print("before suite hook")
+
+            @after_suite
+            def after_spec_hook():
+                print("after suite hook")
+
+    .. tab:: Ruby
+
+        .. code-block:: ruby
+
+            before_suite do
+                # Code for before suite
+            end
+
+            after_suite do
+                # Code for after suite
+            end
+
+            before_spec do
+                # Code for before spec
+            end
+
+            after_spec do
+                # Code for after spec
+            end
+
+            before_scenario do
+                # Code for before scenario
+            end
+
+            after_scenario do
+                # Code for after scenario
+            end
+
+            before_step do
+                # Code for before step
+            end
+
+            after_step do
+                # Code for after step
+            end
+
+
+By default, Gauge clears the state after each scenario so that new
+objects are created for next scenario execution. You can :ref:`configure <default_properties>`
+to change the level at which Gauge clears cache.
+
+Current Execution Context in the Hook
++++++++++++++++++++++++++++++++++++++
+
+-  To get additional information about the **current specification,
+   scenario and step** executing, an additional **ExecutionContext**
+   parameter can be added to the :ref:`hooks <execution_hooks>` method.
+
+.. tab-container:: languages
+
+    .. tab:: CSharp
+
+        .. code-block:: java
+
+            This feature is not yet
+            supported in Gauge-CSharp. Please refer to
+            https://github.com/getgauge/gauge-csharp/issues/53 for updates.
+
+    .. tab:: Java
+
+        .. code-block:: java
+
+            @BeforeScenario
+            public void loginUser(ExecutionContext context) {
+            String scenarioName = context.getCurrentScenario().getName();
+            // Code for before scenario
+            }
+
+            @AfterSpec
+            public void performAfterSpec(ExecutionContext context) {
+            Specification currentSpecification = context.getCurrentSpecification();
+            // Code for after step
+            }
+
+    .. tab:: JavaScript
+
+        .. code-block:: javascript
+
+            hooks.beforeScenario(fn, [opts]) { ... }
+            hooks.afterSpec(fn, [opts]) { ... }
+
+    .. tab:: Python
+
+        .. code-block:: python
+
+            from getgauge.python import before_step, after_scenario
+
+            @before_scenario
+            def before_scenario_hook():
+                print("before scenario hook")
+
+            @after_spec
+            def after_spec_hook():
+                print("after spec hook")
+
+    .. tab:: Ruby
+
+        .. code-block:: ruby
+
+            before_spec do |execution_info|
+                puts execution_info.inspect
+            end
+
+            after_spec do |execution_info|
+                puts execution_info.inspect
+            end
+
+
+.. _filtering_hooks_with_tags:
+
+Filtering Hooks execution based on tags
++++++++++++++++++++++++++++++++++++++++
+
+-  You can specify tags for which the execution :ref:`hooks <execution_hooks>` can run. This
+   will ensure that the hook runs only on scenarios and specifications
+   that have the required tags.
+
+.. tab-container::
+
+    .. tab:: CSharp
+
+        .. code-block:: java
+
+            // A before spec hook that runs when tag1 and tag2
+            // is present in the current scenario and spec.
+            [BeforeSpec("tag1, tag2")]
+            public void LoginUser() {
+                // Code for before scenario
+            }
+
+            // A after step hook runs when tag1 or tag2
+            // is present in the current scenario and spec.
+            // Default tagAggregation value is Operator.AND.
+            [AfterStep("tag1", "tag2")]
+            [TagAggregationBehaviour(TagAggregation.Or)]
+            public void PerformAfterStep() {
+                // Code for after step
+            }
+    .. tab:: Java
+
+        .. code-block:: java
+
+            // A before spec hook that runs when tag1 and tag2
+            // is present in the current scenario and spec.
+            @BeforeSpec(tags = {"tag1, tag2"})
+            public void loginUser() {
+                // Code forbefore scenario
+            }
+
+            // A after step hook runs when tag1 or tag2
+            // is present in the currentscenario and spec.
+            // Default tagAggregation value is Operator.AND.
+            @AfterStep(tags = {"tag1", "tag2"}, tagAggregation = Operator.OR)
+            public void performAfterStep() {
+                // Code for after step
+            }
+
+    .. tab:: JavaScript
+
+        .. code-block:: javascript
+
+            // A before spec hook that runs when tag1 and tag2
+            // is present in the current scenario and spec.
+            hooks.beforeSpec(function () {
+                //implementation
+            }, { tags: [ "tag1","tag2" ]});
+
+            // A after step hook runs when tag1 or tag2
+            // is present in the currentscenario and spec.
+            // Default tagAggregation value is Operator.AND.
+            hooks.afterStep(function () {
+                //implementation
+            }, { tags: [ "tag1","tag2" ]});
+
+    .. tab:: Python
+
+        .. code-block:: python
+
+            // A before spec hook that runs when tag1 and tag2
+            // is present in the current scenario and spec.
+            @before_spec("<tag1> and <tag2>")
+            def before_spec_hook():
+                print("before spec hook with tag")
+
+            // A after step hook runs when tag1 or tag2
+            // is present in the currentscenario and spec.
+            // Default tagAggregation value is Operator.AND.
+            @after_step("<tag1> and <tag2>")
+            def after_step_hook():
+                print("after step hook with tag")
+    .. tab:: Ruby
+
+        .. code-block:: ruby
+
+            # A before spec hook that runs when
+            # tag1 and tag2 is present in the current scenario and spec.
+            before_spec({tags: ['tag2', 'tag1']}) do
+                # Code for before scenario
+            end
+
+            # A after step hook runs when tag1 or tag2 is present in the current scenario and spec.
+            # Default tagAggregation value is Operator.AND.
+
+            after_spec({tags: ['tag2', 'tag1'], operator: 'OR'}) do
+                # Code for after step
+            end
+
+.. note:: Tags cannot be specified on @BeforeSuite and @AfterSuite hooks
+
+
+Data Store
+----------
+
+Data (Objects) can be shared in steps defined in different classes at
+runtime using DataStores exposed by Gauge.
+
+There are 3 different types of DataStores based on the lifecycle of when
+it gets cleared.
+
+ScenarioStore
++++++++++++++
+
+This data store keeps values added to it in the lifecycle of the
+scenario execution. Values are cleared after every scenario executes
+
+.. tab-container::
+
+    .. tab:: CSharp
+
+        .. code-block:: java
+
+            using Gauge.CSharp.Lib;
+
+            // Adding value
+            var scenarioStore = DataStoreFactory.ScenarioDataStore;
+            scenarioStore.Add("element-id", "455678");
+
+            // Fetching Value
+            var elementId = (string) scenarioStore.Get("element-id");
+
+            // avoid type cast by using generic Get
+            var anotherElementId = scenarioStore.Get("element-id");
+
+    .. tab:: Java
+
+        .. code-block:: java
+
+            import com.thoughtworks.gauge.datastore.*;
+
+            // Adding value
+            DataStore scenarioStore = DataStoreFactory.getScenarioDataStore();
+            scenarioStore.put("element-id", "455678");
+
+            // Fetching Value
+            String elementId = (String) scenarioStore.get("element-id");
+
+    .. tab:: JavaScript
+
+        .. code-block:: javascript
+
+            // Adding value
+            gauge.dataStore.scenarioStore.put(key, value);
+
+            // Fetching Value
+            gauge.dataStore.scenarioStore.get(key);
+
+    .. tab:: Python
+
+        .. code-block:: python
+
+            from getgauge.python import DataStoreFactory
+            // Adding value
+            DataStoreFactory.scenario_data_store().put(key, value)
+
+            // Fetching Value
+            DataStoreFactory.scenario_data_store().get(key)
+
+    .. tab:: Ruby
+
+        .. code-block:: ruby
+
+            // Adding value
+            scenario_store = DataStoreFactory.scenario_datastore;
+            scenario_store.put("element-id", "455678");
+
+
+            // Fetching Value
+            element_id = scenario_store.get("element-id");
+
+
+SpecStore
++++++++++
+
+This data store keeps values added to it during the lifecycle of the
+specification execution. Values are cleared after every specification
+executes
+
+.. tab-container::
+
+    .. tab:: CSharp
+
+        .. code-block:: java
+
+        using Gauge.CSharp.Lib;
+
+        // Adding value
+        var specStore = DataStoreFactory.SpecDataStore;
+        specStore.Add("element-id", "455678");
+
+        // Fetching Value
+        var elementId = (string) specStore.Get("element-id");
+
+        // avoid type cast by using generic Get
+        var anotherElementId = specStore.Get("element-id");
+
+    .. tab:: Java
+
+        .. code-block:: java
+
+        // Import Package import
+        com.thoughtworks.gauge.datastore.*;
+
+        // Adding value DataStore specStore =
+        DataStoreFactory.getSpecDataStore();
+        specStore.put("key", "455678");
+
+        // Fetching value DataStore specStore =
+        String elementId = (String) specStore.get("key");
+
+    .. tab:: JavaScript
+
+        .. code-block:: javascript
+
+        // Adding value DataStore specStore =
+        gauge.dataStore.specStore.put(key, value);
+        // Fetching value DataStore specStore =
+        gauge.dataStore.specStore.get(key);
+
+    .. tab:: Python
+
+        .. code-block:: python
+
+        // Import Package import
+        from getgauge.python import DataStoreFactory
+        // Adding value DataStore specStore =
+        DataStoreFactory.spec_data_store().put(key, value)
+
+        // Fetching value DataStore specStore =
+        DataStoreFactory.spec_data_store().get(key)
+
+    .. tab:: Ruby
+
+        .. code-block:: ruby
+
+        // Adding value
+        spec_store = DataStoreFactory.spec_datastore;
+        spec_store.put("element-id", "455678");
+
+        // Fetching Value
+        element_id = spec_store.get("element-id");
+
+SuiteStore
+++++++++++
+
+This data store keeps values added to it during the lifecycle of entire
+suite execution. Values are cleared after entire suite execution.
+
+.. warning::
+   ``SuiteStore`` is not advised to be used when executing specs in parallel.
+   The values are not retained between parallel streams of execution.
+
+.. tab-container::
+
+    .. tab:: CSharp
+
+        .. code-block:: java
+
+        using Gauge.CSharp.Lib;
+
+        // Adding value var suiteStore = DataStoreFactory.SuiteDataStore;
+        suiteStore.Add("element-id", "455678");
+
+        // Fetching Value var suiteStore = DataStoreFactory.SuiteDataStore; var
+        elementId = (string) suiteStore.Get("element-id");
+
+        // avoid type cast by using generic Get var anotherElementId =
+        suiteStore.Get("element-id");
+
+    .. tab:: Java
+
+        .. code-block:: java
+
+        // Import Package import
+        com.thoughtworks.gauge.datastore.*;
+
+        // Adding value
+        DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
+        suiteStore.put("element-id", "455678");
+
+        // Fetching value
+        DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
+        String elementId = (String) suiteStore.get("element-id");
+
+    .. tab:: JavaScript
+
+        .. code-block:: javascript
+
+        // Adding value DataStore suiteStore =
+        gauge.dataStore.suiteStore.put(key, value);
+        // Fetching value DataStore specStore =
+        gauge.dataStore.suiteStore.get(key);
+
+    .. tab:: Python
+
+        .. code-block:: python
+
+        // Import Package import
+        from getgauge.python import DataStoreFactory
+        // Adding value DataStore suiteStore =
+        DataStoreFactory.suite_data_store().put(key, value)
+
+        // Fetching value DataStore specStore =
+        DataStoreFactory.suite_data_store().get(key)
+
+    .. tab:: Ruby
+
+        .. code-block:: ruby
+
+        // Adding value
+        suite_store = DataStoreFactory.suite_datastore;
+        suite_store.put("element-id", "455678");
+
+        // Fetching Value
+        suite_store = DataStoreFactory.suite_datastore;
+        element_id = suite_store.get("element-id");
+
+Taking Custom Screenshots
+-------------------------
+
+-  By default gauge captures the display screen on failure if this
+   feature has been enabled.
+
+-  If you need to take CustomScreenshots (using webdriver for example)
+   because you need only a part of the screen captured, this can be done
+   by **implementing** the ``ICustomScreenshotGrabber`` interface;
+
+.. note::
+
+    If multiple custom ScreenGrabber implementations are found in
+    classpath then gauge will pick one randomly to capture the screen.
+    This is because Gauge selects the first ScreenGrabber it finds,
+    which in turn depends on the order of scanning of the libraries.
+
+
+.. tab-container::
+
+    .. tab:: CSharp
+
+        .. code-block:: java
+
+            //Using Webdriver public
+            class CustomScreenGrabber : ICustomScreenshotGrabber {
+
+                // Return a screenshot byte array
+                public byte[] TakeScreenshot() {
+                    var driver = DriverFactory.getDriver();
+                    return ((ITakesScreenshot) driver).GetScreenshot().AsByteArray;
+                }
+            }
+
+    .. tab:: Java
+
+        .. code-block:: java
+
+            // Using Webdriver public class
+            CustomScreenGrabber implements ICustomScreenshotGrabber {
+                // Return a screenshot byte array
+                public byte[] takeScreenshot() {
+                    WebDriver driver = DriverFactory.getDriver();
+                    return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+                }
+
+            }
+
+    .. tab:: JavaScript
+
+        .. code-block:: javascript
+
+            gauge.screenshotFn = function () {
+                return "base64encodedstring";
+            };
+
+    .. tab:: Python
+
+        .. code-block:: python
+
+            from getgauge.python import screenshot
+            @screenshot
+            def take_screenshot():
+                return "base64encodedstring"
+
+    .. tab:: Ruby
+
+        .. code-block:: ruby
+
+            # Using Webdriver
+            Gauge.configure do |config|
+                # Return a screenshot byte array
+                config.screengrabber = -> {
+                driver.save_screenshot('/tmp/screenshot.png')
+                return File.binread("/tmp/screenshot.png")
+                }
+            end
+
+
+.. _reports_custom_messages:
+
+Custom messages in reports
+--------------------------
+
+Custom messages/data can be added to execution reports using the below
+API from the step implementations or hooks.
+
+These messages will appear under steps in the execution reports.
+
+.. tab-container::
+
+    .. tab:: CSharp
+
+        .. code-block:: java
+
+            GaugeMessages.WriteMessage("Custom message for report");
+            var id = "4567";
+            GaugeMessages.WriteMessage("User id is {0}", id);
+
+    .. tab:: Java
+
+        .. code-block:: java
+
+            Gauge.writeMessage("Custom message for report");
+            String id = "4567";
+            Gauge.writeMessage("User id is %s", id);
+
+    .. tab:: JavaScript
+
+        .. code-block:: javascript
+
+            gauge.message("Custom message for report");
+
+    .. tab:: Python
+
+        .. code-block:: python
+
+            from getgauge.python import Messages
+
+            Messages.write_message("Custom message for report")
+
+    .. tab:: Ruby
+
+        .. code-block:: ruby
+
+            Gauge.write_message("Custom message for report")
+            id = "4567"
+            Gauge.write_message("User id is" + id)
+
+
+Continue on Failure
+-------------------
+
+The default behaviour in Gauge is to break execution on the first
+failure in a :ref:`step <step_syntax>`. So, if the
+first step in a :ref:`scenario <scenario_syntax>`
+fails, the subsequent steps are skipped. While this works for a majority
+of use cases, there are times when you need to execute all steps in a
+scenario irrespective of whether the previous steps have failed or not.
+
+To address that requirement, Gauge provides a way for language runners
+to mark steps as recoverable, depending on whether the step
+implementation asks for it explicitly. Each language runner uses
+different syntax, depending on the language idioms, to allow a step
+implementation to be marked to continue on failure.
+
+.. tab-container::
+
+    .. tab:: CSharp
+
+        .. code-block:: java
+
+            // The ``[ContinueOnFailure]`` attribute tells Gauge to continue executing others
+            // steps even if the current step fails.
+
+            public class StepImplementation {
+                [ContinueOnFailure]
+                [Step("Say <greeting> to <product name>")]
+                public void HelloWorld(string greeting, string name) {
+                    // If there is an error here, Gauge will still execute next steps
+                }
+
+            }
+
+    .. tab:: Java
+
+        .. code-block:: java
+
+            // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
+            // steps even if the current step fails.
+
+            public class StepImplementation {
+                @ContinueOnFailure
+                @Step("Say <greeting> to <product name>")
+                public void helloWorld(String greeting, String name) {
+                    // If there is an error here, Gauge will still execute next steps
+                }
+
+            }
+
+    .. tab:: JavaScript
+
+        .. code-block:: javascript
+
+            // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
+            // steps even if the current step fails.
+
+            gauge.step("Say <greeting> to <product>.", { continueOnFailure: true}, function (greeting,product) {
+            });
+
+    .. tab:: Python
+
+        .. code-block:: python
+
+            // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
+            // steps even if the current step fails.
+
+            @continue_on_failure([RuntimeError])
+            @step("Say <greeting> to <product>")
+            def step2(greeting,product):
+                pass
+
+    .. tab:: Ruby
+
+        .. code-block:: ruby
+
+            # The ``:continue_on_failure => true`` keyword argument
+            # tells Gauge to continue executing other steps even
+            # if the current step fails.
+
+            step 'Say <greeting> to <name>', :continue_on_failure => true do |greeting, name|
+                # If there is an error here, Gauge will still execute next steps
+            end
+
+Continue on Failure can take an optional parameter to specify the list
+of error classes on which it would continue to execute further steps in
+case of failure. This is currently supported only with the following runners.
+
+.. code-block:: java
+  :caption: Java
+
+  @ContinueOnFailure({AssertionError.class, CustomError.class})
+  @Step("hello")
+  public void sayHello() {
+    // code here
+  }
+
+  @ContinueOnFailure(AssertionError.class)
+  @Step("hello")
+  public void sayHello() {
+    // code here
+  }
+
+  @ContinueOnFailure
+  @Step("hello")
+  public void sayHello() {
+    // code here
+  }
+
+.. code-block:: python
+  :caption: Python
+
+  @continue_on_failure([RuntimeError])
+  @step("Step 2")
+  def step2():
+      pass
+
+In case no parameters are passed to ``@ContinueOnFailure``, on any type
+of error it continues with execution of further steps by default.
+
+This can be used to control on what type of errors the execution should
+continue, instead of just continuing on every type of error. For
+instance, on a ``RuntimeException`` it's ideally not expected to
+continue further. Whereas if it's an assertion error, it might be fine
+to continue execution.
+
+.. note::
+
+  -  Continue on failure comes into play at post execution, i.e. after the step method is executed. If there is a failure in executing the step, ex. parameter count/type mismatch, Gauge will not honour the ``ContinueOnFailure`` flag.
+  -  Continue on failure does not apply to :ref:`hooks <execution_hooks>`. Hooks always fail on first error.
+  -  Step implementations are still non-recoverable by default and Gauge does not execute subsequent steps upon failure. To make a step implementation continue on failure, it needs to be explicitly marked in the test code.
+  -  There is no way to globally mark a test run to treat all steps to continue on failure. Each step implementation has to be marked explicitly.
+  -  If an implementation uses step aliases, marking that implementation to continue on failure will also make all the aliases to continue on failure. So, if a step alias is supposed to break on failure and another step alias is supposed to continue on failure, they need to be extracted to two different step implementations.
+
 
 Using IDE plugins
 -----------------
@@ -944,7 +2061,7 @@ Refactoring
 -----------
 
 Rephrase steps
-^^^^^^^^^^^^^^
+++++++++++++++
 
 Gauge allows you to rephrase a step across the project. To rephrase a
 step run:

@@ -381,7 +381,7 @@ Gauge maven project creation in IDE
 
 .. note::
 
-    See :ref:`maven_project_idea_using_plugin`
+    See `Maven using gauge-maven-plugin in IntelliJ Idea <https://github.com/getgauge/intellij-plugin#maven-project-using-gauge-maven-plugin>` __
 
 The generated **pom.xml** in the project will have the **gauge-java** dependency and 
 a **gauge:execute** goal defined in the test phase.
@@ -504,7 +504,7 @@ Property        Usage                    Description
 ``flags``       ``-Dflags="--verbose"``  Add additional gauge flags to execution.
 =============== ======================== ===============================================================
 
-See gauge's :ref:`cli_interface` for list of all flags that be used with **-Dflags** option.
+See gauge's `Manpage <https://manpage.gauge.org>` __ for list of all flags that be used with **-Dflags** option.
 
 .. _gradle:
 
@@ -609,7 +609,7 @@ Property        Usage                    Description
 ``flags``       ``-Pflags="--verbose"``  Add additional gauge flags to execution.
 =============== ======================== ===============================================================
 
-See gauge's :ref:`cli_interface` for list of all flags that be used with **-PadditionalFlags** option.
+See gauge's `Manpage <https://manpage.gauge.org>` __ for list of all flags that be used with **-PadditionalFlags** option.
 
 Adding/configuring custom Gauge tasks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

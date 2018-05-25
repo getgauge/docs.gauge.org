@@ -58,7 +58,7 @@ Creating tasks
 
 * Run against specific :ref:`environments` using the ``--env`` flag.
 
-* See the :ref:`cli_interface` for list of all the flags that can be used.
+* See the `Manpage <https://manpage.gauge.org>` __ for list of all the flags that can be used.
 
 
 Reports

@@ -10,7 +10,7 @@ Setup
 
    .. image:: images/Gauge_Pipeline.png
 -  `Download <https://gauge.org/get-started.html>`__ and Install Gauge on the Go Agents
--  Install the required gauge :ref:`language plugin <plugins-installation>` on the Go agents.
+-  Install the required gauge :ref:`language plugin <install_plugins>` on the Go agents.
 
 Tips on Installation
 --------------------
@@ -33,7 +33,7 @@ Create execution task
     Eg. ``gauge run --tags "tag1 & tag2" specs``
 -  Adding a flag ``-p`` runs them using :ref:`parallel_execution`.
 -  Run against specific :ref:`environments` using the ``--env`` flag
--  See the :ref:`cli_interface` for list of all the flags that can be used.
+-  See the `Manpage <https://manpage.gauge.org>` __ for list of all the flags that can be used.
 
    .. figure:: images/Configuring_Gauge.png
       :alt: adding new task

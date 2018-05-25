@@ -463,7 +463,7 @@ Linux
 Plugin installation
 -------------------
 
--  If :ref:`plugin installation <plugins-installation>` fails due to a network connection issue, you can **manually download** the plugin distributable zip and install it using the ``-f`` flag.
+-  If :ref:`plugin installation <install_plugins>` fails due to a network connection issue, you can **manually download** the plugin distributable zip and install it using the ``-f`` flag.
 
 .. code-block:: console
 

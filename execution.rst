@@ -278,6 +278,8 @@ Tags allow filtering the specs and scenarios to be executed.
 The following command executes all the specs and scenarios which are labelled with certain
 tags:
 
+.. _tag_syntax:
+
 .. code-block:: console
 
     gauge run --tags tag1,tag2 specs
@@ -330,7 +332,7 @@ should be executed, then use the following command:
     gauge run --tags "search & successful" SPEC_FILE_NAME # Runs scenario 'Successful search' only
 
 Execution hooks can also be filtered based on tags. 
-See :ref:`filtering hooks with tags <_filtering_hooks_with_tags>` for more information.
+See :ref:`filtering hooks with tags <filtering_hooks_with_tags>` for more information.
 
 Tag expressions
 ^^^^^^^^^^^^^^^
@@ -544,7 +546,7 @@ Parse errors
 ^^^^^^^^^^^^
 
 This occurs if the spec or concept file doesn't follow the 
-expected :ref:`specifications <spec_syntax>` or :ref:`concepts <concept_syntax>` syntax.
+expected :ref:`specifications <spec_syntax>` or :ref:`concepts <concept>` syntax.
 
 **Example:**
 
@@ -665,7 +667,7 @@ Compatibility errors
     Failed to start a runner. Compatible runner version to 0.0.7 not found
 
 -  The language plugin installed is not compatible with the gauge version installed.
--  Run ``gauge install language_NAME`` to install the latest compatible version. See :ref:`plugin installation <plugins-installation>` for
+-  Run ``gauge install language_NAME`` to install the latest compatible version. See :ref:`plugin installation <install_plugins>` for
    more details
 
 Execution Errors

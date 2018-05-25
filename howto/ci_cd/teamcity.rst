@@ -3,7 +3,7 @@
 -  `Download <https://gauge.org/get-started.html>`__ and Install
    Gauge on the agents. Read more on installing Gauge
    `here <https://docs.gauge.org/installing.html#installation>`__.
--  Install the required Gauge :ref:`language plugins <plugins-installation>` on
+-  Install the required Gauge :ref:`language plugins <install_plugins>` on
    the agents as: ``gauge install <language>``
 
 Tips on Installation
@@ -31,7 +31,7 @@ Create execution task
     Eg. ``gauge run --tags "tag1 & tag2" specs``
 -  Adding a flag ``-p`` runs them using :ref:`parallel_execution`.
 -  Run against specific :ref:`environments` using the ``--env`` flag.
--  See the :ref:`cli_interface` for list of all the flags that can be used.
+-  See the `Manpage <https://manpage.gauge.org>` __ for list of all the flags that can be used.
 
 Reports
 -------

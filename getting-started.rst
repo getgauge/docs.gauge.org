@@ -113,8 +113,6 @@ The output should look like:
    -------
    plugin(<version number>)
 
-You can read more about plugins :doc:`here <plugins>`.
-
 After Gauge and a language runner is installed, see :ref:`create a Gauge project <create_a_project>`.
 
 .. _create_a_project:
@@ -174,7 +172,7 @@ The details of the run are displayed on the command line followed by a summary.
 
 .. note::
 
-   Refer :ref:`executing_tests` for more details.
+   Refer :doc:`execution` for more details.
 
 Interpret results
 -----------------
