@@ -40,34 +40,6 @@
   margin-top: 5px;
 }
 
-.gauge-features {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 2em;
-}
-
-.gauge-features > div {
-  display: flex;
-  flex-direction: column;
-}
-
-.feature-wrapper {
-  margin-top: 10px;
-  border: 0.5px solid;
-  border-radius: 2px;
-  padding: 5px;
-  height: 100%;
-  cursor: pointer;
-  position: relative;
-}
-
-.feature-wrapper:hover {
-  background-color: #eeeeee;
-}
-.feature-wrapper a, .feature-wrapper a:hover {
-  color: rgb(51,51,51);
-}
-
 .highlight-console .highlight pre span.go:before{
   content: '> ';
   color: #aaaaaa;
@@ -226,26 +198,28 @@ code {
   font-size: 80%;
 }
 
-.banner {
-  display: flex;
+.row.banner {
+  margin: 20px auto;
 }
 
 .banner #search {
   font-size: 100%;
-  width: 25em;
+  width: 100%;
+  margin-top: 20px;
+}
+.align-middle .algolia-autocomplete{
+  display: block;
+  width: 100%;
+  float: none;
+}
+@media (min-width: 992px){
+  .align-middle .algolia-autocomplete{
+    display: block;
+    width: 80%;
+    float: right;
+  } 
 }
 
-.align-middle {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.feature-desc > span {
-  border-bottom: 0.5px solid;
-}
 
 .faq-toc > ul {
   font-size: 80%;
@@ -255,4 +229,233 @@ code {
 .faq-toc ul {
   list-style: none;
   padding-left: 0.8em;
+}
+
+/* Docs Page Styling */
+
+*{
+  box-sizing:border-box;
+}
+
+.gauge-features{
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  margin:0;
+  padding:0;
+}
+
+.gauge-features__feature{
+  width: 100%;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  padding:20px;
+  margin: 10px;
+}
+
+@media (min-width: 768px){
+  .gauge-features__feature{
+    width: 46%;
+    min-height:150px;
+  }
+}
+
+@media (min-width: 992px){
+  .gauge-features__feature{
+    width: 31%;
+  }
+}  
+
+.feature-wrapper h3{
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0 auto 15px;
+}
+.feature-wrapper a{
+  text-decoration: none;
+}
+
+@media (min-width:768px){
+  .feature-wrapper h3{
+    font-size: 18px;
+  } 
+}
+
+@media (min-width:$screen-lg){
+  .feature-wrapper h3{
+    font-size: 20px;
+  }
+}    
+
+.feature-desc{
+  color: #000;
+  padding: 0 10px 0 0;
+  margin: 0px 0 10px 0;
+  font-size: 14px;
+      
+}
+
+@media (min-width: 768px){
+  .feature-desc{
+    font-size: 16px;
+  }
+}
+
+.link-text{
+  color: #333;  
+  border-bottom:1px dotted #333;
+  display:inlie-block;
+  font-size:13px;
+}
+
+/* Dcouments page Inside stylesheet - including tabs and Sidebar*/
+
+.content > .section > h1 {
+  font-size:20px;
+  text-transform:uppercase;
+  border-bottom: 1px solid #ccc;
+}
+
+.content > .section  h2 {
+  font-size:20px;
+  margin-bottom:20px;
+}
+
+.content > .section  h3 {
+  font-size:18px;
+  font-weight:500;
+  margin:30px 0 10px;
+}
+
+.content .section .section{
+  margin-bottom:80px;
+}
+
+.tab{
+  border:1px solid #ccc;
+  border-radius:0;
+  padding:20px;
+  margin-bottom:30px;
+}
+
+.tabs li.active {
+  border-bottom: 3px solid rgb(245, 193, 14);
+  border-radius: 0px;
+  background-color: transparent;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
+  background-color: transparent !important;
+}
+
+.tab-selector.nav{
+  position:relative
+}
+
+.tabs li:not(.active):hover {
+  border-bottom:3px solid #ccc;
+  background-color:transparent;
+}
+
+.tabs .nav>li>a:hover, .tabs .nav>li>a:focus {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.tab-selector.nav li{
+  padding:5px 20px 5px 30px
+}
+
+.sidebar-wrapper{
+  border:0;
+}
+
+.localtoc > ul > li > a{
+  display:block;
+  border-bottom:1px solid #aaa;
+  border-color:#aaa;
+}
+
+.localtoc > ul > li > ul {
+  padding-left: 10px !important;
+  margin-bottom:20px;
+}
+
+.localtoc ul li ul a{
+  display:block;
+  border-bottom:1px dotted #ccc;
+  padding:10px 0;
+}
+
+#rightNav li.active > a{
+  border-bottom:1px solid #ccc;
+}
+
+.localtoc ul li ul  a:hover {
+  border-bottom:1px dotted rgb(245, 193, 14);=
+}
+
+#rightNav li.active > a{
+  border-bottom: 1px solid rgb(245, 193, 14);
+}
+
+.links ul li a{
+  border-bottom:1px solid #aaa;
+  display:block;
+  padding:10px 0;
+}
+
+.separator{
+  display:none;
+}
+
+#rightNav .rst-breadcrumbs-buttons a:hover{
+  border:1px solid transparent;
+}
+
+table {
+  border-collapse: collapse;
+  width:100%
+ }
+
+ th {
+  background: #ccc;
+ }
+ 
+ th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+ }
+ 
+ tr:nth-child(even) {
+  background: #efefef;
+ }
+ 
+ tr:hover {
+  background: #d1d1d1;
+ }
+
+ /* Table of Content Styling */
+ aside.main-toc {
+  position:  fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+aside ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+aside ul a {
+  color: rgb(85, 85, 85);
+  display: block;
+  padding: 5px 0;
+  border-bottom: 1px solid #ccc;
 }

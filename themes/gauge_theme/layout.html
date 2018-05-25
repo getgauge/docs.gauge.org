@@ -37,7 +37,6 @@
 {%- endmacro %}
 
 {%- macro css() %}
-  <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
   <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
   {%- for css in css_files %}
     {%- if css|attr("filename") %}
@@ -46,6 +45,7 @@
   <link rel="stylesheet" href="{{ pathto(css, 1) }}" type="text/css" />
     {%- endif %}
   {%- endfor %}
+  <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
 {%- endmacro %}
 
 {%- if html_tag %}
@@ -82,6 +82,7 @@
 {% endblock %}
 </head>
 {%- block body_tag %}<body>{% endblock %}
+  <!-- {{ toctree }} -->
 {%- block header %}{% endblock %}
 
 {%- block content %}
@@ -114,6 +115,20 @@
     </nav>
   </div>
 </header>
+
+
+<aside class="main-toc">
+<!-- Place the Toc Tree here and remove Ul and Li -->
+
+<!-- <ul>
+  <li> <a href="#">link</a> </li>
+  <li> <a href="#">link</a> </li>
+  <li> <a href="#">link</a> </li>
+  <li> <a href="#">link</a> </li>
+  <li> <a href="#">link</a> </li>
+</ul> -->
+
+</aside>
 <div class="container">
   <div class="row col-md-12">
     {% if pagename == 'index' %}

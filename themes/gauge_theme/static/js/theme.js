@@ -89,8 +89,9 @@ $(document).ready(() => {
   menuItems.click(function(e){
     var href = $(this).attr("href"),
       offsetTop = href === "#" ? 0 : $(href).offset().top-rightNavHeight+1;
+
     $('html, body').stop().animate({ 
-      scrollTop: offsetTop
+      scrollTop: offsetTop + 250
     }, 300);
     e.preventDefault();
   });
