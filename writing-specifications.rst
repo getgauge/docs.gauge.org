@@ -4,12 +4,11 @@ Writing Specifications
 Specifications (spec)
 ---------------------
 
-They are business layer test cases which can also act as your feature
-documentation. They are written in the business language. Typically a
-spec or specification describe a particular feature of the application
+A specification is a business test case which can also act as feature
+documentation. Typically a  specification describe a particular feature of the application
 under test.
 
--  They are written in a ``.spec`` file. Gauge also supports ``.md`` file format.
+-  These are written in a ``.spec`` file. Gauge also supports ``.md`` file format.
 -  The markup for a specification file is based on `markdown syntax <https://daringfireball.net/projects/markdown/syntax>`__.
 
 Example
@@ -44,7 +43,7 @@ Example
 Specification Heading
 ^^^^^^^^^^^^^^^^^^^^^
 
-A spec must begins with a spec heading and a single specification can
+A specification must begins with a spec heading and a single specification can
 contain only one spec heading.
 
 It is written in ``<H1>`` syntax of markdown. This can be in two
@@ -111,14 +110,14 @@ Example
 Steps
 -----
 
-Steps are the executable components of your specification. They are
+Steps are the executable components of your specification, 
 written as markdown unordered list items (bulleted points).
 
-They are written inside a specification as
+Steps can exist inside a specification as
 
    - :ref:`Context Steps<longstart-context>`
    - :ref:`longstart-teardown`
-   - Steps inside a scenario or concepts
+   - Inside a scenario or concepts
 
 Every step has an underlying code implementation for the programming
 language used. This is executed when the steps inside a spec are
@@ -148,7 +147,7 @@ cannot be used in step text.
 Parameters
 ----------
 
-Steps can be defined to take values as parameters so that they can be
+Steps can be defined to take values as parameters so that these can be
 re-used with different parameter values.
 
 .. code-block:: gauge
