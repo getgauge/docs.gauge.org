@@ -21,45 +21,23 @@ Install Gauge
 
     .. tab:: macOS
 
-        **Offline Installation**
+        **Using HomeBrew**
 
-        Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
+        Requires `homebrew <https://brew.sh/>`__ and an internet connection.
 
+        .. code-block:: console
 
-        **Nightly installation**
-
-        Nightly releases are latest development snapshots of Gauge. They have
-        the latest features being developed, but are unstable.
-
-        Download the Gauge archive from `here <https://bintray.com/gauge/Gauge/Nightly/>`__. Extract it to a location and add it to system path.
+            brew update
+            brew install gauge
 
     .. tab:: Debian/APT
 
-        **Offline Installation**
-
-        Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
-
-        **Nightly Installation**
-
-        Nightly releases are latest development snapshots of Gauge. They have
-        the latest features being developed, but are unstable.
-
-        Add Gauge's GPG key
+        Add Gauge's GPG key, URL to repository list and install Gauge.
 
         .. code-block:: console
 
             sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
-
-        Add to repository list
-
-        .. code-block:: console
-
-            echo deb https://dl.bintray.com/gauge/gauge-deb nightly main | sudo tee -a /etc/apt/sources.list
-
-        Install
-
-        .. code-block:: console
-
+            echo deb https://dl.bintray.com/gauge/gauge-deb stable main | sudo tee -a /etc/apt/sources.list
             sudo apt-get update
             sudo apt-get install gauge
 
