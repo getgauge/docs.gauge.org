@@ -124,8 +124,89 @@ Gauge
 
     .. note:: Having trouble with installation? Head over to our :ref:`installation-faq` FAQ's.
 
+
+.. _install_plugins:
+
 Plugins
 -------
+
+Plugins are an easy way to extend the features of Gauge. There are
+various types of plugins that Gauge currently supports.
+
+Language Runner
+^^^^^^^^^^^^^^^
+
+Language plugins enable the users to write the implementation of specs in a language of their choice. 
+
+.. _install-language-runner:
+
+.. tab-container:: languages
+
+    .. tab:: CSharp
+
+        .. code-block:: console
+
+            gauge install csharp
+
+        Read more `here <https://github.com/getgauge/gauge-csharp>`__
+
+    .. tab:: Java
+
+        .. code-block:: console
+
+            gauge install java
+
+        Read more `here <https://github.com/getgauge/gauge-java>`__
+
+    .. tab:: JavaScript
+
+        .. code-block:: console
+
+            gauge install js
+
+        Read more `here <https://github.com/getgauge/gauge-js>`__
+
+    .. tab:: Python
+
+        .. code-block:: console
+
+            gauge install python
+
+        Read more `here <https://github.com/getgauge/gauge-python>`__
+
+    .. tab:: Ruby
+
+        .. code-block:: console
+
+            gauge install ruby
+
+        Read more `here <https://github.com/getgauge/gauge-ruby>`__
+
+.. _reporting_plugins:
+
+Reporting Plugins
+^^^^^^^^^^^^^^^^^
+
+Reporting plugins generate execution reports in various formats.
+
+
+.. tab-container:: reports
+
+    .. tab:: Html-Report
+
+        .. code-block:: console
+
+            gauge install html-report
+
+        Read more `here <https://github.com/getgauge/html-report>`__
+
+    .. tab:: Xml-Report
+
+        .. code-block:: console
+
+            gauge install xml-report
+
+        Read more `here <https://github.com/getgauge/xml-report>`__
 
 .. _documentation_plugins:
 
