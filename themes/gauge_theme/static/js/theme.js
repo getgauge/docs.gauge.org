@@ -60,11 +60,14 @@ $(document).ready(() => {
     sel_class = null;
   });
 
+  var location = window.location.pathname;
+  var version = location.substring(1, location.lastIndexOf('/'));
   // wire up algolia search
   docsearch({
     apiKey: '5008b0d9ea4d9e639a17a123bea077fe',
     indexName: 'gauge',
     inputSelector: '#search',
+    algoliaOptions: { 'facetFilters': ["version:" + version] },
     debug: false // Set debug to true if you want to inspect the dropdown
   });
 
