@@ -1257,35 +1257,35 @@ levels during the test suite execution.
 
         .. code-block:: javascript
 
-            hooks.beforeSuite(fn, [opts]) {
+            beforeSuite(fn, [opts]) {
                 // Code for before suite
             }
 
-            hooks.beforeSpec(fn, [opts]) {
+            beforeSpec(fn, [opts]) {
                 // Code for before spec
             }
 
-            hooks.beforeScenario(fn, [opts]) {
+            beforeScenario(fn, [opts]) {
                 // Code for before scenario
             }
 
-            hooks.beforeStep(fn, [opts]) {
+            beforeStep(fn, [opts]) {
                 // Code for before step
             }
 
-            hooks.afterSuite(fn, [opts]) {
+            afterSuite(fn, [opts]) {
                 // Code for after suite
             }
 
-            hooks.afterSpec(fn, [opts]) {
+            afterSpec(fn, [opts]) {
                 // Code for after spec
             }
 
-            hooks.afterScenario(fn, [opts]) {
+            afterScenario(fn, [opts]) {
                 // Code for after scenario
             }
 
-            hooks.afterStep(fn, [opts]) {
+            afterStep(fn, [opts]) {
                 // Code for after step
             }
 
@@ -1405,8 +1405,8 @@ Current Execution Context in the Hook
 
         .. code-block:: javascript
 
-            hooks.beforeScenario(fn, [opts]) { ... }
-            hooks.afterSpec(fn, [opts]) { ... }
+            beforeScenario(fn, [opts]) { ... }
+            afterSpec(fn, [opts]) { ... }
 
     .. tab:: Python
 
@@ -1490,14 +1490,14 @@ Filtering Hooks execution based on tags
 
             // A before spec hook that runs when tag1 and tag2
             // is present in the current scenario and spec.
-            hooks.beforeSpec(function () {
+            beforeSpec(function () {
                 //implementation
             }, { tags: [ "tag1","tag2" ]});
 
             // A after step hook runs when tag1 or tag2
             // is present in the currentscenario and spec.
             // Default tagAggregation value is Operator.AND.
-            hooks.afterStep(function () {
+            afterStep(function () {
                 //implementation
             }, { tags: [ "tag1","tag2" ]});
 
