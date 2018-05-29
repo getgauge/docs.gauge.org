@@ -291,9 +291,9 @@ Execution will stop where it finds the above statement and you can debug.
 
 VSCode
 ------
-Why are some functionalities not working?
+Why are some features not working?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you notice that any of the documented functionalities (ex. goto definition, codelense of implementation files, find usages)
+If you notice that any of the documented features (ex. goto definition, codelense of implementation files, find usages)
 are not working then make sure the required language runner is installed, by running ``gauge version``.
 If not installed, install using ``gauge install <plugin_name>``.
