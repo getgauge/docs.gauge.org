@@ -112,4 +112,13 @@ $(document).ready(() => {
         .end().filter("[href='#"+id+"']").parent().addClass("active");
     }                   
   });
+
+  var sidebar = new StickySidebar('#sideBar', {
+    containerSelector: '.bigContainer',
+    innerWrapperSelector: '#rightNav',
+    topSpacing: 20,
+    bottomSpacing: 20
+  });
+
 });
+
