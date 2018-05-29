@@ -27,7 +27,7 @@
 {%- endif %}
 
 {% set css_files = ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css', 'https://gauge.org/assets/stylesheets/application.css'] %}
-{% set script_files = script_files + ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', '_static/js/theme.js'] %}
+{% set script_files = script_files + ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', '_static/js/theme.js', '_static/js/sticky-sidebar.js'] %}
 
 {%- macro script() %}
   <script type="text/javascript" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
@@ -127,7 +127,7 @@
 </header>
 
 <div class="container">
-  <div class="row col-md-12">
+  <div class="row col-md-12 bigContainer">
     {% if pagename == 'index' %}
     <div class="col-md-12 content">
       {% include '_landing.html' %}
@@ -145,7 +145,7 @@
 
     {% block sidebar2 %} 
       {% if pagename != 'index' %}        
-        <div class="col-md-3">
+        <div class="col-md-3" id="sideBar">
           <nav id="rightNav">
             <div class="text-center">
               <input type="text" id="search" name="search" placeholder="Search Docs"/>
@@ -157,17 +157,17 @@
               <div class="separator"></div>
               <div class="links">
                 <ul>
-                  <li><a href="/">Docs Home</a></li>
                   <li>
-                    <a href="https://github.com/getgauge/docs.gauge.org/blob/{{ github_version|default("master") }}{{ conf_py_path }}{{ pagename }}{{ source_suffix|default(".rst") }}"> Edit on GitHub</a> 
+                    <a href="https://github.com/getgauge/docs.gauge.org/blob/{{ github_version|default("master") }}{{ conf_py_path }}{{ pagename }}{{ source_suffix|default(".rst") }}"> <i class="fab fa-github"></i> Edit on GitHub</a> 
                   </li>
                 </ul>
                   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+                    <a href="/"><i class="fa fa-home"></i></a>
                     {% if prev %}
-                      <a href="{{ prev.link|e }}" class="btn btn-neutral" title="{{ prev.title|striptags|e }}" accesskey="p">Previous</a>
+                      <a href="{{ prev.link|e }}" class="btn btn-neutral" title="{{ prev.title|striptags|e }}" accesskey="p">Previous <i class="fas fa-arrow-left"></i> </a>
                     {% endif %}
                     {% if next %}
-                      <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n">Next</a>
+                      <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n">Next <i class="fas fa-arrow-right"></i> </a>
                     {% endif %}
                   </div>
               </div>

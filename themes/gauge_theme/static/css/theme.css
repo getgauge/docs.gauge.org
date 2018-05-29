@@ -284,7 +284,7 @@ code {
   } 
 }
 
-@media (min-width:$screen-lg){
+@media (min-width: 992px){
   .feature-wrapper h3{
     font-size: 20px;
   }
@@ -316,7 +316,8 @@ code {
 .content > .section > h1 {
   font-size:20px;
   text-transform:uppercase;
-  border-bottom: 1px solid #ccc;
+  /* border-bottom: 1px solid #ccc; */
+  border: none;
 }
 
 .content > .section  h2 {
@@ -436,7 +437,34 @@ table {
  
  tr:hover {
   background: #d1d1d1;
-}
+ }
+
+ /* Sidebar plugin settings */
+  .is-affixed{
+    display: none;
+  }
+
+  #sidebar{
+    will-change: min-height;
+  }
+
+  @media (min-width: 992px){
+    .is-affixed{
+      display: block;
+    }
+  }
+
+  #rightNav{
+    transform: translate(0, 0); 
+    transform: translate3d(0, 0, 0);
+    will-change: position, transform;
+    left: auto !important;
+  }
+  
+  #global{
+    overflow: hidden;
+  }
+
 
 .admonition {
   background-color: transparent !important;
