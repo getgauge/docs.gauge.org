@@ -148,16 +148,16 @@
               <div class="links">
                 <ul>
                   <li>
-                    <a href="https://github.com/getgauge/docs.gauge.org/blob/{{ github_version|default("master") }}{{ conf_py_path }}{{ pagename }}{{ source_suffix|default(".rst") }}"> <i class="fab fa-github"></i>Edit on GitHub</a> 
+                    <a href="https://github.com/getgauge/docs.gauge.org/blob/{{ github_version|default("master") }}{{ conf_py_path }}{{ pagename }}{{ source_suffix|default(".rst") }}"> <i class="fab fa-github"></i> Edit on GitHub</a> 
                   </li>
                 </ul>
                   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
                     <a href="/"><i class="fa fa-home"></i></a>
                     {% if prev %}
-                      <a href="{{ prev.link|e }}" class="btn btn-neutral" title="{{ prev.title|striptags|e }}" accesskey="p">Previous <i class="fas fa-arrow-right"></i></a>
+                      <a href="{{ prev.link|e }}" class="btn btn-neutral" title="{{ prev.title|striptags|e }}" accesskey="p">Previous <i class="fas fa-arrow-left"></i> </a>
                     {% endif %}
                     {% if next %}
-                      <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n">Next <i class="fas fa-arrow-left"></i></a>
+                      <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n">Next <i class="fas fa-arrow-right"></i> </a>
                     {% endif %}
                   </div>
               </div>
