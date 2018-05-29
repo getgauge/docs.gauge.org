@@ -21,45 +21,23 @@ Install Gauge
 
     .. tab:: macOS
 
-        **Offline Installation**
+        **Using HomeBrew**
 
-        Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
+        Requires `homebrew <https://brew.sh/>`__ and an internet connection.
 
+        .. code-block:: console
 
-        **Nightly installation**
-
-        Nightly releases are latest development snapshots of Gauge. They have
-        the latest features being developed, but are unstable.
-
-        Download the Gauge archive from `here <https://bintray.com/gauge/Gauge/Nightly/>`__. Extract it to a location and add it to system path.
+            brew update
+            brew install gauge
 
     .. tab:: Debian/APT
 
-        **Offline Installation**
-
-        Download the Gauge archive from `here <https://github.com/getgauge/gauge/releases/latest>`__. Extract it to a location and add it to system path.
-
-        **Nightly Installation**
-
-        Nightly releases are latest development snapshots of Gauge. They have
-        the latest features being developed, but are unstable.
-
-        Add Gauge's GPG key
+        Add Gauge's GPG key, URL to repository list and install Gauge.
 
         .. code-block:: console
 
             sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
-
-        Add to repository list
-
-        .. code-block:: console
-
-            echo deb https://dl.bintray.com/gauge/gauge-deb nightly main | sudo tee -a /etc/apt/sources.list
-
-        Install
-
-        .. code-block:: console
-
+            echo deb https://dl.bintray.com/gauge/gauge-deb stable main | sudo tee -a /etc/apt/sources.list
             sudo apt-get update
             sudo apt-get install gauge
 
@@ -113,89 +91,8 @@ Install Gauge
 
 .. note:: 
     - Gauge can be installed using other methods. See :ref:`advanced_installation`.
+    - Gauge requires some plugins to be installed to execute specs. Gauge attempts to install them automatically, when needed. See :ref:`install_plugins`.
     - Having trouble with installation? Head over to our :ref:`installation-faq` FAQ's.
-
-Install Plugins
----------------
-
-Plugins are an easy way to extend the features of Gauge. There are
-various types of plugins that Gauge currently supports.
-
-Language Runner
-^^^^^^^^^^^^^^^
-
-Language plugins enable the users to write the implementation of specs in a language of their choice. 
-
-.. _install-language-runner:
-
-.. tab-container:: languages
-
-    .. tab:: CSharp
-
-        .. code-block:: console
-
-            gauge install csharp
-
-        Read more `here <https://github.com/getgauge/gauge-csharp>`__
-
-    .. tab:: Java
-
-        .. code-block:: console
-
-            gauge install java
-        
-        Read more `here <https://github.com/getgauge/gauge-java>`__
-
-    .. tab:: JavaScript
-
-        .. code-block:: console
-
-            gauge install js
-        
-        Read more `here <https://github.com/getgauge/gauge-js>`__
-
-    .. tab:: Python
-
-        .. code-block:: console
-
-            gauge install python
-
-        Read more `here <https://github.com/getgauge/gauge-python>`__
-
-    .. tab:: Ruby
-
-        .. code-block:: console
-
-            gauge install ruby
-        
-        Read more `here <https://github.com/getgauge/gauge-ruby>`__
-
-.. _reporting_plugins:
-
-Reporting Plugins
-^^^^^^^^^^^^^^^^^
-
-Reporting plugins generate execution reports in various formats.
-
-
-.. tab-container:: reports
-
-    .. tab:: Html-Report
-
-        .. code-block:: console
-
-            gauge install html-report
-
-        Read more `here <https://github.com/getgauge/html-report>`__
-
-    .. tab:: Xml-Report
-
-        .. code-block:: console
-
-            gauge install xml-report
-
-        Read more `here <https://github.com/getgauge/xml-report>`__
-
 
 Verify your installation
 ------------------------
@@ -215,8 +112,6 @@ The output should look like:
    Plugins
    -------
    plugin(<version number>)
-
-You can read more about plugins :doc:`here <plugins>`.
 
 After Gauge and a language runner is installed, see :ref:`create a Gauge project <create_a_project>`.
 
@@ -277,7 +172,7 @@ The details of the run are displayed on the command line followed by a summary.
 
 .. note::
 
-   Refer :ref:`executing_tests` for more details.
+   Refer :doc:`execution` for more details.
 
 Interpret results
 -----------------

@@ -464,3 +464,23 @@ table {
   #global{
     overflow: hidden;
   }
+
+
+.admonition {
+  background-color: transparent !important;
+  border: 0.5px solid rgb(245, 193, 14);
+  margin-top: 10px;
+}
+
+.admonition > p {
+  padding: 0 0 0 10px !important;
+  font-size: 80% !important;
+}
+
+.admonition .first {
+  background-color: rgb(245, 193, 14);
+}
+
+.note {
+  padding: 0 !important;
+}
