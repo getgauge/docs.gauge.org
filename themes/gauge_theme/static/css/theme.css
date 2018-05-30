@@ -471,11 +471,13 @@ ul.breadcrumbs li a{
 .breadcrumbs-aside{
   float: left;
   width: 100%;
+  margin: 5px 0px;
 }
 @media (min-width: 992px){
   .breadcrumbs-aside{
     float: right;
      width: 25%;
      text-align: right;
+     margin: 0;
   }
 }
