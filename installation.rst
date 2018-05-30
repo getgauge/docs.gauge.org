@@ -1,10 +1,10 @@
 .. _advanced_installation:
 
-Advanced Installation
-======================
+Installation
+============
 
 .. note:: 
-    For recommended installation, refer :ref:`getting_started`.
+    For recommended installation, refer `Getting Started <//gauge.org/get-started.html>`__.
     This page lists alternate methods of installing Gauge and plugins.
 
 Gauge

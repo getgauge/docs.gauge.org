@@ -12,7 +12,7 @@ This can occur because of following reasons :
 
 To Solve this :
 
-- If gauge is not installed, :ref:`install gauge <getting_started>`.
+- If gauge is not installed, `Install Gauge <//gauge.org/get-started.html>`__.
 - If gauge is installed at custom location, add ``custom_install_location/bin`` to ``PATH``
 - On custom installation location Set ``GAUGE_ROOT`` to ``custom_install_location``
 - Restart Intellij
