@@ -464,6 +464,9 @@ ul.breadcrumbs li{
   width: auto;
   border: 1px solid transparent;
 }
+ul.breadcrumbs li a{
+  padding: 0px 5px 0px 0px;
+}
 
 .breadcrumbs-aside{
   float: left;
@@ -473,5 +476,6 @@ ul.breadcrumbs li{
   .breadcrumbs-aside{
     float: right;
      width: 25%;
+     text-align: right;
   }
 }
