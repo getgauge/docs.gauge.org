@@ -72,7 +72,6 @@ body {
 }
 
 .content > .section > h1 {
-  border-bottom: 1px solid;
   padding-bottom: 10px;
 }
 
@@ -309,7 +308,6 @@ code {
 .content > .section > h1 {
   font-size:20px;
   text-transform:uppercase;
-  border-bottom: 1px solid #ccc;
 }
 
 .content > .section  h2 {
@@ -459,11 +457,24 @@ ul.breadcrumbs{
   }
 }
 
+.content > .section > h1:nth-child(1) {
+  margin-top: 10px;
+}
+
+.breadcrumbs-container {
+  padding-top: 16px;
+}
+
+ul.breadcrumbs {
+  margin-left: -3px;
+}
+
 ul.breadcrumbs li{
   display: inline-flex;
   width: auto;
   border: 1px solid transparent;
 }
+
 ul.breadcrumbs li a{
   padding: 0px 5px 0px 0px;
 }
@@ -473,6 +484,7 @@ ul.breadcrumbs li a{
   width: 100%;
   margin: 5px 0px;
 }
+
 @media (min-width: 992px){
   .breadcrumbs-aside{
     float: right;

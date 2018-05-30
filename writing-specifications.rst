@@ -22,7 +22,7 @@ IDE plugins
         This plugin currently supports Gauge with C#.
 
 .. note:: 
-    For a better experience, it is recommended to use one of the IDE plugins, however this is not mandatory. Gauge specifications can be authored using any text editor.
+    For a better experience, we recommend using one of the IDE plugins. However, this is not mandatory, as you can author Gauge specifications using any text editor.
 
 Specifications (spec)
 ---------------------
