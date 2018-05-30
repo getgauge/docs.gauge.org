@@ -16,7 +16,7 @@ When the specs are executed, the html report is generated in ``reports`` directo
 
 By default html-report is added to the project.
 
-Find more information about this plugin `here <https://github.com/getgauge/html-report#html-report>`__.
+Find more information about this plugin `on Github <https://github.com/getgauge/html-report#html-report>`__.
 
 XML Report
 ----------
@@ -35,7 +35,7 @@ Spectacle pugin generates static HTML from
 Specification/Markdown files. Ability to filter specifications and
 scenarios are available.
 
-Find more information about this plugin `here <https://github.com/getgauge/spectacle#spectacle>`__.
+Find more information about this plugin `on Github <https://github.com/getgauge/spectacle#spectacle>`__.
 
 Flash
 -----
@@ -43,7 +43,7 @@ Flash
 Real-time execution reporting plugin! Watch test runs go green or red.
 Install it in your CI/CD setup and connect to Flash using your browser to see what your test suites are doing.
 
-Find more information about this plugin `here <https://github.com/getgauge/flash#flash>`__.
+Find more information about this plugin `on Github <https://github.com/getgauge/flash#flash>`__.
 
 
 JSON Report
@@ -53,8 +53,8 @@ JSON Report plugin creates the test result in JSON format. When the specs are ex
 report is generated in ``reports`` directory in the project. The format of
 JSON report is based on this `JSON Schema <https://apoorvam.github.io/json-report>`__.
 
-Find more information about this plugin `here <https://github.com/apoorvam/json-report#json-report>`__.
+Find more information about this plugin `on Github <https://github.com/apoorvam/json-report#json-report>`__.
 
 .. note::
 
-    This plugin is a community contributed plugin. For any query/feature raise an issue `here <https://github.com/apoorvam/json-report/issues>`__.
+    This plugin is a community contributed plugin. For any query/feature raise an issue `on Github <https://github.com/apoorvam/json-report/issues>`__.
