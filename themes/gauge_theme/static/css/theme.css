@@ -437,11 +437,47 @@ table {
 }
 
 .edit-on-github {
-  width: 20em;
   background-image: url(../img/github-logo.svg);
-  padding: 5px 5px 5px 29px;
   background-size: 16px 16px;
   background-repeat: no-repeat;
   background-position-y: center;
-  background-position-x: 5px;
+  padding: 0px 20px;
+}
+
+ul.breadcrumbs{
+  list-style: none;
+  border: 1px solid transparent;
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%
+}
+@media (min-width: 992px){
+  ul.breadcrumbs{
+    display: inline-block;
+    width: 75%
+  }
+}
+
+ul.breadcrumbs li{
+  display: inline-flex;
+  width: auto;
+  border: 1px solid transparent;
+}
+ul.breadcrumbs li a{
+  padding: 0px 5px 0px 0px;
+}
+
+.breadcrumbs-aside{
+  float: left;
+  width: 100%;
+  margin: 5px 0px;
+}
+@media (min-width: 992px){
+  .breadcrumbs-aside{
+    float: right;
+     width: 25%;
+     text-align: right;
+     margin: 0;
+  }
 }

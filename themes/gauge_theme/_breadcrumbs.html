@@ -7,13 +7,12 @@
           {% endfor %}
         <li>{{ title }}</li>
       {% endblock %}
-      {% block breadcrumbs_aside %}
-        <li class="breadcrumbs-aside">
+    </ul>
+    {% block breadcrumbs_aside %}
+        <span class="breadcrumbs-aside">
           {% if hasdoc(pagename) %}
             <a class="edit-on-github" href="https://github.com/getgauge/docs.gauge.org/blob/{{ github_version|default("master") }}{{ conf_py_path }}{{ pagename }}{{ source_suffix|default(".rst") }}">Edit on GitHub</a> 
           {% endif %}
-        </li>
+        </span>
       {% endblock %}
-    </ul>
-    <hr/>
   </div>
