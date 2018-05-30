@@ -75,50 +75,5 @@ $(document).ready(() => {
   
   // remove nested container classes, prevent overlap with sidebar
   $('.container .container').removeClass('container');
-
-  // sidebar menu scroll spy.
-  var lastId,
-  rightNav = $("#rightNav .localtoc"),
-  rightNavHeight = rightNav.outerHeight()+15,
-  menuItems = rightNav.find("a").not("[href='#']"),
-  scrollItems = menuItems.map(function(){
-    var item = $($(this).attr("href"));
-    if (item.length) { return item; }
-  });
-
-  menuItems.click(function(e){
-    var href = $(this).attr("href"),
-      offsetTop = href === "#" ? 0 : $(href).offset().top-rightNavHeight+1;
-
-    $('html, body').stop().animate({ 
-      scrollTop: offsetTop + 250
-    }, 300);
-    e.preventDefault();
-  });
-
-  $(window).scroll(function(){
-    var fromTop = $(this).scrollTop()+rightNavHeight;
-    var cur = scrollItems.map(function(){
-    if ($(this).offset().top < fromTop)
-      return this;
-    });
-    cur = cur[cur.length-1];
-    var id = cur && cur.length ? cur[0].id : "";
-
-    if (lastId !== id) {
-      lastId = id;
-      menuItems
-        .parent().removeClass("active")
-        .end().filter("[href='#"+id+"']").parent().addClass("active");
-    }                   
-  });
-
-  var sidebar = new StickySidebar('#sideBar', {
-    containerSelector: '.bigContainer',
-    innerWrapperSelector: '#rightNav',
-    topSpacing: 20,
-    bottomSpacing: 20
-  });
-
 });
 

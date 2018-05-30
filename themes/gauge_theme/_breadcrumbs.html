@@ -1,0 +1,19 @@
+<div role="navigation" aria-label="breadcrumbs navigation">
+    <ul class="breadcrumbs">
+      {% block breadcrumbs %}
+        <li><a href="{{ pathto(master_doc) }}">{{ _('Documentation') }}</a> &raquo;</li>
+          {% for doc in parents %}
+            <li><a href="{{ doc.link|e }}">{{ doc.title }}</a> &raquo;</li>
+          {% endfor %}
+        <li>{{ title }}</li>
+      {% endblock %}
+      {% block breadcrumbs_aside %}
+        <li class="breadcrumbs-aside">
+          {% if hasdoc(pagename) %}
+            <a class="edit-on-github" href="https://github.com/getgauge/docs.gauge.org/blob/{{ github_version|default("master") }}{{ conf_py_path }}{{ pagename }}{{ source_suffix|default(".rst") }}">Edit on GitHub</a> 
+          {% endif %}
+        </li>
+      {% endblock %}
+    </ul>
+    <hr/>
+  </div>

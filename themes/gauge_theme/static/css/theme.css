@@ -1,6 +1,8 @@
+@import "https://fonts.googleapis.com/css?family=Open+Sans";
+@import url("application.css");
+
 #rightNav {
   padding-top: 12px;
-  position: fixed;
 }
 
 #rightNav #search {
@@ -14,6 +16,7 @@
 
 .localtoc > ul > li > a {
   border-bottom: 0.5px solid rgba(85, 85, 85, 0.3);
+  font-size: 80%;
 }
 
 .localtoc > ul > li > ul {
@@ -28,16 +31,6 @@
 
 #rightNav a:hover {
   border-bottom: 1px solid rgb(245, 193, 14);
-}
-
-#rightNav li.active > a:before {
-  content:"\A";
-  border-style: solid;
-  border-width: 8px 0 8px 12px;
-  border-color: transparent transparent transparent rgb(245, 193, 14);
-  position: absolute;
-  left: 1px;
-  margin-top: 5px;
 }
 
 .highlight-console .highlight pre span.go:before{
@@ -284,7 +277,7 @@ code {
   } 
 }
 
-@media (min-width: 992px){
+@media (min-width:$screen-lg){
   .feature-wrapper h3{
     font-size: 20px;
   }
@@ -316,8 +309,7 @@ code {
 .content > .section > h1 {
   font-size:20px;
   text-transform:uppercase;
-  /* border-bottom: 1px solid #ccc; */
-  border: none;
+  border-bottom: 1px solid #ccc;
 }
 
 .content > .section  h2 {
@@ -399,20 +391,6 @@ code {
   border-bottom:1px dotted rgb(245, 193, 14);=
 }
 
-#rightNav li.active > a{
-  border-bottom: 1px solid rgb(245, 193, 14);
-}
-
-.links ul li a{
-  border-bottom:1px solid #aaa;
-  display:block;
-  padding:10px 0;
-}
-
-.separator{
-  display:none;
-}
-
 #rightNav .rst-breadcrumbs-buttons a:hover{
   border:1px solid transparent;
 }
@@ -437,34 +415,7 @@ table {
  
  tr:hover {
   background: #d1d1d1;
- }
-
- /* Sidebar plugin settings */
-  .is-affixed{
-    display: none;
-  }
-
-  #sidebar{
-    will-change: min-height;
-  }
-
-  @media (min-width: 992px){
-    .is-affixed{
-      display: block;
-    }
-  }
-
-  #rightNav{
-    transform: translate(0, 0); 
-    transform: translate3d(0, 0, 0);
-    will-change: position, transform;
-    left: auto !important;
-  }
-  
-  #global{
-    overflow: hidden;
-  }
-
+}
 
 .admonition {
   background-color: transparent !important;
@@ -483,4 +434,14 @@ table {
 
 .note {
   padding: 0 !important;
+}
+
+.edit-on-github {
+  width: 20em;
+  background-image: url(../img/github-logo.svg);
+  padding: 5px 5px 5px 29px;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 5px;
 }
