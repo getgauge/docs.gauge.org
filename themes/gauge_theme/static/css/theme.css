@@ -474,7 +474,6 @@ ul.breadcrumbs li{
   width: auto;
   border: 1px solid transparent;
 }
-
 ul.breadcrumbs li a{
   padding: 0px 5px 0px 0px;
 }
@@ -484,7 +483,6 @@ ul.breadcrumbs li a{
   width: 100%;
   margin: 5px 0px;
 }
-
 @media (min-width: 992px){
   .breadcrumbs-aside{
     float: right;
@@ -492,6 +490,10 @@ ul.breadcrumbs li a{
      text-align: right;
      margin: 0;
   }
+}
+
+.linenodiv pre{
+  margin-bottom: 15px;
 }
 
 #return-to-top {
@@ -535,3 +537,4 @@ ul.breadcrumbs li a{
 #return-to-top:hover i {
   margin-top: 12px;
 }
+ 
