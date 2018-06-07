@@ -133,8 +133,8 @@ You'll find the logged at ``logs/gauge.log`` in your projects directory.
 
     ``logs`` is the default location for log files. This can be changed using ``logs_directory`` in :ref:`project's properties<default_properties>`.
 
-Where can I find gauge core API logs for debugging IDE plugins?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Where can I find gauge API logs for debugging IDE plugins?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You'll find that at ``logs/api.log`` in your projects directory.
 

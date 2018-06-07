@@ -1,6 +1,29 @@
 Writing Specifications
 ======================
 
+IDE plugins
+-----------
+
+.. tab-container:: ide
+
+    .. tab:: Visual Studio Code
+
+        Gauge projects can be created and executed in Visual Studio Code using the `Gauge extension for VSCode <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__.
+        This plugin currently supports Gauge with JavaScript, Ruby and Python.
+
+    .. tab:: IntelliJ Idea
+
+        Gauge projects can be created and executed in IntelliJ IDEA using the `Gauge plugin for IntelliJ IDEA <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__.
+        This plugin only supports Gauge with Java.
+
+    .. tab:: Visual Studio
+
+        Gauge projects can be created and executed in Visual Studio using the `Gauge extension for Visual Studio <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__.
+        This plugin currently supports Gauge with C#.
+
+.. note:: 
+    For a better experience, we recommend using one of the IDE plugins. However, this is not mandatory, as you can author Gauge specifications using any text editor.
+
 Specifications (spec)
 ---------------------
 
@@ -2027,35 +2050,6 @@ to continue execution.
   -  There is no way to globally mark a test run to treat all steps to continue on failure. Each step implementation has to be marked explicitly.
   -  If an implementation uses step aliases, marking that implementation to continue on failure will also make all the aliases to continue on failure. So, if a step alias is supposed to break on failure and another step alias is supposed to continue on failure, they need to be extracted to two different step implementations.
 
-
-Using IDE plugins
------------------
-
-The listed IDE plugins are available for gauge to make writing specs and test code simpler.
-
-.. tab-container:: ide
-
-    .. tab:: Visual Studio Code
-
-        Gauge projects can be created and executed in Visual Studio Code using the `Gauge extension for VSCode <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__.
-        This plugin currently supports Gauge with JavaScript, Ruby and Python.
-
-        More information on IDE features and how to use it can be found `here <https://github.com/getgauge/gauge-vscode/blob/master/README.md>`__.
-
-
-    .. tab:: IntelliJ Idea
-
-        Gauge projects can be created and executed in IntelliJ IDEA using the `Gauge plugin for IntelliJ IDEA <https://plugins.jetbrains.com/plugin/7535-gauge>`__.
-        This plugin only supports Gauge with Java.
-
-        More information on IDE features and how to use it can be found `here <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__.
-
-    .. tab:: Visual Studio
-
-        Gauge projects can be created and executed in Visual Studio using the `Gauge extension for Visual Studio <https://marketplace.visualstudio.com/items?itemName=vs-publisher-1071478.GaugepluginforVisualStudio>`__.
-        This plugin currently supports Gauge with C#.
-
-        More information on IDE features and how to use it can be found `here <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__.
 
 Refactoring
 -----------
