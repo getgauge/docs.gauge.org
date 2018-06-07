@@ -85,8 +85,6 @@ html_theme = "gauge_theme"
 
 html_theme_path = ["themes"]
 
-html_extra_path = ["robots.txt"]
-
 html_context = {
     "display_github": True,
     "last_updated": True,
