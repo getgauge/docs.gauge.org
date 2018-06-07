@@ -1,5 +1,3 @@
-:page_header: Execution
-
 Execution
 =========
 

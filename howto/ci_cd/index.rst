@@ -1,4 +1,5 @@
-:page_header: Tutorials: Integrating Gauge with CI/CD tools
+Tutorials: Integrating Gauge with CI/CD tools
+=============================================
 
 Gauge can be easily integrated with any `Continuous Integration <https://martinfowler.com/articles/continuousIntegration.html>`__ environment.
 

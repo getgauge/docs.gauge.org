@@ -26,10 +26,12 @@ sys.path.insert(0, os.path.abspath('_ext'))
 #
 needs_sphinx = '1.5.2'
 
+site_url = 'https://docs.gauge.org/latest/'
+
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.todo', 'sphinx.ext.ifconfig', 'gauge_lexer', 'code_lineno_highlighter', 'tabs']
+extensions = ['sphinx.ext.todo', 'sphinx.ext.ifconfig', 'gauge_lexer', 'code_lineno_highlighter', 'tabs', 'sphinx_sitemap']
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -82,6 +84,8 @@ todo_include_todos = True
 html_theme = "gauge_theme"
 
 html_theme_path = ["themes"]
+
+html_extra_path = ["robots.txt"]
 
 html_context = {
     "display_github": True,

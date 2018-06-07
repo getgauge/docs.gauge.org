@@ -1,4 +1,5 @@
-:page_header: Tutorial: Integrating Gauge with Travis CI
+Tutorial: Integrating Gauge with Travis CI
+==========================================
 
 `Travis CI <https://travis-ci.org/>`__ is a hosted, distributed
 continuous integration service used to build and test software projects

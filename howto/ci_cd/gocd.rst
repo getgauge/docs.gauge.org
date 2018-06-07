@@ -1,4 +1,5 @@
-:page_header: Tutorial: Integrating Gauge with GoCD
+Tutorial: Integrating Gauge with GoCD
+=====================================
 
 `GoCD <https://www.gocd.io/>`__ is a continuous integration and deployment
 tool.

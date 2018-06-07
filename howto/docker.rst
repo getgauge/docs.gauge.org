@@ -1,4 +1,5 @@
-:page_header: Tutorial: Gauge tests on docker
+Run Gauge tests on Docker
+=========================
 
 Gauge can be easily installed on `Docker <https://www.docker.com/what-docker>`__ container.
 

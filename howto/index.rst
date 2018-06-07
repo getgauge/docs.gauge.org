@@ -1,5 +1,3 @@
-:page_header: Tutorials
-
 Tutorials
 =========
 
