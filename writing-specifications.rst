@@ -2096,4 +2096,4 @@ This will change all spec files to reflect the change.
 Troubleshooting
 ===============
 
-.. include:: errors/index.rst
+.. include:: errors.rst

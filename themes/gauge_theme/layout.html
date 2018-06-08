@@ -144,7 +144,7 @@
     {% endif %}
 
     {% block sidebar2 %} 
-      {% if pagename != 'index' %}        
+      {% if pagename != 'index' and pagename != 'browse' %}
         <div class="col-md-3" id="sideBar">
           <nav id="rightNav">
             <div class="text-center">
@@ -170,6 +170,7 @@
         <a href="https://www.thoughtworks.com/products">
           <img alt="Thoughtworks logo" src="{{ pathto('_static/img/thoughtworks-logo.svg', 1) }}" height="44">
         </a>
+        <div><a href="browse.html">Table of Contents</a></div>
         <div class="disclamer">
           Gauge is an open source project, sponsored by ThoughtWorks Inc. under the GPL License, Version 3.0
         </div>
