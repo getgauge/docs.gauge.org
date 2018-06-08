@@ -39,6 +39,9 @@ versions: prune
 	rm -rf $(WORKDIR); \
 	git checkout master
 
+	# copy robots.txt
+	cp robots.txt $(BUILDDIR)/html
+
 prune: clean
 	git checkout master;\
 	git worktree prune;\
