@@ -1027,3 +1027,14 @@ header.top {
     text-indent: -200em;
     margin: 0 2px;
     overflow: hidden; }
+
+    .fa-github{
+      background: url('../img/github.svg') no-repeat;
+      background-position: center;
+      margin: 0 6px;
+    }
+    .fa-twitter{
+      background: url('../img/twitter.svg') no-repeat;
+      background-position: center;
+      margin: 0 6px;
+    }
