@@ -1,6 +1,11 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans";
 @import url("application.css");
 
+html, body, footer{
+  height: 100%;
+  min-height: 100% !important;
+}
+
 #rightNav {
   padding-top: 12px;
 }
@@ -1010,8 +1015,8 @@ header.top {
         text-align: left;
         padding-left: 0px; } }
     .licence a {
-      border-bottom: 1px dotted #ccc;
-      color: #C1C1C0;
+      border-bottom: 1px dotted #ccc !important;
+      color: #C1C1C0 !important;
       text-decoration: none; }
   
   .love {
