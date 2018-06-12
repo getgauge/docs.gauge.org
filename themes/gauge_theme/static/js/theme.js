@@ -89,5 +89,44 @@ $(document).ready(() => {
         scrollTop : 0                       // Scroll to top of body
     }, 500);
   });
+
+  
+
+  $('.navbtn').on('click', function () {
+    $('.bar').toggleClass('animate');
+    $('body').toggleClass('noscroll');
+    $('.top').toggleClass('open');
+    // $('.nav').slideToggle();
+    $('.nav').toggleClass('open');
+  });
+
+    //sticky header
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 20) {
+      $('.top').addClass('sticky');
+    } else {
+      $('.top').removeClass('sticky');
+    }
+  });
+
+  // Github star count
+  function gitHubStars(){
+    $.ajax({
+      url: "https://api.github.com/repos/getgauge/gauge",
+      success: function(data){
+        if(data['stargazers_count'] != undefined){
+          window.localStorage.setItem('star',data['stargazers_count'])
+        }
+      }
+    })
+  }
+
+  function setGithubStar(){
+    gitHubStars();
+    var star = window.localStorage.getItem('star')
+    $('.github_star').text(star);
+  }
+
+  setGithubStar();
 });
 

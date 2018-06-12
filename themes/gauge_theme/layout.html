@@ -87,40 +87,24 @@
 
 {%- block content %}
 <header class="top">
-  <div class="container">
-    <a class="logo" href="//gauge.org">
-      <img alt="Gauge logo" id="thumb" src="{{ pathto('_static/img/Gauge-Logo-White.svg', 1) }}" width="150" height="38">
-    </a>
-    <span class="beta">Preview</span>
-    <nav class="mainnav">
-      <ul class="level0">
-        <li class="dropdown">
-        <a href="//gauge.org/get-started.html" class="link-get-started">Get Started</a>
-        <ul class="level1">
-        <li>
-        <a href="//gauge.org/get-started.html" class="link-download">Download</a>
+  <div class="header-container">
+    <a href="//gauge.org" class="logo">Gauge</a>
+    <nav class="nav">
+      <ul class="main-nav">
+        <li class="githubstar-box">
+          <a href="https://github.com/getgauge/gauge" target="_blank"><span  class="github-icon"></span><span class="github_star"></span></a>
         </li>
-        <li>
-        <a href="//gauge.org/plugins.html" class="link-plugins">Plugins</a>
-        </li>
-        </ul>
-        </li>
-        <li class="dropdown">
-        <a href="/" class="link-documentation">Documentation</a>
-        <ul class="level1">
-            <li> <a href="{{ pathto('examples') }}">Examples</a> </li>
-            <li> <a href="{{ pathto('writing-specifications') }}">Write Specifications</a> </li>
-            <li> <a href="{{ pathto('execution') }}">Run Specifications</a> </li>
-            <li> <a href="{{ pathto('configuration') }}">Configuration</a></li>
-            <li> <a href="{{ pathto('faqs') }}">FAQs</a></li>
-            <li> <a href="//manpage.gauge.org">Manual</a></li>
-          </ul>
-        </li>
-        <li>
-        <a href="//blog.getgauge.io" class="link-blog">Blog</a>
-        </li>
+        <li class="link_home"><a href="//gauge.org">Home</a></li>
+        <li class="link_plugins"><a href="//gauge.org/plugins.html">Plugins</a></li>
+        <a href-
+        <li><a href="https://docs.gauge.org/latest/index.html">Documentation</a></li>
+    
+        <li class="link_getstarted"><a href="//gauge.org/get-started.html">Get Started</a></li>
       </ul>
     </nav>
+    <div class="navbtn">
+      <div class="bar"></div>
+    </div>
   </div>
 </header>
 
@@ -164,37 +148,63 @@
 {%- endblock %}
 
 {%- block footer %}
-  <footer>
-    <div class="powered-by">
-      <div class="container">
-        <a href="https://www.thoughtworks.com/products">
-          <img alt="Thoughtworks logo" src="{{ pathto('_static/img/thoughtworks-logo.svg', 1) }}" height="44">
-        </a>
-        <div><a href="browse.html">Table of Contents</a></div>
-        <div class="disclamer">
-          Gauge is an open source project, sponsored by ThoughtWorks Inc. under the GPL License, Version 3.0
-        </div>
-      </div>
-      <div class="footer text-center" role="contentinfo">
-      {%- if show_copyright %}
-        {%- if hasdoc('copyright') %}
-          {% trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
-        {%- else %}
-          {% trans copyright=copyright|e %}&#169; Copyright {{ copyright }}.{% endtrans %}
-        {%- endif %}
-      {%- endif %}
-      {%- if last_updated %}
-        {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
-      {%- endif %}
-      {%- if show_sphinx %}
-        {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx-doc.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
-      {%- endif %}
-      </div>
+<footer>
+  <div class="footer container">
+    <div class="footer_items product">
+      <h5>Product</h5>
+      <nav class="footer_links">
+        <ul class="foolinks">
+          <li> <a href="get_started/">Get started</a> </li>
+          <li> <a href="/index.html#features">Features</a> </li>
+          <li> <a href="plugins/">Plugins</a> </li>
+          <li> <a href="https://docs.gauge.org/latest/index.html" target="_blank">Documentation</a> </li>
+          <li> <a href="https://blog.getgauge.io/"  target="_blank">Blog</a></li> 
+          <li> <a href="#https://brandfolder.com/twproducts"   target="_blank">Press Kit</a></li> 
+                      
+        </ul>
+      </nav>
     </div>
-    {%- block scripts %}
-    {{- script() }}
-    {%- endblock %}
-  </footer>
+    <div class="footer_items explore">
+      <h5>Explore</h5>
+      <nav class="footer_links">
+        <ul class="foolinks">
+          <li> <a href="https://waffle.io/getgauge/gauge"   target="_blank">Roadmap</a> </li>
+          <li> <a href="https://manpage.gauge.org/"   target="_blank">Man page</a> </li>
+          <li> <a href="https://insights.gauge.org/"   target="_blank">Insights</a> </li>
+        
+        </ul>
+      </nav>
+    </div>      
+    <div class="footer_items engage">
+      <h5>Engage</h5>
+      <nav class="footer_links">
+        <ul class="foolinks">
+          <li> <a href="https://gitter.im/getgauge/chat" target="_blank"><img src="{{ pathto('_static/img/footer-icons/gitter-icon.svg', 1) }}" class="icon-sm">Gitter</a> </li> 
+          <li> <a href="https://groups.google.com/forum/#!forum/getgauge"  target="_blank"><img src="{{ pathto('_static/img/footer-icons/google-group-icon.svg', 1) }}" class="icon-sm">Google Group</a> </li>
+          <li> <a href="https://stackoverflow.com/users/login?ssrc=anon_ask&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2fask%3ftags%3dgetgauge"  target="_blank"><img src="{{ pathto('_static/img/footer-icons/stack_overflow-icon.svg', 1) }}" class="icon-sm">Stack Overflow</a> </li>
+          <li> <a href="https://github.com/getgauge/gauge/blob/master/CONTRIBUTING.md"  target="_blank"><img src="{{ pathto('_static/img/footer-icons/contribute-icon.svg', 1) }}" class="icon-sm">Contribute</a> </li>                  
+        
+        </ul>
+      </nav>
+    </div>
+    <div class="footer_items follow">
+      <h5>Follow us</h5>
+      <nav class="footer_links">
+        <ul class="foolinks">
+          <li> <a href="https://github.com/getgauge/gauge"  target="_blank"><i class="fab fa-github"></i></a> <a href="https://twitter.com/getgauge"  target="_blank"><i class="fab fa-twitter"></i></a></li> 
+          </ul>
+        </nav>
+        <div class="licence">
+        <p>Gauge is an open-source project, sponsored by <a href="https://www.thoughtworks.com/"  target="_blank">ThoughtWorks Inc.</a> under the GPL License, Version 3.0</p>
+        <p>made with <span class="love">love</span> in bangalore</p>
+        </div>
+    </div>
+  </div>
+  {%- block scripts %}
+  {{- script() }}
+  {%- endblock %}
+</footer>
+
 {%- endblock %}
 <!-- Google Tag Manager -->
 <noscript>
