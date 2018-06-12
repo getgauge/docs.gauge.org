@@ -27,7 +27,7 @@
 {%- endif %}
 
 {% set css_files = ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css'] %}
-{% set script_files = script_files + ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', '_static/js/theme.js'] %}
+{% set script_files = script_files + ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js','//preview.gauge.org/assets/javascripts/site.js', '_static/js/theme.js'] %}
 
 {%- macro script() %}
   <script type="text/javascript" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
@@ -92,11 +92,11 @@
     <nav class="nav">
       <ul class="main-nav">
         <li class="githubstar-box">
-          <a href="https://github.com/getgauge/gauge" target="_blank"><span  class="github-icon"></span><span class="github_star"></span></a>
+          <a href="//github.com/getgauge/gauge" target="_blank"><span  class="github-icon"></span><span class="github_star"></span></a>
         </li>
         <li class="link_home"><a href="//gauge.org">Home</a></li>
         <li class="link_plugins"><a href="//gauge.org/plugins.html">Plugins</a></li>
-        <li><a href="https://docs.gauge.org/latest/index.html">Documentation</a></li>
+        <li><a href="//docs.gauge.org/latest/index.html">Documentation</a></li>
         <li class="link_getstarted"><a href="//gauge.org/get-started.html">Get Started</a></li>
       </ul>
     </nav>
@@ -155,9 +155,9 @@
           <li> <a href="get_started/">Get started</a> </li>
           <li> <a href="/index.html#features">Features</a> </li>
           <li> <a href="plugins/">Plugins</a> </li>
-          <li> <a href="https://docs.gauge.org/latest/index.html" target="_blank">Documentation</a> </li>
-          <li> <a href="https://blog.getgauge.io/"  target="_blank">Blog</a></li> 
-          <li> <a href="#https://brandfolder.com/twproducts"   target="_blank">Press Kit</a></li> 
+          <li> <a href="//docs.gauge.org/latest/index.html" target="_blank">Documentation</a> </li>
+          <li> <a href="//blog.getgauge.io/"  target="_blank">Blog</a></li> 
+          <li> <a href="//brandfolder.com/twproducts"   target="_blank">Press Kit</a></li> 
                       
         </ul>
       </nav>
@@ -166,9 +166,9 @@
       <h5>Explore</h5>
       <nav class="footer_links">
         <ul class="foolinks">
-          <li> <a href="https://waffle.io/getgauge/gauge"   target="_blank">Roadmap</a> </li>
-          <li> <a href="https://manpage.gauge.org/"   target="_blank">Man page</a> </li>
-          <li> <a href="https://insights.gauge.org/"   target="_blank">Insights</a> </li>
+          <li> <a href="//waffle.io/getgauge/gauge"   target="_blank">Roadmap</a> </li>
+          <li> <a href="//manpage.gauge.org/"   target="_blank">Man page</a> </li>
+          <li> <a href="//insights.gauge.org/"   target="_blank">Insights</a> </li>
         
         </ul>
       </nav>
@@ -177,10 +177,10 @@
       <h5>Engage</h5>
       <nav class="footer_links">
         <ul class="foolinks">
-          <li> <a href="https://gitter.im/getgauge/chat" target="_blank"><img src="{{ pathto('_static/img/footer-icons/gitter-icon.svg', 1) }}" class="icon-sm">Gitter</a> </li> 
-          <li> <a href="https://groups.google.com/forum/#!forum/getgauge"  target="_blank"><img src="{{ pathto('_static/img/footer-icons/google-group-icon.svg', 1) }}" class="icon-sm">Google Group</a> </li>
-          <li> <a href="https://stackoverflow.com/users/login?ssrc=anon_ask&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2fask%3ftags%3dgetgauge"  target="_blank"><img src="{{ pathto('_static/img/footer-icons/stack_overflow-icon.svg', 1) }}" class="icon-sm">Stack Overflow</a> </li>
-          <li> <a href="https://github.com/getgauge/gauge/blob/master/CONTRIBUTING.md"  target="_blank"><img src="{{ pathto('_static/img/footer-icons/contribute-icon.svg', 1) }}" class="icon-sm">Contribute</a> </li>                  
+          <li> <a href="//gitter.im/getgauge/chat" target="_blank"><img src="//preview.gauge.org/assets/images/footer-icons/gitter-icon.svg" class="icon-sm">Gitter</a> </li> 
+          <li> <a href="//groups.google.com/forum/#!forum/getgauge"  target="_blank"><img src="//preview.gauge.org/assets/images/footer-icons/google-group-icon.svg" class="icon-sm">Google Group</a> </li>
+          <li> <a href="//stackoverflow.com/users/login?ssrc=anon_ask&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2fask%3ftags%3dgetgauge"  target="_blank"><img src="//preview.gauge.org/assets/images/footer-icons/stack_overflow-icon.svg" class="icon-sm">Stack Overflow</a> </li>
+          <li> <a href="//github.com/getgauge/gauge/blob/master/CONTRIBUTING.md"  target="_blank"><img src="//preview.gauge.org/assets/images/footer-icons/contribute-icon.svg" class="icon-sm">Contribute</a> </li>                  
         
         </ul>
       </nav>
@@ -189,11 +189,11 @@
       <h5>Follow us</h5>
       <nav class="footer_links">
         <ul class="foolinks">
-          <li> <a href="https://github.com/getgauge/gauge"  target="_blank"><i class="fab fa-github"></i></a> <a href="https://twitter.com/getgauge"  target="_blank"><i class="fab fa-twitter"></i></a></li> 
+          <li> <a href="//github.com/getgauge/gauge"  target="_blank"><i class="fab fa-github"></i></a> <a href="//twitter.com/getgauge"  target="_blank"><i class="fab fa-twitter"></i></a></li> 
           </ul>
         </nav>
         <div class="licence">
-        <p>Gauge is an open-source project, sponsored by <a href="https://www.thoughtworks.com/"  target="_blank">ThoughtWorks Inc.</a> under the GPL License, Version 3.0</p>
+        <p>Gauge is an open-source project, sponsored by <a href="//www.thoughtworks.com/"  target="_blank">ThoughtWorks Inc.</a> under the GPL License, Version 3.0</p>
         <p>made with <span class="love">love</span> in bangalore</p>
         </div>
     </div>

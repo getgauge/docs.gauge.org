@@ -677,7 +677,7 @@ header.top {
   height: 32px;
   display: inline-block;
   margin: 18px 0 0 16px;
-  background: url("../img/gauge-logo_white.svg") no-repeat 0 0;
+  background: url("//preview.gauge.org/assets/images/gauge-logo_white.svg") no-repeat 0 0;
   text-indent: -100em;
   overflow: hidden;
   -webkit-transition: all 0.2s ease-in-out;
@@ -826,13 +826,13 @@ header.top {
       -ms-flex-align: center;
           align-items: center; }
 .githubstar-box .github-icon {
-  background: url("../img/github_star_black.svg") no-repeat 0 0;
+  background: url("//preview.gauge.org/assets/images/github_star_black.svg") no-repeat 0 0;
   padding-left: 40px;
   width: 40px;
   height: 20px; }
   @media (min-width: 768px) {
     .githubstar-box .github-icon {
-      background: url("../img/github_star.svg") no-repeat 0 0; } }
+      background: url("//preview.gauge.org/assets/images/github_star.svg") no-repeat 0 0; } }
 .githubstar-box span {
   color: #fff;
   padding: 4px; }
@@ -1021,7 +1021,7 @@ header.top {
   
   .love {
     display: inline-block;
-    background: url("../img/icon_love.png") no-repeat 0 0;
+    background: url("//preview.gauge.org/assets/images/icons/icon_love.png") no-repeat 0 0;
     width: 13px;
     height: 11px;
     text-indent: -200em;
