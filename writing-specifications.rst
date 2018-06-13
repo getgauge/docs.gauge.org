@@ -1403,10 +1403,22 @@ Current Execution Context in the Hook
     .. tab:: CSharp
 
         .. code-block:: java
+            using Gauge.CSharp.Lib;
+            using static Gauge.CSharp.Lib.ExecutionContext;
 
-            This feature is not yet
-            supported in Gauge-CSharp. Please refer to
-            https://github.com/getgauge/gauge-csharp/issues/53 for updates.
+            [BeforeScenario]
+            public void BeforeScenario(ExecutionContext context)
+            {
+                String scenarioName = context.CurrentScenario.Name;
+                //Code for before scenario
+            }
+
+            [AfterSpec]
+            public void AfterSpec(ExecutionContext context)
+            {
+                Specification specification = context.CurrentSpecification;
+                //Code for after spec
+            }
 
     .. tab:: Java
 
