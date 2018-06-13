@@ -1440,8 +1440,15 @@ Current Execution Context in the Hook
 
         .. code-block:: javascript
 
-            beforeScenario(fn, [opts]) { ... }
-            afterSpec(fn, [opts]) { ... }
+            beforeScenario(function (context) {
+                var scenario = context.currentScenario
+                // Code for before scenario
+            });
+
+            afterSpec(function (context) {
+                var specification = context.currentSpec
+                // Code for after step
+            });
 
     .. tab:: Python
 
@@ -1449,13 +1456,13 @@ Current Execution Context in the Hook
 
             from getgauge.python import before_step, after_scenario
 
-            @before_scenario
-            def before_scenario_hook():
-                print("before scenario hook")
+            @before_step
+            def before_step_hook(context):
+                print(context)
 
             @after_spec
-            def after_spec_hook():
-                print("after spec hook")
+            def after_spec_hook(context):
+                print(context)
 
     .. tab:: Ruby
 
