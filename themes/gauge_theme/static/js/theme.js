@@ -89,5 +89,6 @@ $(document).ready(() => {
         scrollTop : 0                       // Scroll to top of body
     }, 500);
   });
+  
 });
 
