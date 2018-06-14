@@ -1403,6 +1403,7 @@ Current Execution Context in the Hook
     .. tab:: CSharp
 
         .. code-block:: java
+
             using Gauge.CSharp.Lib;
             using static Gauge.CSharp.Lib.ExecutionContext;
 
@@ -1433,7 +1434,7 @@ Current Execution Context in the Hook
             @AfterSpec
             public void performAfterSpec(ExecutionContext context) {
             Specification currentSpecification = context.getCurrentSpecification();
-            // Code for after step
+                //Code for after spec
             }
 
     .. tab:: JavaScript
@@ -1447,7 +1448,7 @@ Current Execution Context in the Hook
 
             afterSpec(function (context) {
                 var specification = context.currentSpec
-                // Code for after step
+                //Code for after spec
             });
 
     .. tab:: Python
