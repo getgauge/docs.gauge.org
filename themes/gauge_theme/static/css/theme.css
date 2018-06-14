@@ -700,7 +700,7 @@ header.top {
   content: "";
   display: block; }
 @media (max-width: 767.98px) {
-  .nav {
+  nav.nav {
     position: fixed;
     left: 0;
     right: 0;
@@ -712,26 +712,26 @@ header.top {
     transition: all 0.2s ease-in-out;
     -webkit-transform: translatex(-100%);
             transform: translatex(-100%); }
-    .nav ul {
+    nav.nav ul {
       position: relative;
       z-index: 2;
       height: 100%;
       padding: 30px; }
-    .nav li {
+    nav.nav li {
       border-bottom: 1px dotted #ccc; } }
     @media (max-width: 767.98px) and (max-width: 767.98px) {
-      .nav li.githubstar-box {
+      nav.nav li.githubstar-box {
         position: absolute;
         padding: 20px 0 20px 0px;
         border: 0;
         top: 265px; } }
 @media (max-width: 767.98px) {
-    .nav.open {
+    nav.nav.open {
       -webkit-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;
       -webkit-transform: translatex(0%);
               transform: translatex(0%); }
-      .nav.open:after {
+      nav.nav.open:after {
         content: "";
         background: rgba(0, 0, 0, 0.8);
         position: absolute;
@@ -741,14 +741,14 @@ header.top {
         bottom: 0;
         height: 100%; } }
 @media (min-width: 768px) {
-  .nav {
+  nav.nav {
     display: block;
     margin-top: 17px;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     float: right; } }
 @media (min-width: 992px) {
-  .nav {
+  nav.nav {
     margin-top: 12px; } }
 
 .main-nav {
@@ -793,12 +793,6 @@ header.top {
       color: #ffcc00;
       -webkit-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out; }
-
-@media (min-width: 768px) {
-  .link_getstarted a {
-    border: 1px solid #1e1e1e;
-    border-radius: 20px;
-    padding: 3px 10px; } }
 
 @media (min-width: 768px) {
   .link_home a {
@@ -1019,22 +1013,3 @@ header.top {
       color: #C1C1C0 !important;
       text-decoration: none; }
   
-  .love {
-    display: inline-block;
-    background: url("//preview.gauge.org/assets/images/icons/icon_love.png") no-repeat 0 0;
-    width: 13px;
-    height: 11px;
-    text-indent: -200em;
-    margin: 0 2px;
-    overflow: hidden; }
-
-    .fa-github{
-      background: url('../img/github.svg') no-repeat;
-      background-position: center;
-      margin: 0 6px;
-    }
-    .fa-twitter{
-      background: url('../img/twitter.svg') no-repeat;
-      background-position: center;
-      margin: 0 6px;
-    }
