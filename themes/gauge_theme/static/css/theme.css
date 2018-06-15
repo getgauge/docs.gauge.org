@@ -1,4 +1,5 @@
-@import "https://fonts.googleapis.com/css?family=Open+Sans";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
 @import url("application.css");
 
 #rightNav {
@@ -896,6 +897,7 @@ header.top {
     border: 0;
     border-radius: 0px; } }
 
+<<<<<<< HEAD
 
 /* Footer Style */
 
@@ -910,6 +912,22 @@ footer {
 img {
   max-width: 100%; }
 
+=======
+
+/* Footer Style */
+
+footer {
+  background: #1A1C19;
+  padding: 50px 0px 150px;
+  position: relative; }
+  @media (min-width: 768px) {
+    footer {
+      padding: 50px 0px; } }
+
+img {
+  max-width: 100%; }
+
+>>>>>>> e94cdc92a118e732ac0c02851bb4f78625a13e4d
 .foolinks {
   list-style-type: none;
   margin: 0;
