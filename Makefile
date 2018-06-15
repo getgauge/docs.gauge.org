@@ -25,7 +25,7 @@ versions: prune
 	
 	# for each branches, generate html, singlehtml
 	(cd $(WORKDIR)/master;\
-	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/master -D version=master \
+	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/master -D html_theme_options.docs_version=master -D version=master \
 		-A current_version=master -A latest_version=$(LATESTBRANCH) -A versions="master latest"\
 		-A commit=$(MASTERSHA) -A github_version=master;\
 	$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/master -A SINGLEHTML=true;);\
