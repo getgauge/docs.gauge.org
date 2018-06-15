@@ -1404,9 +1404,22 @@ Current Execution Context in the Hook
 
         .. code-block:: java
 
-            This feature is not yet
-            supported in Gauge-CSharp. Please refer to
-            https://github.com/getgauge/gauge-csharp/issues/53 for updates.
+            using Gauge.CSharp.Lib;
+            using static Gauge.CSharp.Lib.ExecutionContext;
+
+            [BeforeScenario]
+            public void BeforeScenario(ExecutionContext context)
+            {
+                String scenarioName = context.CurrentScenario.Name;
+                //Code for before scenario
+            }
+
+            [AfterSpec]
+            public void AfterSpec(ExecutionContext context)
+            {
+                Specification specification = context.CurrentSpecification;
+                //Code for after spec
+            }
 
     .. tab:: Java
 
@@ -1421,15 +1434,22 @@ Current Execution Context in the Hook
             @AfterSpec
             public void performAfterSpec(ExecutionContext context) {
             Specification currentSpecification = context.getCurrentSpecification();
-            // Code for after step
+                //Code for after spec
             }
 
     .. tab:: JavaScript
 
         .. code-block:: javascript
 
-            beforeScenario(fn, [opts]) { ... }
-            afterSpec(fn, [opts]) { ... }
+            beforeScenario(function (context) {
+                var scenario = context.currentScenario
+                // Code for before scenario
+            });
+
+            afterSpec(function (context) {
+                var specification = context.currentSpec
+                //Code for after spec
+            });
 
     .. tab:: Python
 
@@ -1437,13 +1457,13 @@ Current Execution Context in the Hook
 
             from getgauge.python import before_step, after_scenario
 
-            @before_scenario
-            def before_scenario_hook():
-                print("before scenario hook")
+            @before_step
+            def before_step_hook(context):
+                print(context)
 
             @after_spec
-            def after_spec_hook():
-                print("after spec hook")
+            def after_spec_hook(context):
+                print(context)
 
     .. tab:: Ruby
 
