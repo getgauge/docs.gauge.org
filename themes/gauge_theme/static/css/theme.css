@@ -1,11 +1,6 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans";
 @import url("application.css");
 
-html, body, footer{
-  height: 100%;
-  min-height: 100% !important;
-}
-
 #rightNav {
   padding-top: 12px;
 }
@@ -546,9 +541,7 @@ ul.breadcrumbs li a{
 
 
 
-
-/* Header Latest Stlye */
-
+/* Header Style */
 
 .navbtn {
   position: absolute;
@@ -681,9 +674,7 @@ header.top {
   text-indent: -100em;
   overflow: hidden;
   -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; 
-}
-
+  transition: all 0.2s ease-in-out; }
   @media (min-width: 768px) {
     .logo {
       float: left;
@@ -719,12 +710,16 @@ header.top {
       padding: 30px; }
     nav.nav li {
       border-bottom: 1px dotted #ccc; } }
+
     @media (max-width: 767.98px) and (max-width: 767.98px) {
+
       nav.nav li.githubstar-box {
         position: absolute;
         padding: 20px 0 20px 0px;
         border: 0;
-        top: 265px; } }
+        top: 330px; 
+      } 
+    }
 @media (max-width: 767.98px) {
     nav.nav.open {
       -webkit-transition: all 0.2s ease-in-out;
@@ -795,6 +790,12 @@ header.top {
       transition: all 0.2s ease-in-out; }
 
 @media (min-width: 768px) {
+  .link_getstarted a {
+    border: 1px solid transparent;
+    border-radius: 20px;
+    padding: 3px 10px; } }
+
+@media (min-width: 768px) {
   .link_home a {
     display: none; } }
 
@@ -816,20 +817,20 @@ header.top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline; }
 .githubstar-box .github-icon {
   background: url("//preview.gauge.org/assets/images/github_star_black.svg") no-repeat 0 0;
   padding-left: 40px;
   width: 40px;
-  height: 20px; }
+  height: 18px; }
   @media (min-width: 768px) {
     .githubstar-box .github-icon {
       background: url("//preview.gauge.org/assets/images/github_star.svg") no-repeat 0 0; } }
 .githubstar-box span {
   color: #fff;
-  padding: 4px; }
+  padding: 0 4px; }
 .githubstar-box .github_star {
   color: #333; }
   @media (min-width: 768px) {
@@ -895,121 +896,169 @@ header.top {
     border: 0;
     border-radius: 0px; } }
 
-#plugins .link_plugins a {
-  color: #ffcc00; }
 
-#get_started .link_getstarted a {
-  color: #ffcc00; }
+/* Footer Style */
 
+footer {
+  background: #1A1C19;
+  padding: 50px 0px 150px;
+  position: relative; }
+  @media (min-width: 768px) {
+    footer {
+      padding: 50px 0px; } }
 
+img {
+  max-width: 100%; }
 
-  /* Footer Style */
-
-
-  footer {
-    background: #1A1C19;
-    padding: 50px 0px 150px;
-    position: relative; }
-    @media (min-width: 768px) {
-      footer {
-        padding: 50px 0px; } }
-  
-  img {
-    max-width: 100%; }
-  
-  .foolinks {
-    list-style-type: none;
-    margin: 0;
-    padding: 0; }
-    .foolinks a {
-      text-decoration: none;
-      color: #fff;
-      padding: 10px 0px;
-      font-size: 13px;
-      font-weight: 300;
+.foolinks {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .foolinks a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 0px;
+    font-size: 13px;
+    font-weight: 300;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    display: inline-block; }
+    .foolinks a:hover {
       -webkit-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out;
-      display: inline-block; }
-      .foolinks a:hover {
-        -webkit-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
-        color: #ffcc00; }
-      @media (min-width: 1200px) {
-        .foolinks a {
-          padding: 5px 0px; } }
-      .foolinks a img {
-        margin: 0px 10px 0px 0px; }
-    .foolinks .fab {
-      font-size: 23px;
-      padding: 0px 20px 0px 0px; }
-  
-  .footer_items {
-    margin-bottom: 30px; }
-    @media (min-width: 768px) {
-      .footer_items {
-        margin-bottom: 0; } }
-    .footer_items h5 {
-      color: #ffcc00;
-      font-size: 14px;
-      font-weight: 400;
-      margin: 0 0 30px; }
-  
-  .footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    padding-left: 25px; }
-    @media (min-width: 768px) {
-      .footer {
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        padding: 0; } }
-  
-  .footer_items.engage {
-    width: 60%; }
-    @media (min-width: 768px) {
-      .footer_items.engage {
-        width: 17%; } }
-  .footer_items.product {
-    width: 60%; }
-    @media (min-width: 768px) {
-      .footer_items.product {
-        width: 17%; } }
-  .footer_items.explore {
-    width: 40%; }
-    @media (min-width: 768px) {
-      .footer_items.explore {
-        width: 17%; } }
-  .footer_items.follow {
-    width: 40%; }
-    @media (min-width: 768px) {
-      .footer_items.follow {
-        width: 34%;
-        padding-left: 30px; } }
-  
-  .icon-sm {
-    width: 17px;
-    height: auto; }
-  
-  .licence {
-    bottom: 10px;
-    color: #C1C1C0;
-    font-size: 12px;
-    left: 0;
-    width: 100%;
-    position: absolute;
-    padding: 20px 30px;
-    text-align: center; }
-    @media (min-width: 768px) {
-      .licence {
-        position: static;
-        text-align: left;
-        padding-left: 0px; } }
-    .licence a {
-      border-bottom: 1px dotted #ccc !important;
-      color: #C1C1C0 !important;
-      text-decoration: none; }
-  
+      color: #ffcc00; }
+    @media (min-width: 1200px) {
+      .foolinks a {
+        padding: 5px 0px; } }
+    .foolinks a img {
+      margin: 0px 10px 0px 0px; }
+  .foolinks .fab {
+    font-size: 23px;
+    padding: 0px 20px 0px 0px; }
+
+.footer_items {
+  margin-bottom: 30px; }
+  @media (min-width: 768px) {
+    .footer_items {
+      margin-bottom: 0; } }
+  .footer_items h5 {
+    color: #ffcc00;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 0 30px; }
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-left: 25px; }
+  @media (min-width: 768px) {
+    .footer {
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      padding: 0; } }
+
+.footer_items.engage {
+  width: 60%; }
+  @media (min-width: 768px) {
+    .footer_items.engage {
+      width: 17%; } }
+.footer_items.product {
+  width: 60%; }
+  @media (min-width: 768px) {
+    .footer_items.product {
+      width: 17%; } }
+.footer_items.explore {
+  width: 40%; }
+  @media (min-width: 768px) {
+    .footer_items.explore {
+      width: 17%; } }
+.footer_items.follow {
+  width: 40%; }
+  @media (min-width: 768px) {
+    .footer_items.follow {
+      width: 34%;
+      padding-left: 30px; } }
+
+.foolinks .icon_gitter, .foolinks .icon_google, .foolinks .icon_stack, .foolinks .icon_contribute {
+  padding: 5px 0 5px 25px;
+  display: block; }
+
+.foolinks .icon_gitter {
+  background: url("//preview.gauge.org/assets/images/footer-icons/icon_gitter.svg") no-repeat 0 7px;
+  background-size: auto 20px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+  .foolinks .icon_gitter:hover {
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background: url("//preview.gauge.org/assets/images/footer-icons/icon_gitter_hover.svg") no-repeat 0 7px;
+    background-size: auto 20px; }
+.foolinks .icon_google {
+  background: url("//preview.gauge.org/assets/images/footer-icons/icon_google-group.svg") no-repeat 0 8px;
+  background-size: auto 18px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+  .foolinks .icon_google:hover {
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background: url("//preview.gauge.org/assets/images/footer-icons/icon_google-group_hover.svg") no-repeat 0 8px;
+    background-size: auto 18px; }
+.foolinks .icon_stack {
+  background: url("//preview.gauge.org/assets/images/footer-icons/icon_stack_overflow.svg") no-repeat 0 7px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background-size: auto 18px; }
+  .foolinks .icon_stack:hover {
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background: url("//preview.gauge.org/assets/images/footer-icons/icon_stack_overflow_hover.svg") no-repeat 0 7px;
+    background-size: auto 18px; }
+.foolinks .icon_contribute {
+  background: url("//preview.gauge.org/assets/images/footer-icons/icon_contribute.svg") no-repeat 0 7px;
+  background-size: auto 18px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+  .foolinks .icon_contribute:hover {
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background: url("//preview.gauge.org/assets/images/footer-icons/icon_contribute_hover.svg") no-repeat 0 7px;
+    background-size: auto 18px; }
+
+.licence {
+  bottom: 10px;
+  color: #C1C1C0;
+  font-size: 12px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  padding: 20px 30px;
+  text-align: center; }
+  @media (min-width: 768px) {
+    .licence {
+      position: static;
+      text-align: left;
+      padding-left: 0px; } }
+  .licence a {
+    border-bottom: 1px dotted #ccc !important;
+    color: #C1C1C0 !important;
+    text-decoration: none; 
+  }
+
+.main-highlight {
+  background: #ffcc00; }
+
+.fa-github{
+  background: url('../img/github.svg') no-repeat;
+  background-position: center;
+  margin: 0 6px;
+}
+.fa-twitter{
+  background: url('../img/twitter.svg') no-repeat;
+  background-position: center;
+  margin: 0 6px;
+}
+
