@@ -1,4 +1,5 @@
-@import "https://fonts.googleapis.com/css?family=Open+Sans";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
 @import url("application.css");
 
 #rightNav {
