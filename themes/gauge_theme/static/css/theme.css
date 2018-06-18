@@ -64,7 +64,9 @@ highlight-console .highlight pre span.go:before{
 }
 
 .top {
-  position: relative !important;
+  position: fixed !important;
+  background: #1e1e1e !important;
+
 }
 
 body {
@@ -304,6 +306,10 @@ code {
 }
 
 /* Dcouments page Inside stylesheet - including tabs and Sidebar*/
+
+.content{
+  margin-top: 60px;
+}
 
 .content > .section > h1 {
   font-size:20px;
@@ -631,7 +637,10 @@ header.top {
   z-index: 10;
   height: 65px;
   -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
+  transition: all 0.2s ease-in-out; 
+  border: none;
+  border-bottom: 5px solid #ffcc00;
+}
   header.top::after {
     clear: both;
     content: "";
@@ -866,7 +875,6 @@ header.top {
 @media (min-width: 768px) {
   .sticky .link_getstarted a,
   .open .link_getstarted a {
-    border: 1px solid #ffcc00;
     border-radius: 20px;
     padding: 3px 10px; } }
 .sticky .main-nav,
@@ -896,6 +904,9 @@ header.top {
     border: 0;
     border-radius: 0px; } }
 
+    .link_doc a{
+      color: #ffcc00;
+    }
 
 /* Footer Style */
 
