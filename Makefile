@@ -25,13 +25,15 @@ versions: prune
 	
 	# for each branches, generate html, singlehtml
 	(cd $(WORKDIR)/master;\
-	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/master -D html_theme_options.docs_version=master -D version=master \
+	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/master -D html_theme_options.docs_version=master \
+	    -D version=$(LATESTBRANCH) -D release=$(LATESTBRANCH) \
 		-A current_version=master -A latest_version=$(LATESTBRANCH) -A versions="master latest"\
 		-A commit=$(MASTERSHA) -A github_version=master;\
 	$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/master -A SINGLEHTML=true;);\
 
 	(cd $(WORKDIR)/$(LATESTBRANCH);\
-	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/latest -D version=latest \
+	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/latest \
+	    -D version=$(LATESTBRANCH) -D release=$(LATESTBRANCH) \
 		-A current_version=latest -A latest_version=$(LATESTBRANCH) -A versions="master latest"\
 		-A commit=$(LATESTSHA) -A github_version=$(LATESTBRANCH);\
 	$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/latest -A SINGLEHTML=true;); \
