@@ -786,7 +786,7 @@ header.top {
       float: right; } }
   .main-nav li {
     display: block;
-    line-height: 26px; }
+    line-height: 24px; }
     @media (min-width: 768px) {
       .main-nav li {
         display: inline-block; } }
