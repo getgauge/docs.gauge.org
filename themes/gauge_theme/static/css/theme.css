@@ -885,10 +885,10 @@ header.top {
   .open .main-nav a {
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out; }
-    @media (min-width: 768px) {
+    /* @media (min-width: 768px) {
       .sticky .main-nav a,
       .open .main-nav a {
-        color: #fff; } }
+        color: #fff; } } */
     .sticky .main-nav a:hover,
     .open .main-nav a:hover {
       color: #ffcc00;
