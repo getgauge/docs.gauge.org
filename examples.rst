@@ -8,7 +8,7 @@ Java
 * `Java + Maven + Selenium <https://github.com/getgauge-examples/java-maven-selenium>`__
 * `Gradle + Selenium <https://github.com/getgauge-examples/java-gradle-selenium>`__
 * `Sahi <https://github.com/getgauge-examples/gauge-example-sahi>`__
-* `Selendroid <https://github.com/getgauge-examples/gauge__selendroid>`__
+* `Selendroid <https://github.com/getgauge-examples/gauge_selendroid>`__
 * `Guice <https://github.com/getgauge-examples/gauge-guice>`__
 * `Spring <https://github.com/getgauge-examples/ioc-spring>`__
 * `Perfecto <https://github.com/AmirAtPerfecto/Gauge-Perfecto-Sample>`__
