@@ -2,8 +2,8 @@
 @import url("application.css");
 
 #rightNav {
-  margin-top: 65px;
-  padding-top: 12px;
+  margin-top: 92px;
+  padding-top: 16px;
 }
 
 #rightNav #search {
@@ -191,10 +191,23 @@ code {
 
 .description {
   font-size: 80%;
+  padding: 10px 0;
+  font-size: 16px;
 }
 
 .row.banner {
-  margin: 20px auto;
+  margin: 92px 0px 40px 0px;
+}
+.row.banner .col-md-6{
+  padding: 0;
+}
+
+.banner_header{
+  font-size: 24px;
+  line-height: 32px;
+  border-bottom: 1px solid #ccc;
+  font-weight: 600;
+  margin-bottom: 40px;
 }
 
 .banner #search {
@@ -237,7 +250,6 @@ code {
   font-family: "Open Sans", sans-serif;
   flex-wrap: wrap;
   list-style: none;
-  justify-content: center;
   margin:0;
   padding:0;
 }
@@ -247,7 +259,7 @@ code {
   border: 1px solid #CCC;
   border-radius: 5px;
   padding:20px;
-  margin: 10px;
+  margin: 10px 20px 10px 0;
 }
 
 @media (min-width: 768px){
@@ -309,7 +321,8 @@ code {
 /* Dcouments page Inside stylesheet - including tabs and Sidebar*/
 
 .content{
-  margin-top: 60px;
+  padding-left: 5px;
+  margin-bottom: 100px;
 }
 
 .content > .section > h1 {
@@ -470,6 +483,7 @@ ul.breadcrumbs{
 
 .breadcrumbs-container {
   padding-top: 16px;
+  margin: 92px 0px 0px 0px;
 }
 
 ul.breadcrumbs {
