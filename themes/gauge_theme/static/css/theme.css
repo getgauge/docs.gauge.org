@@ -2,6 +2,7 @@
 @import url("application.css");
 
 #rightNav {
+  margin-top: 65px;
   padding-top: 12px;
 }
 
