@@ -90,5 +90,12 @@ $(document).ready(() => {
     }, 500);
   });
   
+  $('ul.localtoc a').click(function(){
+    var sectionId = $(this).attr('href');
+
+    $('body,html').animate({
+      scrollTop : $(sectionId).offset().top - 100                       
+  }, 500);
+  });
 });
 
