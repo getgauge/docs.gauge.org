@@ -640,7 +640,7 @@ There are two types of validation error which can occurs
 Troubleshooting
 ===============
 
-Ensure that the latest version of gauge and `gauge plugins <https://gauge.org/plugins.html>`__. 
+Ensure that the latest version of gauge and `gauge plugins <//gauge.org/plugins/>`__. 
 
 Run ``gauge update -c`` to check if there are updates available for gauge and the plugins.
 

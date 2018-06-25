@@ -10,7 +10,7 @@ Setup
 -  `Setup a new pipeline on Go <https://docs.gocd.io/current/configuration/quick_pipeline_setup.html>`__
 
    .. image:: images/Gauge_Pipeline.png
--  `Download <https://gauge.org/get-started.html>`__ and Install Gauge on the Go Agents
+-  `Download <//gauge.org/get_started>`__ and Install Gauge on the Go Agents
 -  Install the required gauge :ref:`language plugin <install_plugins>` on the Go agents.
 
 Tips on Installation
