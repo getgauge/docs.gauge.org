@@ -4,7 +4,7 @@ Installation
 ============
 
 .. note:: 
-    For recommended installation, refer `Getting Started <//gauge.org/get-started.html>`__.
+    For recommended installation, refer `Getting Started <//gauge.org/get_started>`__.
     This page lists alternate methods of installing Gauge and plugins.
 
 Gauge
@@ -254,7 +254,7 @@ from plugin repository by using the ``--file`` or ``-f`` flag.
     gauge install html-report --file ZIP_FILE_PATH
 
 Download the latest version of plugin from the ``Releases`` section of
-the respective repository. See `plugin list <https://gauge.org/plugins.html>`__ to
+the respective repository. See `plugin list <//gauge.org/plugins/>`__ to
 find the repositories.
 
 Updating plugins
@@ -475,7 +475,7 @@ Example:
 
     gauge install html-report -f html-report-1.0.3-darwin.x86.zip
 
--  Find the plugin zip files under ``Releases`` section of the plugin github repositories. See the `gauge plugin list <https://gauge.org/plugins.html>`__ for plugin repositories details.
+-  Find the plugin zip files under ``Releases`` section of the plugin github repositories. See the `gauge plugin list <https://gauge.org/plugins/>`__ for plugin repositories details.
 
 Plugins directory
 ^^^^^^^^^^^^^^^^^
