@@ -179,6 +179,7 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 .sidebar-wrapper {
   border-left: 0.5px solid #222222;
   padding-left: 10px !important;
+  margin: 20px 0 0 0;
 }
 
 .sidebar-wrapper .separator {
@@ -388,6 +389,7 @@ code {
   display:block;
   border-bottom:1px solid #aaa;
   border-color:#aaa;
+  font-size: 16px;
 }
 
 .localtoc > ul > li > ul {
@@ -399,6 +401,7 @@ code {
   display:block;
   border-bottom:1px dotted #ccc;
   padding:10px 0;
+  font-size: 14px;
 }
 
 #rightNav li.active > a{
