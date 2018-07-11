@@ -1673,63 +1673,65 @@ executes
 
         .. code-block:: java
 
-        using Gauge.CSharp.Lib;
+            using Gauge.CSharp.Lib;
 
-        // Adding value
-        var specStore = DataStoreFactory.SpecDataStore;
-        specStore.Add("element-id", "455678");
+            // Adding value
+            var specStore = DataStoreFactory.SpecDataStore;
+            specStore.Add("element-id", "455678");
 
-        // Fetching Value
-        var elementId = (string) specStore.Get("element-id");
+            // Fetching Value
+            var elementId = (string) specStore.Get("element-id");
 
-        // avoid type cast by using generic Get
-        var anotherElementId = specStore.Get("element-id");
+            // avoid type cast by using generic Get
+            var anotherElementId = specStore.Get("element-id");
 
     .. tab:: Java
 
         .. code-block:: java
 
-        // Import Package import
-        com.thoughtworks.gauge.datastore.*;
+            // Import Package 
+            import com.thoughtworks.gauge.datastore.*;
 
-        // Adding value DataStore specStore =
-        DataStoreFactory.getSpecDataStore();
-        specStore.put("key", "455678");
+            // Adding value 
+            DataStore specStore = DataStoreFactory.getSpecDataStore();
+            specStore.put("key", "455678");
 
-        // Fetching value DataStore specStore =
-        String elementId = (String) specStore.get("key");
+            // Fetching value 
+            String elementId = (String) specStore.get("key");
 
     .. tab:: JavaScript
 
         .. code-block:: javascript
 
-        // Adding value DataStore specStore =
-        gauge.dataStore.specStore.put(key, value);
-        // Fetching value DataStore specStore =
-        gauge.dataStore.specStore.get(key);
+            // Adding value 
+            DataStore specStore = gauge.dataStore.specStore.put(key, value);
+
+            // Fetching value 
+            DataStore specStore = gauge.dataStore.specStore.get(key);
 
     .. tab:: Python
 
         .. code-block:: python
 
-        // Import Package import
-        from getgauge.python import DataStoreFactory
-        // Adding value DataStore specStore =
-        DataStoreFactory.spec_data_store().put(key, value)
+            // Import Package 
+            import from getgauge.python import DataStoreFactory
 
-        // Fetching value DataStore specStore =
-        DataStoreFactory.spec_data_store().get(key)
+            // Adding value 
+            DataStore specStore = DataStoreFactory.spec_data_store().put(key, value)
+
+            // Fetching value 
+            DataStore specStore = DataStoreFactory.spec_data_store().get(key)
 
     .. tab:: Ruby
 
         .. code-block:: ruby
 
-        // Adding value
-        spec_store = DataStoreFactory.spec_datastore;
-        spec_store.put("element-id", "455678");
+            // Adding value
+            spec_store = DataStoreFactory.spec_datastore;
+            spec_store.put("element-id", "455678");
 
-        // Fetching Value
-        element_id = spec_store.get("element-id");
+            // Fetching Value
+            element_id = spec_store.get("element-id");
 
 SuiteStore
 ++++++++++
@@ -1747,64 +1749,68 @@ suite execution. Values are cleared after entire suite execution.
 
         .. code-block:: java
 
-        using Gauge.CSharp.Lib;
+            using Gauge.CSharp.Lib;
 
-        // Adding value var suiteStore = DataStoreFactory.SuiteDataStore;
-        suiteStore.Add("element-id", "455678");
+            // Adding value 
+            var suiteStore = DataStoreFactory.SuiteDataStore;
+            suiteStore.Add("element-id", "455678");
 
-        // Fetching Value var suiteStore = DataStoreFactory.SuiteDataStore; var
-        elementId = (string) suiteStore.Get("element-id");
+            // Fetching Value 
+            var suiteStore = DataStoreFactory.SuiteDataStore; 
+            var elementId = (string) suiteStore.Get("element-id");
 
-        // avoid type cast by using generic Get var anotherElementId =
-        suiteStore.Get("element-id");
+            // Avoid type cast by using generic Get 
+            var anotherElementId = suiteStore.Get("element-id");
 
     .. tab:: Java
 
         .. code-block:: java
 
-        // Import Package import
-        com.thoughtworks.gauge.datastore.*;
+            // Import Package 
+            import com.thoughtworks.gauge.datastore.*;
 
-        // Adding value
-        DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
-        suiteStore.put("element-id", "455678");
+            // Adding value
+            DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
+            suiteStore.put("element-id", "455678");
 
-        // Fetching value
-        DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
-        String elementId = (String) suiteStore.get("element-id");
+            // Fetching value
+            DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
+            String elementId = (String) suiteStore.get("element-id");
 
     .. tab:: JavaScript
 
         .. code-block:: javascript
 
-        // Adding value DataStore suiteStore =
-        gauge.dataStore.suiteStore.put(key, value);
-        // Fetching value DataStore specStore =
-        gauge.dataStore.suiteStore.get(key);
+            // Adding value 
+            DataStore suiteStore = gauge.dataStore.suiteStore.put(key, value);
+            
+            // Fetching value 
+            DataStore specStore = gauge.dataStore.suiteStore.get(key);
 
     .. tab:: Python
 
         .. code-block:: python
 
-        // Import Package import
-        from getgauge.python import DataStoreFactory
-        // Adding value DataStore suiteStore =
-        DataStoreFactory.suite_data_store().put(key, value)
+            // Import Package 
+            import from getgauge.python import DataStoreFactory
+            
+            // Adding value 
+            DataStore suiteStore = DataStoreFactory.suite_data_store().put(key, value)
 
-        // Fetching value DataStore specStore =
-        DataStoreFactory.suite_data_store().get(key)
+            // Fetching value 
+            DataStore specStore = DataStoreFactory.suite_data_store().get(key)
 
     .. tab:: Ruby
 
         .. code-block:: ruby
 
-        // Adding value
-        suite_store = DataStoreFactory.suite_datastore;
-        suite_store.put("element-id", "455678");
+            // Adding value
+            suite_store = DataStoreFactory.suite_datastore;
+            suite_store.put("element-id", "455678");
 
-        // Fetching Value
-        suite_store = DataStoreFactory.suite_datastore;
-        element_id = suite_store.get("element-id");
+            // Fetching Value
+            suite_store = DataStoreFactory.suite_datastore;
+            element_id = suite_store.get("element-id");
 
 Taking Custom Screenshots
 -------------------------
