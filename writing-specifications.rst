@@ -55,7 +55,7 @@ Example
     * Search for product "Die Hard"
     * "Die hard" should ahow up in the search results
 
-    ## Unsuccessfull search
+    ## Unsuccessful search
 
     On an unknown product name search the search results will be empty
 
