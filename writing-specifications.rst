@@ -1640,12 +1640,18 @@ scenario execution. Values are cleared after every scenario executes
 
         .. code-block:: python
 
-            from getgauge.python import DataStoreFactory
-            // Adding value
-            DataStoreFactory.scenario_data_store().put(key, value)
+            # Import Package
+            from getgauge.python import data_store
+            
+            # Adding value
+            data_store.scenario["key"] = value
+            # OR
+            data_store.scenario.key = value
 
-            // Fetching Value
-            DataStoreFactory.scenario_data_store().get(key)
+            # Fetching Value
+            data_store.scenario["key"]
+            # OR
+            data_store.scenario.key
 
     .. tab:: Ruby
 
@@ -1713,14 +1719,18 @@ executes
 
         .. code-block:: python
 
-            // Import Package 
-            import from getgauge.python import DataStoreFactory
+            # Import Package
+            from getgauge.python import data_store
 
-            // Adding value 
-            DataStore specStore = DataStoreFactory.spec_data_store().put(key, value)
+            # Adding value 
+            data_store.spec["key"] = value
+            # OR
+            data_store.spec.key = value
 
-            // Fetching value 
-            DataStore specStore = DataStoreFactory.spec_data_store().get(key)
+            # Fetching value 
+            data_store.spec["key"]
+            # OR
+            data_store.spec.key
 
     .. tab:: Ruby
 
@@ -1791,14 +1801,18 @@ suite execution. Values are cleared after entire suite execution.
 
         .. code-block:: python
 
-            // Import Package 
-            import from getgauge.python import DataStoreFactory
+            # Import Package 
+            from getgauge.python import data_store
             
-            // Adding value 
-            DataStore suiteStore = DataStoreFactory.suite_data_store().put(key, value)
+            # Adding value 
+            data_store.suite["key"] = value
+            # OR
+            data_store.suite.key = value
 
-            // Fetching value 
-            DataStore specStore = DataStoreFactory.suite_data_store().get(key)
+            # Fetching value 
+            data_store.suite["key"]
+            # OR
+            data_store.suite.key
 
     .. tab:: Ruby
 
