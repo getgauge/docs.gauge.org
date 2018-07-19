@@ -785,7 +785,7 @@ Implementation
 
             public class Users {
 
-                [Step({"Create a user <user_name>", "Create another user <user_name>"})]
+                [Step("Create a user <user_name>", "Create another user <user_name>")]
                 public void HelloWorld(string user_name) {
                     // create user user_name
                 }
