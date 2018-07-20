@@ -144,11 +144,22 @@ Language plugins enable the users to write the implementation of specs in a lang
 
     .. tab:: CSharp
 
-        .. code-block:: console
+            to use .Net Framework as runtime
 
-            gauge install csharp
+            .. code-block:: console
 
-        Read more `here <https://github.com/getgauge/gauge-csharp>`__
+                gauge install csharp
+
+            Read more `here <https://github.com/getgauge/gauge-csharp>`__
+
+            to use .Net Core as runtime
+
+            .. code-block:: console
+
+                gauge install dotnet
+
+            Read more `here <https://github.com/getgauge/gauge-dotnet>`__
+
 
     .. tab:: Java
 
