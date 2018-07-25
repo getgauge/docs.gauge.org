@@ -1,18 +1,19 @@
 # You can set these variables from the command line.
-SPHINXOPTS    =
-SPHINXBUILD   = sphinx-build
-SPHINXPROJ    = Gauge
-SOURCEDIR     = .
-BUILDDIR      = _build
+SPHINXOPTS    	=
+SPHINXBUILD   	= sphinx-build
+SPHINXPROJ    	= Gauge
+SOURCEDIR     	= .
+BUILDDIR      	= _build
 
-EXCLUDES      = _images _static .doctrees
+EXCLUDES      	= _images _static .doctrees
 
-REMOTEBRANCHES = $(shell git for-each-ref --format='%(refname:strip=3)' refs/remotes/) 
-LOCALBRANCHES = $(shell git for-each-ref --format='%(refname:strip=2)' refs/heads/)
-LATESTBRANCH = $(shell git for-each-ref --sort='-*authordate' --format='%(refname:strip=3)' --count=3 refs/remotes/ | grep -v "master\|HEAD")
-WORKDIR = $(BUILDDIR)/src
-MASTERSHA = $(shell git rev-parse --short HEAD)
-LATESTSHA = $(shell git rev-parse --short origin/$(LATESTBRANCH))
+REMOTE		   ?= origin
+REMOTEBRANCHES 	= $(shell git for-each-ref --format='%(refname:strip=3)' refs/remotes/) 
+LOCALBRANCHES 	= $(shell git for-each-ref --format='%(refname:strip=2)' refs/heads/)
+LATESTBRANCH 	= $(shell git for-each-ref --sort='-*authordate' --format='%(refname:strip=3)' --count=3 refs/remotes/ | grep -v "master\|HEAD")
+WORKDIR 		= $(BUILDDIR)/src
+MASTERSHA 		= $(shell git rev-parse --short HEAD)
+LATESTSHA 		= $(shell git rev-parse --short $(REMOTE)/$(LATESTBRANCH))
 
 versions: prune
 	# copy master
@@ -21,7 +22,7 @@ versions: prune
 	
 	echo "Fetching $(LATESTBRANCH) from remote"; \
 	mkdir -p $(WORKDIR)/$(LATESTBRANCH); \
-	git worktree add -b $(LATESTBRANCH) $(WORKDIR)/$(LATESTBRANCH) origin/$(LATESTBRANCH); \
+	git worktree add -b $(LATESTBRANCH) $(WORKDIR)/$(LATESTBRANCH) $(REMOTE)/$(LATESTBRANCH); \
 	
 	# for each branches, generate html, singlehtml
 	(cd $(WORKDIR)/master;\
