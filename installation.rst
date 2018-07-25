@@ -3,9 +3,13 @@
 Installation
 ============
 
+For recommended installation, refer `Getting Started <//gauge.org/get_started>`__.
+This page lists alternate methods of installing Gauge and plugins.
+
 .. note:: 
-    For recommended installation, refer `Getting Started <//gauge.org/get_started>`__.
-    This page lists alternate methods of installing Gauge and plugins.
+    Gauge automatically sends telemetry data to help us `improve <https://blog.getgauge.io/why-we-collect-data-b19df366b677>`__
+    the product. If you would prefer not to have this data sent you can choose to `opt out <https://manpage.gauge.org/gauge_telemetry.html>`__
+
 
 Gauge
 -----
@@ -122,8 +126,7 @@ Gauge
 
             curl -SsL https://downloads.gauge.org/stable | sh -s -- --location=[custom path]
 
-    .. note:: Having trouble with installation? Head over to our :ref:`installation-faq` FAQ's.
-
+Having trouble with installation? Head over to our :ref:`installation-faq` FAQ's.
 
 .. _install_plugins:
 
