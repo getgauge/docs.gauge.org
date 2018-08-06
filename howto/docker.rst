@@ -22,7 +22,7 @@ Docker image for Gauge
 
     # Install Java.
     RUN apt-get update && apt-get install -q -y \
-        default-jdk \
+        openjdk-8-jdk \
         sudo \
         apt-transport-https
 
