@@ -23,3 +23,4 @@ For example, to run the specs use ``gauge run specs``
     TeamCity<teamcity>
     Travis-CI<travis>
     CircleCI<circle>
+    Jenkins<jenkins>
