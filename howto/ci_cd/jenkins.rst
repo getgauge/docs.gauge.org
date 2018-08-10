@@ -1,5 +1,5 @@
 Tutorial: Integrating Gauge with Jenkins
-=====================================
+========================================
 
 `Jenkins <https://jenkins.io/>`__ is a continuous integration and deployment
 tool.
@@ -28,10 +28,11 @@ Create execution task
 -  Create a new job which will run ``gauge run specs``.
    - In ``Source Code Management`` select ``Git`` give the git repository url.
    - In ``Build`` select ``Execute Shell`` and specify the command ``gauge run specs``.
-   .. figure:: images/Jenkins_config.png
-      :alt: adding new job
 
-      configuring
+       .. figure:: images/Jenkins_config.png
+         :alt: adding new job
+
+         configuring
 
 -  If you want to run only a subset of specs, you can use :ref:`tagged_execution`. 
     Eg. ``gauge run --tags "tag1 & tag2" specs``
