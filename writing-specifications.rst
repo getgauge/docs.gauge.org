@@ -1955,6 +1955,50 @@ These messages will appear under steps in the execution reports.
             id = "4567"
             Gauge.write_message("User id is" + id)
 
+.. _reports_custom_messages:
+
+Custom screenshots in reports
+--------------------------
+
+Custom screenshot can be added to execution reports using the below
+API from the step implementations or hooks.
+
+These screenshots will appear under steps in the execution reports.
+
+.. tab-container::
+
+    .. tab:: CSharp
+
+        .. code-block:: java
+
+            GaugeScreenshots.Capture();
+
+    .. tab:: Java
+
+        .. code-block:: java
+
+            Gauge.captureScreenshot();
+
+    .. tab:: JavaScript
+
+        .. code-block:: javascript
+
+            gauge.screenshot();
+
+    .. tab:: Python
+
+        .. code-block:: python
+
+            from getgauge.python import Screenshots
+
+            Screenshots.capture_screenshot()
+
+    .. tab:: Ruby
+
+        .. code-block:: ruby
+
+            Gauge.capture
+
 
 Continue on Failure
 -------------------
