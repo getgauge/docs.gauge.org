@@ -255,7 +255,7 @@ Example
          | Gauge java | Daredevil|
          | Gauge ruby | Iron Fist|
 
-Iniline data tables can be externalized as :ref:`special csv paramter<special_parameter_csv>`
+Inline data tables can be externalized as :ref:`special csv parameter<special_parameter_csv>`
 
 Special Parameters
 ^^^^^^^^^^^^^^^^^^
@@ -650,7 +650,7 @@ Simple step
         .. code-block:: python
 
             @step("Say <greeting> to <product name>")
-            def create_following_characters(greeting, name):
+            def hello_world(greeting, name):
                 assert False, "Add implementation code"
 
     .. tab:: Ruby
@@ -687,10 +687,10 @@ Step with table
             // This is available by adding a reference to the Gauge.CSharp.Lib.
             // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/
 
-            public class Users {
+            public class StepImplementation {
 
-                [Step("Create following <role> users <table>")]
-                public void HelloWorld(string role, Table table) {
+                [Step("Create following <race> characters <table>")]
+                public void CreateCharacters(string race, Table table) {
                     // Step implementation
                 }
 
@@ -701,10 +701,10 @@ Step with table
         .. code-block:: java
 
             // Table is a custom data structure defined by gauge.
-            public class Users {
+            public class StepImplementation {
 
                 @Step("Create following <race> characters <table>")
-                public void createCharacters(String type, Table table) {
+                public void createCharacters(String race, Table table) {
                     // Step implementation
                 }
 
@@ -714,7 +714,7 @@ Step with table
 
         .. code-block:: javascript
 
-            step("Create following <arg0> characters <arg1>", async function(arg0, arg1) {
+            step("Create following <race> characters <table>", async function(race, table) {
                 throw 'Unimplemented Step';
             });
 
@@ -724,8 +724,8 @@ Step with table
 
             # Here Table is a custom data structure defined by gauge.
 
-            @step("Create following <hobbit> characters <table>")
-            def create_following_characters(hobbit, table):
+            @step("Create following <race> characters <table>")
+            def create_characters(race, table):
                 assert False, "Add implementation code"
 
     .. tab:: Ruby
@@ -734,7 +734,7 @@ Step with table
 
             # Here table is a custom data structure defined by gauge-ruby.
 
-            step 'Create following <race> characters <table>' do |role, table|
+            step 'Create following <race> characters <table>' do |race, table|
                 puts table.rows
                 puts table.columns
             end
@@ -786,7 +786,7 @@ Implementation
             public class Users {
 
                 [Step("Create a user <user_name>", "Create another user <user_name>")]
-                public void HelloWorld(string user_name) {
+                public void CreateUser(string user_name) {
                     // create user user_name
                 }
 
@@ -799,7 +799,7 @@ Implementation
             public class Users {
 
                 @Step({"Create a user <user_name>", "Create another user <user_name>"})
-                public void helloWorld(String user_name) {
+                public void createUser(String user_name) {
                     // create user user_name
                 }
 
@@ -810,7 +810,7 @@ Implementation
         .. code-block:: javascript
 
             step(["Create a user <username>", "Create another user <username>"], function (username) {
-            // do cool stuff
+                // do cool stuff
             });
 
     .. tab:: Python
@@ -820,14 +820,14 @@ Implementation
             from getgauge.python import step
 
             @step(["Create a user <user name>", "Create another user <user name>"])
-            def hello(user_name):
+            def create_user(user_name):
                 print("create {}.".format(user_name))
 
     .. tab:: Ruby
 
         .. code-block:: ruby
 
-            step 'Create a user ','Create another user ' do |user_name|
+            step 'Create a user <user name>','Create another user <user name>' do |user_name|
                 // create user user_name
             end
 
@@ -864,7 +864,7 @@ Implementation
             public class Users {
 
                 [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
-                public void HelloWorld(string email_type) {
+                public void SendEmail(string email_type) {
                     // Send email of email_type
                 }
 
@@ -877,7 +877,7 @@ Implementation
             public class Users {
 
                 @Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})
-                public void helloWorld(String email_type) {
+                public void sendEmail(String email_type) {
                     // Send email of email_type
                 }
 
@@ -905,7 +905,7 @@ Implementation
 
         .. code-block:: ruby
 
-            step 'A email is sent to the user', 'An email confirming the is sent' do |email_type|
+            step 'A <email_type> email is sent to the user', 'An email confirming the <email_type> is sent' do |email_type|
                 email_service.send email_type
             end
 
@@ -1189,42 +1189,42 @@ levels during the test suite execution.
 
                 [BeforeSuite]
                 public void BeforeSuite() {
-                // Code for before suite
+                    // Code for before suite
                 }
 
                 [AfterSuite]
                 public void AfterSuite() {
-                // Code for after suite
+                    // Code for after suite
                 }
 
                 [BeforeSpec]
                 public void BeforeSpec() {
-                // Code for before spec
+                    // Code for before spec
                 }
 
                 [AfterSpec]
                 public void AfterSpec() {
-                // Code for after spec
+                    // Code for after spec
                 }
 
                 [BeforeScenario]
                 public void BeforeScenario() {
-                // Code for before scenario
+                    // Code for before scenario
                 }
 
                 [AfterScenario]
                 public void AfterScenario() {
-                // Code for after scenario
+                    // Code for after scenario
                 }
 
                 [BeforeStep]
                 public void BeforeStep() {
-                // Code for before step
+                    // Code for before step
                 }
 
                 [AfterStep]
                 public void AfterStep() {
-                // Code for after step
+                    // Code for after step
                 }
 
             }
@@ -1235,43 +1235,44 @@ levels during the test suite execution.
 
             public class ExecutionHooks {
 
-                @BeforeSuite public void BeforeSuite() {
-                // Code for before suite
+                @BeforeSuite
+                public void BeforeSuite() {
+                    // Code for before suite
                 }
 
                 @AfterSuite
                 public void AfterSuite() {
-                // Code for after suite
+                    // Code for after suite
                 }
 
                 @BeforeSpec
                 public void BeforeSpec() {
-                // Code for before spec
+                    // Code for before spec
                 }
 
                 @AfterSpec
                 public void AfterSpec() {
-                // Code for after spec
+                    // Code for after spec
                 }
 
                 @BeforeScenario
                 public void BeforeScenario() {
-                // Code for before scenario
+                    // Code for before scenario
                 }
 
                 @AfterScenario
                 public void AfterScenario() {
-                // Code for after scenario
+                    // Code for after scenario
                 }
 
                 @BeforeStep
                 public void BeforeStep() {
-                // Code for before step
+                    // Code for before step
                 }
 
                 @AfterStep
                 public void AfterStep() {
-                // Code for after step
+                    // Code for after step
                 }
 
             }
@@ -1347,7 +1348,7 @@ levels during the test suite execution.
                 print("before suite hook")
 
             @after_suite
-            def after_spec_hook():
+            def after_suite_hook():
                 print("after suite hook")
 
     .. tab:: Ruby
@@ -1427,8 +1428,8 @@ Current Execution Context in the Hook
 
             @BeforeScenario
             public void loginUser(ExecutionContext context) {
-            String scenarioName = context.getCurrentScenario().getName();
-            // Code for before scenario
+                String scenarioName = context.getCurrentScenario().getName();
+                // Code for before scenario
             }
 
             @AfterSpec
@@ -1570,10 +1571,10 @@ Filtering Hooks execution based on tags
                 # Code for before scenario
             end
 
-            # A after step hook runs when tag1 or tag2 is present in the current scenario and spec.
+            # A after step hook runs when tag1 or tag2
+            # is present in the current scenario and spec.
             # Default tagAggregation value is Operator.AND.
-
-            after_spec({tags: ['tag2', 'tag1'], operator: 'OR'}) do
+            after_step({tags: ['tag2', 'tag1'], operator: 'OR'}) do
                 # Code for after step
             end
 
