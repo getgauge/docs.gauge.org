@@ -28,7 +28,7 @@ Specifications (spec)
 ---------------------
 
 A specification is a business test case which can also act as feature
-documentation. Typically a  specification describe a particular feature of the application
+documentation. Typically a  specification describes a particular feature of the application
 under test.
 
 -  These are written in a ``.spec`` file. Gauge also supports ``.md`` file format.
@@ -66,7 +66,7 @@ Example
 Specification Heading
 ^^^^^^^^^^^^^^^^^^^^^
 
-A specification must begins with a spec heading and a single specification can
+A specification must begin with a spec heading and a single specification can
 contain only one spec heading.
 
 It is written in ``<H1>`` syntax of markdown. This can be in two
@@ -176,7 +176,7 @@ cannot be used in step text.
 Parameters
 ----------
 
-Steps can be defined to take values as parameters so that these can be
+Steps can be defined to take values as parameters so that they can be
 re-used with different parameter values.
 
 .. code-block:: gauge
@@ -236,7 +236,7 @@ The above concept can be invoked and a value can be passed to the concept agains
 
 Table Parameters
 ^^^^^^^^^^^^^^^^
-Table parameters are used when a step is to be exucuted for multiple values. The step having a inline table parameter will be executed for each table row
+Table parameters are used when a step is to be executed for multiple values. The step having an inline table parameter will be executed for each table row
 
 .. _example_inline_table:
 
@@ -306,7 +306,7 @@ an absolute path to the file.
 Special Parameter: CSV
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Tables are used to pass table value into steps read from an external CSV
+Tables are used to pass table values into steps read from an external CSV
 file. The parameter text in the step contains a prefix table and the
 path to the csv file.
 
@@ -327,13 +327,13 @@ path to the csv file.
     1,The Way to Go On
     2,Ivo Jay Balbaert
 
-The first row is considered as table header. Following rows are
+The first row is considered as the table header. Following rows are
 considered as the row values.
 
 Data Table values in inline tables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Dynamic values from the data table can also be referred in table
+Dynamic values from the data table can also be referred to in table
 parameters passed into steps
 
 .. _example_inline_data_driven_table:
@@ -406,7 +406,7 @@ They are defined in ``.cpt`` format files in the ``specs`` directory
 in the project. They can be inside nested directories inside the specs
 directory.
 
--  Concepts are used inside spec just like any other step. The
+-  Concepts are used inside a spec just like any other step. The
    appropriate parameters are passed to them.
 -  On execution all the steps under the concepts are executed in the
    defined order.
@@ -530,7 +530,7 @@ Tear Down Steps
 
 **Tear Down Steps** are the steps defined in a spec after the last
 scenario. They allow you to specify a set of clean-up steps after every
-execution of scenario in a spec. They are used to perform a tear down
+execution of a scenario in a spec. They are used to perform a tear down
 function.
 
 -  Any regular :ref:`steps <step_syntax>` can be used as a tear down step.
@@ -540,7 +540,7 @@ Syntax
 ++++++
 
 ``___``: Three or more consecutive underscores will indicate the start
-of tear down. Steps that are written in tear down(after three or more
+of tear down. Steps that are written in tear down (after three or more
 consecutive underscores) will be considered as tear down steps.
 
 .. code-block:: gauge
@@ -950,7 +950,7 @@ Common Gauge files
 
 .. _gauge_project_root:
 
-``GAUGE_PROJECT_ROOT`` environment variable holds the path in which the Gauge project is created.
+``GAUGE_PROJECT_ROOT`` environment variable holds the path in which the gauge project is created.
 
 .. code-block:: text
 
@@ -975,7 +975,7 @@ Learn more about :ref:`managing environments <environments>`.
 Specs Directory
 ^^^^^^^^^^^^^^^
 
-The specs directory contains all :ref:`spec <spec_syntax>` files for the
+The specs directory contains all the :ref:`spec <spec_syntax>` files for the
 project. They are the business layer specifications written in simple
 markdown format.
 
@@ -1060,7 +1060,7 @@ Creating a new project adds some language specific files.
 
         **packages.config**
 
-        For ``nuget``. Contains the dependencies for Gauge. One can add more to
+        For ``nuget``. Contains the dependencies for gauge. One can add more to
         this list, depending on project needs.
 
         **StepImplementation.cs**
@@ -1485,7 +1485,7 @@ Filtering Hooks execution based on tags
 +++++++++++++++++++++++++++++++++++++++
 
 -  You can specify tags for which the execution :ref:`hooks <execution_hooks>` can run. This
-   will ensure that the hook runs only on scenarios and specifications
+   will ensure that the hook only runs on scenarios and specifications
    that have the required tags.
 
 .. tab-container::
@@ -1536,14 +1536,14 @@ Filtering Hooks execution based on tags
             // is present in the current scenario and spec.
             beforeSpec(function () {
                 //implementation
-            }, { tags: [ "tag1","tag2" ]});
+            }, { tags: [ "tag1", "tag2" ]});
 
             // A after step hook runs when tag1 or tag2
             // is present in the currentscenario and spec.
             // Default tagAggregation value is Operator.AND.
             afterStep(function () {
                 //implementation
-            }, { tags: [ "tag1","tag2" ]});
+            }, { tags: [ "tag1", "tag2" ]});
 
     .. tab:: Python
 
@@ -1585,7 +1585,7 @@ Data Store
 ----------
 
 Data (Objects) can be shared in steps defined in different classes at
-runtime using DataStores exposed by Gauge.
+runtime using DataStores exposed by gauge.
 
 There are 3 different types of DataStores based on the lifecycle of when
 it gets cleared.
@@ -1594,7 +1594,7 @@ ScenarioStore
 +++++++++++++
 
 This data store keeps values added to it in the lifecycle of the
-scenario execution. Values are cleared after every scenario executes
+scenario execution. Values are cleared after every scenario executes.
 
 .. tab-container::
 
@@ -1841,7 +1841,7 @@ Taking Custom Screenshots
 
     If multiple custom ScreenGrabber implementations are found in
     classpath then gauge will pick one randomly to capture the screen.
-    This is because Gauge selects the first ScreenGrabber it finds,
+    This is because gauge selects the first ScreenGrabber it finds,
     which in turn depends on the order of scanning of the libraries.
 
 
@@ -2004,17 +2004,17 @@ These screenshots will appear under steps in the execution reports.
 Continue on Failure
 -------------------
 
-The default behaviour in Gauge is to break execution on the first
+The default behaviour in gauge is to break execution on the first
 failure in a :ref:`step <step_syntax>`. So, if the
 first step in a :ref:`scenario <scenario_syntax>`
 fails, the subsequent steps are skipped. While this works for a majority
 of use cases, there are times when you need to execute all steps in a
 scenario irrespective of whether the previous steps have failed or not.
 
-To address that requirement, Gauge provides a way for language runners
+To address that requirement, gauge provides a way for language runners
 to mark steps as recoverable, depending on whether the step
 implementation asks for it explicitly. Each language runner uses
-different syntax, depending on the language idioms, to allow a step
+different syntax, depending on the language idioms to allow a step
 implementation to be marked to continue on failure.
 
 .. tab-container::
@@ -2129,7 +2129,7 @@ to continue execution.
 
 .. note::
 
-  -  Continue on failure comes into play at post execution, i.e. after the step method is executed. If there is a failure in executing the step, ex. parameter count/type mismatch, Gauge will not honour the ``ContinueOnFailure`` flag.
+  -  Continue on failure comes into play at post execution, i.e. after the step method is executed. If there is a failure in executing the step, ex. parameter count/type mismatch, gauge will not honour the ``ContinueOnFailure`` flag.
   -  Continue on failure does not apply to :ref:`hooks <execution_hooks>`. Hooks always fail on first error.
   -  Step implementations are still non-recoverable by default and Gauge does not execute subsequent steps upon failure. To make a step implementation continue on failure, it needs to be explicitly marked in the test code.
   -  There is no way to globally mark a test run to treat all steps to continue on failure. Each step implementation has to be marked explicitly.
