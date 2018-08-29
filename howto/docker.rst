@@ -24,7 +24,7 @@ Docker image for Gauge
     RUN apt-get update && apt-get install -q -y \
         openjdk-8-jdk \
         apt-transport-https \
-        gnupg \
+        gnupg2 \
         ca-certificates
 
     # Install gauge
