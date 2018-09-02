@@ -53,7 +53,7 @@ Example
     For an existing product name, the search result will contain the product name
 
     * Search for product "Die Hard"
-    * "Die hard" should ahow up in the search results
+    * "Die hard" should show up in the search results
 
     ## Unsuccessful search
 
