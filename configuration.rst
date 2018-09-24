@@ -172,7 +172,7 @@ Gauge loads the environment variables as below.
 -  Specifying the ``default`` environment is optional. 
    The command `gauge run --env "ci, experimental" specs` will load values from the given environments.
    Only the values which are not yet set will be loaded from ``default`` environment. 
-   This step won't overwrite the variables which are set in step 1.
+   The default environment variables won't overwrite variables which are already loaded.
 
 Precedence of Environments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
