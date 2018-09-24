@@ -164,9 +164,15 @@ Multiple environments can be specified using the ``env`` flag. For example if
 
     gauge run --env "ci, experimental, default" specs
 
-Precedence to the env variable value is given to the order given by the user command.
-Hence command `gauge run --env "ci, experimental, default" specs` is different than
-`gauge run --env "ci, default, experimental" specs`
+Gauge loads the environment variables as below.
+-  Precedence to the env variable value is given to the order given by the user command.
+   Hence command `gauge run --env "ci, experimental, default" specs` is different than
+   `gauge run --env "ci, default, experimental" specs`
+
+-  Specifying the ``default`` environment is optional. 
+   The command `gauge run --env "ci, experimental" specs` will load values from the given environments.
+   Only the values which are not yet set will be loaded from ``default`` environment. 
+   This step won't overwrite the variables which are set in step 1.
 
 Precedence of Environments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
