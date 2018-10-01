@@ -138,6 +138,11 @@ To create an environment called ``ci``:
        |── default
           ├── default.properties
           └── java.properties
+       ├── dev
+          |── user.properties    
+       ├── experimental
+          |── default.properties    
+          └── java.properties
 
 Executing with environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -149,6 +154,25 @@ The environment is specified using the ``env`` flag. For example if
 
     gauge run --env ci specs
 
+Executing with multiple environments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Multiple environments can be specified using the ``env`` flag. For example if
+``ci``, ``experimental`` and ``default`` environments are used during execution
+
+.. code-block:: console
+
+    gauge run --env "ci, experimental, default" specs
+
+Gauge loads the environment variables as below.
+-  Precedence to the env variable value is given to the order given by the user command.
+   Hence command `gauge run --env "ci, experimental, default" specs` is different than
+   `gauge run --env "ci, default, experimental" specs`
+
+-  Specifying the ``default`` environment is optional. 
+   The command `gauge run --env "ci, experimental" specs` will load values from the given environments.
+   Only the values which are not yet set will be loaded from ``default`` environment. 
+   The default environment variables won't overwrite variables which are already loaded.
 
 Precedence of Environments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -172,7 +196,7 @@ User shell / OS env variable values 2. Project environment passed in the
 
 Gauge loads the environment variables as below.
 
--  When Gauge starts, the environment passed by the user in the
+-  When Gauge starts, the environment(s) passed by the user in the
    ``--env`` flag will be loaded. If this flag is not passed by the
    user, ``default`` environment will be loaded.
 -  Gauge will then load the ``default`` environment. Only the values
