@@ -34,25 +34,7 @@ Creating tasks
     sudo: false
 
 .. code-block:: yaml
-  :caption: Linux (manual)
-
-    language:
-        - language_name
-    os:
-        - linux
-    install:
-        - sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net --recv-keys 023EDB0B
-        - echo deb https://dl.bintray.com/gauge/gauge-deb stable main | sudo tee -a /etc/apt/sources.list
-        - sudo apt-get update
-        - sudo apt-get install gauge
-        - gauge install html-report
-
-    script: 'gauge run specs'
-
-    sudo: true
-
-.. code-block:: yaml
-  :caption: Linux (using Travis addson)
+  :caption: Linux
 
     language:
         - language_name
