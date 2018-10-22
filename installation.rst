@@ -410,6 +410,30 @@ Example:
 Troubleshooting
 ===============
 
+Logs
+----
+
+-  Gauge logs are created under the ``logs`` directory in the project.
+-  Three log files are created
+    -  **gauge.log** - logs for test execution
+    -  **api.log** - logs for gauge core api exposed for plugins
+    -  **lsp.log** - logs for gauge when launched in LSP mode.
+
+-  To customize logs directory set the ``logs_directory`` property in the ``env/default/default.properties`` file to a custom logs directory path.
+
+.. code-block:: text
+
+    logs_directory = my_logs_dir
+
+-  For **non-project specific actions** like plugin installation log
+   files are created in the following location.
+
+.. code-block:: text
+
+     Windows - %APPDATA%\gauge\logs
+     MacOS*  - <user_home>/.gauge/logs
+     Linux   - <user_home>/.gauge/logs
+
 .. _troubleshoot_gauge_installation:
 
 Gauge Installation
@@ -484,29 +508,4 @@ Custom Plugin Install location
 By default the plugins are stored at ``%APPDATA%\gauge\plugins`` for windows and ``~/.gauge/plugins`` in mac and linux.
 
 To install plugins at different location, set ``GAUGE_HOME`` environment variable to the custom location. After setting the ``GAUGE_HOME`` env, run the install command. The plugin will get installed at the ``GAUGE_HOME`` custom location.
-
-
-Logs
-----
-
--  Gauge logs are created under the ``logs`` directory in the project.
--  Three log files are created
-    -  **gauge.log** - logs for test execution
-    -  **api.log** - logs for gauge core api exposed for plugins
-    -  **lsp.log** - logs for gauge when launched in LSP mode.
-
--  To customize logs directory set the ``logs_directory`` property in the ``env/default/default.properties`` file to a custom logs directory path.
-
-.. code-block:: text
-
-    logs_directory = my_logs_dir
-
--  For **non-project specific actions** like plugin installation log
-   files are created in the following location.
-
-.. code-block:: text
-
-     Windows - %APPDATA%\gauge\logs
-     MacOS*  - <user_home>/.gauge/logs
-     Linux   - <user_home>/.gauge/logs
 
