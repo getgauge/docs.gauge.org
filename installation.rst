@@ -508,4 +508,3 @@ Custom Plugin Install location
 By default the plugins are stored at ``%APPDATA%\gauge\plugins`` for windows and ``~/.gauge/plugins`` in mac and linux.
 
 To install plugins at different location, set ``GAUGE_HOME`` environment variable to the custom location. After setting the ``GAUGE_HOME`` env, run the install command. The plugin will get installed at the ``GAUGE_HOME`` custom location.
-
