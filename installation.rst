@@ -263,8 +263,7 @@ There are various types of plugins that Gauge currently supports.
 1. :ref:`IDE Plugins <ide_plugins>`
 2. :ref:`Language Runners/Plugins <language_plugins>`
 3. :ref:`Reporting Plugins <reporting_plugins>`
-4. :ref:`Documentation Plugins <documentation_plugins>`
-5. :ref:`Dependency Management Plugins <dependency_plugins>`
+4. :ref:`Other Plugins <other_plugins>`
 
 .. _ide_plugins:
 
@@ -377,16 +376,12 @@ Reporting plugins generate execution reports in various formats. Depending on th
 
         Read more `here <https://github.com/getgauge/xml-report>`__
 
-.. _documentation_plugins:
+.. _other_plugins:
 
-Documentation Plugins
+Other Plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Documentation plugins generate readable and easy to navigate documentation from the specs.
-
-.. tab-container:: documentation
-
-    .. tab:: Spectacle
+The spectacle plugin generates a readable HTML format of the specs.
 
         .. code-block:: console
 
@@ -394,12 +389,7 @@ Documentation plugins generate readable and easy to navigate documentation from 
 
         Read more `here <https://github.com/getgauge/spectacle>`__
 
-.. _dependency_plugins:
-
-Dependency Management Plugins
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Gauge supports the dependency management workflow with custom plugins for `Maven <https://github.com/getgauge/gauge-maven-plugin>`__ and `Gradle <https://github.com/manupsunny/gauge-gradle-plugin>`__. 
+Gauge also supports the dependency management workflow with custom plugins for `Maven <https://github.com/getgauge/gauge-maven-plugin>`__ and `Gradle <https://github.com/manupsunny/gauge-gradle-plugin>`__. 
 
 Plugin Installation
 -------------------
