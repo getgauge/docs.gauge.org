@@ -381,7 +381,7 @@ Reporting plugins generate execution reports in various formats. Depending on th
 Other Plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-The spectacle plugin generates readable and easy to navigate documentation from the specs.
+The spectacle plugin generates a readable HTML format of the specs.
 
         .. code-block:: console
 
