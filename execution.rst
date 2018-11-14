@@ -364,6 +364,7 @@ Example:
 
 In the above spec, "search" and "admin" are tagged to all scenarios in the spec.
 Tags "successful" and "result" are tagged to the specific scenario for which it is defined.
+> Note: As shown in the example above, indentation is required to specify tags in multiple lines
 
 Tag expressions
 ^^^^^^^^^^^^^^^
