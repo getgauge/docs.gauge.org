@@ -332,6 +332,39 @@ should be executed, then use the following command:
 Execution hooks can also be filtered based on tags. 
 See :ref:`filtering hooks with tags <filtering_hooks_with_tags>` for more information.
 
+Multiline tags
+^^^^^^^^^^^^^^
+
+In a specification, tags can be defined in multiple lines
+
+Example:
+
+.. code-block:: gauge
+    :linenos:
+
+    # Search Specification
+
+    The admin user must be able to search for available products on the search page.
+
+    Tags: search,
+     admin
+
+    * User must be logged in as "admin"
+    * Open the product search page
+
+    ## Successful search
+
+    Tags: successful,
+     result
+
+    For an existing product name, the search result will contain the product name.
+
+    * Search for product "Die Hard"
+    * "Die Hard" should show up in the search results
+
+In the above spec, "search" and "admin" are tagged to all scenarios in the spec.
+Tags "successful" and "result" are tagged to the specific scenario for which it is defined.
+
 Tag expressions
 ^^^^^^^^^^^^^^^
 
