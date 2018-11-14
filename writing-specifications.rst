@@ -377,8 +377,8 @@ Tags are used to associate labels with specifications or scenarios. Tags are wri
 
 They help in filtering specs or scenarios based on tags used.
 
-Example
-+++++++
+Example: Tag(s)
++++++++++++++++
 
 Both the ``Login specification`` and the scenario
 ``Successful login scenario`` have tags in the below example.
@@ -394,6 +394,28 @@ Both the ``Login specification`` and the scenario
      Tags: login-success, admin
 
 A tag applied to a spec automatically applies to a scenario.
+
+Example: Multi-line tag(s)
+++++++++++++++++++++++++++
+
+Tags can be defined in multiple lines
+
+Both the ``Login specification`` and the scenario
+``Successful login scenario`` have tags in multiple lines in the below example.
+
+.. code-block:: gauge
+
+    # Login specification
+
+    Tags: login, 
+     admin, user-abc
+
+    ## Successful login scenario
+
+    Tags: admin,
+     login-success
+
+> Note: As shown in the example above, indentation is required to specify tags in multiple lines
 
 .. _concept:
 
