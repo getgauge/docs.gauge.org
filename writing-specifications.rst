@@ -1,8 +1,7 @@
 Writing Specifications
 ======================
 
-IDE plugins
------------
+In this page, we'll cover everything you need to know about writing Gauge specification. Before we start, do take a look at the IDE plugins for Gauge that improve your test authoring experience.  
 
 .. tab-container:: ide
 
@@ -64,7 +63,7 @@ Example
 
 
 Specification Heading
-^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++
 
 A specification must begin with a spec heading and a single specification can
 contain only one spec heading.
@@ -85,13 +84,15 @@ or
     Spec Heading
     ============
 
+Note:
+
 -  Every spec must contain one or more :ref:`longstart-scenarios`.
 -  Every spec can be marked with labels using :ref:`longstart-tags`.
 
 .. _longstart-scenarios:
 
-Scenarios
----------
+Scenario
+--------
 
 Each scenario represents a single flow in a particular specification. A
 specification must contain at least one scenario.
@@ -111,10 +112,13 @@ or
 .. code-block:: gauge
 
     Scenario heading
-    ----------------
+    ================
+
+Note:
 
 -  A scenario contains one or more :ref:`steps <step_syntax>` under it.
 -  A scenario can be tagged using :ref:`tags <tag_syntax>`.
+
 
 Example
 +++++++
@@ -134,17 +138,17 @@ Example
 
 .. _longstart-steps:
 
-Steps
------
+Step
+----
 
 Steps are the executable components of your specification, 
 written as markdown unordered list items (bulleted points).
 
 Steps can exist inside a specification as
 
-   - :ref:`Context Steps<longstart-context>`
-   - :ref:`longstart-teardown`
-   - Inside a scenario or concepts
+- :ref:`Context Steps<longstart-context>`
+- :ref:`longstart-teardown`
+- Inside a scenario or concepts
 
 Every step has an underlying code implementation for the programming
 language used. This is executed when the steps inside a spec are
@@ -169,12 +173,12 @@ the underlying step implementation as a language specific structure.
 Note: The following characters are reserved for parameters, these
 cannot be used in step text.
 
-   - ``"``
-   - ``<``
+- ``"``
+- ``<``
    - ``>``
 
 Parameters
-----------
+-----------
 
 Steps can be defined to take values as parameters so that they can be
 re-used with different parameter values.
@@ -190,8 +194,8 @@ step.
 
 The parameters passed into a step are of the following types:
 
-Simple parameters
-+++++++++++++++++
+1. Simple parameters
+++++++++++++++++++++
 
 They are values passed into the steps in double quotes.
 
@@ -205,8 +209,8 @@ method. By design, the renamed parameter is considered a new parameter.
 Therefore the usage of the old parameter (if any) has to be fixed
 manually to resolve the corresponding compilation issue.
 
-Dynamic Parameters
-++++++++++++++++++
+2. Dynamic Parameters
+++++++++++++++++++++
 
 Dynamic parameters are used as placeholder for values.
 
@@ -215,8 +219,7 @@ Dynamic parameters are used as placeholder for values.
 Dynamic parameters are primarily used when referring to a table column value in :ref:`table_driven_execution`,
 or while passing values to :ref:`concept`.
 
-Example
-+++++++
+**Example**
 
 .. code-block:: gauge
     :caption: example.cpt
@@ -234,14 +237,14 @@ The above concept can be invoked and a value can be passed to the concept agains
 .. note:: Refer to this :ref:`example_inline_data_driven_table` for illustration on how table cell values can be referred using dynamic parameters.
 
 
-Table Parameters
-^^^^^^^^^^^^^^^^
+3. Table Parameters
+++++++++++++++++++++
+
 Table parameters are used when a step is to be executed for multiple values. The step having an inline table parameter will be executed for each table row
 
 .. _example_inline_table:
 
-Example
-+++++++
+**Example**
 
 .. code-block:: gauge
 
@@ -257,14 +260,14 @@ Example
 
 Inline data tables can be externalized as :ref:`special csv parameter<special_parameter_csv>`
 
-Special Parameters
-^^^^^^^^^^^^^^^^^^
+4. Special Parameters
+++++++++++++++++++++
 
 Special parameters provide the ability to pass larger and richer data
 into the steps as parameters.
 
-   - They are entered in angular brackets - ``<>`` in the step.
-   - They contain 2 parts separated by a colon ``:``
+- They are entered in angular brackets - ``<>`` in the step.
+- They contain 2 parts separated by a colon ``:``
 
 .. code-block:: gauge
 
@@ -275,16 +278,15 @@ table.
 
 **Value** : This defines the value for the type of special parameter.
 
-
 There are two types of special parameters:
 
-1. :ref:`File<special_parameter_file>`
-2. :ref:`CSV<special_parameter_csv>`
+i. :ref:`File<special_parameter_file>`
+ii. :ref:`CSV<special_parameter_csv>`
 
 .. _special_parameter_file:
 
 Special Parameter: File
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 These are used to read files and pass the file content as a string
 parameter to the underlying steps.
@@ -304,7 +306,7 @@ an absolute path to the file.
 .. _special_parameter_csv:
 
 Special Parameter: CSV
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Tables are used to pass table values into steps read from an external CSV
 file. The parameter text in the step contains a prefix table and the
@@ -329,6 +331,7 @@ path to the csv file.
 
 The first row is considered as the table header. Following rows are
 considered as the row values.
+
 
 Data Table values in inline tables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -370,13 +373,12 @@ Tags
 Tags are used to associate labels with specifications or scenarios. Tags are written as comma separated values in the spec with a prefix ``Tags:`` .
 
 -  Both scenarios and specifications can be separately tagged
--  Only **one** set of tags can be added to a single specification or
-   scenario.
+-  Only **one** set of tags can be added to a single specification or scenario.
 
 They help in filtering specs or scenarios based on tags used.
 
-Example
-+++++++
+Example: Tag(s)
++++++++++++++++
 
 Both the ``Login specification`` and the scenario
 ``Successful login scenario`` have tags in the below example.
@@ -392,6 +394,28 @@ Both the ``Login specification`` and the scenario
      Tags: login-success, admin
 
 A tag applied to a spec automatically applies to a scenario.
+
+Example: Multi-line tag(s)
+++++++++++++++++++++++++++
+
+Tags can be defined in multiple lines
+
+Both the ``Login specification`` and the scenario
+``Successful login scenario`` have tags in multiple lines in the below example.
+
+.. code-block:: gauge
+
+    # Login specification
+
+    Tags: login, 
+     admin, user-abc
+
+    ## Successful login scenario
+
+    Tags: admin,
+     login-success
+
+> Note: As shown in the example above, indentation is required to specify tags in multiple lines
 
 .. _concept:
 
@@ -441,8 +465,8 @@ that it takes. It is written in the markdown **``H1``** format.
 
 .. _concept_steps:
 
-Steps
-+++++
+Concept Steps
++++++++++++++
 
 The concept header is followed by the steps that are used inside the
 concept. They are defined in the usual :ref:`steps <step_syntax>` structure.
