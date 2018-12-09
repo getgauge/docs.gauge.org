@@ -1889,15 +1889,19 @@ Taking Custom Screenshots
 
         .. code-block:: java
 
-            // Using Webdriver public class
-            CustomScreenGrabber implements ICustomScreenshotGrabber {
-                // Return a screenshot byte array
-                public byte[] takeScreenshot() {
-                    WebDriver driver = DriverFactory.getDriver();
-                    return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-                }
+                // Using WebDriver public class
+                public class CustomScreenshotGrabber implements ICustomScreenshotGrabber {
 
-            }
+                    public CustomScreenshotGrabber(){}
+
+                    private WebDriver driver = Driver.driver;
+
+                    // Return a screenshot byte array
+                    public byte[] takeScreenshot() {
+                        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+                    }
+
+                }
 
     .. tab:: JavaScript
 
