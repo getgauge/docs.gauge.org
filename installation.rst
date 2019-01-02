@@ -129,6 +129,21 @@ Install Gauge for your OS
 
             curl -SsL https://downloads.gauge.org/stable | sh -s -- --location=[custom path]
 
+    .. tab:: NPM
+
+        Install the latest node version by using
+
+        .. code-block:: console
+
+            npm install -g npm@latest
+
+        Now, install Gauge using
+
+        .. code-block:: console
+
+            npm install -g @getgauge/cli
+
+
 .. note:: 
     Gauge automatically sends `telemetry data <https://gauge.org/telemetry>`__ to help us improve the product. If you would prefer not to have this data sent you can choose to `opt out <https://manpage.gauge.org/gauge_telemetry.html>`__
 
@@ -244,6 +259,13 @@ Uninstall Gauge
         Remove the `gauge` binary from installed location.
         The entry from `PATH` that was added during installation, can also be removed.
 
+    .. tab:: NPM
+
+        Uninstall Gauge using npm
+
+        .. code-block:: console
+
+            npm uninstall -g @getgauge/cli
 
 .. note:: 
     If Gauge is installed in custom location, remove corresponding files/directory.
