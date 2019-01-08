@@ -112,7 +112,7 @@ or
 .. code-block:: gauge
 
     Scenario heading
-    ================
+    ----------------
 
 Note:
 
