@@ -84,6 +84,7 @@ $(document).ready(() => {
         $('#return-to-top').fadeOut(200);   // Else fade out the arrow
     }
   });
+  
   $('#return-to-top').click(function() {      // When arrow is clicked
     $('body,html').animate({
         scrollTop : 0                       // Scroll to top of body
@@ -94,8 +95,16 @@ $(document).ready(() => {
     var sectionId = $(this).attr('href');
 
     $('body,html').animate({
-      scrollTop : $(sectionId).offset().top - 100                       
+      scrollTop : $(sectionId).offset().top                       
   }, 500);
   });
+
+  $('.headerlink').click(function(){
+    var sectionId = $(this).attr('href');
+    $('body,html').animate({
+      scrollTop : $(sectionId).offset().top                       
+    }, 500);
+  });
+
 });
 
