@@ -95,17 +95,16 @@ $(document).ready(() => {
     var sectionId = $(this).attr('href');
 
     $('body,html').animate({
-      scrollTop : $(sectionId).offset().top - 100                       
+      scrollTop : $(sectionId).offset().top                       
   }, 500);
   });
 
   $('.headerlink').click(function(){
     var sectionId = $(this).attr('href');
-
     $('body,html').animate({
-      scrollTop : $(sectionId).offset().top - 100                       
+      scrollTop : $(sectionId).offset().top                       
     }, 500);
   });
-  
+
 });
 
