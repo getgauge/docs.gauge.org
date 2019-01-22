@@ -19,11 +19,11 @@ versions: prune
 	# copy master
 	mkdir -p $(WORKDIR)/master; \
 	cp -r `ls | grep -v '$(BUILDDIR)'` $(WORKDIR)/master/;
-	
+
 	echo "Fetching $(LATESTBRANCH) from remote"; \
 	mkdir -p $(WORKDIR)/$(LATESTBRANCH); \
 	git worktree add -b $(LATESTBRANCH) $(WORKDIR)/$(LATESTBRANCH) $(REMOTE)/$(LATESTBRANCH); \
-	
+
 	# for each branches, generate html, singlehtml
 	(cd $(WORKDIR)/master;\
 	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/master -D html_theme_options.docs_version=master \

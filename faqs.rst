@@ -292,6 +292,12 @@ VSCode
 Why are some features not working?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you notice that any of the documented features (ex. goto definition, codelense of implementation files, find usages)
+If you notice that any of the documented features (ex. goto definition, Code Lens of implementation files, find usages)
 are not working then make sure the required language runner is installed, by running ``gauge version``.
 If not installed, install using ``gauge install <plugin_name>``.
+
+Why does the debugger not stop at the right breakpoint (gauge-java)?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In Java projects, if the debugger does not stop at the right breakpoint, it is related to `this issue
+<https://github.com/getgauge/gauge-vscode/issues/344>`_.
