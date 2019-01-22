@@ -210,7 +210,7 @@ Therefore the usage of the old parameter (if any) has to be fixed
 manually to resolve the corresponding compilation issue.
 
 2. Dynamic Parameters
-++++++++++++++++++++
++++++++++++++++++++++
 
 Dynamic parameters are used as placeholder for values.
 
@@ -261,7 +261,7 @@ Table parameters are used when a step is to be executed for multiple values. The
 Inline data tables can be externalized as :ref:`special csv parameter<special_parameter_csv>`
 
 4. Special Parameters
-++++++++++++++++++++
++++++++++++++++++++++
 
 Special parameters provide the ability to pass larger and richer data
 into the steps as parameters.
@@ -1983,7 +1983,7 @@ These messages will appear under steps in the execution reports.
 .. _reports_custom_messages:
 
 Custom screenshots in reports
---------------------------
+-----------------------------
 
 Custom screenshot can be added to execution reports using the below
 API from the step implementations or hooks.
