@@ -296,8 +296,8 @@ If you notice that any of the documented features (ex. goto definition, Code Len
 are not working then make sure the required language runner is installed, by running ``gauge version``.
 If not installed, install using ``gauge install <plugin_name>``.
 
-Why does debugger not stop at debug point (gauge-java)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Why does the debugger not stop at the right breakpoint (gauge-java)?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you notice that debugger deos not stop at the right location with java projects, most probably it is related to `this issue
+In Java projects, if the debugger does not stop at the right breakpoint, it is related to `this issue
 <https://github.com/getgauge/gauge-vscode/issues/344>`_.
