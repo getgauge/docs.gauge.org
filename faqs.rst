@@ -205,6 +205,37 @@ Caveats
 The debugger exposes entire gauge-js runner code.
 You need to be quick enough to hit continue in the browser when node-inspector launches. If this takes too long, gauge will timeout connecting to the API. A workaround for this is to increase the runner_connection_timeout property to an acceptable value.
 
+
+gRPC issues
+^^^^^^^^^^^^
+
+gauge-js uses `gRPC <https://github.com/grpc/grpc-node/tree/master/packages/grpc-native-core>`_ to communicate with Gauge.
+The package  ``gRPC`` is a native module, and uses native bindings.
+
+When the nodejs is updated the ``gauge run`` fails because the installed binaries are not compatible with the version.
+
+Example Stacktrace:
+
+.. code-block:: sh
+
+    Error: Failed to load gRPC binary module because it was not installed for the current system
+    Expected directory: node-v67-darwin-x64-unknown
+    Found: [node-v57-darwin-x64-unknown]
+    This problem can often be fixed by running "npm rebuild" on the current system
+    Original error: Cannot find module '/Users/someone/.gauge/plugins/js/2.3.4/node_modules/grpc/src/node/extension_binary/node-v67-darwin-x64-unknown/grpc_node.node'
+
+
+To fix this
+
+Run  ``npm rebuild`` in ``PLUGIN_INSTALL_LOCATION\js\PLUGIN_VERSION`` dir.
+
+or
+
+Remove ``PLUGIN_INSTALL_LOCATION\js``, then run ``npm cache clean -f`` and install the plugin again by running ``gauge install js``.
+
+Refer `this <https://docs.gauge.org/latest/installation.html#plugins-directory>`__ to find plugin install location.
+
+
 .. _python_faq:
 
 Gauge Python
