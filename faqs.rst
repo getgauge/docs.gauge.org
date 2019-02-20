@@ -210,9 +210,9 @@ gRPC issues
 ^^^^^^^^^^^^
 
 gauge-js uses `gRPC <https://github.com/grpc/grpc-node/tree/master/packages/grpc-native-core>`_ to communicate with Gauge.
-The package  ``gRPC`` is a native module, and uses native bindings.
+The package  ``gRPC`` has native bindings.
 
-When the nodejs is updated the ``gauge run`` fails because the installed binaries are not compatible with the version.
+When Node is updated, ``gauge run`` fails due to binary incompatibility with the newer version.
 
 Example Stacktrace:
 
