@@ -15,43 +15,43 @@ Install Gauge for your OS
 
         **1. Chocolatey**
 
-        Install Gauge using `Chocolatey <https://chocolatey.org/>`__. 
-        
+        Install Gauge using `Chocolatey <https://chocolatey.org/>`__.
+
         .. code-block:: console
-                
+
             choco install gauge
 
         **2. ZIP File**
 
-        `Download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.3/gauge-1.0.3-windows.x86_64.zip>`__ and the run following command in powershell
+        `Download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.4/gauge-1.0.4-windows.x86_64.zip>`__ and the run following command in powershell
 
         .. code-block:: console
-            
-            PS> Expand-Archive -Path gauge-1.0.3-windows.x86_64.zip -DestinationPath custom_path
+
+            PS> Expand-Archive -Path gauge-1.0.4-windows.x86_64.zip -DestinationPath custom_path
 
     .. tab:: macOS
 
         **1. Homebrew**
 
-        Install Gauge using `Homebrew <https://brew.sh/>`__. 
-        
+        Install Gauge using `Homebrew <https://brew.sh/>`__.
+
         .. code-block:: console
-                
+
             brew update
             brew install gauge
 
 
         **2. ZIP File**
 
-        For signed binaries `download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.3/gauge-1.0.3-darwin.x86_64.zip>`__ and the run following command
+        For signed binaries `download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.4/gauge-1.0.4-darwin.x86_64.zip>`__ and the run following command
 
         .. code-block:: console
-            
-            unzip -o gauge-1.0.3-darwin.x86_64.zip -d /usr/local/bin
+
+            unzip -o gauge-1.0.4-darwin.x86_64.zip -d /usr/local/bin
 
 
     .. tab:: Debian/APT
-        
+
         Gauge can be installed on any flavour of Linux using the shell script. The following steps will guide you to a quick install on a linux box.
 
         **1. APT-GET**
@@ -75,22 +75,22 @@ Install Gauge for your OS
             sudo apt-get update
             sudo apt-get install gauge
 
-    
+
         **2. ZIP Download**
-        
-        `Download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.3/gauge-1.0.3-linux.x86_64.zip>`__ and then run following command
+
+        `Download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.4/gauge-1.0.4-linux.x86_64.zip>`__ and then run following command
 
         .. code-block:: console
 
-            unzip -o gauge-1.0.3-linux.x86_64.zip -d /usr/local/bin
-   
+            unzip -o gauge-1.0.4-linux.x86_64.zip -d /usr/local/bin
+
 
     .. tab:: YUM/DNF
 
         Gauge can be installed on any flavour of Linux using the shell script. The following steps will guide you to a quick install on a linux box.
 
         **1. DNF**
-        
+
         Install Gauge using dnf by running this command
 
         .. code-block:: console
@@ -99,20 +99,20 @@ Install Gauge for your OS
             sudo dnf install gauge
 
         **2. ZIP Download**
-        
-        `Download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.3/gauge-1.0.3-linux.x86_64.zip>`__ and then run following command
+
+        `Download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.4/gauge-1.0.4-linux.x86_64.zip>`__ and then run following command
 
         .. code-block:: console
 
-            unzip -o gauge-1.0.3-linux.x86_64.zip -d /usr/local/bin    
+            unzip -o gauge-1.0.4-linux.x86_64.zip -d /usr/local/bin
 
     .. tab:: Freebsd
 
-        Download the `zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.3/gauge-1.0.3-freebsd.x86_64.zip>`__ and then run following command.
+        Download the `zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.4/gauge-1.0.4-freebsd.x86_64.zip>`__ and then run following command.
 
         .. code-block:: console
-        
-            unzip -o gauge-1.0.3-freebsd.x86_64.zip -d /usr/local/bin
+
+            unzip -o gauge-1.0.4-freebsd.x86_64.zip -d /usr/local/bin
 
 
     .. tab:: Curl
@@ -122,7 +122,7 @@ Install Gauge for your OS
         .. code-block:: console
 
             curl -SsL https://downloads.gauge.org/stable | sh
-        
+
         Or install Gauge to a [custom path] using
 
         .. code-block:: console
@@ -144,7 +144,7 @@ Install Gauge for your OS
             npm install -g @getgauge/cli
 
 
-.. note:: 
+.. note::
     Gauge automatically sends `telemetry data <https://gauge.org/telemetry>`__ to help us improve the product. If you would prefer not to have this data sent you can choose to `opt out <https://manpage.gauge.org/gauge_telemetry.html>`__
 
 
@@ -159,7 +159,7 @@ Download the Gauge archive from `here <https://github.com/getgauge/gauge/release
 
 Nightly releases are latest development snapshots of Gauge. They have the latest features being developed, but are unstable. Download the Gauge archive from `here <https://bintray.com/gauge/Gauge/Nightly/>`__. Extract it to a location and add it to system path.
 
-    
+
 For Linux, create ``/etc/yum.repos.d/gauge-nightly.repo`` with the following steps.
 
 .. code-block:: text
@@ -186,13 +186,13 @@ Install Gauge using yum or dnf.
 
     sudo dnf install gauge
 
-.. note:: 
+.. note::
     Having trouble with installation? Head over to our :ref:`installation-faq` FAQ's.
 
 Project Templates
 -----------------
 
-Gauge hosts a list of project templates to help setup specific type of projects depending on the language of your tests. 
+Gauge hosts a list of project templates to help setup specific type of projects depending on the language of your tests.
 
 Run this command to see the list of updated available templates.
 
@@ -206,7 +206,7 @@ Uninstall Gauge
 
 .. warning::
     The Gauge folder(~/.gauge in Mac/Linux and in %APPDATA%\Gauge in windows) has to be removed manually. This folder contains Gauge config, logs and plugins.
-    
+
     Plugins should be removed before uninstalling gauge. Follow the steps in :ref:`plugins-uninstallation`.
 
 .. tab-container:: platforms
@@ -267,7 +267,7 @@ Uninstall Gauge
 
             npm uninstall -g @getgauge/cli
 
-.. note:: 
+.. note::
     If Gauge is installed in custom location, remove corresponding files/directory.
     More on Gauge install location can be found :ref:`here <troubleshoot_gauge_installation>`.
 
@@ -276,11 +276,11 @@ Uninstall Gauge
 Plugins
 =======
 
-Plugins are an easy way to extend the features of Gauge. 
+Plugins are an easy way to extend the features of Gauge.
 
 Types of Plugins
 ----------------
-There are various types of plugins that Gauge currently supports. 
+There are various types of plugins that Gauge currently supports.
 
 1. :ref:`IDE Plugins <ide_plugins>`
 2. :ref:`Language Runners/Plugins <language_plugins>`
@@ -292,7 +292,7 @@ There are various types of plugins that Gauge currently supports.
 IDE Plugins
 ^^^^^^^^^^^^^^
 
-Gauge has plugins for popular IDEs that vastly improve the experience of authoring test specifications. We recommend using the VSCode plugin. However Gauge can be used without a plugin on any editor of your choice. 
+Gauge has plugins for popular IDEs that vastly improve the experience of authoring test specifications. We recommend using the VSCode plugin. However Gauge can be used without a plugin on any editor of your choice.
 
 .. tab-container:: ide
 
@@ -316,7 +316,7 @@ Gauge has plugins for popular IDEs that vastly improve the experience of authori
 Language Plugins
 ^^^^^^^^^^^^^^^^^^^
 
-Language plugins or language runners enable the users to write the implementation of specs in a language of their choice. When you intitilize a Gauge project, this gets installed by default. 
+Language plugins or language runners enable the users to write the implementation of specs in a language of their choice. When you intitilize a Gauge project, this gets installed by default.
 
 .. _install-language-runner:
 
@@ -378,7 +378,7 @@ Language plugins or language runners enable the users to write the implementatio
 Reporting Plugins
 ^^^^^^^^^^^^^^^^^^^^
 
-Reporting plugins generate execution reports in various formats. Depending on the format of report you need, you can install the respective plugin. 
+Reporting plugins generate execution reports in various formats. Depending on the format of report you need, you can install the respective plugin.
 
 .. tab-container:: reports
 
@@ -411,28 +411,28 @@ The spectacle plugin generates a readable HTML format of the specs.
 
         Read more `here <https://github.com/getgauge/spectacle>`__
 
-Gauge also supports the dependency management workflow with custom plugins for `Maven <https://github.com/getgauge/gauge-maven-plugin>`__ and `Gradle <https://github.com/manupsunny/gauge-gradle-plugin>`__. 
+Gauge also supports the dependency management workflow with custom plugins for `Maven <https://github.com/getgauge/gauge-maven-plugin>`__ and `Gradle <https://github.com/manupsunny/gauge-gradle-plugin>`__.
 
 Plugin Installation
 -------------------
 
-Install a specific Plugin version 
+Install a specific Plugin version
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To install a specific version of a plugin use the ``--version`` flag.
 
 .. code-block:: console
 
-    gauge install html-report --version 2.1.0
+    gauge install html-report --version 4.0.7
 
 
 Add Plugins to a Project
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Run this command from within the project directory, to install the plugin and add it to project. 
+Run this command from within the project directory, to install the plugin and add it to project.
 
 .. code-block:: console
-    
+
     gauge install <plugin_name>
 
 If the plugin is already installed, Gauge just adds it to the project.
@@ -456,12 +456,12 @@ Updating Plugins
 Run this command to update your plugin.
 
 .. code-block:: console
-    
+
     gauge update <plugin_name>
 
 This downloads the latest compatible plugin from our plugin repository.
 
-.. note:: 
+.. note::
     Every Gauge plugin when published, has metadata indicating the ``min`` and ``max`` version of Gauge that it is compatible with. This is used when installing plugins on a system running a particular gauge version.
 
 
@@ -475,7 +475,7 @@ To update a plugin to a specific version, use the ``--version`` flag.
 
 .. code-block:: console
 
-    gauge update java --version 0.3.2
+    gauge update java --version 0.7.1
 
 You can also update all the installed plugins by running
 
@@ -511,7 +511,7 @@ Example:
 
 .. code-block:: console
 
-   gauge uninstall java --version 0.3.2
+   gauge uninstall java --version 0.7.1
 
 
 Troubleshooting
@@ -522,7 +522,7 @@ Troubleshooting
 Gauge Installation
 ------------------
 
-Here are some troubleshooting tips to common errors when installing Gauge. 
+Here are some troubleshooting tips to common errors when installing Gauge.
 
 Installing with npm
 ^^^^^^^^^^^^^^^^^^^^
@@ -537,7 +537,7 @@ Installing with Homebrew
 Windows
 ^^^^^^^
 
-If you're on Windows, make sure that: 
+If you're on Windows, make sure that:
 
 -  the default installation location is ``%ProgramFiles%\gauge``.
 -  ``gauge_install_location\bin`` should be in PATH to run from command line.
@@ -547,7 +547,7 @@ If you're on Windows, make sure that:
 Mac OS X
 ^^^^^^^^
 
-If you're using MacOS, make sure that: 
+If you're using MacOS, make sure that:
 
 -  the default installation location is ``/usr/local/``.
 -  ``usr/local/bin/`` or ``custom_install_location/bin`` should be in PATH.
@@ -556,7 +556,7 @@ If you're using MacOS, make sure that:
 Linux
 ^^^^^
 
-If you're using Linux, make sure that: 
+If you're using Linux, make sure that:
 
 -  the default installation location is ``/usr/local/``
 -  ``usr/local/bin/`` or ``custom_install_location/bin`` should be in PATH.
@@ -577,7 +577,7 @@ Example:
 
 .. code-block:: console
 
-    gauge install html-report -f html-report-1.0.3-darwin.x86.zip
+    gauge install html-report -f html-report-4.0.7-darwin.x86.zip
 
 -  Find the plugin zip files under ``Releases`` section of the plugin github repositories. See the `gauge plugin list <https://gauge.org/plugins/>`__ for plugin repositories details.
 
