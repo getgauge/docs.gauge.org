@@ -93,6 +93,15 @@ value pairs.
     # relative to the path of directory or absolute.
     gauge_exclude_dirs = src/test,bin
 
+    # This property enables saving execution results after execution. 
+    # The saved result can be used to regenerate html reports.
+    # default: false
+    save_execution_result = false
+
+    # CsvDelimiter holds delimiter used to parse csv files
+    # default: `,`
+    csv_delimiter = ,
+
 .. _environments:
 
 Environments
