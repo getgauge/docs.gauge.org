@@ -176,6 +176,54 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
   background-image: url("../img/curl-logo.svg");
 }
 
+.tab-npm {
+  background-image: url("../img/npm-logo.svg");
+}
+
+.tab-freebsd {
+  background-image: url("../img/freebsd-logo.svg");
+}
+
+.tab-visual-studio-code {
+  background-image: url("../img/vscode-logo.svg");
+}
+
+.tab-intellij-idea {
+  background-image: url("../img/idea-logo.svg");
+}
+
+.tab-visual-studio {
+  background-image: url("../img/vs-logo.svg");
+}
+
+.tab-csharp {
+  background-image: url("../img/csharp-logo.svg");
+}
+
+.tab-java {
+  background-image: url("../img/java-logo.svg");
+}
+
+.tab-javascript {
+  background-image: url("../img/javascript-logo.svg");
+}
+
+.tab-python {
+  background-image: url("../img/python-logo.svg");
+}
+
+.tab-ruby {
+  background-image: url("../img/ruby-logo.svg");
+}
+
+.tab-html-report {
+  background-image: url("../img/html-logo.svg");
+}
+
+.tab-xml-report {
+  background-image: url("../img/xml-logo.svg");
+}
+
 .sidebar-wrapper {
   border-left: 0.5px solid #222222;
   padding-left: 10px !important;
