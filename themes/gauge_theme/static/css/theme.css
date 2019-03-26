@@ -745,7 +745,7 @@ header.top {
   height: 32px;
   display: inline-block;
   margin: 18px 0 0 16px;
-  background: url("//preview.gauge.org/assets/images/gauge-logo_white.svg") no-repeat 0 0;
+  background: url("//gauge.org/assets/images/gauge-logo_white.svg") no-repeat 0 0;
   text-indent: -100em;
   overflow: hidden;
   -webkit-transition: all 0.2s ease-in-out;
@@ -897,13 +897,13 @@ header.top {
       -ms-flex-align: baseline;
           align-items: baseline; }
 .githubstar-box .github-icon {
-  background: url("//preview.gauge.org/assets/images/github_star_black.svg") no-repeat 0 0;
+  background: url("//gauge.org/assets/images/github_star_black.svg") no-repeat 0 0;
   padding-left: 40px;
   width: 40px;
   height: 18px; }
   @media (min-width: 768px) {
     .githubstar-box .github-icon {
-      background: url("//preview.gauge.org/assets/images/github_star.svg") no-repeat 0 0; } }
+      background: url("//gauge.org/assets/images/github_star.svg") no-repeat 0 0; } }
 .githubstar-box span {
   color: #fff;
   padding: 0 4px; }
@@ -1066,44 +1066,44 @@ img {
   display: block; }
 
 .foolinks .icon_gitter {
-  background: url("//preview.gauge.org/assets/images/footer-icons/icon_gitter.svg") no-repeat 0 7px;
+  background: url("//gauge.org/assets/images/footer-icons/icon_gitter.svg") no-repeat 0 7px;
   background-size: auto 20px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
   .foolinks .icon_gitter:hover {
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    background: url("//preview.gauge.org/assets/images/footer-icons/icon_gitter_hover.svg") no-repeat 0 7px;
+    background: url("//gauge.org/assets/images/footer-icons/icon_gitter_hover.svg") no-repeat 0 7px;
     background-size: auto 20px; }
 .foolinks .icon_google {
-  background: url("//preview.gauge.org/assets/images/footer-icons/icon_google-group.svg") no-repeat 0 8px;
+  background: url("//gauge.org/assets/images/footer-icons/icon_google-group.svg") no-repeat 0 8px;
   background-size: auto 18px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
   .foolinks .icon_google:hover {
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    background: url("//preview.gauge.org/assets/images/footer-icons/icon_google-group_hover.svg") no-repeat 0 8px;
+    background: url("//gauge.org/assets/images/footer-icons/icon_google-group_hover.svg") no-repeat 0 8px;
     background-size: auto 18px; }
 .foolinks .icon_stack {
-  background: url("//preview.gauge.org/assets/images/footer-icons/icon_stack_overflow.svg") no-repeat 0 7px;
+  background: url("//gauge.org/assets/images/footer-icons/icon_stack_overflow.svg") no-repeat 0 7px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   background-size: auto 18px; }
   .foolinks .icon_stack:hover {
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    background: url("//preview.gauge.org/assets/images/footer-icons/icon_stack_overflow_hover.svg") no-repeat 0 7px;
+    background: url("//gauge.org/assets/images/footer-icons/icon_stack_overflow_hover.svg") no-repeat 0 7px;
     background-size: auto 18px; }
 .foolinks .icon_contribute {
-  background: url("//preview.gauge.org/assets/images/footer-icons/icon_contribute.svg") no-repeat 0 7px;
+  background: url("//gauge.org/assets/images/footer-icons/icon_contribute.svg") no-repeat 0 7px;
   background-size: auto 18px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
   .foolinks .icon_contribute:hover {
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    background: url("//preview.gauge.org/assets/images/footer-icons/icon_contribute_hover.svg") no-repeat 0 7px;
+    background: url("//gauge.org/assets/images/footer-icons/icon_contribute_hover.svg") no-repeat 0 7px;
     background-size: auto 18px; }
 
 .licence {
