@@ -381,8 +381,8 @@ Build tools
 .. _gradle:
 .. _ant_task:
 
-1. To use Gauge with `Maven <https://maven.apache.org/>`__, refer `Gauge Maven Plugin <https://github.com/getgauge/gauge-maven-plugin/blob/master/README.md>`__
-2. To use Gauge with `Gradle <https://gradle.org/>`__, refer `Gauge Gradle Plugin <https://github.com/manupsunny/gauge-gradle-plugin/blob/master/Readme.md>`__
+1. To use Gauge with `Maven <https://maven.apache.org/>`__, refer to `Gauge Maven Plugin <https://github.com/getgauge/gauge-maven-plugin/blob/master/README.md>`__
+2. To use Gauge with `Gradle <https://gradle.org/>`__, refer to `Gauge Gradle Plugin <https://github.com/getgauge/gauge-gradle-plugin/blob/master/Readme.md>`__
 3. To invoke gauge specs using `Ant <https://ant.apache.org/manual/Tasks/ant.html>`__
 
     .. code-block:: xml
