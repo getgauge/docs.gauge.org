@@ -411,7 +411,7 @@ The spectacle plugin generates a readable HTML format of the specs.
 
         Read more `here <https://github.com/getgauge/spectacle>`__
 
-Gauge also supports the dependency management workflow with custom plugins for `Maven <https://github.com/getgauge/gauge-maven-plugin>`__ and `Gradle <https://github.com/manupsunny/gauge-gradle-plugin>`__.
+Gauge also supports the dependency management workflow with custom plugins for `Maven <https://github.com/getgauge/gauge-maven-plugin>`__ and `Gradle <https://github.com/getgauge/gauge-gradle-plugin>`__.
 
 Plugin Installation
 -------------------
