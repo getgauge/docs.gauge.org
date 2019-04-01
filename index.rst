@@ -10,6 +10,7 @@ Gauge is a light-weight cross-platform test automation tool with the ability to 
 
     installation
     writing-specifications
+    experimental-feature
     execution
     configuration
     faqs
