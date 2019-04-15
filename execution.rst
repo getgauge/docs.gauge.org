@@ -280,12 +280,6 @@ tags:
 
 .. code-block:: console
 
-    gauge run --tags tag1,tag2 specs
-
-or,
-
-.. code-block:: console
-
     gauge run --tags "tag1, tag2" specs
 
 This executes only the scenarios and specifications which are tagged
@@ -341,7 +335,7 @@ Tags can be selected using expressions. Examples:
 Tags                               Selects specs/scenarios that
 ================================== ===============================================================
 ``!TagA``                          do not have ``TagA``
-``TagA & TagB``                    have both ``TagA`` and ``TagB``.
+``TagA & TagB`` or ``TagA,TagB``   have both ``TagA`` and ``TagB``.
 ``TagA & !TagB``                   have ``TagA`` and not ``TagB``.
 ``TagA | TagB``                    have either ``TagA`` or ``TagB``.
 ``(TagA & TagB) | TagC``           have either ``TagC`` or both ``TagA`` and ``TagB``
