@@ -40,6 +40,10 @@ Global
     # accordingly.
     runner_request_timeout = 10000
 
+    # sets the timeout in milliseconds for responses from the
+    # language runner when invoked for IDEs.
+    ide_request_timeout = 30000
+
 Local (Project level)
 ---------------------
 
@@ -101,6 +105,14 @@ value pairs.
     # CsvDelimiter holds delimiter used to parse csv files
     # default: `,`
     csv_delimiter = ,
+
+    # Gauge tries to install missing plugins during execution.
+    # To disable this, set the below environment variable to false.
+    GAUGE_PLUGIN_INSTALL = true
+
+    # The path the gauge specifications directory. 
+    # Takes a comma separated list of specification files/directories.
+    gauge_specs_dir = specs
 
 .. _environments:
 
