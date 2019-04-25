@@ -530,6 +530,27 @@ equivalent to command
 
     gauge run --env="chrome" --verbose specs <path_to_failed_scenarios>
 
+Re-run flaky tests with max retry
+---------------------------------
+
+Gauge provides a way to retry tests which may have failed.
+The failed tests can be retry using following command.
+
+.. code-block:: console
+
+    gauge run --max-retries-count=3
+
+This command will retry a failed test for a maximum of 3 times before it marks it as failed.
+
+``--max-retries-count`` can be used along ``--retry-only`` flag. The ``--retry-only`` can be used to filter scenarios that should be retried when failed.
+
+.. code-block:: console
+
+    gauge run --max-retries-count=3 --retry-only="should-retry"
+
+If ``--retry-only`` flag is not specified, all scenarios will retried ``--max-retries-count`` number of times.
+
+
 
 Errors during execution
 -----------------------
