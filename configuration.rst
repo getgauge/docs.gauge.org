@@ -370,9 +370,19 @@ Without Authentication
 If authentication is not required, set the environment variable
 ``HTTP_PROXY`` to proxy server URL.
 
-.. code-block:: text
+.. tab-container:: http_proxy
 
-    export HTTP_PROXY=http://10.0.2.2:5678
+    .. tab:: macOS
+
+        .. code-block:: console
+
+            export HTTP_PROXY=http://10.0.2.2:5678
+
+    .. tab:: windows
+
+        .. code-block:: console
+
+            set HTTP_PROXY=http://10.0.2.2:5678
 
 With Authentication
 ^^^^^^^^^^^^^^^^^^^
@@ -380,10 +390,19 @@ With Authentication
 If authentication is required, set the environment variable
 ``HTTP_PROXY`` to proxy server URL along with the credentials.
 
-.. code-block:: text
+.. tab-container:: http_proxy
 
-    export HTTP_PROXY=http://username:password@10.0.2.2:5678
+    .. tab:: macOS
 
+        .. code-block:: console
+
+            export HTTP_PROXY=http://username:password@10.0.2.2:5678
+
+    .. tab:: windows
+
+        .. code-block:: console
+
+            set HTTP_PROXY=http://username:password@10.0.2.2:5678
 
 
 Build tools
