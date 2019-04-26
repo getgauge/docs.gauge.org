@@ -10,12 +10,10 @@ EXCLUDES      	= _images _static .doctrees
 REMOTE		   ?= origin
 REMOTEBRANCHES 	= $(shell git for-each-ref --format='%(refname:strip=3)' refs/remotes/) 
 LOCALBRANCHES 	= $(shell git for-each-ref --format='%(refname:strip=2)' refs/heads/)
-LATESTBRANCH 	= $(shell git for-each-ref --sort='-*authordate' --format='%(refname:strip=3)' --count=3 refs/remotes/ | grep -v "master\|HEAD")
+LATESTBRANCH 	= $(shell git for-each-ref --sort='-*authordate' --format='%(refname:strip=3)' refs/remotes/ | grep -E "(^[0-9]+\.[0-9]+\.[0-9]+)" | head -n1)
 WORKDIR 		= $(BUILDDIR)/src
 MASTERSHA 		= $(shell git rev-parse --short HEAD)
 LATESTSHA 		= $(shell git rev-parse --short $(REMOTE)/$(LATESTBRANCH))
-VERSIONS        = $(filter-out $(LATESTBRANCH) HEAD master, $(REMOTEBRANCHES))
-LATESTVERSION   = $(lastword $(VERSIONS))
 
 versions: prune
 	# copy master
@@ -23,9 +21,9 @@ versions: prune
 	cp -r `ls | grep -v '$(BUILDDIR)'` $(WORKDIR)/master/;
 
 	# sync local with remote
-	echo "Fetching $(LATESTVERSION) from remote"; \
-	mkdir -p $(WORKDIR)/$(LATESTVERSION); \
-	git worktree add -b $(LATESTVERSION) $(WORKDIR)/$(LATESTVERSION) $(REMOTE)/$(LATESTVERSION);
+	echo "Fetching $(LATESTBRANCH) from remote"; \
+	mkdir -p $(WORKDIR)/$(LATESTBRANCH); \
+	git worktree add -b $(LATESTBRANCH) $(WORKDIR)/$(LATESTBRANCH) $(REMOTE)/$(LATESTBRANCH);
 
 	# for master and latest version branches, generate html, singlehtml
 	(cd $(WORKDIR)/master;\
@@ -35,11 +33,11 @@ versions: prune
 		-A commit=$(MASTERSHA) -A github_version=master;\
 	$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/master -A SINGLEHTML=true;);\
 
-	(cd $(WORKDIR)/$(LATESTVERSION);\
+	(cd $(WORKDIR)/$(LATESTBRANCH);\
 	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/latest \
-		-D version=$(LATESTVERSION) -D release=$(LATESTVERSION) \
+		-D version=$(LATESTBRANCH) -D release=$(LATESTBRANCH) \
 		-A current_version=latest -A latest_version=$(LATESTBRANCH) -A versions="master latest"\
-		-A commit=$(shell git rev-parse --short HEAD) -A github_version=$(LATESTVERSION);\
+		-A commit=$(shell git rev-parse --short HEAD) -A github_version=$(LATESTBRANCH);\
 	$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/latest -A SINGLEHTML=true;);\
 
 	rm -rf $(WORKDIR); \
@@ -60,7 +58,7 @@ zip: versions
 		echo "Using $(folder) "; \
 		mkdir -p $(BUILDDIR)/html/$(folder)/downloads; \
 		(cd "$(BUILDDIR)/singlehtml/$(folder)" && zip -r -D \
-		  ../../../$(BUILDDIR)/html/$(folder)/downloads/gauge-v-$(folder:latest=$(LATESTVERSION)).zip *) ; \
+		  ../../../$(BUILDDIR)/html/$(folder)/downloads/gauge-v-$(folder:latest=$(LATESTBRANCH)).zip *) ; \
 	)
 
 serve: zip
