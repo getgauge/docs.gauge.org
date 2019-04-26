@@ -23,11 +23,11 @@ Install Gauge for your OS
 
         **2. ZIP File**
 
-        `Download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.4/gauge-1.0.4-windows.x86_64.zip>`__ and the run following command in powershell
+        `Download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-windows.x86_64.zip>`__ and the run following command in powershell
 
         .. code-block:: console
 
-            PS> Expand-Archive -Path gauge-1.0.4-windows.x86_64.zip -DestinationPath custom_path
+            PS> Expand-Archive -Path gauge-1.0.5-windows.x86_64.zip -DestinationPath custom_path
 
     .. tab:: macOS
 
@@ -43,11 +43,11 @@ Install Gauge for your OS
 
         **2. ZIP File**
 
-        For signed binaries `download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.4/gauge-1.0.4-darwin.x86_64.zip>`__ and the run following command
+        For signed binaries `download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-darwin.x86_64.zip>`__ and the run following command
 
         .. code-block:: console
 
-            unzip -o gauge-1.0.4-darwin.x86_64.zip -d /usr/local/bin
+            unzip -o gauge-1.0.5-darwin.x86_64.zip -d /usr/local/bin
 
 
     .. tab:: Debian/APT
@@ -78,11 +78,11 @@ Install Gauge for your OS
 
         **2. ZIP Download**
 
-        `Download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.4/gauge-1.0.4-linux.x86_64.zip>`__ and then run following command
+        `Download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-linux.x86_64.zip>`__ and then run following command
 
         .. code-block:: console
 
-            unzip -o gauge-1.0.4-linux.x86_64.zip -d /usr/local/bin
+            unzip -o gauge-1.0.5-linux.x86_64.zip -d /usr/local/bin
 
 
     .. tab:: YUM/DNF
@@ -100,19 +100,19 @@ Install Gauge for your OS
 
         **2. ZIP Download**
 
-        `Download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.4/gauge-1.0.4-linux.x86_64.zip>`__ and then run following command
+        `Download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-linux.x86_64.zip>`__ and then run following command
 
         .. code-block:: console
 
-            unzip -o gauge-1.0.4-linux.x86_64.zip -d /usr/local/bin
+            unzip -o gauge-1.0.5-linux.x86_64.zip -d /usr/local/bin
 
     .. tab:: Freebsd
 
-        Download the `zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.4/gauge-1.0.4-freebsd.x86_64.zip>`__ and then run following command.
+        Download the `zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-freebsd.x86_64.zip>`__ and then run following command.
 
         .. code-block:: console
 
-            unzip -o gauge-1.0.4-freebsd.x86_64.zip -d /usr/local/bin
+            unzip -o gauge-1.0.5-freebsd.x86_64.zip -d /usr/local/bin
 
 
     .. tab:: Curl
