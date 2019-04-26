@@ -18,7 +18,7 @@ Global
     # This is used to determine if an update is available.
     gauge_update_url = https://downloads.gauge.org/gauge
 
-    # set to an url, which acts as template repository for Gauge.
+    # set to a url, which acts as template repository for Gauge.
     gauge_templates_url = https://downloads.gauge.org/templates
 
     # sets the timeout in milliseconds for making a
