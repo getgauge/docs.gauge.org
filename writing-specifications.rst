@@ -175,7 +175,7 @@ cannot be used in step text.
 
 - ``"``
 - ``<``
-   - ``>``
+- ``>``
 
 Parameters
 -----------
