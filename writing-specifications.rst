@@ -1903,18 +1903,23 @@ Taking Custom Screenshots
 
         .. code-block:: javascript
 
-            gauge.screenshotFn = function () {
-                return "base64encodedstring";
+            // Using Taiko
+            // Return a screenshot byte array
+            gauge.screenshotFn = async function() {
+                return await screenshot({ encoding: 'base64' });
             };
+
 
     .. tab:: Python
 
         .. code-block:: python
 
+            # Using Webdriver
             from getgauge.python import screenshot
-            @screenshot
+            @custom_screen_grabber
+            # Return a screenshot byte array
             def take_screenshot():
-                return "base64encodedstring"
+                return Driver.driver.get_screenshot_as_png()
 
     .. tab:: Ruby
 
