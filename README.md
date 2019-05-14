@@ -1,5 +1,7 @@
 # User Documentation for [Gauge](https://gauge.org)
 
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
+
 This is the repository for [Gauge documentation](https://docs.gauge.org).
 
 The documents are written in RST and are built using [Sphinx](http://www.sphinx-doc.org/), a theme based on [readthedocs](https://github.com/snide/sphinx_rtd_theme/).
