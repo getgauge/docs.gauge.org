@@ -24,3 +24,4 @@ For example, to run the specs use ``gauge run specs``
     Travis-CI<travis>
     CircleCI<circle>
     Jenkins<jenkins>
+    Azure<azure>
