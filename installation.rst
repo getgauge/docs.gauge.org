@@ -3,11 +3,11 @@
 Installation
 ============
 
-This page lists all the methods of installing Gauge and its related plugins. If you're new to Gauge, we recommend you refer our `Getting Started <//gauge.org/get_started>`__ guide.
+This page lists all the methods of installing Gauge and its related plugins. If you are new to Gauge, we recommend that you refer to the `Getting Started <//gauge.org/get_started>`__ guide.
 
 
-Install Gauge for your OS
--------------------------
+Install Gauge for your Operating System
+---------------------------------------
 
 .. tab-container:: platforms
 
