@@ -3,50 +3,30 @@
 Installation
 ============
 
-This page provides information about installing Gauge. If you are new to Gauge, we recommend that you refer to the `Getting Started <//gauge.org/get_started>`__ guide.
+This page provides information about installing Gauge. If you are new to Gauge, we recommend that you refer to the `Getting Started <https://gauge.org/get_started>`__ guide.
 
+.. _install_gauge:
 
 Install Gauge for your OS (Operating System)
 --------------------------------------------
+
+| You can install Gauge on your OS by using the package managers or certain commands for that particular OS. Alternately, for some of the Operating Systems, you can also install Gauge by downloading the latest Gauge release to a location on your system.
+| Both the methods are listed on this page, you can choose whatever suits your requirements.
+
 
 .. tab-container:: platforms
 
     .. tab:: Windows
 
-        Ensure the following:
-
-        - The default installation location of Gauge is ``%ProgramFiles%\gauge``.
-        - ``gauge_install_location\bin`` must be in ``PATH`` to run from the command line.
-        - Gauge plugins are installed at ``%APPDATA%\gauge\plugins`` directory.
-        - APPDATA directory is located at ``C:\Users\USER_NAME\AppData\Roaming``.
-
-        **1. Chocolatey**
-
-        Install Gauge by using `Chocolatey <https://chocolatey.org/>`__ .
+       Install Gauge by using `Chocolatey <https://chocolatey.org/>`__ .
 
         .. code-block:: console
 
             choco install gauge
 
-        **2. ZIP File**
-
-        `Download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-windows.x86_64.zip>`__ and the run following command in powershell
-
-        .. code-block:: console
-
-            PS> Expand-Archive -Path gauge-1.0.5-windows.x86_64.zip -DestinationPath custom_path
-
     .. tab:: macOS
 
-        Ensure the following:
-
-        - The default installation location of Gauge is ``/usr/local/``.
-        - ``usr/local/bin/`` or ``custom_install_location/bin`` must be in ``PATH``.
-        - Gauge plugins are installed under ``~/.gauge/plugins`` directory.
-
-        **1. Homebrew**
-
-        Install Gauge by using `Homebrew <https://brew.sh/>`__.
+       Install Gauge by using `Homebrew <https://brew.sh/>`__.
 
         .. code-block:: console
 
@@ -56,72 +36,35 @@ Install Gauge for your OS (Operating System)
         .. note:: 
             If Gauge installation fails, upgrade Homebrew to the latest version and install Gauge again.
 
-        **2. ZIP File**
-
-        For signed binaries `download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-darwin.x86_64.zip>`__ and the run following command
-
-        .. code-block:: console
-
-            unzip -o gauge-1.0.5-darwin.x86_64.zip -d /usr/local/bin
-
-
     .. tab:: Debian/APT
 
         You can install Gauge on any flavour of Linux by using the shell script. 
 
-        Ensure the following:
-
-        - The default installation location of Gauge is ``/usr/local/``.
-        - ``usr/local/bin/`` or ``custom_install_location/bin`` must be in ``PATH``.
-        - Gauge plugins are installed under ``~/.gauge/plugins`` directory.
-
         Use the following steps to perform a quick install on a Linux system.
 
-        **1. APT-GET**
-
-        Add Gauge's GPG key by using the following command:
+        1. Add Gauge's GPG key by using the following command:
 
         .. code-block:: console
 
             sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
 
-        Add Gauge to the repository list by using the following command:
+        2. Add Gauge to the repository list by using the following command:
 
         .. code-block:: console
 
             echo deb https://dl.bintray.com/gauge/gauge-deb nightly main | sudo tee -a /etc/apt/sources.list
 
-        Install Gauge by using the following command:
+        3. Install Gauge by using the following command:
 
         .. code-block:: console
 
             sudo apt-get update
             sudo apt-get install gauge
 
-
-        **2. ZIP Download**
-
-        `Download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-linux.x86_64.zip>`__ and then run following command
-
-        .. code-block:: console
-
-            unzip -o gauge-1.0.5-linux.x86_64.zip -d /usr/local/bin
-
-
     .. tab:: YUM/DNF
 
         You can install Gauge on any flavour of Linux by using the shell script. 
         
-        Ensure the following:
-
-        - The default installation location of Gauge is ``/usr/local/``.
-        - ``usr/local/bin/`` or ``custom_install_location/bin`` must be in ``PATH``.
-        - Gauge plugins are installed under ``~/.gauge/plugins`` directory.
-
-        Use the following steps to perform a quick install on a Linux system:
-
-        **1. DNF**
-
         Install Gauge by using the following command:
 
         .. code-block:: console
@@ -129,17 +72,9 @@ Install Gauge for your OS (Operating System)
             echo -e "[gauge-stable]\nname=gauge-stable\nbaseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-stable\ngpgcheck=0\nenabled=1" | sudo tee /etc/yum.repos.d/gauge-stable.repo
             sudo dnf install gauge
 
-        **2. ZIP Download**
-
-        `Download the zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-linux.x86_64.zip>`__ and then run the following command:
-
-        .. code-block:: console
-
-            unzip -o gauge-1.0.5-linux.x86_64.zip -d /usr/local/bin
-
     .. tab:: Freebsd
 
-        Download the `zip installer <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-freebsd.x86_64.zip>`__ and then run following command.
+        Download the latest `Gauge release <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-freebsd.x86_64.zip>`__ and then run the following command:
 
         .. code-block:: console
 
@@ -147,8 +82,6 @@ Install Gauge for your OS (Operating System)
 
 
     .. tab:: Curl
-
-        You can install Gauge in the following ways:
 
         Install Gauge to ``/usr/local/bin`` by using the following command:
 
@@ -158,11 +91,13 @@ Install Gauge for your OS (Operating System)
 
         Or 
         
-        Install Gauge to a ``[custom path]`` by using the following command:
+        Install Gauge to a location of your choice on your system by using the following command:
 
         .. code-block:: console
 
             curl -SsL https://downloads.gauge.org/stable | sh -s -- --location=[custom path]
+
+        ``[custom path]``: location of your choice on your system
 
     .. tab:: NPM
 
@@ -182,29 +117,63 @@ Install Gauge for your OS (Operating System)
 .. note::
     Gauge automatically sends `telemetry data <https://gauge.org/telemetry>`__ to help us improve the product. If you prefer not to have this data sent, you can choose to turn off the telemetry by using the ``gauge telemetry off`` command. For more information about the ``gauge telemetry`` commands, see the `man page <https://manpage.gauge.org/gauge_telemetry.html>`__.
 
+Alternately, you could also choose to install Gauge on your system by downloading the latest Gauge release from GitHub to a location on your system.
 
-Alternate Installation Methods
-------------------------------
+.. tab-container:: platforms
 
-You can also install Gauge on your system in the following different ways:
+    .. tab:: Windows
 
-**Offline Installation**
+        Download the `latest Gauge release <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-windows.x86_64.zip>`__ and then run the following command in PowerShell:
 
-1. Download the latest version of Gauge from `here <https://github.com/getgauge/gauge/releases/latest>`__. 
+        .. code-block:: console
 
-2. Extract the files to a location on your system and add the files to your system path.
+            PS> Expand-Archive -Path gauge-1.0.5-windows.x86_64.zip -DestinationPath custom_path
+        
+        ``custom_path`` - a location of your choice on your system
 
-**Nightly installation**
+        For more information about PowerShell commands, see the appropriate PowerShell documentation.
 
-Nightly releases are latest development snapshots of Gauge. 
+    .. tab:: macOS
+
+        For signed binaries, download the `latest Gauge release <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-darwin.x86_64.zip>`__ and the run following command:
+
+        .. code-block:: console
+
+            unzip -o gauge-1.0.5-darwin.x86_64.zip -d /usr/local/bin
+
+
+    .. tab:: Debian/APT
+
+        You can install Gauge on any flavour of Linux by using the shell script. 
+
+        Download the `latest Gauge release <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-linux.x86_64.zip>`__ and then run following command:
+
+        .. code-block:: console
+
+            unzip -o gauge-1.0.5-linux.x86_64.zip -d /usr/local/bin
+
+    .. tab:: YUM/DNF
+
+        You can install Gauge on any flavour of Linux by using the shell script. 
+        
+        Download the `latest Gauge release <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-linux.x86_64.zip>`__ and then run the following command:
+
+        .. code-block:: console
+
+            unzip -o gauge-1.0.5-linux.x86_64.zip -d /usr/local/bin
+
+
+Nightly releases
+--------------------
+
+Nightly releases are latest development snapshots of Gauge. If you choose to install the nightly releases, you can find the latest version of Gauge nightly releases `here <https://bintray.com/gauge/Gauge/Nightly/>`__. 
 
 .. ATTENTION:: Nightly releases include latest features of Gauge, which are under development, hence the release can be unstable. 
 
-1. Download the latest version of Gauge from `here <https://bintray.com/gauge/Gauge/Nightly/>`__. 
+Installing nightly releases on Linux systems
+............................................
 
-2. Extract the files to a location on your system and add the files to your system path.
-
-For nightly installation on Linux systems, perform the following steps:
+To install nightly releases on Linux systems, perform the following steps:
 
 1. Create ``/etc/yum.repos.d/gauge-nightly.repo`` by using the following commands:
 
@@ -232,6 +201,55 @@ Alternately, you can also use the following command to create ``/etc/yum.repos.d
 
     sudo dnf install gauge
 
+.. note::
+   If you choose to install plugins that are supported by Gauge, see :ref:`install_plugins`.
+
+Verify paths after Gauge Installation
+----------------------------------------
+
+.. admonition:: Postrequisite
+
+   After installing Gauge on your system, you must verify the installation location of Gauge and Gauge plugins.
+
+.. tab-container:: platforms
+
+    .. tab:: Windows
+
+       Ensure the following:
+
+       - The default installation location of Gauge is ``%ProgramFiles%\gauge``.
+       - ``gauge_install_location\bin`` must be in ``PATH`` to run from the command line.
+       - Gauge plugins are installed at ``%APPDATA%\gauge\plugins`` directory.
+       - ``APPDATA`` directory is located at ``C:\Users\USER_NAME\AppData\Roaming``.
+
+
+    .. tab:: macOS
+
+       Ensure the following:
+
+       - The default installation location of Gauge is ``/usr/local/``.
+       - ``usr/local/bin/`` or ``custom_install_location/bin`` must be in ``PATH``.
+       - Gauge plugins are installed under ``~/.gauge/plugins`` directory.
+
+        
+    .. tab:: Debian/APT
+
+       Ensure the following:
+
+       - The default installation location of Gauge is ``/usr/local/``.
+       - ``usr/local/bin/`` or ``custom_install_location/bin`` must be in ``PATH``.
+       - Gauge plugins are installed under ``~/.gauge/plugins`` directory.
+
+    .. tab:: YUM/DNF
+
+       Ensure the following:
+
+       - The default installation location of Gauge is ``/usr/local/``.
+       - ``usr/local/bin/`` or ``custom_install_location/bin`` must be in ``PATH``.
+       - Gauge plugins are installed under ``~/.gauge/plugins`` directory.
+
+
+
 Project Templates
 -----------------
 
@@ -245,14 +263,13 @@ Run the following command to see the list of updated available templates:
 
 
 Uninstall Gauge for your OS
----------------------------
+------------------------------
 
-.. important::
+.. admonition:: Prerequisite
     
-    Remove the Plugins before uninstalling Gauge. For information about removing plugins, see .
-.. Deepti - need to cross reference to plugin page    
+   Remove the Plugins before uninstalling Gauge. For information about removing plugins, see :ref:`plugins-uninstallation`.
     
-    While uninstalling Gauge, you must remove the Gauge folder (~/.gauge in Mac/Linux and in %APPDATA%\Gauge in windows) manually. This folder contains Gauge config, logs and plugins.
+   While uninstalling Gauge, you must remove the Gauge folder (~/.gauge in Mac/Linux and in %APPDATA%\Gauge in windows) manually. This folder contains Gauge config, logs and plugins.
 
     
 .. tab-container:: platforms
@@ -285,7 +302,7 @@ Uninstall Gauge for your OS
 
         You can uninstall Gauge in one of the following ways:
 
-        Uninstall by using `yum <https://www.centos.org/docs/5/html/5.1/Deployment_Guide/s1-yum-useful-commands.html>`__ .
+        Uninstall by using ``yum``.
 
         .. code-block:: console
 
@@ -299,15 +316,14 @@ Uninstall Gauge for your OS
 
             dnf remove gauge
 
-    .. tab:: Zip
+    .. tab:: Freebsd
 
-        Remove the `gauge` binary from the location at which you have installed Gauge.
-        You can also remove the entry from `PATH` that was added during installation.
+        Delete the Gauge files from the installed location.
+        
 
     .. tab:: Curl
 
-        Remove the `gauge` binary from installed location.
-        The entry from `PATH` that was added during installation, can also be removed.
+        Delete the Gauge files from the installed location.
 
     .. tab:: NPM
 
@@ -318,7 +334,7 @@ Uninstall Gauge for your OS
             npm uninstall -g @getgauge/cli
 
 .. note::
-    If Gauge is installed in custom location, remove corresponding files or directories.
+    If you have installed Gauge on your system by downloading the Gauge release from GitHub, then delete the Gauge files from the installed location.
     
 Logs
 ----
