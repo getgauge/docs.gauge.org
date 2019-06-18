@@ -18,11 +18,13 @@ Install Gauge for your OS (Operating System)
 
     .. tab:: Windows
 
-       Install Gauge by using `Chocolatey <https://chocolatey.org/>`__ .
+       Gauge can be installed by using `Chocolatey <https://chocolatey.org/>`__ .
+       
+       Install Gauge at the command line prompt of your OS by using the following command:
 
         .. code-block:: console
 
-            choco install gauge
+           choco install gauge
 
     .. tab:: macOS
 
@@ -30,11 +32,11 @@ Install Gauge for your OS (Operating System)
 
         .. code-block:: console
 
-            brew update
-            brew install gauge
+           brew update
+           brew install gauge
 
         .. note:: 
-            If Gauge installation fails, upgrade Homebrew to the latest version and install Gauge again.
+           If Gauge installation fails, upgrade Homebrew to the latest version and install Gauge again.
 
     .. tab:: Debian/APT
 
@@ -46,20 +48,20 @@ Install Gauge for your OS (Operating System)
 
         .. code-block:: console
 
-            sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
+           sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
 
         2. Add Gauge to the repository list by using the following command:
 
         .. code-block:: console
 
-            echo deb https://dl.bintray.com/gauge/gauge-deb nightly main | sudo tee -a /etc/apt/sources.list
+           echo deb https://dl.bintray.com/gauge/gauge-deb nightly main | sudo tee -a /etc/apt/sources.list
 
         3. Install Gauge by using the following command:
 
         .. code-block:: console
 
-            sudo apt-get update
-            sudo apt-get install gauge
+           sudo apt-get update
+           sudo apt-get install gauge
 
     .. tab:: YUM/DNF
 
@@ -69,8 +71,8 @@ Install Gauge for your OS (Operating System)
 
         .. code-block:: console
 
-            echo -e "[gauge-stable]\nname=gauge-stable\nbaseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-stable\ngpgcheck=0\nenabled=1" | sudo tee /etc/yum.repos.d/gauge-stable.repo
-            sudo dnf install gauge
+           echo -e "[gauge-stable]\nname=gauge-stable\nbaseurl=http://dl.bintray.com/gauge/gauge-rpm/gauge-stable\ngpgcheck=0\nenabled=1" | sudo tee /etc/yum.repos.d/gauge-stable.repo
+           sudo dnf install gauge
 
     .. tab:: Freebsd
 
@@ -78,7 +80,7 @@ Install Gauge for your OS (Operating System)
 
         .. code-block:: console
 
-            unzip -o gauge-1.0.5-freebsd.x86_64.zip -d /usr/local/bin
+           unzip -o gauge-1.0.5-freebsd.x86_64.zip -d /usr/local/bin
 
 
     .. tab:: Curl
@@ -87,7 +89,7 @@ Install Gauge for your OS (Operating System)
 
         .. code-block:: console
 
-            curl -SsL https://downloads.gauge.org/stable | sh
+           curl -SsL https://downloads.gauge.org/stable | sh
 
         Or 
         
@@ -95,23 +97,17 @@ Install Gauge for your OS (Operating System)
 
         .. code-block:: console
 
-            curl -SsL https://downloads.gauge.org/stable | sh -s -- --location=[custom path]
+           curl -SsL https://downloads.gauge.org/stable | sh -s -- --location=[custom path]
 
         ``[custom path]``: location of your choice on your system
 
     .. tab:: NPM
 
-        1. Install the `LTS (Long Term Support) version of the Node <https://nodejs.org/en/>`_ by using the following command:
+        Install Gauge by using the following command:
 
         .. code-block:: console
 
-            npm install -g npm@latest
-
-        2. Install Gauge by using the following command:
-
-        .. code-block:: console
-
-            npm install -g @getgauge/cli
+           npm install -g @getgauge/cli
 
 
 .. note::
@@ -127,9 +123,9 @@ Alternately, you could also choose to install Gauge on your system by downloadin
 
         .. code-block:: console
 
-            PS> Expand-Archive -Path gauge-1.0.5-windows.x86_64.zip -DestinationPath custom_path
+           PS> Expand-Archive -Path gauge-1.0.5-windows.x86_64.zip -DestinationPath [custom_path]
         
-        ``custom_path`` - a location of your choice on your system
+        ``[custom_path]`` - a location of your choice on your system
 
         For more information about PowerShell commands, see the appropriate PowerShell documentation.
 
@@ -139,7 +135,7 @@ Alternately, you could also choose to install Gauge on your system by downloadin
 
         .. code-block:: console
 
-            unzip -o gauge-1.0.5-darwin.x86_64.zip -d /usr/local/bin
+           unzip -o gauge-1.0.5-darwin.x86_64.zip -d /usr/local/bin
 
 
     .. tab:: Debian/APT
@@ -150,7 +146,7 @@ Alternately, you could also choose to install Gauge on your system by downloadin
 
         .. code-block:: console
 
-            unzip -o gauge-1.0.5-linux.x86_64.zip -d /usr/local/bin
+           unzip -o gauge-1.0.5-linux.x86_64.zip -d /usr/local/bin
 
     .. tab:: YUM/DNF
 
@@ -160,7 +156,7 @@ Alternately, you could also choose to install Gauge on your system by downloadin
 
         .. code-block:: console
 
-            unzip -o gauge-1.0.5-linux.x86_64.zip -d /usr/local/bin
+           unzip -o gauge-1.0.5-linux.x86_64.zip -d /usr/local/bin
 
 
 Nightly releases
@@ -209,7 +205,7 @@ Verify paths after Gauge Installation
 
 .. admonition:: Postrequisite
 
-   After installing Gauge on your system, you must verify the installation location of Gauge and Gauge plugins.
+   After installing Gauge on your system, you must verify the location at which Gauge and Gauge plugins are installed.
 
 .. tab-container:: platforms
 
@@ -219,8 +215,8 @@ Verify paths after Gauge Installation
 
        - The default installation location of Gauge is ``%ProgramFiles%\gauge``.
        - ``gauge_install_location\bin`` must be in ``PATH`` to run from the command line.
-       - Gauge plugins are installed at ``%APPDATA%\gauge\plugins`` directory.
-       - ``APPDATA`` directory is located at ``C:\Users\USER_NAME\AppData\Roaming``.
+       - If you have installed plugins, then Gauge plugins are installed at ``%APPDATA%\gauge\plugins`` directory.
+       - ``%APPDATA%`` directory is located at ``C:\Users\USER_NAME\AppData\Roaming``.
 
 
     .. tab:: macOS
@@ -228,27 +224,30 @@ Verify paths after Gauge Installation
        Ensure the following:
 
        - The default installation location of Gauge is ``/usr/local/``.
-       - ``usr/local/bin/`` or ``custom_install_location/bin`` must be in ``PATH``.
-       - Gauge plugins are installed under ``~/.gauge/plugins`` directory.
-
+       - ``usr/local/bin/`` or ``[custom_install_location]/bin`` must be in ``PATH``.
+       - If you have installed plugins, then Gauge plugins are installed under ``~/.gauge/plugins`` directory.
+       
+       ``[custom_install_location]`` - a location of your choice on your system
         
     .. tab:: Debian/APT
 
        Ensure the following:
 
        - The default installation location of Gauge is ``/usr/local/``.
-       - ``usr/local/bin/`` or ``custom_install_location/bin`` must be in ``PATH``.
-       - Gauge plugins are installed under ``~/.gauge/plugins`` directory.
+       - ``usr/local/bin/`` or ``[custom_install_location]/bin`` must be in ``PATH``.
+       - If you have installed plugins, then Gauge plugins are installed under ``~/.gauge/plugins`` directory.
+
+       ``[custom_install_location]`` - a location of your choice on your system
 
     .. tab:: YUM/DNF
 
        Ensure the following:
 
        - The default installation location of Gauge is ``/usr/local/``.
-       - ``usr/local/bin/`` or ``custom_install_location/bin`` must be in ``PATH``.
-       - Gauge plugins are installed under ``~/.gauge/plugins`` directory.
+       - ``usr/local/bin/`` or ``[custom_install_location]/bin`` must be in ``PATH``.
+       - If you have installed plugins, then Gauge plugins are installed under ``~/.gauge/plugins`` directory.
 
-
+       ``[custom_install_location]`` - a location of your choice on your system
 
 Project Templates
 -----------------
