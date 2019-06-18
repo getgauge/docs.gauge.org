@@ -2,7 +2,7 @@
 Plugins
 ============
 
-| This page provides information about different types of plugins supported by Gauge and plugin install and uninstall. Plugins help you to use additional features of Gauge.
+| This page provides information about different types of plugins supported by Gauge and plugin installation and uninstallation. Plugins help you to use additional features of Gauge.
 | For information about installing Gauge on your system, see :ref:`install_gauge`.
 
 .. _install_plugins:
@@ -44,7 +44,7 @@ You can also install a plugin from a zip file instead of downloading from the pl
 
 .. code-block:: console
 
-    gauge install <plugin_name> --file ZIP_FILE_PATH
+   gauge install <plugin_name> --file ZIP_FILE_PATH
 
 You can download the latest version of a plugin from the ``Releases`` section of the plugin's GitHub repository. See the `plugin list <https://gauge.org/plugins/>`_ to find the Gauge repositories.
 
@@ -129,7 +129,7 @@ Example:
 
 .. code-block:: console
 
-    gauge install html-report -f html-report-4.0.7-darwin.x86.zip
+   gauge install html-report -f html-report-4.0.7-darwin.x86.zip
 
 -  You can find the plugin zip files in the ``Releases`` section of the plugin GitHub repositories. See the `gauge plugin list <https://gauge.org/plugins/>`__ for plugin repository details.
 
@@ -240,7 +240,7 @@ Reporting plugins generate execution reports in various formats. Depending on th
 
             gauge install html-report
 
-        For more information about HTML report generation plugin for Gauge, see `here <https://github.com/getgauge/html-report>`__ .
+        For more information about HTML report generation plugin for Gauge, see `Gauge GitHub for HTML report generation <https://github.com/getgauge/html-report>`__ .
 
     .. tab:: XML-Report
 
@@ -248,7 +248,15 @@ Reporting plugins generate execution reports in various formats. Depending on th
 
             gauge install xml-report
 
-        For more information about XML-report generation plugin for Gauge, see `here <https://github.com/getgauge/xml-report>`__ .
+        For more information about XML-report generation plugin for Gauge, see `Gauge GitHub for XML report generation <https://github.com/getgauge/xml-report>`__ .
+
+    .. tab:: Flash
+
+        .. code-block:: console
+
+            gauge install flash
+
+        For more information about Flash plugin for Gauge, see `Gauge GitHub for Flash <https://github.com/getgauge/Flash>`__ .
 
 .. _other_plugins:
 
@@ -259,9 +267,9 @@ The spectacle plugin generates a readable HTML format of the specifications:
 
         .. code-block:: console
 
-            gauge install spectacle
+           gauge install spectacle
 
-        For more information about gauge spectacle, see `here <https://github.com/getgauge/spectacle>`__
+        For more information about gauge spectacle, see `Gauge GitHub for Spectacle <https://github.com/getgauge/spectacle>`__
 
 Gauge also supports the dependency management workflow with custom plugins for `Maven <https://github.com/getgauge/gauge-maven-plugin>`__ and `Gradle <https://github.com/getgauge/gauge-gradle-plugin>`__.
 
