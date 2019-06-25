@@ -1735,10 +1735,10 @@ executes
         .. code-block:: javascript
 
             // Adding value 
-            DataStore specStore = gauge.dataStore.specStore.put(key, value);
+            gauge.dataStore.specStore.put(key, value);
 
             // Fetching value 
-            DataStore specStore = gauge.dataStore.specStore.get(key);
+            gauge.dataStore.specStore.get(key);
 
     .. tab:: Python
 
