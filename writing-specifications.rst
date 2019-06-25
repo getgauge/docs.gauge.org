@@ -1817,10 +1817,10 @@ suite execution. Values are cleared after entire suite execution.
         .. code-block:: javascript
 
             // Adding value 
-            DataStore suiteStore = gauge.dataStore.suiteStore.put(key, value);
+            gauge.dataStore.suiteStore.put(key, value);
             
             // Fetching value 
-            DataStore specStore = gauge.dataStore.suiteStore.get(key);
+            gauge.dataStore.suiteStore.get(key);
 
     .. tab:: Python
 
