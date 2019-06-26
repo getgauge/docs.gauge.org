@@ -15,4 +15,3 @@ Gauge is a light-weight, cross-platform test automation tool which has the abili
     configuration
     faqs
     examples
-    howto/index
