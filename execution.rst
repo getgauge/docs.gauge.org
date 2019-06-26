@@ -4,12 +4,12 @@ Execution
 Specify Directory
 -----------------
 
-By convention, specifications are stored in the the ``./specs/`` 
-sub-directory in the project root.Gauge scans the directory(ies) passed 
+By convention, specifications are stored in the ``./specs/`` 
+sub-directory in the project root. Gauge scans the directory(ies) passed 
 and picks up valid specification files.
 
 Multiple arguments can be passed to ``run`` subcommand by separating them with a space. 
-The values can be either
+The values can be one of the following:
 
 - path to directories that contain specifications 
 - path to specification files
@@ -94,7 +94,7 @@ To execute a ``Admin Login`` scenario in the following spec use
     * User must login as "admin"
     * Navigate to the configuration page
 
-This executes only the scenario present at line number ``3`` i.e
+This executes only the scenario present at line number ``3`` that is
 ``Admin Login`` in ``login_test.spec``. In the above spec, specifying
 line numbers 3-5 will execute the same scenario because of the span.
 
