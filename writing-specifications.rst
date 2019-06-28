@@ -1,40 +1,45 @@
-Writing Specifications
-======================
+Write a Gauge specification
+===========================
 
-In this page, we'll cover everything you need to know about writing Gauge specification. Before we start, do take a look at the IDE plugins for Gauge that improve your test authoring experience.  
+This page provides information about what a specification is, how to write a specification, and other related information such as concepts, step implementation, specs directory, and so on.
+
+Specifications (specs)
+----------------------
+
+A specification is a business test case which describes a particular feature of the application that needs testing.  
+Gauge specifications support a ``.spec`` or ``.md`` file format and these specifications are written in a syntax similar to Markdown.
+
+For more information about Markdown, see `Markdown Syntax <https://daringfireball.net/projects/markdown/syntax>`__.
+
+Text editor for specs
+^^^^^^^^^^^^^^^^^^^^^
+
+You can author Gauge specifications by using any text editor. 
+It is recommended that you use one of the following IDE plugins:
 
 .. tab-container:: ide
 
     .. tab:: Visual Studio Code
 
-        Gauge projects can be created and executed in Visual Studio Code using the `Gauge extension for VSCode <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__.
-        This plugin currently supports Gauge with JavaScript, Ruby and Python.
+        Gauge projects can be created and run in Visual Studio Code by using the `Gauge extension for VSCode <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__.
+        This plugin currently supports Gauge with JavaScript, Ruby, and Python.
 
     .. tab:: IntelliJ Idea
 
-        Gauge projects can be created and executed in IntelliJ IDEA using the `Gauge plugin for IntelliJ IDEA <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__.
+        Gauge projects can be created and run in IntelliJ IDEA by using the `Gauge plugin for IntelliJ IDEA <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__.
         This plugin only supports Gauge with Java.
 
     .. tab:: Visual Studio
 
-        Gauge projects can be created and executed in Visual Studio using the `Gauge extension for Visual Studio <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__.
+        Gauge projects can be created and run in Visual Studio by using the `Gauge extension for Visual Studio <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__.
         This plugin currently supports Gauge with C#.
 
-.. note:: 
-    For a better experience, we recommend using one of the IDE plugins. However, this is not mandatory, as you can author Gauge specifications using any text editor.
 
-Specifications (spec)
----------------------
-
-A specification is a business test case which can also act as feature
-documentation. Typically a  specification describes a particular feature of the application
-under test.
-
--  These are written in a ``.spec`` file. Gauge also supports ``.md`` file format.
--  The markup for a specification file is based on `markdown syntax <https://daringfireball.net/projects/markdown/syntax>`__.
 
 Example
-+++++++
+^^^^^^^
+
+The following is an example of a Gauge specification:
 
 .. code-block:: gauge
 
@@ -63,13 +68,11 @@ Example
 
 
 Specification Heading
-+++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^
 
-A specification must begin with a spec heading and a single specification can
-contain only one spec heading.
+A specification must begin with a Spec Heading. A specification contains only one Spec Heading.
 
-It is written in ``<H1>`` syntax of markdown. This can be in two
-forms:
+Spec Heading is written in the Markdown `<H1>` syntax in one of the following ways:
 
 .. _spec_syntax:
 
@@ -84,22 +87,32 @@ or
     Spec Heading
     ============
 
-Note:
+| Every spec must contain one or more :ref:`longstart-scenarios`.
+| Every spec can be marked with labels using :ref:`longstart-tags`.
 
--  Every spec must contain one or more :ref:`longstart-scenarios`.
--  Every spec can be marked with labels using :ref:`longstart-tags`.
+Example
+^^^^^^^
+In the following example, ``# Search specificaiton`` is the spec heading, followed by tags and steps.
+
+.. code-block:: gauge
+
+    # Search specification
+    Tags: search, admin
+
+    The admin user must be able to search for available products on the search page
+
+    * User must be logged in as "admin"
+    * Open the product search page
 
 .. _longstart-scenarios:
 
 Scenario
 --------
 
-Each scenario represents a single flow in a particular specification. A
-specification must contain at least one scenario.
+Each scenario represents a single flow in a particular specification. A specification must contain at least one scenario.
 
-A scenario starts after a scenario heading or a scenario name. The
-scenario heading is written in markdown ``<H2>`` syntax. This can be
-written in 2 ways:
+A scenario starts after a scenario heading or a scenario name. 
+The scenario heading is written in Markdown ``<H2>`` syntax in one of the following ways:
 
 .. _scenario_syntax:
 
@@ -114,14 +127,24 @@ or
     Scenario heading
     ----------------
 
-Note:
-
--  A scenario contains one or more :ref:`steps <step_syntax>` under it.
--  A scenario can be tagged using :ref:`tags <tag_syntax>`.
+| A scenario contains one or more :ref:`steps <step_syntax>` in it.
+| A scenario can be tagged by using :ref:`tags <tag_syntax>`.
 
 
 Example
-+++++++
+^^^^^^^
+
+In the following example, ``## Successful search`` is the scenario heading followed by tags and steps.
+
+.. code-block:: gauge
+
+    ## Successful search
+    Tags: successful
+
+    For an existing product name, the search result will contain the product name
+
+    * Search for product "Die Hard"
+    * "Die Hard" should show up in the search results
 
 .. code-block:: gauge
 
@@ -141,25 +164,44 @@ Example
 Step
 ----
 
-Steps are the executable components of your specification, 
-written as markdown unordered list items (bulleted points).
+Steps are the executable components of a specification that are written by using the Markdown unordered list syntax.
 
-Steps can exist inside a specification as
+The following are the two types of steps inside a specification:
 
 - :ref:`Context Steps<longstart-context>`
 - :ref:`longstart-teardown`
-- Inside a scenario or concepts
 
-Every step has an underlying code implementation for the programming
-language used. This is executed when the steps inside a spec are
-executed.
+Steps can also exist inside a Scenario or Concept.
 
-See how to write :ref:`language-steps` for different languages.
+Every step implementation has an equivalent code as per the programming language used. This code is run when the steps inside a spec are executed.
+
+In the following example, the two sentences preceded by asterisk, \*\, are the unordered steps listed under the ``Successful search`` scenario.
+
+.. code-block:: gauge
+
+    ## Successful search
+    Tags: successful
+
+    For an existing product name, the search result will contain the product name
+
+    * Search for product "Die Hard"
+    * "Die Hard" should show up in the search results
+
+The values written in *quotes*, ``"``, are parameters that are passed into the equivalent code of the step implementation for that particular language plugin.
+
+.. attention::
+   The following characters are reserved for parameters and cannot be used in the text of a step:
+
+   * ``"``
+   * ``<``
+   * ``>``
+
+For more informatin about how to write step implementations for different languages, see :ref:`language-steps`.
 
 .. _step_syntax:
 
 Example
-+++++++
+^^^^^^^
 
 .. code-block:: gauge
 
@@ -167,35 +209,44 @@ Example
     * Search for "gauge"
     * Search for "gauge-java"
 
-The values written in **quotes** are parameters which are passed into
-the underlying step implementation as a language specific structure.
-
-Note: The following characters are reserved for parameters, these
-cannot be used in step text.
-
-- ``"``
-- ``<``
-   - ``>``
 
 Parameters
 -----------
 
-Steps can be defined to take values as parameters so that they can be
-re-used with different parameter values.
+Steps are defined to take values as parameters so that they can be reused with different parameter values.
+The equivalent code of the step implementation for that particular language plugin must also have the same number of parameters as mentioned in the step.
+
+Example
+^^^^^^^
+
+In the following example, parameter values are ``“Die Hard”`` (within double quotes) within the two steps.
+
+.. code-block:: gauge
+
+    ## Successful search
+    Tags: successful
+
+    For an existing product name, the search result will contain the product name
+
+    * Search for product "Die Hard"
+    * "Die Hard" should show up in the search results
+
 
 .. code-block:: gauge
 
     * Check "product 1" exists
     * Check "product 2" exists
 
-The underlying :ref:`step implementation <language-steps>` in
-code must also take the same number of parameters as passed from the
-step.
+A step can have the following types of parameters:
 
-The parameters passed into a step are of the following types:
+* Simple parameters
+* Dynamic parameters
+* Table parameters
+* Special parameters
+
 
 1. Simple parameters
-++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^
 
 They are values passed into the steps in double quotes.
 
@@ -210,7 +261,7 @@ Therefore the usage of the old parameter (if any) has to be fixed
 manually to resolve the corresponding compilation issue.
 
 2. Dynamic Parameters
-+++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^
 
 Dynamic parameters are used as placeholder for values.
 
@@ -238,7 +289,7 @@ The above concept can be invoked and a value can be passed to the concept agains
 
 
 3. Table Parameters
-++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^
 
 Table parameters are used when a step is to be executed for multiple values. The step having an inline table parameter will be executed for each table row
 
@@ -261,7 +312,7 @@ Table parameters are used when a step is to be executed for multiple values. The
 Inline data tables can be externalized as :ref:`special csv parameter<special_parameter_csv>`
 
 4. Special Parameters
-+++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^
 
 Special parameters provide the ability to pass larger and richer data
 into the steps as parameters.
