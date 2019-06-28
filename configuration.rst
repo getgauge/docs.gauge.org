@@ -1,5 +1,5 @@
-Configuration
-=============
+Configure Gauge
+===============
 You can configure Gauge as per your requirements by using the *key value* pairs in the ``gauge.properties`` and ``default.properties`` files. 
 
 
@@ -20,7 +20,7 @@ Global configuration of Gauge (``gauge.properties``)
 ----------------------------------------------------
 ``gauge.properties`` is a ``.properties`` file that contains all Gauge specific configurations. You can use or change the *key value* pairs present in this file to configure Gauge across all Gauge projects. This file is located at ``~/.gauge/config`` in Mac OS and Linux systems and at ``%APPDATA%\Gauge\config`` in Windows systems.
 
-You can also use the ``gauge.config`` command to change the value of a key in the ``gauge.properties`` file.
+You can also use the ``gauge config`` command to change the value of a key in the ``gauge.properties`` file.
 
 .. code-block:: console
 
@@ -313,7 +313,7 @@ You can create a new ``.properties`` file or add an existing property file to th
 
 .. admonition:: Before you begin
 
-   Ensure that you have created and initialized a Gauge project with a language of your choice.
+   Ensure that you have created and initialized a Gauge project with a language runner of your choice.
 
 .. admonition:: About this task:
 
@@ -380,7 +380,7 @@ If ``-env`` is not specified, then the ``default`` environment is loaded during 
    * Ensure that you have the Gauge specification that needs to be run.
    * You must have already created the environment and added the ``.properties`` file in this environment.
 
-Use the following command at `<project_root>` (location at which you have created the Gauge project) to run a 
+Use the following command at ``<project_root>`` (location at which you have created the Gauge project) to run a 
 Gauge specification with an environment:
 
 .. code-block:: console
@@ -413,12 +413,12 @@ This allows ease of testing.
 .. admonition:: About this task:
 
    * Gauge loads the environment variables as per the rules of precedence.
-   * If there are common environment variables in a user created environment and the ``default`` environment, then the ``default`` environment does not overwrite those variables which are already loaded from the user created environment.
+   * If there are common environment variables in a user-created environment and the ``default`` environment, then the ``default`` environment does not overwrite those variables which are already loaded from the user-created environment.
    * If the ``default`` environment is not specified explicitly as an argument to the ``--env`` flag, then Gauge automatically adds ``default`` at the end of the arguments list. 
 
    For more information about the precedence of environments, see :ref:`Precedence of environments <precedence_environments>`.
 
-Use the following command at `<project_root>` (location at which you have created the Gauge project) to run a 
+Use the following command at ``<project_root>`` (location at which you have created the Gauge project) to run a 
 Gauge specification with multiple environments:
 
 .. code-block:: console
@@ -469,14 +469,17 @@ The rules of precedence to load the environment variables are as follows:
 * Environment variables (from the environments) provided by the user in the ``--env`` flag.
 * Environment variables from ``gauge.properties`` (global configuration of Gauge; located at ``<project_root>/env``).
 * Environment variables from the ``default`` environment.
-
+  
+  .. note::
+     If the ``default`` environment is not present, Gauge internall sets the environment variables which have the same value as mentioned in ``default.properties``.
+  
 Gauge workflow with multiple environments
 -----------------------------------------
 
 When Gauge is run with multiple environments, the following events occur:
 
-1. Gauge loads the environment variables that is set at the operating system's user shell.
-2. Gauge loads the environment variables from the environment (s) provided by the user in the ``--env`` flag.
+1. Gauge loads the environment variables set at the operating system's user shell.
+2. Gauge loads the environment variables from the environments provided by the user in the ``--env`` flag.
    
    .. attention::
       If the environment mentioned in the ``--env`` flag is not found at  ``<project_root>/env``, Gauge ends with a non-zero exit code.
@@ -486,7 +489,10 @@ When Gauge is run with multiple environments, the following events occur:
    .. important::
       Only those variables that are not yet set are loaded.
 
-4. Lastly, Gauge loads the environment variables from ``default``, located at ``<project_root>/env``.
+4. Lastly, Gauge loads the default environment variables as follows: 
+
+   * If the ``default`` directory is not present at ``<project_root>/env``, Gauge internally sets the environment variables as mentioned in ``default.properties`` (local configuration).
+   * If ``default`` is located at ``<project_root>/env``, Gauge loads the environment variables from ``default.properties``. 
 
    .. important::
       Only those variables that are not yet set are loaded.
@@ -497,56 +503,62 @@ For more information about local configuration, see :ref:`Local configuration of
 
 Examples of Gauge workflows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Some of the possible Gauge workflows are listed in this document for your understanding.
-
-The following properties are default values of keys set by Gauge:
-
-+---------------------------+-----------+
-|Property                   | Value     |
-+===========================+===========+
-| gauge_reports_dir         | reports   |
-+---------------------------+-----------+
-| overwrite_reports         | true      |
-+---------------------------+-----------+
-| screenshot_on_failure     | true      |
-+---------------------------+-----------+
-| logs_directory            | logs      |
-+---------------------------+-----------+
+Some of the possible Gauge workflows are listed on this page for your understanding.
 
 Workflow : User runs ``gauge run specs``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``default`` environment is located at <project_root>/env/.
 
-* If ``<project_root>/env/default`` is **not** present, Gauge sets the environment variables with values as mentioned in the table.
-* If ``<project_root>/env/default`` is present, Gauge sets the environment variables as mentioned in the ``default`` environment. 
+* If ``default`` is **not** present, Gauge internally sets the environment variables with the same values as mentioned in ``default.properties`` (local configuration).
+* If ``default`` is present, Gauge sets the environment variables as mentioned in the ``default`` environment. 
   
-  .. note:: 
-     Gauge then sets any environment variable (which is not already set) as per the values mentioned in the table.
+For more information about local configuration, see :ref:`Local configuration of Gauge <local_configuration_Gauge>`.
 
 Workflow : User runs ``gauge run --env java_ci specs``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-``java_ci`` is the environment created at ``<project_root>/env``.
+``java_ci`` is the user-created environment at ``<project_root>/env``.
 
-* If ``<project_root>/env/java_ci`` is **not** found, Gauge ends with a non-zero exit code.
-* | If ``<project_root>/env/java_ci`` is present, Gauge sets the environment variables mentioned in the corresponding ``java_ci`` environment. 
+* If ``java_ci`` is **not** found, Gauge ends with a non-zero exit code.
+* | If ``java_ci`` is present, Gauge sets the environment variables mentioned in the ``java_ci`` environment. 
   | Gauge then loads other environment variables from the ``default`` environment which are not yet set. 
-  | Finally, Gauge sets the remaining (if any) environment variables with values mentioned as per the table.
+  | If the ``default`` environment is not present, Gauge internally sets the environment variables, which is the same as those in ``default.properties``.
 
 Workflow : User runs ``gauge_reports_dir=newReportsDir gauge run specs``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. note::
-   User can also explicitly set ``gauge_reports_dir=newReportsDir`` in the operating system's user shell and then run ``gauge run specs``
-    
-Gauge sets all the environment variables from ``<project_root>/env/default`` and then the values from the table, except for ``gauge_reports_dir``. 
+   Alternately, user can explicitly set ``gauge_reports_dir=newReportsDir`` in the operating system's user shell and then run ``gauge run specs``.
+
+``default`` environment is located at <project_root>/env/.
+
+| Gauge sets all the environment variables from ``default``. 
+| If ``default`` is not present, Gauge internally sets the environment variables, which is the same as those in ``default.properities``, except for ``gauge_reports_dir``. 
+
 The value of ``gauge_reports_dir`` continues to be ``newReportsDir``.
 
 Workflow : User runs ``gauge_reports_dir=newReportsDir gauge run --env=java_ci specs``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``java_ci`` is the user-created environment at ``<project_root>/env``.
 
 .. note::
-   User can also explicitly set ``gauge_reports_dir=newReportsDir`` in the operating system's user shell and then run ``gauge run --env java_ci specs``
+   Alternately, user can explicitly set ``gauge_reports_dir=newReportsDir`` in the operating system's user shell and then run ``gauge run --env java_ci specs``
 
-Gauge sets the environment variables as mentioned in the ``java_ci`` environment. 
-Gauge then loads other variables from the ``default`` environment which are not yet set. 
-Finally, Gauge sets the (if any) remaining environment variables with values mentioned in the table, except for ``gauge_reports_dir``.
+Gauge sets the environment variables as mentioned in the ``java_ci`` environment except for ``gauge_reports_dir``.
 The value of ``gauge_reports_dir`` continues to be ``newReportsDir``.
+
+Workflow : User runs ``gauge_reports_dir=newReportsDir gauge run --env “java_ci, experimental” specs``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``java_ci, experimental`` are the user-created environments at ``<project_root>/env``.
+
+.. note::
+   Alternately, user can explicitly set ``gauge_reports_dir=newReportsDir`` in the operating system's user shell and then run ``gauge run --env "java_ci, experimental" specs``
+
+* If either one of the user-created environment is not found, Gauge ends with a non-zero exit code.
+* If all the user-created environments are present, Gauge sets the environment variables mentioned in the corresponding environments.
+* Gauge then loads the environment variables, which are not yet set, from ``gauge.properties``.
+* | If the ``default`` environment is not specified explicitly, then Gauge automatically runs ``default`` and loads the environment variables which are not yet set.
+  | If ``default`` is not present, Gauge internally sets the environment variables, which is the same as ``default.properties``.
+
+The value of ``gauge_reports_dir`` continues to be ``newReportsDir``.
+
