@@ -1,5 +1,6 @@
 Configure Gauge
 ===============
+
 You can configure Gauge as per your requirements by using the *key value* pairs in the ``gauge.properties`` and ``default.properties`` files. 
 
 
@@ -149,7 +150,6 @@ Configuration properties set in these files are available as environment variabl
    
 | You can find the language specific ``.properties`` file at ``<project_root>/env/default/<language>.properties``, where ``<project_root>`` is the location at which you have created the Gauge project. 
 | For example, if you have installed Java on your system, then the path of the ``.properties`` file is ``<project_root>/env/default/java.properties``.
-
 
 For more details about running language plugins as an environment, see :ref:`Environments <environments>`.
 
@@ -383,7 +383,10 @@ If ``-env`` is not specified, then the ``default`` environment is loaded during 
 Use the following command at ``<project_root>`` (location at which you have created the Gauge project) to run a 
 Gauge specification with an environment:
 
-.. code-block:: console
+
+You can use the ``-env`` flag to load an environment when Gauge runs a specification. 
+During run time, the key value pairs that you have used in the ``.properties`` file are set as environment variables. 
+If ``-env`` is not specified, then the ``default`` environment is loaded during run time.
 
     gauge run --env <name_of_env> specs
 
