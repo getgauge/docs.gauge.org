@@ -1,40 +1,45 @@
-Writing Specifications
-======================
+Write a Gauge specification
+===========================
 
-In this page, we'll cover everything you need to know about writing Gauge specification. Before we start, do take a look at the IDE plugins for Gauge that improve your test authoring experience.  
+This page provides information about what a specification is, how to write a specification, and other related information such as concepts, step implementation, specs directory, and so on.
+
+Specifications (specs)
+----------------------
+
+A specification is a business test case which describes a particular feature of the application that needs testing.  
+Gauge specifications support a ``.spec`` or ``.md`` file format and these specifications are written in a syntax similar to Markdown.
+
+For more information about Markdown, see `Markdown Syntax <https://daringfireball.net/projects/markdown/syntax>`__.
+
+Text editor for specs
+^^^^^^^^^^^^^^^^^^^^^
+
+You can author Gauge specifications by using any text editor. 
+It is recommended that you use one of the following IDE plugins:
 
 .. tab-container:: ide
 
     .. tab:: Visual Studio Code
 
-        Gauge projects can be created and executed in Visual Studio Code using the `Gauge extension for VSCode <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__.
-        This plugin currently supports Gauge with JavaScript, Ruby and Python.
+        Gauge projects can be created and run in Visual Studio Code by using the `Gauge extension for VSCode <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__.
+        This plugin currently supports Gauge with JavaScript, Ruby, and Python.
 
     .. tab:: IntelliJ Idea
 
-        Gauge projects can be created and executed in IntelliJ IDEA using the `Gauge plugin for IntelliJ IDEA <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__.
+        Gauge projects can be created and run in IntelliJ IDEA by using the `Gauge plugin for IntelliJ IDEA <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__.
         This plugin only supports Gauge with Java.
 
     .. tab:: Visual Studio
 
-        Gauge projects can be created and executed in Visual Studio using the `Gauge extension for Visual Studio <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__.
+        Gauge projects can be created and run in Visual Studio by using the `Gauge extension for Visual Studio <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__.
         This plugin currently supports Gauge with C#.
 
-.. note:: 
-    For a better experience, we recommend using one of the IDE plugins. However, this is not mandatory, as you can author Gauge specifications using any text editor.
 
-Specifications (spec)
----------------------
-
-A specification is a business test case which can also act as feature
-documentation. Typically a  specification describes a particular feature of the application
-under test.
-
--  These are written in a ``.spec`` file. Gauge also supports ``.md`` file format.
--  The markup for a specification file is based on `markdown syntax <https://daringfireball.net/projects/markdown/syntax>`__.
 
 Example
-+++++++
+^^^^^^^
+
+The following is an example of a Gauge specification:
 
 .. code-block:: gauge
 
@@ -63,13 +68,11 @@ Example
 
 
 Specification Heading
-+++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^
 
-A specification must begin with a spec heading and a single specification can
-contain only one spec heading.
+A specification must begin with a Spec Heading. A specification contains only one Spec Heading.
 
-It is written in ``<H1>`` syntax of markdown. This can be in two
-forms:
+Spec Heading is written in the Markdown `<H1>` syntax in one of the following ways:
 
 .. _spec_syntax:
 
@@ -84,22 +87,32 @@ or
     Spec Heading
     ============
 
-Note:
+| Every spec must contain one or more :ref:`longstart-scenarios`.
+| Every spec can be marked with labels using :ref:`longstart-tags`.
 
--  Every spec must contain one or more :ref:`longstart-scenarios`.
--  Every spec can be marked with labels using :ref:`longstart-tags`.
+Example
+^^^^^^^
+In the following example, ``# Search specificaiton`` is the spec heading, followed by tags and steps.
+
+.. code-block:: gauge
+
+    # Search specification
+    Tags: search, admin
+
+    The admin user must be able to search for available products on the search page
+
+    * User must be logged in as "admin"
+    * Open the product search page
 
 .. _longstart-scenarios:
 
 Scenario
 --------
 
-Each scenario represents a single flow in a particular specification. A
-specification must contain at least one scenario.
+Each scenario represents a single flow in a particular specification. A specification must contain at least one scenario.
 
-A scenario starts after a scenario heading or a scenario name. The
-scenario heading is written in markdown ``<H2>`` syntax. This can be
-written in 2 ways:
+A scenario starts after a scenario heading or a scenario name. 
+The scenario heading is written in Markdown ``<H2>`` syntax in one of the following ways:
 
 .. _scenario_syntax:
 
@@ -114,14 +127,24 @@ or
     Scenario heading
     ----------------
 
-Note:
-
--  A scenario contains one or more :ref:`steps <step_syntax>` under it.
--  A scenario can be tagged using :ref:`tags <tag_syntax>`.
+| A scenario contains one or more :ref:`steps <step_syntax>` in it.
+| A scenario can be tagged by using :ref:`tags <tag_syntax>`.
 
 
 Example
-+++++++
+^^^^^^^
+
+In the following example, ``## Successful search`` is the scenario heading followed by tags and steps.
+
+.. code-block:: gauge
+
+    ## Successful search
+    Tags: successful
+
+    For an existing product name, the search result will contain the product name
+
+    * Search for product "Die Hard"
+    * "Die Hard" should show up in the search results
 
 .. code-block:: gauge
 
@@ -141,25 +164,44 @@ Example
 Step
 ----
 
-Steps are the executable components of your specification, 
-written as markdown unordered list items (bulleted points).
+Steps are the executable components of a specification that are written by using the Markdown unordered list syntax.
 
-Steps can exist inside a specification as
+The following are the two types of steps inside a specification:
 
 - :ref:`Context Steps<longstart-context>`
 - :ref:`longstart-teardown`
-- Inside a scenario or concepts
 
-Every step has an underlying code implementation for the programming
-language used. This is executed when the steps inside a spec are
-executed.
+Steps can also exist inside a Scenario or Concept.
 
-See how to write :ref:`language-steps` for different languages.
+Every step implementation has an equivalent code as per the programming language used. This code is run when the steps inside a spec are executed.
+
+In the following example, the two sentences preceded by asterisk, \*\, are the unordered steps listed under the ``Successful search`` scenario.
+
+.. code-block:: gauge
+
+    ## Successful search
+    Tags: successful
+
+    For an existing product name, the search result will contain the product name
+
+    * Search for product "Die Hard"
+    * "Die Hard" should show up in the search results
+
+The values written in *quotes*, ``"``, are parameters that are passed into the equivalent code of the step implementation for that particular language plugin.
+
+.. attention::
+   The following characters are reserved for parameters and cannot be used in the text of a step:
+
+   * ``"``
+   * ``<``
+   * ``>``
+
+For more informatin about how to write step implementations for different languages, see :ref:`language-steps`.
 
 .. _step_syntax:
 
 Example
-+++++++
+^^^^^^^
 
 .. code-block:: gauge
 
@@ -167,42 +209,57 @@ Example
     * Search for "gauge"
     * Search for "gauge-java"
 
-The values written in **quotes** are parameters which are passed into
-the underlying step implementation as a language specific structure.
-
-Note: The following characters are reserved for parameters, these
-cannot be used in step text.
-
-- ``"``
-- ``<``
-   - ``>``
 
 Parameters
 -----------
 
-Steps can be defined to take values as parameters so that they can be
-re-used with different parameter values.
+Steps are defined to take values as parameters so that they can be reused with different parameter values.
+The equivalent code of the step implementation for that particular language plugin must also have the same number of parameters as mentioned in the step.
+
+Example
+^^^^^^^
+
+In the following example, parameter values are ``“Die Hard”`` (within double quotes) within the two steps.
+
+.. code-block:: gauge
+
+    ## Successful search
+    Tags: successful
+
+    For an existing product name, the search result will contain the product name
+
+    * Search for product "Die Hard"
+    * "Die Hard" should show up in the search results
+
 
 .. code-block:: gauge
 
     * Check "product 1" exists
     * Check "product 2" exists
 
-The underlying :ref:`step implementation <language-steps>` in
-code must also take the same number of parameters as passed from the
-step.
+A step can have the following types of parameters:
 
-The parameters passed into a step are of the following types:
+* Simple parameters
+* Dynamic parameters
+* Table parameters
+* Special parameters
+
 
 1. Simple parameters
-++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^
 
-They are values passed into the steps in double quotes.
+Simple parameters are values, which are used in a step within double quotes.
+
+Example
+^^^^^^^
+
+In the following examples, ``Die Hard``, ``gauge-java``, and ``100`` are values within double quotes and are used in steps: 
 
 .. code-block:: gauge
 
-    * Create a “gauge-java” project
-    * Write “100” line specification
+   * Search for product "Die Hard"
+   * Create a “gauge-java” project
+   * Write “100” line specification
 
 **Note:** Renaming the parameter will not rename the usages inside the
 method. By design, the renamed parameter is considered a new parameter.
@@ -210,41 +267,79 @@ Therefore the usage of the old parameter (if any) has to be fixed
 manually to resolve the corresponding compilation issue.
 
 2. Dynamic Parameters
-+++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^
 
-Dynamic parameters are used as placeholder for values.
-
-**Syntax**: ``<dynamic_param>``.
+Dynamic parameters are used as placeholders instead of actual values. 
+These parameters are used when referring to a table column value of a data table. Data tables are defined at the beginning of a spec. 
+Dynamic parameters are also used as values in a Concept.
+Dynamic parameters have the following syntax: ``<dynamic_param>``.
 
 Dynamic parameters are primarily used when referring to a table column value in :ref:`table_driven_execution`,
 or while passing values to :ref:`concept`.
 
-**Example**
-
-.. code-block:: gauge
-    :caption: example.cpt
-
-    # A sample concept that takes a <parameter>
-
-    * And used the <parameter> in a step.
-
-The above concept can be invoked and a value can be passed to the concept against ``<parameter>`` at the time of invocation.
+Example: Dynamic Parameters used in a spec which has a data table
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In the following example, ``<name>`` is a dynamic parameter. 
+``<name>`` can take the values mentioned in the "name" column of the table. In this case, "Vishnu", "Prateek", or "Navaneeth".
 
 .. code-block:: gauge
 
-    * A sample concept that takes a "dummy value"
+    # Create projects
 
-.. note:: Refer to this :ref:`example_inline_data_driven_table` for illustration on how table cell values can be referred using dynamic parameters.
+        |id| name      |
+        |--|-----------|
+        |1 | Vishnu    |
+        |2 | Prateek   |
+        |3 | Navaneeth |
+
+    ## First scenario
+    * Say "hello" to <name>.
+
+    ## Second scenario
+    * Say "namaste" to <name>.
+     
+Example: Dynamic parameters used in a Concept
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In the following example, ``<username>`` and ``<project_name>`` are used in a Concept.
+
+.. code-block:: gauge
+
+    # Login as user <username> and create project <project_name>
+
+    * Login as user <username> and "password"
+    * Navigate to project page
+    * Create a project <project_name>
+
+| The dynamic parameters take actual values when a concept is invoked from within a spec. 
+| In the following specification, the concept is invoked within the "Successful login scenario" and the dynamic parameters, ``<username>`` and ``<project_name>`` take the values "john" and "gauge java" respectively.
+
+.. code-block:: gauge
+
+    # Login specification
+
+    ## Successful login scenario
+
+    * Login as user "john" and create project "Gauge java"
+
+
+| For more information about using dynamic parameters in table column values, see :ref:`table_driven_execution`.
+| For more information about concepts, see :ref:`concept`.
+| For more information about using dynamic parameters as table cell values, see :ref:`example_inline_data_driven_table`.
 
 
 3. Table Parameters
-++++++++++++++++++++
-
-Table parameters are used when a step is to be executed for multiple values. The step having an inline table parameter will be executed for each table row
+^^^^^^^^^^^^^^^^^^^
+Table parameters are used when a step is executed for multiple values in a table.
+When the step has an inline table parameter, the step is executed for each table row.
 
 .. _example_inline_table:
 
-**Example**
+Example
+^^^^^^^
+In the following example, "Gauge java, Gauge ruby, Daredevil, and Iron Fist are table parameters.
+
+Inline data tables can be externalized as :ref:`special csv parameter<special_parameter_csv>`.
 
 .. code-block:: gauge
 
@@ -258,91 +353,18 @@ Table parameters are used when a step is to be executed for multiple values. The
          | Gauge java | Daredevil|
          | Gauge ruby | Iron Fist|
 
-Inline data tables can be externalized as :ref:`special csv parameter<special_parameter_csv>`
 
-4. Special Parameters
-+++++++++++++++++++++
+Dynamic parameters used in inline tables
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Special parameters provide the ability to pass larger and richer data
-into the steps as parameters.
-
-- They are entered in angular brackets - ``<>`` in the step.
-- They contain 2 parts separated by a colon ``:``
-
-.. code-block:: gauge
-
-    <prefix:value>
-
-**Prefix** : This defines the type of special parameter. e.g. file,
-table.
-
-**Value** : This defines the value for the type of special parameter.
-
-There are two types of special parameters:
-
-i. :ref:`File<special_parameter_file>`
-ii. :ref:`CSV<special_parameter_csv>`
-
-.. _special_parameter_file:
-
-Special Parameter: File
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-These are used to read files and pass the file content as a string
-parameter to the underlying steps.
-
-**Syntax** : ``<file:[value]>`` where ``[value]`` is the path to the file.
-
-.. note:: ``[value]`` can be an absolute or relative path. Relative paths are resolved relative to :ref:`GAUGE_PROJECT_ROOT<gauge_project_root>`.
-
-.. code-block:: gauge
-
-    * Verify email text is <file:email.txt>
-    * Check if <file:/work/content.txt> is visible
-
-The path to the file can be the relative path from the Gauge project or
-an absolute path to the file.
-
-.. _special_parameter_csv:
-
-Special Parameter: CSV
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Tables are used to pass table values into steps read from an external CSV
-file. The parameter text in the step contains a prefix table and the
-path to the csv file.
-
-**Syntax** : ``<table:[value]>`` where ``[value]`` is the path to the csv file.
-
-.. note:: ``[value]`` can be an absolute or relative path. Relative paths are resolved relative to :ref:`GAUGE_PROJECT_ROOT<gauge_project_root>`.
-
-.. code-block:: gauge
-
-    * Step that takes a table <table:data.csv>
-    * Check if the following users exist <table:/Users/john/work/users.csv>
-
-**Sample csv file**:
-
-.. code-block:: text
-
-    Id,Name
-    1,The Way to Go On
-    2,Ivo Jay Balbaert
-
-The first row is considered as the table header. Following rows are
-considered as the row values.
-
-
-Data Table values in inline tables
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Dynamic values from the data table can also be referred to in table
-parameters passed into steps
+Dynamic parameters can be used in inline tables, which are used within a step. These parameters can take values from the data tables.
 
 .. _example_inline_data_driven_table:
 
 Example
-+++++++
+^^^^^^^
+In the following example, ``<name>`` is a dynamic parameter, which is used in the inline table.
+This parameter takes values from the data table.
 
 .. code-block:: gauge
 
@@ -361,8 +383,67 @@ Example
         | Gauge java | <name>   |
         | Gauge ruby | <name>   |
 
-In the above example the table parameter uses a dynamic value from the
-data table.
+
+
+4. Special Parameters
+^^^^^^^^^^^^^^^^^^^^^
+
+Special parameters provide the ability to pass larger and richer data such as tables and files into the steps as parameters.
+
+| A special parameter has the following syntax: ``<prefix:value>``.
+| ``prefix`` - defines the special type of parameter such as file or table
+| ``value`` - defines the value for the type of special parameter
+
+
+The two types of special parameters are as follows:
+
+* File
+* CSV
+
+.. _special_parameter_file:
+
+Special Parameter: File
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| These are used to read files and pass the file content as a string parameter to the steps in a specification.
+| The syntax of file is as follows: ``<file:[value]>`` .
+| ``[value]`` is the absolute or relative path to the file (relative path to ``<project_root>``, where ``<project_root>`` is the location at which the Gauge project is created). 
+
+Example
+^^^^^^^
+
+.. code-block:: gauge
+
+    * Verify email text is <file:email.txt>
+    * Check if <file:/work/content.txt> is visible
+
+The path to the file can be the relative path from the Gauge project or
+an absolute path to the file.
+
+.. _special_parameter_csv:
+
+Special Parameter: CSV
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| Tables are used to pass table values into steps by using the values from an external CSV file. 
+| The syntax of this parameter is as follows: ``<table:[value]>``
+| ``[value]`` is the absolute or relative path to the file (relative path to ``<project_root>``, where ``<project_root>`` is the location at which the Gauge project is created). 
+
+Example
+^^^^^^^
+
+.. code-block:: gauge
+
+    * Step that takes a table <table:data.csv>
+    * Check if the following users exist <table:/Users/john/work/users.csv>
+
+The following is a sample CSV file, with the first row as table header and following rows considered as row values:
+
+.. code-block:: text
+
+    Id,Name
+    1,The Way to Go On
+    2,Ivo Jay Balbaert
 
 
 .. _longstart-tags:
@@ -378,7 +459,7 @@ Tags are used to associate labels with specifications or scenarios. Tags are wri
 They help in filtering specs or scenarios based on tags used.
 
 Example: Tag(s)
-+++++++++++++++
+^^^^^^^^^^^^^^^
 
 Both the ``Login specification`` and the scenario
 ``Successful login scenario`` have tags in the below example.
@@ -396,7 +477,7 @@ Both the ``Login specification`` and the scenario
 A tag applied to a spec automatically applies to a scenario.
 
 Example: Multi-line tag(s)
-++++++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Tags can be defined in multiple lines
 
@@ -438,7 +519,7 @@ directory.
 **Note:** A single .cpt file can contain multiple concept definitions.
 
 Defining a concept
-++++++++++++++++++
+^^^^^^^^^^^^^^^^^^
 
 Create a ``.cpt`` file under specs directory with the concept
 definition.
@@ -451,7 +532,7 @@ The concept definition contains the 2 parts:
 .. _concept_header:
 
 Concept header
-++++++++++++++
+^^^^^^^^^^^^^^
 
 The concept header defines the name of the concept and the parameters
 that it takes. It is written in the markdown **``H1``** format.
@@ -466,7 +547,7 @@ that it takes. It is written in the markdown **``H1``** format.
 .. _concept_steps:
 
 Concept Steps
-+++++++++++++
+^^^^^^^^^^^^^
 
 The concept header is followed by the steps that are used inside the
 concept. They are defined in the usual :ref:`steps <step_syntax>` structure.
@@ -561,7 +642,7 @@ function.
 -  Tear down steps are executed after every scenario in the spec.
 
 Syntax
-++++++
+^^^^^^
 
 ``___``: Three or more consecutive underscores will indicate the start
 of tear down. Steps that are written in tear down (after three or more
@@ -575,7 +656,7 @@ consecutive underscores) will be considered as tear down steps.
     * Tear down step 3
 
 Example
-+++++++
+^^^^^^^
 
 .. code-block:: gauge
 
@@ -622,7 +703,7 @@ Step implementations
 :ref:`longstart-steps` have a language specific implementation that gets executed on the spec execution.
 
 Simple step
-+++++++++++
+^^^^^^^^^^^
 
 **Step name**
 
@@ -686,7 +767,7 @@ Simple step
             end
 
 Step with table
-+++++++++++++++
+^^^^^^^^^^^^^^^
 
 **Step**
 
@@ -771,14 +852,14 @@ parameters for all the steps names must match the number of parameters
 on the implementation.
 
 Use case
-~~~~~~~~
+^^^^^^^^
 
 There may be situations where while authoring the specs, you may want to
 express the same functionality in different ways in order to make the
 specs more readable.
 
 Example 1
-~~~~~~~~~
+^^^^^^^^^
 
 .. code-block:: gauge
 
@@ -970,7 +1051,7 @@ On initialization of a gauge project for a particular language a project
 skeleton is created with the following files
 
 Common Gauge files
-++++++++++++++++++
+^^^^^^^^^^^^^^^^^^
 
 .. _gauge_project_root:
 
@@ -1054,7 +1135,7 @@ following content:
    }
 
 Project files
-+++++++++++++
+^^^^^^^^^^^^^
 
 Creating a new project adds some language specific files.
 
@@ -1417,7 +1498,7 @@ objects are created for next scenario execution. You can :ref:`configure <defaul
 to change the level at which Gauge clears cache.
 
 Current Execution Context in the Hook
-+++++++++++++++++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  To get additional information about the **current specification,
    scenario and step** executing, an additional **ExecutionContext**
@@ -1506,7 +1587,7 @@ Current Execution Context in the Hook
 .. _filtering_hooks_with_tags:
 
 Filtering Hooks execution based on tags
-+++++++++++++++++++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  You can specify tags for which the execution :ref:`hooks <execution_hooks>` can run. This
    will ensure that the hook only runs on scenarios and specifications
@@ -1615,7 +1696,7 @@ There are 3 different types of DataStores based on the lifecycle of when
 it gets cleared.
 
 ScenarioStore
-+++++++++++++
+^^^^^^^^^^^^^
 
 This data store keeps values added to it in the lifecycle of the
 scenario execution. Values are cleared after every scenario executes.
@@ -1692,7 +1773,7 @@ scenario execution. Values are cleared after every scenario executes.
 
 
 SpecStore
-+++++++++
+^^^^^^^^^
 
 This data store keeps values added to it during the lifecycle of the
 specification execution. Values are cleared after every specification
@@ -1769,7 +1850,7 @@ executes
             element_id = spec_store.get("element-id");
 
 SuiteStore
-++++++++++
+^^^^^^^^^^
 
 This data store keeps values added to it during the lifecycle of entire
 suite execution. Values are cleared after entire suite execution.
@@ -1985,7 +2066,7 @@ These messages will appear under steps in the execution reports.
             id = "4567"
             Gauge.write_message("User id is" + id)
 
-.. _reports_custom_messages:
+.. _reports_custom_screenshots:
 
 Custom screenshots in reports
 -----------------------------
@@ -2169,7 +2250,7 @@ Refactoring
 -----------
 
 Rephrase steps
-++++++++++++++
+^^^^^^^^^^^^^^
 
 Gauge allows you to rephrase a step across the project. To rephrase a
 step run:
