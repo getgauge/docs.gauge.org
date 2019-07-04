@@ -471,7 +471,7 @@ The rules of precedence to load the environment variables are as follows:
 * Environment variables from the ``default`` environment.
   
   .. note::
-     If the ``default`` environment is not present, Gauge internall sets the environment variables which have the same value as mentioned in ``default.properties``.
+     If the ``default`` environment is not present, Gauge internally sets the environment variables which have the same value as mentioned in ``default.properties``.
   
 Gauge workflow with multiple environments
 -----------------------------------------
