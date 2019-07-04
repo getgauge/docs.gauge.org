@@ -41,9 +41,9 @@ Specs directory
 When a Gauge project is created and initialized, a ``specs`` directory is automatically created at ``<project_root>`` with a sample file, ``example.spec``.
 This sample file helps you understand how to write a specification.
 
-..note::
-  | The location and name of the ``specs`` directory can be changed by using key value pairs in the ``default.properties`` file of your project.
-  | For more information about ``default.properties``, see Configure Gauge.
+.. note::
+   | The location and name of the ``specs`` directory can be changed by using key value pairs in the ``default.properties`` file of your project.
+   | For more information about ``default.properties``, see :ref:`local_configuration_Gauge`.
 
 Example
 ^^^^^^^
@@ -101,7 +101,7 @@ Specification heading
 
 A specification must begin with a spec heading. A specification must contain only one spec heading.
 
-Spec heading is written in the Markdown `<H1>` syntax in one of the following ways:
+Spec heading is written in the `<H1>` Markdown syntax in one of the following ways:
 
 
 .. _spec_syntax:
@@ -276,11 +276,6 @@ In the following examples, ``Die Hard``, ``gauge-java``, and ``100`` are values 
    * Search for product "Die Hard"
    * Create a “gauge-java” project
    * Write “100” line specification
-
-**Note:** Renaming the parameter will not rename the usages inside the
-method. By design, the renamed parameter is considered a new parameter.
-Therefore the usage of the old parameter (if any) has to be fixed
-manually to resolve the corresponding compilation issue.
 
 Dynamic Parameters
 ^^^^^^^^^^^^^^^^^^^^^
@@ -740,7 +735,8 @@ The Implementation section shows the step implementation for different language 
 
   * Say "hello" to "gauge"
 
-**Implementation**
+Implementation
+..............
 
 .. tab-container:: languages
 
@@ -813,7 +809,8 @@ The Implementation section shows the step implementation for different language 
     |456|bilbo  |
     |789|samwise|
 
-**Implementation**
+Implementation
+..............
 
 .. tab-container:: languages
 
@@ -904,7 +901,8 @@ The Implementation section shows the step implementation for different language 
     * Create another user "user 2"
     * Verify "user 2" has access to dashboard
 
-**Implementation**
+Implementation
+..............
 
 .. tab-container:: languages
 
@@ -979,7 +977,8 @@ The Implementation section shows the step implementation for different language 
     * Payment is successfully received
     * An email confirming the "order" is sent
 
-**Implementation**
+Implementation
+..............
 
 .. tab-container:: languages
 
@@ -1053,7 +1052,8 @@ The Implementation section shows the step implementation for Java.
 
   * Navigate towards "SOUTH"
 
-**Implementation**
+Implementation
+..............
 
 .. code-block:: java
     :caption: Java
@@ -1066,14 +1066,14 @@ The Implementation section shows the step implementation for Java.
     }
 
 
-``gauge refactor`` (rephrase steps)
------------------------------------
+Refactoring (``gauge refactor``)
+--------------------------------
 
 Gauge allows you to rephrase a step, add and remove parameters, and change the order of parameters in all spec files and code files of a project. 
 
 .. attention::
   Renaming the parameter does not rename the usage of the parameter inside the step implementation method. 
-  By design, the renamed parameter is considered a new parameter. 
+  By design, the renamed parameter is considered as a new parameter. 
   Therefore the usage of the old parameter (if any) has to be fixed manually to resolve the corresponding compilation issue.
 
 The following command is used to rephrase a step:
@@ -1095,15 +1095,28 @@ Consider the following spec:
     
     ## Vowel counts in single word
     
-    * The word gauge has 3 vowels
+    * The word "gauge" has "3" vowels
 
-To rephrase the step, ``gauge refactor`` command is used as follows:
+To rephrase the step, ``gauge refactor`` command can be used in the following ways:
+
+Method 1
+........
 
 .. code-block:: console
 
-    gauge refactor "The word gauge has 3 vowels" "The word gauge has 2 consonants"
+    gauge refactor "The word \"gauge\" has \"3\" vowels" "The word \"gauge\" has \"3\" vowels and \"2\" consonants"
 
-The new step name is "The word gauge has 2 consonants.
+.. note::
+   Use the appropriate syntax while giving values in quotes, " ", in the command.
+
+Method 2
+........
+
+.. code-block:: console
+
+    gauge refactor "The word <word> has <number> vowels" "The word <word> has <number> vowels and \"2\" consonants"
+
+Both the methods give the same result - the new step is as follows:
 
 .. code-block:: gauge
 
@@ -1111,20 +1124,75 @@ The new step name is "The word gauge has 2 consonants.
     
     ## Vowel counts in single word
     
-    * The word gauge has 2 consonants
+    * The word "gauge" has "3" vowels and "2" consonants
 
-Use cases of ``gauge refactor``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Let us consider few examples that show how to add a parameter, remove a parameter, and change the order of  parameter.
+Use cases of Refactoring
+------------------------
+Let us consider a few examples that show how to add a parameter, remove a parameter, and change the order of parameters.
+
+Consider the following spec:
+
+.. code-block:: gauge
+
+    # Vowels count specification
+    
+    ## Vowel counts in single word
+    
+    * The word "gauge" has "3" vowels
 
 How to add a parameter
 ^^^^^^^^^^^^^^^^^^^^^^
+In the following example, a new parameter has been added to the step.
+
+.. code-block:: console
+
+    gauge refactor "The word \"gauge\" has \"3\" vowels" "The word \"gauge\" has \"3\" vowels and \"2\" consonants"
+
+The result is as follows:
+
+.. code-block:: gauge
+
+    # Vowels count specification
+    
+    ## Vowel counts in single word
+    
+    * The word "gauge" has "3" vowels and "2" consonants
+
+How to change the order of parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In the following example, the order of parameters within the step has been changed.
+
+.. code-block:: console
+
+    gauge refactor "The word \"gauge\" has \"3\" vowels and \"2\" consonants" "The word \"gauge\" has \"2\" consonants and \"3\" vowels"
+
+The result is as follows:
+
+.. code-block:: gauge
+
+    # Vowels count specification
+    
+    ## Vowel counts in single word
+    
+    * The word "gauge" has "2" consonants and "3" vowels
 
 How to delete a parameter
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+In the following example, a parameter has been deleted.
 
-How to change the order of parameter
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    gauge refactor "The word \"gauge\" has \"2\" consonants and \"3\" vowels" "The word \"gauge\" has \"3\" vowels"
+
+The result is as follows:
+
+.. code-block:: gauge
+
+    # Vowels count specification
+    
+    ## Vowel counts in single word
+    
+    * The word "gauge" has "3" vowels
 
 .. _project_structure:
 
