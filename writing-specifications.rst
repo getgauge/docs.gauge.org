@@ -1,5 +1,7 @@
-Write a Gauge specification
-===========================
+.. _write_gauge_specification:
+
+Write Gauge specifications
+==========================
 
 This page provides information about what a specification is, how to write a specification, and other related information such as concepts, step implementation, specs directory, and so on.  
 
@@ -42,7 +44,7 @@ When a Gauge project is created and initialized, a ``specs`` directory is automa
 This sample file helps you understand how to write a specification.
 
 .. note::
-   | The location and name of the ``specs`` directory can be changed by using key value pairs in the ``default.properties`` file of your project.
+   | The path and name of the ``specs`` directory can be changed by using key value pairs in the ``default.properties`` file of your project.
    | For more information about ``default.properties``, see :ref:`local_configuration_Gauge`.
 
 Example
