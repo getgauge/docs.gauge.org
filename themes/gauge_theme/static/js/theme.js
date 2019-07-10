@@ -44,21 +44,21 @@ $(document).ready(() => {
     i = null;
   });
 
-  $('.tab-selector li').click(function(e) {
-    e.preventDefault();
-    if($(this).hasClass('active')) return;
+  // $('.tab-selector li').click(function(e) {
+  //   e.preventDefault();
+  //   if($(this).hasClass('active')) return;
     
-    var tabs = $(this).parents('.tabs');
+  //   var tabs = $(this).parents('.tabs');
 
-    var sel_class = $(this).attr('class');
-    $('div.tab',tabs).hide();
-    $('div#' + sel_class, tabs).show();
+  //   var sel_class = $(this).attr('class');
+  //   $('div.tab',tabs).hide();
+  //   $('div#' + sel_class, tabs).show();
 
-    $('ul.tab-selector li', tabs).removeClass('active');
-    $('ul.tab-selector li.' + sel_class, tabs).addClass('active');
+  //   $('ul.tab-selector li', tabs).removeClass('active');
+  //   $('ul.tab-selector li.' + sel_class, tabs).addClass('active');
 
-    sel_class = null;
-  });
+  //   sel_class = null;
+  // });
 
   var location = window.location.pathname;
   var version = location.substring(1, location.lastIndexOf('/'));
