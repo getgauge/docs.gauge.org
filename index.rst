@@ -6,12 +6,4 @@ Gauge is a light-weight, cross-platform test automation tool which has the abili
 
 .. container:: index-page
 
-  .. toctree::
 
-    installation
-    writing-specifications
-    experimental-feature
-    execution
-    configuration
-    faqs
-    examples
