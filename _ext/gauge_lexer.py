@@ -39,7 +39,7 @@ class GaugeLexer(RegexLexer):
 
             (r'\*', Name.Function, 'step'),
             # Tags
-            (r'Tags:.*\n', Name.Tag),
+            (r' *Tags:.*[\n].*', Name.Tag),
             # Horizontal rule
             (r'^\s*\n(?:\s*[-*_]){3,}\s*\n', Keyword),
 
