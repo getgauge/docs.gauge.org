@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
 @import url("application.css");
-#rightNav {
+.containers {
   margin-top: 98px;
   padding-top: 16px;
 }
 
-#rightNav #search {
+.containers #search {
   margin-bottom: 12px;
 }
 
-#rightNav ul {
+.containers ul {
   padding: 0;
   list-style: none;
 }
@@ -23,13 +23,13 @@
   padding-left: 5px !important;
 }
 
-#rightNav a {
+.containers a {
   padding-left: 3px;
   color: rgb(85, 85, 85);
   padding-bottom: 3px;
 }
 
-#rightNav a:hover {
+.containers a:hover {
   border-bottom: 1px solid rgb(245, 193, 14);
 }
 
@@ -223,7 +223,7 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 
 .sidebar-wrapper {
   border-left: 0.5px solid #222222;
-  padding-left: 10px !important;
+  padding-left: 43px !important;
   margin: 20px 0 0 0;
 }
 
@@ -340,7 +340,7 @@ code {
   }
 }
 
-@media (min-width:$screen-lg) {
+@media (min-width:screen-lg) {
   .feature-wrapper h3 {
     font-size: 20px;
   }
@@ -457,7 +457,6 @@ code {
 
 .localtoc ul li ul a:hover {
   border-bottom: 1px dotted rgb(245, 193, 14);
-  =
 }
 
 #rightNav .rst-breadcrumbs-buttons a:hover {
@@ -707,10 +706,10 @@ header.top {
   position: fixed;
   z-index: 10;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 12.5%;
+  width: 75%;
   z-index: 10;
-  height: 65px;
+  height: 100px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   border: none;
@@ -738,6 +737,7 @@ header.top::after {
 .header-container {
   margin: 0 auto;
   width: 100%;
+  line-height: 65px;
 }
 
 .header-container::after {
@@ -794,7 +794,7 @@ header.top::after {
 @media (min-width: 1200px) {
   .logo {
     width: 180px;
-    margin: 12px 0 0 0;
+    margin: 25px 0 0 0;
     height: 40px;
   }
 }
@@ -1095,12 +1095,39 @@ header.top::after {
   color: #ffcc00;
 }
 
+/* Container Style */
+
+.container {
+  width: 75%;
+  left: 12.5%;
+  background-color: #f2f2f2;
+}
+
+.left-sidebar-container {
+  width: 25%;
+  margin-left: -1%;
+  float: left;
+}
+
+.docs-container {
+  float: left;
+  width: 50%;
+  background-color: white;
+}
+
+.right-sidebar-container {
+  width: 25%;
+  float: left;
+}
+
 /* Footer Style */
 
 footer {
   background: #1A1C19;
   padding: 50px 0px 150px;
   position: relative;
+  width: 75%;
+  left: 12.5%;
 }
 
 @media (min-width: 768px) {
