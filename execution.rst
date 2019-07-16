@@ -1,7 +1,7 @@
 Run Gauge specifications
 ========================
 This page provides information about how to run a specification, multiple arguments that can be used with the ``gauge run`` command when a spec is executed, 
-verbose reporting, data driven execution, parallel execution of specs, and how to rerun failed and flaky tests.
+verbose reporting, data driven execution, parallel execution of specs, how to rerun failed and flaky tests, errors that occur when a spec is run, and troubleshooting information.
 
 For information about what a specification is and related details, see :ref:`write_gauge_specification`.
 
@@ -154,6 +154,8 @@ To run multiple scenarios, use the following command:
 
     gauge run <specification_path>:<scenario_line_number> <specification_path>:<scenario_line_number>...
 
+.. _spec_example_scenario:
+
 Example
 ^^^^^^^
 Consider the following specification, ``spec1.spec`` located at ``specs`` directory:
@@ -192,8 +194,8 @@ Hence, you can also mention line 9 in the command as follows:
 In both cases, the ``User Login`` scenario is run.
 
 Multiple scenarios
-------------------
-In addition to ``spec1`` considered in the previous example, let us consider another spec, ``test1``, in the ``specs`` directory as follows:
+..................
+In addition to ``spec1`` used as an :ref:`example <spec_example_scenario>` previously, let us consider another spec, ``test1``, in the ``specs`` directory as follows:
 
 .. code-block:: gauge
     :linenos:
@@ -240,6 +242,8 @@ Use the following command to filter a Gauge specification or scenario by using t
 
 When this command is run, only the scenarios and specifications which are tagged with ``Tag_Name`` are executed.
 
+.. _spec_example_tag:
+
 Example
 ^^^^^^^
 Consider the following spec in the ``specs`` directory, which has tags ``search`` and ``admin``. 
@@ -285,17 +289,18 @@ If the tag ``successful`` is used, the scenario, ``Successful search`` is run.
 
    gauge run --tags "successful" specs
 
-Execution hooks can also be filtered based on tags.
-For more information, see :ref:`filtering hooks with tags <filtering_hooks_with_tags>`.
+Execution hooks can also be filtered based on tags. For more information, see :ref:`write_gauge_specification`.
+
+.. _tag_expressions:
 
 Tag expressions
 ---------------
-Tags can be used with expressions. 
+Tags can be used with expressions.
 This helps you search and filter specs and scenarios effectively. 
 The following table lists the tags and expressions and their corresponding action while selecting specs and scenarios.
 
 .. attention::
-   In the command line, while using the not symbol(!) with tags, (!) has to be preceded by escape (\).
+   In the command line, while using the not symbol (!) with tags, (!) has to be preceded by escape (\\).
 
 ================================== ===============================================================
 Tags                               Selects specs/scenarios that
@@ -312,7 +317,7 @@ Tags                               Selects specs/scenarios that
 Example
 ^^^^^^^
 
-Consider the spec of the previous example - if all the scenarios tagged with ``search`` and ``successful`` must be run, then use the following command:
+Consider the spec of the previous :ref:`example <spec_example_tag>` - if all the scenarios tagged with ``search`` and ``successful`` must be run, then use the following command:
 
 .. code-block:: console
 
@@ -323,32 +328,32 @@ Based on the Tags expressions table, ``Successful Search`` scenario is run.
 Verbose reporting
 -----------------
 
-By default, ``gauge`` reports at the specification level when executing
-tests. Enable verbose step-level reporting by using the
-``--verbose`` flag. For example,
+By default, Gauge generates reports at the specification level when executing tests. 
+To ease debugging, reports can also be generated at a step level by using the ``--verbose`` flag.
+These reports are generated on the console.
+
+Use the following command to generate reports at the step level:
 
 .. code-block:: console
 
-    gauge run --verbose specs/
-
+    gauge run --verbose specs
 
 .. _table_driven_execution:
 
 Data driven execution
 ---------------------
--  A *data table* is defined in markdown table format in the beginning
-   of the spec before any steps.
--  The data table should have a header row and one or more data rows
--  The header names from the table can be used in the steps within
-   angular brackets ``< >`` to refer a particular column from the data
-   table as a parameter.
--  On execution each scenario will be executed for every data row from
-   the table.
--  Table can be easily created in IDE using template
-   ``table:<no of columns>``, and hit ``Tab``.
--  Table parameters are written in Multi-markdown table formats.
+A data table is defined in Markdown table format at the beginning of the spec prior to steps. 
+The data table should have a header row and one or more data rows.
+The header names from the table can be used in the steps within angular brackets ``< >`` to refer to a particular column from the data table as a parameter.
 
-For example,
+When a spec is run, each scenario is executed for every data row of the table.
+Table parameters are written in Multi-Markdown table formats.
+
+Example
+^^^^^^^
+In the following specification ``hello.spec``, the data table is defined at the beginning of the spec. 
+The step uses the ``name`` column from the data table as a dynamic parameter.
+When the spec is run, ``Scenario`` and ``Second Scenario`` are executed first for the first row values ``1``, ``vishnu`` followed by the second and third row values from the table.
 
 .. code-block:: gauge
     :linenos:
@@ -368,25 +373,58 @@ For example,
     ## Second Scenario
     * Say "namaste" to <name>
 
-In the above example the step uses the ``name`` column from the data
-table as a dynamic parameter.
+Selected data table rows
+------------------------
+By default, scenarios in a spec are run for every data table row. 
+Scenarios can also be run against selected data table rows by using the ``--table-rows`` flag along with specifying the row numbers for which the scenarios should be run. 
+If there are multiple row numbers, the row numbers should be separated by commas. 
+A range of table rows can also be specified.
 
-Both ``Scenario`` and ``Second Scenario`` are executed first for the
-first row values ``1, vishnu`` and then consecutively for the second and
-third row values from the table.
+.. important::
+   Only a single specification can be run while using the ``--table-rows`` flag.
+
+Examples
+^^^^^^^^
+In the following example, the scenarios in ``hello.spec`` (see :ref:`Data driven execution <table_driven_execution>`) are run only for the first row of the data table.
+
+.. code-block:: console
+
+    gauge run --table-rows "1" specs/hello.spec
+
+| In the following example, multiple rows are specified by separating them with commas. 
+| The scenarios from the ``hello.spec`` are run for the first and third rows of the data table.
+
+.. code-block:: console
+
+    gauge run --table-rows "1,3" specs/hello.spec
+
+| In the following example, a range of table rows is specified.
+| The scenarios from the ``hello.spec`` are run for the first, second, and third rows of the data table.
+
+.. code-block:: console
+
+    gauge run --table-rows "1-3" specs/hello.spec
 
 External CSV for data table
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Data Tables for a specification can also be passed from an external CSV file. 
-The parameter contains a prefix table and the path to the csv file.
 
-**Prefix** : The prefix is table
+For more information about external CSV files used in data tables, see :ref:`write_gauge_specification`.
 
-**Value** : The value is the path to the csv file. This can be absolute file path or relative to project.
+Example
+^^^^^^^
+In this example, ``users.csv`` is the external CSV file that contains the following data table:
 
+.. code-block:: gauge
 
-For example,
+    |id| name    |
+    |--|---------|
+    |1 |vishnu   |
+    |2 |prateek  |
+    |3 |navaneeth|
+
+In the spec, the steps use the ``<name>`` column from the CSV file.
 
 .. code-block:: gauge
     :linenos:
@@ -402,245 +440,224 @@ For example,
     ## Second Scenario
     * Say "namaste" to <name>
 
-
-In the above example the step uses the ``name`` column from the csv file.
-
-Execute selected data table rows
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-By default, scenarios in a spec are run against all the data table rows.
-It can be run against selected data table rows with flag
-``--table-rows`` and specifying the row numbers against which the
-scenarios should be executed. If there are multiple row numbers, they
-should be separated by commas.
-
-For example,
-
-.. code-block:: console
-
-    gauge run --table-rows "1" specs/hello.spec
-    gauge run --table-rows "1,4,7" specs/hello.spec
-
-Range of table rows can also be specified, against which the scenarios
-are run.
-
-For example,
-
-.. code-block:: console
-
-    gauge run --table-rows "1-3" specs/hello.spec
-
-This executes the scenarios against table rows 1, 2, 3.
-
-.. note::
-
-    This flag does not work well for multiple specifications, since there is no way to choose 
-    different table rows for different specifications.
-
 .. _parallel_execution:
 
-Parallel Execution
+Parallel execution
 ------------------
+Specs can be executed in parallel to run the tests faster. 
+Running tests in parallel creates a number of execution streams depending on the  number of CPU cores available on your system and distributes the load among worker processes.
 
-Specs can be executed in parallel to run the tests faster and distribute
-the load.
+The number of parallel execution streams can be specified by using the ``-n`` flag.
 
-This can be done by the command:
+.. note::
+   | It could lead to undesirable results if the number of streams specified is more than the number of CPU cores available on your system. 
+   | For optimizations, you can also use threads. See :ref:`Parallel execution by using threads <parallel execution using threads>`.
+
+Use the following command to run specs in parallel:
 
 .. code-block:: console
 
     gauge run --parallel specs
 
-or,
+OR
 
 .. code-block:: console
 
     gauge run -p specs
 
-This creates a number of execution streams depending on the number of
-cores of the machine and distribute the load among workers.
-
-The number of parallel execution streams can be specified by ``-n``
-flag.
-
-Example:
+Example
+^^^^^^^
+In the following example, four parallel execution streams are created.
 
 .. code-block:: console
 
     gauge run --parallel -n=4 specs
 
-This creates four parallel execution streams.
-
-.. note:: 
-    The number of streams should be specified depending on number of CPU 
-    cores available on the machine, beyond which it could lead to undesirable results. 
-    For optimizations, try `parallel execution using threads`_.
-
 .. _parallel execution using threads:
 
-Parallel Execution using threads
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Parallel execution by using threads
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In parallel execution, every stream starts a new worker process. This can be optimized 
-by using multithreading instead of processes. This uses only one worker process and 
+by using multithreading instead of processes. Multithreading uses only one worker process and 
 starts multiple threads for parallel execution.
 
-To use this, Set `enable_multithreading` env var to true. 
-This property can also be added to the default/custom env.
+| To use the multithreading feature, the ``enable_multithreading`` environment variable must be set to ``true``. If not already present, you can add this variable to the ``default.properties`` file. 
+| For more information about ``default.properties``, see :ref:`local_configuration_Gauge`.
 
-.. code-block:: text
+.. admonition:: Prerequisites
 
-    enable_multithreading = true
+   * Use thread-safe test code.
+   * Use a language runner that supports multithreading.
 
-**Requirements:**
+.. note:: 
+   Currently, only the Java language runner supports parallel execution of specs by using threads.
 
-* Thread safe test code.
-* Language runner should support multithreading.
+Test suite execution by using the ``--strategy`` option
+-------------------------------------------------------
+The ``--strategy`` option allows you to set the strategy for parallel execution of tests. 
+This option has two values: ``lazy`` and ``eager``. By default, the option is set to ``lazy``. 
 
-.. note:: Currently, this feature is only supported by Java language runner/plugin.
+``lazy``
+^^^^^^^^
+The ``lazy`` feature enables Gauge to dynamically allocate specs to streams during execution instead of at the beginning of execution. 
+This allows Gauge to optimise the resources on your system or execution environment. 
+Such optimization is useful because some specs might take more time to get executed than the others. 
+This could be either because of the number of scenarios in the specs or the nature of the feature under test.
 
-Executing a group of specification
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``lazy`` is the default value of the ``--strategy`` option.
 
-Specifications can be distributed into groups and ``--group`` \| ``-g``
-flag provides the ability to execute a specific group.
-
-This can be done by the command:
-
-.. code-block:: console
-
-    gauge run -n=4 -g=2 specs
-
-This creates 4 groups (provided by -n flag) of specification and selects
-the 2nd group (provided by -g flag) for execution.
-
-Specifications are sorted by alphabetical order and then distributed
-into groups, which guarantees that every group will have the same set of
-specifications, no matter how many times it is being executed.
-
-Example:
-
-.. code-block:: console
-
-    gauge run -n=4 -g=2 specs
-
-.. code-block:: console
-
-    gauge run -n=4 -g=2 specs
-
-The above two commands will execute the same group of specifications.
-
-Rerun one execution stream
-...........................
-
-Executing specs with ``-n`` and ``--g`` flags guarantee the same execution. 
-
-Example, execute the below command twice:
-
-.. code-block:: console
-
-    gauge run -n=4 -g=2 specs
-
-On both occassions, gauge will execute the same group of specifications, in the same order.
-
-
-Run your test suite with lazy assignment of tests
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-This features dynamically allocates specs to streams during execution instead 
-of at the start of execution.
-
-This allows Gauge to optimise the resources on your agent/execution
-environment. This is useful because some specs may take much longer than
-other, either because of the number of scenarios in them or the nature
-of the feature under test
-
-The following command will assign tests lazily across the specified
-number of streams:
+The following command assigns tests lazily across the specified number of streams:
 
 .. code-block:: console
 
     gauge run -n=4 --strategy="lazy" specs
 
-or,
+OR
 
 .. code-block:: console
 
     gauge run -n=4 specs
 
-As an example, if there are 100 tests, which have to be run across 4
-streams/cores; lazy assignment will dynamically assign the next spec 
-in line to the stream that has completed it's previous execution and 
-is waiting for more work.
+.. note:: 
+    The ``lazy`` value cannot be used when the ``-g`` flag is used with the ``gauge run`` command. 
+    This is because the grouping of tests depends on allocation of tests before the beginning of test execution, however, ``lazy`` is used during execution of tests.  
+    Using the ``-g`` flag with ``--strategy=lazy`` has no impact on your test suite execution.
 
-Lazy assignment of tests is the default behaviour.
+Example
+.......
+If there are 100 tests, which have to be run across four streams or cores, Gauge dynamically assigns the next spec in queue to the stream that has completed its previous test execution and is waiting for more work.
 
-Another strategy called ``eager`` can also be useful depending on need.
-In this case, the 100 tests are distributed before execution, thus
-making them an equal number based distribution.
+``eager``
+^^^^^^^^^
+When the ``-g (grouping)`` flag is used, the value of the ``strategy`` option is ``eager``. 
+In this strategy, Gauge allocates specs to streams at the beginning of test execution. 
+
+Example
+.......
+When ``eager`` is used, if 100 tests are run, these tests are equally distributed before execution in the number of streams as mentioned by the ``-n`` option.
 
 .. code-block:: console
 
     gauge run -n=4 --strategy="eager" specs
 
-.. note:: 
-    The 'lazy' assignment strategy only works when you do NOT use
-    the -g flag. This is because grouping is dependent on allocation of
-    tests before the start of execution. Using this in conjunction with a
-    lazy strategy will have no impact on your test suite execution.
+Executing a group of specification
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gauge sorts the specifications by alphabetical order and then distributes these specifications into groups.
+You can use the ``--group`` \| ``-g`` flag to execute a specific group of specs.
 
+Executing specs with  the ``-n`` and ``--g`` flags ensures that Gauge executes the same group of specifications in the same order
+regardless of the number of times the ``gauge run`` command is executed. 
 
-Re-run failed tests
+Use the following command to execute a group of specifications:
+
+.. code-block:: console
+
+    gauge run -n=<number_of_groups> -g=<group_number> specs
+
+| ``-n`` - number of groups
+| ``-g`` - group number
+
+Example
+.......
+In the following example, Gauge creates four groups of specification and selects the second group for execution.
+
+.. code-block:: console
+
+    gauge run -n=4 -g=2 specs
+
+Even if the command is run multiple times, Gauge still executes the same group of specifications in the same order.
+
+Rerun failed tests
 -------------------
+Gauge provides the ability to rerun only the scenarios which failed in the previous execution. 
+You can use the ``--failed`` flag with the ``gauge run`` command to rerun failed scenarios.
 
-Gauge provides the ability to re-run only the scenarios which failed
-in previous execution. Failed scenarios can be run using the
-``--failed`` flag of Gauge.
+.. admonition:: Prerequisite
+   
+    You must have already run the specifications by using the ``gauge run`` command.
 
-As an example if 3 scenarios failed during ``gauge run specs`` , the failed scenarios can be re-run
-instead of executing all scenarios by following command.
+Use the following command to rerun failed scenarios:
 
 .. code-block:: console
 
     gauge run --failed
 
-This command will even set the flags which you had provided in your
-previous run. For example, if previous command was
+For example, if three scenarios failed during ``gauge run specs``, the failed scenarios can be rerun instead of executing all scenarios.
+
+When the ``--failed`` flag is used with the ``gauge run`` command, the flags that were set during the previous execution is once again set.
+
+Example
+^^^^^^^
+| Consider an example, where specs are run with a ``--env`` and ``--verbose`` flags.
+| Three scenarios fail during this run.
 
 .. code-block:: console
 
     gauge run --env="chrome" --verbose specs
 
-and 3 scenarios failed in this run, the ``gauge run --failed`` command sets
-the ``--env`` and ``--verbose`` flags to corresponding values and
-executes only the 3 failed scenarios. In this case ``gauge run --failed`` is
-equivalent to command
+To rerun only the failed scenarios, use the following command:
+
+.. code-block:: console
+
+    gauge run --failed
+
+When this command is run, Gauge internally sets the ``--env`` and ``--verbose`` flags  to corresponding values used in the previous execution.
+Hence, ``gauge run --failed`` is equivalent to the following command:
 
 .. code-block:: console
 
     gauge run --env="chrome" --verbose specs <path_to_failed_scenarios>
 
-Re-run flaky tests with max retry
----------------------------------
+Rerun failed tests by using ``--max-retries-count``
+----------------------------------------------------
+You can use the ``--max-retries-count`` flag to rerun failed tests for a specific number of times.
 
-Gauge provides a way to retry tests which may have failed.
-The failed tests can be retry using following command.
+.. note::
+   ``--max-retries-count`` feature is also useful if there are flaky tests in your test suite.
+
+Use the following command to rerun failed tests for a specific number of times:
+
+.. code-block:: console
+
+    gauge run --max-retries-count=<number of retries>
+
+Example
+^^^^^^^
+In the following example, Gauge reruns a failed test for a maximum of three times and then marks the spec as failed. 
 
 .. code-block:: console
 
     gauge run --max-retries-count=3
 
-This command will retry a failed test for a maximum of 3 times before it marks it as failed.
+Rerun failed scenarios by using ``--retry-only``
+------------------------------------------------
+You can filter scenarios that must be rerun a specific number of times when failed by using the ``--retry-only`` flag.
+The value of this flag is the tag used to associate the scenario(s).
 
-``--max-retries-count`` can be used along ``--retry-only`` flag. The ``--retry-only`` can be used to filter scenarios that should be retried when failed.
+Use the following command to rerun failed scenarios for a specific number of times:
+
+.. code-block:: console
+
+    gauge run --max-retries-count=<number of retries> --retry-only "<tag_name>"
+
+``<tag_name>`` - name of the tag used to label the scenario(s) that should be rerun when failed
+
+.. note::
+   | Tags can also be used with expressions.
+   | For more information about using tags with expressions, see :ref:`Tag expressions <tag_expressions>` .
+
+Example
+^^^^^^^
+In the following example, Gauge reruns only those scenarios that have the ``should-retry`` tag . 
+Gauge runs these scenarios thrice as specified by the ``--max-retries-count`` flag.
 
 .. code-block:: console
 
     gauge run --max-retries-count=3 --retry-only="should-retry"
 
-If ``--retry-only`` flag is not specified, all scenarios will retried ``--max-retries-count`` number of times.
-
-
+.. note::
+   If ``--retry-only`` flag is not specified, all scenarios are retried the number of times as specified in ``--max-retries-count``.
 
 Errors during execution
 -----------------------
@@ -740,981 +757,6 @@ There are two types of validation error which can occurs
 .. code-block:: text
 
     [ValidationError] foo.spec:11 Duplicate step implementation => 'Vowels in English language are <table>'
-
-Advanced
-========
-
-.. _execution_hooks:
-
-Execution hooks
----------------
-
-Test execution hooks can be used to run arbitrary test code as different
-levels during the test suite execution.
-
-**Implementation**
-
-.. tab-container:: languages
-
-    .. tab:: CSharp
-
-        .. code-block:: java
-
-            public class ExecutionHooks
-            {
-
-                [BeforeSuite]
-                public void BeforeSuite() {
-                    // Code for before suite
-                }
-
-                [AfterSuite]
-                public void AfterSuite() {
-                    // Code for after suite
-                }
-
-                [BeforeSpec]
-                public void BeforeSpec() {
-                    // Code for before spec
-                }
-
-                [AfterSpec]
-                public void AfterSpec() {
-                    // Code for after spec
-                }
-
-                [BeforeScenario]
-                public void BeforeScenario() {
-                    // Code for before scenario
-                }
-
-                [AfterScenario]
-                public void AfterScenario() {
-                    // Code for after scenario
-                }
-
-                [BeforeStep]
-                public void BeforeStep() {
-                    // Code for before step
-                }
-
-                [AfterStep]
-                public void AfterStep() {
-                    // Code for after step
-                }
-
-            }
-
-    .. tab:: Java
-
-        .. code-block:: java
-
-            public class ExecutionHooks {
-
-                @BeforeSuite
-                public void BeforeSuite() {
-                    // Code for before suite
-                }
-
-                @AfterSuite
-                public void AfterSuite() {
-                    // Code for after suite
-                }
-
-                @BeforeSpec
-                public void BeforeSpec() {
-                    // Code for before spec
-                }
-
-                @AfterSpec
-                public void AfterSpec() {
-                    // Code for after spec
-                }
-
-                @BeforeScenario
-                public void BeforeScenario() {
-                    // Code for before scenario
-                }
-
-                @AfterScenario
-                public void AfterScenario() {
-                    // Code for after scenario
-                }
-
-                @BeforeStep
-                public void BeforeStep() {
-                    // Code for before step
-                }
-
-                @AfterStep
-                public void AfterStep() {
-                    // Code for after step
-                }
-
-            }
-
-    .. tab:: JavaScript
-
-        .. code-block:: javascript
-
-            beforeSuite(fn, [opts]) {
-                // Code for before suite
-            }
-
-            beforeSpec(fn, [opts]) {
-                // Code for before spec
-            }
-
-            beforeScenario(fn, [opts]) {
-                // Code for before scenario
-            }
-
-            beforeStep(fn, [opts]) {
-                // Code for before step
-            }
-
-            afterSuite(fn, [opts]) {
-                // Code for after suite
-            }
-
-            afterSpec(fn, [opts]) {
-                // Code for after spec
-            }
-
-            afterScenario(fn, [opts]) {
-                // Code for after scenario
-            }
-
-            afterStep(fn, [opts]) {
-                // Code for after step
-            }
-
-    .. tab:: Python
-
-        .. code-block:: python
-
-            from getgauge.python import before_step, after_step, before_scenario, after_scenario, before_spec, after_spec, before_suite, after_suite
-
-            @before_step
-            def before_step_hook():
-                print("before step hook")
-
-            @after_step
-            def after_step_hook():
-                print("after step hook")
-
-            @before_scenario
-            def before_scenario_hook():
-                print("before scenario hook")
-
-            @after_scenario
-            def after_scenario_hook():
-                print("after scenario hook")
-
-            @before_spec
-            def before_spec_hook():
-                print("before spec hook")
-
-            @after_spec
-            def after_spec_hook():
-                print("after spec hook")
-
-            @before_suite
-            def before_suite_hook():
-                print("before suite hook")
-
-            @after_suite
-            def after_suite_hook():
-                print("after suite hook")
-
-    .. tab:: Ruby
-
-        .. code-block:: ruby
-
-            before_suite do
-                # Code for before suite
-            end
-
-            after_suite do
-                # Code for after suite
-            end
-
-            before_spec do
-                # Code for before spec
-            end
-
-            after_spec do
-                # Code for after spec
-            end
-
-            before_scenario do
-                # Code for before scenario
-            end
-
-            after_scenario do
-                # Code for after scenario
-            end
-
-            before_step do
-                # Code for before step
-            end
-
-            after_step do
-                # Code for after step
-            end
-
-
-By default, Gauge clears the state after each scenario so that new
-objects are created for next scenario execution. You can :ref:`configure <default_properties>`
-to change the level at which Gauge clears cache.
-
-Current Execution Context in the Hook
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
--  To get additional information about the **current specification,
-   scenario and step** executing, an additional **ExecutionContext**
-   parameter can be added to the :ref:`hooks <execution_hooks>` method.
-
-.. tab-container:: languages
-
-    .. tab:: CSharp
-
-        .. code-block:: java
-
-            using Gauge.CSharp.Lib;
-            using static Gauge.CSharp.Lib.ExecutionContext;
-
-            [BeforeScenario]
-            public void BeforeScenario(ExecutionContext context)
-            {
-                String scenarioName = context.CurrentScenario.Name;
-                //Code for before scenario
-            }
-
-            [AfterSpec]
-            public void AfterSpec(ExecutionContext context)
-            {
-                Specification specification = context.CurrentSpecification;
-                //Code for after spec
-            }
-
-    .. tab:: Java
-
-        .. code-block:: java
-
-            @BeforeScenario
-            public void loginUser(ExecutionContext context) {
-                String scenarioName = context.getCurrentScenario().getName();
-                // Code for before scenario
-            }
-
-            @AfterSpec
-            public void performAfterSpec(ExecutionContext context) {
-            Specification currentSpecification = context.getCurrentSpecification();
-                //Code for after spec
-            }
-
-    .. tab:: JavaScript
-
-        .. code-block:: javascript
-
-            beforeScenario(function (context) {
-                var scenario = context.currentScenario
-                // Code for before scenario
-            });
-
-            afterSpec(function (context) {
-                var specification = context.currentSpec
-                //Code for after spec
-            });
-
-    .. tab:: Python
-
-        .. code-block:: python
-
-            from getgauge.python import before_step, after_scenario
-
-            @before_step
-            def before_step_hook(context):
-                print(context)
-
-            @after_spec
-            def after_spec_hook(context):
-                print(context)
-
-    .. tab:: Ruby
-
-        .. code-block:: ruby
-
-            before_spec do |execution_info|
-                puts execution_info.inspect
-            end
-
-            after_spec do |execution_info|
-                puts execution_info.inspect
-            end
-
-
-.. _filtering_hooks_with_tags:
-
-Filtering Hooks execution based on tags
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
--  You can specify tags for which the execution :ref:`hooks <execution_hooks>` can run. This
-   will ensure that the hook only runs on scenarios and specifications
-   that have the required tags.
-
-.. tab-container::
-
-    .. tab:: CSharp
-
-        .. code-block:: java
-
-            // A before spec hook that runs when tag1 and tag2
-            // is present in the current scenario and spec.
-            [BeforeSpec("tag1, tag2")]
-            public void LoginUser() {
-                // Code for before scenario
-            }
-
-            // A after step hook runs when tag1 or tag2
-            // is present in the current scenario and spec.
-            // Default tagAggregation value is Operator.AND.
-            [AfterStep("tag1", "tag2")]
-            [TagAggregationBehaviour(TagAggregation.Or)]
-            public void PerformAfterStep() {
-                // Code for after step
-            }
-    .. tab:: Java
-
-        .. code-block:: java
-
-            // A before spec hook that runs when tag1 and tag2
-            // is present in the current scenario and spec.
-            @BeforeSpec(tags = {"tag1, tag2"})
-            public void loginUser() {
-                // Code forbefore scenario
-            }
-
-            // A after step hook runs when tag1 or tag2
-            // is present in the currentscenario and spec.
-            // Default tagAggregation value is Operator.AND.
-            @AfterStep(tags = {"tag1", "tag2"}, tagAggregation = Operator.OR)
-            public void performAfterStep() {
-                // Code for after step
-            }
-
-    .. tab:: JavaScript
-
-        .. code-block:: javascript
-
-            // A before spec hook that runs when tag1 and tag2
-            // is present in the current scenario and spec.
-            beforeSpec(function () {
-                //implementation
-            }, { tags: [ "tag1", "tag2" ]});
-
-            // A after step hook runs when tag1 or tag2
-            // is present in the currentscenario and spec.
-            // Default tagAggregation value is Operator.AND.
-            afterStep(function () {
-                //implementation
-            }, { tags: [ "tag1", "tag2" ]});
-
-    .. tab:: Python
-
-        .. code-block:: python
-
-            // A before spec hook that runs when tag1 and tag2
-            // is present in the current scenario and spec.
-            @before_spec("<tag1> and <tag2>")
-            def before_spec_hook():
-                print("before spec hook with tag")
-
-            // A after step hook runs when tag1 or tag2
-            // is present in the currentscenario and spec.
-            // Default tagAggregation value is Operator.AND.
-            @after_step("<tag1> and <tag2>")
-            def after_step_hook():
-                print("after step hook with tag")
-    .. tab:: Ruby
-
-        .. code-block:: ruby
-
-            # A before spec hook that runs when
-            # tag1 and tag2 is present in the current scenario and spec.
-            before_spec({tags: ['tag2', 'tag1']}) do
-                # Code for before scenario
-            end
-
-            # A after step hook runs when tag1 or tag2
-            # is present in the current scenario and spec.
-            # Default tagAggregation value is Operator.AND.
-            after_step({tags: ['tag2', 'tag1'], operator: 'OR'}) do
-                # Code for after step
-            end
-
-.. note:: Tags cannot be specified on @BeforeSuite and @AfterSuite hooks
-
-
-Data Store
-----------
-
-Data (Objects) can be shared in steps defined in different classes at
-runtime using DataStores exposed by gauge.
-
-There are 3 different types of DataStores based on the lifecycle of when
-it gets cleared.
-
-ScenarioStore
-^^^^^^^^^^^^^
-
-This data store keeps values added to it in the lifecycle of the
-scenario execution. Values are cleared after every scenario executes.
-
-.. tab-container::
-
-    .. tab:: CSharp
-
-        .. code-block:: java
-
-            using Gauge.CSharp.Lib;
-
-            // Adding value
-            var scenarioStore = DataStoreFactory.ScenarioDataStore;
-            scenarioStore.Add("element-id", "455678");
-
-            // Fetching Value
-            var elementId = (string) scenarioStore.Get("element-id");
-
-            // avoid type cast by using generic Get
-            var anotherElementId = scenarioStore.Get("element-id");
-
-    .. tab:: Java
-
-        .. code-block:: java
-
-            import com.thoughtworks.gauge.datastore.*;
-
-            // Adding value
-            DataStore scenarioStore = DataStoreFactory.getScenarioDataStore();
-            scenarioStore.put("element-id", "455678");
-
-            // Fetching Value
-            String elementId = (String) scenarioStore.get("element-id");
-
-    .. tab:: JavaScript
-
-        .. code-block:: javascript
-
-            // Adding value
-            gauge.dataStore.scenarioStore.put(key, value);
-
-            // Fetching Value
-            gauge.dataStore.scenarioStore.get(key);
-
-    .. tab:: Python
-
-        .. code-block:: python
-
-            # Import Package
-            from getgauge.python import data_store
-            
-            # Adding value
-            data_store.scenario["key"] = value
-            # OR
-            data_store.scenario.key = value
-
-            # Fetching Value
-            data_store.scenario["key"]
-            # OR
-            data_store.scenario.key
-
-    .. tab:: Ruby
-
-        .. code-block:: ruby
-
-            // Adding value
-            scenario_store = DataStoreFactory.scenario_datastore;
-            scenario_store.put("element-id", "455678");
-
-
-            // Fetching Value
-            element_id = scenario_store.get("element-id");
-
-
-SpecStore
-^^^^^^^^^
-
-This data store keeps values added to it during the lifecycle of the
-specification execution. Values are cleared after every specification
-executes
-
-.. tab-container::
-
-    .. tab:: CSharp
-
-        .. code-block:: java
-
-            using Gauge.CSharp.Lib;
-
-            // Adding value
-            var specStore = DataStoreFactory.SpecDataStore;
-            specStore.Add("element-id", "455678");
-
-            // Fetching Value
-            var elementId = (string) specStore.Get("element-id");
-
-            // avoid type cast by using generic Get
-            var anotherElementId = specStore.Get("element-id");
-
-    .. tab:: Java
-
-        .. code-block:: java
-
-            // Import Package 
-            import com.thoughtworks.gauge.datastore.*;
-
-            // Adding value 
-            DataStore specStore = DataStoreFactory.getSpecDataStore();
-            specStore.put("key", "455678");
-
-            // Fetching value 
-            String elementId = (String) specStore.get("key");
-
-    .. tab:: JavaScript
-
-        .. code-block:: javascript
-
-            // Adding value 
-            DataStore specStore = gauge.dataStore.specStore.put(key, value);
-
-            // Fetching value 
-            DataStore specStore = gauge.dataStore.specStore.get(key);
-
-    .. tab:: Python
-
-        .. code-block:: python
-
-            # Import Package
-            from getgauge.python import data_store
-
-            # Adding value 
-            data_store.spec["key"] = value
-            # OR
-            data_store.spec.key = value
-
-            # Fetching value 
-            data_store.spec["key"]
-            # OR
-            data_store.spec.key
-
-    .. tab:: Ruby
-
-        .. code-block:: ruby
-
-            // Adding value
-            spec_store = DataStoreFactory.spec_datastore;
-            spec_store.put("element-id", "455678");
-
-            // Fetching Value
-            element_id = spec_store.get("element-id");
-
-SuiteStore
-^^^^^^^^^^
-
-This data store keeps values added to it during the lifecycle of entire
-suite execution. Values are cleared after entire suite execution.
-
-.. warning::
-   ``SuiteStore`` is not advised to be used when executing specs in parallel.
-   The values are not retained between parallel streams of execution.
-
-.. tab-container::
-
-    .. tab:: CSharp
-
-        .. code-block:: java
-
-            using Gauge.CSharp.Lib;
-
-            // Adding value 
-            var suiteStore = DataStoreFactory.SuiteDataStore;
-            suiteStore.Add("element-id", "455678");
-
-            // Fetching Value 
-            var suiteStore = DataStoreFactory.SuiteDataStore; 
-            var elementId = (string) suiteStore.Get("element-id");
-
-            // Avoid type cast by using generic Get 
-            var anotherElementId = suiteStore.Get("element-id");
-
-    .. tab:: Java
-
-        .. code-block:: java
-
-            // Import Package 
-            import com.thoughtworks.gauge.datastore.*;
-
-            // Adding value
-            DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
-            suiteStore.put("element-id", "455678");
-
-            // Fetching value
-            DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
-            String elementId = (String) suiteStore.get("element-id");
-
-    .. tab:: JavaScript
-
-        .. code-block:: javascript
-
-            // Adding value 
-            DataStore suiteStore = gauge.dataStore.suiteStore.put(key, value);
-            
-            // Fetching value 
-            DataStore specStore = gauge.dataStore.suiteStore.get(key);
-
-    .. tab:: Python
-
-        .. code-block:: python
-
-            # Import Package 
-            from getgauge.python import data_store
-            
-            # Adding value 
-            data_store.suite["key"] = value
-            # OR
-            data_store.suite.key = value
-
-            # Fetching value 
-            data_store.suite["key"]
-            # OR
-            data_store.suite.key
-
-    .. tab:: Ruby
-
-        .. code-block:: ruby
-
-            // Adding value
-            suite_store = DataStoreFactory.suite_datastore;
-            suite_store.put("element-id", "455678");
-
-            // Fetching Value
-            suite_store = DataStoreFactory.suite_datastore;
-            element_id = suite_store.get("element-id");
-
-Taking Custom Screenshots
--------------------------
-
--  By default gauge captures the display screen on failure if this
-   feature has been enabled.
-
--  If you need to take CustomScreenshots (using webdriver for example)
-   because you need only a part of the screen captured, this can be done
-   by **implementing** the ``ICustomScreenshotGrabber`` interface;
-
-.. note::
-
-    If multiple custom ScreenGrabber implementations are found in
-    classpath then gauge will pick one randomly to capture the screen.
-    This is because gauge selects the first ScreenGrabber it finds,
-    which in turn depends on the order of scanning of the libraries.
-
-
-.. tab-container::
-
-    .. tab:: CSharp
-
-        .. code-block:: java
-
-            //Using Webdriver public
-            class CustomScreenGrabber : ICustomScreenshotGrabber {
-
-                // Return a screenshot byte array
-                public byte[] TakeScreenshot() {
-                    var driver = DriverFactory.getDriver();
-                    return ((ITakesScreenshot) driver).GetScreenshot().AsByteArray;
-                }
-            }
-
-    .. tab:: Java
-
-        .. code-block:: java
-
-            // Using Webdriver public class
-            CustomScreenGrabber implements ICustomScreenshotGrabber {
-                // Return a screenshot byte array
-                public byte[] takeScreenshot() {
-                    WebDriver driver = DriverFactory.getDriver();
-                    return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-                }
-
-            }
-
-    .. tab:: JavaScript
-
-        .. code-block:: javascript
-
-            // Using Taiko
-            // Return a screenshot byte array
-            gauge.screenshotFn = async function() {
-                return await screenshot({ encoding: 'base64' });
-            };
-
-
-    .. tab:: Python
-
-        .. code-block:: python
-
-            # Using Webdriver
-            from getgauge.python import screenshot
-            @custom_screen_grabber
-            # Return a screenshot byte array
-            def take_screenshot():
-                return Driver.driver.get_screenshot_as_png()
-
-    .. tab:: Ruby
-
-        .. code-block:: ruby
-
-            # Using Webdriver
-            Gauge.configure do |config|
-                # Return a screenshot byte array
-                config.screengrabber = -> {
-                driver.save_screenshot('/tmp/screenshot.png')
-                return File.binread("/tmp/screenshot.png")
-                }
-            end
-
-
-.. _reports_custom_messages:
-
-Custom messages in reports
---------------------------
-
-Custom messages/data can be added to execution reports using the below
-API from the step implementations or hooks.
-
-These messages will appear under steps in the execution reports.
-
-.. tab-container::
-
-    .. tab:: CSharp
-
-        .. code-block:: java
-
-            GaugeMessages.WriteMessage("Custom message for report");
-            var id = "4567";
-            GaugeMessages.WriteMessage("User id is {0}", id);
-
-    .. tab:: Java
-
-        .. code-block:: java
-
-            Gauge.writeMessage("Custom message for report");
-            String id = "4567";
-            Gauge.writeMessage("User id is %s", id);
-
-    .. tab:: JavaScript
-
-        .. code-block:: javascript
-
-            gauge.message("Custom message for report");
-
-    .. tab:: Python
-
-        .. code-block:: python
-
-            from getgauge.python import Messages
-
-            Messages.write_message("Custom message for report")
-
-    .. tab:: Ruby
-
-        .. code-block:: ruby
-
-            Gauge.write_message("Custom message for report")
-            id = "4567"
-            Gauge.write_message("User id is" + id)
-
-.. _reports_custom_screenshots:
-
-Custom screenshots in reports
------------------------------
-
-Custom screenshot can be added to execution reports using the below
-API from the step implementations or hooks.
-
-These screenshots will appear under steps in the execution reports.
-
-.. tab-container::
-
-    .. tab:: CSharp
-
-        .. code-block:: java
-
-            GaugeScreenshots.Capture();
-
-    .. tab:: Java
-
-        .. code-block:: java
-
-            Gauge.captureScreenshot();
-
-    .. tab:: JavaScript
-
-        .. code-block:: javascript
-
-            gauge.screenshot();
-
-    .. tab:: Python
-
-        .. code-block:: python
-
-            from getgauge.python import Screenshots
-
-            Screenshots.capture_screenshot()
-
-    .. tab:: Ruby
-
-        .. code-block:: ruby
-
-            Gauge.capture
-
-
-Continue on Failure
--------------------
-
-The default behaviour in gauge is to break execution on the first
-failure in a :ref:`step <step_syntax>`. So, if the
-first step in a :ref:`scenario <scenario_syntax>`
-fails, the subsequent steps are skipped. While this works for a majority
-of use cases, there are times when you need to execute all steps in a
-scenario irrespective of whether the previous steps have failed or not.
-
-To address that requirement, gauge provides a way for language runners
-to mark steps as recoverable, depending on whether the step
-implementation asks for it explicitly. Each language runner uses
-different syntax, depending on the language idioms to allow a step
-implementation to be marked to continue on failure.
-
-.. tab-container::
-
-    .. tab:: CSharp
-
-        .. code-block:: java
-
-            // The ``[ContinueOnFailure]`` attribute tells Gauge to continue executing others
-            // steps even if the current step fails.
-
-            public class StepImplementation {
-                [ContinueOnFailure]
-                [Step("Say <greeting> to <product name>")]
-                public void HelloWorld(string greeting, string name) {
-                    // If there is an error here, Gauge will still execute next steps
-                }
-
-            }
-
-    .. tab:: Java
-
-        .. code-block:: java
-
-            // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
-            // steps even if the current step fails.
-
-            public class StepImplementation {
-                @ContinueOnFailure
-                @Step("Say <greeting> to <product name>")
-                public void helloWorld(String greeting, String name) {
-                    // If there is an error here, Gauge will still execute next steps
-                }
-
-            }
-
-    .. tab:: JavaScript
-
-        .. code-block:: javascript
-
-            // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
-            // steps even if the current step fails.
-
-            gauge.step("Say <greeting> to <product>.", { continueOnFailure: true}, function (greeting,product) {
-            });
-
-    .. tab:: Python
-
-        .. code-block:: python
-
-            // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
-            // steps even if the current step fails.
-
-            @continue_on_failure([RuntimeError])
-            @step("Say <greeting> to <product>")
-            def step2(greeting,product):
-                pass
-
-    .. tab:: Ruby
-
-        .. code-block:: ruby
-
-            # The ``:continue_on_failure => true`` keyword argument
-            # tells Gauge to continue executing other steps even
-            # if the current step fails.
-
-            step 'Say <greeting> to <name>', :continue_on_failure => true do |greeting, name|
-                # If there is an error here, Gauge will still execute next steps
-            end
-
-Continue on Failure can take an optional parameter to specify the list
-of error classes on which it would continue to execute further steps in
-case of failure. This is currently supported only with the following runners.
-
-.. code-block:: java
-  :caption: Java
-
-  @ContinueOnFailure({AssertionError.class, CustomError.class})
-  @Step("hello")
-  public void sayHello() {
-    // code here
-  }
-
-  @ContinueOnFailure(AssertionError.class)
-  @Step("hello")
-  public void sayHello() {
-    // code here
-  }
-
-  @ContinueOnFailure
-  @Step("hello")
-  public void sayHello() {
-    // code here
-  }
-
-.. code-block:: python
-  :caption: Python
-
-  @continue_on_failure([RuntimeError])
-  @step("Step 2")
-  def step2():
-      pass
-
-In case no parameters are passed to ``@ContinueOnFailure``, on any type
-of error it continues with execution of further steps by default.
-
-This can be used to control on what type of errors the execution should
-continue, instead of just continuing on every type of error. For
-instance, on a ``RuntimeException`` it's ideally not expected to
-continue further. Whereas if it's an assertion error, it might be fine
-to continue execution.
-
-.. note::
-
-  -  Continue on failure comes into play at post execution, i.e. after the step method is executed. If there is a failure in executing the step, ex. parameter count/type mismatch, gauge will not honour the ``ContinueOnFailure`` flag.
-  -  Continue on failure does not apply to :ref:`hooks <execution_hooks>`. Hooks always fail on first error.
-  -  Step implementations are still non-recoverable by default and Gauge does not execute subsequent steps upon failure. To make a step implementation continue on failure, it needs to be explicitly marked in the test code.
-  -  There is no way to globally mark a test run to treat all steps to continue on failure. Each step implementation has to be marked explicitly.
-  -  If an implementation uses step aliases, marking that implementation to continue on failure will also make all the aliases to continue on failure. So, if a step alias is supposed to break on failure and another step alias is supposed to continue on failure, they need to be extracted to two different step implementations.
 
 Troubleshooting
 ===============
