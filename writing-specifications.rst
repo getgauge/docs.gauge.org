@@ -29,6 +29,8 @@ It is recommended that you use one of the following IDE plugins:
         Gauge projects can be created and run in Visual Studio by using the `Gauge extension for Visual Studio <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__.
         This plugin currently supports Gauge with C# (.Net framework).
 
+.. _specs:
+
 Specifications (spec)
 ---------------------
 
@@ -37,6 +39,8 @@ Gauge specifications support a ``.spec`` or ``.md`` file format and these specif
 
 | Every spec can contain one or more :ref:`longstart-scenarios`.
 | Every spec can be marked with labels using :ref:`longstart-tags`.
+
+.. _specs_directory:
 
 Specs directory
 ^^^^^^^^^^^^^^^
@@ -159,7 +163,7 @@ or
     ----------------
 
 | A scenario contains one or more :ref:`steps <step_syntax>` in it.
-| A scenario can be tagged by using :ref:`tags <tag_syntax>`.
+| A scenario can be tagged by using :ref:`tags <longstart-tags>`.
 
 Example
 ^^^^^^^
@@ -226,6 +230,7 @@ The values written in *quotes*, ``"``, are parameters that are passed into the e
 | For more information about Context Steps and Tear Down steps, see :ref:`Context Steps<longstart-context>` and :ref:`longstart-teardown`.
 | For more informatin about how to write step implementations for different languages, see :ref:`language-steps`.
 
+.. _parameters:
 
 Parameters
 -----------
@@ -1198,59 +1203,60 @@ The result is as follows:
 
 .. _project_structure:
 
-Project Structure
------------------
+Gauge Project Structure
+-----------------------
+When a Gauge project is initialized for a particular language plugin, a project structure is created at ``<project_root>``. 
+The project structure consists of language-specific files depending on the language plugin used and some common files and directories for all language plugins.
 
-On initialization of a gauge project for a particular language a project
-skeleton is created with the following files
+``<project_root>`` - location at which the Gauge project is created.
 
-Common Gauge files
-^^^^^^^^^^^^^^^^^^
+Common Gauge project files
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Regardless of the language plugin used, few common files and directories are created when a Gauge project is initialized. 
 
-.. _gauge_project_root:
+The following are the common files and directories in the Gauge project structure:
 
-``GAUGE_PROJECT_ROOT`` environment variable holds the path in which the gauge project is created.
+* env
+* logs
+* specs
+* manifest.json
 
 .. code-block:: text
 
     ├── env
     │  └── default
     │     └── default.properties
+    ├── logs
     ├── manifest.json
     ├── specs
        └── example.spec
-
+    
 Env Directory
 ^^^^^^^^^^^^^
+The ``env`` directory contains multiple environment specific directories.
+Each directory has ``.property`` files which define the environment variables set during spec execution for that specific environment.
 
-The env directory contains multiple environment specific directories.
-Each directory has `.property files <https://en.wikipedia.org/wiki/.properties>`__ which define the environment variables set during execution for that specific environment.
+A ``env/default`` directory is created when a Gauge project is initialized. 
+The default directory has the ``default.properties`` file, which contains the default environment variables set during spec execution.
+This directory also has the language specific ``.property`` file which contains language-specific environment variables.
 
-A **env/default** directory is created on project initialization which
-contains the default environment variables set during execution.
-
-Learn more about :ref:`managing environments <environments>`.
+| For more information about environments, see :ref:`environments`. 
+| For more information about the ``default.properties`` file, see :ref:`local_configuration_Gauge`.
 
 Specs Directory
 ^^^^^^^^^^^^^^^
+The specs directory contains all the specification files for the project. 
+A sample specification file called ``example.spec`` is created in this directory to understand the format of a specification file.
 
-The specs directory contains all the :ref:`spec <spec_syntax>` files for the
-project. They are the business layer specifications written in simple
-markdown format.
+A specification is a business test case, written in Markdown, which describes a particular feature of the application that needs testing.
 
-A simple example spec (**example.spec**) is created in the specs
-directory to better understand the format of specifications.
-
-Learn more about :ref:`spec <spec_syntax>`.
+For more information about what a specification is and spec directory, see :ref:`specs` and :ref:`specs_directory`.
 
 Manifest file
 ^^^^^^^^^^^^^
+The ``manifest.json`` file contains information such as the language used and plugins required for the Gauge project.
 
-The **manifest.json** contains gauge specific configurations which
-includes the information of plugins required in the project.
-
-After project initialization, the ``manifest.json`` will have the
-following content.
+After the Gauge project is initialized, ``manifest.json`` has the following information:
 
 .. code:: js
 
@@ -1261,22 +1267,12 @@ following content.
      ]
    }
 
--  **language** : Programming language used for the test code. Gauge uses the corresponding language runner for executing the specs.
+``Language`` - indicates the programming language used for the test code. Gauge uses this language runner for executing specs.
 
--  **Plugins** : The gauge plugins used for the project. Some plugins are used by default on each gauge project. The plugins can be added to project by running the following command :
+``Plugins`` - indicates the plugins used for the project. Some plugins are used by default for each gauge project. Plugins can also be added to the project by installing the required plugin.
 
-  .. code:: console
-
-      gauge install <plugin-name>
-
-  Example :
-
-  .. code:: console
-
-      gauge install xml-report
-
-After running the above command, the manifest.json would have the
-following content:
+For example, if you want to add xml-report plugin to the ``manifest.json`` file, you must install the xml-report plugin. 
+After the plugin is installed, manifest.json has the following content:
 
 .. code:: js
 
@@ -1288,10 +1284,13 @@ following content:
      ]
    }
 
-Project files
-^^^^^^^^^^^^^
+For more information about installing a plugin and related details, see :ref:`install_plugins`.
 
-Creating a new project adds some language specific files.
+Language-specific project files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When the Gauge project is initialized, depending on the language plugin used, language-specific files are created in the project.
+
+The following table shows the project structure for each of the languages when used for creating a Gauge project.
 
 .. tab-container:: languages
 
@@ -1307,7 +1306,7 @@ Creating a new project adds some language specific files.
             │
             ├── env
             │   └───default
-            │           default.properties
+            │           csharp.properties
             │
             ├───packages
                 └───<Nuget Package Binaries>
@@ -1315,17 +1314,22 @@ Creating a new project adds some language specific files.
             │       AssemblyInfo.cs
             │
             └───specs
-                    hello_world.spec
+                    example.spec
 
+        
         **packages.config**
 
-        For ``nuget``. Contains the dependencies for gauge. One can add more to
-        this list, depending on project needs.
+        Nuget Package Binaries contains nuget dependencies for Gauge.
 
         **StepImplementation.cs**
 
-        Contains the implementations for the sample steps defined in
-        ``hello_world.spec``.
+        This file contains the implementations for the sample steps defined in
+        ``example.spec``.
+
+        **csharp.properties**
+
+        | This file defines configurations for CSharp runner plugin.
+        | For more information about language-specific configuration, see :ref:`language_config`.
 
     .. tab:: Java
 
@@ -1350,13 +1354,12 @@ Creating a new project adds some language specific files.
 
         **src**
 
-        Src directory contains the classes the test code including step
-        implementations.
+        This directory contains the classes including step implementations.
 
         **java.properties**
 
-        This defines configurations for java runner plugin.
-        See :doc:`configuration` for more details.
+        | This file defines configurations for Java runner plugin.
+        | For more information about language-specific configuration, see :ref:`language_config`.
 
     .. tab:: JavaScript
 
@@ -1373,12 +1376,12 @@ Creating a new project adds some language specific files.
 
         **tests**
 
-        tests directory contains the test code including step implementations.
+        This directory contains the test code including step implementations.
 
         **js.properties**
 
-        This defines configurations for Javascript runner plugin.
-        See :doc:`configuration` for more details.
+        | This file defines configurations for Javascript runner plugin.
+        | For more information about language-specific configuration, see :ref:`language_config`.
 
     .. tab:: Python
 
@@ -1395,12 +1398,12 @@ Creating a new project adds some language specific files.
 
         **step_impl**
 
-        step_impl directory contains the test code including step implementations.
+        This directory contains the test code including step implementations.
 
         **python.properties**
 
-        This defines configurations for Python runner plugin.
-        See :doc:`configuration` for more details.
+        | This file defines configurations for Python runner plugin.
+        | For more information about language-specific configuration, see :ref:`language_config`.
 
     .. tab:: Ruby
 
@@ -1417,12 +1420,12 @@ Creating a new project adds some language specific files.
 
         **step_implementations directory**
 
-        This contains all the ``.rb`` files with the test code including step implementations in ruby
+        This directory contains all the ``.rb`` files with the test code including step implementations in ruby.
 
         **ruby.properties**
 
-        This defines configurations for ruby runner plugin.
-        See :doc:`configuration` for more details.
+        | This file defines configurations for Ruby runner plugin.
+        | For more information about language-specific configuration, see :ref:`language_config`.
 
 Advanced
 ========
