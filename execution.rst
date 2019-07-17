@@ -1,3 +1,5 @@
+.. _run_gauge_specifications:
+
 Run Gauge specifications
 ========================
 This page provides information about how to run a specification, multiple arguments that can be used with the ``gauge run`` command when a spec is executed, 
@@ -137,7 +139,7 @@ The argument to the ``gauge run`` command can be a specific scenario or a list o
 Any line number which the scenario spans across can be used. 
 
 .. note::
-   For more information about scenarios, see :ref:`write_gauge_specification`.
+   For more information about scenarios, see :ref:`longstart-scenarios`.
 
 To run a single scenario, use the following command:
 
@@ -230,7 +232,7 @@ You can use the ``--tags`` flag with the ``gauge run`` command to filter specs a
 .. admonition:: Prerequisite
 
    | You must have already labelled the specs and scenarios with tags.
-   | For more information about Tags, see :ref:`write_gauge_specification`.
+   | For more information about Tags, see :ref:`longstart-tags`.
 
 Use the following command to filter a Gauge specification or scenario by using tags:
 
@@ -568,8 +570,8 @@ In the following example, Gauge creates four groups of specification and selects
 
 Even if the command is run multiple times, Gauge still executes the same group of specifications in the same order.
 
-Rerun failed tests
--------------------
+Rerun failed scenarios
+----------------------
 Gauge provides the ability to rerun only the scenarios which failed in the previous execution. 
 You can use the ``--failed`` flag with the ``gauge run`` command to rerun failed scenarios.
 
@@ -609,8 +611,8 @@ Hence, ``gauge run --failed`` is equivalent to the following command:
 
     gauge run --env="chrome" --verbose specs <path_to_failed_scenarios>
 
-Rerun failed tests by using ``--max-retries-count``
-----------------------------------------------------
+Rerun failed scenarios by using ``--max-retries-count``
+-------------------------------------------------------
 You can use the ``--max-retries-count`` flag to rerun failed tests for a specific number of times.
 
 .. note::
