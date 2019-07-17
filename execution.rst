@@ -15,7 +15,7 @@ When this command is run, Gauge scans the directories and sub-directories at ``<
 .. admonition:: Prerequisite
     
    | You must have already created specification(s) at the ``specs`` directory or configured a directory(s) of your choice.
-   | For more information about writing a specification and ``specs`` directory, see :ref:`write_gauge_specification`.
+   | For more information about ``specs`` directory, see :ref:`specs_directory`.
 
 You can use the following command at ``<project_root>`` to run a Gauge specification:
 
@@ -412,7 +412,7 @@ External CSV for data table
 
 Data Tables for a specification can also be passed from an external CSV file. 
 
-For more information about external CSV files used in data tables, see :ref:`write_gauge_specification`.
+For more information about external CSV files used in data tables, see :ref:`parameters`.
 
 Example
 ^^^^^^^
