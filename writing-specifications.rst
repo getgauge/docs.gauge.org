@@ -109,7 +109,6 @@ A specification must begin with a spec heading. A specification must contain onl
 
 Spec heading is written in the `<H1>` Markdown syntax in one of the following ways:
 
-
 .. _spec_syntax:
 
 .. code-block:: gauge
@@ -142,7 +141,6 @@ In the following example, ``# Search specificaiton`` is the spec heading, follow
 
 Scenario
 --------
-
 Each scenario represents a single workflow in a particular specification. A
 specification must contain at least one scenario.
 
@@ -167,7 +165,6 @@ or
 
 Example
 ^^^^^^^
-
 In the following example, the spec, ``Search specification`` contains the scenario, ``## Successful search``. This scenario heading is followed by tags and steps.
 
 .. code-block:: gauge
@@ -203,7 +200,6 @@ This code is run when the steps inside a spec are executed.
 
 Example
 ^^^^^^^
-
 In the following example, the two sentences preceded by asterisk, \*\, are the unordered steps listed inside the ``Successful search`` scenario.
 
 .. code-block:: gauge
@@ -241,7 +237,6 @@ The equivalent code of the step implementation for that particular language plug
 
 Examples
 ^^^^^^^^
-
 In the following example, parameter values are ``“Die Hard”`` (within double quotes) within the two steps.
 
 .. code-block:: gauge
@@ -275,7 +270,6 @@ Simple parameters are values, which are used in a step within double quotes.
 
 Example
 ^^^^^^^
-
 In the following examples, ``Die Hard``, ``gauge-java``, and ``100`` are values within double quotes and are used in steps: 
 
 .. code-block:: gauge
@@ -315,7 +309,6 @@ In the following example, ``<name>`` is a dynamic parameter.
      
 Example: Dynamic parameters used in a Concept
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 In the following example, ``<username>`` and ``<project_name>`` are used in a Concept.
 
 .. code-block:: gauge
@@ -341,7 +334,6 @@ In the following example, ``<username>`` and ``<project_name>`` are used in a Co
 | For more information about using dynamic parameters in table column values, see :ref:`table_driven_execution`.
 | For more information about concepts, see :ref:`concept`.
 | For more information about using dynamic parameters in inline tables, see :ref:`example_inline_data_driven_table`.
-
 
 3. Table Parameters
 ^^^^^^^^^^^^^^^^^^^
@@ -402,13 +394,11 @@ This parameter takes values from the data table.
 
 4. Special Parameters
 ^^^^^^^^^^^^^^^^^^^^^
-
 Special parameters provide the ability to pass large and complex data such as tables and files into the steps as parameters.
 
 | A special parameter has the following syntax: ``<prefix:value>``.
 | ``prefix`` - defines the special type of parameter such as file or table
 | ``value`` - defines the value for the type of special parameter
-
 
 The two types of special parameters are as follows:
 
@@ -451,7 +441,6 @@ Special Parameter: CSV
 
 Examples
 ^^^^^^^^
-
 In the following example, ``data.csv`` is the absolute value of the special parameter, ``table``.
 
 .. code-block:: gauge
@@ -2401,7 +2390,6 @@ to continue execution.
   -  Step implementations are still non-recoverable by default and Gauge does not execute subsequent steps upon failure. To make a step implementation continue on failure, it needs to be explicitly marked in the test code.
   -  There is no way to globally mark a test run to treat all steps to continue on failure. Each step implementation has to be marked explicitly.
   -  If an implementation uses step aliases, marking that implementation to continue on failure will also make all the aliases to continue on failure. So, if a step alias is supposed to break on failure and another step alias is supposed to continue on failure, they need to be extracted to two different step implementations.
-
 
 Troubleshooting
 ===============

@@ -14,4 +14,4 @@ Gauge is a light-weight, cross-platform test automation tool which has the abili
     execution
     configuration
     faqs
-    examples
+    examples-and-tutorials
