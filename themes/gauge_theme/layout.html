@@ -135,64 +135,63 @@
     </div>
   </header>
 
+  <div class="wrapper-container">
+    <div class="main-content">
 
-  <div class="container">
-
-    <!--Left Sidebar  -->
-    <div class="left-sidebar-container containers">
-      <div id="sideBar">
-        <nav>
-          <div class="text-center">
-            <input type="text" id="search" name="search" placeholder="Search Docs" />
-          </div>
-          <div class="text-center">
-              <div class="sidebar-wrapper text-left">
-                  <ul>
-                    <li><a href="">OVERVIEW</a> </li>
-                    <li><a href="">DOCS HOME</a> </li>
-                    <li><a href="">GETTING STARTED</a> </li>
-                    <li><a href="">WRITE SPECIFICATIONS</a> </li>
-                    <li><a href="">RUN SPECIFICATIONS</a> </li>
-                    <li><a href="">PLUGINS</a> </li>
-                    <li><a href="">FROM ANOTHER PLATFORM</a> </li>
-                    <li><a href="">COMMAND REFRERENCE</a> </li>
-                    <li><a href="">CONFIGURATION</a> </li>
-                  </ul>
-                </div>
-          </div>
-        </nav>
-      </div>
-    </div>
-
-
-
-
-    <!-- Content Holder -->
-    <div class="docs-container containers">
-      <div class="row col-md-12 bigContainer">
-        {% if pagename == 'index' %}
-        <div class="col-md-12 content">
-          {% include '_overview.html' %}
-          <!-- Update it to Docs home once the design is finalized -->
+      <!--Left Sidebar  -->
+      <div class="left-sidebar-container containers">
+        <div id="sidebar">
+          <nav>
+            <div class="search-container">
+              <span id="search-icon"></span>
+              <input type="text" id="search" name="search" placeholder="Search" />
+            </div>
+            <div class="docs-toc">
+              <ul>
+                <li><a href="">DOCS HOME</a> </li>
+                <li><a href="/overview.html">OVERVIEW</a> </li>
+                <li><a href="">GETTING STARTED</a> </li>
+                <li><a href="">WRITE SPECIFICATIONS</a> </li>
+                <li><a href="">RUN SPECIFICATIONS</a> </li>
+                <li><a href="">PLUGINS</a> </li>
+                <li><a href="">FROM ANOTHER PLATFORM</a> </li>
+                <li><a href="">COMMAND REFRERENCE</a> </li>
+                <li><a href="">CONFIGURATION</a> </li>
+              </ul>
+            </div>
+          </nav>
         </div>
-        {% else %}
-        <div class="col-md-9 content">
-          {% if pagename == 'faqs' %}
-          <div class="faq-toc">
-            {{toc}}
-          </div>
-          {%endif%}
-          {% include '_breadcrumbs.html' %}
-          <a href="javascript:" id="return-to-top"><i></i></a>
-          {% block body %}{% endblock %}
-        </div>
-        {% endif %}
       </div>
 
-    </div>
-    <!-- Right Sidebar -->
-    <div class="right-sidebar-container containers">
-      <div>
+
+
+
+      <!-- Content Holder -->
+      <div class="docs-container containers">
+        <div class="row col-md-12 bigContainer">
+          {% if pagename == 'index' %}
+          <div class="col-md-12 content">
+            {% include '_overview.html' %}
+            <!-- Update it to Docs home once the design is finalized -->
+          </div>
+          {% else %}
+          <div class="col-md-9 content">
+            {% if pagename == 'faqs' %}
+            <div class="faq-toc">
+              {{toc}}
+            </div>
+            {%endif%}
+            <!-- {% include '_breadcrumbs.html' %} -->
+            <a href="javascript:" id="return-to-top"><i></i></a>
+            {% block body %}{% endblock %}
+          </div>
+          {% endif %}
+        </div>
+
+      </div>
+      <!-- Right Sidebar -->
+      <div class="right-sidebar-container containers">
+        <div>
           <!-- Local TOC -->
           <!-- {% block sidebar2 %}
       {% if pagename != 'index' and pagename != 'browse' %}
@@ -201,11 +200,11 @@
           <div class="text-center">
             <input type="text" id="search" name="search" placeholder="Search Docs" />
           </div>
-          <div class="sidebar-wrapper">
+          <div class="sidebar-wrapper"> -->
             <ul class="localtoc">
               {{ toc }}
             </ul>
-          </div>
+       <!--    </div>
         </nav>
       </div>
       {% endif %}
@@ -221,69 +220,70 @@
               <li><a href="">Slack</a> </li>
             </ul>
           </div>
-      </div>
-    </div>
-  </div>
-  {%- endblock %}
-
-  {%- block footer %}
-  <footer>
-    <div class="footer">
-      <div class="footer_items product">
-        <h5>Product</h5>
-        <nav class="footer_links">
-          <ul class="foolinks">
-            <li> <a href="{{gaugehome}}/get_started/">Get started</a> </li>
-            <li> <a href="{{gaugehome}}/#features">Features</a> </li>
-            <li> <a href="{{gaugehome}}/plugins/">Plugins</a> </li>
-            <li> <a href="/">Documentation</a> </li>
-            <li> <a href="{{gaugehome}}/blog/">Blog</a></li>
-            <li> <a href="//brandfolder.com/twproducts" target="_blank">Press Kit</a></li>
-
-          </ul>
-        </nav>
-      </div>
-      <div class="footer_items explore">
-        <h5>Explore</h5>
-        <nav class="footer_links">
-          <ul class="foolinks">
-            <li> <a href="browse.html">Table of Contents</a> </li>
-            <li> <a href="//waffle.io/getgauge/gauge" target="_blank">Roadmap</a> </li>
-            <li> <a href="//manpage.gauge.org/" target="_blank">Gauge Commands</a> </li>
-            <li><a href="//thoughtworks.com/privacy-policy" target="_blank">Privacy</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="footer_items engage">
-        <h5>Engage</h5>
-        <nav class="footer_links">
-          <ul class="foolinks">
-            <li> <a href="//gitter.im/getgauge/chat" class="icon_gitter">Gitter</a> </li>
-            <li> <a href="//groups.google.com/forum/#!forum/getgauge" class="icon_google">Google Group</a> </li>
-            <li> <a href="//stackoverflow.com/questions/tagged/getgauge" class="icon_stack">Stack Overflow</a> </li>
-            <li> <a href="//github.com/getgauge/gauge/blob/master/CONTRIBUTING.md"
-                class="icon_contribute">Contribute</a> </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="footer_items follow">
-        <h5>Follow us</h5>
-        <nav class="footer_links">
-          <ul class="foolinks">
-            <li> <a href="//github.com/getgauge/gauge" target="_blank"><i class="fab fa-github"></i></a> <a
-                href="//twitter.com/getgauge" target="_blank"><i class="fab fa-twitter"></i></a></li>
-          </ul>
-        </nav>
-        <div class="licence">
-          <p>Gauge is an open-source project, sponsored by <a href="//www.thoughtworks.com/"
-              target="_blank">ThoughtWorks Inc.</a> under the GPL License, Version 3.0</p>
         </div>
       </div>
     </div>
-    {%- block scripts %}
-    {{- script() }}
     {%- endblock %}
-  </footer>
+
+    {%- block footer %}
+    <footer>
+      <div class="footer">
+        <div class="footer_items product">
+          <h5>Product</h5>
+          <nav class="footer_links">
+            <ul class="foolinks">
+              <li> <a href="{{gaugehome}}/get_started/">Get started</a> </li>
+              <li> <a href="{{gaugehome}}/#features">Features</a> </li>
+              <li> <a href="{{gaugehome}}/plugins/">Plugins</a> </li>
+              <li> <a href="/">Documentation</a> </li>
+              <li> <a href="{{gaugehome}}/blog/">Blog</a></li>
+              <li> <a href="//brandfolder.com/twproducts" target="_blank">Press Kit</a></li>
+
+            </ul>
+          </nav>
+        </div>
+        <div class="footer_items explore">
+          <h5>Explore</h5>
+          <nav class="footer_links">
+            <ul class="foolinks">
+              <li> <a href="browse.html">Table of Contents</a> </li>
+              <li> <a href="//waffle.io/getgauge/gauge" target="_blank">Roadmap</a> </li>
+              <li> <a href="//manpage.gauge.org/" target="_blank">Gauge Commands</a> </li>
+              <li><a href="//thoughtworks.com/privacy-policy" target="_blank">Privacy</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer_items engage">
+          <h5>Engage</h5>
+          <nav class="footer_links">
+            <ul class="foolinks">
+              <li> <a href="//gitter.im/getgauge/chat" class="icon_gitter">Gitter</a> </li>
+              <li> <a href="//groups.google.com/forum/#!forum/getgauge" class="icon_google">Google Group</a> </li>
+              <li> <a href="//stackoverflow.com/questions/tagged/getgauge" class="icon_stack">Stack Overflow</a> </li>
+              <li> <a href="//github.com/getgauge/gauge/blob/master/CONTRIBUTING.md"
+                  class="icon_contribute">Contribute</a> </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer_items follow">
+          <h5>Follow us</h5>
+          <nav class="footer_links">
+            <ul class="foolinks">
+              <li> <a href="//github.com/getgauge/gauge" target="_blank"><i class="fab fa-github"></i></a> <a
+                  href="//twitter.com/getgauge" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+          </nav>
+          <div class="licence">
+            <p>Gauge is an open-source project, sponsored by <a href="//www.thoughtworks.com/"
+                target="_blank">ThoughtWorks Inc.</a> under the GPL License, Version 3.0</p>
+          </div>
+        </div>
+      </div>
+      {%- block scripts %}
+      {{- script() }}
+      {%- endblock %}
+    </footer>
+  </div>
   {%- endblock %}
 </body>
 
