@@ -70,8 +70,8 @@ The following is an example of a Gauge specification:
 
     * User must be logged in as "admin"
     * Open the product search page
-    * Search for product "Die Hard"
-    * "Die Hard" should show up in the search results
+    * Search for product "Cup Cakes"
+    * "Cup Cakes" should show up in the search results
 
     
     ## Unsuccessfull search
@@ -178,8 +178,8 @@ In the following example, the spec, ``Search specification`` contains the scenar
 
     For an existing product name, the search result will contain the product name
 
-    * Search for product "Die Hard"
-    * "Die Hard" should show up in the search results
+    * Search for product "Cup Cakes"
+    * "Cup Cakes" should show up in the search results
 
 
 .. _longstart-steps:
@@ -211,8 +211,8 @@ In the following example, the two sentences preceded by asterisk, \*\, are the u
 
     For an existing product name, the search result will contain the product name
 
-    * Search for product "Die Hard"
-    * "Die Hard" should show up in the search results
+    * Search for product "Cup Cakes"
+    * "Cup Cakes" should show up in the search results
 
 The values written in *quotes*, ``"``, are parameters that are passed into the equivalent code of the step implementation for that particular language plugin.
 
@@ -224,7 +224,7 @@ The values written in *quotes*, ``"``, are parameters that are passed into the e
    * ``>``
 
 | For more information about Context Steps and Tear Down steps, see :ref:`Context Steps<longstart-context>` and :ref:`longstart-teardown`.
-| For more informatin about how to write step implementations for different languages, see :ref:`language-steps`.
+| For more information about how to write step implementations for different languages, see :ref:`language-steps`.
 
 .. _parameters:
 
@@ -237,7 +237,8 @@ The equivalent code of the step implementation for that particular language plug
 
 Examples
 ^^^^^^^^
-In the following example, parameter values are ``“Die Hard”`` (within double quotes) within the two steps.
+
+In the following example, parameter values are ``“Cup Cakes”`` (within double quotes) within the two steps.
 
 .. code-block:: gauge
 
@@ -246,8 +247,8 @@ In the following example, parameter values are ``“Die Hard”`` (within double
 
     For an existing product name, the search result will contain the product name
 
-    * Search for product "Die Hard"
-    * "Die Hard" should show up in the search results
+    * Search for product "Cup Cakes"
+    * "Cup Cakes" should show up in the search results
 
 In the following example, parameter values are ``"product 1"`` and ``"product 2"``.
 
@@ -270,11 +271,12 @@ Simple parameters are values, which are used in a step within double quotes.
 
 Example
 ^^^^^^^
-In the following examples, ``Die Hard``, ``gauge-java``, and ``100`` are values within double quotes and are used in steps: 
+
+In the following examples, ``Cup Cakes``, ``gauge-java``, and ``100`` are values within double quotes and are used in steps: 
 
 .. code-block:: gauge
 
-   * Search for product "Die Hard"
+   * Search for product "Cup Cakes"
    * Create a “gauge-java” project
    * Write “100” line specification
 
@@ -289,7 +291,7 @@ Dynamic parameters have the following syntax: ``<dynamic_param>``.
 Example: Dynamic Parameters used in a spec which has a data table
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In the following example, ``<name>`` is a dynamic parameter. 
-``<name>`` can take the values mentioned in the "name" column of the table. In this case, the values are "Vishnu", "Prateek", or "Navaneeth".
+``<name>`` can take the values mentioned in the "name" column of the table. In this case, the values are "Alice", "Bob", or "Eve".
 
 .. code-block:: gauge
 
@@ -297,9 +299,9 @@ In the following example, ``<name>`` is a dynamic parameter.
 
         |id| name      |
         |--|-----------|
-        |1 | Vishnu    |
-        |2 | Prateek   |
-        |3 | Navaneeth |
+        |1 | Alice    |
+        |2 | Bob   |
+        |3 | Eve |
 
     ## First scenario
     * Say "hello" to <name>.
@@ -494,7 +496,7 @@ Example: Single line tag
 Example: Multi-line tag
 ^^^^^^^^^^^^^^^^^^^^^^^
 | In the following example, both the specification and scenario have tags in multiple lines.
-| Tags have to be indented while specifying in multiple lines.
+| Tags have to be indented when written in multiple lines.
 
 .. code-block:: gauge
 
@@ -534,8 +536,8 @@ These comments enhance readability without getting executed when the spec is run
 
     * User must be logged in as "admin"
     * Open the product search page
-    * Search for product "Die Hard"
-    * "Die Hard" should show up in the search results
+    * Search for product "Cup Cakes"
+    * "Cup Cakes" should show up in the search results
 
 .. _concept:
 
