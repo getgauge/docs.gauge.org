@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
 @import url("application.css");
 @import url("overview.css");
+:root {
+  --left-side-bar-color:#f2f2f2
+}
 
 body {
   display: grid;
@@ -32,7 +35,20 @@ body {
 
 .left-sidebar-container {
   flex:.95;
-  background-color: #f2f2f2;
+  background-color: var(--left-side-bar-color);
+}
+
+.help-note{
+  background-color: var(--left-side-bar-color);
+  font-size: 14px;
+}
+
+.help-note  h4 {
+  font-size: 16px;
+}
+
+.help-note a {
+  text-decoration: underline;
 }
 
 #sidebar {
@@ -76,7 +92,6 @@ footer {
 }
 
 .containers a {
-  padding-left: 3px;
   color: rgb(85, 85, 85);
   padding-bottom: 3px;
 }
@@ -432,7 +447,6 @@ code {
 
 .content>.section>h1 {
   font-size: 20px;
-  text-transform: uppercase;
 }
 
 .content>.section h2 {
@@ -1281,9 +1295,22 @@ img {
   }
 }
 
-.foolinks .icon_gitter, .foolinks .icon_google, .foolinks .icon_stack, .foolinks .icon_contribute {
+.foolinks .icon_gitter,
+.help-note .icon_gitter,
+.foolinks .icon_google,
+.help-note .icon_google,
+.foolinks .icon_stack,
+.help-note .icon_stack,
+.foolinks .icon_contribute {
   padding: 5px 0 5px 25px;
   display: block;
+}
+
+.help-note .icon_gitter {
+  background: url("../img/icon_gitter.svg") no-repeat 0 7px;
+  background-size: auto 20px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .foolinks .icon_gitter {
@@ -1300,6 +1327,13 @@ img {
   background-size: auto 20px;
 }
 
+.help-note  .icon_google {
+  background: url("../img/icon_google-group.svg") no-repeat 0 8px;
+  background-size: auto 18px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
 .foolinks .icon_google {
   background: url("//gauge.org/assets/images/footer-icons/icon_google-group.svg") no-repeat 0 8px;
   background-size: auto 18px;
@@ -1311,6 +1345,13 @@ img {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   background: url("//gauge.org/assets/images/footer-icons/icon_google-group_hover.svg") no-repeat 0 8px;
+  background-size: auto 18px;
+}
+
+.help-note .icon_stack {
+  background: url("../img/icon_stack_overflow.svg") no-repeat 0 7px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   background-size: auto 18px;
 }
 

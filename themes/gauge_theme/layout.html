@@ -175,7 +175,7 @@
             <!-- Update it to Docs home once the design is finalized -->
           </div>
           {% else %}
-          <div class="col-md-9 content">
+          <div class="col-md-12 content">
             {% if pagename == 'faqs' %}
             <div class="faq-toc">
               {{toc}}
@@ -209,15 +209,14 @@
       </div>
       {% endif %}
       {% endblock %} -->
-          <div class="text-left">
+          <div class="col-md-9 help-note">
             <h4>Need Help?</h4>
             <a href="">Read the troubleshooting guide.</a>
-            <b>Reach out to our comminity</b>
+            <span>Reach out to our comminity</span>
             <ul>
-              <li><a href="">Gitter</a> </li>
-              <li><a href="">Google Group</a> </li>
-              <li><a href="">Stack Overflow</a> </li>
-              <li><a href="">Slack</a> </li>
+              <li><a href="https://gitter.im/getgauge/chat" class="icon_gitter">Gitter</a> </li>
+              <li><a href="https://groups.google.com/forum/#!forum/getgauge" class="icon_google" >Google Group</a> </li>
+              <li><a href="https://stackoverflow.com/questions/tagged/getgauge" class="icon_stack">Stack Overflow</a> </li>
             </ul>
           </div>
         </div>
