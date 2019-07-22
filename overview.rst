@@ -220,13 +220,14 @@ example.cpt
 
     * And used the <parameter> in a step.
 
-The above concept can be invoked and a value can be passed to the concept against <parameter> at the time of invocation.
+The above concept can be invoked and a value can be passed to the concept against :highlighted-syntax:`<parameter>` at the time of invocation.
 
 .. code-block:: gauge
 
     * A sample concept that takes a "dummy value"
 
-| Note
+.. cssclass:: note
+| Note:
 | Refer to this example_inline_table for illustration on how table cell values can be referred using dynamic parameters.
 
 Table Parameters

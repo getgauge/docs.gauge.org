@@ -595,7 +595,10 @@ tr:hover {
 }
 
 .note {
-  padding: 0 !important;
+  border-left: 4px solid var(--gauge-yellow);
+  padding: 20px;
+  font-size: 14px;
+  border-radius: 5px;
 }
 
 .edit-on-github {
