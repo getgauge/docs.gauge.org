@@ -2,6 +2,13 @@
 @import url("font.css");
 @import url("application.css");
 @import url("overview.css");
+@import url("change_filter.css");
+
+
+.hidden {
+  visibility: hidden;
+}
+
 :root {
   --left-side-bar-color:#f2f2f2;
   --gauge-yellow: #ffcc00;

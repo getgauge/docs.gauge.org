@@ -20,6 +20,10 @@ def visit_input_node(self, node):
     text = ''
     for attr in node.attlist():
         attrs += attr[0] +"=" +'"'+ attr[1] +'"'
+<<<<<<< HEAD
+=======
+    attrs += 'class="search"'
+>>>>>>> Add docs for gauge installation
     self.body.append('<span><input '+ attrs +'>'+ node.rawsource +'</span>')
 
 def depart_input_node(self, node):
@@ -40,6 +44,7 @@ class SetupFiltersDirective(Directive):
         node['classes'].append('selections')
         self.state.nested_parse(self.content, self.content_offset, node)
         buttons_container = nodes.container()
+<<<<<<< HEAD
         buttons_container['classes'].append('filter-actions')
         for button_text in ['Cancel', 'Apply Filter']:
             button_container = nodes.container()
@@ -51,6 +56,8 @@ class SetupFiltersDirective(Directive):
             button_container.append(button)
             buttons_container += button_container
         wrapper += heading_node('Choose your setup')
+=======
+>>>>>>> Add docs for gauge installation
         horizontal_line = nodes.container()
         horizontal_line['classes'] = ['horizontal-line']
         wrapper += horizontal_line
@@ -78,8 +85,11 @@ class SetupFilterDirective(Directive):
             _input['type'] = 'radio'
             _input['name'] = options['type']
             _input['value'] = content
+<<<<<<< HEAD
             if content == options['selected']:
                 _input['checked'] = 'true'
+=======
+>>>>>>> Add docs for gauge installation
             container += _input
         return [container]
 
@@ -89,4 +99,8 @@ def setup(app):
 
     app.add_node(input_node, html=(visit_input_node, depart_input_node))
     app.add_directive('setupfilters', SetupFiltersDirective)
+<<<<<<< HEAD
     app.add_directive('setupfilter', SetupFilterDirective)
+=======
+    app.add_directive('setupfilter', SetupFilterDirective)
+>>>>>>> Add docs for gauge installation

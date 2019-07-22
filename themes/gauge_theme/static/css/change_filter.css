@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @media (min-width: 1200px){
     #proj-setup-filter-section {
         width: 750px;
@@ -14,6 +15,11 @@
     font-size: 14px;
     display: flex;
     justify-content: space-between;
+=======
+/* #proj-setup-filter-section .applied-filters {
+    font-size: 14px;
+    display: flex;
+>>>>>>> Add docs for gauge installation
 }
 #proj-setup-filter-section .applied-filters .applied-filter {
     padding: 0px 20px 0px 20px;
@@ -22,9 +28,12 @@
     margin-left: 10px;
     color: white;
 }
+<<<<<<< HEAD
 #change-filter{
     width: 20%;
 }
+=======
+>>>>>>> Add docs for gauge installation
 #change-filter::before {
     content: "";
     border-bottom: 10px solid #f8cd46;
@@ -55,6 +64,10 @@
 #proj-setup-filter-section .proj-setup-filters .selections .selection {
     display: inline-flex;
     flex-direction: column;
+<<<<<<< HEAD
+=======
+    border-block-color: black
+>>>>>>> Add docs for gauge installation
 }
 
 #proj-setup-filter-section .proj-setup-filters .horizontal-line {
@@ -80,4 +93,8 @@
     border-radius: 25px;
     border: 1px solid black;
     background-color: white;
+<<<<<<< HEAD
 }
+=======
+} */
+>>>>>>> Add docs for gauge installation
