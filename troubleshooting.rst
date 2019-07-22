@@ -3,43 +3,69 @@ Troubleshooting
 
 .. _execution-troubleshooting:
 
-Execution
----------
+Execution (run a Gauge specification)
+-------------------------------------
 
-Why do I get validation failure warning?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Validation failure warning
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Error message:**
 
 .. code-block:: text
 
    [WARN] Validation failed. The following steps have errors
    ...
 
-Check if the step is implemented.
-The steps are case sensitive, check if the cases match.
+**Cause:**
 
-Why does the runner fail to start?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This error occurs if the step implementation for a particular step does not exist.
+
+**Corrective action:**
+
+* Add the step implementation for the failed step.
+* | Ensure that the cases match between the step and the corresponding code in the implementation file. 
+  | The code for the step in the step implementation file is case sensitive.
+
+Failed to start a runner
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Error:**
 
 .. code-block:: text
 
    Failed to start a runner. Compatible runner version to 0.0.7 not found
 
-The language plugin is not compatible with the gauge version installed. Run
+**Cause:**
+
+The language plugin is not compatible with the Gauge version installed on your system. 
+
+**Corrective action:**
+
+Issue the following command:
 
 .. code-block:: console
 
    gauge install language_name
 
-Why are there too many open files?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+For more information about plugin installation, see :ref:`install_plugins`.
+
+Too many open files
+^^^^^^^^^^^^^^^^^^^
+
+**Error**
 
 .. code-block:: text
 
    Error: too many open files
 
+**Cause:**
+
 The upper limit to the number of open files is low.
-Increase the upper limit by adding a command ``ulimit -S -n 2048`` to you ~/.profile.
-Don't forget to re-login for the changes to take effect.
+
+**Corrective action:**
+
+1. Increase the upper limit by adding a command ``ulimit -S -n 2048`` to you ``~/.profile``.
+2. Log out and log in again for the changes to take effect.
 
 Why can't gradle execute gauge specs, despite adding a task as per the document?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -1,13 +1,15 @@
 FAQs
 ====
+This page lists FAQs (Frequently Asked Questions) about installing Gauge, running a Gauge specification (spec), configuring Gauge, language runners used with Gauge, and using text editors while writing a Gauge spec. 
+To understand these concepts, see Gauge documentation.
 
 .. _installation-faq:
 
 Installation
 ------------
 
-Where's the gauge executable installed by default?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Where is the Gauge executable installed by default?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ============= ================================
 OS            Path
@@ -16,10 +18,8 @@ Windows       ``%ProgramFiles%\gauge\bin``
 MacOS/Linux   ``/usr/local/bin``
 ============= ================================
 
-
-
-Where are the plugins installed?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Where are the plugins installed by default?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ============= ================================
 OS            Path
@@ -29,14 +29,13 @@ MacOS/Linux   ``~/.gauge/plugins``
 ============= ================================
 
 What is GAUGE_HOME?
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 ``GAUGE_HOME`` environment variable can be used to customize config files and plugins installation location.
 
 How can I manually install a plugin?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Download the plugin distributable zip file and install it using the ``-f`` flag.
+Download the plugin from a zip file and install the plugin by using the ``-f`` flag.
 
 .. code-block:: console
 
