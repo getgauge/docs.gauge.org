@@ -72,7 +72,7 @@ Select your setup to see the instructions for installing gauge.
 
 
 .. include:: mac_installation.rst
-.. include:: window_installation.rst
+.. include:: windows_installation.rst
 .. include:: linux_installation.rst
 .. include:: vscode_installation.rst
 

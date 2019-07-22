@@ -1,4 +1,5 @@
 .. cssclass:: hidden, windows
+
 Step1: Installing Gauge on Windows
 ==================================
 
@@ -12,18 +13,22 @@ Download the following instruction bundle to get the latest stable release of Ga
     windows Installer
 
 .. cssclass:: hidden, windows
+
 Chocolatey Package Manager
 ==========================
 
 .. cssclass:: hidden, windows
+
 Zip file
 ========
 
 .. cssclass:: hidden, windows
+
 NPM install
 ===========
 
 .. cssclass:: hidden, windows
+
 Alternate methods
 =================
 
