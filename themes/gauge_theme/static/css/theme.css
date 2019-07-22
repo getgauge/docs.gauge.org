@@ -3,7 +3,8 @@
 @import url("application.css");
 @import url("overview.css");
 :root {
-  --left-side-bar-color:#f2f2f2
+  --left-side-bar-color:#f2f2f2;
+  --gauge-yellow: #ffcc00;
 }
 
 body {
@@ -686,8 +687,8 @@ ul.breadcrumbs li a {
 
 #return-to-top i {
   display: inline-block;
-  border-right: 4px solid #f5c10e;
-  border-bottom: 4px solid #f5c10e;
+  border-right: 4px solid var(--gauge-yellow);
+  border-bottom: 4px solid var(--gauge-yellow);
   width: 20px;
   height: 20px;
   transform: rotate(-135deg);
@@ -814,7 +815,7 @@ header.top {
   width: 80%;
   height: 100%;
   background: #1e1e1e;
-  border-bottom: 5px solid #ffcc00;
+  border-bottom: 5px solid var(--gauge-yellow);
   padding: 0px 4% 0px 6%;
 }
 
@@ -833,7 +834,7 @@ header.top::after {
 
 .inner header.top {
   background: #1e1e1e;
-  border-bottom: 5px solid #ffcc00;
+  border-bottom: 5px solid var(--gauge-yellow);
 }
 
 .header-container {
@@ -1040,7 +1041,7 @@ header.top::after {
 }
 
 .main-nav a:hover {
-  color: #ffcc00;
+  color: var(--gauge-yellow);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -1174,7 +1175,7 @@ header.top::after {
         color: #fff; } } */
 
 .sticky .main-nav a:hover, .open .main-nav a:hover {
-  color: #ffcc00;
+  color: var(--gauge-yellow);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -1194,7 +1195,7 @@ header.top::after {
 }
 
 .link_doc a {
-  color: #ffcc00;
+  color: var(--gauge-yellow);
 }
 
 footer{
@@ -1232,7 +1233,7 @@ img {
 .foolinks a:hover {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  color: #ffcc00;
+  color: var(--gauge-yellow);
 }
 
 @media (min-width: 1200px) {
@@ -1261,7 +1262,7 @@ img {
 }
 
 .footer_items h5 {
-  color: #ffcc00;
+  color: var(--gauge-yellow);
   font-size: 14px;
   font-weight: 400;
   margin: 0 0 30px;
@@ -1440,7 +1441,7 @@ img {
 }
 
 .main-highlight {
-  background: #ffcc00;
+  background: var(--gauge-yellow);
 }
 
 .fa-github {
