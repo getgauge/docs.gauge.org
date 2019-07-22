@@ -87,7 +87,7 @@ For more information about Markdown, see `Markdown Syntax <https://daringfirebal
 
 Components of a specification
 -----------------------------
-A specification comprises of different sections; some of which are mandatory and few are optional.
+A specification consists of different sections; some of which are mandatory and few are optional.
 The components of a spec are listed as follows:
 
 * Specification heading
