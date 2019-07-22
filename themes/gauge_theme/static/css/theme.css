@@ -71,11 +71,24 @@ header.top:hover {
 .docs-container {
   flex:2;
   background-color: white;
-  padding: 10px;
+  padding: 10px 30px;
+}
+
+.docs-container h1 {
+  font-size: 24px;
+}
+
+.docs-container h2 {
+  font-size: 20px;
+}
+
+.docs-container h3 {
+  font-size: 18px;
 }
 
 .right-sidebar-container {
   flex:1;
+  margin-top: 60px;
 }
 
 

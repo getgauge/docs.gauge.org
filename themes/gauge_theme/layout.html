@@ -170,26 +170,16 @@
 
       <!-- Content Holder -->
       <div class="docs-container containers">
-        <div class="row col-md-12 bigContainer">
+        <!-- <div class="row col-md-12 bigContainer"> -->
           {% if pagename == 'index' %}
-          <div class="col-md-12 content">
             {% include '_overview.html' %}
             <!-- Update it to Docs home once the design is finalized -->
-          </div>
           {% else %}
-          <div class="col-md-12 content">
-            {% if pagename == 'faqs' %}
-            <div class="faq-toc">
-              {{toc}}
-            </div>
-            {%endif%}
             <!-- {% include '_breadcrumbs.html' %} -->
             <a href="javascript:" id="return-to-top"><i></i></a>
             {% block body %}{% endblock %}
-          </div>
           {% endif %}
-        </div>
-
+        <!-- </div> -->
       </div>
       <!-- Right Sidebar -->
       <div class="right-sidebar-container containers">
@@ -202,6 +192,7 @@
         <div class="col-md-9 help-note">
           <h4>Need Help?</h4>
           <a href="">Read the troubleshooting guide.</a>
+          <br>
           <span>Reach out to our comminity</span>
           <ul>
             <li><a href="https://gitter.im/getgauge/chat" class="icon_gitter">Gitter</a> </li>

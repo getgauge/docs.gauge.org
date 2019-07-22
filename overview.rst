@@ -1,4 +1,4 @@
-
+.. cssclass:: topic
 What is Gauge
 ==============
 
@@ -10,7 +10,7 @@ natural part of the software development cycle by removing any hurdle that comes
 writing and maintaining acceptance tests
 
 
-
+.. cssclass:: topic
 Why Gauge
 =========
 
@@ -32,7 +32,7 @@ Some of the key features of Gauge that make it stand unique include:
 * Helps you create Maintainable and Understandable test suites.
 * IDE Support
 
-
+.. cssclass:: topic
 Gauge Terminologies
 ===================
 
@@ -84,7 +84,7 @@ It is written in :highlighted-syntax:`<H1>` syntax of markdown. This can be in t
 
     # Spec Heading
 
-or 
+or
 
 .. code-block:: gauge
 
