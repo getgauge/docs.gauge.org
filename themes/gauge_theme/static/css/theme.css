@@ -1184,6 +1184,11 @@ header.top::after {
   color: #ffcc00;
 }
 
+footer{
+  display: flex;
+  justify-content: center;
+}
+
 @media (min-width: 768px) {
   footer {
     padding: 50px 0px;
