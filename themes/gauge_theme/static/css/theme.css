@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+@import url("font.css");
 @import url("application.css");
 @import url("overview.css");
 :root {
@@ -16,6 +17,17 @@ body {
 .wrapper-container { grid-area: main-content; }
 .footer-content { grid-area: footer-content; }
 
+h1, h2, h3, h4 {
+  font-family: "URWGeometric-SemiBold";
+}
+
+* {
+  font-family: "Open Sans";
+}
+
+header.top:hover {
+  background-color: white;
+}
 .wrapper-container {
   display: flex;
   flex-direction: column;
@@ -27,20 +39,20 @@ body {
 }
 
 .main-content, footer {
-  width: 72%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
 }
 
 .left-sidebar-container {
-  flex:.95;
+  min-width: 290px;
   background-color: var(--left-side-bar-color);
 }
 
 .help-note{
   background-color: var(--left-side-bar-color);
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .help-note  h4 {
@@ -83,8 +95,8 @@ footer {
 }
 
 .localtoc>ul>li>a {
-  border-bottom: 0.5px solid rgba(85, 85, 85, 0.3);
-  font-size: 80%;
+  /* border-bottom: 0.5px solid rgba(85, 85, 85, 0.3); */
+  font-size: 14px;
 }
 
 .localtoc>ul>li>ul {
@@ -152,13 +164,18 @@ body {
   transition: all 0.3s ease;
 }
 
+.algolia-autocomplete {
+  width: 100%;
+}
+
 #search {
-  width: 20em;
+  width: 100%;
   padding: 5px 5px 5px 29px;
   font-size: 80%;
   height: 40px;
   border-radius: 6px;
-  border-style: solid;
+  /* border-style: solid; */
+  border: 2px solid lightgray;
 }
 #search-icon {
   background-image: url(../img/search.svg);
@@ -367,7 +384,6 @@ code {
 
 .gauge-features {
   display: flex;
-  font-family: "Open Sans", sans-serif;
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
@@ -498,24 +514,21 @@ code {
 .tab-selector.nav li {
   padding: 5px 20px 5px 30px
 }
+.localtoc-container > h4 {
+  color: #848181;
+  font-weight: 600;
+}
 
-.localtoc>ul>li>a {
+.localtoc > ul a {
   display: block;
-  border-bottom: 1px solid #aaa;
-  border-color: #aaa;
-  font-size: 16px;
+  font-size: 14px;
+  color: gray;
+  padding: 4px 0;
 }
 
 .localtoc>ul>li>ul {
-  padding-left: 10px !important;
+  padding-left: 40px !important;
   margin-bottom: 20px;
-}
-
-.localtoc ul li ul a {
-  display: block;
-  border-bottom: 1px dotted #ccc;
-  padding: 10px 0;
-  font-size: 14px;
 }
 
 #rightNav li.active>a {
@@ -785,7 +798,7 @@ header.top {
 }
 
 .header-container {
-  width: 72%;
+  width: 80%;
   height: 100%;
   background: #1e1e1e;
   border-bottom: 5px solid #ffcc00;
@@ -842,7 +855,7 @@ header.top::after {
 
 @media (min-width: 1200px) {
   .header-container {
-    max-width: 72%;
+    max-width: 80%;
   }
 }
 

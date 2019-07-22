@@ -36,7 +36,7 @@ Some of the key features of Gauge that make it stand unique include:
 Gauge Terminologies
 ===================
 
-Specifications (spec)
+Specifications
 ---------------------
 
 They are business layer test cases which can also act as your feature documentation. They are written in the business language. Typically a spec or specification describe a particular feature of the application under test.
@@ -74,7 +74,7 @@ Example
     The search results will be empty
 
 Specification Heading
----------------------
++++++++++++++++++++++
 
 A Spec must begins with a spec heading and a single specification can contain only one spec heading.
 
