@@ -1,0 +1,68 @@
+.selections {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.selection {
+    background-color: #fff9e5;
+    width: 27%;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ffcc01;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+}
+
+
+/* .number {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    margin-left: 40%;
+    margin-top: -8%;
+    background-color: white;
+    vertical-align: middle;
+    line-height: 35px;
+    border-radius: 50%;
+    border: 1px solid black;
+} */
+
+
+.radioContainer {
+    position: relative;
+    width: 70%;
+    border-radius: 20px;
+    margin: 5px 0px 5px 40px;
+    cursor: pointer;
+    font-size: 18px;
+    border: 1px solid black;
+}
+
+/* Hide the browser's default radio button */
+input {
+    display: none;
+}
+
+/* Add check mark font*/
+
+.checkmark:after {
+    content: '\f058';
+    font-family: FontAwesome;
+    position: absolute;
+    display: none;
+    left: 4px;
+    text-align: left;
+}
+
+/* Show the indicator when checked */
+input:checked~.checkmark:after {
+    display: inline;
+}

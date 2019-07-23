@@ -6,7 +6,7 @@ Step 2: Installing Gauge extension for VSCode
     System Requirements
     Latest VSCode
 
-Follow the steps to add the Gauge VSCode code    plugin from the IDE
+Follow the steps to add the Gauge VSCode code plugin from the IDE
 
 1. Install the following Gauge extension for VSCode.
 `Gauge extension <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__

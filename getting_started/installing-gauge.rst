@@ -1,4 +1,4 @@
-Next `Create a testing project <testing-project>`__
+Next `Create a testing project </create-test-project.html>`__
 
 Getting Started
 ================
@@ -6,7 +6,7 @@ Getting Started
 This getting started guide walks you through the core features of Gauge. You'll be able to install
 Gauge and learn how to create a test automation project using Gauge.
 
-If you are new to Gauge, check out the `Overview <overview.html>`__ section in the docs for a quick introduction to th
+If you are new to Gauge, check out the `Overview </overview.html>`__ section in the docs for a quick introduction to th
 most important concepts and features of the tool.
 
 
@@ -15,22 +15,22 @@ Choose your Setup to Install Gauge
 Select your setup to see the instructions for installing gauge.
 
 
-.. _proj-setup-filter-section:
+.. _installation-selection:
 .. container::
 
-   .. setupfilters::
-      :section_name: proj-setup-filters
+   .. installationselections::
+      :section_name: installation
 
-      .. setupfilter::
+      .. installationselection::
          :class: selection
          :type: os
-         :title: 1 : Select your os
+         :title: 1 : Select your OS
 
          MacOS
          Windows
          Linux
 
-      .. setupfilter::
+      .. installationselection::
          :class: selection
          :type: language
          :title: 2 : Select a Language
@@ -41,7 +41,7 @@ Select your setup to see the instructions for installing gauge.
          Ruby
          Csharp
 
-      .. setupfilter::
+      .. installationselection::
          :class: selection
          :type: ide
          :title: 3 : Select an IDE/Editor
@@ -53,7 +53,7 @@ Select your setup to see the instructions for installing gauge.
 .. Installation Instructions
 .. --------------------------
 
-.. .. _proj-setup-filter-section:
+.. .. _installation_selection:
 .. .. container::
 
 ..    .. container:: applied-filters
@@ -78,11 +78,8 @@ Select your setup to see the instructions for installing gauge.
 
 
 
-
-
-
-
 Next Step:
 Now that you've install Gauge, you can go ahead and create a JavaScript testing project using Gauge.
 
-Next `Create a testing project <testing-project>`__
+
+Next `Create a testing project </   create-test-project.html>`__
