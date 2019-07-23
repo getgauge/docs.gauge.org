@@ -100,6 +100,40 @@ header.top:hover {
   margin-top: 60px;
 }
 
+.docs-toc .sub-toc {
+  font-family: "URWGeometric-Regular";
+  padding: 0 28px;
+}
+
+.sub-toc.collapsed {
+  display: none;
+}
+
+.docs-toc .sub-toc a {
+  color: #636262;
+}
+
+.doc-toc-group > a:after {
+  content: ' ';
+  width: 10px;
+  height: 10px;
+  position: relative;
+  float: right;
+}
+
+.doc-toc-group.collapsed > a:after {
+  border-left: 2px solid #8a8a8a;
+  border-top: 2px solid #8a8a8a;
+  transform: rotate(-135deg);
+  top: 7px;
+}
+
+.doc-toc-group.expanded > a:after {
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  transform: rotate(45deg);
+  top: 13px;
+}
 
 footer {
   background: #1A1C19;
@@ -212,7 +246,10 @@ body {
 
 .docs-toc a {
   text-decoration: none;
-  color: gray;
+  color: #989898;
+  display: block;
+  font-family: "URWGeometric-Medium";
+  font-size: 16px;
 }
 
 .docs-toc li {
