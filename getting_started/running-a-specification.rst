@@ -1,7 +1,8 @@
 .. cssclass:: topic
-Running a Specification from VS Code
-====================================
+Running a Specification
+=======================
 
+.. include:: change_filter.rst
 .. role:: highlighted-syntax
 .. role:: param-syntax-char
 
@@ -12,7 +13,8 @@ running a specification using the example spec in the test folder.
 A test specification (spec) is a detailed statement of what will be tested. In Gauge, these are written
 in a spec file.To learn more about how specifications work you can look at the owerview section.
 
-Running the specification using VS Code
+.. cssclass:: MacOS-javascript-vscode display-content
+Using VS Code
 ---------------------------------------
 Step 1
 ++++++
