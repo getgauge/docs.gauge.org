@@ -30,7 +30,11 @@
     cursor: pointer;
 }
 
-#change-filter::before {
+.apply-filter:hover{
+    cursor: pointer;
+}
+
+.change-filter-btn::before {
     content: "";
     border-bottom: 10px solid #f8cd46;
     border-left: 10px solid transparent;
@@ -52,7 +56,7 @@
     background-color: #f2f2f2;
     padding: 0 30px 0px 30px;
     box-shadow: 1px 5px 8px gray;
-    margin-top: 10px;
+    margin-top: 9px;
 }
 
 #proj-setup-filter-section .proj-setup-filters .selections {

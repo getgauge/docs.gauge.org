@@ -69,12 +69,24 @@ function changeFilter() {
 
 const showPopup = function() {
     const popUp = document.getElementsByClassName("proj-setup-filters");
+    const changeFilterBtn = document.getElementById("change-filter");
+    changeFilterBtn.classList.add("change-filter-btn");
     popUp[0].classList.remove("hidden");
 };
 
 const hidePopUp = function() {
     const popUp = document.getElementsByClassName("proj-setup-filters");
+    const changeFilterBtn = document.getElementById("change-filter");
+    changeFilterBtn.classList.remove("change-filter-btn");
     popUp[0].classList.add("hidden");
+};
+
+const changeSelectedDetails = function(selectedItems) {
+    const appliedFilters = document.querySelectorAll(".applied-filter");
+
+    appliedFilters.forEach((appliedFilter, index) => {
+        appliedFilter.innerText = selectedItems[index];
+    });
 };
 
 const showContent = function() {
@@ -97,4 +109,5 @@ const showContent = function() {
     elems.forEach(elem => elem.classList.add("hidden"));
     elemsToShow.forEach(elemToShow => elemToShow.classList.remove("hidden"));
     hidePopUp();
+    changeSelectedDetails(selectedItems);
 };
