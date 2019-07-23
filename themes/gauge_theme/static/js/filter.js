@@ -54,4 +54,46 @@ window.onload = function () {
         window.location.search = (new URLSearchParams(selections)).toString();
     }
     showContent();
+    changeFilter();
 }
+function changeFilter() {
+    const changeFilterBtn = document.getElementById("change-filter");
+    changeFilterBtn.onclick = showPopup;
+
+    const cancelBtn = document.getElementsByClassName("cancel");
+    cancelBtn[0].onclick = hidePopUp;
+
+    const applyBtn = document.getElementsByClassName("apply-filter");
+    applyBtn[0].onclick = showContent;
+};
+
+const showPopup = function() {
+    const popUp = document.getElementsByClassName("proj-setup-filters");
+    popUp[0].classList.remove("hidden");
+};
+
+const hidePopUp = function() {
+    const popUp = document.getElementsByClassName("proj-setup-filters");
+    popUp[0].classList.add("hidden");
+};
+
+const showContent = function() {
+    const selections = document.querySelectorAll(".selection");
+    const selectedItems = [];
+    selections.forEach(selection => {
+        for (e of selection.children) {
+            if (e.firstChild.checked) selectedItems.push(e.firstChild.value);
+        }
+    });
+    const contentToShow = selectedItems
+        .join("-")
+        .split(" ")
+        .join("")
+        .toLowerCase();
+
+    const elemsToShow = document.querySelectorAll("." + contentToShow);
+    const elems = document.querySelectorAll(".display-content");
+
+    elems.forEach(elem => elem.classList.add("hidden"));
+    elemsToShow.forEach(elemToShow => elemToShow.classList.remove("hidden"));
+};

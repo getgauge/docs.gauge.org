@@ -72,6 +72,14 @@ header.top:hover {
   text-decoration: underline;
 }
 
+.display-content{
+  width: 750px;
+}
+
+.sub-heading{
+  font-size: 20px;
+}
+
 #sidebar {
   width: 80%;
   margin: 45px auto;

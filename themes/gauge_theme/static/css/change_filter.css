@@ -25,6 +25,11 @@
 #change-filter{
     width: 20%;
 }
+
+#change-filter:hover{
+    cursor: pointer;
+}
+
 #change-filter::before {
     content: "";
     border-bottom: 10px solid #f8cd46;
@@ -33,6 +38,10 @@
     position: relative;
     top: 3px;
     left: 50px;
+}
+
+.cancel{
+    cursor: pointer;
 }
 
 #proj-setup-filter-section .proj-setup-filters {

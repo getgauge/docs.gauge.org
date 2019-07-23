@@ -4,50 +4,38 @@ Create a Testing project using Gauge
 
 .. include:: change_filter.rst
 
-.. cssclass:: windows-javascript-vscode
+.. cssclass:: windows-javascript-vscode display-content hidden
 
-| Gauge projects can be created and executed in Visual studio code using the Gauge extension for VSCode.
-| In this guide, you'll be able to learn how to add a sample Javascript testing project in VSCode
+.. container::
 
-.. cssclass:: windows-javascript-vscode
+    | Gauge projects can be created and executed in Visual studio code using the Gauge extension for VSCode.
+    | In this guide, you'll be able to learn how to add a sample Javascript testing project in VSCode
 
--------
-Step 1
--------
+    .. cssclass:: sub-heading
+    Step 1
 
-Once the extension is installed, press Ctrl + shift + p to display the editor's command pallete, and then execute the following command to create a new testing project in Gauge:
+    Once the extension is installed, press Ctrl + shift + p to display the editor's command pallete, and then execute the following command to create a new testing project in Gauge:
 
-.. code-block:: text
+    .. code-block:: text
 
-    Gauge: Create new Gauge Project
+        Gauge: Create new Gauge Project
 
-.. cssclass:: windows-javascript-vscode
+    .. cssclass:: sub-heading
+    Step 2
 
--------
-Step 2
--------
+    Select the JS template to create the sample testing project
 
-Select the JS template to create the sample testing project
+    .. cssclass:: sub-heading
+    Step 3
 
-.. cssclass:: windows-javascript-vscode
+    Choose a location to create a new folder to create a new project
 
--------
-Step 3
--------
+    .. cssclass:: sub-heading
+    Step 4
 
-Choose a location to create a new folder to create a new project
+    Give a name to your project
 
-.. cssclass:: windows-javascript-vscode
-
--------
-Step 4
--------
-
-Give a name to your project
-
-.. cssclass:: windows-javascript-vscode
-
-| After you've successfully created a gauge project, you'll be able to see a sample project with an example specification.
+    | After you've successfully created a gauge project, you'll be able to see a sample project with an example specification.
 
 ----------------------------------
 Next Step: Running a Specification

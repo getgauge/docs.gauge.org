@@ -19,7 +19,7 @@
       .. container::
 
          Change Filter
-
+   .. cssclass:: hidden
    .. setupfilters::
       :section_name: proj-setup-filters
 
