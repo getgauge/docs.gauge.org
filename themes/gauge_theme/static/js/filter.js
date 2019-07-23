@@ -96,4 +96,5 @@ const showContent = function() {
 
     elems.forEach(elem => elem.classList.add("hidden"));
     elemsToShow.forEach(elemToShow => elemToShow.classList.remove("hidden"));
+    hidePopUp();
 };
