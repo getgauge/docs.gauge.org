@@ -91,20 +91,47 @@ $(document).ready(() => {
     }, 500);
   });
 
-  $('ul.localtoc a').click(function () {
+  $('ul.localtoc a').click(function(){
     var sectionId = $(this).attr('href');
 
     $('body,html').animate({
-      scrollTop: $(sectionId).offset().top
-    }, 500);
+      scrollTop : $(sectionId).offset().top
+  }, 500);
   });
 
   $('.headerlink').click(function () {
     var sectionId = $(this).attr('href');
     $('body,html').animate({
-      scrollTop: $(sectionId).offset().top
+      scrollTop : $(sectionId).offset().top
     }, 500);
   });
 
+  jQuery('.docs-toc li').on('click', function(event, selector) {
+    if(event.currentTarget.className.match('active-toc')) {
+      $(event.currentTarget).addClass('active-toc');
+    };
+    $(event.currentTarget).toggleClass('collapsed');
+    $(event.currentTarget).toggleClass("expanded");
+  })
+
+  jQuery('.docs-toc > ul > li').each((_, toc) => {
+    let elemSelector = $(toc);
+    if(toc.className.match('doc-toc-group')) {
+      let subTocList = elemSelector.find('ul.sub-toc li')
+      subTocList.each( (_, subToc) => {
+        let tocLink = subToc.children[0]
+        if( tocLink && tocLink.href.match(window.location.pathname)) {
+          $(subToc).addClass('active-toc expanded');
+          elemSelector.addClass('active-toc expanded');
+          elemSelector.removeClass('collapsed');
+        }
+      })
+    } else {
+      let tocLink = toc.children[0]
+      if( tocLink && tocLink.href.match(window.location.pathname)) {
+        elemSelector.addClass('active-toc');
+      }
+    }
+  });
 });
 

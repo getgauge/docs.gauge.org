@@ -110,10 +110,10 @@ header.top:hover {
 
 .docs-toc .sub-toc {
   font-family: "URWGeometric-Regular";
-  padding: 0 28px;
+  padding-left: 28px;
 }
 
-.sub-toc.collapsed {
+.doc-toc-group.collapsed .sub-toc {
   display: none;
 }
 
@@ -130,17 +130,21 @@ header.top:hover {
 }
 
 .doc-toc-group.collapsed > a:after {
-  border-left: 2px solid #8a8a8a;
-  border-top: 2px solid #8a8a8a;
+  border-left: 3px solid #8a8a8a;
+  border-top: 3px solid #8a8a8a;
   transform: rotate(-135deg);
-  top: 7px;
+  top: 1px;
 }
 
 .doc-toc-group.expanded > a:after {
-  border-left: 2px solid black;
-  border-top: 2px solid black;
+  border-left: 3px solid black;
+  border-top: 3px solid black;
   transform: rotate(45deg);
-  top: 13px;
+  top: 7px;
+}
+
+.docs-toc .active-toc > a {
+  color: #323232;
 }
 
 footer {
@@ -172,8 +176,8 @@ footer {
   padding-bottom: 3px;
 }
 
-.containers a:hover {
-  border-bottom: 1px solid rgb(245, 193, 14);
+.docs-toc .active-toc > a.toc-link {
+  border-bottom: 3px solid rgb(245, 193, 14);
 }
 
 .highlight-console .highlight pre span.go:before {
