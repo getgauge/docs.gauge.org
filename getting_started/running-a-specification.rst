@@ -60,5 +60,10 @@ You'll get immediate feedback in the output about what got executed.
 
 
 Next Step:
-++++++++++
+----------
 Now that you have successfully run a Gauge specification, you can go ahead and view the report from VS code.
+
+.. cssclass:: page-navigator
+
+    `Previous <create-test-project.html>`_
+    `Next <view-a-report.html>`_
