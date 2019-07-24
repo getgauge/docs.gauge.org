@@ -54,6 +54,15 @@ header.top:hover {
   display: flex;
 }
 
+.page-navigator{
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-navigator a{
+  text-decoration: none;
+}
+
 .left-sidebar-container {
   min-width: 290px;
   background-color: var(--left-side-bar-color);
@@ -74,10 +83,13 @@ header.top:hover {
 
 .display-content{
   width: 750px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .sub-heading{
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: bolder;
 }
 
 #sidebar {
@@ -637,24 +649,20 @@ tr:hover {
 }
 
 .admonition {
-  background-color: transparent !important;
-  border: 0.5px solid rgb(245, 193, 14);
+  background-color: #F2F2F2 !important;
   margin-top: 10px;
 }
 
 .admonition>p {
   padding: 0 0 0 10px !important;
   font-size: 80% !important;
-}
-
-.admonition .first {
-  background-color: rgb(245, 193, 14);
+  margin: 0px;
 }
 
 .note {
   border-left: 4px solid var(--gauge-yellow);
-  padding: 20px;
-  font-size: 14px;
+  padding: 10px 0px 10px 0px;
+  font-size: 18px;
   border-radius: 5px;
 }
 

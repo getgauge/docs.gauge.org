@@ -10,20 +10,31 @@
     }
 }
 
+#proj-setup-filter-section{
+    margin: 0px;
+    padding: 0px;
+}
+
 #proj-setup-filter-section .applied-filters {
     font-size: 14px;
     display: flex;
-    justify-content: space-between;
 }
 #proj-setup-filter-section .applied-filters .applied-filter {
-    padding: 0px 20px 0px 20px;
+    padding: 0px 20px 0px 10px;
     background-color: black;
     border-radius: 30px;
-    margin-left: 10px;
+    margin-right: 10px;
     color: white;
 }
-#change-filter{
-    width: 20%;
+
+#proj-setup-filter-section .applied-filters .applied-filter::before{
+    content: "\2713";
+    color: black;
+    padding-right: 5px;
+    padding-left: 5px;
+    background: #f8cd46;
+    border-radius: 50%;
+    margin-right: 5px;
 }
 
 #change-filter:hover{
@@ -32,6 +43,15 @@
 
 .apply-filter:hover{
     cursor: pointer;
+}
+
+#change-filter::after{
+    content: "     \270E";
+    transform: rotate(180deg);
+}
+
+.change-filter-btn{
+    width: 20%;
 }
 
 .change-filter-btn::before {
@@ -60,8 +80,7 @@
 }
 
 #proj-setup-filter-section .proj-setup-filters .selections {
-    width: 100%;
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
 }
 
