@@ -32,27 +32,27 @@ versions: prune
 
 	# for master branch, generate html, singlehtml
 	(cd $(WORKDIR)/master;\
-	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/master -D html_theme_options.docs_version=master \
+	GAUGE_LATEST_VERSION=$(LATESTBRANCH) $(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/master -D html_theme_options.docs_version=master \
 	    -D version=master -D release=master \
 		-A current_version=master -A latest_version=master -A versions="master latest redesign"\
 		-A commit=$(MASTERSHA) -A github_version=master;\
-	$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/master -A SINGLEHTML=true;);\
+	GAUGE_LATEST_VERSION=$(LATESTBRANCH) $(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/master -A SINGLEHTML=true;);\
 
 	# for latest version branch, generate html, singlehtml
 	(cd $(WORKDIR)/$(LATESTBRANCH);\
-	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/latest \
+	GAUGE_LATEST_VERSION=$(LATESTBRANCH) $(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/latest \
 		-D version=$(LATESTBRANCH) -D release=$(LATESTBRANCH) \
 		-A current_version=latest -A latest_version=$(LATESTBRANCH) -A versions="master latest redesign"\
 		-A commit=$(shell git rev-parse --short HEAD) -A github_version=$(LATESTBRANCH);\
-	$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/latest -A SINGLEHTML=true;);\
+	GAUGE_LATEST_VERSION=$(LATESTBRANCH) $(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/latest -A SINGLEHTML=true;);\
 
 	# for redesign branch, generate html, singlehtml
 	(cd $(WORKDIR)/redesign;\
-	$(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/redesign \
+	GAUGE_LATEST_VERSION=$(LATESTBRANCH) $(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/redesign \
 		-D version=redesign -D release=redesign \
 		-A current_version=redesign -A latest_version=redesign -A versions="master latest redesign"\
 		-A commit=$(shell git rev-parse --short HEAD) -A github_version=redesign;\
-	$(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/redesign -A SINGLEHTML=true;);\
+	GAUGE_LATEST_VERSION=$(LATESTBRANCH) $(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/redesign -A SINGLEHTML=true;);\
 
 	rm -rf $(WORKDIR); \
 	git checkout master

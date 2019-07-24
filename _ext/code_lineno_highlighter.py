@@ -1,4 +1,6 @@
 from sphinx.writers.html import HTMLTranslator
+from os import environ
+from sphinx.directives import CodeBlock
 
 
 class Highlighter(object):
@@ -30,6 +32,19 @@ class AnchorLineNoHTMLTranslator(HTMLTranslator):
 
         HTMLTranslator.visit_literal_block(self, node)
 
+    def visit_reference(self, node):
+        if node.hasattr('refuri') and node['refuri'].find('GAUGE_LATEST_VERSION_PLACEHOLDER') >= 0:
+            refuri = node.attributes['refuri']
+            node.attributes['refuri'] = refuri.replace('GAUGE_LATEST_VERSION_PLACEHOLDER', environ.get('GAUGE_LATEST_VERSION'))
+        HTMLTranslator.visit_reference(self, node)
 
 def setup(app):
     app.set_translator('html', AnchorLineNoHTMLTranslator)
+    app.add_directive('custom-code-block', CustomCodeBlock)
+
+
+class CustomCodeBlock(CodeBlock):
+    def run(self):
+        print(environ.values())
+        self.content.replace('GAUGE_LATEST_VERSION_PLACEHOLDER', environ.get('GAUGE_LATEST_VERSION'))
+        return super().run()
