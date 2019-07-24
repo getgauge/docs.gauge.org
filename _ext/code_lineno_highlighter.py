@@ -48,4 +48,4 @@ class CustomCodeBlock(CodeBlock):
         if environ.get('GAUGE_LATEST_VERSION') == None:
             raise Exception("Please set GAUGE_LATEST_VERSION env variable")
         self.content.replace('GAUGE_LATEST_VERSION_PLACEHOLDER', environ.get('GAUGE_LATEST_VERSION'))
-        return super().run()
+        return super(CustomCodeBlock, self).run()
