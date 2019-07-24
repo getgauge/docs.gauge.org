@@ -65,6 +65,8 @@ function changeFilter() {
 
     const applyBtn = document.getElementsByClassName("apply-filter");
     applyBtn[0].onclick = showContent;
+
+    showContent();
 };
 
 const showPopup = function() {
