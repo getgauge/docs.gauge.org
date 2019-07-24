@@ -13,8 +13,8 @@ running a specification using the example spec in the test folder.
 A test specification (spec) is a detailed statement of what will be tested. In Gauge, these are written
 in a spec file.To learn more about how specifications work you can look at the owerview section.
 
-.. cssclass:: MacOS-javascript-vscode display-content
-Using VS Code
+.. cssclass:: macos-javascript-vscode display-content
+Running a Specification using VS Code
 ---------------------------------------
 Step 1
 ++++++
@@ -27,6 +27,37 @@ Run your Gauge specs in VS Code by choosing the option to :highlighted-syntax:`R
 
 
 You'll get immediate feedback in the output about what got executed.
+
+.. cssclass:: macos-java-intellij display-content hidden
+Running a Specification using Intellij
+---------------------------------------
+Step 1
+++++++
+Open the example spec. The Gauge specification file is present under :highlighted-syntax:`/specs/example.spec`
+
+Step 2
+++++++
+Run your Gauge specs in Intellij
+
+
+
+You'll get immediate feedback in the output about what got executed.
+
+.. cssclass:: windows-csharp-visualstudio display-content hidden
+Running a Specification using Visual Studio
+---------------------------------------
+Step 1
+++++++
+Open the example spec. The Gauge specification file is present under :highlighted-syntax:`/specs/example.spec`
+
+Step 2
+++++++
+Run your Gauge specs in Visual Studio
+
+
+
+You'll get immediate feedback in the output about what got executed.
+
 
 Next Step:
 ++++++++++
