@@ -24,7 +24,7 @@ function setSelections() {
     });
 }
 
-function showContent() {
+function showContents() {
     Object.keys(selections).forEach(function (s) {
         document.querySelectorAll('.' + selections[s]).forEach(function (e) {
             e.classList.remove('hidden');
@@ -53,7 +53,7 @@ window.onload = function () {
     if (window.location.search === '') {
         window.location.search = (new URLSearchParams(selections)).toString();
     }
-    showContent();
+    showContents();
     changeFilter();
 }
 function changeFilter() {

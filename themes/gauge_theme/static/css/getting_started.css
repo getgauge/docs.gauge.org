@@ -1,10 +1,10 @@
-.selections {
+#installation-selection .setup-selections {
     display: flex;
     flex-direction: row;
     margin: 10px;
 }
 
-.selection {
+#installation-selection .setup-selection {
     background-color: #fff9e5;
     width: 27%;
     text-align: center;
@@ -36,7 +36,7 @@
 } */
 
 
-.radioContainer {
+#installation-selection .radioContainer {
     position: relative;
     width: 70%;
     border-radius: 20px;
@@ -47,13 +47,13 @@
 }
 
 /* Hide the browser's default radio button */
-input {
+#installation-selection input {
     display: none;
 }
 
 /* Add check mark font*/
 
-.checkmark:after {
+#installation-selection .checkmark:after {
     content: '\f058';
     font-family: FontAwesome;
     position: absolute;
@@ -63,6 +63,6 @@ input {
 }
 
 /* Show the indicator when checked */
-input:checked~.checkmark:after {
+#installation-selection input:checked~.checkmark:after {
     display: inline;
 }

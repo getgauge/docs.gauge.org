@@ -1,4 +1,6 @@
-Next `Create a testing project </create-test-project.html>`__
+.. cssclass:: page-navigator
+
+`Next: Create a testing project <create-test-project.html>`__
 
 Getting Started
 ================
@@ -19,10 +21,10 @@ Select your setup to see the instructions for installing gauge.
 .. container::
 
    .. installationselections::
-      :section_name: installation
+      :setup-section: installation
 
       .. installationselection::
-         :class: selection
+         :class: setup-selection
          :type: os
          :title: 1 : Select your OS
 
@@ -31,7 +33,7 @@ Select your setup to see the instructions for installing gauge.
          Linux
 
       .. installationselection::
-         :class: selection
+         :class: setup-selection
          :type: language
          :title: 2 : Select a Language
 
@@ -42,7 +44,7 @@ Select your setup to see the instructions for installing gauge.
          Csharp
 
       .. installationselection::
-         :class: selection
+         :class: setup-selection
          :type: ide
          :title: 3 : Select an IDE/Editor
 
@@ -82,4 +84,7 @@ Next Step:
 Now that you've install Gauge, you can go ahead and create a JavaScript testing project using Gauge.
 
 
-Next `Create a testing project </   create-test-project.html>`__
+
+.. cssclass:: page-navigator
+
+`Next: Create a testing project <create-test-project.html>`__

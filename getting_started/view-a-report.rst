@@ -2,7 +2,7 @@
 Viewing Reports from VS Code
 =============================
 
-.. include:: change_filter.rst
+.. include:: ../change_filter.rst
 
 .. cssclass:: windows-javascript-vscode display-content hidden
 

@@ -1,11 +1,15 @@
 .. cssclass:: topic
+
 Create a Testing project using Gauge
 ====================================
 
-.. include:: change_filter.rst
+.. include:: ../change_filter.rst
+
+
 .. role:: highlighted-syntax
 
 .. cssclass:: windows-javascript-vscode display-content hidden
+
 Creating a Testing Project in VS Code
 -------------------------------------
 Gauge projects can be created and executed in Visual studio code using the Gauge extension for VSCode.
@@ -39,6 +43,7 @@ Give a name to your project
 .. Note:: The file structure may vary depending on the language of your project. For this example, we have created a Javascript project.
 
 .. cssclass:: macos-javascript-vscode display-content hidden
+
 Creating a Testing Project in VS Code
 -------------------------------------
 Gauge projects can be created and executed in Visual studio code using the Gauge extension for VSCode.
@@ -90,6 +95,7 @@ Give a name to your project
       :alt: Select the template
 
 .. cssclass:: linux-javascript-vscode display-content hidden
+
 Creating a Testing Project in VS Code
 -------------------------------------
 Gauge projects can be created and executed in Visual studio code using the Gauge extension for VSCode.
@@ -130,6 +136,6 @@ Now that you have successfully added/initialized a new Gauge testing projec, we 
 
 .. cssclass:: page-navigator
 
-    `Previous <getting-started.html>`_
+    `Previous <installing-gauge.html>`_
     `Next <running-a-specification.html>`_
     

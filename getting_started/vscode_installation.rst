@@ -1,4 +1,4 @@
-..cssclass
+.. cssclass:: vscode
 
 Step 2: Installing Gauge extension for VSCode
 =============================================

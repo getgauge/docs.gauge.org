@@ -1,8 +1,9 @@
 .. cssclass:: topic
+
 Running a Specification
 =======================
 
-.. include:: change_filter.rst
+.. include:: ../change_filter.rst
 .. role:: highlighted-syntax
 .. role:: param-syntax-char
 
@@ -14,6 +15,7 @@ A test specification (spec) is a detailed statement of what will be tested. In G
 in a spec file.To learn more about how specifications work you can look at the owerview section.
 
 .. cssclass:: macos-javascript-vscode display-content
+
 Running a Specification using VS Code
 ---------------------------------------
 Step 1
