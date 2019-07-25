@@ -64,7 +64,7 @@ The upper limit to the number of open files is low.
 
 **Solution:**
 
-1. Increase the upper limit by adding a command ``ulimit -S -n 2048`` to you ``~/.profile``.
+1. Increase the upper limit by adding a command ``ulimit -S -n 2048`` to your ``~/.profile``.
 2. Log out and log in again for the changes to take effect.
 
 Gradle unable to execute Gauge specs, despite adding GaugeTask
@@ -130,46 +130,48 @@ List of various Parse errors:
 | Scenario heading is not allowed in        | Stops                          |
 | concept file                              |                                |
 +-------------------------------------------+--------------------------------+
-| Table doesn’t belong to any step          | Ignores table,Continue         |
+| Table does not belong to any step         | Ignores table;                 |
+|                                           | Gauge execution continues      |
 +-------------------------------------------+--------------------------------+
 | Table header cannot have repeated column  | Marks that spec as             |
-| values                                    | failed,Continues for others    |
+| values                                    | failed; Gauge execution        |
+|                                           | continues for other spes       | 
 +-------------------------------------------+--------------------------------+
 | Teardown should have at least three       | Marks that spec as             |
-| underscore characters                     | failed,Continues for other     |
+| underscore characters                     | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
 | Scenario heading should have at least one | Marks that spec as             |
-| character                                 | failed,Continues for other     |
+| character                                 | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
 | Table header should be not blank          | Marks that spec as             |
-|                                           | failed,Continues for other     |
+|                                           | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
 | Multiple spec headings found in the same  | Marks that spec as             |
-| file                                      | failed,Continues for other     |
+| file                                      | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
 | Scenario should be defined after the spec | Marks that spec as             |
-| heading                                   | failed,Continues for other     |
+| heading                                   | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
 | Could not resolve table from file         | Marks that spec as             |
-|                                           | failed,Continues for other     |
+|                                           | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
 | Spec does not have any element            | Marks that spec as             |
-|                                           | failed,Continues for other     |
+|                                           | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
 | Spec heading not found                    | Marks that spec as             |
-|                                           | failed,Continues for other     |
+|                                           | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
 | Spec heading should have at least one     | Marks that spec as             |
-| character                                 | failed,Continues for other     |
+| character                                 | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
 | Dynamic param could not be resolved       | Marks that spec as             |
-|                                           | failed,Continues for other     |
+|                                           | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
 | Step should not be blank                  | Marks that spec as             |
-|                                           | failed,Continues for other     |
+|                                           | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
 | Duplicate scenario definition found in    | Marks that spec as             |
-| the same specification                    | failed,Continues for other     |
+| the same specification                    | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
 
 **Cause:**
@@ -180,7 +182,7 @@ necessary for writing a spec or concept.
 **Solution:**
 
 | Ensure that the spec and concept files follow the appropriate guidelines.
-| For more information about how to write a spec, see :ref:`spec_syntax`.
+| For more information about how to write a spec, see :ref:`_specs`.
 | For more information about how to write a concept, see :ref:`concept`. 
 
 Validation Errors
@@ -249,7 +251,7 @@ When Node is updated, ``gauge run`` fails due to binary incompatibility with the
 
 **Solution:**
 
-Run  ``npm rebuild`` in ``PLUGIN_INSTALL_LOCATION\js\PLUGIN_VERSION`` dir.
+Run  ``npm rebuild`` in ``PLUGIN_INSTALL_LOCATION\js\PLUGIN_VERSION`` directory.
 
 or
 
@@ -300,11 +302,11 @@ This error occurs in versions lower than Python 2.7 and versions lower than Pyth
 
 **Solution:**
 
-* Move to Python versions other than those in which the error occurs.
+* Use Python versions other than those in which the error occurs.
 
 Or
 
-* If you cannot move to other Python versions, create ``step_impl/__init__.py`` file.
+* If you cannot use other Python versions, create ``step_impl/__init__.py`` file.
 
 VSCode
 ------
@@ -318,7 +320,6 @@ Debugger does not stop at the right breakpoint (gauge-java)
 
 **Cause:**
 
-In Java projects, if the debugger does not stop at the right breakpoint
 For more information about this issue, see `GitHub gauge-vscode issues
 <https://github.com/getgauge/gauge-vscode/issues/344>`_.
 
@@ -385,8 +386,10 @@ This behavior is flaky, hence sometimes the Gauge API does not get started.
 5) Ensure that Gauge can use the port range 46337-46997 in the firewall because Gauge-VisualStudio uses this port number by default.
 
 6) | If port range 46337-46997 has a conflict or these ports cannot be used in the firewall, then set a different port in Gauge-VisualStudio. 
-   | To set a different port, select ``Tools->Option->Gauge->API Options``.
-   | Ensure that the port set is white-listed in your firewall.
+   
+   1) To set a different port, select ``Tools->Option->Gauge->API Options``.
+   
+   Ensure that the port set is white-listed in your firewall.
 
 GAUGE-VS-002 : Incompatible Gauge Version installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -446,10 +449,10 @@ GAUGE-IntelliJ-001 : Gauge API Not Started
 
 **Solution:**
 
-- If gauge is not installed, `Install Gauge <//gauge.org/get_started>`__.
-- If gauge is installed at custom location, add ``custom_install_location/bin`` to ``PATH``
-- On custom installation location Set ``GAUGE_ROOT`` to ``custom_install_location``
-- Restart Intellij
+- If Gauge is not installed, `Install Gauge <//gauge.org/get_started>`__.
+- If Gauge is installed at custom location, add ``custom_install_location/bin`` to ``PATH``
+- At custom installation location, set ``GAUGE_ROOT`` to ``custom_install_location``.
+- Restart Intellij.
 
 GAUGE-IntelliJ-002 : Error adding module to project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -462,11 +465,11 @@ GAUGE-IntelliJ-002 : Error adding module to project
 
 **Cause:**
 
-Opening an existing gauge project from the ``create new project`` option of Intellij.
+This error occurs when the ``create new project`` option is used to open an existing Gauge project.
 
 **Solution:**
 
-Use the ``open`` option of Intellij to open an existing gauge project.
+Use the ``open`` option to open an existing Gauge project.
 
 GAUGE-IntelliJ-003 : Steps marked as unimplemented
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -477,12 +480,13 @@ Steps marked as unimplemented
 
 **Cause:**
 
-If steps have implementation code and are still marked as unimplemented:
+IntelliJ or Gauge plugin are not configured correctly.
 
 **Solution:**
 
-- Ensure that ``src/test/java`` directory is marked as test sources root in the project. Right click on the ``src/test/java`` directory and select ``Mark Directory as -> Test sources root``
-- Ensure the project is compiling. Press ctrl/cmd + F9 to build project or select ``Build -> Make project``.
+- Ensure that the ``src/test/java`` directory is marked as test sources root in the project. 
+- Right click on the ``src/test/java`` directory and select ``Mark Directory as -> Test sources root``.
+- Ensure that the project compiles. Press ctrl/cmd + F9 to build project or select ``Build -> Make project``.
 - Ensure ``Module SDK`` is set to a valid JDK under ``Module settings``.
 - Restart Intellij or close and reopen the project.
 - Check dependencies for a gauge maven project and simple gauge java project.
@@ -490,16 +494,16 @@ If steps have implementation code and are still marked as unimplemented:
 For a gauge maven project
 .........................
 
--  The gauge-java dependency should be added in the pom.xml
--  Enable auto-import for the project. Under ``File > Settings > Maven > Importing``, mark the checkbox ``Import Maven projects automatically``.
+-  Add the gauge-java dependency in the ``pom.xml``.
+-  Enable auto-import for the project; in ``File > Settings > Maven > Importing``, select the checkbox ``Import Maven projects automatically``.
 
 For a simple gauge java project
 ...............................
 
--  Under ``Project Settings -> Modules`` select the gauge module. Under
-   the ``dependencies`` tab should be ``gauge-lib`` and ``project-lib``.
--  If not present restart Intellij or close and re-open project. They
-   should be added
+1) In ``Project Settings -> Modules``, select the gauge module. 
+2) Ensure that the following are present in the ``dependencies`` tab: ``gauge-lib`` and ``project-lib``.
+3) | If the dependencies are not present, restart Intellij or close and reopen the project. 
+   | ``gauge-lib`` and ``project-lib`` are added automatically.
 
 GAUGE-IntelliJ-004 : Project Build failing with compilation error but the Java Files do not mark any errors.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -510,17 +514,16 @@ Project Build failing with compilation error but the Java Files do not mark any 
 
 **Cause:**
 
-The project compilation fails however the java files do not mark any errors in the file.
-This is a specific issue with Java <= 1.7 on Windows.
+This error occurs in versions lower than or equal to Java 1.7 on Windows.
 
 **Solution:**
 
-Set **-Duser.home=USER_HOME** in the **IDEA_INSTALLATION\bin\idea.exe.vmoptions** file.
+Set ``-Duser.home=USER_HOME`` in the ``IDEA_INSTALLATION\bin\idea.exe.vmoptions`` file.
 
 .. code-block:: text
 
     -Duser.home=C:\\Users\\<username>
 
-See the `Intellij idea forum post <https://devnet.jetbrains.com/message/5545889#5545889>`__ for more details
+For more details about this issue, see the `Intellij idea forum post <https://devnet.jetbrains.com/message/5545889#5545889>`__.
 
 
