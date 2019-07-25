@@ -182,7 +182,7 @@ necessary for writing a spec or concept.
 **Solution:**
 
 | Ensure that the spec and concept files follow the appropriate guidelines.
-| For more information about how to write a spec, see :ref:`_specs`.
+| For more information about how to write a spec, see :ref:`specs`.
 | For more information about how to write a concept, see :ref:`concept`. 
 
 Validation Errors
@@ -518,7 +518,7 @@ This error occurs in versions lower than or equal to Java 1.7 on Windows.
 
 **Solution:**
 
-Set ``-Duser.home=USER_HOME`` in the ``IDEA_INSTALLATION\bin\idea.exe.vmoptions`` file.
+Set ``-Duser.home=USER_HOME`` in the ``IDEA_INSTALLATIONbinidea.exe.vmoptions`` file as follows:
 
 .. code-block:: text
 
