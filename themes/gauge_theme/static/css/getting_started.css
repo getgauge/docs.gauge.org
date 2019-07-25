@@ -1,3 +1,8 @@
+#installation-selection{
+    width: 100%;
+    padding: 0px;
+}
+
 #installation-selection .setup-selections {
     display: flex;
     flex-direction: row;
@@ -6,16 +11,17 @@
 
 #installation-selection .setup-selection {
     background-color: #fff9e5;
-    width: 27%;
+    width: 33%;
     text-align: center;
     min-height: 200px;
     display: flex;
     flex-direction: column;
     border: 1px solid #ffcc01;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
     padding-bottom: 5px;
     border-radius: 5px;
+    align-items: center;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     -khtml-border-radius: 5px;
@@ -38,9 +44,9 @@
 
 #installation-selection .radioContainer {
     position: relative;
-    width: 70%;
+    width: 85%;
     border-radius: 20px;
-    margin: 5px 0px 5px 40px;
+    margin: 5px 0px 5px 10px;
     cursor: pointer;
     font-size: 18px;
     border: 1px solid black;

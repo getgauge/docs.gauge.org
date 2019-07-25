@@ -38,6 +38,7 @@ header.top:hover {
   background-color: white;
 }
 .wrapper-container {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   left: 0px;
@@ -82,7 +83,6 @@ header.top:hover {
 }
 
 .display-content{
-  width: 750px;
   margin: 0px;
   padding: 0px;
 }
@@ -98,6 +98,7 @@ header.top:hover {
 }
 
 .docs-container {
+  width:60%;
   flex:2;
   background-color: white;
   padding: 10px 30px;
