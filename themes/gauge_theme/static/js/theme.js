@@ -120,7 +120,9 @@ $(document).ready(() => {
       let subTocList = elemSelector.find('ul.sub-toc li')
       subTocList.each( (_, subToc) => {
         let tocLink = subToc.children[0]
-        if( tocLink && tocLink.href.match(window.location.pathname)) {
+        let location = window.location.pathname;
+        if(location == "/") location = "/index.html"
+        if( tocLink && tocLink.href.match(location)) {
           $(subToc).addClass('active-toc expanded');
           elemSelector.addClass('active-toc expanded');
           elemSelector.removeClass('collapsed');
@@ -128,7 +130,9 @@ $(document).ready(() => {
       })
     } else {
       let tocLink = toc.children[0]
-      if( tocLink && tocLink.href.match(window.location.pathname)) {
+      let location = window.location.pathname;
+      if(location == "/") location = "/index.html"
+      if( tocLink && tocLink.href.match(location)) {
         elemSelector.addClass('active-toc');
       }
     }
