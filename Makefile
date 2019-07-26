@@ -25,16 +25,11 @@ versions: prune
 	mkdir -p $(WORKDIR)/$(LATESTBRANCH); \
 	git worktree add -b $(LATESTBRANCH) $(WORKDIR)/$(LATESTBRANCH) $(REMOTE)/$(LATESTBRANCH);
 
-	# sync local with remote for redesign
-	echo "Fetching redesign from remote"; \
-	mkdir -p $(WORKDIR)/redesign; \
-	git worktree add -b redesign $(WORKDIR)/redesign $(REMOTE)/redesign;
-
 	# for master branch, generate html, singlehtml
 	(cd $(WORKDIR)/master;\
 	GAUGE_LATEST_VERSION=$(LATESTBRANCH) $(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/master -D html_theme_options.docs_version=master \
 	    -D version=master -D release=master \
-		-A current_version=master -A latest_version=master -A versions="master latest redesign"\
+		-A current_version=master -A latest_version=master -A versions="master latest"\
 		-A commit=$(MASTERSHA) -A github_version=master;\
 	GAUGE_LATEST_VERSION=$(LATESTBRANCH) $(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/master -A SINGLEHTML=true;);\
 
@@ -42,17 +37,9 @@ versions: prune
 	(cd $(WORKDIR)/$(LATESTBRANCH);\
 	GAUGE_LATEST_VERSION=$(LATESTBRANCH) $(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/latest \
 		-D version=$(LATESTBRANCH) -D release=$(LATESTBRANCH) \
-		-A current_version=latest -A latest_version=$(LATESTBRANCH) -A versions="master latest redesign"\
+		-A current_version=latest -A latest_version=$(LATESTBRANCH) -A versions="master latest"\
 		-A commit=$(shell git rev-parse --short HEAD) -A github_version=$(LATESTBRANCH);\
 	GAUGE_LATEST_VERSION=$(LATESTBRANCH) $(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/latest -A SINGLEHTML=true;);\
-
-	# for redesign branch, generate html, singlehtml
-	(cd $(WORKDIR)/redesign;\
-	GAUGE_LATEST_VERSION=$(LATESTBRANCH) $(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/redesign \
-		-D version=redesign -D release=redesign \
-		-A current_version=redesign -A latest_version=redesign -A versions="master latest redesign"\
-		-A commit=$(shell git rev-parse --short HEAD) -A github_version=redesign;\
-	GAUGE_LATEST_VERSION=$(LATESTBRANCH) $(SPHINXBUILD) $(SPHINXOPTS) -b singlehtml . ../../singlehtml/redesign -A SINGLEHTML=true;);\
 
 	rm -rf $(WORKDIR); \
 	git checkout master
