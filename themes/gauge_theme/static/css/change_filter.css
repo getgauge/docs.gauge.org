@@ -6,16 +6,18 @@
         width: 750px;
     }
     #proj-setup-filter-section .proj-setup-filters{
-        width: 750px;
+        width: inherit;
     }
 }
 
 #proj-setup-filter-section{
     margin: 0px;
     padding: 0px;
+    width: inherit;
 }
 
 #proj-setup-filter-section .applied-filters {
+    width: inherit;
     font-size: 14px;
     display: flex;
 }
