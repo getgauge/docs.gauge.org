@@ -1,5 +1,6 @@
 let selections = { os: "macos", language: "javascript", ide: "vscode" };
 const SELECTION_CLASSES = ['macos','windows','linux','javascript','java','python','ruby','csharp','vscode','intellij','visualstudio'];
+const COMBINATIONS = ['javascript-vscode','java-vscode','python-vscode','ruby-vscode','csharp-vscode','java-intellij','csharp-visualstudio'];
 
 function updateSelection(searchParam) {
     selections.os = searchParam.get('os');
@@ -114,6 +115,11 @@ const showContent = function() {
             }
         }
     });
+
+    const selectedLanguage = selectedItems[1];
+    const selectedIde = selectedItems[2];
+    const selectedCombination = `${selectedLanguage}-${selectedIde}`
+    if(!COMBINATIONS.includes(selectedCombination)) return;
 
     const isSelected = hasSelectedClasses.bind(null, selectedItems);
 
