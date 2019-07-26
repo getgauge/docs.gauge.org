@@ -22,9 +22,8 @@ Step 1
 ++++++
 Open the example spec. The Gauge specification file is present under :highlighted-syntax:`/specs/example.spec`
 
-.. figure:: ../images/mac/VSCode_JS_project_file_structure.png
-      :alt: VSCode JS file structure
-
+.. figure:: ../images/mac/VSCode_open_example.spec.png
+      :alt: Open example.spec file
 Step 2
 ++++++
 Run your Gauge specs in VS Code by choosing the option to :highlighted-syntax:`Run Spec`
