@@ -22,19 +22,19 @@ Step 1
 ++++++
 Open the example spec. The Gauge specification file is present under :highlighted-syntax:`/specs/example.spec`
 
-.. figure:: ../images/VSCode_JS_project_file_structure.png
+.. figure:: ../images/mac/VSCode_JS_project_file_structure.png
       :alt: VSCode JS file structure
 
 Step 2
 ++++++
 Run your Gauge specs in VS Code by choosing the option to :highlighted-syntax:`Run Spec`
 
-.. figure:: ../images/VSCode_run_code_lens.png
+.. figure:: ../images/mac/VSCode_run_code_lens.png
       :alt: VSCode JS run code lens
 
 You'll get immediate feedback in the output about what got executed.
 
-.. figure:: ../images/VSCode_execution_console.png
+.. figure:: ../images/mac/VSCode_execution_console.png
       :alt: VSCode JS execution console
 
 .. cssclass:: macos-java-intellij display-content hidden

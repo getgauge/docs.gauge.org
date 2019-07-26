@@ -12,16 +12,13 @@ Viewing Reports from VS Code
 
     Open the html report by clicking on the view summary link in VS Code
 
-    .. figure:: ../images/VSCode_report_link.png
-      :alt: VSCode execution report link
-
     OR
 
     In the editor's command pallete type Gauge: Show Last Run Report to view the report in the browser
 
     Here's what a Gauge report looks like.
 
-    .. figure:: ../images/VSCode_JS_report_link.png
+    .. figure:: ../images/mac/VSCode_show_last_run_report.png
       :alt: VSCode execution report link
 
 .. cssclass:: macos-javascript-vscode display-content hidden
@@ -32,11 +29,20 @@ Viewing Reports from VS Code
 
     Open the html report by clicking on the view summary link in VS Code
 
+    .. figure:: ../images/mac/VSCode_report_link.png
+      :alt: VSCode execution report link
+
     OR
 
     In the editor's command pallete type Gauge: Show Last Run Report to view the report in the browser
 
+    .. figure:: ../images/mac/VSCode_show_last_run_report.png
+      :alt: VSCode show last run report command
+
     Here's what a Gauge report looks like.
+
+    .. figure:: ../images/mac/HTML_report.png
+      :alt: HTML report
 
 .. cssclass:: linux-javascript-vscode display-content hidden
 
