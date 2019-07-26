@@ -40,6 +40,8 @@ Select the JS template to create the sample testing project
       :alt: Select template
 
 Step 3
+++++++
+
 Choose a location to create a new folder to create a new project
 
 .. cssclass:: macos dynamic-content
@@ -47,6 +49,8 @@ Choose a location to create a new folder to create a new project
       :alt: Select project folder
 
 Step 4
+++++++
+
 Give a name to your project
 
 .. cssclass:: macos dynamic-content
