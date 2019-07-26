@@ -36,13 +36,51 @@ function showContents() {
 
 function setOnclickEvent(button) {
     let name = normalize(button.value);
-    if (selections[button.name] === name) button.checked = true;
+    if (selections[button.name] === name) {
+        button.checked = true
+        button.parentElement.style.backgroundColor = "white"
+    };
+
     button.onclick = function () {
         window.localStorage.setItem(button.name, name);
         selections[button.name] = name;
         window.location.search = (new URLSearchParams(selections)).toString();
     };
 };
+
+function setBackground(radio) {
+    let bg = radio.checked ? "white" : "#fff9e5";
+    radio.parentElement.style.backgroundColor = bg;
+}
+
+function isContentClass(child) {
+    return child.classList && child.classList.length >= 1;
+}
+
+function hideOtherInstallation(coll) {
+    for (let i = 0; i < coll.length; i++) {
+        coll[i].childNodes.forEach(child => {
+            if (isContentClass(child))  {
+                child.classList.add('content')
+            }
+        });
+    }
+}
+
+function expandInstaller() {
+    var coll = document.getElementsByClassName("collapsible");
+    for (let i = 0; i < coll.length; i++) {
+        coll[i].onclick = function () {
+            hideOtherInstallation(coll);
+            coll[i].childNodes.forEach(child => {
+                if (isContentClass(child))  {
+                    child.classList.remove('content');
+                }
+            });
+        }
+    }
+}
+
 
 window.onload = function () {
     let queryString = window.location.search;
@@ -51,15 +89,19 @@ window.onload = function () {
         updateSelection(searchParam);
     }
     setSelections();
-    document.querySelectorAll(".search").forEach(setOnclickEvent);
+    let radios = document.querySelectorAll(".search");
+    radios.forEach(setOnclickEvent);
     if (window.location.search === '') {
         window.location.search = (new URLSearchParams(selections)).toString();
     }
     showContents();
+    expandInstaller();
     changeFilter();
 }
+
 function changeFilter() {
     const changeFilterBtn = document.getElementById("change-filter");
+    if (!changeFilterBtn) return;
     changeFilterBtn.onclick = showPopup;
 
     const cancelBtn = document.getElementsByClassName("cancel");
@@ -71,21 +113,21 @@ function changeFilter() {
     showContent();
 };
 
-const showPopup = function() {
+const showPopup = function () {
     const popUp = document.getElementsByClassName("proj-setup-filters");
     const changeFilterBtn = document.getElementById("change-filter");
     changeFilterBtn.classList.add("change-filter-btn");
     popUp[0].classList.remove("hidden");
 };
 
-const hidePopUp = function() {
+const hidePopUp = function () {
     const popUp = document.getElementsByClassName("proj-setup-filters");
     const changeFilterBtn = document.getElementById("change-filter");
     changeFilterBtn.classList.remove("change-filter-btn");
     popUp[0].classList.add("hidden");
 };
 
-const changeSelectedDetails = function(selectedItems) {
+const changeSelectedDetails = function (selectedItems) {
     const appliedFilters = document.querySelectorAll(".applied-filter");
 
     appliedFilters.forEach((appliedFilter, index) => {
