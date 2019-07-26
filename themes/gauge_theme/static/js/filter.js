@@ -1,4 +1,5 @@
 let selections = { os: "macos", language: "javascript", ide: "vscode" };
+const SELECTION_CLASSES = ['macos','windows','linux','javascript','java','python','ruby','csharp','vscode','intellij','visualstudio'];
 
 function updateSelection(searchParam) {
     selections.os = searchParam.get('os');
@@ -91,25 +92,40 @@ const changeSelectedDetails = function(selectedItems) {
     });
 };
 
+const isSelectionClass = function(className){
+    return SELECTION_CLASSES.includes(className);
+}
+
+const hasSelectedClasses = function(selectedItems, className){
+    return selectedItems.includes(className)
+}
+
 const showContent = function() {
-    const selections = document.querySelectorAll(".selection");
+    const dynamicElems = document.querySelectorAll(".dynamic-content");
+    const selectionItems = document.querySelectorAll(".selection");
     const selectedItems = [];
-    selections.forEach(selection => {
+    const selectedValues = [];
+
+    selectionItems.forEach(selection => {
         for (e of selection.children) {
-            if (e.firstChild.checked) selectedItems.push(e.firstChild.value);
+            if (e.firstChild.checked) {
+                selectedItems.push(e.firstChild.value.split(" ").join("").toLowerCase());
+                selectedValues.push(e.firstChild.value);
+            }
         }
     });
-    const contentToShow = selectedItems
-        .join("-")
-        .split(" ")
-        .join("")
-        .toLowerCase();
 
-    const elemsToShow = document.querySelectorAll("." + contentToShow);
-    const elems = document.querySelectorAll(".display-content");
+    const isSelected = hasSelectedClasses.bind(null, selectedItems);
 
-    elems.forEach(elem => elem.classList.add("hidden"));
-    elemsToShow.forEach(elemToShow => elemToShow.classList.remove("hidden"));
+    dynamicElems.forEach(elem => {
+        const elemSelectionClasses = elem.classList.value.split(" ").filter(isSelectionClass);
+        const hasAllSelections = elemSelectionClasses.every(isSelected);
+        elem.classList.remove('hidden');
+        if(!hasAllSelections){
+            elem.classList.add('hidden');
+        }
+    });
+    
     hidePopUp();
-    changeSelectedDetails(selectedItems);
+    changeSelectedDetails(selectedValues);
 };
