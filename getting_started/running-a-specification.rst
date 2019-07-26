@@ -29,12 +29,12 @@ Step 2
 ++++++
 Run your Gauge specs in VS Code by choosing the option to :highlighted-syntax:`Run Spec`
 
-.. figure:: ../images/VSCode_JS_run_code_lens.png
+.. figure:: ../images/VSCode_run_code_lens.png
       :alt: VSCode JS run code lens
 
 You'll get immediate feedback in the output about what got executed.
 
-.. figure:: ../images/VSCode_JS_execution_console.png
+.. figure:: ../images/VSCode_execution_console.png
       :alt: VSCode JS execution console
 
 .. cssclass:: macos-java-intellij display-content hidden
