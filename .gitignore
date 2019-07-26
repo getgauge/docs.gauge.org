@@ -6,3 +6,4 @@ tags
 .idea
 *.pyc
 .vscode
+build.go
