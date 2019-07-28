@@ -1,79 +1,82 @@
-const SELECTION_CLASSES = ['macos','windows','linux','javascript','java','python','ruby','csharp','vscode','intellij','visualstudio'];
-const COMBINATIONS = ['javascript-vscode','java-vscode','python-vscode','ruby-vscode','csharp-vscode','java-intellij','csharp-visualstudio'];
+const COMBINATIONS = ['javascript-vscode', 'java-vscode', 'python-vscode', 'ruby-vscode', 'csharp-vscode', 'java-intellij', 'csharp-visualstudio'];
+const SELECTION_CLASSES = ['macos', 'windows', 'linux', 'javascript', 'java', 'python', 'ruby', 'csharp', 'vscode', 'intellij', 'visualstudio'];
 
-function changeFilter() {
-    const changeFilterBtn = document.getElementById("change-filter");
+const changeFilter = function () {
+    let changeFilterBtn = document.getElementById("change-filter");
     if (!changeFilterBtn) return;
     changeFilterBtn.onclick = showPopup;
-    const cancelBtn = document.getElementsByClassName("cancel");
+    let cancelBtn = document.getElementsByClassName("cancel");
     cancelBtn[0].onclick = hidePopUp;
-
-    const applyBtn = document.getElementsByClassName("apply-filter");
-    applyBtn[0].onclick = showContent;
-
-    showContent();
+    let applyBtn = document.getElementsByClassName("apply-filter");
+    applyBtn[0].onclick = updateContent;
 };
 
 const showPopup = function () {
-    const popUp = document.getElementsByClassName("proj-setup-filters");
-    const changeFilterBtn = document.getElementById("change-filter");
+    Object.values(SELECTIONS).forEach(selection => {
+        document.querySelector(`input[value="${selection}"]`).checked=true;
+    });
+    let popUp = document.getElementsByClassName("proj-setup-filters");
+    let changeFilterBtn = document.getElementById("change-filter");
     changeFilterBtn.classList.add("change-filter-btn");
     popUp[0].classList.remove("hidden");
 };
 
 const hidePopUp = function () {
-    const popUp = document.getElementsByClassName("proj-setup-filters");
-    const changeFilterBtn = document.getElementById("change-filter");
+    let popUp = document.getElementsByClassName("proj-setup-filters");
+    let changeFilterBtn = document.getElementById("change-filter");
     changeFilterBtn.classList.remove("change-filter-btn");
     popUp[0].classList.add("hidden");
 };
 
-const changeSelectedDetails = function (selectedItems) {
-    const appliedFilters = document.querySelectorAll(".applied-filter");
 
-    appliedFilters.forEach((appliedFilter, index) => {
-        appliedFilter.innerText = selectedItems[index];
-    });
-};
-
-const isSelectionClass = function(className){
-    return SELECTION_CLASSES.includes(className);
+const isRightCombination = function () {
+    let selectedLanguage = SELECTIONS.language;
+    let selectedIde = SELECTIONS.ide;
+    let selectedCombination = `${selectedLanguage}-${selectedIde}`
+    return COMBINATIONS.includes(selectedCombination);
 }
 
-const hasSelectedClasses = function(selectedItems, className){
-    return selectedItems.includes(className)
+const applyCombination = function (element) {
+    let name = normalize(element.value);
+    SELECTIONS[element.name] = name;
+    if (!isRightCombination()) return;
+    window.localStorage.setItem(element.name, name);
+    updateURLAndSelection(element);
 }
 
-const showContent = function() {
-    const dynamicElems = document.querySelectorAll(".dynamic-content");
-    const selectionItems = document.querySelectorAll(".selection");
-    const selectedItems = [];
-    const selectedValues = [];
-
-    selectionItems.forEach(selection => {
-        for (e of selection.children) {
-            if (e.firstChild.checked) {
-                selectedItems.push(e.firstChild.value.split(" ").join("").toLowerCase());
-                selectedValues.push(e.firstChild.value);
-            }
-        }
+const updateContent = function () {
+    let selectionItems = document.querySelectorAll(".selection");
+    selectionItems.forEach(selectedItem => {
+        selectedItem.childNodes.forEach(item => {
+            let element = item.firstChild;
+            if (element && element.checked) applyCombination(element);
+        });
     });
+    if (isRightCombination()) hidePopUp();
+}
 
-    const selectedLanguage = selectedItems[1];
-    const selectedIde = selectedItems[2];
-    const selectedCombination = `${selectedLanguage}-${selectedIde}`
-    if(!COMBINATIONS.includes(selectedCombination)) return;
+const isSelected = (selection) => Object.values(SELECTIONS).includes(selection);
+const isSelectionClass = (className) => SELECTION_CLASSES.includes(className);
+const selectedClasses = (element) => element.classList.value.split(" ").filter(isSelectionClass);
 
-    const isSelected = hasSelectedClasses.bind(null, selectedItems);
+const hasSingleSelection = function (selectedClasses) {
+    return selectedClasses.length == 1 && isSelected(selectedClasses[0]);
+}
 
+const hasMultipleSelection = function (selectedClasses) {
+    let hasAllselectedClasses = selectedClasses.every(isSelected);
+    return hasAllselectedClasses;
+}
+
+const showContents = function () {
+    let dynamicElems = document.querySelectorAll(".dynamic-content");
     dynamicElems.forEach(elem => {
-        const elemSelectionClasses = elem.classList.value.split(" ").filter(isSelectionClass);
-        const hasAllSelections = elemSelectionClasses.every(isSelected);
-        elem.classList.remove('hidden');
-        if(!hasAllSelections){
-            elem.classList.add('hidden');
+        elem.classList.add('hidden');
+        let classes = selectedClasses(elem);
+        if (hasSingleSelection(classes)) {
+            elem.classList.remove('hidden');
+        } else if (hasMultipleSelection(classes)) {
+            elem.classList.remove('hidden');
         }
     });
-    hidePopUp();
-    changeSelectedDetails(selectedValues);
-};
+}

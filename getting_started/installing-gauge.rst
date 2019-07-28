@@ -1,3 +1,4 @@
+.. role:: question-circle
 .. cssclass:: navigate-next
 
 Next: `Create a testing project <create-test-project.html>`__
@@ -8,7 +9,7 @@ Getting Started
 This getting started guide walks you through the core features of Gauge. You'll be able to install
 Gauge and learn how to create a test automation project using Gauge.
 
-If you are new to Gauge, check out the `Overview </overview.html>`__ section in the docs for a quick introduction to th
+If you are new to Gauge, check out the `Overview </overview.html>`__ section in the docs for a quick introduction to the
 most important concepts and features of the tool.
 
 
@@ -16,7 +17,7 @@ Choose your Setup to Install Gauge
 ----------------------------------
 
 
-Select your setup to see the instructions for installing gauge.
+Select your setup to see the instructions for installing gauge. ?
 
 
 .. _installation-selection:
@@ -54,6 +55,7 @@ Select your setup to see the instructions for installing gauge.
          Intellij
          Visual Studio
 
+
 Installation Instructions
 =========================
 
@@ -82,9 +84,9 @@ Installation Instructions
 
 
 
-Next Step:
-Now that you've install Gauge, you can go ahead and create a JavaScript testing project using Gauge.
+**Next Step:**
 
+Now that you've install Gauge, you can go ahead and create a JavaScript testing project using Gauge.
 
 
 .. cssclass:: navigate-next

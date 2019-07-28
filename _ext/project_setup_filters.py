@@ -26,6 +26,8 @@ def visit_input_node(self, node):
 def depart_input_node(self, node):
     pass
 
+def normalize(param):
+    return param.replace(" ","").lower()
 
 class SetupFiltersDirective(Directive):
     optional_arguments = 0
@@ -78,7 +80,7 @@ class SetupFilterDirective(Directive):
             _input = input_node(content)
             _input['type'] = 'radio'
             _input['name'] = options['type']
-            _input['value'] = content
+            _input['value'] = normalize(content)
             if content == options['selected']:
                 _input['checked'] = 'true'
             container += _input

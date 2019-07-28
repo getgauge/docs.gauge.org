@@ -47,7 +47,7 @@
 
       .. setupfilter::
          :class: selection
-         :type: ide-editor
+         :type: ide
          :title: 3 : Select an IDE/Editor
          :selected: VS Code
 

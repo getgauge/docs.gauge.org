@@ -1,6 +1,6 @@
-let selections = { os: "macos", language: "javascript", ide: "vscode" };
+let SELECTIONS = { os: "macos", language: "javascript", ide: "vscode" };
 
-function updateSelections() {
+const updateSelections = function () {
     let searchParam = window.location.search;
     let localStorage = window.localStorage;
     if (searchParam) {
@@ -15,42 +15,42 @@ function updateSelections() {
 
 }
 
-function updateSelectionFromQS(queryString) {
+const updateSelectionFromQS = function (queryString) {
     let searchParam = new URLSearchParams(queryString);
-    selections.os = searchParam.get('os');
-    selections.language = searchParam.get('language');
-    selections.ide = searchParam.get('ide');
-    window.localStorage.setItem('os', selections.os)
-    window.localStorage.setItem('language', selections.language)
-    window.localStorage.setItem('ide', selections.ide)
+    SELECTIONS.os = searchParam.get('os');
+    SELECTIONS.language = searchParam.get('language');
+    SELECTIONS.ide = searchParam.get('ide');
+    window.localStorage.setItem('os', SELECTIONS.os)
+    window.localStorage.setItem('language', SELECTIONS.language)
+    window.localStorage.setItem('ide', SELECTIONS.ide)
 
 }
 
-function hasLocalParams(localStorage) {
+const hasLocalParams = function (localStorage) {
     let localKeys = Object.keys(localStorage);
     return localKeys.includes('os') && localKeys.includes('os') && localKeys.includes('os');
 }
 
-function updateSelectioFromLS(localStorage) {
+const updateSelectioFromLS = function (localStorage) {
     if (!hasLocalParams(localStorage)) return;
-    selections.os = localStorage.getItem('os');
-    selections.language = localStorage.getItem('language');
-    selections.ide = localStorage.getItem('ide');
+    SELECTIONS.os = localStorage.getItem('os');
+    SELECTIONS.language = localStorage.getItem('language');
+    SELECTIONS.ide = localStorage.getItem('ide');
 }
 
-function normalize(s) {
+const normalize = function (s) {
     return s.replace(/[&\/\\#,+()$~%.'":*?<>{}\s-]/g, '').toLowerCase();
 }
 
-function setBackground(button) {
+const setBackground = function (button) {
     let name = normalize(button.value);
-    if (selections[button.name] === name) {
+    if (SELECTIONS[button.name] === name) {
         button.checked = true
         button.parentElement.style.backgroundColor = "white"
     };
 }
 
-function changeBackground() {
+const changeBackground = function () {
     let radios = document.querySelectorAll('.getting-started-radios');
     radios.forEach(element => {
         let bg = element.checked ? "white" : "#fff9e5";
@@ -58,52 +58,44 @@ function changeBackground() {
     });
 }
 
-function updateInstallationSetup() {
+const updateInstallationSetup = function () {
     let appliedFilter = document.querySelectorAll(".applied-filter");
-    appliedFilter[0].innerText = selections.os;
-    appliedFilter[1].innerText = selections.language;
-    appliedFilter[2].innerText = selections.ide;
+    appliedFilter[0].innerText = SELECTIONS.os;
+    appliedFilter[1].innerText = SELECTIONS.language;
+    appliedFilter[2].innerText = SELECTIONS.ide;
 }
 
-function setOnclickEvent(button) {
-    let name = normalize(button.value);
+const updateURLAndSelection = function () {
+    insertUrlParam();
+    updateInstallationSetup();
+    showContents();
+}
+
+const setOnclickEvent = function (button) {
     setBackground(button);
     button.onclick = function () {
-        window.localStorage.setItem(button.name, name);
-        selections[button.name] = name;
-        insertUrlParam();
+        let name = normalize(button.value);
+        SELECTIONS[button.name] = name;
         changeBackground(button);
-        updateInstallationSetup();
-        showContents();
+        window.localStorage.setItem(button.name, name);
+        updateURLAndSelection();
     };
 };
 
-function showContents() {
-    const dynamicElems = document.querySelectorAll(".dynamic-content");
-    dynamicElems.forEach(elem => {
-        elem.classList.add('hidden');
-    });
-    Object.keys(selections).forEach(function (s) {
-        document.querySelectorAll('.' + selections[s]).forEach(function (e) {
-            e.classList.remove('hidden');
-        })
-    })
-}
 
-
-function insertUrlParam() {
+const insertUrlParam = function () {
     if (history.pushState) {
-        let searchParams = new URLSearchParams(selections);
+        let searchParams = new URLSearchParams(SELECTIONS);
         let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + searchParams.toString();
         window.history.pushState({ path: newurl }, '', newurl);
     }
 }
 
-function isContentClass(child) {
+const isContentClass = function (child) {
     return child.classList && child.classList.length >= 1;
 }
 
-function hideOtherInstallation(coll) {
+const hideOtherInstallation = function (coll) {
     for (let i = 0; i < coll.length; i++) {
         coll[i].childNodes.forEach(child => {
             if (isContentClass(child)) {
@@ -113,8 +105,7 @@ function hideOtherInstallation(coll) {
     }
 }
 
-
-function expandInstaller() {
+const expandInstaller = function () {
     var coll = document.getElementsByClassName("collapsible");
     for (let i = 0; i < coll.length; i++) {
         coll[i].onclick = function () {
@@ -128,10 +119,12 @@ function expandInstaller() {
     }
 }
 
-window.onload = function () {
+const addOnloadEvents = function () {
     updateSelections();
     updateInstallationSetup();
     showContents();
     expandInstaller();
     changeFilter();
 }
+
+window.onload = addOnloadEvents

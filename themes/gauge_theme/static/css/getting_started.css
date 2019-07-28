@@ -76,7 +76,7 @@
 .collapsible {
     cursor: pointer;
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid #b1b1b1;
     outline: none;
     padding-left: 10px;
 }
@@ -105,8 +105,25 @@
     font-size: 17px;
 }
 
-.rectangle {
+
+#installation-instructions {
+    margin: 40px 0;
+}
+
+.extension-link {
+    background-color: #ffcc00;
+    width: fit-content;
+    border-radius: 25px;
+    padding: 4px;
+}
+
+.extension-link a {
+    text-decoration: none;
+    border: none;
+}
+
+.code-block {
     background-color: #f2f2f2;
-    padding: 0 20px;
-    margin: 0px;
+    margin: 15px;
+    padding: 10px;
 }
