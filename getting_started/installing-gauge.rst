@@ -1,6 +1,6 @@
-.. cssclass:: page-navigator
+.. cssclass:: navigate-next
 
-`Next: Create a testing project <create-test-project.html>`__
+Next: `Create a testing project <create-test-project.html>`__
 
 Getting Started
 ================
@@ -14,6 +14,8 @@ most important concepts and features of the tool.
 
 Choose your Setup to Install Gauge
 ----------------------------------
+
+
 Select your setup to see the instructions for installing gauge.
 
 
@@ -52,25 +54,25 @@ Select your setup to see the instructions for installing gauge.
          Intellij
          Visual Studio
 
-.. Installation Instructions
-.. --------------------------
+Installation Instructions
+=========================
 
-.. .. _installation_selection:
-.. .. container::
+.. _proj-setup-filter-section:
+.. container::
 
-..    .. container:: applied-filters
+   .. container:: applied-filters
 
-..       .. container:: applied-filter
+      .. container:: applied-filter
 
-..          MacOs
+         MacOs
 
-..       .. container:: applied-filter
+      .. container:: applied-filter
 
-..          JavaScript
+         JavaScript
 
-..       .. container:: applied-filter
+      .. container:: applied-filter
 
-..          VS Code
+         VS Code
 
 
 .. include:: mac_installation.rst
@@ -85,6 +87,6 @@ Now that you've install Gauge, you can go ahead and create a JavaScript testing 
 
 
 
-.. cssclass:: page-navigator
+.. cssclass:: navigate-next
 
-`Next: Create a testing project <create-test-project.html>`__
+Next: `Create a testing project <create-test-project.html>`__

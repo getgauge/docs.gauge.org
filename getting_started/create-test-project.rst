@@ -10,7 +10,6 @@ Create a Testing project using Gauge
 
 .. include:: ../change_filter.rst
 
-
 .. role:: highlighted-syntax
 
 .. cssclass:: vscode dynamic-content

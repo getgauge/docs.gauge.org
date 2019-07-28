@@ -20,7 +20,7 @@ def visit_setup_input_node(self, node):
     text = ''
     for attr in node.attlist():
         attrs += attr[0] +"=" +'"'+ attr[1] +'"'
-    self.body.append('<label class="radioContainer"> '+ node.rawsource + '<input class="search" '+ attrs +'>'+
+    self.body.append('<label class="radioContainer"> '+ node.rawsource + '<input class="search getting-started-radios" '+ attrs +'>'+
         '<span class="checkmark"></span>' + '</label>')
 
 def depart_setup_input_node(self, node):

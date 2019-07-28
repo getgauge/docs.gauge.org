@@ -97,12 +97,7 @@ header.top:hover {
   text-decoration: underline;
 }
 
-.dynamic-content {
-  margin: 0px;
-  padding: 0px;
-}
-
-.sub-heading {
+.sub-heading{
   font-size: 18px;
   font-weight: bolder;
 }

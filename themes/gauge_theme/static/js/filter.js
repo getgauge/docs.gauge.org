@@ -1,109 +1,10 @@
-let selections = { os: "macos", language: "javascript", ide: "vscode" };
 const SELECTION_CLASSES = ['macos','windows','linux','javascript','java','python','ruby','csharp','vscode','intellij','visualstudio'];
 const COMBINATIONS = ['javascript-vscode','java-vscode','python-vscode','ruby-vscode','csharp-vscode','java-intellij','csharp-visualstudio'];
-
-function updateSelection(searchParam) {
-    selections.os = searchParam.get('os');
-    window.localStorage.setItem('os', selections.os)
-    selections.language = searchParam.get('language');
-    window.localStorage.setItem('language', selections.language)
-    selections.ide = searchParam.get('ide');
-    window.localStorage.setItem('ide', selections.ide)
-
-}
-
-function normalize(s) {
-    return s.replace(/[&\/\\#,+()$~%.'":*?<>{}\s-]/g, '').toLowerCase();
-}
-
-function setSelections() {
-    Object.keys(selections).forEach(function (k) {
-        let entry = window.localStorage.getItem(k);
-        if (entry)
-            selections[k] = normalize(entry);
-        else
-            window.localStorage.setItem(k, normalize(selections[k]));
-    });
-}
-
-function showContents() {
-    Object.keys(selections).forEach(function (s) {
-        document.querySelectorAll('.' + selections[s]).forEach(function (e) {
-            e.classList.remove('hidden');
-        })
-    })
-}
-
-function setOnclickEvent(button) {
-    let name = normalize(button.value);
-    if (selections[button.name] === name) {
-        button.checked = true
-        button.parentElement.style.backgroundColor = "white"
-    };
-
-    button.onclick = function () {
-        window.localStorage.setItem(button.name, name);
-        selections[button.name] = name;
-        window.location.search = (new URLSearchParams(selections)).toString();
-    };
-};
-
-function setBackground(radio) {
-    let bg = radio.checked ? "white" : "#fff9e5";
-    radio.parentElement.style.backgroundColor = bg;
-}
-
-function isContentClass(child) {
-    return child.classList && child.classList.length >= 1;
-}
-
-function hideOtherInstallation(coll) {
-    for (let i = 0; i < coll.length; i++) {
-        coll[i].childNodes.forEach(child => {
-            if (isContentClass(child))  {
-                child.classList.add('content')
-            }
-        });
-    }
-}
-
-function expandInstaller() {
-    var coll = document.getElementsByClassName("collapsible");
-    for (let i = 0; i < coll.length; i++) {
-        coll[i].onclick = function () {
-            hideOtherInstallation(coll);
-            coll[i].childNodes.forEach(child => {
-                if (isContentClass(child))  {
-                    child.classList.remove('content');
-                }
-            });
-        }
-    }
-}
-
-
-window.onload = function () {
-    let queryString = window.location.search;
-    if (queryString) {
-        let searchParam = new URLSearchParams(queryString);
-        updateSelection(searchParam);
-    }
-    setSelections();
-    let radios = document.querySelectorAll(".search");
-    radios.forEach(setOnclickEvent);
-    if (window.location.search === '') {
-        window.location.search = (new URLSearchParams(selections)).toString();
-    }
-    showContents();
-    expandInstaller();
-    changeFilter();
-}
 
 function changeFilter() {
     const changeFilterBtn = document.getElementById("change-filter");
     if (!changeFilterBtn) return;
     changeFilterBtn.onclick = showPopup;
-
     const cancelBtn = document.getElementsByClassName("cancel");
     cancelBtn[0].onclick = hidePopUp;
 
@@ -173,7 +74,6 @@ const showContent = function() {
             elem.classList.add('hidden');
         }
     });
-    
     hidePopUp();
     changeSelectedDetails(selectedValues);
 };
