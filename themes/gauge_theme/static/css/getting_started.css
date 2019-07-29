@@ -1,0 +1,129 @@
+#installation-selection {
+    width: 100%;
+    padding: 0px;
+}
+
+#installation-selection .setup-selections {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+#installation-selection .setup-selection {
+    background-color: #fff9e5;
+    width: 33%;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ffcc01;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    align-items: center;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+}
+
+
+/* .number {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    margin-left: 40%;
+    margin-top: -8%;
+    background-color: white;
+    vertical-align: middle;
+    line-height: 35px;
+    border-radius: 50%;
+    border: 1px solid black;
+} */
+
+
+#installation-selection .radioContainer {
+    position: relative;
+    width: 85%;
+    border-radius: 20px;
+    margin: 5px 0px 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border: 1px solid black;
+}
+
+/* Hide the browser's default radio button */
+#installation-selection input {
+    display: none;
+}
+
+/* Add check mark font*/
+
+#installation-selection .checkmark:after {
+    content: '\f058';
+    font-family: FontAwesome;
+    position: absolute;
+    display: none;
+    left: 4px;
+    text-align: left;
+}
+
+/* Show the indicator when checked */
+#installation-selection input:checked~.checkmark:after {
+    display: inline;
+}
+
+.collapsible {
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid #b1b1b1;
+    outline: none;
+    padding-left: 10px;
+}
+
+.collapsible:after {
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.content {
+    padding: 0 10px;
+    max-height: 0;
+    overflow: hidden;
+    display: none;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
+
+.navigate-next {
+    text-align: right;
+}
+
+.requirement-block-heading {
+    font-weight: bolder;
+    font-size: 17px;
+}
+
+
+#installation-instructions {
+    margin: 40px 0;
+}
+
+.extension-link {
+    background-color: #ffcc00;
+    width: fit-content;
+    border-radius: 25px;
+    padding: 4px;
+}
+
+.extension-link a {
+    text-decoration: none;
+    border: none;
+}
+
+.code-block {
+    background-color: #f2f2f2;
+    margin: 15px;
+    padding: 10px;
+}

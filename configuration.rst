@@ -216,9 +216,28 @@ Python
     # Comma separated list of dirs. path should be relative to project root.
     STEP_IMPL_DIR = tests
 
-.. note::
-   | C Sharp and Ruby do not have any specific configuration properties of their own. For these language runners, you must use the configuration properties (*key value* pairs) listed in ``default.properties``, located at ``<project_root>/env/default``. 
-   | See :ref:`default properties <default_properties>` .
+Csharp
+^^^^^^
+| If you have installed Csharp, then you can make Csharp specific configuration changes in the ``csharp.properties`` file. 
+| The following *key value* pair is listed in ``csharp.properties``:
+
+.. code-block:: text
+    :linenos:
+    :name: csharp
+
+    # Holds the location of the created Gauge project
+    GAUGE_CSHARP_PROJECT_FILE = /Users/nivedhasenthil/Desktop/sample-csharp/SampleCsharp.csproj
+
+    # The build configuration when running tests for the Gauge project
+    GAUGE_CSHARP_PROJECT_CONFIG = Debug
+
+    # The build platform when running tests for the Gauge project
+    GAUGE_CSHARP_PROJECT_PLATFORM = Any CPU
+
+Ruby
+^^^^
+| If you have installed Ruby, then you can make Ruby specific configuration changes in the ``ruby.properties`` file.
+| Ruby do not have any specific default configuration properties of its own currently. 
 
 
 HTTP_PROXY setting while using Gauge

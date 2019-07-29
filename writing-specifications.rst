@@ -1,20 +1,15 @@
-Write a Gauge specification
-===========================
+.. _write_gauge_specification:
 
-This page provides information about what a specification is, how to write a specification, and other related information such as concepts, step implementation, specs directory, and so on.
+Write Gauge specifications
+==========================
 
-Specifications (specs)
-----------------------
-
-A specification is a business test case which describes a particular feature of the application that needs testing.  
-Gauge specifications support a ``.spec`` or ``.md`` file format and these specifications are written in a syntax similar to Markdown.
-
-For more information about Markdown, see `Markdown Syntax <https://daringfireball.net/projects/markdown/syntax>`__.
+This page provides information about what a specification is, how to write a specification, and other related information such as concepts, step implementation, specs directory, and so on.  
 
 Text editor for specs
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 You can author Gauge specifications by using any text editor. 
+
 It is recommended that you use one of the following IDE plugins:
 
 .. tab-container:: ide
@@ -22,7 +17,7 @@ It is recommended that you use one of the following IDE plugins:
     .. tab:: Visual Studio Code
 
         Gauge projects can be created and run in Visual Studio Code by using the `Gauge extension for VSCode <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__.
-        This plugin currently supports Gauge with JavaScript, Ruby, and Python.
+        This plugin currently supports Gauge with Java, JavaScript, Ruby, Python, C# (.Net Core), and TypeScript.
 
     .. tab:: IntelliJ Idea
 
@@ -32,9 +27,29 @@ It is recommended that you use one of the following IDE plugins:
     .. tab:: Visual Studio
 
         Gauge projects can be created and run in Visual Studio by using the `Gauge extension for Visual Studio <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__.
-        This plugin currently supports Gauge with C#.
+        This plugin currently supports Gauge with C# (.Net framework).
 
+.. _specs:
 
+Specifications (spec)
+---------------------
+
+A specification is a business test case which describes a particular feature of the application that needs testing.  
+Gauge specifications support a ``.spec`` or ``.md`` file format and these specifications are written in a syntax similar to Markdown.
+
+| Every spec can contain one or more :ref:`longstart-scenarios`.
+| Every spec can be marked with labels using :ref:`longstart-tags`.
+
+.. _specs_directory:
+
+Specs directory
+^^^^^^^^^^^^^^^
+When a Gauge project is created and initialized, a ``specs`` directory is automatically created at ``<project_root>`` with a sample file, ``example.spec``.
+This sample file helps you understand how to write a specification.
+
+.. note::
+   | The path and name of the ``specs`` directory can be changed by using key value pairs in the ``default.properties`` file of your project.
+   | For more information about ``default.properties``, see :ref:`local_configuration_Gauge`.
 
 Example
 ^^^^^^^
@@ -48,31 +63,51 @@ The following is an example of a Gauge specification:
 
     The admin user must be able to search for available products on the search page
 
-    * User must be logged in as "admin"
-    * Open the product search page
-
     ## Successful search
     Tags: successful
 
     For an existing product name, the search result will contain the product name
 
-    * Search for product "Die Hard"
-    * "Die Hard" should show up in the search results
+    * User must be logged in as "admin"
+    * Open the product search page
+    * Search for product "Cup Cakes"
+    * "Cup Cakes" should show up in the search results
 
+    
     ## Unsuccessfull search
 
     On an unknown product name search the search results will be empty
 
+    * User must be logged in as "admin"
+    * Open the product search page
     * Search for product "unknown"
     * The search results will be empty
 
+For more information about Markdown, see `Markdown Syntax <https://daringfireball.net/projects/markdown/syntax>`__.
 
-Specification Heading
-^^^^^^^^^^^^^^^^^^^^^
+Components of a specification
+-----------------------------
+A specification consists of different sections; some of which are mandatory and few are optional.
+The components of a spec are listed as follows:
 
-A specification must begin with a Spec Heading. A specification contains only one Spec Heading.
+* Specification heading
+* Scenario
+* Step
+* Parameters
+* Tags
+* Comments
 
-Spec Heading is written in the Markdown `<H1>` syntax in one of the following ways:
+.. note::
+   
+   * Tags - optional, executable component when the spec is run
+   * Comments - optional, non-executable component when the spec is run
+
+Specification heading
+---------------------
+
+A specification must begin with a spec heading. A specification must contain only one spec heading.
+
+Spec heading is written in the `<H1>` Markdown syntax in one of the following ways:
 
 .. _spec_syntax:
 
@@ -87,12 +122,10 @@ or
     Spec Heading
     ============
 
-| Every spec must contain one or more :ref:`longstart-scenarios`.
-| Every spec can be marked with labels using :ref:`longstart-tags`.
-
 Example
 ^^^^^^^
-In the following example, ``# Search specificaiton`` is the spec heading, followed by tags and steps.
+
+In the following example, ``# Search specificaiton`` is the spec heading, followed by tags and steps (statements preceded by ``*``).
 
 .. code-block:: gauge
 
@@ -108,8 +141,8 @@ In the following example, ``# Search specificaiton`` is the spec heading, follow
 
 Scenario
 --------
-
-Each scenario represents a single flow in a particular specification. A specification must contain at least one scenario.
+Each scenario represents a single workflow in a particular specification. A
+specification must contain at least one scenario.
 
 A scenario starts after a scenario heading or a scenario name. 
 The scenario heading is written in Markdown ``<H2>`` syntax in one of the following ways:
@@ -128,36 +161,26 @@ or
     ----------------
 
 | A scenario contains one or more :ref:`steps <step_syntax>` in it.
-| A scenario can be tagged by using :ref:`tags <tag_syntax>`.
-
+| A scenario can be tagged by using :ref:`tags <longstart-tags>`.
 
 Example
 ^^^^^^^
-
-In the following example, ``## Successful search`` is the scenario heading followed by tags and steps.
+In the following example, the spec, ``Search specification`` contains the scenario, ``## Successful search``. This scenario heading is followed by tags and steps.
 
 .. code-block:: gauge
+    
+    # Search specification
+    
+    The admin user must be able to search for available products on the search page
 
     ## Successful search
     Tags: successful
 
     For an existing product name, the search result will contain the product name
 
-    * Search for product "Die Hard"
-    * "Die Hard" should show up in the search results
+    * Search for product "Cup Cakes"
+    * "Cup Cakes" should show up in the search results
 
-.. code-block:: gauge
-
-    # Configuration
-
-    The Admin user should be able to switch permissions for other users.
-
-    ## Admin Login
-
-    * User must login as "admin"
-    * Navigate to the configuration page
-    * Change permissions for user "john" to "admin"
-    * User "john" should have admin permissions
 
 .. _longstart-steps:
 
@@ -165,27 +188,31 @@ Step
 ----
 
 Steps are the executable components of a specification that are written by using the Markdown unordered list syntax.
+In a specification, steps can exist either within a scenario or outside a scenario. 
+When steps are used outside a scenario, they can be of the following types: Context steps and Tear Down steps. 
 
-The following are the two types of steps inside a specification:
+Steps also exist inside a Concept.
 
-- :ref:`Context Steps<longstart-context>`
-- :ref:`longstart-teardown`
+Every step implementation has an equivalent code as per the language plugin used while installing Gauge. 
+This code is run when the steps inside a spec are executed.
 
-Steps can also exist inside a Scenario or Concept.
+.. _step_syntax:
 
-Every step implementation has an equivalent code as per the programming language used. This code is run when the steps inside a spec are executed.
-
-In the following example, the two sentences preceded by asterisk, \*\, are the unordered steps listed under the ``Successful search`` scenario.
+Example
+^^^^^^^
+In the following example, the two sentences preceded by asterisk, \*\, are the unordered steps listed inside the ``Successful search`` scenario.
 
 .. code-block:: gauge
+
+    # Search specification
 
     ## Successful search
     Tags: successful
 
     For an existing product name, the search result will contain the product name
 
-    * Search for product "Die Hard"
-    * "Die Hard" should show up in the search results
+    * Search for product "Cup Cakes"
+    * "Cup Cakes" should show up in the search results
 
 The values written in *quotes*, ``"``, are parameters that are passed into the equivalent code of the step implementation for that particular language plugin.
 
@@ -196,30 +223,22 @@ The values written in *quotes*, ``"``, are parameters that are passed into the e
    * ``<``
    * ``>``
 
-For more informatin about how to write step implementations for different languages, see :ref:`language-steps`.
+| For more information about Context Steps and Tear Down steps, see :ref:`Context Steps<longstart-context>` and :ref:`longstart-teardown`.
+| For more information about how to write step implementations for different languages, see :ref:`language-steps`.
 
-.. _step_syntax:
-
-Example
-^^^^^^^
-
-.. code-block:: gauge
-
-    * Login into my app
-    * Search for "gauge"
-    * Search for "gauge-java"
-
+.. _parameters:
 
 Parameters
 -----------
 
 Steps are defined to take values as parameters so that they can be reused with different parameter values.
+
 The equivalent code of the step implementation for that particular language plugin must also have the same number of parameters as mentioned in the step.
 
-Example
-^^^^^^^
+Examples
+^^^^^^^^
 
-In the following example, parameter values are ``“Die Hard”`` (within double quotes) within the two steps.
+In the following example, parameter values are ``“Cup Cakes”`` (within double quotes) within the two steps.
 
 .. code-block:: gauge
 
@@ -228,9 +247,10 @@ In the following example, parameter values are ``“Die Hard”`` (within double
 
     For an existing product name, the search result will contain the product name
 
-    * Search for product "Die Hard"
-    * "Die Hard" should show up in the search results
+    * Search for product "Cup Cakes"
+    * "Cup Cakes" should show up in the search results
 
+In the following example, parameter values are ``"product 1"`` and ``"product 2"``.
 
 .. code-block:: gauge
 
@@ -244,8 +264,7 @@ A step can have the following types of parameters:
 * Table parameters
 * Special parameters
 
-
-1. Simple parameters
+Simple parameters
 ^^^^^^^^^^^^^^^^^^^^
 
 Simple parameters are values, which are used in a step within double quotes.
@@ -253,20 +272,15 @@ Simple parameters are values, which are used in a step within double quotes.
 Example
 ^^^^^^^
 
-In the following examples, ``Die Hard``, ``gauge-java``, and ``100`` are values within double quotes and are used in steps: 
+In the following examples, ``Cup Cakes``, ``gauge-java``, and ``100`` are values within double quotes and are used in steps: 
 
 .. code-block:: gauge
 
-   * Search for product "Die Hard"
+   * Search for product "Cup Cakes"
    * Create a “gauge-java” project
    * Write “100” line specification
 
-**Note:** Renaming the parameter will not rename the usages inside the
-method. By design, the renamed parameter is considered a new parameter.
-Therefore the usage of the old parameter (if any) has to be fixed
-manually to resolve the corresponding compilation issue.
-
-2. Dynamic Parameters
+Dynamic Parameters
 ^^^^^^^^^^^^^^^^^^^^^
 
 Dynamic parameters are used as placeholders instead of actual values. 
@@ -274,13 +288,10 @@ These parameters are used when referring to a table column value of a data table
 Dynamic parameters are also used as values in a Concept.
 Dynamic parameters have the following syntax: ``<dynamic_param>``.
 
-Dynamic parameters are primarily used when referring to a table column value in :ref:`table_driven_execution`,
-or while passing values to :ref:`concept`.
-
 Example: Dynamic Parameters used in a spec which has a data table
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In the following example, ``<name>`` is a dynamic parameter. 
-``<name>`` can take the values mentioned in the "name" column of the table. In this case, "Vishnu", "Prateek", or "Navaneeth".
+``<name>`` can take the values mentioned in the "name" column of the table. In this case, the values are "Alice", "Bob", or "Eve".
 
 .. code-block:: gauge
 
@@ -288,9 +299,9 @@ In the following example, ``<name>`` is a dynamic parameter.
 
         |id| name      |
         |--|-----------|
-        |1 | Vishnu    |
-        |2 | Prateek   |
-        |3 | Navaneeth |
+        |1 | Alice    |
+        |2 | Bob   |
+        |3 | Eve |
 
     ## First scenario
     * Say "hello" to <name>.
@@ -300,7 +311,6 @@ In the following example, ``<name>`` is a dynamic parameter.
      
 Example: Dynamic parameters used in a Concept
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 In the following example, ``<username>`` and ``<project_name>`` are used in a Concept.
 
 .. code-block:: gauge
@@ -312,7 +322,7 @@ In the following example, ``<username>`` and ``<project_name>`` are used in a Co
     * Create a project <project_name>
 
 | The dynamic parameters take actual values when a concept is invoked from within a spec. 
-| In the following specification, the concept is invoked within the "Successful login scenario" and the dynamic parameters, ``<username>`` and ``<project_name>`` take the values "john" and "gauge java" respectively.
+| In the following specification, the concept is invoked within the "Successful login scenario" and the dynamic parameters, ``<username>`` and ``<project_name>`` take the values "john" and "Gauge java" respectively.
 
 .. code-block:: gauge
 
@@ -325,21 +335,18 @@ In the following example, ``<username>`` and ``<project_name>`` are used in a Co
 
 | For more information about using dynamic parameters in table column values, see :ref:`table_driven_execution`.
 | For more information about concepts, see :ref:`concept`.
-| For more information about using dynamic parameters as table cell values, see :ref:`example_inline_data_driven_table`.
-
+| For more information about using dynamic parameters in inline tables, see :ref:`example_inline_data_driven_table`.
 
 3. Table Parameters
 ^^^^^^^^^^^^^^^^^^^
 Table parameters are used when a step is executed for multiple values in a table.
-When the step has an inline table parameter, the step is executed for each table row.
+For a step with an inline table parameter, the entire table becomes the parameter value.
 
 .. _example_inline_table:
 
 Example
 ^^^^^^^
-In the following example, "Gauge java, Gauge ruby, Daredevil, and Iron Fist are table parameters.
-
-Inline data tables can be externalized as :ref:`special csv parameter<special_parameter_csv>`.
+In the following example, the step has an inline table parameter.
 
 .. code-block:: gauge
 
@@ -353,6 +360,8 @@ Inline data tables can be externalized as :ref:`special csv parameter<special_pa
          | Gauge java | Daredevil|
          | Gauge ruby | Iron Fist|
 
+.. note::
+   Inline data tables can be used as special CSV parameters. For more information about CSV parameters, see :ref:`special csv parameter<special_parameter_csv>`.
 
 Dynamic parameters used in inline tables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -387,13 +396,11 @@ This parameter takes values from the data table.
 
 4. Special Parameters
 ^^^^^^^^^^^^^^^^^^^^^
-
-Special parameters provide the ability to pass larger and richer data such as tables and files into the steps as parameters.
+Special parameters provide the ability to pass large and complex data such as tables and files into the steps as parameters.
 
 | A special parameter has the following syntax: ``<prefix:value>``.
 | ``prefix`` - defines the special type of parameter such as file or table
 | ``value`` - defines the value for the type of special parameter
-
 
 The two types of special parameters are as follows:
 
@@ -407,18 +414,23 @@ Special Parameter: File
 
 | These are used to read files and pass the file content as a string parameter to the steps in a specification.
 | The syntax of file is as follows: ``<file:[value]>`` .
-| ``[value]`` is the absolute or relative path to the file (relative path to ``<project_root>``, where ``<project_root>`` is the location at which the Gauge project is created). 
+| ``[value]`` is the absolute or relative path to the file located at ``<project_root>`` (location at which the Gauge project is created). 
 
-Example
-^^^^^^^
+Examples
+^^^^^^^^
+
+In the following example, ``email.txt`` is the absolute value of the special parameter, ``file``.
 
 .. code-block:: gauge
 
     * Verify email text is <file:email.txt>
-    * Check if <file:/work/content.txt> is visible
 
-The path to the file can be the relative path from the Gauge project or
-an absolute path to the file.
+In the following example, ``content.txt`` is the file located at  ``<project_root>/work/content.txt``. 
+``/work/content.txt`` is the relative path passed as the value to ``file``.
+
+.. code-block:: gauge
+
+    * Check if <file:/work/content.txt> is visible
 
 .. _special_parameter_csv:
 
@@ -427,17 +439,24 @@ Special Parameter: CSV
 
 | Tables are used to pass table values into steps by using the values from an external CSV file. 
 | The syntax of this parameter is as follows: ``<table:[value]>``
-| ``[value]`` is the absolute or relative path to the file (relative path to ``<project_root>``, where ``<project_root>`` is the location at which the Gauge project is created). 
+| ``[value]`` is the absolute or relative path to the file located at ``<project_root>`` (location at which the Gauge project is created). 
 
-Example
-^^^^^^^
+Examples
+^^^^^^^^
+In the following example, ``data.csv`` is the absolute value of the special parameter, ``table``.
 
 .. code-block:: gauge
 
     * Step that takes a table <table:data.csv>
+    
+In the following example, ``users.csv`` is the file located at ``/Users/john/work/``.
+``/Users/john/work/`` is the relative path passed as the value to ``table``.
+
+.. code-block:: gauge
+
     * Check if the following users exist <table:/Users/john/work/users.csv>
 
-The following is a sample CSV file, with the first row as table header and following rows considered as row values:
+The following is an example of a sample CSV file, with the first row as table header and following rows are row values:
 
 .. code-block:: text
 
@@ -451,38 +470,33 @@ The following is a sample CSV file, with the first row as table header and follo
 Tags
 ----
 
-Tags are used to associate labels with specifications or scenarios. Tags are written as comma separated values in the spec with a prefix ``Tags:`` .
+Tags are used to associate labels with specifications or scenarios. 
+Tags help in searching or filtering specs or scenarios.
 
--  Both scenarios and specifications can be separately tagged
--  Only **one** set of tags can be added to a single specification or scenario.
+Tags are written as comma separated values in the spec with a prefix ``Tags:`` .
+Both scenarios and specifications can be separately tagged, however, only **one** set of tags can be added to a single specification or scenario.
+A tag applied to a spec automatically applies to a scenario as well.
 
-They help in filtering specs or scenarios based on tags used.
+When the number of tags used is more, tags can be defined in multiple lines to enhance readability. 
 
-Example: Tag(s)
-^^^^^^^^^^^^^^^
-
-Both the ``Login specification`` and the scenario
-``Successful login scenario`` have tags in the below example.
+Example: Single line tag
+^^^^^^^^^^^^^^^^^^^^^^^^
+| In the following example, both the specification, ``Search specification``, and scenario, ``Successful search``, have tags. 
+| ``search`` and ``admin`` tags, which are used for the spec also apply to the scenario.
+| Additionally, the scenario has its own set of tag, which is ``successful``.
 
 .. code-block:: gauge
 
-    # Login specification
+    # Search specification
+      Tags: search, admin
 
-     Tags: login, admin, user-abc
+    ## Successful search
+       Tags: successful
 
-    ## Successful login scenario
-
-     Tags: login-success, admin
-
-A tag applied to a spec automatically applies to a scenario.
-
-Example: Multi-line tag(s)
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Tags can be defined in multiple lines
-
-Both the ``Login specification`` and the scenario
-``Successful login scenario`` have tags in multiple lines in the below example.
+Example: Multi-line tag
+^^^^^^^^^^^^^^^^^^^^^^^
+| In the following example, both the specification and scenario have tags in multiple lines.
+| Tags have to be indented when written in multiple lines.
 
 .. code-block:: gauge
 
@@ -496,66 +510,85 @@ Both the ``Login specification`` and the scenario
     Tags: admin,
      login-success
 
-> Note: As shown in the example above, indentation is required to specify tags in multiple lines
+How to add comments in a specification
+--------------------------------------
+Any sentence in plain text which does not follow any syntax is seen as a comment in a spec.
+Comments help enhance readability of a spec without being executed.
+
+Example
+^^^^^^^
+In the following example, ``The admin user must be able to search for available products on the search page`` is a comment. 
+This is in plain text without any syntax and provides information about the spec. 
+Similarly, ``For an existing product name, the search result will contain the product name`` is also a comment within the scenario and provides information about the scenario.
+These comments enhance readability without getting executed when the spec is run.
+
+.. code-block:: gauge
+
+    # Search specification
+    Tags: search, admin
+
+    The admin user must be able to search for available products on the search page
+
+    ## Successful search
+    Tags: successful
+
+    For an existing product name, the search result will contain the product name
+
+    * User must be logged in as "admin"
+    * Open the product search page
+    * Search for product "Cup Cakes"
+    * "Cup Cakes" should show up in the search results
 
 .. _concept:
 
 Concepts
 --------
+Concepts provide the ability to combine re-usable, logical groups of steps into a single unit. 
+A concept presents the summary of a business intent by combining logical groups of steps. 
 
-Concepts provide the ability to combine re-usable logical groups of
-steps into a single unit. It provides a higher level abstraction of a
-business intent by combining steps.
+.. It provides a higher level abstraction of a business intent by combining steps.
 
-They are defined in ``.cpt`` format files in the ``specs`` directory
-in the project. They can be inside nested directories inside the specs
-directory.
-
--  Concepts are used inside a spec just like any other step. The
-   appropriate parameters are passed to them.
--  On execution all the steps under the concepts are executed in the
-   defined order.
-
-**Note:** A single .cpt file can contain multiple concept definitions.
+Concepts follow the same rules or guidelines that are required while using steps within a spec.
+Multiple concepts can be used within a spec and concepts can be nested too.
+When the spec is run, all concepts and their steps are executed in the defined order.
 
 Defining a concept
 ^^^^^^^^^^^^^^^^^^
-
-Create a ``.cpt`` file under specs directory with the concept
-definition.
-
-The concept definition contains the 2 parts:
-
-- :ref:`Concept header<concept_header>`
-- :ref:`Steps<concept_steps>`
+Concepts are defined in a ``.cpt`` file format at ``<project_root>/specs``, where ``<project_root>`` is the location at which the Gauge project is created. 
+Concepts can also be inside nested directories within the ``specs`` directory. 
+Multiple concept definitions can be invoked from within a concept definition.
+A concept definition consists of a concept header and concept steps.
 
 .. _concept_header:
 
 Concept header
 ^^^^^^^^^^^^^^
+Concept header defines the name of the concept and the parameters used in the concept. 
+Concept header is written in the ``H1`` format of Markdown syntax. 
+Parameters are defined as ``<parameters>``.
 
-The concept header defines the name of the concept and the parameters
-that it takes. It is written in the markdown **``H1``** format.
-
--  All parameters are defined in angular brackets ``< >``.
--  A concept definition must have a concept header.
+Example
+^^^^^^^
+| In the following example, the concept header is preceded by ``#``. 
+| ``<username>`` and ``<project_name>`` are parameters used in the concept.
 
 .. code-block:: gauge
 
-    # Concept name with <param0> and <param1>
+    # Login as user <username> and create project <project_name>
 
 .. _concept_steps:
 
-Concept Steps
+Concept steps
 ^^^^^^^^^^^^^
+Concept steps are used in a way similar to using steps in a specification. These follow the concept header.
+If parameters are used from the the concept header, then these parameters must be used within ``< >``. 
+Parameters within concepts steps can also have static values, which are written within double quotes ``" "``.
 
-The concept header is followed by the steps that are used inside the
-concept. They are defined in the usual :ref:`steps <step_syntax>` structure.
-
--  All the parameters used from the concept header will be in ``< >``
-   brackets.
--  Fixed static parameter values are written in quotes ``" "``.
--  Other concepts can also be called inside the concept definition.
+Example
+^^^^^^^
+The following example shows a concept ``(.cpt)`` file with a concept header (preceded by ``#``) and ``<username>`` and ``<project_name>`` as parameters. 
+Parameters are defined in the concept header. This concept has three steps.
+"password" is the static value of another parameter used in one of the concept steps.
 
 .. code-block:: gauge
 
@@ -565,14 +598,9 @@ concept. They are defined in the usual :ref:`steps <step_syntax>` structure.
     * Navigate to project page
     * Create a project <project_name>
 
-In the example above:
-
--  The first line is the concept header
--  The following 3 steps are abstracted into the concept
-
 .. _longstart-context:
 
-The concept above can now be used in any spec as shown below
+This concept is invoked from a spec as follows:
 
 .. code-block:: gauge
 
@@ -585,16 +613,24 @@ The concept above can now be used in any spec as shown below
 Contexts
 --------
 
-**Contexts** or **Context steps** are steps defined in a spec before any
-scenario.
+Contexts or Context steps are steps defined in a spec prior to a scenario. 
+These steps allow you to specify a set of conditions that are necessary for executing scenarios in a spec. 
+If there are multiple scenarios, context steps are executed prior to every scenario in the spec. 
+A context step must be preceded by ``*`` and are executed in the defined order. 
+Hence, they are similar to steps used in a scenario or concept.
 
-They allow you to specify a set of conditions that are necessary for
-executing scenarios in a spec. Context steps can be used to set up data
-before running scenarios. They can also perform a setup or tear down
-function.
+Example
+^^^^^^^
+| In the following example, the context steps are ``User is logged in as Mike`` and ``Navigate to the project page``.
+| These steps are defined and executed prior to the two scenarios, ``## Delete single project`` and ``## Delete multiple projects``.
 
--  Any regular :ref:`steps <step_syntax>` can be used as a context.
--  Contexts are executed before every scenario in the spec.
+When the spec is run, the workflow is as follows:
+
+1. Context steps execution
+2. ``Delete single project`` scenario execution
+3. Context steps execution
+4. ``Delete multiple projects`` scenario execution
+
 
 .. code-block:: gauge
 
@@ -615,38 +651,19 @@ function.
     * Delete all the projects in the list
     * Ensure project list is empty
 
-In the above example spec the context steps are ``User is logged in as Mike`` and
-``Navigate to the project page``, they are defined before any
-scenario.
-
-These steps are executed before the execution of each scenario ``Delete single project`` and ``Delete multiple projects``.
-
-The spec execution flow would be:
-
-1. Context steps execution
-2. ``Delete single project`` scenario execution
-3. Context steps execution
-4. ``Delete multiple projects`` scenario execution
-
 .. _longstart-teardown:
 
 Tear Down Steps
 ---------------
+Tear Down Steps are defined in a spec after the last scenario. 
+These steps allow you to specify some sort of a conclusion after every execution of a scenario in a spec. 
+They are used to perform a tear down function.
 
-**Tear Down Steps** are the steps defined in a spec after the last
-scenario. They allow you to specify a set of clean-up steps after every
-execution of a scenario in a spec. They are used to perform a tear down
-function.
+If there are multiple scenarios, tear down steps are executed prior to every scenario in the spec. 
+A tear down step must be preceded by ``*`` and are executed in the defined order. 
+Hence, they are similar to steps used in a scenario or concept.
 
--  Any regular :ref:`steps <step_syntax>` can be used as a tear down step.
--  Tear down steps are executed after every scenario in the spec.
-
-Syntax
-^^^^^^
-
-``___``: Three or more consecutive underscores will indicate the start
-of tear down. Steps that are written in tear down (after three or more
-consecutive underscores) will be considered as tear down steps.
+Three or more consecutive underscores, ``___``, indicates the start of tear down steps. 
 
 .. code-block:: gauge
 
@@ -657,6 +674,17 @@ consecutive underscores) will be considered as tear down steps.
 
 Example
 ^^^^^^^
+In the following example, the tear down steps that start after the three or more consecutive underscores, ___, are 
+``Logout user "mike"`` and ``Delete user "mike"``.
+
+When the spec is run, the workflow is as follows:
+
+1. Context steps execution
+2. ``Delete single project`` scenario execution
+3. Tear down steps execution
+4. Context steps execution
+5. ``Delete multiple projects`` scenario execution
+6. Tear down steps execution
 
 .. code-block:: gauge
 
@@ -681,37 +709,32 @@ Example
     * Logout user "mike"
     * Delete user "mike"
 
-In the above example spec, the tear down steps are
-``Logout user "mike"`` and ``Delete user "mike"``, they are
-defined after three or more consecutive underscores.
-
-The spec execution flow would be:
-
-1. Context steps execution
-2. ``Delete single project`` scenario execution
-3. Tear down steps execution
-4. Context steps execution
-5. ``Delete multiple projects`` scenario execution
-6. Tear down steps execution
-
-
 .. _language-steps:
 
 Step implementations
 --------------------
+Every step implementation has an equivalent code as per the language plugin used while installing Gauge. 
+The code is run when the steps inside a spec are executed. 
+The code must have the same number of parameters as mentioned in the step.
 
-:ref:`longstart-steps` have a language specific implementation that gets executed on the spec execution.
+Steps can be implemented in different ways such as simple step, step with table, step alias, and enum data type used as step parameters.
 
 Simple step
 ^^^^^^^^^^^
+This is a simple step implementation, which has simple parameters.
 
-**Step name**
+Example
+^^^^^^^
+In the following example of a step, “hello” and “gauge” are two simple parameters. 
+Hence, the step implementation must also contain the same number of parameters. 
+The Implementation section shows the step implementation for different language plugins.
 
 .. code-block:: gauge
 
   * Say "hello" to "gauge"
 
-**Implementation**
+Implementation
+..............
 
 .. tab-container:: languages
 
@@ -768,8 +791,12 @@ Simple step
 
 Step with table
 ^^^^^^^^^^^^^^^
+When steps have an inline table as a parameter, the step implementation must have the appropriate parameter.
 
-**Step**
+Example
+^^^^^^^
+In the following example, “hobbit” and the table are step parameters. 
+The Implementation section shows the step implementation for different language plugins.
 
 .. code-block:: gauge
 
@@ -780,7 +807,8 @@ Step with table
     |456|bilbo  |
     |789|samwise|
 
-**Implementation**
+Implementation
+..............
 
 .. tab-container:: languages
 
@@ -846,20 +874,19 @@ Step with table
 
 Step alias
 ^^^^^^^^^^
+Step alias is a feature when there are multiple step names for the same step functionality. 
+The parameters in the step implementation must match the number and type of parameters used in all the steps names. 
+Step alias feature can be used in a specification when the same functionality is expressed in different ways.
+This enhances readability of the specification.
 
-Multiple Step names for the same implementation. The number and type of
-parameters for all the steps names must match the number of parameters
-on the implementation.
-
-Use case
-^^^^^^^^
-
-There may be situations where while authoring the specs, you may want to
-express the same functionality in different ways in order to make the
-specs more readable.
+Step alias feature helps you follow a good software engineering practice such as the DRY (Don't Repeat Yourself) principle at the code level, while ensuring that the functionality is expressed clearly.
+You can browse the web for more information about the DRY principle.
 
 Example 1
 ^^^^^^^^^
+In the following example, ``Create a user "user 1"`` and ``Create another user "user 2"`` are step aliases because they have the same functionality, but are expressed differently.
+However, ``Verify "user 1" has access to dashboard`` and ``Verify "user 2" has access to dashboard`` are *not* step aliases.
+The Implementation section shows the step implementation for different language plugins.
 
 .. code-block:: gauge
 
@@ -872,15 +899,8 @@ Example 1
     * Create another user "user 2"
     * Verify "user 2" has access to dashboard
 
-In the scenario named Multiple Users, the underlying functionality of
-the first and the third step is the same. But the way it is expressed is
-different. This helps in conveying the intent and the functionality more
-clearly. In such situations like this, step aliases feature should be
-used so that you can practice DRY principle at code level, while
-ensuring that the functionality is expressed clearly.
-
 Implementation
-""""""""""""""
+..............
 
 .. tab-container:: languages
 
@@ -937,7 +957,10 @@ Implementation
             end
 
 Example 2
-~~~~~~~~~
+^^^^^^^^^
+In the following example, the functionality of sending an email in both scenarios is the same. 
+However, the steps are expressed differently. 
+The Implementation section shows the step implementation for different language plugins.
 
 .. code-block:: gauge
 
@@ -952,13 +975,8 @@ Example 2
     * Payment is successfully received
     * An email confirming the "order" is sent
 
-In this case, the underlying functionality of the last step (sending an
-email) in both the scenarios is the same. But it is expressed more
-clearly with the use of aliases. The underlying step implementation
-could be something like this.
-
 Implementation
-""""""""""""""
+..............
 
 .. tab-container:: languages
 
@@ -1014,22 +1032,26 @@ Implementation
                 email_service.send email_type
             end
 
-Enum as Step parameter
-----------------------
+Enum as a step parameter
+^^^^^^^^^^^^^^^^^^^^^^^^
+The constant values of "Enum" data type can be used as parameters in a step. 
+However, the type of parameter should match the Enum name in the step implementation code.
 
-.. note:: This feature is currently only supported for ``Java``.
+.. note:: 
+   Enum as a step parameter is currently supported for ``Java`` only.
 
-The constant values of an Enum data type can be used as parameters to a
-Step. However, the type of parameter should match the Enum name itself
-in step implementation.
-
-**Step**
+Example
+^^^^^^^
+In the following example, the parameter ``SOUTH`` is of the "Enum" data type. 
+In the equivalent code, the parameter ``<direction>`` matches with the Enum name, ``Direction``.
+The Implementation section shows the step implementation for Java.
 
 .. code-block:: gauge
 
   * Navigate towards "SOUTH"
 
-**Implementation**
+Implementation
+..............
 
 .. code-block:: java
     :caption: Java
@@ -1042,61 +1064,190 @@ in step implementation.
     }
 
 
+Refactoring (``gauge refactor``)
+--------------------------------
+
+Gauge allows you to rephrase a step, add and remove parameters, and change the order of parameters in all spec files and code files of a project. 
+
+.. attention::
+  Renaming the parameter does not rename the usage of the parameter inside the step implementation method. 
+  By design, the renamed parameter is considered as a new parameter. 
+  Therefore the usage of the old parameter (if any) has to be fixed manually to resolve the corresponding compilation issue.
+
+The following command is used to rephrase a step:
+
+.. code-block:: console
+
+    gauge refactor "old step name" "new step name"
+
+.. note::
+  This command must be issued at ``<project_root>``, location at which the Gauge project is created.
+
+Example
+^^^^^^^
+Consider the following spec:
+
+.. code-block:: gauge
+
+    # Vowels count specification
+    
+    ## Vowel counts in single word
+    
+    * The word "gauge" has "3" vowels
+
+To rephrase the step, ``gauge refactor`` command can be used in the following ways:
+
+Method 1
+........
+
+.. code-block:: console
+
+    gauge refactor "The word \"gauge\" has \"3\" vowels" "The word \"gauge\" has \"3\" vowels and \"2\" consonants"
+
+.. note::
+   Use the appropriate syntax while giving values in quotes, " ", in the command.
+
+Method 2
+........
+
+.. code-block:: console
+
+    gauge refactor "The word <word> has <number> vowels" "The word <word> has <number> vowels and \"2\" consonants"
+
+Both the methods give the same result - the new step is as follows:
+
+.. code-block:: gauge
+
+    # Vowels count specification
+    
+    ## Vowel counts in single word
+    
+    * The word "gauge" has "3" vowels and "2" consonants
+
+Use cases of Refactoring
+------------------------
+Let us consider a few examples that show how to add a parameter, remove a parameter, and change the order of parameters.
+
+Consider the following spec:
+
+.. code-block:: gauge
+
+    # Vowels count specification
+    
+    ## Vowel counts in single word
+    
+    * The word "gauge" has "3" vowels
+
+How to add a parameter
+^^^^^^^^^^^^^^^^^^^^^^
+In the following example, a new parameter has been added to the step.
+
+.. code-block:: console
+
+    gauge refactor "The word \"gauge\" has \"3\" vowels" "The word \"gauge\" has \"3\" vowels and \"2\" consonants"
+
+The result is as follows:
+
+.. code-block:: gauge
+
+    # Vowels count specification
+    
+    ## Vowel counts in single word
+    
+    * The word "gauge" has "3" vowels and "2" consonants
+
+How to change the order of parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In the following example, the order of parameters within the step has been changed.
+
+.. code-block:: console
+
+    gauge refactor "The word \"gauge\" has \"3\" vowels and \"2\" consonants" "The word \"gauge\" has \"2\" consonants and \"3\" vowels"
+
+The result is as follows:
+
+.. code-block:: gauge
+
+    # Vowels count specification
+    
+    ## Vowel counts in single word
+    
+    * The word "gauge" has "2" consonants and "3" vowels
+
+How to delete a parameter
+^^^^^^^^^^^^^^^^^^^^^^^^^
+In the following example, a parameter has been deleted.
+
+.. code-block:: console
+
+    gauge refactor "The word \"gauge\" has \"2\" consonants and \"3\" vowels" "The word \"gauge\" has \"3\" vowels"
+
+The result is as follows:
+
+.. code-block:: gauge
+
+    # Vowels count specification
+    
+    ## Vowel counts in single word
+    
+    * The word "gauge" has "3" vowels
+
 .. _project_structure:
 
-Project Structure
------------------
+Gauge Project Structure
+-----------------------
+When a Gauge project is initialized for a particular language plugin, a project structure is created at ``<project_root>``. 
+The project structure consists of language-specific files depending on the language plugin used and some common files and directories for all language plugins.
 
-On initialization of a gauge project for a particular language a project
-skeleton is created with the following files
+``<project_root>`` - location at which the Gauge project is created.
 
-Common Gauge files
-^^^^^^^^^^^^^^^^^^
+Common Gauge project files
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Regardless of the language plugin used, few common files and directories are created when a Gauge project is initialized. 
 
-.. _gauge_project_root:
+The following are the common files and directories in the Gauge project structure:
 
-``GAUGE_PROJECT_ROOT`` environment variable holds the path in which the gauge project is created.
+* env
+* logs
+* specs
+* manifest.json
 
 .. code-block:: text
 
     ├── env
     │  └── default
     │     └── default.properties
+    ├── logs
     ├── manifest.json
     ├── specs
        └── example.spec
-
+    
 Env Directory
 ^^^^^^^^^^^^^
+The ``env`` directory contains multiple environment specific directories.
+Each directory has ``.property`` files which define the environment variables set during spec execution for that specific environment.
 
-The env directory contains multiple environment specific directories.
-Each directory has `.property files <https://en.wikipedia.org/wiki/.properties>`__ which define the environment variables set during execution for that specific environment.
+A ``env/default`` directory is created when a Gauge project is initialized. 
+The default directory has the ``default.properties`` file, which contains the default environment variables set during spec execution.
+This directory also has the language specific ``.property`` file which contains language-specific environment variables.
 
-A **env/default** directory is created on project initialization which
-contains the default environment variables set during execution.
-
-Learn more about :ref:`managing environments <environments>`.
+| For more information about environments, see :ref:`environments`. 
+| For more information about the ``default.properties`` file, see :ref:`local_configuration_Gauge`.
 
 Specs Directory
 ^^^^^^^^^^^^^^^
+The specs directory contains all the specification files for the project. 
+A sample specification file called ``example.spec`` is created in this directory to understand the format of a specification file.
 
-The specs directory contains all the :ref:`spec <spec_syntax>` files for the
-project. They are the business layer specifications written in simple
-markdown format.
+A specification is a business test case, written in Markdown, which describes a particular feature of the application that needs testing.
 
-A simple example spec (**example.spec**) is created in the specs
-directory to better understand the format of specifications.
-
-Learn more about :ref:`spec <spec_syntax>`.
+For more information about what a specification is and spec directory, see :ref:`specs` and :ref:`specs_directory`.
 
 Manifest file
 ^^^^^^^^^^^^^
+The ``manifest.json`` file contains information such as the language used and plugins required for the Gauge project.
 
-The **manifest.json** contains gauge specific configurations which
-includes the information of plugins required in the project.
-
-After project initialization, the ``manifest.json`` will have the
-following content.
+After the Gauge project is initialized, ``manifest.json`` has the following information:
 
 .. code:: js
 
@@ -1107,22 +1258,12 @@ following content.
      ]
    }
 
--  **language** : Programming language used for the test code. Gauge uses the corresponding language runner for executing the specs.
+``Language`` - indicates the programming language used for the test code. Gauge uses this language runner for executing specs.
 
--  **Plugins** : The gauge plugins used for the project. Some plugins are used by default on each gauge project. The plugins can be added to project by running the following command :
+``Plugins`` - indicates the plugins used for the project. Some plugins are used by default for each gauge project. Plugins can also be added to the project by installing the required plugin.
 
-  .. code:: console
-
-      gauge install <plugin-name>
-
-  Example :
-
-  .. code:: console
-
-      gauge install xml-report
-
-After running the above command, the manifest.json would have the
-following content:
+For example, if you want to add xml-report plugin to the ``manifest.json`` file, you must install the xml-report plugin. 
+After the plugin is installed, manifest.json has the following content:
 
 .. code:: js
 
@@ -1134,10 +1275,13 @@ following content:
      ]
    }
 
-Project files
-^^^^^^^^^^^^^
+For more information about installing a plugin and related details, see :ref:`install_plugins`.
 
-Creating a new project adds some language specific files.
+Language-specific project files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When the Gauge project is initialized, depending on the language plugin used, language-specific files are created in the project.
+
+The following table shows the project structure for each of the languages when used for creating a Gauge project.
 
 .. tab-container:: languages
 
@@ -1153,7 +1297,7 @@ Creating a new project adds some language specific files.
             │
             ├── env
             │   └───default
-            │           default.properties
+            │           csharp.properties
             │
             ├───packages
                 └───<Nuget Package Binaries>
@@ -1161,17 +1305,22 @@ Creating a new project adds some language specific files.
             │       AssemblyInfo.cs
             │
             └───specs
-                    hello_world.spec
+                    example.spec
 
+        
         **packages.config**
 
-        For ``nuget``. Contains the dependencies for gauge. One can add more to
-        this list, depending on project needs.
+        Nuget Package Binaries contains nuget dependencies for Gauge.
 
         **StepImplementation.cs**
 
-        Contains the implementations for the sample steps defined in
-        ``hello_world.spec``.
+        This file contains the implementations for the sample steps defined in
+        ``example.spec``.
+
+        **csharp.properties**
+
+        | This file defines configurations for CSharp runner plugin.
+        | For more information about language-specific configuration, see :ref:`language_config`.
 
     .. tab:: Java
 
@@ -1196,13 +1345,12 @@ Creating a new project adds some language specific files.
 
         **src**
 
-        Src directory contains the classes the test code including step
-        implementations.
+        This directory contains the classes including step implementations.
 
         **java.properties**
 
-        This defines configurations for java runner plugin.
-        See :doc:`configuration` for more details.
+        | This file defines configurations for Java runner plugin.
+        | For more information about language-specific configuration, see :ref:`language_config`.
 
     .. tab:: JavaScript
 
@@ -1219,12 +1367,12 @@ Creating a new project adds some language specific files.
 
         **tests**
 
-        tests directory contains the test code including step implementations.
+        This directory contains the test code including step implementations.
 
         **js.properties**
 
-        This defines configurations for Javascript runner plugin.
-        See :doc:`configuration` for more details.
+        | This file defines configurations for Javascript runner plugin.
+        | For more information about language-specific configuration, see :ref:`language_config`.
 
     .. tab:: Python
 
@@ -1241,12 +1389,12 @@ Creating a new project adds some language specific files.
 
         **step_impl**
 
-        step_impl directory contains the test code including step implementations.
+        This directory contains the test code including step implementations.
 
         **python.properties**
 
-        This defines configurations for Python runner plugin.
-        See :doc:`configuration` for more details.
+        | This file defines configurations for Python runner plugin.
+        | For more information about language-specific configuration, see :ref:`language_config`.
 
     .. tab:: Ruby
 
@@ -1263,12 +1411,12 @@ Creating a new project adds some language specific files.
 
         **step_implementations directory**
 
-        This contains all the ``.rb`` files with the test code including step implementations in ruby
+        This directory contains all the ``.rb`` files with the test code including step implementations in ruby.
 
         **ruby.properties**
 
-        This defines configurations for ruby runner plugin.
-        See :doc:`configuration` for more details.
+        | This file defines configurations for Ruby runner plugin.
+        | For more information about language-specific configuration, see :ref:`language_config`.
 
 Advanced
 ========
@@ -2244,49 +2392,6 @@ to continue execution.
   -  Step implementations are still non-recoverable by default and Gauge does not execute subsequent steps upon failure. To make a step implementation continue on failure, it needs to be explicitly marked in the test code.
   -  There is no way to globally mark a test run to treat all steps to continue on failure. Each step implementation has to be marked explicitly.
   -  If an implementation uses step aliases, marking that implementation to continue on failure will also make all the aliases to continue on failure. So, if a step alias is supposed to break on failure and another step alias is supposed to continue on failure, they need to be extracted to two different step implementations.
-
-
-Refactoring
------------
-
-Rephrase steps
-^^^^^^^^^^^^^^
-
-Gauge allows you to rephrase a step across the project. To rephrase a
-step run:
-
-.. code-block:: console
-
-    gauge refactor "old step <name>" "new step name"
-
-Here ``<`` and ``>`` are used to denote parameters in the step.
-**Parameters can be added, removed or changed while rephrasing.**
-
-This will change all spec files and code files (for language plugins
-that support refactoring).
-
-For example,
-
-Let's say we have the following steps in our ``spec`` file:
-
-.. code-block:: gauge
-
-    * create user "john" with id "123"
-    * create user "mark" with id "345"
-
-Now, if we now need to add an additional parameter, say ``last name``,
-to this step we can run the command:
-
-.. code-block:: console
-
-    gauge refactor "create user <name> with id <id>" "create user <name> with <id> and last name <watson>"
-
-This will change all spec files to reflect the change.
-
-.. code-block:: gauge
-
-    * create user "john" with id "123" and last name "watson"
-    * create user "mark" with id "345" and last name "watson"
 
 Troubleshooting
 ===============
