@@ -123,11 +123,11 @@
               <span class="github_star"></span></a>
           </li>
           <li class="link_home"><a href="{{gaugehome}}">Home</a></li>
-          <li class="link_doc"><a href="/">Documentation</a></li>
           <li class="link_plugins"><a href="{{gaugehome}}/plugins">Plugins</a></li>
-          <li class="link_examples"><a href="">Examples</a></li> <!-- Update the href -->
-          <li class="link_faq"><a href="">FAQ</a></li> <!-- Update the href -->
-          <li class="link_community"><a href="">Community</a></li> <!-- Update the href -->
+          <li class="link_doc"><a href="/">Documentation</a></li>
+          <li class="link_examples"><a href="{{gaugehome}}/blog">Blog</a></li> <!-- Update the href -->
+          <li class="link_faq"><a href="/{{theme_docs_version}}/getting_started/installing-gauge.html">Getting
+              Started</a></li> <!-- Update the href -->
         </ul>
       </nav>
       <div class="navbtn">
@@ -151,20 +151,28 @@
               <ul>
                 <li><a href="/{{theme_docs_version}}/index.html">DOCS HOME</a> </li>
                 <li><a href="/{{theme_docs_version}}/overview.html">OVERVIEW</a> </li>
-                <li class="doc-toc-group collapsed" ><a href="#">GETTING STARTED</a>
+                <li class="doc-toc-group collapsed"><a href="#">GETTING STARTED</a>
                   <ul class="sub-toc collapsed">
-                    <li><a href="/{{theme_docs_version}}/getting_started/installing-gauge.html">Installing Gauge</a> </li>
-                    <li><a href="/{{theme_docs_version}}/getting_started/create-test-project.html">Create a test Project</a> </li>
-                    <li><a href="/{{theme_docs_version}}/getting_started/running-a-specification.html">Running a Specification</a> </li>
+                    <li><a href="/{{theme_docs_version}}/getting_started/installing-gauge.html">Installing Gauge</a>
+                    </li>
+                    <li><a href="/{{theme_docs_version}}/getting_started/create-test-project.html">Create a test
+                        Project</a> </li>
+                    <li><a href="/{{theme_docs_version}}/getting_started/running-a-specification.html">Running a
+                        Specification</a> </li>
                     <li><a href="/{{theme_docs_version}}/getting_started/view-a-report.html">Viewing Report</a> </li>
                   </ul>
                 </li>
-                <li><a href="/writing-specifications.html" class="toc-link">WRITE SPECIFICATIONS</a> </li>
-                <li><a href="/">RUN SPECIFICATIONS</a> </li>
-                <li><a href="/{{theme_docs_version}}/plugin.html">PLUGINS</a> </li>
-                <li><a href="/">FROM ANOTHER PLATFORM</a> </li>
-                <li><a href="https://manpage.gauge.org/">COMMAND REFRERENCE</a> </li>
-                <li><a href="/{{theme_docs_version}}/configuration.html">CONFIGURATION</a> </li>
+
+                <li><a href="/{{theme_docs_version}}/writing-specifications.html" class="toc-link">WRITE
+                    SPECIFICATIONS</a> </li>
+                <li><a href="/{{theme_docs_version}}/">RUN SPECIFICATIONS</a> </li>
+                <li><a href="/{{theme_docs_version}}/plugin.html" class="toc-link">PLUGINS</a> </li>
+                <li><a href="//manpage.gauge.org">COMMAND REFRERENCE</a> </li>
+                <li><a href="/{{theme_docs_version}}/configuration.html" class="toc-link">CONFIGURATION</a> </li>
+                <li><a href="/{{theme_docs_version}}/examples-and-tutorials.html" class="toc-link">EXAMPLES AND
+                    RECIPIES</a> </li>
+                <li><a href="/{{theme_docs_version}}" class="toc-link">FAQ</a> </li>
+                <li><a href="//taiko.gauge.org/#integrating-gauge" class="toc-link">GAUGE WITH TAIKO</a> </li>
               </ul>
             </div>
           </nav>
@@ -177,23 +185,29 @@
       <!-- Content Holder -->
       <div class="docs-container containers">
         <!-- <div class="row col-md-12 bigContainer"> -->
-          {% if pagename == 'index' %}
-            {% include '_overview.html' %}
-            <!-- Update it to Docs home once the design is finalized -->
-          {% else %}
-            <!-- {% include '_breadcrumbs.html' %} -->
-            <a href="javascript:" id="return-to-top"><i></i></a>
-            {% block body %}{% endblock %}
-          {% endif %}
+
+        {% if pagename == 'index' %}
+        {% include '_landing.html' %}
+        {% else %}
+        <div class="edit-page">
+          <a href="https://github.com/getgauge/docs.gauge.org/edit/master/{{pagename}}.rst">
+            <i class="fas fa-pencil"></i>
+            <u>Edit this Page</u> </a>
+        </div>
+        <!-- {% include '_breadcrumbs.html' %} -->
+        <a href="javascript:" id="return-to-top"><i></i></a>
+        {% block body %}{% endblock %}
+        {% endif %}
         <!-- </div> -->
       </div>
       <!-- Right Sidebar -->
+      {% if pagename != 'index' %}
       <div class="right-sidebar-container containers">
         <div class="localtoc-container">
-            <h4>Contents</h4>
-            <ul class="localtoc">
-              {{ toc }}
-            </ul>
+          <h4>Contents</h4>
+          <ul class="localtoc">
+            {{ toc }}
+          </ul>
         </div>
         <div class="col-md-9 help-note">
           <h4>Need Help?</h4>
@@ -202,11 +216,13 @@
           <span>Reach out to our comminity</span>
           <ul>
             <li><a href="https://gitter.im/getgauge/chat" class="icon_gitter">Gitter</a> </li>
-            <li><a href="https://groups.google.com/forum/#!forum/getgauge" class="icon_google" >Google Group</a> </li>
-            <li><a href="https://stackoverflow.com/questions/tagged/getgauge" class="icon_stack">Stack Overflow</a> </li>
+            <li><a href="https://groups.google.com/forum/#!forum/getgauge" class="icon_google">Google Group</a> </li>
+            <li><a href="https://stackoverflow.com/questions/tagged/getgauge" class="icon_stack">Stack Overflow</a>
+            </li>
           </ul>
         </div>
       </div>
+      {% endif %}
     </div>
     {%- endblock %}
 

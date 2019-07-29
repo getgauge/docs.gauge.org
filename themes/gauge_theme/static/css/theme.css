@@ -4,27 +4,45 @@
 @import url("overview.css");
 @import url("change_filter.css");
 @import url("getting_started.css");
+.edit-page {
+  text-align: right;
+  width: 75%;
+  font-size: 13px;
+  line-height: normal;
+}
 
+.edit-page .fa-pencil {
+  font-family: FontAwesome;
+  font-size: 12px;
+  font-style: normal;
+}
 
 .hidden {
   visibility: hidden;
 }
 
 :root {
-  --left-side-bar-color:#f2f2f2;
+  --left-side-bar-color: #f2f2f2;
   --gauge-yellow: #ffcc00;
 }
 
 body {
   display: grid;
-  grid-template-areas:
-  'header header header header header'
-  'main-content main-content main-content main-content main-content';
+  grid-template-areas: 'header header header header header' 'main-content main-content main-content main-content main-content';
   grid-template-rows: 100px auto;
 }
-.top { grid-area: header ;}
-.wrapper-container { grid-area: main-content; }
-.footer-content { grid-area: footer-content; }
+
+.top {
+  grid-area: header;
+}
+
+.wrapper-container {
+  grid-area: main-content;
+}
+
+.footer-content {
+  grid-area: footer-content;
+}
 
 h1, h2, h3, h4 {
   font-family: "URWGeometric-SemiBold";
@@ -37,15 +55,12 @@ h1, h2, h3, h4 {
 header.top:hover {
   background-color: white;
 }
+
 .wrapper-container {
   overflow: hidden;
   display: flex;
   flex-direction: column;
   left: 0px;
-}
-
-.main-content {
-  margin-top: 10px;
 }
 
 .main-content, footer {
@@ -55,12 +70,12 @@ header.top:hover {
   display: flex;
 }
 
-.page-navigator{
+.page-navigator {
   display: flex;
   justify-content: space-between;
 }
 
-.page-navigator a{
+.page-navigator a {
   text-decoration: none;
 }
 
@@ -69,12 +84,12 @@ header.top:hover {
   background-color: var(--left-side-bar-color);
 }
 
-.help-note{
+.help-note {
   background-color: var(--left-side-bar-color);
   font-size: 12px;
 }
 
-.help-note  h4 {
+.help-note h4 {
   font-size: 16px;
 }
 
@@ -82,12 +97,12 @@ header.top:hover {
   text-decoration: underline;
 }
 
-.dynamic-content{
+.dynamic-content {
   margin: 0px;
   padding: 0px;
 }
 
-.sub-heading{
+.sub-heading {
   font-size: 18px;
   font-weight: bolder;
 }
@@ -98,8 +113,8 @@ header.top:hover {
 }
 
 .docs-container {
-  width:60%;
-  flex:2;
+  width: 60%;
+  flex: 2;
   background-color: white;
   padding: 10px 30px;
 }
@@ -117,7 +132,7 @@ header.top:hover {
 }
 
 .right-sidebar-container {
-  flex:1;
+  flex: 1;
   margin-top: 60px;
 }
 
@@ -134,7 +149,7 @@ header.top:hover {
   color: #636262;
 }
 
-.doc-toc-group > a:after {
+.doc-toc-group>a:after {
   content: ' ';
   width: 10px;
   height: 10px;
@@ -142,21 +157,21 @@ header.top:hover {
   float: right;
 }
 
-.doc-toc-group.collapsed > a:after {
+.doc-toc-group.collapsed>a:after {
   border-left: 3px solid #8a8a8a;
   border-top: 3px solid #8a8a8a;
   transform: rotate(-135deg);
   top: 1px;
 }
 
-.doc-toc-group.expanded > a:after {
+.doc-toc-group.expanded>a:after {
   border-left: 3px solid black;
   border-top: 3px solid black;
   transform: rotate(45deg);
   top: 7px;
 }
 
-.docs-toc .active-toc > a {
+.docs-toc .active-toc>a {
   color: #323232;
 }
 
@@ -189,7 +204,7 @@ footer {
   padding-bottom: 3px;
 }
 
-.docs-toc .active-toc > a.toc-link {
+.docs-toc .active-toc>a.toc-link {
   border-bottom: 3px solid rgb(245, 193, 14);
 }
 
@@ -258,6 +273,7 @@ body {
   /* border-style: solid; */
   border: 2px solid lightgray;
 }
+
 #search-icon {
   background-image: url(../img/search.svg);
   padding: 5px 5px 5px 29px;
@@ -410,12 +426,11 @@ code {
 
 .description {
   font-size: 80%;
-  padding: 10px 0;
   font-size: 16px;
 }
 
 .row.banner {
-  margin: 98px 0px 40px 0px;
+  margin: 30px 0px 50px 0px;
 }
 
 .row.banner .col-md-6 {
@@ -425,9 +440,7 @@ code {
 .banner_header {
   font-size: 24px;
   line-height: 32px;
-  border-bottom: 1px solid #ccc;
   font-weight: 600;
-  margin-bottom: 40px;
 }
 
 .banner #search {
@@ -467,6 +480,7 @@ code {
 }
 
 .gauge-features {
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -598,12 +612,13 @@ code {
 .tab-selector.nav li {
   padding: 5px 20px 5px 30px
 }
-.localtoc-container > h4 {
+
+.localtoc-container>h4 {
   color: #848181;
   font-weight: 600;
 }
 
-.localtoc > ul a {
+.localtoc>ul a {
   display: block;
   font-size: 14px;
   color: gray;
@@ -869,7 +884,7 @@ header.top {
   position: fixed;
   z-index: 10;
   top: 0;
-  left:0px;
+  left: 0px;
   width: 100%;
   z-index: 10;
   height: 100px;
@@ -877,7 +892,6 @@ header.top {
   transition: all 0.2s ease-in-out;
   border: none;
   background-color: white;
-  
 }
 
 .header-container {
@@ -1267,7 +1281,7 @@ header.top::after {
   color: var(--gauge-yellow);
 }
 
-footer{
+footer {
   display: flex;
   justify-content: center;
 }
@@ -1398,13 +1412,7 @@ img {
   }
 }
 
-.foolinks .icon_gitter,
-.help-note .icon_gitter,
-.foolinks .icon_google,
-.help-note .icon_google,
-.foolinks .icon_stack,
-.help-note .icon_stack,
-.foolinks .icon_contribute {
+.foolinks .icon_gitter, .help-note .icon_gitter, .foolinks .icon_google, .help-note .icon_google, .foolinks .icon_stack, .help-note .icon_stack, .foolinks .icon_contribute {
   padding: 5px 0 5px 25px;
   display: block;
 }
@@ -1430,7 +1438,7 @@ img {
   background-size: auto 20px;
 }
 
-.help-note  .icon_google {
+.help-note .icon_google {
   background: url("../img/icon_google-group.svg") no-repeat 0 8px;
   background-size: auto 18px;
   -webkit-transition: all 0.2s ease-in-out;
