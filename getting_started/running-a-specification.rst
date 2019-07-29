@@ -4,6 +4,7 @@
 
     `Previous: Create a Test Project <create-test-project.html>`_
     `Next: View a Report <view-a-report.html>`_
+
 Running a Specification
 =======================
 
@@ -19,6 +20,7 @@ A test specification (spec) is a detailed statement of what will be tested. In G
 in a spec file.To learn more about how specifications work you can look at the owerview section.
 
 .. cssclass:: vscode dynamic-content
+
 Running a Specification using VS Code
 -------------------------------------
 
@@ -28,6 +30,7 @@ Open the example spec. The Gauge specification file is present under :highlighte
 
 .. figure:: ../images/VSCode_open_example.spec.png
       :alt: Open example.spec file
+
 Step 2
 ++++++
 Run your Gauge specs in VS Code by choosing the option to :highlighted-syntax:`Run Spec`
@@ -41,6 +44,7 @@ You'll get immediate feedback in the output about what got executed.
       :alt: VSCode JS execution console
 
 .. cssclass:: java intellij dynamic-content
+
 Running a Specification using Intellij
 ---------------------------------------
 Step 1
@@ -54,6 +58,7 @@ Run your Gauge specs in Intellij
 You'll get immediate feedback in the output about what got executed.
 
 .. cssclass:: csharp visulastudio dynamic-content
+
 Running a Specification using Visual Studio
 -------------------------------------------
 Step 1

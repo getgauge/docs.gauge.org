@@ -4,6 +4,7 @@
 
     `Previous: Installing gauge <installing-gauge.html>`_
     `Next: Running a Specification <running-a-specification.html>`_
+
 Create a Testing project using Gauge
 ====================================
 
@@ -13,6 +14,7 @@ Create a Testing project using Gauge
 .. role:: highlighted-syntax
 
 .. cssclass:: vscode dynamic-content
+
 Creating a Testing Project in VS Code
 -------------------------------------
 Gauge projects can be created and executed in Visual studio code using the Gauge extension for VSCode.

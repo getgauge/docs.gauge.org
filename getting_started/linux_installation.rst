@@ -113,6 +113,7 @@ Alternate Installation
 ----------------------
 
 .. cssclass:: hidden linux content
+
 Nightly release are latest development snapshots of Gauge. They have the latest features being developed, but are unstable. Downnload the Gauge archive from here. Extract it to a location and add it to system path.
 
 .. cssclass:: hidden linux content

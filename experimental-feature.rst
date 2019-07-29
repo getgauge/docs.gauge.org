@@ -25,9 +25,6 @@ and then runs the tagged ones in parallel.
     This feature is currently available in gauge nightlies >= 15-3-2019, 
     follow instruction `here <https://docs.gauge.org/latest/installation.html#alternate-installation-methods>`__ to install nightly builds.
 
-
-.. _run_specs_before_parallel_execution:
-
 Table driven scenario
 ---------------------
 

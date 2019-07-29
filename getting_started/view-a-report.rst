@@ -5,6 +5,7 @@
     `Previous: Running a Specification <running-a-specification.html>`_
 
 .. cssclass:: vscode dynamic-content
+
 Viewing Reports from VS Code
 =============================
 

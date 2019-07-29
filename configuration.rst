@@ -221,7 +221,7 @@ Csharp
 | If you have installed Csharp, then you can make Csharp specific configuration changes in the ``csharp.properties`` file. 
 | The following *key value* pair is listed in ``csharp.properties``:
 
-.. code-block:: csharp
+.. code-block:: text
     :linenos:
     :name: csharp
 

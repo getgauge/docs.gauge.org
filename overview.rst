@@ -1,4 +1,5 @@
 .. cssclass:: topic
+
 What is Gauge
 ==============
 
@@ -11,6 +12,7 @@ writing and maintaining acceptance tests
 
 
 .. cssclass:: topic
+
 Why Gauge
 =========
 
@@ -21,6 +23,7 @@ written in a way that will be understood by all roles in a project and help brid
 Some of the key features of Gauge that make it stand unique include:
 
 .. cssclass:: key-features
+
 * A rich markup based on markdown
 * Simple, Flexible and Rich Syntax
 * Business Language Tests: Supports the concept of executable documentation
@@ -33,6 +36,7 @@ Some of the key features of Gauge that make it stand unique include:
 * IDE Support
 
 .. cssclass:: topic
+
 Gauge Terminologies
 ===================
 
@@ -42,6 +46,7 @@ Specifications
 They are business layer test cases which can also act as your feature documentation. They are written in the business language. Typically a spec or specification describe a particular feature of the application under test.
 
 .. cssclass:: key-features
+
 * They are written in a :highlighted-syntax:`.spec` file. Gauge also supports :highlighted-syntax:`.md` file format.
 * The Markup for a Specification file is based on markdown syntax.
 
@@ -92,6 +97,7 @@ or
     ============
 
 .. cssclass:: note
+
 | Note:
 | Every spec must contain one or more Scenarios.
 | Every spec can be marked with labels using Tags.
@@ -116,6 +122,7 @@ or
     ----------------
 
 .. cssclass:: note
+
 | Note:
 | A scenario contains one or more steps under it.
 | A scenario can be tagged using tags.
@@ -145,6 +152,7 @@ Steps are the executable components of your specification. They are written as m
 They are written inside a specification as
 
 .. cssclass:: key-features
+
 * Context Steps
 * Tear Down Steps
 * Steps inside a scenario or concepts
@@ -167,6 +175,7 @@ The values written in quotes are parameters which are passed into the underlying
 The following characters are reserved for parameters, these cannot be used in step text.
 
 .. cssclass:: key-features
+
 * :param-syntax-char:`"`
 * :param-syntax-char:`<`
 * :param-syntax-char:`>`
@@ -196,6 +205,7 @@ They are values passed into the steps in double quotes.
     * Write “100” line specification
 
 .. cssclass:: note
+
 | Note:
 | Renaming the parameter will not rename the usages inside the method. By design, the renamed parameter is considered as a new parameter. Therefore the usage of the old parameter(if any) has to be fixed manually to resolve the corresponding compilation issue.
 
@@ -227,6 +237,7 @@ The above concept can be invoked and a value can be passed to the concept agains
     * A sample concept that takes a "dummy value"
 
 .. cssclass:: note
+
 | Note:
 | Refer to this example_inline_table for illustration on how table cell values can be referred using dynamic parameters.
 

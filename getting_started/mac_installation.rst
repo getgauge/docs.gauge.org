@@ -80,6 +80,7 @@ Mac OSCommandline tool- Terminal
     Zip Installer
 
 .. cssclass:: hidden macos content
+
 2. Run the following command in your Commnad line tool to complete the installation.
 
 .. cssclass:: hidden macos content
@@ -93,26 +94,21 @@ NPM install
 -----------
 
 .. cssclass:: hidden macos content
+.. container::
 
+    System Requirements
 
-System Requirements
-Node.js
-To install gauge using NPM you will need the latest node version.
+    Node.js
 
-.. cssclass:: hidden macos content
-    if you have Node.js already installed - to get the latest version use the following command:
+    To install gauge using NPM you will need the latest node version.
 
-    `npm install -g npm@latest`.
+    `if you have Node.js already installed - to get the latest version use the following command:`
+    
+    npm install -g npm@latest.
 
 .. cssclass:: hidden macos content
 
 You can install Gauge by running the following command in Terminal.
-
-.. cssclass:: hidden macos content
-
-.. code-block:: console
-
-    npm install -g @getgauge/cli
 
 .. cssclass:: hidden macos content
 
