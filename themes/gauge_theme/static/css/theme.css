@@ -80,7 +80,7 @@ header.top:hover {
 }
 
 .left-sidebar-container {
-  min-width: 290px;
+  min-width: 20%;
   background-color: var(--left-side-bar-color);
 }
 
@@ -475,7 +475,6 @@ code {
 }
 
 .gauge-features {
-  width: 80%;
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -500,7 +499,7 @@ code {
 
 @media (min-width: 992px) {
   .gauge-features__feature {
-    width: 31%;
+    width: 25%;
   }
 }
 
