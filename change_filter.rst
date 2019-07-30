@@ -29,9 +29,9 @@
          :title: 1 : Select your os
          :selected: MacOS
 
+         Linux
          MacOS
          Windows
-         Linux
 
       .. setupfilter::
          :class: selection
@@ -39,11 +39,11 @@
          :title: 2 : Select a Language
          :selected: JavaScript
 
-         JavaScript
+         Csharp
          Java
+         JavaScript
          Python
          Ruby
-         Csharp
 
       .. setupfilter::
          :class: selection
@@ -51,6 +51,6 @@
          :title: 3 : Select an IDE/Editor
          :selected: VS Code
 
-         VS Code
          Intellij
          Visual Studio
+         VS Code

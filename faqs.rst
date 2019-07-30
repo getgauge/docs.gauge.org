@@ -1,6 +1,8 @@
 FAQs
 ====
+
 .. include:: change_filter.rst
+
 
 This page lists FAQs (Frequently Asked Questions) about installing Gauge, running a Gauge specification (spec), configuring Gauge, language runners used with Gauge, and using text editors while writing a Gauge spec. 
 To understand these concepts, see Gauge documentation.
@@ -13,22 +15,29 @@ Installation
 Where is the Gauge executable installed by default?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-============= ================================
-OS            Path
-============= ================================
-Windows       ``%ProgramFiles%\gauge\bin``
-MacOS/Linux   ``/usr/local/bin``
-============= ================================
+.. cssclass:: dynamic-content windows
+`%ProgramFiles%\\gauge\\bin`
+
+.. cssclass:: dynamic-content macos
+`/usr/local/bin`
+
+.. cssclass:: dynamic-content linux
+`/usr/local/bin`
+
+
 
 Where are the plugins installed by default?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-============= ================================
-OS            Path
-============= ================================
-Windows       ``%APPDATA%\gauge\plugins``
-MacOS/Linux   ``~/.gauge/plugins``
-============= ================================
+.. cssclass:: dynamic-content windows
+`%APPDATA%\\gauge\\plugins`
+
+.. cssclass:: dynamic-content macos
+`~/.gauge/plugins`
+
+.. cssclass:: dynamic-content linux
+`~/.gauge/plugins`
+
 
 What is GAUGE_HOME?
 ^^^^^^^^^^^^^^^^^^^
@@ -37,11 +46,34 @@ What is GAUGE_HOME?
 
 How can I manually install a plugin?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Download the plugin from a zip file and install the plugin by using the ``-f`` flag.
+Download the plugin's zip file from github release and install the plugin by using the ``-f`` flag.
 
+.. cssclass:: dynamic-content csharp
 .. code-block:: console
 
-   gauge install plugin_name -f path_to_zip_file
+   gauge install csharp -f <path_to_gauge_csharp_zip_file>
+
+.. cssclass:: dynamic-content java
+.. code-block:: console
+
+   gauge install java -f <path_to_gauge_java_zip_file>
+
+.. cssclass:: dynamic-content javascript
+.. code-block:: console
+
+   gauge install js -f <path_to_gauge_js_zip_file>
+
+.. cssclass:: dynamic-content python
+.. code-block:: console
+
+   gauge install python -f <path_to_gauge_python_zip_file>
+
+.. cssclass:: dynamic-content ruby
+.. code-block:: console
+
+   gauge install ruby -f <path_to_gauge_ruby_zip_file>
+
+
 
 Configuration
 -------------
@@ -93,13 +125,17 @@ You can specify a custom directory by changing the ``logs_directory`` property u
 Where does gauge non project specific logs like plugin installation etc.?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-============= ===============================
-OS            Path
-============= ===============================
-Windows       ``%APPDATA%\gauge\logs``
-MacOS / Linux ``~/.gauge/logs``
-============= ===============================
+.. cssclass:: dynamic-content windows
+`%APPDATA%\\gauge\\logs`
 
+.. cssclass:: dynamic-content macos
+`~/.gauge/logs`
+
+.. cssclass:: dynamic-content linux
+`~/.gauge/logs`
+
+
+.. cssclass:: dynamic-content javascript
 .. _js_faq:
 
 Gauge Javascript
@@ -133,8 +169,8 @@ Example:
 .. code-block:: text
 
     gauge.step("There are <num> vowels.", function (num) {
-    debugger;
-    assert.equal(num, 5);
+        debugger;
+        assert.equal(num, 5);
     });
 
 This will pause the debugger when this step's callback is executed by gauge-js.
@@ -145,6 +181,8 @@ Caveats
 The debugger exposes entire gauge-js runner code.
 You need to be quick enough to hit continue in the browser when node-inspector launches. If this takes too long, gauge will timeout connecting to the API. A workaround for this is to increase the runner_connection_timeout property to an acceptable value.
 
+
+.. cssclass:: dynamic-content python
 .. _python_faq:
 
 Gauge Python
@@ -193,8 +231,13 @@ The typical usage to break into the debugger from a running program is to insert
 
 Execution will stop where it finds the above statement and you can debug.
 
-VSCode
-------
+
+.. cssclass:: dynamic-content vscode
+.. _vscode_faq:
+
+Gauge VS Code
+-------------
+
 Why are some features not working?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -202,6 +245,8 @@ If you notice that any of the documented features (ex. goto definition, Code Len
 are not working then make sure the required language runner is installed, by running ``gauge version``.
 If not installed, install using ``gauge install <plugin_name>``.
 
+
+.. cssclass:: dynamic-content vscode
 Why does the debugger not stop at the right breakpoint (gauge-java)?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
