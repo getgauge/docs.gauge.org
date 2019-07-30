@@ -32,8 +32,13 @@
 {% endif %}
 
 {% set css_files = ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'] %}
+<<<<<<< HEAD
 {% set script_files = script_files + ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js','//gauge.org/assets/javascripts/site.js', '_static/js/theme.js', '_static/js/filter.js', '_static/js/installation.js'] %}
 {% set title = 'Gauge Documentation' %}
+=======
+{% set script_files = script_files + ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js','_static/js/site.js', '_static/js/theme.js', '_static/js/filter.js', '_static/js/installation.js'] %}
+
+>>>>>>> Create layout for mobile devices. #171
 {%- macro script() %}
 <script type="text/javascript" id="documentation_options" data-url_root="{{ pathto('', 1) }}"
   src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
@@ -130,9 +135,6 @@
           </li>
         </ul>
       </nav>
-      <div class="navbtn">
-        <div class="bar"></div>
-      </div>
     </div>
   </header>
 
@@ -140,28 +142,67 @@
     <!-- <div class="main-content"> -->
 
       <!--Left Sidebar  -->
-      <div class="left-sidebar-container containers">
-        <div id="sidebar">
-          <nav>
-            <div class="search-container">
-              <span id="search-icon"></span>
-              <input type="text" id="search" name="search" placeholder="Search" />
-            </div>
-            <div class="docs-toc">
-              <ul>
-                <li><a href="/{{theme_docs_version}}/index.html">DOCS HOME</a> </li>
-                <li><a href="/{{theme_docs_version}}/overview.html">OVERVIEW</a> </li>
-                <li class="doc-toc-group collapsed"><a href="#">GET STARTED</a>
-                  <ul class="sub-toc collapsed">
-                    <li><a href="/{{theme_docs_version}}/getting_started/installing-gauge.html">Installing Gauge</a>
+
+      <div id="sidebar" class="left-sidebar-container containers">
+        <div class='side-nav-header'>
+          <div class="navbtn">
+            <div class="bar"></div>
+          </div>
+          <div class="search-container">
+            <span id="search-icon"></span>
+            <input type="text" id="search" name="search" placeholder="Search" />
+          </div>
+        </div>
+        <nav>
+          <div class="sliding-docs-toc docs-toc">
+            <ul class="">
+              <li class="link_home"><a href="{{gaugehome}}">Home</a></li>
+              <li class="link_plugins"><a href="{{gaugehome}}/plugins">Plugins</a></li>
+              <li class="doc-toc-group collapsed"><span>Documentation</span>
+                <ul class="sub-toc collapsed" >
+                    <li><a href="/{{theme_docs_version}}/index.html">DOCS HOME</a> </li>
+                    <li><a href="/{{theme_docs_version}}/overview.html">OVERVIEW</a> </li>
+                    <li class="doc-toc-group collapsed"><span >GETTING STARTED</span>
+                      <ul class="sub-toc collapsed">
+                        <li><a href="/{{theme_docs_version}}/getting_started/installing-gauge.html">Installing Gauge</a>
+                        </li>
+                        <li><a href="/{{theme_docs_version}}/getting_started/create-test-project.html">Create a test
+                            Project</a> </li>
+                        <li><a href="/{{theme_docs_version}}/getting_started/running-a-specification.html">Running a
+                            Specification</a> </li>
+                        <li><a href="/{{theme_docs_version}}/getting_started/view-a-report.html">Viewing Report</a> </li>
+                      </ul>
                     </li>
-                    <li><a href="/{{theme_docs_version}}/getting_started/create-test-project.html">Create a test
-                        Project</a> </li>
-                    <li><a href="/{{theme_docs_version}}/getting_started/running-a-specification.html">Running a
-                        Specification</a> </li>
-                    <li><a href="/{{theme_docs_version}}/getting_started/view-a-report.html">Viewing Report</a> </li>
+  
+                    <li><a href="/{{theme_docs_version}}/writing-specifications.html" class="toc-link">WRITE
+                        SPECIFICATIONS</a> </li>
+                    <li><a href="/{{theme_docs_version}}/">RUN SPECIFICATIONS</a> </li>
+                    <li><a href="//manpage.gauge.org">COMMAND REFRERENCE</a> </li>
+                    <li><a href="/{{theme_docs_version}}/configuration.html" class="toc-link">CONFIGURATION</a> </li>
+                    <li><a href="/{{theme_docs_version}}/examples-and-tutorials.html" class="toc-link">EXAMPLES AND
+                        RECIPIES</a> </li>
+                    <li><a href="/{{theme_docs_version}}" class="toc-link">FAQ</a> </li>
+                    <li><a href="//taiko.gauge.org/#integrating-gauge" class="toc-link">GAUGE WITH TAIKO</a> </li>
                   </ul>
-                </li>
+              </li>
+              <li class="link_examples"><a href="{{gaugehome}}/blog">Blog</a></li>
+            </ul>
+          </div>
+          <div class="fixed-docs-toc docs-toc">
+            <ul>
+              <li><a href="/{{theme_docs_version}}/index.html">DOCS HOME</a> </li>
+              <li><a href="/{{theme_docs_version}}/overview.html">OVERVIEW</a> </li>
+              <li class="doc-toc-group collapsed"><a href="#">GETTING STARTED</a>
+                <ul class="sub-toc collapsed">
+                  <li><a href="/{{theme_docs_version}}/getting_started/installing-gauge.html">Installing Gauge</a>
+                  </li>
+                  <li><a href="/{{theme_docs_version}}/getting_started/create-test-project.html">Create a test
+                      Project</a> </li>
+                  <li><a href="/{{theme_docs_version}}/getting_started/running-a-specification.html">Running a
+                      Specification</a> </li>
+                  <li><a href="/{{theme_docs_version}}/getting_started/view-a-report.html">Viewing Report</a> </li>
+                </ul>
+              </li>
 
                 <li><a href="/{{theme_docs_version}}/writing-specifications.html" class="toc-link">WRITE
                     SPECIFICATIONS</a> </li>
