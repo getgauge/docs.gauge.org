@@ -14,6 +14,9 @@ Download the following installation bundle to get the latest stable release of G
 
 `windows Installer <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-windows.x86_64.exe>`__
 
+.. figure:: ../images/windows/installer.png
+      :alt: Windows installer
+
 Once you finished installing Gauge, you can go ahead and `install the Gauge Extension for VS Code Plugin <#step-2-installing-gauge-extension-for-vscode>`__
 
 Alternate Installation Methods
