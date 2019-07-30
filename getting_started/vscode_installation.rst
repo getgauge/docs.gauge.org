@@ -1,4 +1,4 @@
-.. cssclass:: vscode
+.. cssclass:: vscode dynamic-content
 
 Step 2: Installing Gauge extension for VSCode
 =============================================
