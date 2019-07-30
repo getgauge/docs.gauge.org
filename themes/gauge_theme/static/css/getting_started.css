@@ -110,44 +110,40 @@
     flex-direction: column;
 }
 
-.navigate-previous p{
-    margin: 0px;
-    align-self: center;
-    font-size: 14px;
+.navigate-next a::before{
+    content: "NEXT";
+    display: block;
+    font-weight: bolder;
+    color: black;
+    margin: 0px 18px;
 }
 
-.navigate-next p{
-    margin: 0px;
-    align-self: center;
-    font-size: 14px;
-}
-
-.previous-symbol{
-    display: flex;
-}
-
-.previous-symbol .figure{
-    width: 13px;
-    align-self: center;
-    margin: 0px 5px 0px 0px;
-}
-
-.previous-symbol img{
-    margin: 0px;
-    padding: 0px;
-}
-
-.next-symbol{
-    display: flex;
-}
-
-.next-symbol .figure{
+.navigate-next a::after{
+    content: url(../img/next-angle.svg);
+    display: inline-block;
     width: 13px;
     align-self: center;
     margin: 0px 0px 0px 5px;
 }
 
-.next-symbol img{
+.navigate-previous a::before{
+    content: "PREVIOUS";
+    display: block;
+    font-weight: bolder;
+    color: black;
+    margin: 0px 18px;
+}
+
+.navigate-previous a::after{
+    content: url(../img/previous-angle.svg);
+    display: block;
+    width: 13px;
+    align-self: center;
+    margin: 5px 5px 0px 0px;
+    float: left;
+}
+
+.navigate-next img{
     margin: 0px;
     padding: 0px;
 }

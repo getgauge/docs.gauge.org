@@ -88,14 +88,4 @@ Now that you've install Gauge, you can go ahead and create a JavaScript testing 
 
    .. container:: navigate-next
 
-      .. container:: navigation-text
-
-         NEXT
-
-      .. container::
-
-         `Create a testing project <create-test-project.html>`__
-
-         .. figure:: ../images/next-angle.svg
-            :alt: Next
-
+      `Create a testing project <create-test-project.html>`__

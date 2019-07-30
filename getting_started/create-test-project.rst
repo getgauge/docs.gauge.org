@@ -140,26 +140,8 @@ Now that you have successfully added/initialized a new Gauge testing projec, we 
 
    .. container:: navigate-previous
 
-      .. container:: navigation-text
-
-         PREVIOUS
-
-      .. container:: previous-symbol
-
-         .. figure:: ../images/previous-angle.svg
-            :alt: Previous
-
-         `Installing Gauge <installing-gauge.html>`__
+      `Installing Gauge <installing-gauge.html>`__
          
    .. container:: navigate-next
 
-      .. container:: navigation-text
-      
-         NEXT
-
-      .. container:: next-symbol
-
-         `Running a Specification <running-a-specification.html>`__
-
-         .. figure:: ../images/next-angle.svg
-            :alt: Next
+      `Running a Specification <running-a-specification.html>`__

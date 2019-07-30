@@ -77,26 +77,8 @@ Now that you have successfully run a Gauge specification, you can go ahead and v
 
    .. container:: navigate-previous
 
-      .. container:: navigation-text
-
-         PREVIOUS
-
-      .. container:: previous-symbol
-
-         .. figure:: ../images/previous-angle.svg
-            :alt: Previous
-
-         `Create a Test Project <create-test-project.html>`__
+      `Create a Test Project <create-test-project.html>`__
 
    .. container:: navigate-next
 
-      .. container:: navigation-text
-
-         NEXT
-
-      .. container::
-
-         `Viewing a Report <view-a-report.html>`__
-
-         .. figure:: ../images/next-angle.svg
-            :alt: Next
+      `Viewing a Report <view-a-report.html>`__

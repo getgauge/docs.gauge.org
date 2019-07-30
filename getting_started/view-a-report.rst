@@ -32,13 +32,4 @@ Here's what a Gauge report looks like.
 
     .. container:: navigate-previous
 
-        .. container:: navigation-text
-
-            PREVIOUS
-
-        .. container:: previous-symbol
-
-            .. figure:: ../images/previous-angle.svg
-                :alt: Previous
-
-            `Running a Specification <running-a-specification.html>`__
+        `Running a Specification <running-a-specification.html>`__
