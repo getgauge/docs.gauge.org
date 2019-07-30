@@ -4,23 +4,6 @@
 @import url("overview.css");
 @import url("change_filter.css");
 @import url("getting_started.css");
-.edit-page {
-  text-align: right;
-  width: 75%;
-  font-size: 13px;
-  line-height: normal;
-}
-
-.edit-page .fa-pencil {
-  font-family: FontAwesome;
-  font-size: 12px;
-  font-style: normal;
-}
-
-#gpl_icon {
-  width: 5%;
-  margin-bottom: 1%;
-}
 
 .hidden {
   visibility: hidden;
@@ -1530,4 +1513,28 @@ img {
   height: 90px;
   visibility: hidden;
   pointer-events: none;
+}
+
+
+
+.edit-page {
+  text-align: right;
+  width: 75%;
+  font-size: 13px;
+  line-height: normal;
+}
+
+.edit-page > a {
+  color: #337ab7;
+}
+
+.edit-page .fa-github {
+  font-family: FontAwesome;
+  font-size: 12px;
+  font-style: normal;
+}
+
+#gpl_icon {
+  width: 5%;
+  margin-bottom: 1%;
 }
