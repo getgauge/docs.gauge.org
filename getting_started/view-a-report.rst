@@ -1,9 +1,5 @@
 .. cssclass:: topic
 
-.. cssclass:: page-navigator
-
-    `Previous: Running a Specification <running-a-specification.html>`_
-
 .. cssclass:: vscode dynamic-content
 
 Viewing Reports from VS Code
@@ -32,6 +28,17 @@ Here's what a Gauge report looks like.
 .. figure:: ../images/HTML_report.png
     :alt: HTML report
 
-.. cssclass:: page-navigator
+.. container:: page-navigator
 
-    `Previous: Running a Specification <running-a-specification.html>`_
+    .. container:: navigate-previous
+
+        .. container:: navigation-text
+
+            PREVIOUS
+
+        .. container:: previous-symbol
+
+            .. figure:: ../images/previous-angle.svg
+                :alt: Previous
+
+            `Running a Specification <running-a-specification.html>`__

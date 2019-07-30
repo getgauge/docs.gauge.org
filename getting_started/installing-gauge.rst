@@ -1,8 +1,3 @@
-.. role:: question-circle
-.. cssclass:: navigate-next
-
-Next: `Create a testing project <create-test-project.html>`__
-
 Getting Started
 ================
 
@@ -89,6 +84,18 @@ Installation Instructions
 Now that you've install Gauge, you can go ahead and create a JavaScript testing project using Gauge.
 
 
-.. cssclass:: navigate-next
+.. container:: page-navigator
 
-Next: `Create a testing project <create-test-project.html>`__
+   .. container:: navigate-next
+
+      .. container:: navigation-text
+
+         NEXT
+
+      .. container::
+
+         `Create a testing project <create-test-project.html>`__
+
+         .. figure:: ../images/next-angle.svg
+            :alt: Next
+

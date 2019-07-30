@@ -1,10 +1,5 @@
 .. cssclass:: topic
 
-.. cssclass:: page-navigator
-
-    `Previous: Create a Test Project <create-test-project.html>`_
-    `Next: View a Report <view-a-report.html>`_
-
 Running a Specification
 =======================
 
@@ -78,7 +73,30 @@ Next Step:
 ----------
 Now that you have successfully run a Gauge specification, you can go ahead and view the report from VS code.
 
-.. cssclass:: page-navigator
+.. container:: page-navigator
 
-    `Previous: Create a Test Project <create-test-project.html>`_
-    `Next: View a Report <view-a-report.html>`_
+   .. container:: navigate-previous
+
+      .. container:: navigation-text
+
+         PREVIOUS
+
+      .. container:: previous-symbol
+
+         .. figure:: ../images/previous-angle.svg
+            :alt: Previous
+
+         `Create a Test Project <create-test-project.html>`__
+
+   .. container:: navigate-next
+
+      .. container:: navigation-text
+
+         NEXT
+
+      .. container::
+
+         `Viewing a Report <view-a-report.html>`__
+
+         .. figure:: ../images/next-angle.svg
+            :alt: Next

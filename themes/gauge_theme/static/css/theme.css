@@ -75,15 +75,6 @@ header.top:hover {
   display: flex;
 }
 
-.page-navigator {
-  display: flex;
-  justify-content: space-between;
-}
-
-.page-navigator a {
-  text-decoration: none;
-}
-
 .left-sidebar-container {
   min-width: 20%;
   background-color: var(--left-side-bar-color);

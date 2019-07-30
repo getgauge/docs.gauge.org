@@ -1,10 +1,5 @@
 .. cssclass:: topic
 
-.. cssclass:: page-navigator
-
-    `Previous: Installing gauge <installing-gauge.html>`_
-    `Next: Running a Specification <running-a-specification.html>`_
-
 Create a Testing project using Gauge
 ====================================
 
@@ -120,8 +115,30 @@ Now that you have successfully added/initialized a new Gauge testing projec, we 
 
 .. Note:: To learn more about how to test specifications in Gauge work and other gauge terminologies please look at our Overview Section.
 
-.. cssclass:: page-navigator
+.. container:: page-navigator
 
-    `Previous: Installing gauge <installing-gauge.html>`_
-    `Next: Running a Specification <running-a-specification.html>`_
-    
+   .. container:: navigate-previous
+
+      .. container:: navigation-text
+
+         PREVIOUS
+
+      .. container:: previous-symbol
+
+         .. figure:: ../images/previous-angle.svg
+            :alt: Previous
+
+         `Installing Gauge <installing-gauge.html>`__
+         
+   .. container:: navigate-next
+
+      .. container:: navigation-text
+      
+         NEXT
+
+      .. container:: next-symbol
+
+         `Running a Specification <running-a-specification.html>`__
+
+         .. figure:: ../images/next-angle.svg
+            :alt: Next
