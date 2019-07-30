@@ -70,6 +70,7 @@ const updateURLAndSelection = function () {
     insertUrlParam();
     updateInstallationSetup();
     showContents();
+    showAlternateMethods();
 }
 
 const setOnclickEvent = function (button) {
@@ -100,7 +101,7 @@ const hideOtherInstallation = function (coll) {
     for (let i = 0; i < coll.length; i++) {
         coll[i].childNodes.forEach(child => {
             if (isContentClass(child)) {
-                child.classList.add('content')
+                child.classList.add('collapsible-content')
             }
         });
     }
@@ -113,12 +114,24 @@ const expandInstaller = function () {
             hideOtherInstallation(coll);
             coll[i].childNodes.forEach(child => {
                 if (isContentClass(child)) {
-                    child.classList.remove('content');
+                    child.classList.remove('collapsible-content');
                 }
             });
         }
     }
 }
+
+const showAlternateMethods = function () {
+    let alternateMethods = document.querySelector(`.${SELECTIONS.os} .alternate-methods`);
+    if (!alternateMethods) return;
+    alternateMethods.onclick = function () {
+        let collapsibleClasss = document.querySelectorAll(`.${SELECTIONS.os}+.collapsible`);
+        collapsibleClasss.forEach(coll => {
+            coll.style.display = 'inline-block';
+        })
+    }
+}
+
 
 const addOnloadEvents = function () {
     updateSelections();
@@ -126,6 +139,7 @@ const addOnloadEvents = function () {
     showContents();
     expandInstaller();
     changeFilter();
+    showAlternateMethods();
 }
 
-window.onload = addOnloadEvents
+window.onload = addOnloadEvents;

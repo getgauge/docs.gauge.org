@@ -79,6 +79,7 @@
     border: 1px solid #b1b1b1;
     outline: none;
     padding-left: 10px;
+    display: none;
 }
 
 .collapsible:after {
@@ -87,7 +88,7 @@
     margin-left: 5px;
 }
 
-.content {
+.collapsible-content {
     padding: 0 10px;
     max-height: 0;
     overflow: hidden;
@@ -192,6 +193,7 @@
     width: fit-content;
     border-radius: 25px;
     padding: 4px;
+    margin-left: 5%;
 }
 
 .extension-link a {
@@ -201,6 +203,12 @@
 
 .code-block {
     background-color: #f2f2f2;
-    margin: 15px;
+    margin: 0px;
     padding: 10px;
+}
+
+.alternate-methods {
+    width: max-content;
+    border-bottom: 1px solid black;
+    cursor: pointer;
 }
