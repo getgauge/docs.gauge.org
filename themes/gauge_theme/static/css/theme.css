@@ -17,6 +17,11 @@
   font-style: normal;
 }
 
+#gpl_icon {
+  width: 5%;
+  margin-bottom: 1%;
+}
+
 .hidden {
   visibility: hidden;
 }
@@ -97,7 +102,7 @@ header.top:hover {
   text-decoration: underline;
 }
 
-.sub-heading{
+.sub-heading {
   font-size: 18px;
   font-weight: bolder;
 }
