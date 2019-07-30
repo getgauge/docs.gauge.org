@@ -46,6 +46,10 @@ Choose a location to create a new folder to create a new project
 .. figure:: ../images/windows/VSCode_create_project_select_folder.png
       :alt: Select project folder
 
+.. cssclass:: linux dynamic-content
+.. figure:: ../images/linux/VSCode_create_project_select_folder.png
+      :alt: Select project folder
+
 Step 4
 ++++++
 
