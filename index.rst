@@ -18,3 +18,4 @@ Gauge documentation
     overview
     plugin
     writing-specifications
+    troubleshooting
