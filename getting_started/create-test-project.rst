@@ -42,6 +42,7 @@ Choose a location to create a new folder to create a new project
 .. figure:: ../images/mac/VSCode_create_project_select_folder.png
       :alt: Select project folder
 
+.. cssclass:: windows dynamic-content
 .. figure:: ../images/windows/VSCode_create_project_select_folder.png
       :alt: Select project folder
 
