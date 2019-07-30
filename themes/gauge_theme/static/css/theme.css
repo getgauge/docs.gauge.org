@@ -431,7 +431,6 @@ code {
 .banner_header {
   font-size: 24px;
   line-height: 32px;
-  font-weight: 600;
 }
 
 .banner #search {
@@ -501,7 +500,6 @@ code {
 
 .feature-wrapper h3 {
   color: #000;
-  font-weight: 600;
   font-size: 16px;
   margin: 0 auto 15px;
 }
@@ -560,7 +558,6 @@ code {
 
 .content>.section h3 {
   font-size: 18px;
-  font-weight: 500;
   margin: 30px 0 10px;
 }
 
@@ -605,7 +602,6 @@ code {
 
 .localtoc-container>h4 {
   color: #848181;
-  font-weight: 600;
 }
 
 .localtoc>ul a {
