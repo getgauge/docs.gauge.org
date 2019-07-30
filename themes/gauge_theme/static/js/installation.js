@@ -60,6 +60,7 @@ const changeBackground = function () {
 
 const updateInstallationSetup = function () {
     let appliedFilter = document.querySelectorAll(".applied-filter");
+    if (appliedFilter.length < 1) return;
     appliedFilter[0].innerText = SELECTIONS.os;
     appliedFilter[1].innerText = SELECTIONS.language;
     appliedFilter[2].innerText = SELECTIONS.ide;
