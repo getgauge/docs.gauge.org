@@ -47,6 +47,9 @@ Choose a location to create a new folder to create a new project
 .. figure:: ../images/mac/VSCode_create_project_select_folder.png
       :alt: Select project folder
 
+.. figure:: ../images/windows/VSCode_create_project_select_folder.png
+      :alt: Select project folder
+
 Step 4
 ++++++
 
@@ -60,6 +63,7 @@ After you've successcreated a gauge project, you'll be able to see a sample proj
 .. cssclass:: macos javascript dynamic-content
 .. figure:: ../images/mac/JS_folder_structure.png
       :alt: folder structure
+
 .. cssclass:: macos python dynamic-content
 .. figure:: ../images/mac/Python_folder_structure.png
       :alt: folder structure
@@ -70,6 +74,26 @@ After you've successcreated a gauge project, you'll be able to see a sample proj
 
 .. cssclass:: macos java dynamic-content
 .. figure:: ../images/mac/Java_folder_structure.png
+      :alt: folder structure
+
+.. cssclass:: windows javascript dynamic-content
+.. figure:: ../images/windows/JS_folder_structure.png
+      :alt: folder structure
+
+.. cssclass:: windows python dynamic-content
+.. figure:: ../images/windows/Python_folder_structure.png
+      :alt: folder structure
+
+.. cssclass:: windows ruby dynamic-content
+.. figure:: ../images/windows/Ruby_folder_structure.png
+      :alt: folder structure
+
+.. cssclass:: windows java dynamic-content
+.. figure:: ../images/windows/Java_folder_structure.png
+      :alt: folder structure
+
+.. cssclass:: windows csharp dynamic-content
+.. figure:: ../images/windows/Csharp_folder_structure.png
       :alt: folder structure
 
 .. Note:: The file structure may vary depending on the language of your project. For ts example, we have created a Javascript project.
