@@ -43,6 +43,11 @@ directions there.
 
 if HomeBrew is working properly, you should see something similar to the following:
 
+
+.. note:: 
+   Gauge automatically sends telemetry data to help us improve the product. If you would prefer not to have this data sent you can choose to opt out.
+
+
 .. cssclass:: dynamic-content macos alternate-methods
 
 Alternate Installation Methods

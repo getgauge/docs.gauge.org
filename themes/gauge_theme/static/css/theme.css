@@ -644,11 +644,21 @@ tr:hover {
   margin: 0px;
 }
 
+.admonition-title {
+  font-weight: bold;
+  font-size: 90% !important;
+}
+
+.admonition-title::after {
+  content: ":";
+}
+
 .note {
   border-left: 4px solid var(--gauge-yellow);
   padding: 10px 0px 10px 0px;
   font-size: 18px;
   border-radius: 5px;
+  margin: 2% 0 2% 0;
 }
 
 .edit-on-github {
