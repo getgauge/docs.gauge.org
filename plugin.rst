@@ -1,5 +1,5 @@
 
-Plugins
+Plugin Usage
 ============
 .. include:: change_filter.rst
 
