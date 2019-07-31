@@ -242,7 +242,13 @@ header.top:hover {
   background-color: white;
   padding: 10px 30px;
   height: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.docs-container::-webkit-scrollbar {
+  display: none;
 }
 
 .docs-container h1 {
