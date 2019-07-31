@@ -81,9 +81,9 @@ Or install Gauge to a [custom path] using
 
     curl -Ssl https://downloads.gauge.org/stable | sh -- --location=[custom path]
 
-.. cssclass:: dynamic-content macos collapsible
+.. cssclass:: dynamic-content macos collapsible zip-installer
 
-:installer-icon:`Install using ZIP file` zip-installer
+:installer-icon:`Install using ZIP file`
 ----------------------------------------
 
 .. cssclass:: dynamic-content macos collapsible-content
