@@ -76,11 +76,11 @@ Install Gauge for your OS (Operating System)
 
     .. tab:: Freebsd
 
-        Download the latest `Gauge release <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-freebsd.x86_64.zip>`__ and then run the following command:
+        Download the latest `Gauge release <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-freebsd.x86_64.zip>`__ and then run the following command:
 
-        .. code-block:: console
+        .. custom-code-block:: console
 
-           unzip -o gauge-1.0.5-freebsd.x86_64.zip -d /usr/local/bin
+           unzip -o gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-freebsd.x86_64.zip -d /usr/local/bin
 
 
     .. tab:: Curl
@@ -111,7 +111,7 @@ Install Gauge for your OS (Operating System)
 
 
 .. note::
-    Gauge automatically sends `telemetry data <https://gauge.org/telemetry>`__ to help us improve the product. If you prefer not to have this data sent, you can choose to turn off the telemetry by using the ``gauge telemetry off`` command. For more information about the ``gauge telemetry`` commands, see the `man page <https://manpage.gauge.org/gauge_telemetry.html>`__.
+    Gauge automatically sends `telemetry data <https://gauge.org/telemetry>`__ to help us improve the product. If you prefer not to have this data sent, you can choose to  `opt out <https://manpage.gauge.org/gauge_telemetry.html>`__.
 
 Alternately, you could also choose to install Gauge on your system by downloading the latest Gauge release from GitHub to a location on your system.
 
@@ -119,11 +119,11 @@ Alternately, you could also choose to install Gauge on your system by downloadin
 
     .. tab:: Windows
 
-        Download the `latest Gauge release <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-windows.x86_64.zip>`__ and then run the following command in PowerShell:
+        Download the `latest Gauge release <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-windows.x86_64.zip>`__ and then run the following command in PowerShell:
 
-        .. code-block:: console
+        .. custom-code-block:: console
 
-           PS> Expand-Archive -Path gauge-1.0.5-windows.x86_64.zip -DestinationPath [custom_path]
+           PS> Expand-Archive -Path gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-windows.x86_64.zip -DestinationPath [custom_path]
         
         ``[custom_path]`` - a location of your choice on your system
 
@@ -131,32 +131,32 @@ Alternately, you could also choose to install Gauge on your system by downloadin
 
     .. tab:: macOS
 
-        For signed binaries, download the `latest Gauge release <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-darwin.x86_64.zip>`__ and the run following command:
+        For signed binaries, download the `latest Gauge release <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-darwin.x86_64.zip>`__ and the run following command:
 
-        .. code-block:: console
+        .. custom-code-block:: console
 
-           unzip -o gauge-1.0.5-darwin.x86_64.zip -d /usr/local/bin
+           unzip -o gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-darwin.x86_64.zip -d /usr/local/bin
 
 
     .. tab:: Debian/APT
 
         You can install Gauge on any flavour of Linux by using the shell script. 
 
-        Download the `latest Gauge release <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-linux.x86_64.zip>`__ and then run following command:
+        Download the `latest Gauge release <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip>`__ and then run following command:
 
-        .. code-block:: console
+        .. custom-code-block:: console
 
-           unzip -o gauge-1.0.5-linux.x86_64.zip -d /usr/local/bin
+           unzip -o gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip -d /usr/local/bin
 
     .. tab:: YUM/DNF
 
         You can install Gauge on any flavour of Linux by using the shell script. 
         
-        Download the `latest Gauge release <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-linux.x86_64.zip>`__ and then run the following command:
+        Download the `latest Gauge release <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip>`__ and then run the following command:
 
-        .. code-block:: console
+        .. custom-code-block:: console
 
-           unzip -o gauge-1.0.5-linux.x86_64.zip -d /usr/local/bin
+           unzip -o gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip -d /usr/local/bin
 
 
 Nightly releases

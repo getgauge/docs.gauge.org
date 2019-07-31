@@ -1,7 +1,7 @@
 $(document).ready(() => {
   var faqToc = $('.faq-toc');
 
-  if(faqToc) {
+  if (faqToc) {
     // get all H2 nodes, these are the groups in the ToC
     var root = $('.faq-toc > ul');
     // remove the H1 from toc.
@@ -15,13 +15,13 @@ $(document).ready(() => {
 
   // remove container class to prevent overlap with sidebar
   $('.tab, .tabs').removeClass('container');
-  
+
   // create tabs from content
-  $('div.tabs').each(function() {
+  $('div.tabs').each(function () {
     var tabSelector = $('<ul />', { class: "tab-selector nav nav-pills" });
     var i = 0;
 
-    $('.tab', this).each(function() {
+    $('.tab', this).each(function () {
       var tab = $('<li />', {
         class: $(this).attr('id'),
       });
@@ -32,9 +32,9 @@ $(document).ready(() => {
 
       $(this).find('.tab-title').remove();
       if (i++) {
-          $(this).hide();
+        $(this).hide();
       } else {
-          tab.addClass('active');
+        tab.addClass('active');
       }
       tabSelector.append(tab);
     });
@@ -44,14 +44,14 @@ $(document).ready(() => {
     i = null;
   });
 
-  $('.tab-selector li').click(function(e) {
+  $('.tab-selector li').click(function (e) {
     e.preventDefault();
-    if($(this).hasClass('active')) return;
-    
+    if ($(this).hasClass('active')) return;
+
     var tabs = $(this).parents('.tabs');
 
     var sel_class = $(this).attr('class');
-    $('div.tab',tabs).hide();
+    $('div.tab', tabs).hide();
     $('div#' + sel_class, tabs).show();
 
     $('ul.tab-selector li', tabs).removeClass('active');
@@ -72,39 +72,71 @@ $(document).ready(() => {
   });
 
   $('ul.localtoc ul ul ul').remove();
-  
+
   // remove nested container classes, prevent overlap with sidebar
   $('.container .container').removeClass('container');
 
   // ===== Scroll to Top ==== 
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
-        $('#return-to-top').fadeIn(200);    // Fade in the arrow
+      $('#return-to-top').fadeIn(200);    // Fade in the arrow
     } else {
-        $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+      $('#return-to-top').fadeOut(200);   // Else fade out the arrow
     }
   });
-  
-  $('#return-to-top').click(function() {      // When arrow is clicked
+
+  $('#return-to-top').click(function () {      // When arrow is clicked
     $('body,html').animate({
-        scrollTop : 0                       // Scroll to top of body
+      scrollTop: 0                       // Scroll to top of body
     }, 500);
   });
-  
+
   $('ul.localtoc a').click(function(){
     var sectionId = $(this).attr('href');
 
     $('body,html').animate({
-      scrollTop : $(sectionId).offset().top                       
+      scrollTop : $(sectionId).offset().top
   }, 500);
   });
 
-  $('.headerlink').click(function(){
+  $('.headerlink').click(function () {
     var sectionId = $(this).attr('href');
     $('body,html').animate({
-      scrollTop : $(sectionId).offset().top                       
+      scrollTop : $(sectionId).offset().top
     }, 500);
   });
 
+  jQuery('.docs-toc li.doc-toc-group').on('click', function(event, selector) {
+    if(!event.currentTarget.className.match('active-toc')) {
+      $(event.currentTarget).addClass('active-toc');
+    };
+    $(event.currentTarget).toggleClass('collapsed');
+    $(event.currentTarget).toggleClass("expanded");
+    event.stopPropagation();
+  })
+
+  jQuery('.docs-toc > ul > li, ul.sub-toc > li').each((_, toc) => {
+    let elemSelector = $(toc);
+    if(toc.className.match('doc-toc-group')) {
+      let subTocList = elemSelector.find('ul.sub-toc li')
+      subTocList.each( (_, subToc) => {
+        let tocLink = subToc.children[0]
+        let location = window.location.pathname;
+        if(location == "/master/" || location == "/latest/") location = "/index.html"
+        if( tocLink && tocLink.href.match(location)) {
+          $(subToc).addClass('active-toc expanded');
+          elemSelector.addClass('active-toc expanded');
+          elemSelector.removeClass('collapsed');
+        }
+      })
+    } else {
+      let tocLink = toc.children[0]
+      let location = window.location.pathname;
+      if(location == "/master/" || location == "/latest/") location = "/index.html"
+      if( tocLink && tocLink.pathname.match(location)) {
+        elemSelector.addClass('active-toc');
+      }
+    }
+  });
 });
 

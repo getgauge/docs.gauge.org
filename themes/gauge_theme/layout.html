@@ -10,8 +10,8 @@
 {%- block doctype -%}{%- if html5_doctype %}
 <!DOCTYPE html>
 {%- else %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 {%- endif %}{%- endblock %}
 {%- set reldelim1 = reldelim1 is not defined and ' &#187;' or reldelim1 %}
 {%- set reldelim2 = reldelim2 is not defined and ' |' or reldelim2 %}
@@ -31,41 +31,48 @@
 {% set gaugehome = '//gauge.org' %}
 {% endif %}
 
-{% set css_files = ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css'] %}
-{% set script_files = script_files + ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js','//gauge.org/assets/javascripts/site.js', '_static/js/theme.js'] %}
+{% set css_files = ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'] %}
+{% set script_files = script_files + ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js','_static/js/site.js', '_static/js/theme.js', '_static/js/filter.js', '_static/js/installation.js'] %}
+{% set title = 'Gauge Documentation' %}
 
 {%- macro script() %}
-<script type="text/javascript" id="documentation_options" data-url_root="{{ pathto('', 1) }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
-  {%- for scriptfile in script_files %}
-  <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
-  {%- endfor %}
+<script type="text/javascript" id="documentation_options" data-url_root="{{ pathto('', 1) }}"
+  src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
+{%- for scriptfile in script_files %}
+<script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
+{%- endfor %}
 {%- endmacro %}
 
 {%- macro css() %}
-  <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
-  {%- for css in css_files %}
-    {%- if css|attr("filename") %}
-  {{ css_tag(css) }}
-    {%- else %}
-  <link rel="stylesheet" href="{{ pathto(css, 1) }}" type="text/css" />
-    {%- endif %}
-  {%- endfor %}
-  <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+<link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+<link rel="stylesheet" href="{{ pathto('_static/css/change_filter.css', 1) }}" type="text/css" />
+{%- for css in css_files %}
+{%- if css|attr("filename") %}
+{{ css_tag(css) }}
+{%- else %}
+<link rel="stylesheet" href="{{ pathto(css, 1) }}" type="text/css" />
+{%- endif %}
+{%- endfor %}
+<link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
 {%- endmacro %}
 
 {%- if html_tag %}
 {{ html_tag }}
 {%- else %}
-<html xmlns="http://www.w3.org/1999/xhtml"{% if language is not none %} lang="{{ language }}"{% endif %}>
+<html xmlns="http://www.w3.org/1999/xhtml" {% if language is not none %} lang="{{ language }}" {% endif %}>
 {%- endif %}
+
 <head>
-   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5C33ML2');</script>
-<!-- End Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5C33ML2');</script>
+  <!-- End Google Tag Manager -->
   {%- if not html5_doctype and not skip_ua_compatible %}
   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
   {%- endif %}
@@ -83,144 +90,238 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   {%- endblock %}
   {%- if not embedded %}
   {%- if favicon %}
-  <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
+  <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" />
   {%- endif %}
   {%- endif %}
-{%- block extrahead %}
-<meta charset='utf-8'>
-<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="google-site-verification" content="yyEnHwGHUHTDtrSJG0WSBleL2wP7e1XfyuJsgRGasyk" />
-{% endblock %}
+  {%- block extrahead %}
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="google-site-verification" content="yyEnHwGHUHTDtrSJG0WSBleL2wP7e1XfyuJsgRGasyk" />
+  {% endblock %}
 </head>
-{%- block body_tag %}<body>
+{%- block body_tag %}
+
+<body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5C33ML2"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5C33ML2" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   {% endblock %}
   <!-- {{ toctree }} -->
-{%- block header %}{% endblock %}
+  {%- block header %}{% endblock %}
 
-{%- block content %}
-<header class="top">
-  <div class="header-container">
-    <a href="{{gaugehome}}" class="logo">Gauge</a>
-    <nav class="nav">
-      <ul class="main-nav">
-        <li class="githubstar-box">
-          <a href="//github.com/getgauge/gauge" target="_blank">
-            <span  class="github-icon"></span>
-            <span class="github_star"></span></a>
-        </li>
-        <li class="link_home"><a href="{{gaugehome}}">Home</a></li>
-        <li class="link_plugins"><a href="{{gaugehome}}/plugins">Plugins</a></li>
-        <li class="link_doc"><a href="/">Documentation</a></li>
-        <li class="link_blog"><a href="{{gaugehome}}/blog">Blog</a></li>
-        <li class="link_getstarted"><a href="{{gaugehome}}/get_started">Get Started</a></li>
-      </ul>
-    </nav>
-    <div class="navbtn">
-      <div class="bar"></div>
+  {%- block content %}
+  <header class="top">
+    <div class="header-container">
+      <a href="{{gaugehome}}" class="logo">Gauge</a>
+      <nav class="nav">
+        <ul class="main-nav">
+          <li class="githubstar-box">
+            <a href="//github.com/getgauge/gauge" target="_blank">
+              <span class="github-icon"></span>
+              <span class="github_star"></span></a>
+          </li>
+          <li class="link_home"><a href="{{gaugehome}}">Home</a></li>
+          <li class="link_plugins"><a href="{{gaugehome}}/plugins">Plugins</a></li>
+          <li class="link_doc"><a href="/">Documentation</a></li>
+          <li class="link_examples"><a href="{{gaugehome}}/blog">Blog</a></li> <!-- Update the href -->
+          <li class="link_faq"><a href="/{{theme_docs_version}}/getting_started/installing-gauge.html">Get Started</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-  </div>
-</header>
+  </header>
 
-<div class="container">
-  <div class="row col-md-12 bigContainer">
-    {% if pagename == 'index' %}
-    <div class="col-md-12 content">
-      {% include '_landing.html' %}
-    </div>      
-    {% else %}
-    <div class="col-md-9 content">
-      {% if pagename == 'faqs' %}
-        <div class="faq-toc">
-          {{toc}}
+  <!-- <div class="wrapper-container"> -->
+    <!-- <div class="main-content"> -->
+
+      <!--Left Sidebar  -->
+
+      <div id="sidebar" class="left-sidebar-container containers">
+        <div class='side-nav-header'>
+          <div class="navbtn">
+            <div class="bar"></div>
+          </div>
+          <div class="search-container">
+            <span id="search-icon"></span>
+            <input type="text" id="search" name="search" placeholder="Search" />
+          </div>
         </div>
-      {%endif%}
-      {% include '_breadcrumbs.html' %}
-      <a href="javascript:" id="return-to-top"><i></i></a>
-      {% block body %}{% endblock %}
-    </div>
-    {% endif %}
+        <nav>
+          <div class="sliding-docs-toc docs-toc">
+            <ul class="">
+              <li class="link_home"><a href="{{gaugehome}}">Home</a></li>
+              <li class="link_plugins"><a href="{{gaugehome}}/plugins">Plugins</a></li>
+              <li class="doc-toc-group collapsed"><a>Documentation</a>
+                <ul class="sub-toc collapsed" >
+                    <li><a href="/{{theme_docs_version}}/index.html">DOCS HOME</a> </li>
+                    <li><a href="/{{theme_docs_version}}/overview.html">OVERVIEW</a> </li>
+                    <li class="doc-toc-group collapsed"><a >GETTING STARTED</a>
+                      <ul class="sub-toc collapsed">
+                        <li><a href="/{{theme_docs_version}}/getting_started/installing-gauge.html">Installing Gauge</a>
+                        </li>
+                        <li><a href="/{{theme_docs_version}}/getting_started/create-test-project.html">Create a test
+                            Project</a> </li>
+                        <li><a href="/{{theme_docs_version}}/getting_started/running-a-specification.html">Running a
+                            Specification</a> </li>
+                        <li><a href="/{{theme_docs_version}}/getting_started/view-a-report.html">Viewing Report</a> </li>
+                      </ul>
+                    </li>
+  
+                    <li><a href="/{{theme_docs_version}}/writing-specifications.html" class="toc-link">WRITE
+                        SPECIFICATIONS</a> </li>
+                    <li><a href="/{{theme_docs_version}}/">RUN SPECIFICATIONS</a> </li>
+                    <li><a href="//manpage.gauge.org">COMMAND REFRERENCE</a> </li>
+                    <li><a href="/{{theme_docs_version}}/configuration.html" class="toc-link">CONFIGURATION</a> </li>
+                    <li><a href="/{{theme_docs_version}}/examples-and-tutorials.html" class="toc-link">EXAMPLES AND
+                        RECIPIES</a> </li>
+                    <li><a href="/{{theme_docs_version}}" class="toc-link">FAQ</a> </li>
+                    <li><a href="//taiko.gauge.org/#integrating-gauge" class="toc-link">GAUGE WITH TAIKO</a> </li>
+                  </ul>
+              </li>
+              <li class="link_examples"><a href="{{gaugehome}}/blog">Blog</a></li>
+            </ul>
+          </div>
+          <div class="fixed-docs-toc docs-toc">
+            <ul>
+              <li><a href="/{{theme_docs_version}}/index.html">DOCS HOME</a> </li>
+              <li><a href="/{{theme_docs_version}}/overview.html">OVERVIEW</a> </li>
+              <li class="doc-toc-group collapsed"><a href="#">GETTING STARTED</a>
+                <ul class="sub-toc collapsed">
+                  <li><a href="/{{theme_docs_version}}/getting_started/installing-gauge.html">Installing Gauge</a>
+                  </li>
+                  <li><a href="/{{theme_docs_version}}/getting_started/create-test-project.html">Create a test
+                      Project</a> </li>
+                  <li><a href="/{{theme_docs_version}}/getting_started/running-a-specification.html">Running a
+                      Specification</a> </li>
+                  <li><a href="/{{theme_docs_version}}/getting_started/view-a-report.html">Viewing Report</a> </li>
+                </ul>
+              </li>
 
-    {% block sidebar2 %} 
-      {% if pagename != 'index' and pagename != 'browse' %}
-        <div class="col-md-3" id="sideBar">
-          <nav id="rightNav">
-            <div class="text-center">
-              <input type="text" id="search" name="search" placeholder="Search Docs"/>
-            </div>
-            <div class="sidebar-wrapper">
-              <ul class="localtoc">
-                {{ toc }}
+                <li><a href="/{{theme_docs_version}}/writing-specifications.html" class="toc-link">WRITE
+                    SPECIFICATIONS</a> </li>
+                <li><a href="/{{theme_docs_version}}/">RUN SPECIFICATIONS</a> </li>
+                <li><a href="/{{theme_docs_version}}/plugin.html" class="toc-link">PLUGINS</a> </li>
+                <li><a href="//manpage.gauge.org">COMMAND REFRERENCE  <i class="fa fa-external-link" aria-hidden="true"></i></a> </li>
+                <li><a href="/{{theme_docs_version}}/configuration.html" class="toc-link">CONFIGURATION</a> </li>
+                <li><a href="/{{theme_docs_version}}/examples-and-tutorials.html" class="toc-link">EXAMPLES AND
+                    RECIPIES</a> </li>
+                <li><a href="/{{theme_docs_version}}/faqs.html" class="toc-link">FAQ</a> </li>
+                <li><a href="//taiko.gauge.org/#integrating-gauge" class="toc-link">GAUGE WITH TAIKO  <i class="fa fa-external-link" aria-hidden="true"></i></a> </li>
               </ul>
             </div>
           </nav>
         </div>
-      {% endif %}
-    {% endblock %}
-  </div>
-</div>
-{%- endblock %}
+      </div>
 
-{%- block footer %}
-<footer>
-  <div class="footer container">
-    <div class="footer_items product">
-      <h5>Product</h5>
-      <nav class="footer_links">
-        <ul class="foolinks">
-          <li> <a href="{{gaugehome}}/get_started/">Get started</a> </li>
-          <li> <a href="{{gaugehome}}/#features">Features</a> </li>
-          <li> <a href="{{gaugehome}}/plugins/">Plugins</a> </li>
-          <li> <a href="/">Documentation</a> </li>
-          <li> <a href="{{gaugehome}}/blog/">Blog</a></li> 
-          <li> <a href="//brandfolder.com/twproducts"   target="_blank">Press Kit</a></li> 
-                      
-        </ul>
-      </nav>
-    </div>
-    <div class="footer_items explore">
-      <h5>Explore</h5>
-      <nav class="footer_links">
-        <ul class="foolinks">
-          <li> <a href="browse.html">Table of Contents</a> </li>
-          <li> <a href="//waffle.io/getgauge/gauge"   target="_blank">Roadmap</a> </li>
-          <li> <a href="//manpage.gauge.org/"   target="_blank">Gauge Commands</a> </li>
-          <li><a href="//thoughtworks.com/privacy-policy" target="_blank">Privacy</a></li>
-        </ul>
-      </nav>
-    </div>      
-    <div class="footer_items engage">
-      <h5>Engage</h5>
-      <nav class="footer_links">
-        <ul class="foolinks">
-          <li> <a href="//gitter.im/getgauge/chat" class="icon_gitter">Gitter</a> </li> 
-          <li> <a href="//groups.google.com/forum/#!forum/getgauge"  class="icon_google">Google Group</a> </li>
-          <li> <a href="//stackoverflow.com/questions/tagged/getgauge"   class="icon_stack">Stack Overflow</a> </li>
-          <li> <a href="//github.com/getgauge/gauge/blob/master/CONTRIBUTING.md"  class="icon_contribute" >Contribute</a> </li>                  
-        </ul>
-      </nav>
-    </div>
-    <div class="footer_items follow">
-      <h5>Follow us</h5>
-      <nav class="footer_links">
-        <ul class="foolinks">
-          <li> <a href="//github.com/getgauge/gauge"  target="_blank"><i class="fab fa-github"></i></a> <a href="//twitter.com/getgauge"  target="_blank"><i class="fab fa-twitter"></i></a></li> 
-          </ul>
-        </nav>
-        <div class="licence">
-        <p>Gauge is an open-source project, sponsored by <a href="//www.thoughtworks.com/"  target="_blank">ThoughtWorks Inc.</a> under the GPL License, Version 3.0</p>
+
+
+
+      <!-- Content Holder -->
+      <div class="docs-container containers">
+        <!-- <div class="row col-md-12 bigContainer"> -->
+
+        {% if pagename == 'index' %}
+        {% include '_landing.html' %}
+        {% else %}
+        <div class="edit-page">
+          <a href="https://github.com/getgauge/docs.gauge.org/edit/master/{{pagename}}.rst">
+            <i class="fab fa-github"></i>
+            <u>improve this page</u> </a>
         </div>
-    </div>
-  </div>
-  {%- block scripts %}
-  {{- script() }}
+        <!-- {% include '_breadcrumbs.html' %} -->
+        <a href="javascript:" id="return-to-top"><i></i></a>
+        {% block body %}{% endblock %}
+        {% endif %}
+        <!-- </div> -->
+      </div>
+      <!-- Right Sidebar -->
+      {% if pagename != 'index' %}
+      <div class="right-sidebar-container containers">
+        <div class="localtoc-container">
+          <ul class="localtoc">
+            {{ toc }}
+          </ul>
+        </div>
+        <div class="col-md-9 help-note">
+          <h4>Need Help?</h4>
+          <a href="">Read the troubleshooting guide.</a>
+          <br>
+          <span>Reach out to our comminity</span>
+          <ul>
+            <li><a href="https://gitter.im/getgauge/chat" class="icon_gitter">Gitter</a> </li>
+            <li><a href="https://groups.google.com/forum/#!forum/getgauge" class="icon_google">Google Group</a> </li>
+            <li><a href="https://stackoverflow.com/questions/tagged/getgauge" class="icon_stack">Stack Overflow</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      {% endif %}
+    <!-- </div> -->
+    {%- endblock %}
+
+    {%- block footer %}
+    <footer>
+      <div class="footer">
+        <div class="footer_items product">
+          <h5>Product</h5>
+          <nav class="footer_links">
+            <ul class="foolinks">
+              <li> <a href="{{gaugehome}}/get_started/">Get started</a> </li>
+              <li> <a href="{{gaugehome}}/#features">Features</a> </li>
+              <li> <a href="{{gaugehome}}/plugins/">Plugins</a> </li>
+              <li> <a href="/">Documentation</a> </li>
+              <li> <a href="{{gaugehome}}/blog/">Blog</a></li>
+              <li> <a href="//brandfolder.com/twproducts" target="_blank">Press Kit</a></li>
+
+            </ul>
+          </nav>
+        </div>
+        <div class="footer_items explore">
+          <h5>Explore</h5>
+          <nav class="footer_links">
+            <ul class="foolinks">
+              <li> <a href="browse.html">Table of Contents</a> </li>
+              <li> <a href="//waffle.io/getgauge/gauge" target="_blank">Roadmap</a> </li>
+              <li> <a href="//manpage.gauge.org/" target="_blank">Gauge Commands</a> </li>
+              <li><a href="//thoughtworks.com/privacy-policy" target="_blank">Privacy</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer_items engage">
+          <h5>Engage</h5>
+          <nav class="footer_links">
+            <ul class="foolinks">
+              <li> <a href="//gitter.im/getgauge/chat" class="icon_gitter">Gitter</a> </li>
+              <li> <a href="//groups.google.com/forum/#!forum/getgauge" class="icon_google">Google Group</a> </li>
+              <li> <a href="//stackoverflow.com/questions/tagged/getgauge" class="icon_stack">Stack Overflow</a> </li>
+              <li> <a href="//github.com/getgauge/gauge/blob/master/CONTRIBUTING.md"
+                  class="icon_contribute">Contribute</a> </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer_items follow">
+          <h5>Follow us</h5>
+          <nav class="footer_links">
+            <ul class="foolinks">
+              <li> <a href="//github.com/getgauge/gauge" target="_blank"><i class="fab fa-github"></i></a> <a
+                  href="//twitter.com/getgauge" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+          </nav>
+          <div class="licence">
+            <p>Gauge is an open-source project, sponsored by <a href="//www.thoughtworks.com/"
+                target="_blank">ThoughtWorks Inc.</a> under the GPL License, Version 3.0</p>
+          </div>
+        </div>
+      </div>
+      {%- block scripts %}
+      {{- script() }}
+      {%- endblock %}
+    </footer>
+  <!-- </div> -->
   {%- endblock %}
-</footer>
-{%- endblock %}
 </body>
+
 </html>

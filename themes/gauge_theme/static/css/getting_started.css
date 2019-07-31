@@ -1,0 +1,213 @@
+#installation-selection {
+    width: 100%;
+    padding: 0px;
+}
+
+#installation-selection .setup-selections {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+#installation-selection .setup-selection {
+    background-color: #fff9e5;
+    width: 33%;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ffcc01;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    align-items: center;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+}
+
+
+.selections-order {
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    margin-top: -17px;
+    background-color: white;
+    vertical-align: middle;
+    line-height: 35px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+
+#installation-selection .radioContainer {
+    position: relative;
+    width: 85%;
+    border-radius: 20px;
+    margin: 5px 0px 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border: 1px solid black;
+}
+
+/* Hide the browser's default radio button */
+#installation-selection input {
+    display: none;
+}
+
+/* Add check mark font*/
+
+#installation-selection .checkmark:after {
+    content: '\f058';
+    font-family: FontAwesome;
+    position: absolute;
+    display: none;
+    left: 4px;
+    text-align: left;
+}
+
+/* Show the indicator when checked */
+#installation-selection input:checked~.checkmark:after {
+    display: inline;
+}
+
+.collapsible {
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid #b1b1b1;
+    outline: none;
+    padding-left: 10px;
+    display: none;
+}
+
+.collapsible:after {
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.collapsible-content {
+    padding: 0 10px;
+    max-height: 0;
+    overflow: hidden;
+    display: none;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
+
+.navigate-next {
+    margin-left: auto;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.navigate-previous {
+    margin-right: auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.navigate-next a::before{
+    content: "NEXT";
+    display: block;
+    font-weight: bolder;
+    color: black;
+    margin: 0px 18px;
+}
+
+.navigate-next a::after{
+    content: url(../img/next-angle.svg);
+    display: inline-block;
+    width: 13px;
+    align-self: center;
+    margin: 0px 0px 0px 5px;
+}
+
+.navigate-previous a::before{
+    content: "PREVIOUS";
+    display: block;
+    font-weight: bolder;
+    color: black;
+    margin: 0px 18px;
+}
+
+.navigate-previous a::after{
+    content: url(../img/previous-angle.svg);
+    display: block;
+    width: 13px;
+    align-self: center;
+    margin: 5px 5px 0px 0px;
+    float: left;
+}
+
+.navigate-next img{
+    margin: 0px;
+    padding: 0px;
+}
+
+.navigation-text{
+    margin: 0px 18px;
+    font-weight: bolder;
+}
+
+.page-navigator{
+    width: 100%;
+    padding: 0px;
+    display: flex;
+    margin: 30px 0px 50px 0px;
+    border-top: 1px solid #b1b1b1;
+}
+
+.page-navigator a{
+    border-bottom: 1px solid #b1b1b1;
+    padding: 0px;
+}
+
+.page-navigator a:hover{
+    background: transparent;
+    border-bottom: 1px solid #b1b1b1;
+    cursor: pointer;
+}
+
+.page-navigator a:visited{
+    color: #b1b1b1;
+    border-bottom: 1px solid #b1b1b1;
+}
+
+.requirement-block-heading {
+    font-weight: bolder;
+    font-size: 17px;
+}
+
+
+#installation-instructions {
+    margin: 40px 0;
+}
+
+.extension-link {
+    background-color: #ffcc00;
+    width: fit-content;
+    border-radius: 25px;
+    padding: 4px;
+    margin-left: 5%;
+}
+
+.extension-link a {
+    text-decoration: none;
+    border: none;
+}
+
+.code-block {
+    background-color: #f2f2f2;
+    margin: 0px;
+    padding: 10px;
+}
+
+.alternate-methods {
+    width: max-content;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}

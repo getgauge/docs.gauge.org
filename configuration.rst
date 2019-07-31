@@ -1,5 +1,6 @@
 Configure Gauge
 ===============
+.. include:: change_filter.rst
 
 You can configure Gauge as per your requirements by using the *key value* pairs in the ``gauge.properties`` and ``default.properties`` files. 
 
@@ -153,6 +154,8 @@ Configuration properties set in these files are available as environment variabl
 
 For more details about running language plugins as an environment, see :ref:`Environments <environments>`.
 
+.. cssclass:: dynamic-content java
+
 Java
 ^^^^
 If you have installed Java, then you can  make Java specific configuration changes in the ``java.properties`` file. 
@@ -186,6 +189,8 @@ The following *key value* pairs are listed in ``java.properties``:
     # Possible values are suite, spec, and scenario. Default value is scenario.
     gauge_clear_state_level = scenario
 
+.. cssclass:: dynamic-content javascript
+
 Javascript
 ^^^^^^^^^^
 | If you have installed JavaScript, then you can make JavaScript specific configuration changes in the ``js.properties`` file. 
@@ -204,6 +209,8 @@ Javascript
     # Comma separated list of directories or paths (a path should be relative to project root).
     STEP_IMPL_DIR = tests
 
+.. cssclass:: dynamic-content python
+
 Python
 ^^^^^^
 | If you have installed Python, then you can make Python specific configuration changes in the ``python.properties`` file. 
@@ -216,12 +223,14 @@ Python
     # Comma separated list of dirs. path should be relative to project root.
     STEP_IMPL_DIR = tests
 
+.. cssclass:: dynamic-content csharp
+
 Csharp
 ^^^^^^
 | If you have installed Csharp, then you can make Csharp specific configuration changes in the ``csharp.properties`` file. 
 | The following *key value* pair is listed in ``csharp.properties``:
 
-.. code-block:: csharp
+.. code-block:: text
     :linenos:
     :name: csharp
 
@@ -233,6 +242,8 @@ Csharp
 
     # The build platform when running tests for the Gauge project
     GAUGE_CSHARP_PROJECT_PLATFORM = Any CPU
+
+.. cssclass:: dynamic-content ruby
 
 Ruby
 ^^^^
@@ -253,19 +264,21 @@ Without Authentication
 If authentication is not required, set the environment variable
 ``HTTP_PROXY`` to proxy server URL.
 
-.. tab-container:: http_proxy
 
-    .. tab:: macOS
+.. cssclass:: dynamic-content macos
+.. code-block:: console
 
-        .. code-block:: console
+    export HTTP_PROXY=http://server-ip:port
 
-            export HTTP_PROXY=http://server-ip:port
+.. cssclass:: dynamic-content linux
+.. code-block:: console
 
-    .. tab:: windows
+    export HTTP_PROXY=http://server-ip:port
 
-        .. code-block:: console
+.. cssclass:: dynamic-content windows`
+.. code-block:: console
 
-            set HTTP_PROXY=http://server-ip:port
+    set HTTP_PROXY=http://server-ip:port
 
 With Authentication
 ^^^^^^^^^^^^^^^^^^^
@@ -273,19 +286,20 @@ With Authentication
 If authentication is required, set the environment variable
 ``HTTP_PROXY`` to proxy server URL along with the credentials.
 
-.. tab-container:: http_proxy
+.. cssclass:: dynamic-content macos
+.. code-block:: console
 
-    .. tab:: macOS
+    export HTTP_PROXY=http://username:password@server-ip:port
 
-        .. code-block:: console
+.. cssclass:: dynamic-content linux
+.. code-block:: console
 
-            export HTTP_PROXY=http://username:password@server-ip:port
+    export HTTP_PROXY=http://username:password@server-ip:port
 
-    .. tab:: windows
+.. cssclass:: dynamic-content windows`
+.. code-block:: console
 
-        .. code-block:: console
-
-            set HTTP_PROXY=http://username:password@server-ip:port
+    set HTTP_PROXY=http://username:password@server-ip:port
 
 
 Gauge configuration while using build tools
