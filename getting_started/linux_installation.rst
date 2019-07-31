@@ -34,8 +34,8 @@ Install Using Shell Script APT_GET
     sudo apt-get install gauge
 
 
-.. note:: 
-   Gauge automatically sends telemetry data to help us improve the product. If you would prefer not to have this data sent you can choose to opt out.
+.. note::
+    Gauge automatically sends `telemetry data <https://gauge.org/telemetry>`__ to help us improve the product. If you prefer not to have this data sent, you can choose to  `opt out <https://manpage.gauge.org/gauge_telemetry.html>`__.
 
 
 .. cssclass:: dynamic-content linux alternate-methods

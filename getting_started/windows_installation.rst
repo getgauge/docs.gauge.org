@@ -22,8 +22,8 @@ Download the following installation bundle to get the latest stable release of G
 Once you finished installing Gauge, you can go ahead and `install the Gauge Extension for VS Code Plugin <#step-2-installing-gauge-extension-for-vscode>`__
 
 
-.. note:: 
-   Gauge automatically sends telemetry data to help us improve the product. If you would prefer not to have this data sent you can choose to opt out.
+.. note::
+    Gauge automatically sends `telemetry data <https://gauge.org/telemetry>`__ to help us improve the product. If you prefer not to have this data sent, you can choose to  `opt out <https://manpage.gauge.org/gauge_telemetry.html>`__.
 
 
 

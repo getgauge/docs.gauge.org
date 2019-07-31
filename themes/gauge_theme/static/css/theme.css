@@ -4,7 +4,6 @@
 @import url("overview.css");
 @import url("change_filter.css");
 @import url("getting_started.css");
-
 .hidden {
   visibility: hidden;
 }
@@ -1525,8 +1524,6 @@ img {
   pointer-events: none;
 }
 
-
-
 .edit-page {
   text-align: right;
   width: 75%;
@@ -1534,7 +1531,7 @@ img {
   line-height: normal;
 }
 
-.edit-page > a {
+.edit-page>a {
   color: #337ab7;
 }
 

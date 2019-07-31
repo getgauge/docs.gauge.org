@@ -111,7 +111,7 @@ Install Gauge for your OS (Operating System)
 
 
 .. note::
-    Gauge automatically sends `telemetry data <https://gauge.org/telemetry>`__ to help us improve the product. If you prefer not to have this data sent, you can choose to turn off the telemetry by using the ``gauge telemetry off`` command. For more information about the ``gauge telemetry`` commands, see the `man page <https://manpage.gauge.org/gauge_telemetry.html>`__.
+    Gauge automatically sends `telemetry data <https://gauge.org/telemetry>`__ to help us improve the product. If you prefer not to have this data sent, you can choose to  `opt out <https://manpage.gauge.org/gauge_telemetry.html>`__.
 
 Alternately, you could also choose to install Gauge on your system by downloading the latest Gauge release from GitHub to a location on your system.
 
