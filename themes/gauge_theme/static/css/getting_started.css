@@ -28,18 +28,17 @@
 }
 
 
-/* .number {
-    width: 35px;
-    height: 35px;
+.selections-order {
+    width: 34px;
+    height: 34px;
     text-align: center;
-    margin-left: 40%;
-    margin-top: -8%;
+    margin-top: -17px;
     background-color: white;
     vertical-align: middle;
     line-height: 35px;
     border-radius: 50%;
     border: 1px solid black;
-} */
+}
 
 
 #installation-selection .radioContainer {

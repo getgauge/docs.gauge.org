@@ -1,6 +1,7 @@
 from docutils import nodes
-from docutils.statemachine import StringList
 from docutils.parsers.rst import Directive, directives
+from docutils.statemachine import StringList
+
 
 class setup_heading_node(nodes.Element):
     tagname='h2'
@@ -11,6 +12,23 @@ def visit_setup_heading_node(self, node):
 
 def depart_setup_heading_node(self, node):
     self.body.append(node.endtag())
+
+
+class setup_order_node(nodes.Element):
+    pass
+
+def visit_setup_order_node(self, node):
+    attrs = ''
+    text = ''
+    for attr in node.attlist():
+        attrs += attr[0] +"=" +'"'+ attr[1] +'"'
+    self.body.append('<div '+ attrs +'>'+ node.rawsource +'</div>')
+
+    self.body.append(node.endtag())
+
+
+def depart_setup_order_node(self, node):
+    pass
 
 class setup_input_node(nodes.Element):
     pass
@@ -52,7 +70,8 @@ class InstallationSelection(Directive):
     final_argument_whitespace = True
     option_spec = {'title': directives.unchanged,
                    'type': directives.unchanged,
-                   'class': directives.unchanged}
+                   'class': directives.unchanged,
+                   'order': directives.unchanged}
     has_content = True
 
     def run(self):
@@ -60,6 +79,9 @@ class InstallationSelection(Directive):
         container = nodes.container()
         container['classes'].append(options['class'])
         heading = setup_heading_node(options['title'])
+        order = setup_order_node(options['order'])
+        order['class'] = 'selections-order'
+        container += order
         container += heading
         for content in self.content:
             _input = setup_input_node(content)
@@ -73,7 +95,7 @@ def setup(app):
 
     app.add_node(setup_heading_node, html=(visit_setup_heading_node, depart_setup_heading_node))
     app.add_node(setup_input_node, html=(visit_setup_input_node, depart_setup_input_node))
+    app.add_node(setup_order_node, html=(visit_setup_order_node, depart_setup_order_node))
 
     app.add_directive('installationselections', InstallationSelections)
     app.add_directive('installationselection', InstallationSelection)
-

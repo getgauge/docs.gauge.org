@@ -24,7 +24,8 @@ Select your setup to see the instructions for installing gauge. ?
       .. installationselection::
          :class: setup-selection
          :type: os
-         :title: 1 : Select your OS
+         :title: Select your OS
+         :order: 1
 
          MacOS
          Windows
@@ -33,7 +34,8 @@ Select your setup to see the instructions for installing gauge. ?
       .. installationselection::
          :class: setup-selection
          :type: language
-         :title: 2 : Select a Language
+         :title: Select a Language
+         :order: 2
 
          JavaScript
          Java
@@ -44,7 +46,8 @@ Select your setup to see the instructions for installing gauge. ?
       .. installationselection::
          :class: setup-selection
          :type: ide
-         :title: 3 : Select an IDE/Editor
+         :title: Select an IDE/Editor
+         :order: 3
 
          VS Code
          Intellij
