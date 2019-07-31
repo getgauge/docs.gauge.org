@@ -237,7 +237,7 @@ header.top:hover {
 }
 
 .docs-container {
-  /* width: 60%; */
+  min-width: 60%;
   flex: 2;
   background-color: white;
   padding: 10px 30px;

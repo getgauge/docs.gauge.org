@@ -118,13 +118,17 @@ Nightly Installation
 Nightly release are latest development snapshots of Gauge. They have the latest features being developed, but are unstable. Downnload the Gauge archive from here. Extract it to a location and add it to system path.
 
 .. cssclass:: dynamic-content windows collapsible-content
+
 `gauge-1.0.6.nightly-2019-07-25-windows.x86.exe <https://bintray.com/gauge/Gauge/download_file?file_path=windows%2Fgauge-1.0.6.nightly-2019-07-25-windows.x86.exe>`__
 
 .. cssclass:: dynamic-content windows collapsible-content
+
 `gauge-1.0.6.nightly-2019-07-25-windows.x86.zip <https://bintray.com/gauge/Gauge/download_file?file_path=windows%2Fgauge-1.0.6.nightly-2019-07-25-windows.x86.zip>`__
 
 .. cssclass:: dynamic-content windows collapsible-content
+
 `gauge-1.0.6.nightly-2019-07-25-windows.x86_64.exe <https://bintray.com/gauge/Gauge/download_file?file_path=windows%2Fgauge-1.0.6.nightly-2019-07-25-windows.x86_64.exe>`__
 
 .. cssclass:: dynamic-content windows collapsible-content
+
 `gauge-1.0.6.nightly-2019-07-25-windows.x86_64.zip <https://bintray.com/gauge/Gauge/download_file?file_path=windows%2Fgauge-1.0.6.nightly-2019-07-25-windows.x86_64.zip>`__
