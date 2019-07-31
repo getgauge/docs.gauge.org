@@ -1,7 +1,7 @@
 .. cssclass:: dynamic-content macos
 
-Step 1: Installing Gauge on MacOS
-=================================
+Installing Gauge on MacOS
+=========================
 
 This section gives specific instructions on setting up Gauge in a Mac OS environment.
 

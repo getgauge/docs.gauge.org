@@ -1,7 +1,7 @@
 .. cssclass:: dynamic-content linux
 
-Step 1: Installing Gauge on Linux
-=================================
+Installing Gauge on Linux
+=========================
 
 Gauge can be installed on any flavour of Linux using the shell script. The Following steps will guide you to a quick install on a linux box.
 

@@ -1,5 +1,7 @@
-Getting Started
-================
+.. cssclass:: topic
+
+Get Started
+===========
 
 This getting started guide walks you through the core features of Gauge. You'll be able to install
 Gauge and learn how to create a test automation project using Gauge.
@@ -11,8 +13,9 @@ most important concepts and features of the tool.
 Choose your Setup to Install Gauge
 ----------------------------------
 
+.. cssclass:: question-circle
 
-Select your setup to see the instructions for installing gauge. ?
+Select your setup to see the instructions for installing gauge.
 
 
 .. _installation-selection:
@@ -74,12 +77,19 @@ Installation Instructions
 
          VS Code
 
+.. cssclass:: steps
 
+Step1:
+======
 .. include:: mac_installation.rst
 .. include:: windows_installation.rst
 .. include:: linux_installation.rst
-.. include:: vscode_installation.rst
 
+.. cssclass:: steps
+
+Step 2:
+=======
+.. include:: vscode_installation.rst
 
 
 Next Step:

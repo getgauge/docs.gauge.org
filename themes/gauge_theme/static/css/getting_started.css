@@ -72,9 +72,65 @@
     display: inline;
 }
 
+#choose-your-setup-to-install-gauge {
+    margin-top: 50px;
+}
+
+.question-circle::after {
+    Content: url(../img/question-circle-solid.svg);
+    display: inline-block;
+    width: 13px;
+    margin-left: 4px;
+}
+
+.steps {
+    margin-bottom: -125px;
+}
+
+#install-using-windows-installer .installer-icon {
+    margin-bottom: 20px;
+}
+
+.installer-icon::before {
+    display: inline-block;
+    margin-right: 10px;
+    border: 1px solid gray;
+    padding: 5px;
+    margin: 0 10px;
+    width: 35px;
+    height: 35px;
+}
+
+#install-using-windows-installer .installer-icon::before {
+    Content: url(../img/windows_installer_icon.svg);
+    border: none;
+    width: 50px;
+}
+
+#install-using-chocolatey-package-manager .installer-icon::before {
+    Content: url(../img/chocolatey.org.ico);
+}
+
+#install-using-zip-file .installer-icon::before {
+    Content: url(../img/file-archive-regular.svg);
+    height: 43px;
+}
+
+#install-using-npm-installation .installer-icon::before {
+    Content: url(../img/npm-logo.svg);
+}
+
+#nightly-installation .installer-icon::before {
+    content: '...';
+    padding-top: 2px;
+    padding-left: 10px;
+    font-weight: bolder;
+}
+
 .collapsible {
     cursor: pointer;
     width: 100%;
+    min-height: 75px;
     border: 1px solid #b1b1b1;
     outline: none;
     padding-left: 10px;
@@ -110,7 +166,7 @@
     flex-direction: column;
 }
 
-.navigate-next a::before{
+.navigate-next a::before {
     content: "NEXT";
     display: block;
     font-weight: bolder;
@@ -118,7 +174,7 @@
     margin: 0px 18px;
 }
 
-.navigate-next a::after{
+.navigate-next a::after {
     content: url(../img/next-angle.svg);
     display: inline-block;
     width: 13px;
@@ -126,7 +182,7 @@
     margin: 0px 0px 0px 5px;
 }
 
-.navigate-previous a::before{
+.navigate-previous a::before {
     content: "PREVIOUS";
     display: block;
     font-weight: bolder;
@@ -134,7 +190,7 @@
     margin: 0px 18px;
 }
 
-.navigate-previous a::after{
+.navigate-previous a::after {
     content: url(../img/previous-angle.svg);
     display: block;
     width: 13px;
@@ -143,17 +199,17 @@
     float: left;
 }
 
-.navigate-next img{
+.navigate-next img {
     margin: 0px;
     padding: 0px;
 }
 
-.navigation-text{
+.navigation-text {
     margin: 0px 18px;
     font-weight: bolder;
 }
 
-.page-navigator{
+.page-navigator {
     width: 100%;
     padding: 0px;
     display: flex;
@@ -161,18 +217,18 @@
     border-top: 1px solid #b1b1b1;
 }
 
-.page-navigator a{
+.page-navigator a {
     border-bottom: 1px solid #b1b1b1;
     padding: 0px;
 }
 
-.page-navigator a:hover{
+.page-navigator a:hover {
     background: transparent;
     border-bottom: 1px solid #b1b1b1;
     cursor: pointer;
 }
 
-.page-navigator a:visited{
+.page-navigator a:visited {
     color: #b1b1b1;
     border-bottom: 1px solid #b1b1b1;
 }
@@ -192,12 +248,18 @@
     width: fit-content;
     border-radius: 25px;
     padding: 4px;
-    margin-left: 5%;
 }
 
 .extension-link a {
     text-decoration: none;
     border: none;
+}
+
+.download-icon::after {
+    Content: url(../img/download_icon.svg);
+    display: inline-block;
+    width: 20px;
+    margin-left: 4px;
 }
 
 .code-block {
@@ -206,8 +268,19 @@
     padding: 10px;
 }
 
+#alternate-installation-methods {
+    margin-top: 35px;
+}
+
 .alternate-methods {
-    width: max-content;
+    width: fit-content;
     border-bottom: 1px solid black;
     cursor: pointer;
+}
+
+.alternate-methods::after {
+    Content: url(../img/angle-right-solid.svg);
+    display: inline-block;
+    width: 9px;
+    margin-left: 9px;
 }

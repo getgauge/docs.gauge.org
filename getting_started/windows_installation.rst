@@ -1,18 +1,20 @@
+.. role:: installer-icon
+.. role:: alternate-methods
 .. cssclass:: dynamic-content windows
 
-Step1: Installing Gauge on Windows
+Installing Gauge on Windows
 ==================================
 
 This section gives specific instructions on setting up Gauge in a Microsoft Windows environment.
 
 .. cssclass:: dynamic-content windows
 
-Install using Windows Installer
--------------------------------
+:installer-icon:`Install using Windows Installer`
+--------------------------------------------------
 
 Download the following installation bundle to get the latest stable release of Gauge.
 
-.. cssclass:: dynamic-content windows extension-link
+.. cssclass:: dynamic-content windows extension-link download-icon
 
 `windows Installer <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-windows.x86_64.exe>`__
 
@@ -21,21 +23,21 @@ Download the following installation bundle to get the latest stable release of G
 
 Once you finished installing Gauge, you can go ahead and `install the Gauge Extension for VS Code Plugin <#step-2-installing-gauge-extension-for-vscode>`__
 
+.. cssclass:: dynamic-content windows
 
 .. note::
     Gauge automatically sends `telemetry data <https://gauge.org/telemetry>`__ to help us improve the product. If you prefer not to have this data sent, you can choose to  `opt out <https://manpage.gauge.org/gauge_telemetry.html>`__.
 
 
+.. cssclass:: dynamic-content windows
 
-.. cssclass:: dynamic-content windows alternate-methods
-
-Alternate Installation Methods
-
+:alternate-methods:`Alternate Installation Methods`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. cssclass:: dynamic-content windows collapsible
 
-Install using Chocolatey Package Manager
-----------------------------------------
+:installer-icon:`Install using Chocolatey Package Manager`
+----------------------------------------------------------
 
 .. cssclass:: dynamic-content windows code-block collapsible-content
 
@@ -64,8 +66,8 @@ For this to work, you will need to install Chocolatey. If you have chocolatey in
 
 .. cssclass:: dynamic-content windows collapsible
 
-Install using Zip file
-----------------------
+:installer-icon:`Install using Zip file`
+----------------------------------------
 
 .. cssclass:: dynamic-content windows collapsible-content
 
@@ -88,8 +90,8 @@ Download the following zip installer.
 
 .. cssclass:: dynamic-content windows collapsible
 
-Install using NPM installation
-------------------------------
+:installer-icon:`Install using NPM installation`
+------------------------------------------------
 
 .. cssclass:: dynamic-content windows collapsible-content text-block
 
@@ -110,8 +112,8 @@ You can install Gauge by running the following command in Powershell/Command Pro
 
 .. cssclass:: dynamic-content windows collapsible
 
-Nightly Installation
---------------------
+:installer-icon:`Nightly Installation`
+--------------------------------------
 
 .. cssclass:: dynamic-content windows collapsible-content
 
