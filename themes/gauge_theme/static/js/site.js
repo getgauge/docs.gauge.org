@@ -1,5 +1,6 @@
 "use strict";
 $(document).ready(function() {
+    windowH();
     setGithubStar();
     copyCode($('.code-box'));
     getLocationhash();
@@ -172,6 +173,10 @@ function videoContentChange() {
         $(videoId).find('iframe').addClass('iframe-visible');
     });
 }
+function windowH() {
+    var wH = $(window).height();
+    $('.docs-container').css({height: wH});
+ }
 
 function videoEndchange() {
     var video = $('.video_item');

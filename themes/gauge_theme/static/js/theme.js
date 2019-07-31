@@ -106,15 +106,16 @@ $(document).ready(() => {
     }, 500);
   });
 
-  jQuery('.docs-toc li').on('click', function(event, selector) {
-    if(event.currentTarget.className.match('active-toc')) {
+  jQuery('.docs-toc li.doc-toc-group').on('click', function(event, selector) {
+    if(!event.currentTarget.className.match('active-toc')) {
       $(event.currentTarget).addClass('active-toc');
     };
     $(event.currentTarget).toggleClass('collapsed');
     $(event.currentTarget).toggleClass("expanded");
+    event.stopPropagation();
   })
 
-  jQuery('.docs-toc > ul > li').each((_, toc) => {
+  jQuery('.docs-toc > ul > li, ul.sub-toc > li').each((_, toc) => {
     let elemSelector = $(toc);
     if(toc.className.match('doc-toc-group')) {
       let subTocList = elemSelector.find('ul.sub-toc li')

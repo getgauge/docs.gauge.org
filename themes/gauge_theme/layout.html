@@ -32,13 +32,9 @@
 {% endif %}
 
 {% set css_files = ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'] %}
-<<<<<<< HEAD
-{% set script_files = script_files + ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js','//gauge.org/assets/javascripts/site.js', '_static/js/theme.js', '_static/js/filter.js', '_static/js/installation.js'] %}
-{% set title = 'Gauge Documentation' %}
-=======
 {% set script_files = script_files + ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js','_static/js/site.js', '_static/js/theme.js', '_static/js/filter.js', '_static/js/installation.js'] %}
+{% set title = 'Gauge Documentation' %}
 
->>>>>>> Create layout for mobile devices. #171
 {%- macro script() %}
 <script type="text/javascript" id="documentation_options" data-url_root="{{ pathto('', 1) }}"
   src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
@@ -158,11 +154,11 @@
             <ul class="">
               <li class="link_home"><a href="{{gaugehome}}">Home</a></li>
               <li class="link_plugins"><a href="{{gaugehome}}/plugins">Plugins</a></li>
-              <li class="doc-toc-group collapsed"><span>Documentation</span>
+              <li class="doc-toc-group collapsed"><a>Documentation</a>
                 <ul class="sub-toc collapsed" >
                     <li><a href="/{{theme_docs_version}}/index.html">DOCS HOME</a> </li>
                     <li><a href="/{{theme_docs_version}}/overview.html">OVERVIEW</a> </li>
-                    <li class="doc-toc-group collapsed"><span >GETTING STARTED</span>
+                    <li class="doc-toc-group collapsed"><a >GETTING STARTED</a>
                       <ul class="sub-toc collapsed">
                         <li><a href="/{{theme_docs_version}}/getting_started/installing-gauge.html">Installing Gauge</a>
                         </li>

@@ -12,7 +12,9 @@
   --left-side-bar-color: #f2f2f2;
   --gauge-yellow: #ffcc00;
 }
-
+html,body {
+  height: 100%;
+}
 body {
   display: grid;
   grid-template-areas:
@@ -99,6 +101,10 @@ footer { grid-area: footer}
   .side-nav-header {
     border-bottom: 1px solid lightgray;
   }
+
+  footer {
+    width: 100%;
+  }
 }
 
 @media (min-width: 1030px) {
@@ -114,6 +120,10 @@ footer { grid-area: footer}
   .left-sidebar-container { grid-column: 2/3}
   .right-sidebar-container { grid-column: 4/5}
   .docs-container { grid-column: 3/4}
+
+  .navbtn {
+    display: none;
+  }
 
   #sidebar {
     width: 95%;
@@ -152,11 +162,21 @@ footer { grid-area: footer}
     flex-direction: row;
     justify-content: space-between;
   }
+
   .doc-toc-group > a::after{
     top: 2px;
   }
+
   .doc-toc-group.expanded > a::after{
     top: 7px;
+  }
+
+  .header-container {
+    max-width: 95%;
+  }
+  
+  footer {
+    width: 95%;
   }
 }
 
@@ -180,7 +200,6 @@ header.top:hover {
 }
 
 .main-content, footer {
-  width: 95%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -222,7 +241,7 @@ header.top:hover {
   flex: 2;
   background-color: white;
   padding: 10px 30px;
-  height: 1000px;
+  height: 100%;
   overflow: scroll;
 }
 
@@ -1029,7 +1048,7 @@ header.top::after {
   display: block;
 }
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
   .header-container {
     max-width: 95%;
   }
@@ -1051,7 +1070,7 @@ header.top::after {
   .header-container {
     max-width: 95%;
   }
-}
+} */
 
 .logo {
   text-decoration: none;
@@ -1256,11 +1275,11 @@ header.top::after {
   border: 0;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .navbtn {
     display: none;
   }
-}
+} */
 
 .githubstar-box a {
   display: -webkit-box;
@@ -1645,7 +1664,7 @@ img {
 
 .edit-page {
   text-align: right;
-  width: 75%;
+  width: 100%;
   font-size: 13px;
   line-height: normal;
 }
