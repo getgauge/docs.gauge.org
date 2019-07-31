@@ -58,7 +58,7 @@ Give a name to your project
 .. figure:: ../images/VSCode_enter_project_name.png
       :alt: Enter project name
 
-After you've successcreated a gauge project, you'll be able to see a sample project with an example specification.
+After you've successfully created a gauge project, you'll be able to see a sample project with an example specification.
 
 .. cssclass:: linux javascript dynamic-content
 .. figure:: ../images/linux/JS_folder_structure.png
