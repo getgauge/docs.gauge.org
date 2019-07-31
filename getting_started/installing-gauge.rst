@@ -79,7 +79,8 @@ Installation Instructions
 
 
 
-**Next Step:**
+Next Step:
+==========
 
 Now that you've install Gauge, you can go ahead and create a JavaScript testing project using Gauge.
 

@@ -16,12 +16,15 @@ Where is the Gauge executable installed by default?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. cssclass:: dynamic-content windows
+
 `%ProgramFiles%\\gauge\\bin`
 
 .. cssclass:: dynamic-content macos
+
 `/usr/local/bin`
 
 .. cssclass:: dynamic-content linux
+
 `/usr/local/bin`
 
 
@@ -30,12 +33,15 @@ Where are the plugins installed by default?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. cssclass:: dynamic-content windows
+
 `%APPDATA%\\gauge\\plugins`
 
 .. cssclass:: dynamic-content macos
+
 `~/.gauge/plugins`
 
 .. cssclass:: dynamic-content linux
+
 `~/.gauge/plugins`
 
 
@@ -126,12 +132,15 @@ Where does gauge non project specific logs like plugin installation etc.?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. cssclass:: dynamic-content windows
+
 `%APPDATA%\\gauge\\logs`
 
 .. cssclass:: dynamic-content macos
+
 `~/.gauge/logs`
 
 .. cssclass:: dynamic-content linux
+
 `~/.gauge/logs`
 
 
@@ -247,6 +256,7 @@ If not installed, install using ``gauge install <plugin_name>``.
 
 
 .. cssclass:: dynamic-content vscode
+
 Why does the debugger not stop at the right breakpoint (gauge-java)?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
