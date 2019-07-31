@@ -1,5 +1,7 @@
-const COMBINATIONS = ['javascript-vscode', 'java-vscode', 'python-vscode', 'ruby-vscode', 'csharp-vscode', 'java-intellij', 'csharp-visualstudio'];
+const COMBINATIONS = {'javascript':['vscode'],'java':['vscode','intellij'],'python':['vscode'],'ruby':['vscode'],'csharp':['vscode','visualstudio']};
 const SELECTION_CLASSES = ['macos', 'windows', 'linux', 'javascript', 'java', 'python', 'ruby', 'csharp', 'vscode', 'intellij', 'visualstudio'];
+const LANGUAGE_CLASSES = ['javascript', 'java', 'python', 'ruby', 'csharp'];
+const IDE_CLASSES = ['vscode','intellij','visualstudio'];
 
 const changeFilter = function () {
     let changeFilterBtn = document.getElementById("change-filter");
@@ -28,18 +30,9 @@ const hidePopUp = function () {
     popUp[0].classList.add("hidden");
 };
 
-
-const isRightCombination = function () {
-    let selectedLanguage = SELECTIONS.language;
-    let selectedIde = SELECTIONS.ide;
-    let selectedCombination = `${selectedLanguage}-${selectedIde}`
-    return COMBINATIONS.includes(selectedCombination);
-}
-
 const applyCombination = function (element) {
     let name = normalize(element.value);
     SELECTIONS[element.name] = name;
-    if (!isRightCombination()) return;
     window.localStorage.setItem(element.name, name);
     updateURLAndSelection(element);
 }
@@ -52,15 +45,34 @@ const updateContent = function () {
             if (element && element.checked) applyCombination(element);
         });
     });
-    if (isRightCombination()) hidePopUp();
+    hidePopUp();
 }
 
-const isSelected = (selection) => Object.values(SELECTIONS).includes(selection);
-const isSelectionClass = (className) => SELECTION_CLASSES.includes(className);
-const selectedClasses = (element) => element.classList.value.split(" ").filter(isSelectionClass);
+const isSelected = selection => Object.values(SELECTIONS).includes(selection);
+const isSelectionClass = className => SELECTION_CLASSES.includes(className);
+const selectedClasses = element => element.classList.value.split(" ").filter(isSelectionClass);
+const isLanguageClass = element => LANGUAGE_CLASSES.includes(element.value);
+const isIdeClass = element => IDE_CLASSES.includes(element.value);
+const isRelevantIde = (language, ide) => COMBINATIONS[language].includes(ide);
 
-const hasSingleSelection = function (selectedClasses) {
-    return selectedClasses.length == 1 && isSelected(selectedClasses[0]);
+const showRelevantIde = function(){
+    const inputs = document.querySelectorAll('input');
+    const ideElements = Array.prototype.filter.call(inputs,isIdeClass);
+
+    ideElements.forEach(ideElement => {
+        ideElement.parentElement.style.display = 'inline';
+        const language = this.value || SELECTIONS.language;
+
+        if(!isRelevantIde(language, ideElement.value)) {
+            ideElement.parentElement.style.display = 'none';
+        }
+    })
+}
+
+const setLanguageButtons = function(){
+    const inputs = document.querySelectorAll('.selection input');
+    const languageElements = Array.prototype.filter.call(inputs,isLanguageClass);
+    languageElements.forEach(elem => elem.onclick= showRelevantIde.bind(elem))
 }
 
 const hasMultipleSelection = function (selectedClasses) {
@@ -73,9 +85,7 @@ const showContents = function () {
     dynamicElems.forEach(elem => {
         elem.classList.add('hidden');
         let classes = selectedClasses(elem);
-        if (hasSingleSelection(classes)) {
-            elem.classList.remove('hidden');
-        } else if (hasMultipleSelection(classes)) {
+        if (hasMultipleSelection(classes)) {
             elem.classList.remove('hidden');
         }
     });

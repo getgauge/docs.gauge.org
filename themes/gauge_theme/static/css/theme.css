@@ -58,7 +58,7 @@ header.top:hover {
 }
 
 .left-sidebar-container {
-  min-width: 20%;
+  min-width: 25%;
   background-color: var(--left-side-bar-color);
 }
 
@@ -83,6 +83,7 @@ header.top:hover {
 #sidebar {
   width: 80%;
   margin: 45px auto;
+  padding: 0px 20px;
 }
 
 .docs-container {

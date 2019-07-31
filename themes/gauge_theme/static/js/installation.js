@@ -12,7 +12,6 @@ const updateSelections = function () {
         insertUrlParam();
     }
     document.querySelectorAll(".search").forEach(setOnclickEvent);
-
 }
 
 const updateSelectionFromQS = function (queryString) {
@@ -81,6 +80,7 @@ const setOnclickEvent = function (button) {
         changeBackground(button);
         window.localStorage.setItem(button.name, name);
         updateURLAndSelection();
+        showRelevantIde();
     };
 };
 
@@ -140,6 +140,8 @@ const addOnloadEvents = function () {
     expandInstaller();
     changeFilter();
     showAlternateMethods();
+    setLanguageButtons();
+    showRelevantIde();
 }
 
 window.onload = addOnloadEvents;

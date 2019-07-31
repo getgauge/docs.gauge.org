@@ -26,6 +26,8 @@ def visit_setup_input_node(self, node):
 def depart_setup_input_node(self, node):
     pass
 
+def normalize(param):
+    return param.replace(" ","").lower()
 
 class InstallationSelections(Directive):
     optional_arguments = 0
@@ -63,7 +65,7 @@ class InstallationSelection(Directive):
             _input = setup_input_node(content)
             _input['type'] = 'radio'
             _input['name'] = options['type']
-            _input['value'] = content
+            _input['value'] = normalize(content)
             container += _input
         return [container]
 
