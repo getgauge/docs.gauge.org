@@ -120,6 +120,17 @@
     Content: url(../img/npm-logo.svg);
 }
 
+#install-using-curl .installer-icon::before {
+    content: url(../img/curl-symbol.svg);
+}
+
+#install-using-homebrew .installer-icon::before {
+    content: '\f0fc';
+    font-family: FontAwesome;
+    border: none;
+}
+
+
 #nightly-installation .installer-icon::before {
     content: '...';
     padding-top: 2px;
