@@ -64,7 +64,7 @@ For this to work, you will need to install Chocolatey. If you have chocolatey in
 
     choco install gauge
 
-.. cssclass:: dynamic-content windows collapsible
+.. cssclass:: dynamic-content windows collapsible zip-installer
 
 :installer-icon:`Install using Zip file`
 ----------------------------------------
@@ -88,7 +88,7 @@ Download the following zip installer.
     PS>  Expand-Archive -Path gauge-1.0.5-windows.x86_64.zip -DestinationPath custom_path
 
 
-.. cssclass:: dynamic-content windows collapsible
+.. cssclass:: dynamic-content windows collapsible npm-installer
 
 :installer-icon:`Install using NPM installation`
 ------------------------------------------------
@@ -110,7 +110,7 @@ You can install Gauge by running the following command in Powershell/Command Pro
 
     npm install -g @getgauge/cli
 
-.. cssclass:: dynamic-content windows collapsible
+.. cssclass:: dynamic-content windows collapsible nightly-installer
 
 :installer-icon:`Nightly Installation`
 --------------------------------------

@@ -1,3 +1,5 @@
+.. role:: alternate-methods
+.. role:: installer-icon
 .. cssclass:: dynamic-content linux
 
 Installing Gauge on Linux
@@ -7,8 +9,9 @@ Gauge can be installed on any flavour of Linux using the shell script. The Follo
 
 .. cssclass:: dynamic-content linux
 
-Install Using Shell Script APT_GET
-----------------------------------
+:installer-icon:`Install Using Shell Script APT_GET`
+----------------------------------------------------
+
 .. cssclass:: dynamic-content linux
 
 1. First, add Gauge's GPG key with this command:
@@ -38,14 +41,17 @@ Install Using Shell Script APT_GET
     Gauge automatically sends `telemetry data <https://gauge.org/telemetry>`__ to help us improve the product. If you prefer not to have this data sent, you can choose to  `opt out <https://manpage.gauge.org/gauge_telemetry.html>`__.
 
 
-.. cssclass:: dynamic-content linux alternate-methods
+.. cssclass:: dynamic-content linux
 
-Alternate Installation Methods
+:alternate-methods:`Alternate Installation Methods`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 .. cssclass:: dynamic-content linux collapsible
 
-DNF Package Manager
--------------------
+:installer-icon:`Install using DNF Package Manager`
+---------------------------------------------------
+
 .. cssclass:: dynamic-content linux collapsible-content
 
 Install Gauge using dfn by running this command
@@ -58,10 +64,12 @@ Install Gauge using dfn by running this command
     | sudo tee /etc/yum.repos.d/gauge-nightly.repo
     sudo dfn install gauge
 
-.. cssclass:: dynamic-content linux collapsible
 
-ZIP file
---------
+.. cssclass:: dynamic-content linux collapsible zip-installer
+
+:installer-icon:`Install using ZIP file dkfhd`
+----------------------------------------------
+
 .. cssclass:: dynamic-content linux collapsible-content
 
 1. Download the zip installer.
@@ -75,10 +83,11 @@ ZIP file
 
     unzip -o gauge-1.0.5-linux.x86_64.zip -d /usr/local/bin
 
-.. cssclass:: dynamic-content linux collapsible
+.. cssclass:: dynamic-content linux collapsible npm-installer
 
-NPM install
------------
+:installer-icon:`Install using NPM installation`
+------------------------------------------------
+
 .. cssclass:: dynamic-content linux collapsible-content
     System Requirements
     Node.js
@@ -92,10 +101,10 @@ NPM install
 
 You can install Gauge by running the following command in Terminal.
 
-.. cssclass:: dynamic-content linux collapsible
+.. cssclass:: dynamic-content linux collapsible curl-installer
 
-Install Using CURL
-------------------
+:installer-icon:`Install Using CURL`
+------------------------------------
 
 .. cssclass:: dynamic-content linux collapsible-content
 
@@ -117,8 +126,8 @@ Or install Gauge to a [custom path] using
 
 .. cssclass:: dynamic-content linux collapsible
 
-Alternate Installation
-----------------------
+:installer-icon:`Alternate Installation`
+----------------------------------------
 
 .. cssclass:: dynamic-content hidden linux collapsible-content
 

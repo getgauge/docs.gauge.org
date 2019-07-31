@@ -58,7 +58,7 @@ if HomeBrew is working properly, you should see something similar to the followi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-.. cssclass:: dynamic-content macos collapsible
+.. cssclass:: dynamic-content macos collapsible curl-installer
 
 :installer-icon:`Install using CURL`
 ------------------------------------
@@ -83,7 +83,7 @@ Or install Gauge to a [custom path] using
 
 .. cssclass:: dynamic-content macos collapsible
 
-:installer-icon:`Install using ZIP file`
+:installer-icon:`Install using ZIP file` zip-installer
 ----------------------------------------
 
 .. cssclass:: dynamic-content macos collapsible-content
@@ -105,7 +105,7 @@ Mac OSCommandline tool- Terminal
 
     unzip -o gauge-1.0.5-darwin.x86_64.zip -d /usr/local/bin
 
-.. cssclass:: dynamic-content macos collapsible
+.. cssclass:: dynamic-content macos collapsible npm-installer
 
 :installer-icon:`Install using NPM installation`
 ------------------------------------------------
@@ -134,7 +134,7 @@ You can install Gauge by running the following command in Terminal.
 
     npm install -g @getgauge/cli
 
-.. cssclass:: dynamic-content macos collapsible
+.. cssclass:: dynamic-content macos collapsible nightly-installer
 
 :installer-icon:`Nightly Installation`
 --------------------------------------

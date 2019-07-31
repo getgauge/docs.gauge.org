@@ -111,16 +111,16 @@
     Content: url(../img/chocolatey.org.ico);
 }
 
-#install-using-zip-file .installer-icon::before {
+.zip-installer .installer-icon::before {
     Content: url(../img/file-archive-regular.svg);
     height: 43px;
 }
 
-#install-using-npm-installation .installer-icon::before {
+.npm-installer .installer-icon::before {
     Content: url(../img/npm-logo.svg);
 }
 
-#install-using-curl .installer-icon::before {
+.curl-installer .installer-icon::before {
     content: url(../img/curl-symbol.svg);
 }
 
@@ -131,7 +131,10 @@
 }
 
 
-#nightly-installation .installer-icon::before {
+.nightly-installer .installer-icon::before,
+#alternate-installation .installer-icon::before,
+#install-using-dnf-package-manager .installer-icon::before,
+#install-using-shell-script-apt-get .installer-icon::before {
     content: '...';
     padding-top: 2px;
     padding-left: 10px;
