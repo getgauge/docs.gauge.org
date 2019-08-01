@@ -77,7 +77,7 @@ const setOnclickEvent = function (button) {
     button.onclick = function () {
         let name = normalize(button.value);
         SELECTIONS[button.name] = name;
-        changeBackground(button);
+        changeBackground();
         window.localStorage.setItem(button.name, name);
         updateURLAndSelection();
         showRelevantIde();

@@ -38,13 +38,18 @@ const applyCombination = function (element) {
 }
 
 const updateContent = function () {
-    let selectionItems = document.querySelectorAll(".selection");
+    let selectionItems = document.querySelectorAll(".selection input");
+    let checkedCount = 0;
     selectionItems.forEach(selectedItem => {
-        selectedItem.childNodes.forEach(item => {
-            let element = item.firstChild;
-            if (element && element.checked) applyCombination(element);
-        });
+        if(selectedItem.checked) checkedCount++;
     });
+
+    if(checkedCount < 3) return;
+
+    selectionItems.forEach(selectedItem => {
+        if (selectedItem.checked) applyCombination(selectedItem);
+    });
+
     hidePopUp();
 }
 
@@ -54,18 +59,46 @@ const selectedClasses = element => element.classList.value.split(" ").filter(isS
 const isLanguageClass = element => LANGUAGE_CLASSES.includes(element.value);
 const isIdeClass = element => IDE_CLASSES.includes(element.value);
 const isRelevantIde = (language, ide) => COMBINATIONS[language].includes(ide);
+const isSelectedIdeDisabled = (ideElement, selectedIde) => ideElement.value == selectedIde && ideElement.disabled;
+
+const disableNonRelevantIde = function(ideElement, languageBtn){
+    ideElement.parentElement.classList.remove('disabled');
+    ideElement.disabled = false;
+    const language = languageBtn.value || SELECTIONS.language;
+    if(!isRelevantIde(language, ideElement.value)) {
+        ideElement.parentElement.classList.add('disabled');
+        ideElement.disabled = true;
+    }
+}
+
+const makeSelections = function(){
+    const selections = document.querySelectorAll(".selection input");
+    selections.forEach(selection => {
+        if(Object.values(SELECTIONS).includes(selection.value)) {
+            console.log(selection.value);
+            selection.checked = true;
+        }
+    })
+}
+
+const resetIdeIfDisabled = function(ideElement){
+    const selectedIde = SELECTIONS["ide"];
+    if(isSelectedIdeDisabled(ideElement, selectedIde)){
+        SELECTIONS["ide"] = "vscode";
+        updateURLAndSelection();
+        updateSelections();
+        changeBackground();
+    }
+}
 
 const showRelevantIde = function(){
     const inputs = document.querySelectorAll('input');
     const ideElements = Array.prototype.filter.call(inputs,isIdeClass);
 
     ideElements.forEach(ideElement => {
-        ideElement.parentElement.style.display = 'inline';
-        const language = this.value || SELECTIONS.language;
-
-        if(!isRelevantIde(language, ideElement.value)) {
-            ideElement.parentElement.style.display = 'none';
-        }
+        disableNonRelevantIde(ideElement, this);
+        resetIdeIfDisabled(ideElement);
+        ideElement.checked = false;
     })
 }
 
