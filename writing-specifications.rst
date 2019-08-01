@@ -48,8 +48,9 @@ When a Gauge project is created and initialized, a ``specs`` directory is automa
 This sample file helps you understand how to write a specification.
 
 .. note::
-   | The path and name of the ``specs`` directory can be changed by using key value pairs in the ``default.properties`` file of your project.
-   | For more information about ``default.properties``, see :ref:`local_configuration_Gauge`.
+   The path and name of the ``specs`` directory can be changed by using key value pairs in the ``default.properties`` file of your project.
+
+   For more information about ``default.properties``, see :ref:`local_configuration_Gauge`.
 
 Example
 ^^^^^^^
@@ -99,8 +100,9 @@ The components of a spec are listed as follows:
 
 .. note::
    
-   * Tags - optional, executable component when the spec is run
-   * Comments - optional, non-executable component when the spec is run
+   Tags - optional, executable component when the spec is run
+
+   Comments - optional, non-executable component when the spec is run
 
 Specification heading
 ---------------------
@@ -2135,14 +2137,22 @@ If ``ContinueOnFailure`` has no parameters, then the step execution continues by
 
 .. note::
 
-   * ``ContinueOnFailure`` is executed after the step method is executed. 
-     If there is a failure in executing the step, for example, due to parameter count or type mismatch, then Gauge does not execute the ``ContinueOnFailure`` feature.
-   * ``ContinueOnFailure`` does not apply to :ref:`hooks <execution_hooks>`. 
-     Hooks always fail on first error.
-   * Each step implementation has to be marked explicitly if the step needs to continue on failure. 
-     It is not possible to globally apply ``ContinueOnFailure`` on all the steps.
-   * If an implementation uses step aliases, marking that implementation to continue on failure ensures that all the aliases also continue on failure. 
-     So, if a step alias is supposed to break on failure and another step alias is supposed to continue on failure, the step aliases need to be extracted to two different step implementations.
+   ``ContinueOnFailure`` is executed after the step method is executed. 
+
+    If there is a failure in executing the step, for example, due to parameter count or type mismatch, then Gauge does not execute the ``ContinueOnFailure`` feature.
+
+   ``ContinueOnFailure`` does not apply to :ref:`hooks <execution_hooks>`. 
+
+    Hooks always fail on first error.
+
+   Each step implementation has to be marked explicitly if the step needs to continue on failure. 
+
+    It is not possible to globally apply ``ContinueOnFailure`` on all the steps.
+
+   If an implementation uses step aliases, marking that implementation to continue on failure ensures that all the aliases also continue on failure. 
+
+    So, if a step alias is supposed to break on failure and another step alias is supposed to continue on failure, the step aliases need to be extracted to two different step implementations.
+
 
 .. _project_structure:
 

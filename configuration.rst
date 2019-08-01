@@ -13,7 +13,8 @@ The local key value pairs, in the ``default.properties`` file, allow you to conf
 For example, you can have separate Gauge reports or a single, new, time-stamped directory created (overwrite previous report) every time Gauge runs a specification by using the ``overwrite_reports`` key.
 
 
-.. note:: 
+.. note::
+
    You can open the ``.properties`` file by using any text editor.
 
 .. _global_configuration_Gauge:
@@ -349,9 +350,10 @@ You can create a new ``.properties`` file or add an existing property file to th
    Ensure that you have created and initialized a Gauge project with a language runner of your choice.
 
 .. admonition:: About this task:
-
-   * A Gauge project can have multiple environments.
-   * ``default`` is the default environment.
+   
+   A Gauge project can have multiple environments.
+   
+   ``default`` is the default environment.
 
 1. | Create a directory in the ``env`` folder of your Gauge project.
    | The environment folder is present at ``<project_root>``, where ``project_root`` is the location at which you have created your Gauge project.
@@ -374,8 +376,10 @@ A ``ci`` environment is created at ``<project_root>/env``.
 2. If you want to add your own key value pairs, then create a ``.properties`` file within the newly created environment.
 
 .. note::
-   * You can also add or change the key value pairs in an existing ``.properties`` file and use this file in your newly created environment.
-   * You can add any number of ``.properties`` file to your environment.
+   
+   You can also add or change the key value pairs in an existing ``.properties`` file and use this file in your newly created environment.
+   
+   You can add any number of ``.properties`` file to your environment.
 
 Example
 ^^^^^^^
@@ -409,9 +413,10 @@ During run time, the key value pairs that you have used in the ``.properties`` f
 If ``-env`` is not specified, then the ``default`` environment is loaded during run time.
 
 .. admonition:: Before you begin
-
-   * Ensure that you have the Gauge specification that needs to be run.
-   * You must have already created the environment and added the ``.properties`` file in this environment.
+   
+   Ensure that you have the Gauge specification that needs to be run.
+   
+   You must have already created the environment and added the ``.properties`` file in this environment.
 
 Use the following command at ``<project_root>`` (location at which you have created the Gauge project) to run a 
 Gauge specification with an environment:
@@ -442,15 +447,16 @@ You can load multiple environments by using the ``-env`` flag when Gauge runs a 
 This allows ease of testing.
 
 .. admonition:: Before you begin
-
-   * Ensure that you have the Gauge specification that needs to be run.
-   * You must have already created the environments and added the ``.properties`` file in these environments.
+   
+   Ensure that you have the Gauge specification that needs to be run.
+   
+   You must have already created the environments and added the ``.properties`` file in these environments.
 
 .. admonition:: About this task:
 
-   * Gauge loads the environment variables as per the rules of precedence.
-   * If there are common environment variables in a user-created environment and the ``default`` environment, then the ``default`` environment does not overwrite those variables which are already loaded from the user-created environment.
-   * If the ``default`` environment is not specified explicitly as an argument to the ``--env`` flag, then Gauge automatically adds ``default`` at the end of the arguments list. 
+   Gauge loads the environment variables as per the rules of precedence.
+   If there are common environment variables in a user-created environment and the ``default`` environment, then the ``default`` environment does not overwrite those variables which are already loaded from the user-created environment.
+   If the ``default`` environment is not specified explicitly as an argument to the ``--env`` flag, then Gauge automatically adds ``default`` at the end of the arguments list. 
 
    For more information about the precedence of environments, see :ref:`Precedence of environments <precedence_environments>`.
 
@@ -507,7 +513,7 @@ The rules of precedence to load the environment variables are as follows:
 * Environment variables from the ``default`` environment.
   
   .. note::
-     If the ``default`` environment is not present, Gauge internally sets the environment variables which have the same value as mentioned in ``default.properties``.
+    If the ``default`` environment is not present, Gauge internally sets the environment variables which have the same value as mentioned in ``default.properties``.
   
 Gauge workflow with multiple environments
 -----------------------------------------

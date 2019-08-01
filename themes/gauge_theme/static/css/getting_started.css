@@ -238,6 +238,7 @@
 
 .page-navigator a {
     border-bottom: 1px solid #b1b1b1;
+    color: #b1b1b1 !important;
     padding: 0px;
 }
 

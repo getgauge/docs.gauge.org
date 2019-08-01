@@ -98,9 +98,11 @@ or
 
 .. cssclass:: note
 
-| Note:
-| Every spec must contain one or more Scenarios.
-| Every spec can be marked with labels using Tags.
+.. note::
+
+    Every spec must contain one or more Scenarios.
+
+    Every spec can be marked with labels using Tags.
 
 
 Scenarios
@@ -123,9 +125,11 @@ or
 
 .. cssclass:: note
 
-| Note:
-| A scenario contains one or more steps under it.
-| A scenario can be tagged using tags.
+.. note::
+
+    A scenario contains one or more steps under it.
+
+    A scenario can be tagged using tags.
 
 Example
 +++++++
@@ -206,8 +210,9 @@ They are values passed into the steps in double quotes.
 
 .. cssclass:: note
 
-| Note:
-| Renaming the parameter will not rename the usages inside the method. By design, the renamed parameter is considered as a new parameter. Therefore the usage of the old parameter(if any) has to be fixed manually to resolve the corresponding compilation issue.
+.. note::
+
+    Renaming the parameter will not rename the usages inside the method. By design, the renamed parameter is considered as a new parameter. Therefore the usage of the old parameter(if any) has to be fixed manually to resolve the corresponding compilation issue.
 
 
 Dynamic Parameters
@@ -238,8 +243,9 @@ The above concept can be invoked and a value can be passed to the concept agains
 
 .. cssclass:: note
 
-| Note:
-| Refer to this example_inline_table for illustration on how table cell values can be referred using dynamic parameters.
+.. note::
+
+    Refer to this example_inline_table for illustration on how table cell values can be referred using dynamic parameters.
 
 Table Parameters
 ++++++++++++++++

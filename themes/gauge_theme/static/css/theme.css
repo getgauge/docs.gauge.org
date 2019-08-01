@@ -238,11 +238,13 @@ header.top:hover {
 
 .docs-container {
   min-width: 60%;
+  height: inherit;
   flex: 2;
   background-color: white;
   padding: 10px 30px;
   height: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }

@@ -50,7 +50,8 @@ For this to work, you will need to install Chocolatey. If you have chocolatey in
 
 
 .. cssclass:: dynamic-content windows collapsible-content
-.. note:: Some of the following instructions mention the "command prompt". Where this is used, it refers to the Windows cmd.
+.. note:: 
+    Some of the following instructions mention the "command prompt". Where this is used, it refers to the Windows cmd.
 
 .. cssclass:: dynamic-content windows collapsible-content
 
