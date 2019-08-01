@@ -39,13 +39,6 @@ const applyCombination = function (element) {
 
 const updateContent = function () {
     let selectionItems = document.querySelectorAll(".selection input");
-    let checkedCount = 0;
-    selectionItems.forEach(selectedItem => {
-        if(selectedItem.checked) checkedCount++;
-    });
-
-    if(checkedCount < 3) return;
-
     selectionItems.forEach(selectedItem => {
         if (selectedItem.checked) applyCombination(selectedItem);
     });
@@ -91,6 +84,13 @@ const resetIdeIfDisabled = function(ideElement){
     }
 }
 
+const select = function(option){
+    const inputs = document.querySelectorAll('.selection input');
+    inputs.forEach(input=> {
+        if(input.value == option) input.checked=true
+    });
+}
+
 const showRelevantIde = function(){
     const inputs = document.querySelectorAll('input');
     const ideElements = Array.prototype.filter.call(inputs,isIdeClass);
@@ -98,8 +98,9 @@ const showRelevantIde = function(){
     ideElements.forEach(ideElement => {
         disableNonRelevantIde(ideElement, this);
         resetIdeIfDisabled(ideElement);
-        ideElement.checked = false;
     })
+    
+    select('vscode');
 }
 
 const setLanguageButtons = function(){
