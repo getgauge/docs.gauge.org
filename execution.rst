@@ -2,6 +2,10 @@
 
 Run Gauge specifications
 ========================
+
+.. include:: change_filter.rst
+
+
 This page provides information about how to run a specification, multiple arguments that can be used with the ``gauge run`` command when a spec is executed, 
 verbose reporting, data driven execution, parallel execution of specs, how to rerun failed and flaky tests, errors that occur when a spec is run, and troubleshooting information.
 
@@ -13,15 +17,14 @@ You can run a Gauge specification by using the ``gauge run`` command.
 When this command is run, Gauge scans the directories and sub-directories at ``<project_root>`` (location at which the Gauge project is created) and picks up valid specification files.
 
 .. admonition:: Prerequisite
-    
-   | You must have already created specification(s) at the ``specs`` directory or configured a directory(s) of your choice.
-   | For more information about ``specs`` directory, see :ref:`specs_directory`.
+
+    You must have already created specification(s) at the ``specs`` directory or configured a directory(s) of your choice. For more information about ``specs`` directory, see :ref:`specs_directory`.
 
 You can use the following command at ``<project_root>`` to run a Gauge specification:
 
 .. code-block:: console
 
-    gauge run [args][flags]
+    gauge run [args] [flags]
 
 | ``<project_root>`` - location at which a Gauge project is created
 | ``[args]`` - directories in which specifications are stored, location of specification files and scenarios
@@ -231,8 +234,7 @@ You can use the ``--tags`` flag with the ``gauge run`` command to filter specs a
 
 .. admonition:: Prerequisite
 
-   | You must have already labelled the specs and scenarios with tags.
-   | For more information about Tags, see :ref:`longstart-tags`.
+    You must have already labelled the specs and scenarios with tags. For more information about Tags, see :ref:`longstart-tags`.
 
 Use the following command to filter a Gauge specification or scenario by using tags:
 
@@ -453,8 +455,8 @@ Running tests in parallel creates a number of execution streams depending on the
 The number of parallel execution streams can be specified by using the ``-n`` flag.
 
 .. note::
-   | It could lead to undesirable results if the number of streams specified is more than the number of CPU cores available on your system. 
-   | For optimizations, you can also use threads. See :ref:`Parallel execution by using threads <parallel execution using threads>`.
+   It could lead to undesirable results if the number of streams specified is more than the number of CPU cores available on your system.
+   For optimizations, you can also use threads. See :ref:`Parallel execution by using threads <parallel execution using threads>`.
 
 Use the following command to run specs in parallel:
 
@@ -488,12 +490,12 @@ starts multiple threads for parallel execution.
 | To use the multithreading feature, the ``enable_multithreading`` environment variable must be set to ``true``. If not already present, you can add this variable to the ``default.properties`` file. 
 | For more information about ``default.properties``, see :ref:`local_configuration_Gauge`.
 
+
 .. admonition:: Prerequisites
 
-   * Use thread-safe test code.
-   * Use a language runner that supports multithreading.
+    Use thread-safe test code. Use a language runner that supports multithreading.
 
-.. note:: 
+.. note::
    Currently, only the Java language runner supports parallel execution of specs by using threads.
 
 Test suite execution by using the ``--strategy`` option
@@ -647,8 +649,7 @@ Use the following command to rerun failed scenarios for a specific number of tim
 ``<tag_name>`` - name of the tag used to label the scenario(s) that should be rerun when failed
 
 .. note::
-   | Tags can also be used with expressions.
-   | For more information about using tags with expressions, see :ref:`Tag expressions <tag_expressions>` .
+   Tags can also be used with expressions. For more information about using tags with expressions, see :ref:`Tag expressions <tag_expressions>` .
 
 Example
 ^^^^^^^
