@@ -107,6 +107,15 @@ footer { grid-area: footer}
   }
 }
 
+@media (min-width: 830px) {
+  body {
+    display: grid;
+    grid-template-areas: 'header header header' 'left-nav left-nav left-nav' 'main-content right-nav .' 'footer footer footer';
+    grid-template-rows: 100px auto auto auto auto;
+    grid-template-columns: 70% 25% 5%;
+  }
+}
+
 @media (min-width: 1030px) {
   body {
     display: grid;
@@ -357,7 +366,7 @@ highlight-console .highlight pre span.go:before {
 .highlight {
   border: 0.5px solid;
   border-radius: 5px;
-  padding: 0 0 0 10px;
+  padding: 15px;
   margin: 15px 0 15px 0;
   background-color: #222222 !important;
 }
@@ -804,8 +813,8 @@ tr:hover {
 
 .note {
   border-left: 4px solid var(--gauge-yellow);
-  padding: 10px 0px 10px 0px;
-  font-size: 18px;
+  padding: 14px;
+  font-size: 16px;
   border-radius: 5px;
   margin: 2% 0 2% 0;
 }
