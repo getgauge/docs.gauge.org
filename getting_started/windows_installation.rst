@@ -41,16 +41,16 @@ Once you finished installing Gauge, you can go ahead and `install the Gauge Exte
 
 .. cssclass:: dynamic-content windows code-block collapsible-content
 
-System Requirements
-`Chocolatey Package Manager <https://chocolatey.org/>`__
+    .. admonition:: System Requirements
+
+        `Chocolatey Package Manager <https://chocolatey.org/>`__
+
+
+    For this to work, you will need to install Chocolatey. If you have chocolatey installed then all you need to is to follow the steps below, it will download and install Gauge.
+
 
 .. cssclass:: dynamic-content windows collapsible-content
-
-For this to work, you will need to install Chocolatey. If you have chocolatey installed then all you need to is to follow the steps below, it will download and install Gauge.
-
-
-.. cssclass:: dynamic-content windows collapsible-content
-.. note:: 
+.. note::
     Some of the following instructions mention the "command prompt". Where this is used, it refers to the Windows cmd.
 
 .. cssclass:: dynamic-content windows collapsible-content
@@ -84,7 +84,7 @@ Download the following zip installer.
 
 .. cssclass:: dynamic-content windows collapsible-content
 
-.. code-block:: console
+.. code-block:: powershell
 
     PS>  Expand-Archive -Path gauge-1.0.5-windows.x86_64.zip -DestinationPath custom_path
 
@@ -94,24 +94,30 @@ Download the following zip installer.
 :installer-icon:`Install using NPM installation`
 ------------------------------------------------
 
-.. cssclass:: dynamic-content windows collapsible-content text-block
+.. cssclass:: dynamic-content windows collapsible-content
 
-System Requirements
-Node.js
-To install gauge using NPM you will need the latest node version.
-* if you have Node.js already installed - to get the latest version use the following command:
-`npm install -g npm@latest`.
+    .. admonition:: System Requirements
+
+        `Node.js <nodejs.org>`__
+
+
+        To install gauge using NPM you will need the latest node version.
+
+            `If you have Node.js already installed - to get the latest version of npm use the following command:`
+
+            'npm install -g npm@latest'
+
+
+    You can install Gauge by running the following command in Terminal.
+
 
 .. cssclass:: dynamic-content windows collapsible-content
 
-You can install Gauge by running the following command in Powershell/Command Prompt.
-
-.. cssclass:: dynamic-content windows collapsible-content
 .. code-block:: console
 
     npm install -g @getgauge/cli
 
-.. cssclass:: dynamic-content windows collapsible nightly-installer
+
 
 :installer-icon:`Nightly Installation`
 --------------------------------------

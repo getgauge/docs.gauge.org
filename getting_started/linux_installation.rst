@@ -62,12 +62,12 @@ Install Gauge using dfn by running this command
     echo -e \
     "[gauge-nightly]\nname-gauge-nightly\nbaseurl-http://dl.bintray.com/gauge/gauge-rpm/gauge-nightly\ngpgcheck-0\nenabled-1" \
     | sudo tee /etc/yum.repos.d/gauge-nightly.repo
-    sudo dfn install gauge
+    sudo dnf install gauge
 
 
 .. cssclass:: dynamic-content linux collapsible zip-installer
 
-:installer-icon:`Install using ZIP file dkfhd`
+:installer-icon:`Install using ZIP file`
 ----------------------------------------------
 
 .. cssclass:: dynamic-content linux collapsible-content
@@ -89,17 +89,28 @@ Install Gauge using dfn by running this command
 ------------------------------------------------
 
 .. cssclass:: dynamic-content linux collapsible-content
-    System Requirements
-    Node.js
-    To install gauge using NPM you will need the latest node version.
 
-        if you have Node.js already installed - to get the latest version use the following command:
+    .. admonition:: System Requirements
 
-        `npm install -g npm@latest`.
+        `Node.js <nodejs.org>`__
+
+
+        To install gauge using NPM you will need the latest node version.
+
+            `If you have Node.js already installed - to get the latest version of npm use the following command:`
+
+            'npm install -g npm@latest'
+
+
+    You can install Gauge by running the following command in Terminal.
+
 
 .. cssclass:: dynamic-content linux collapsible-content
 
-You can install Gauge by running the following command in Terminal.
+.. code-block:: console
+
+    npm install -g @getgauge/cli
+
 
 .. cssclass:: dynamic-content linux collapsible curl-installer
 

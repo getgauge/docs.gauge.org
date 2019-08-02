@@ -15,15 +15,15 @@ You can install Gauge using any of the following methods.
 :installer-icon:`Install Using HomeBrew`
 ----------------------------------------
 
-.. cssclass:: dynamic-content macos
+.. admonition:: System Requirements
 
-.. code-block:: console
+    - Mac OS
 
-    System Requirements
-    Mac OS
-    Homebrew
-    Commandline tool
-    Terminal
+    - Homebrew
+
+    - Commandline tool
+
+    - Terminal
 
 
 .. cssclass:: dynamic-content macos
@@ -88,22 +88,24 @@ Or install Gauge to a [custom path] using
 
 .. cssclass:: dynamic-content macos collapsible-content
 
-System Requirements
-Mac OSCommandline tool- Terminal
+    .. admonition:: System Requirements
 
-.. cssclass:: dynamic-content macos collapsible-content
+        - Mac OS
 
-1. For signed binaries first download the zip installer
-    Zip Installer
+        - Commandline tool
 
-.. cssclass:: dynamic-content macos collapsible-content
+        - Terminal
 
-2. Run the following command in your Commnad line tool to complete the installation.
+    1. For signed binaries first download the zip installer
+        Zip Installer
+
+    2. Run the following command in your Commnad line tool to complete the installation.
 
 .. cssclass:: dynamic-content macos collapsible-content
 .. code-block:: console
 
     unzip -o gauge-1.0.5-darwin.x86_64.zip -d /usr/local/bin
+
 
 .. cssclass:: dynamic-content macos collapsible npm-installer
 
@@ -112,27 +114,27 @@ Mac OSCommandline tool- Terminal
 
 .. cssclass:: dynamic-content macos collapsible-content
 
-    System Requirements
+    .. admonition:: System Requirements
 
-    Node.js
+        `Node.js <nodejs.org>`__
 
-    To install gauge using NPM you will need the latest node version.
 
-.. cssclass:: dynamic-content macos collapsible-content
+        To install gauge using NPM you will need the latest node version.
 
-    `if you have Node.js already installed - to get the latest version use the following command:`
+            `If you have Node.js already installed - to get the latest version of npm use the following command:`
 
-    npm install -g npm@latest.
+            'npm install -g npm@latest'
 
-.. cssclass:: dynamic-content macos collapsible-content
 
-You can install Gauge by running the following command in Terminal.
+    You can install Gauge by running the following command in Terminal.
+
 
 .. cssclass:: dynamic-content macos collapsible-content
 
 .. code-block:: console
 
     npm install -g @getgauge/cli
+
 
 .. cssclass:: dynamic-content macos collapsible nightly-installer
 

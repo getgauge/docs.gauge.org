@@ -152,7 +152,7 @@
     min-height: 75px;
     border: 1px solid #b1b1b1;
     outline: none;
-    padding-left: 10px;
+    padding: 0 10px 0 10px;
     display: none;
 }
 

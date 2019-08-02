@@ -5,8 +5,9 @@ Installing Gauge extension for VSCode
 
 .. cssclass:: code-block
 
-System Requirements
-Latest VSCode
+.. admonition:: System Requirements
+
+      `Latest VSCode <https://code.visualstudio.com/>`__
 
 
 Follow the steps to add the Gauge VSCode code plugin from the IDE
