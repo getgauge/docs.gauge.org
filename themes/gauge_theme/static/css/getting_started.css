@@ -304,3 +304,7 @@
     width: 9px;
     margin-left: 9px;
 }
+
+.active-rhs-toc {
+  border-bottom: 3px solid rgb(245, 193, 14);
+}

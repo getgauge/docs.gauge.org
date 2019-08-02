@@ -1,9 +1,10 @@
 .. role:: alternate-methods
 .. role:: installer-icon
+.. role:: linux
 .. cssclass:: dynamic-content linux
 
-Installing Gauge on Linux
-=========================
+:linux:`Installing Gauge on Linux`
+==================================
 
 Gauge can be installed on any flavour of Linux using the shell script. The Following steps will guide you to a quick install on a linux box.
 
@@ -68,7 +69,7 @@ Install Gauge using dfn by running this command
 .. cssclass:: dynamic-content linux collapsible zip-installer
 
 :installer-icon:`Install using ZIP file`
-----------------------------------------------
+----------------------------------------
 
 .. cssclass:: dynamic-content linux collapsible-content
 
@@ -140,7 +141,7 @@ Or install Gauge to a [custom path] using
 :installer-icon:`Alternate Installation`
 ----------------------------------------
 
-.. cssclass:: dynamic-content hidden linux collapsible-content
+.. cssclass:: dynamic-content linux collapsible-content
 
 Nightly release are latest development snapshots of Gauge. They have the latest features being developed, but are unstable. Downnload the Gauge archive from here. Extract it to a location and add it to system path.
 

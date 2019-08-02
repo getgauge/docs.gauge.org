@@ -1,9 +1,10 @@
 .. role:: installer-icon
+.. role:: windows
 .. role:: alternate-methods
 .. cssclass:: dynamic-content windows
 
-Installing Gauge on Windows
-==================================
+:windows:`Installing Gauge on Windows`
+======================================
 
 This section gives specific instructions on setting up Gauge in a Microsoft Windows environment.
 

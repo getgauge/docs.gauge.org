@@ -1,9 +1,10 @@
+.. role:: vscode
 .. cssclass:: topic
 
 .. cssclass:: vscode dynamic-content
 
-Viewing Reports from VS Code
-=============================
+:vscode:`Viewing Reports from VS Code`
+======================================
 
 .. include:: ../change_filter.rst
 

@@ -1,9 +1,10 @@
 .. role:: alternate-methods
 .. role:: installer-icon
+.. role:: macos
 .. cssclass:: dynamic-content macos
 
-Installing Gauge on MacOS
-=========================
+:macos:`Installing Gauge on MacOS`
+==================================
 
 This section gives specific instructions on setting up Gauge in a Mac OS environment.
 

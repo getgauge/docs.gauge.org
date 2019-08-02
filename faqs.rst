@@ -1,3 +1,7 @@
+.. role:: vscode
+.. role:: javascript
+.. role:: python
+
 FAQs
 ====
 
@@ -147,8 +151,8 @@ Where does gauge non project specific logs like plugin installation etc.?
 .. cssclass:: dynamic-content javascript
 .. _js_faq:
 
-Gauge Javascript
-----------------
+:javascript:`Gauge Javascript`
+==============================
 
 How to debug without IDE
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -194,8 +198,8 @@ You need to be quick enough to hit continue in the browser when node-inspector l
 .. cssclass:: dynamic-content python
 .. _python_faq:
 
-Gauge Python
-------------
+:python:`Gauge Python`
+======================
 
 How to change/rename default step implementation(``step_impl``) directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -244,8 +248,8 @@ Execution will stop where it finds the above statement and you can debug.
 .. cssclass:: dynamic-content vscode
 .. _vscode_faq:
 
-Gauge VS Code
--------------
+:vscode:`Gauge VS Code`
+========================
 
 Why are some features not working?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

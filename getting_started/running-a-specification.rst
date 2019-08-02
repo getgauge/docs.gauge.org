@@ -1,3 +1,6 @@
+.. role:: vscode
+.. role:: intellij
+.. role:: visualstudio
 .. cssclass:: topic
 
 Running a Specification
@@ -16,8 +19,8 @@ in a spec file.To learn more about how specifications work you can look at the o
 
 .. cssclass:: vscode dynamic-content
 
-Running a Specification using VS Code
--------------------------------------
+:vscode:`Running a Specification using VS Code`
+================================================
 
 Step 1
 ++++++
@@ -40,8 +43,8 @@ You'll get immediate feedback in the output about what got executed.
 
 .. cssclass:: java intellij dynamic-content
 
-Running a Specification using Intellij
----------------------------------------
+:intellij:`Running a Specification using Intellij`
+===================================================
 Step 1
 ++++++
 Open the example spec. The Gauge specification file is present under :highlighted-syntax:`/specs/example.spec`
@@ -52,10 +55,10 @@ Run your Gauge specs in Intellij
 
 You'll get immediate feedback in the output about what got executed.
 
-.. cssclass:: csharp visulastudio dynamic-content
+.. cssclass:: csharp visualstudio dynamic-content
 
-Running a Specification using Visual Studio
--------------------------------------------
+:visualstudio:`Running a Specification using Visual Studio`
+===========================================================
 Step 1
 ++++++
 Open the example spec. The Gauge specification file is present under :highlighted-syntax:`/specs/example.spec`
@@ -70,7 +73,7 @@ You'll get immediate feedback in the output about what got executed.
 
 
 Next Step:
-----------
+==========
 Now that you have successfully run a Gauge specification, you can go ahead and view the report from VS code.
 
 .. container:: page-navigator

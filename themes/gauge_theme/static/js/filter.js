@@ -42,7 +42,6 @@ const updateContent = function () {
     selectionItems.forEach(selectedItem => {
         if (selectedItem.checked) applyCombination(selectedItem);
     });
-
     hidePopUp();
 }
 
@@ -99,7 +98,6 @@ const showRelevantIde = function(){
         disableNonRelevantIde(ideElement, this);
         resetIdeIfDisabled(ideElement);
     })
-    
     select('vscode');
 }
 

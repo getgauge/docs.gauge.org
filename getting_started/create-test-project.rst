@@ -1,3 +1,4 @@
+.. role:: vscode
 .. cssclass:: topic
 
 Create a Testing project using Gauge
@@ -9,8 +10,9 @@ Create a Testing project using Gauge
 
 .. cssclass:: vscode dynamic-content
 
-Creating a Testing Project in VS Code
--------------------------------------
+:vscode:`Creating a Testing Project in VS Code`
+================================================
+
 Gauge projects can be created and executed in Visual studio code using the Gauge extension for VSCode.
 
 In this guide, you'll be able to learn how to add a sample Javascript testing project in VSCode
@@ -131,7 +133,8 @@ After you've successfully created a gauge project, you'll be able to see a sampl
       :alt: VSCode Java file structure
 
 Next Step: Running a Specification
-----------------------------------
+===================================
+
 Now that you have successfully added/initialized a new Gauge testing projec, we can look at how to run a specification by using the sample spec in the test folder
 
 .. Note:: To learn more about how to test specifications in Gauge work and other gauge terminologies please look at our Overview Section.

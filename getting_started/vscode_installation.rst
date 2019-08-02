@@ -1,7 +1,8 @@
 .. cssclass:: vscode dynamic-content
+.. role:: vscode
 
-Installing Gauge extension for VSCode
-=====================================
+:vscode:`Installing Gauge extension for VSCode`
+===============================================
 
 .. cssclass:: code-block
 
