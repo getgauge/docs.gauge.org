@@ -30,9 +30,9 @@ Select your setup to see the instructions for installing gauge.
          :title: Select your OS
          :order: 1
 
+         Linux
          MacOS
          Windows
-         Linux
 
       .. installationselection::
          :class: setup-selection
@@ -40,11 +40,11 @@ Select your setup to see the instructions for installing gauge.
          :title: Select a Language
          :order: 2
 
-         JavaScript
+         Csharp
          Java
+         JavaScript
          Python
          Ruby
-         Csharp
 
       .. installationselection::
          :class: setup-selection
@@ -52,9 +52,9 @@ Select your setup to see the instructions for installing gauge.
          :title: Select an IDE/Editor
          :order: 3
 
-         VS Code
          Intellij
          Visual Studio
+         VS Code
 
 
 Installation Instructions
@@ -95,7 +95,26 @@ Step 2:
 Next Step:
 ==========
 
-Now that you've install Gauge, you can go ahead and create a JavaScript testing project using Gauge.
+.. cssclass:: csharp dynamic-content
+
+   Now that you've install Gauge, you can go ahead and create a C# testing project using Gauge.
+
+.. cssclass:: java dynamic-content
+
+   Now that you've install Gauge, you can go ahead and create a Java testing project using Gauge.
+
+.. cssclass:: javascript dynamic-content
+
+   Now that you've install Gauge, you can go ahead and create a JavaScript testing project using Gauge.
+
+.. cssclass:: python dynamic-content
+
+   Now that you've install Gauge, you can go ahead and create a Python testing project using Gauge.
+
+.. cssclass:: ruby dynamic-content
+
+   Now that you've install Gauge, you can go ahead and create a Ruby testing project using Gauge.
+
 
 
 .. container:: page-navigator
