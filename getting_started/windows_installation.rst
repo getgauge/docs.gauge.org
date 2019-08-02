@@ -113,7 +113,7 @@ Download the following zip installer.
 
 .. cssclass:: dynamic-content windows collapsible-content
 
-.. code-block:: console
+.. code-block:: text
 
     npm install -g @getgauge/cli
 

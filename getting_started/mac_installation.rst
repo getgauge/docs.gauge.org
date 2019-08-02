@@ -131,7 +131,7 @@ Or install Gauge to a [custom path] using
 
 .. cssclass:: dynamic-content macos collapsible-content
 
-.. code-block:: console
+.. code-block:: text
 
     npm install -g @getgauge/cli
 
