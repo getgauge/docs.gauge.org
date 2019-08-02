@@ -103,7 +103,7 @@ Download the following zip installer.
 
         To install gauge using NPM you will need the latest node version.
 
-            `If you have Node.js already installed - to get the latest version of npm use the following command:`
+            - `If you have Node.js already installed - to get the latest version of npm use the following command:`
 
             'npm install -g npm@latest'
 
