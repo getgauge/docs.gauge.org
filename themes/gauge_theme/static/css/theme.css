@@ -50,7 +50,6 @@ footer {
 
 .side-nav-header {
   padding: 20px;
-  /* border-bottom: 1px solid lightgray; */
 }
 
 .search-container {
@@ -136,7 +135,7 @@ footer {
     display: grid;
     grid-template-areas: 'header header header header header' 'left-nav main-content main-content main-content right-nav' 'footer footer footer footer footer';
     grid-template-rows: 100px auto auto;
-    grid-template-columns: 2.5% 20% 60% 15% 2.5%;
+    grid-template-columns: 2.5% minmax(274px, 19%) auto 249px 2.5%;
   }
   .left-sidebar-container {
     grid-column: 2/3
@@ -151,8 +150,21 @@ footer {
     display: none;
   }
   #sidebar {
-    width: 95%;
+    min-width: 19%;
+    height: calc(100% - 100px);
+    top: 100px;
+    left: 2.5%;
     padding-top: 45px;
+    position: fixed;
+  }
+
+  .right-sidebar-container {
+    position: fixed;
+    right: 2.5%;
+    top: 100px;
+    min-width: 249px;
+    height: calc(100% - 100px);
+    padding-top: 60px;
   }
   #search-icon {
     top: 44px;
@@ -163,7 +175,6 @@ footer {
     margin-bottom: 12px;
   }
   .left-sidebar-container {
-    min-width: 20%;
     background-color: var(--left-side-bar-color);
   }
   .left-sidebar-container nav {
@@ -221,11 +232,6 @@ header.top:hover {
   display: flex;
 }
 
-.left-sidebar-container {
-  min-width: 25%;
-  background-color: var(--left-side-bar-color);
-}
-
 .left-sidebar-container>ul {
   padding: 0;
   list-style: none;
@@ -253,6 +259,8 @@ header.top:hover {
 .help-note {
   background-color: var(--left-side-bar-color);
   font-size: 12px;
+  width: 90%;
+  padding: 10px;
 }
 
 .help-note h4 {
@@ -270,15 +278,13 @@ header.top:hover {
 
 .docs-container {
   min-width: 60%;
-  height: inherit;
   flex: 2;
   background-color: white;
   padding: 10px 30px;
-  height: 100%;
+  /* height: 100%;
   overflow-y: scroll;
-  overflow-x: hidden;
   -ms-overflow-style: none;
-  scrollbar-width: none;
+  scrollbar-width: none; */
 }
 
 .docs-container::-webkit-scrollbar {
@@ -295,11 +301,6 @@ header.top:hover {
 
 .docs-container h3 {
   font-size: 18px;
-}
-
-.right-sidebar-container {
-  flex: 1;
-  margin-top: 60px;
 }
 
 .docs-toc .sub-toc {

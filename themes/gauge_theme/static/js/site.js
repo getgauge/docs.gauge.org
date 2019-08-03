@@ -129,6 +129,19 @@ $(document).ready(function() {
         $(".main-table").clone(true).appendTo('#table-scroll').addClass('clone');
     });
 
+    const leftSideBarOffsetTop = +$('#sidebar').css('top').replace('px', '');
+    $(window).on('scroll', function() {
+        let isFooterTouchingSidebar = $('#sidebar').innerHeight() >= $('footer').offset().top - window.scrollY;
+        if(isFooterTouchingSidebar) {
+            let sidebarOffsetTop = (leftSideBarOffsetTop ) - ($('#sidebar').innerHeight() - ($('footer').offset().top - window.scrollY) );
+            $('#sidebar').css('top',`${sidebarOffsetTop}px`)
+            $('.right-sidebar-container').css('top',`${sidebarOffsetTop}px`)
+        } else {
+            $('#sidebar').css('top',`${leftSideBarOffsetTop}px`);
+            $('.right-sidebar-container').css('top',`${leftSideBarOffsetTop}px`);
+        }
+    });
+
 });
 
 function copyCode(element) {
