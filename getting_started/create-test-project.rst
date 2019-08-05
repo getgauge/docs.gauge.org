@@ -144,7 +144,7 @@ Now that you have successfully added/initialized a new Gauge testing projec, we 
    .. container:: navigate-previous
 
       `Installing Gauge <installing-gauge.html>`__
-         
+
    .. container:: navigate-next
 
       `Running a Specification <running-a-specification.html>`__

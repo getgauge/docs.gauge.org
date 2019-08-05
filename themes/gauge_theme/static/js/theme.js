@@ -91,23 +91,23 @@ $(document).ready(() => {
     }, 500);
   });
 
-  $('ul.localtoc a').click(function(){
+  $('ul.localtoc a').click(function () {
     var sectionId = $(this).attr('href');
 
     $('body,html').animate({
-      scrollTop : $(sectionId).offset().top
-  }, 500);
+      scrollTop: $(sectionId).offset().top
+    }, 500);
   });
 
   $('.headerlink').click(function () {
     var sectionId = $(this).attr('href');
     $('body,html').animate({
-      scrollTop : $(sectionId).offset().top
+      scrollTop: $(sectionId).offset().top
     }, 500);
   });
 
-  jQuery('.docs-toc li.doc-toc-group').on('click', function(event, selector) {
-    if(!event.currentTarget.className.match('active-toc')) {
+  jQuery('.docs-toc li.doc-toc-group').on('click', function (event, selector) {
+    if (!event.currentTarget.className.match('active-toc')) {
       $(event.currentTarget).addClass('active-toc');
     };
     $(event.currentTarget).toggleClass('collapsed');
@@ -117,13 +117,13 @@ $(document).ready(() => {
 
   jQuery('.docs-toc > ul > li, ul.sub-toc > li').each((_, toc) => {
     let elemSelector = $(toc);
-    if(toc.className.match('doc-toc-group')) {
+    if (toc.className.match('doc-toc-group')) {
       let subTocList = elemSelector.find('ul.sub-toc li')
-      subTocList.each( (_, subToc) => {
+      subTocList.each((_, subToc) => {
         let tocLink = subToc.children[0]
         let location = window.location.pathname;
-        if(location == "/master/" || location == "/latest/") location = "/index.html"
-        if( tocLink && tocLink.href.match(location)) {
+        if (location == "/master/" || location == "/latest/") location = "/index.html"
+        if (tocLink && tocLink.href.match(location)) {
           $(subToc).addClass('active-toc expanded');
           elemSelector.addClass('active-toc expanded');
           elemSelector.removeClass('collapsed');
@@ -132,11 +132,10 @@ $(document).ready(() => {
     } else {
       let tocLink = toc.children[0]
       let location = window.location.pathname;
-      if(location == "/master/" || location == "/latest/") location = "/index.html"
-      if( tocLink && tocLink.pathname.match(location)) {
+      if (location == "/master/" || location == "/latest/") location = "/index.html"
+      if (tocLink && tocLink.pathname.match(location)) {
         elemSelector.addClass('active-toc');
       }
     }
   });
 });
-

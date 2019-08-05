@@ -155,12 +155,12 @@ Where does gauge non project specific logs like plugin installation etc.?
 ==============================
 
 How to debug without IDE
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 gauge-js supports debugging your test implementation code using node-inspector.
 
 Requirements
-++++++++++++
+-------------
 
 Ensure you have the latest Chrome browser and node-inspector installed. Please consult the node-inspector documentation for installation instructions.
 Ensure that the binaries node-debug and node-inspector are available on PATH.
@@ -171,7 +171,7 @@ Set the DEBUG key to true in env/<env-name>/js.properties file in your gauge pro
 Set the environment variable DEBUG=true when calling gauge. Like: DEBUG=true gauge specs/. This needs gauge v0.3.2 or newer.
 
 How it works
-############
+^^^^^^^^^^^^^
 
 Setting the debug option will launch the runner code through node-debug. It will start node-inspector, launch Chrome DevTools and pause on the first line of execution. You will need to continue execution to let gauge carry on with its execution.
 
@@ -202,7 +202,7 @@ You need to be quick enough to hit continue in the browser when node-inspector l
 ======================
 
 How to change/rename default step implementation(``step_impl``) directory
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------------------------------------
 
 Create ``python.properties`` file in the ``<PROJECT_DIR>/env/default`` directory and add the following line to it.
 
@@ -215,7 +215,7 @@ Create ``python.properties`` file in the ``<PROJECT_DIR>/env/default`` directory
 
 
 How to use different version of python while running specs
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------------------------
 
 By default the language runner uses ``python`` command to run specs. To change the default behaviour, add ``GAUGE_PYTHON_COMMAND`` property to the ``python.properties`` file in the ``<PROJECT_DIR>/env/default`` directory.
 
@@ -226,7 +226,7 @@ By default the language runner uses ``python`` command to run specs. To change t
     GAUGE_PYTHON_COMMAND = python2
 
 How to debug gauge-python without using an IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------------
 
 Gauge-Python supports debugging your test implementation code using `pbd`_.
 
@@ -252,7 +252,7 @@ Execution will stop where it finds the above statement and you can debug.
 ========================
 
 Why are some features not working?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 
 If you notice that any of the documented features (ex. goto definition, Code Lens of implementation files, find usages)
 are not working then make sure the required language runner is installed, by running ``gauge version``.
@@ -262,7 +262,7 @@ If not installed, install using ``gauge install <plugin_name>``.
 .. cssclass:: dynamic-content vscode
 
 Why does the debugger not stop at the right breakpoint (gauge-java)?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------------------------
 
 In Java projects, if the debugger does not stop at the right breakpoint, it is related to `this issue
 <https://github.com/getgauge/gauge-vscode/issues/344>`_.

@@ -140,8 +140,8 @@ $(document).ready(function() {
             $('#sidebar').css('top',`${leftSideBarOffsetTop}px`);
             $('.right-sidebar-container').css('top',`${leftSideBarOffsetTop}px`);
         }
+        updateActiveToc();
     });
-
 });
 
 function copyCode(element) {
