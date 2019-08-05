@@ -90,6 +90,7 @@ Step1:
 Step 2:
 =======
 .. include:: vscode_installation.rst
+.. include:: intellij_installation.rst
 
 
 Next Step:
