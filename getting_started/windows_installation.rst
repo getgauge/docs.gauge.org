@@ -16,7 +16,7 @@ Download the following installation bundle to get the latest stable release of G
 
 .. cssclass:: dynamic-content windows extension-link download-icon
 
-`windows Installer <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-windows.x86_64.exe>`__
+`windows Installer <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-windows.x86_64.exe>`__
 
 .. figure:: ../images/windows/installer.png
       :alt: Windows installer
@@ -76,7 +76,7 @@ Download the following zip installer.
 
 .. cssclass:: dynamic-content windows collapsible-content extension-link
 
-`gauge-1.0.5-windows.x86_64.zip <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-windows.x86_64.zip>`__
+`gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-windows.x86_64.zip <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-windows.x86_64.zip>`__
 
 .. cssclass:: dynamic-content windows collapsible-content
 
@@ -84,9 +84,9 @@ Download the following zip installer.
 
 .. cssclass:: dynamic-content windows collapsible-content
 
-.. code-block:: powershell
+.. custom-code-block:: powershell
 
-    PS>  Expand-Archive -Path gauge-1.0.5-windows.x86_64.zip -DestinationPath custom_path
+    PS>  Expand-Archive -Path gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-windows.x86_64.zip -DestinationPath custom_path
 
 
 .. cssclass:: dynamic-content windows collapsible npm-installer

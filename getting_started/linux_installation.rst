@@ -74,14 +74,14 @@ Install Gauge using dfn by running this command
 
 1. Download the zip installer.
 .. cssclass:: dynamic-content linux collapsible-content
-`gauge-1.0.5-linux.x86_64.zip <https://github.com/getgauge/gauge/releases/download/v1.0.5/gauge-1.0.5-linux.x86_64.zip>`__
+`gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip>`__
 .. cssclass:: dynamic-content linux collapsible-content
 2. Extract to a location and add it to system path using the following command.
 
 .. cssclass:: dynamic-content linux collapsible-content
-.. code-block:: console
+.. custom-code-block:: console
 
-    unzip -o gauge-1.0.5-linux.x86_64.zip -d /usr/local/bin
+    unzip -o gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip -d /usr/local/bin
 
 .. cssclass:: dynamic-content linux collapsible npm-installer
 
