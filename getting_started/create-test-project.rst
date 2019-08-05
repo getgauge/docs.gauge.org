@@ -1,4 +1,5 @@
 .. role:: vscode
+.. role:: intellij
 .. cssclass:: topic
 
 Create a Testing project using Gauge
@@ -15,12 +16,41 @@ Create a Testing project using Gauge
 
 Gauge projects can be created and executed in Visual studio code using the Gauge extension for VSCode.
 
-In this guide, you'll be able to learn how to add a sample Javascript testing project in VSCode
+.. cssclass:: csharp dynamic-content
+
+      In this guide, you'll be able to learn how to add a sample CSharp testing project in VSCode
+
+.. cssclass:: java dynamic-content
+
+      In this guide, you'll be able to learn how to add a sample Java testing project in VSCode
+
+.. cssclass:: javascript dynamic-content
+
+      In this guide, you'll be able to learn how to add a sample Javascript testing project in VSCode
+
+.. cssclass:: python dynamic-content
+
+      In this guide, you'll be able to learn how to add a sample Python testing project in VSCode
+
+.. cssclass:: ruby dynamic-content
+
+      In this guide, you'll be able to learn how to add a sample Ruby testing project in VSCode
+
 
 Step 1
 ++++++
 
-Once the extension is installed, press Cmd + shift + p to display the editor's command pallete, and then execute the following command to create a new testing project in Gauge:
+.. cssclass:: macos dynamic-content
+
+      Once the extension is installed, press Cmd + shift + p to display the editor's command pallete, and then execute the following command to create a new testing project in Gauge:
+
+.. cssclass:: windows dynamic-content
+
+      Once the extension is installed, press ctrl + shift + p to display the editor's command pallete, and then execute the following command to create a new testing project in Gauge:
+
+.. cssclass:: linux dynamic-content
+
+      Once the extension is installed, press ctrl + shift + p to display the editor's command pallete, and then execute the following command to create a new testing project in Gauge:
 
 :highlighted-syntax:`Gauge: Create new Gauge Project`
 
@@ -29,8 +59,25 @@ Once the extension is installed, press Cmd + shift + p to display the editor's c
 
 Step 2
 ++++++
+.. cssclass:: csharp dynamic-content
 
-Select the JS template to create the sample testing project
+      Select the csharp template to create the sample testing project
+
+.. cssclass:: java dynamic-content
+
+      Select the java template to create the sample testing project
+
+.. cssclass:: javascript dynamic-content
+
+      Select the js template to create the sample testing project
+
+.. cssclass:: python dynamic-content
+
+      Select the python template to create the sample testing project
+
+.. cssclass:: ruby dynamic-content
+
+      Select the ruby template to create the sample testing project
 
 .. figure:: ../images/VSCode_select_project_tempate.png
       :alt: Select template
@@ -132,10 +179,35 @@ After you've successfully created a gauge project, you'll be able to see a sampl
 .. figure:: ../images/VSCode_Java_project_file_structure.png
       :alt: VSCode Java file structure
 
+.. cssclass:: intellij dynamic-content
+
+:intellij:`Creating a Testing Project in Intellij Idea`
+=======================================================
+
+Gauge projects can be created and executed in Intellij Idea using the Gauge plugin for Intellij Idea.
+
+In this guide, you'll be able to learn how to add a sample Java testing project in Intellij Idea
+
+Step 1
+++++++
+
+Once the plugin is installed, goto :highlighted-syntax:`File -> New Project`, select :highlighted-syntax:`Gauge` and click :highlighted-syntax:`Next`.
+
+.. figure:: ../images/
+      :alt: Select Gauge
+
+Step 2
+++++++
+
+Choose the project name, location, java sdk and click :highlighted-syntax:`Finish`.
+
+.. figure:: ../images/
+      :alt: Create project
+
 Next Step: Running a Specification
 ===================================
 
-Now that you have successfully added/initialized a new Gauge testing projec, we can look at how to run a specification by using the sample spec in the test folder
+Now that you have successfully added/initialized a new Gauge testing project, we can look at how to run a specification by using the sample spec in the test folder
 
 .. Note:: To learn more about how to test specifications in Gauge work and other gauge terminologies please look at our Overview Section.
 
