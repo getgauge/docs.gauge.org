@@ -44,10 +44,6 @@ footer {
   grid-area: footer
 }
 
-#sidebar {
-  width: 100%;
-}
-
 .side-nav-header {
   padding: 20px;
 }
@@ -162,7 +158,7 @@ footer {
     position: fixed;
     right: 2.5%;
     top: 100px;
-    min-width: 249px;
+    width: 249px;
     height: calc(100% - 100px);
     padding-top: 60px;
   }
@@ -760,6 +756,17 @@ code {
 
 .localtoc-container>h4 {
   color: #848181;
+}
+
+.localtoc-container {
+  max-height: 54%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  margin-bottom: 50px;
+}
+
+.localtoc-container > ul {
+  padding: 0px;
 }
 
 .localtoc>ul a {
