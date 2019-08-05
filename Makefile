@@ -47,6 +47,9 @@ versions: prune
 	# copy robots.txt
 	cp robots.txt $(BUILDDIR)/html
 
+	# copy verification file
+	cp googlefaad68ffc626de37.html $(BUILDDIR)/html
+
 prune: clean
 	git checkout master;\
 	git worktree prune;\
