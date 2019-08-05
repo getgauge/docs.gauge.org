@@ -2,32 +2,35 @@
 
 Write Gauge specifications
 ==========================
+.. include:: change_filter.rst
 
 This page provides information about what a specification is, how to write a specification, and other related information such as concepts, step implementation, specs directory, and so on.  
 
 Text editor for specs
 ---------------------
 
-You can author Gauge specifications by using any text editor. 
+You can author Gauge specifications by using any text editor. It is recommended that you use the IDE plugin.
 
-It is recommended that you use one of the following IDE plugins:
+.. cssclass:: dynamic-content vscode
 
-.. tab-container:: ide
+VSCode
+^^^^^^
+Gauge projects can be created and run in Visual Studio Code by using the `Gauge extension for VSCode <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__.
+This plugin currently supports Gauge with Java, JavaScript, Ruby, Python, C# (.Net Core), and TypeScript.
 
-    .. tab:: Visual Studio Code
+.. cssclass:: dynamic-content intellij
 
-        Gauge projects can be created and run in Visual Studio Code by using the `Gauge extension for VSCode <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__.
-        This plugin currently supports Gauge with Java, JavaScript, Ruby, Python, C# (.Net Core), and TypeScript.
+IntelliJ IDEA
+^^^^^^^^^^^^^
+Gauge projects can be created and run in IntelliJ IDEA by using the `Gauge plugin for IntelliJ IDEA <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__.
+This plugin only supports Gauge with Java.
 
-    .. tab:: IntelliJ Idea
+.. cssclass:: dynamic-content visualstudio
 
-        Gauge projects can be created and run in IntelliJ IDEA by using the `Gauge plugin for IntelliJ IDEA <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__.
-        This plugin only supports Gauge with Java.
-
-    .. tab:: Visual Studio
-
-        Gauge projects can be created and run in Visual Studio by using the `Gauge extension for Visual Studio <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__.
-        This plugin currently supports Gauge with C# (.Net framework).
+Visual Studio
+^^^^^^^^^^^^^
+Gauge projects can be created and run in Visual Studio by using the `Gauge extension for Visual Studio <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__.
+This plugin currently supports Gauge with C# (.Net framework).
 
 .. _specs:
 
@@ -37,8 +40,10 @@ Specifications (spec)
 A specification is a business test case which describes a particular feature of the application that needs testing.  
 Gauge specifications support a ``.spec`` or ``.md`` file format and these specifications are written in a syntax similar to Markdown.
 
-| Every spec can contain one or more :ref:`longstart-scenarios`.
-| Every spec can be marked with labels using :ref:`longstart-tags`.
+.. cssclass:: key-points
+
+    * Every spec can contain one or more :ref:`longstart-scenarios`.
+    * Every spec can be marked with labels using :ref:`longstart-tags`.
 
 .. _specs_directory:
 
@@ -91,12 +96,14 @@ Components of a specification
 A specification consists of different sections; some of which are mandatory and few are optional.
 The components of a spec are listed as follows:
 
-* Specification heading
-* Scenario
-* Step
-* Parameters
-* Tags
-* Comments
+.. cssclass:: key-points
+
+    * Specification heading
+    * Scenario
+    * Step
+    * Parameters
+    * Tags
+    * Comments
 
 .. note::
    
@@ -261,12 +268,14 @@ In the following example, parameter values are ``"product 1"`` and ``"product 2"
 
 A step can have the following types of parameters:
 
-* Simple parameters
-* Dynamic parameters
-* Table parameters
-* Special parameters
+.. cssclass:: key-points
 
-Simple parameters
+    * Simple parameters
+    * Dynamic parameters
+    * Table parameters
+    * Special parameters
+
+1. Simple parameters
 ^^^^^^^^^^^^^^^^^^^^
 
 Simple parameters are values, which are used in a step within double quotes.
@@ -282,7 +291,7 @@ In the following examples, ``Cup Cakes``, ``gauge-java``, and ``100`` are values
    * Create a “gauge-java” project
    * Write “100” line specification
 
-Dynamic Parameters
+2. Dynamic Parameters
 ^^^^^^^^^^^^^^^^^^^^^
 
 Dynamic parameters are used as placeholders instead of actual values. 
@@ -738,58 +747,67 @@ The Implementation section shows the step implementation for different language 
 Implementation
 ..............
 
-.. tab-container:: languages
+.. cssclass:: dynamic-content csharp
 
-    .. tab:: CSharp
 
-        .. code-block:: java
+CSharp
+^^^^^^
+.. code-block:: java
 
-            // The Method can be written in **any C# class** as long as it is part of the project.
-            public class StepImplementation {
+    // The Method can be written in **any C# class** as long as it is part of the project.
+    public class StepImplementation {
 
-                [Step("Say <greeting> to <product name>")]
-                public void HelloWorld(string greeting, string name) {
-                    // Step implementation
-                }
-            }
+        [Step("Say <greeting> to <product name>")]
+        public void HelloWorld(string greeting, string name) {
+            // Step implementation
+        }
+    }
 
-    .. tab:: Java
+.. cssclass:: dynamic-content java
 
-        .. code-block:: java
+Java
+^^^^
+.. code-block:: java
 
-            // This Method can be written in any java class as long as it is in classpath.
+    // This Method can be written in any java class as long as it is in classpath.
 
-            public class StepImplementation {
+    public class StepImplementation {
 
-                @Step("Say <greeting> to <product name>")
-                public void helloWorld(String greeting, String name) {
-                    // Step implementation
-                }
-            }
+        @Step("Say <greeting> to <product name>")
+        public void helloWorld(String greeting, String name) {
+            // Step implementation
+        }
+    }
 
-    .. tab:: JavaScript
+.. cssclass:: dynamic-content javascript
 
-        .. code-block:: javascript
+JavaScript
+^^^^^^^^^^
+.. code-block:: javascript
 
-            step("Say <greeting> to <name>", async function(greeting, name) {
-                throw 'Unimplemented Step';
-            });
+    step("Say <greeting> to <name>", async function(greeting, name) {
+        throw 'Unimplemented Step';
+    });
 
-    .. tab:: Python
+.. cssclass:: dynamic-content python
 
-        .. code-block:: python
+Python
+^^^^^^
+.. code-block:: python
 
-            @step("Say <greeting> to <product name>")
-            def hello_world(greeting, name):
-                assert False, "Add implementation code"
+    @step("Say <greeting> to <product name>")
+    def hello_world(greeting, name):
+        assert False, "Add implementation code"
 
-    .. tab:: Ruby
+.. cssclass:: dynamic-content ruby
 
-        .. code-block:: ruby
+Ruby
+^^^^
+.. code-block:: ruby
 
-            step 'Say <greeting> to <product name>' do |greeting, name|
-                # Code for the step
-            end
+    step 'Say <greeting> to <product name>' do |greeting, name|
+        # Code for the step
+    end
 
 Step with table
 ^^^^^^^^^^^^^^^
@@ -812,67 +830,75 @@ The Implementation section shows the step implementation for different language 
 Implementation
 ..............
 
-.. tab-container:: languages
+.. cssclass:: dynamic-content csharp
 
-    .. tab:: CSharp
+CSharp
+^^^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    // Here Table is a custom data structure defined by gauge.
+    // This is available by adding a reference to the Gauge.CSharp.Lib.
+    // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/
 
-            // Here Table is a custom data structure defined by gauge.
-            // This is available by adding a reference to the Gauge.CSharp.Lib.
-            // Refer : http://nuget.org/packages/Gauge.CSharp.Lib/
+    public class StepImplementation {
 
-            public class StepImplementation {
+        [Step("Create following <race> characters <table>")]
+        public void CreateCharacters(string race, Table table) {
+            // Step implementation
+        }
 
-                [Step("Create following <race> characters <table>")]
-                public void CreateCharacters(string race, Table table) {
-                    // Step implementation
-                }
+    }
 
-            }
+.. cssclass:: dynamic-content java
 
-    .. tab:: Java
+Java
+^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    // Table is a custom data structure defined by gauge.
+    public class StepImplementation {
 
-            // Table is a custom data structure defined by gauge.
-            public class StepImplementation {
+        @Step("Create following <race> characters <table>")
+        public void createCharacters(String race, Table table) {
+            // Step implementation
+        }
 
-                @Step("Create following <race> characters <table>")
-                public void createCharacters(String race, Table table) {
-                    // Step implementation
-                }
+    }
 
-            }
+.. cssclass:: dynamic-content javascript
 
-    .. tab:: JavaScript
+JavaScript
+^^^^^^^^^^
+.. code-block:: javascript
 
-        .. code-block:: javascript
+    step("Create following <race> characters <table>", async function(race, table) {
+        throw 'Unimplemented Step';
+    });
 
-            step("Create following <race> characters <table>", async function(race, table) {
-                throw 'Unimplemented Step';
-            });
+.. cssclass:: dynamic-content python
 
-    .. tab:: Python
+Python
+^^^^^^
+.. code-block:: python
 
-        .. code-block:: python
+    # Here Table is a custom data structure defined by gauge.
 
-            # Here Table is a custom data structure defined by gauge.
+    @step("Create following <race> characters <table>")
+    def create_characters(race, table):
+        assert False, "Add implementation code"
 
-            @step("Create following <race> characters <table>")
-            def create_characters(race, table):
-                assert False, "Add implementation code"
+.. cssclass:: dynamic-content ruby
 
-    .. tab:: Ruby
+Ruby
+^^^^^^
+.. code-block:: ruby
 
-        .. code-block:: ruby
+    # Here table is a custom data structure defined by gauge-ruby.
 
-            # Here table is a custom data structure defined by gauge-ruby.
-
-            step 'Create following <race> characters <table>' do |race, table|
-                puts table.rows
-                puts table.columns
-            end
+    step 'Create following <race> characters <table>' do |race, table|
+        puts table.rows
+        puts table.columns
+    end
 
 Step alias
 ^^^^^^^^^^
@@ -904,59 +930,67 @@ The Implementation section shows the step implementation for different language 
 Implementation
 ..............
 
-.. tab-container:: languages
+.. cssclass:: dynamic-content csharp
 
-    .. tab:: CSharp
+CSharp
+^^^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    public class Users {
 
-            public class Users {
+        [Step("Create a user <user_name>", "Create another user <user_name>")]
+        public void CreateUser(string user_name) {
+            // create user user_name
+        }
 
-                [Step("Create a user <user_name>", "Create another user <user_name>")]
-                public void CreateUser(string user_name) {
-                    // create user user_name
-                }
+    }
 
-            }
+.. cssclass:: dynamic-content java
 
-    .. tab:: Java
+Java
+^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    public class Users {
 
-            public class Users {
+        @Step({"Create a user <user_name>", "Create another user <user_name>"})
+        public void createUser(String user_name) {
+            // create user user_name
+        }
 
-                @Step({"Create a user <user_name>", "Create another user <user_name>"})
-                public void createUser(String user_name) {
-                    // create user user_name
-                }
+    }
 
-            }
+.. cssclass:: dynamic-content javascript
 
-    .. tab:: JavaScript
+JavaScript
+^^^^^^^^^^
+.. code-block:: javascript
 
-        .. code-block:: javascript
+    step(["Create a user <username>", "Create another user <username>"], function (username) {
+        // do cool stuff
+    });
 
-            step(["Create a user <username>", "Create another user <username>"], function (username) {
-                // do cool stuff
-            });
+.. cssclass:: dynamic-content python
 
-    .. tab:: Python
+Python
+^^^^^^
+.. code-block:: python
 
-        .. code-block:: python
+    from getgauge.python import step
 
-            from getgauge.python import step
+    @step(["Create a user <user name>", "Create another user <user name>"])
+    def create_user(user_name):
+        print("create {}.".format(user_name))
 
-            @step(["Create a user <user name>", "Create another user <user name>"])
-            def create_user(user_name):
-                print("create {}.".format(user_name))
+.. cssclass:: dynamic-content ruby
 
-    .. tab:: Ruby
+Ruby
+^^^^^^
+.. code-block:: ruby
 
-        .. code-block:: ruby
-
-            step 'Create a user <user name>','Create another user <user name>' do |user_name|
-                // create user user_name
-            end
+    step 'Create a user <user name>','Create another user <user name>' do |user_name|
+        // create user user_name
+    end
 
 Example 2
 ^^^^^^^^^
@@ -980,59 +1014,71 @@ The Implementation section shows the step implementation for different language 
 Implementation
 ..............
 
-.. tab-container:: languages
+.. cssclass:: dynamic-content csharp
 
-    .. tab:: CSharp
+CSharp
+^^^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    public class Users {
 
-            public class Users {
+        [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
+        public void SendEmail(string email_type) {
+            // Send email of email_type
+        }
 
-                [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
-                public void SendEmail(string email_type) {
-                    // Send email of email_type
-                }
+    }
 
-            }
+.. cssclass:: dynamic-content java
 
-    .. tab:: Java
+Java
+^^^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    public class Users {
 
-            public class Users {
+        @Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})
+        public void sendEmail(String email_type) {
+            // Send email of email_type
+        }
 
-                @Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})
-                public void sendEmail(String email_type) {
-                    // Send email of email_type
-                }
+    }
 
-            }
+.. cssclass:: dynamic-content javascript
 
-    .. tab:: JavaScript
+JavaScript
+^^^^^^^^^^
+.. code-block:: javascript
 
-        .. code-block:: javascript
+    step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"], function (email_type) {
+        // do cool stuff
+    });
 
-            step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"], function (email_type) {
-                // do cool stuff
-            });
+.. cssclass:: dynamic-content python
 
-    .. tab:: Python
+Python
+^^^^^^
 
-        .. code-block:: python
+.. code-block:: python
 
-            from getgauge.python import step
+    from getgauge.python import step
 
-            @step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"])
-            def email(email_type):
-                print("create {}.".format(email_type))
+    @step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"])
+    def email(email_type):
+        print("create {}.".format(email_type))
 
-    .. tab:: Ruby
+.. cssclass:: dynamic-content ruby
 
-        .. code-block:: ruby
+Ruby
+^^^^^^
+.. code-block:: ruby
 
-            step 'A <email_type> email is sent to the user', 'An email confirming the <email_type> is sent' do |email_type|
-                email_service.send email_type
-            end
+    step 'A <email_type> email is sent to the user', 'An email confirming the <email_type> is sent' do |email_type|
+        email_service.send email_type
+    end
+
+
+.. cssclass:: dynamic-content java
 
 Enum as a step parameter
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1041,6 +1087,8 @@ However, the type of parameter should match the Enum name in the step implementa
 
 .. note:: 
    Enum as a step parameter is currently supported for ``Java`` only.
+
+.. cssclass:: dynamic-content java
 
 Example
 ^^^^^^^
@@ -1211,297 +1259,313 @@ For more information about configuring the appropriate environment variable in t
 Implementation
 ^^^^^^^^^^^^^^
 
-.. tab-container:: languages
+.. cssclass:: dynamic-content csharp
 
-    .. tab:: CSharp
+CSharp
+^^^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    public class ExecutionHooks
+    {
 
-            public class ExecutionHooks
-            {
+        [BeforeSuite]
+        public void BeforeSuite() {
+            // Code for before suite
+        }
 
-                [BeforeSuite]
-                public void BeforeSuite() {
-                    // Code for before suite
-                }
+        [AfterSuite]
+        public void AfterSuite() {
+            // Code for after suite
+        }
 
-                [AfterSuite]
-                public void AfterSuite() {
-                    // Code for after suite
-                }
+        [BeforeSpec]
+        public void BeforeSpec() {
+            // Code for before spec
+        }
 
-                [BeforeSpec]
-                public void BeforeSpec() {
-                    // Code for before spec
-                }
+        [AfterSpec]
+        public void AfterSpec() {
+            // Code for after spec
+        }
 
-                [AfterSpec]
-                public void AfterSpec() {
-                    // Code for after spec
-                }
+        [BeforeScenario]
+        public void BeforeScenario() {
+            // Code for before scenario
+        }
 
-                [BeforeScenario]
-                public void BeforeScenario() {
-                    // Code for before scenario
-                }
+        [AfterScenario]
+        public void AfterScenario() {
+            // Code for after scenario
+        }
 
-                [AfterScenario]
-                public void AfterScenario() {
-                    // Code for after scenario
-                }
+        [BeforeStep]
+        public void BeforeStep() {
+            // Code for before step
+        }
 
-                [BeforeStep]
-                public void BeforeStep() {
-                    // Code for before step
-                }
+        [AfterStep]
+        public void AfterStep() {
+            // Code for after step
+        }
 
-                [AfterStep]
-                public void AfterStep() {
-                    // Code for after step
-                }
+    }
 
-            }
+.. cssclass:: dynamic-content java
 
-    .. tab:: Java
+Java
+^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    public class ExecutionHooks {
 
-            public class ExecutionHooks {
+        @BeforeSuite
+        public void BeforeSuite() {
+            // Code for before suite
+        }
 
-                @BeforeSuite
-                public void BeforeSuite() {
-                    // Code for before suite
-                }
+        @AfterSuite
+        public void AfterSuite() {
+            // Code for after suite
+        }
 
-                @AfterSuite
-                public void AfterSuite() {
-                    // Code for after suite
-                }
+        @BeforeSpec
+        public void BeforeSpec() {
+            // Code for before spec
+        }
 
-                @BeforeSpec
-                public void BeforeSpec() {
-                    // Code for before spec
-                }
+        @AfterSpec
+        public void AfterSpec() {
+            // Code for after spec
+        }
 
-                @AfterSpec
-                public void AfterSpec() {
-                    // Code for after spec
-                }
+        @BeforeScenario
+        public void BeforeScenario() {
+            // Code for before scenario
+        }
 
-                @BeforeScenario
-                public void BeforeScenario() {
-                    // Code for before scenario
-                }
+        @AfterScenario
+        public void AfterScenario() {
+            // Code for after scenario
+        }
 
-                @AfterScenario
-                public void AfterScenario() {
-                    // Code for after scenario
-                }
+        @BeforeStep
+        public void BeforeStep() {
+            // Code for before step
+        }
 
-                @BeforeStep
-                public void BeforeStep() {
-                    // Code for before step
-                }
+        @AfterStep
+        public void AfterStep() {
+            // Code for after step
+        }
 
-                @AfterStep
-                public void AfterStep() {
-                    // Code for after step
-                }
+    }
 
-            }
+.. cssclass:: dynamic-content javascript
 
-    .. tab:: JavaScript
+JavaScript
+^^^^^^^^^^
+.. code-block:: javascript
 
-        .. code-block:: javascript
+    beforeSuite(fn, [opts]) {
+        // Code for before suite
+    }
 
-            beforeSuite(fn, [opts]) {
-                // Code for before suite
-            }
+    beforeSpec(fn, [opts]) {
+        // Code for before spec
+    }
 
-            beforeSpec(fn, [opts]) {
-                // Code for before spec
-            }
+    beforeScenario(fn, [opts]) {
+        // Code for before scenario
+    }
 
-            beforeScenario(fn, [opts]) {
-                // Code for before scenario
-            }
+    beforeStep(fn, [opts]) {
+        // Code for before step
+    }
 
-            beforeStep(fn, [opts]) {
-                // Code for before step
-            }
+    afterSuite(fn, [opts]) {
+        // Code for after suite
+    }
 
-            afterSuite(fn, [opts]) {
-                // Code for after suite
-            }
+    afterSpec(fn, [opts]) {
+        // Code for after spec
+    }
 
-            afterSpec(fn, [opts]) {
-                // Code for after spec
-            }
+    afterScenario(fn, [opts]) {
+        // Code for after scenario
+    }
 
-            afterScenario(fn, [opts]) {
-                // Code for after scenario
-            }
+    afterStep(fn, [opts]) {
+        // Code for after step
+    }
 
-            afterStep(fn, [opts]) {
-                // Code for after step
-            }
+.. cssclass:: dynamic-content python
 
-    .. tab:: Python
+Python
+^^^^^^
+.. code-block:: python
 
-        .. code-block:: python
+    from getgauge.python import before_step, after_step, before_scenario, after_scenario, before_spec, after_spec, before_suite, after_suite
 
-            from getgauge.python import before_step, after_step, before_scenario, after_scenario, before_spec, after_spec, before_suite, after_suite
+    @before_step
+    def before_step_hook():
+        print("before step hook")
 
-            @before_step
-            def before_step_hook():
-                print("before step hook")
+    @after_step
+    def after_step_hook():
+        print("after step hook")
 
-            @after_step
-            def after_step_hook():
-                print("after step hook")
+    @before_scenario
+    def before_scenario_hook():
+        print("before scenario hook")
 
-            @before_scenario
-            def before_scenario_hook():
-                print("before scenario hook")
+    @after_scenario
+    def after_scenario_hook():
+        print("after scenario hook")
 
-            @after_scenario
-            def after_scenario_hook():
-                print("after scenario hook")
+    @before_spec
+    def before_spec_hook():
+        print("before spec hook")
 
-            @before_spec
-            def before_spec_hook():
-                print("before spec hook")
+    @after_spec
+    def after_spec_hook():
+        print("after spec hook")
 
-            @after_spec
-            def after_spec_hook():
-                print("after spec hook")
+    @before_suite
+    def before_suite_hook():
+        print("before suite hook")
 
-            @before_suite
-            def before_suite_hook():
-                print("before suite hook")
+    @after_suite
+    def after_suite_hook():
+        print("after suite hook")
 
-            @after_suite
-            def after_suite_hook():
-                print("after suite hook")
+.. cssclass:: dynamic-content ruby
 
-    .. tab:: Ruby
+Ruby
+^^^^
+.. code-block:: ruby
 
-        .. code-block:: ruby
+    before_suite do
+        # Code for before suite
+    end
 
-            before_suite do
-                # Code for before suite
-            end
+    after_suite do
+        # Code for after suite
+    end
 
-            after_suite do
-                # Code for after suite
-            end
+    before_spec do
+        # Code for before spec
+    end
 
-            before_spec do
-                # Code for before spec
-            end
+    after_spec do
+        # Code for after spec
+    end
 
-            after_spec do
-                # Code for after spec
-            end
+    before_scenario do
+        # Code for before scenario
+    end
 
-            before_scenario do
-                # Code for before scenario
-            end
+    after_scenario do
+        # Code for after scenario
+    end
 
-            after_scenario do
-                # Code for after scenario
-            end
+    before_step do
+        # Code for before step
+    end
 
-            before_step do
-                # Code for before step
-            end
-
-            after_step do
-                # Code for after step
-            end
+    after_step do
+        # Code for after step
+    end
 
 Current Execution Context in the Hook
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To get additional information about the current specification and scenario and step execution, an additional parameter called  ``ExecutionContext`` can be added to the :ref:`hooks <execution_hooks>` method.
 
-.. tab-container:: languages
+.. cssclass:: dynamic-content csharp
 
-    .. tab:: CSharp
+CSharp
+^^^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    using Gauge.CSharp.Lib;
+    using static Gauge.CSharp.Lib.ExecutionContext;
 
-            using Gauge.CSharp.Lib;
-            using static Gauge.CSharp.Lib.ExecutionContext;
+    [BeforeScenario]
+    public void BeforeScenario(ExecutionContext context)
+    {
+        String scenarioName = context.CurrentScenario.Name;
+        //Code for before scenario
+    }
 
-            [BeforeScenario]
-            public void BeforeScenario(ExecutionContext context)
-            {
-                String scenarioName = context.CurrentScenario.Name;
-                //Code for before scenario
-            }
+    [AfterSpec]
+    public void AfterSpec(ExecutionContext context)
+    {
+        Specification specification = context.CurrentSpecification;
+        //Code for after spec
+    }
 
-            [AfterSpec]
-            public void AfterSpec(ExecutionContext context)
-            {
-                Specification specification = context.CurrentSpecification;
-                //Code for after spec
-            }
+.. cssclass:: dynamic-content java
 
-    .. tab:: Java
+Java
+^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    @BeforeScenario
+    public void loginUser(ExecutionContext context) {
+        String scenarioName = context.getCurrentScenario().getName();
+        // Code for before scenario
+    }
 
-            @BeforeScenario
-            public void loginUser(ExecutionContext context) {
-                String scenarioName = context.getCurrentScenario().getName();
-                // Code for before scenario
-            }
+    @AfterSpec
+    public void performAfterSpec(ExecutionContext context) {
+    Specification currentSpecification = context.getCurrentSpecification();
+        //Code for after spec
+    }
 
-            @AfterSpec
-            public void performAfterSpec(ExecutionContext context) {
-            Specification currentSpecification = context.getCurrentSpecification();
-                //Code for after spec
-            }
+.. cssclass:: dynamic-content javascript
 
-    .. tab:: JavaScript
+JavaScript
+^^^^^^^^^^
+.. code-block:: javascript
 
-        .. code-block:: javascript
+    beforeScenario(function (context) {
+        var scenario = context.currentScenario
+        // Code for before scenario
+    });
 
-            beforeScenario(function (context) {
-                var scenario = context.currentScenario
-                // Code for before scenario
-            });
+    afterSpec(function (context) {
+        var specification = context.currentSpec
+        //Code for after spec
+    });
 
-            afterSpec(function (context) {
-                var specification = context.currentSpec
-                //Code for after spec
-            });
+.. cssclass:: dynamic-content python
 
-    .. tab:: Python
+Python
+^^^^^^
+.. code-block:: python
 
-        .. code-block:: python
+    from getgauge.python import before_step, after_scenario
 
-            from getgauge.python import before_step, after_scenario
+    @before_step
+    def before_step_hook(context):
+        print(context)
 
-            @before_step
-            def before_step_hook(context):
-                print(context)
+    @after_spec
+    def after_spec_hook(context):
+        print(context)
 
-            @after_spec
-            def after_spec_hook(context):
-                print(context)
+.. cssclass:: dynamic-content ruby
 
-    .. tab:: Ruby
+Ruby
+^^^^
+.. code-block:: ruby
 
-        .. code-block:: ruby
+    before_spec do |execution_info|
+        puts execution_info.inspect
+    end
 
-            before_spec do |execution_info|
-                puts execution_info.inspect
-            end
-
-            after_spec do |execution_info|
-                puts execution_info.inspect
-            end
+    after_spec do |execution_info|
+        puts execution_info.inspect
+    end
 
 
 .. _filtering_hooks_with_tags:
@@ -1515,95 +1579,105 @@ This ensures that the hook only runs on scenarios and specifications that have t
 .. note:: 
    Tags cannot be specified on @BeforeSuite and @AfterSuite hooks.
 
-.. tab-container::
+.. cssclass:: dynamic-content csharp
 
-    .. tab:: CSharp
+CSharp
+^^^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    // A before spec hook that runs when tag1 and tag2
+    // is present in the current scenario and spec.
+    [BeforeSpec("tag1, tag2")]
+    public void LoginUser() {
+        // Code for before scenario
+    }
 
-            // A before spec hook that runs when tag1 and tag2
-            // is present in the current scenario and spec.
-            [BeforeSpec("tag1, tag2")]
-            public void LoginUser() {
-                // Code for before scenario
-            }
+    // A after step hook runs when tag1 or tag2
+    // is present in the current scenario and spec.
+    // Default tagAggregation value is Operator.AND.
+    [AfterStep("tag1", "tag2")]
+    [TagAggregationBehaviour(TagAggregation.Or)]
+    public void PerformAfterStep() {
+        // Code for after step
+    }
 
-            // A after step hook runs when tag1 or tag2
-            // is present in the current scenario and spec.
-            // Default tagAggregation value is Operator.AND.
-            [AfterStep("tag1", "tag2")]
-            [TagAggregationBehaviour(TagAggregation.Or)]
-            public void PerformAfterStep() {
-                // Code for after step
-            }
-    .. tab:: Java
+.. cssclass:: dynamic-content java
 
-        .. code-block:: java
+Java
+^^^^
+.. code-block:: java
 
-            // A before spec hook that runs when tag1 and tag2
-            // is present in the current scenario and spec.
-            @BeforeSpec(tags = {"tag1, tag2"})
-            public void loginUser() {
-                // Code forbefore scenario
-            }
+    // A before spec hook that runs when tag1 and tag2
+    // is present in the current scenario and spec.
+    @BeforeSpec(tags = {"tag1, tag2"})
+    public void loginUser() {
+        // Code forbefore scenario
+    }
 
-            // A after step hook runs when tag1 or tag2
-            // is present in the currentscenario and spec.
-            // Default tagAggregation value is Operator.AND.
-            @AfterStep(tags = {"tag1", "tag2"}, tagAggregation = Operator.OR)
-            public void performAfterStep() {
-                // Code for after step
-            }
+    // A after step hook runs when tag1 or tag2
+    // is present in the currentscenario and spec.
+    // Default tagAggregation value is Operator.AND.
+    @AfterStep(tags = {"tag1", "tag2"}, tagAggregation = Operator.OR)
+    public void performAfterStep() {
+        // Code for after step
+    }
 
-    .. tab:: JavaScript
+.. cssclass:: dynamic-content javascript
 
-        .. code-block:: javascript
+JavaScript
+^^^^^^^^^^
+.. code-block:: javascript
 
-            // A before spec hook that runs when tag1 and tag2
-            // is present in the current scenario and spec.
-            beforeSpec(function () {
-                //implementation
-            }, { tags: [ "tag1", "tag2" ]});
+    // A before spec hook that runs when tag1 and tag2
+    // is present in the current scenario and spec.
+    beforeSpec(function () {
+        //implementation
+    }, { tags: [ "tag1", "tag2" ]});
 
-            // A after step hook runs when tag1 or tag2
-            // is present in the currentscenario and spec.
-            // Default tagAggregation value is Operator.AND.
-            afterStep(function () {
-                //implementation
-            }, { tags: [ "tag1", "tag2" ]});
+    // A after step hook runs when tag1 or tag2
+    // is present in the currentscenario and spec.
+    // Default tagAggregation value is Operator.AND.
+    afterStep(function () {
+        //implementation
+    }, { tags: [ "tag1", "tag2" ]});
 
-    .. tab:: Python
+.. cssclass:: dynamic-content python
 
-        .. code-block:: python
+Python
+^^^^^^
+.. code-block:: python
 
-            // A before spec hook that runs when tag1 and tag2
-            // is present in the current scenario and spec.
-            @before_spec("<tag1> and <tag2>")
-            def before_spec_hook():
-                print("before spec hook with tag")
+    // A before spec hook that runs when tag1 and tag2
+    // is present in the current scenario and spec.
+    @before_spec("<tag1> and <tag2>")
+    def before_spec_hook():
+        print("before spec hook with tag")
 
-            // A after step hook runs when tag1 or tag2
-            // is present in the currentscenario and spec.
-            // Default tagAggregation value is Operator.AND.
-            @after_step("<tag1> and <tag2>")
-            def after_step_hook():
-                print("after step hook with tag")
-    .. tab:: Ruby
+    // A after step hook runs when tag1 or tag2
+    // is present in the currentscenario and spec.
+    // Default tagAggregation value is Operator.AND.
+    @after_step("<tag1> and <tag2>")
+    def after_step_hook():
+        print("after step hook with tag")
 
-        .. code-block:: ruby
+.. cssclass:: dynamic-content ruby
 
-            # A before spec hook that runs when
-            # tag1 and tag2 is present in the current scenario and spec.
-            before_spec({tags: ['tag2', 'tag1']}) do
-                # Code for before scenario
-            end
+Ruby
+^^^^
+.. code-block:: ruby
 
-            # A after step hook runs when tag1 or tag2
-            # is present in the current scenario and spec.
-            # Default tagAggregation value is Operator.AND.
-            after_step({tags: ['tag2', 'tag1'], operator: 'OR'}) do
-                # Code for after step
-            end
+    # A before spec hook that runs when
+    # tag1 and tag2 is present in the current scenario and spec.
+    before_spec({tags: ['tag2', 'tag1']}) do
+        # Code for before scenario
+    end
+
+    # A after step hook runs when tag1 or tag2
+    # is present in the current scenario and spec.
+    # Default tagAggregation value is Operator.AND.
+    after_step({tags: ['tag2', 'tag1'], operator: 'OR'}) do
+        # Code for after step
+    end
 
 Data Store
 ----------
@@ -1616,75 +1690,83 @@ ScenarioStore
 This DataStore keeps values added to memory during the lifecycle of the scenario execution. 
 Values are cleared after every scenario is executed.
 
-.. tab-container::
+.. cssclass:: dynamic-content csharp
 
-    .. tab:: CSharp
+CSharp
+^^^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    using Gauge.CSharp.Lib;
 
-            using Gauge.CSharp.Lib;
+    // Adding value
+    var scenarioStore = DataStoreFactory.ScenarioDataStore;
+    scenarioStore.Add("element-id", "455678");
 
-            // Adding value
-            var scenarioStore = DataStoreFactory.ScenarioDataStore;
-            scenarioStore.Add("element-id", "455678");
+    // Fetching Value
+    var elementId = (string) scenarioStore.Get("element-id");
 
-            // Fetching Value
-            var elementId = (string) scenarioStore.Get("element-id");
+    // avoid type cast by using generic Get
+    var anotherElementId = scenarioStore.Get("element-id");
 
-            // avoid type cast by using generic Get
-            var anotherElementId = scenarioStore.Get("element-id");
+.. cssclass:: dynamic-content java
 
-    .. tab:: Java
+Java
+^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    import com.thoughtworks.gauge.datastore.*;
 
-            import com.thoughtworks.gauge.datastore.*;
+    // Adding value
+    DataStore scenarioStore = DataStoreFactory.getScenarioDataStore();
+    scenarioStore.put("element-id", "455678");
 
-            // Adding value
-            DataStore scenarioStore = DataStoreFactory.getScenarioDataStore();
-            scenarioStore.put("element-id", "455678");
+    // Fetching Value
+    String elementId = (String) scenarioStore.get("element-id");
 
-            // Fetching Value
-            String elementId = (String) scenarioStore.get("element-id");
+.. cssclass:: dynamic-content javascript
 
-    .. tab:: JavaScript
+JavaScript
+^^^^^^^^^^
+.. code-block:: javascript
 
-        .. code-block:: javascript
+    // Adding value
+    gauge.dataStore.scenarioStore.put(key, value);
 
-            // Adding value
-            gauge.dataStore.scenarioStore.put(key, value);
+    // Fetching Value
+    gauge.dataStore.scenarioStore.get(key);
 
-            // Fetching Value
-            gauge.dataStore.scenarioStore.get(key);
+.. cssclass:: dynamic-content python
 
-    .. tab:: Python
+Python
+^^^^^^
+.. code-block:: python
 
-        .. code-block:: python
+    # Import Package
+    from getgauge.python import data_store
 
-            # Import Package
-            from getgauge.python import data_store
-            
-            # Adding value
-            data_store.scenario["key"] = value
-            # OR
-            data_store.scenario.key = value
+    # Adding value
+    data_store.scenario["key"] = value
+    # OR
+    data_store.scenario.key = value
 
-            # Fetching Value
-            data_store.scenario["key"]
-            # OR
-            data_store.scenario.key
+    # Fetching Value
+    data_store.scenario["key"]
+    # OR
+    data_store.scenario.key
 
-    .. tab:: Ruby
+.. cssclass:: dynamic-content ruby
 
-        .. code-block:: ruby
+Ruby
+^^^^
+.. code-block:: ruby
 
-            // Adding value
-            scenario_store = DataStoreFactory.scenario_datastore;
-            scenario_store.put("element-id", "455678");
+    // Adding value
+    scenario_store = DataStoreFactory.scenario_datastore;
+    scenario_store.put("element-id", "455678");
 
 
-            // Fetching Value
-            element_id = scenario_store.get("element-id");
+    // Fetching Value
+    element_id = scenario_store.get("element-id");
 
 
 SpecStore
@@ -1693,75 +1775,83 @@ This DataStore keeps values added to memory during the lifecycle of the specific
 
 Values are cleared after every specification is executed.
 
-.. tab-container::
+.. cssclass:: dynamic-content csharp
 
-    .. tab:: CSharp
+CSharp
+^^^^^^^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    using Gauge.CSharp.Lib;
 
-            using Gauge.CSharp.Lib;
+    // Adding value
+    var specStore = DataStoreFactory.SpecDataStore;
+    specStore.Add("element-id", "455678");
 
-            // Adding value
-            var specStore = DataStoreFactory.SpecDataStore;
-            specStore.Add("element-id", "455678");
+    // Fetching Value
+    var elementId = (string) specStore.Get("element-id");
 
-            // Fetching Value
-            var elementId = (string) specStore.Get("element-id");
+    // avoid type cast by using generic Get
+    var anotherElementId = specStore.Get("element-id");
 
-            // avoid type cast by using generic Get
-            var anotherElementId = specStore.Get("element-id");
+.. cssclass:: dynamic-content java
 
-    .. tab:: Java
+Java
+^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    // Import Package
+    import com.thoughtworks.gauge.datastore.*;
 
-            // Import Package 
-            import com.thoughtworks.gauge.datastore.*;
+    // Adding value
+    DataStore specStore = DataStoreFactory.getSpecDataStore();
+    specStore.put("key", "455678");
 
-            // Adding value 
-            DataStore specStore = DataStoreFactory.getSpecDataStore();
-            specStore.put("key", "455678");
+    // Fetching value
+    String elementId = (String) specStore.get("key");
 
-            // Fetching value 
-            String elementId = (String) specStore.get("key");
+.. cssclass:: dynamic-content javascript
 
-    .. tab:: JavaScript
+JavaScript
+^^^^^^^^^^
+.. code-block:: javascript
 
-        .. code-block:: javascript
+    // Adding value
+    DataStore specStore = gauge.dataStore.specStore.put(key, value);
 
-            // Adding value 
-            DataStore specStore = gauge.dataStore.specStore.put(key, value);
+    // Fetching value
+    DataStore specStore = gauge.dataStore.specStore.get(key);
 
-            // Fetching value 
-            DataStore specStore = gauge.dataStore.specStore.get(key);
+.. cssclass:: dynamic-content python
 
-    .. tab:: Python
+Python
+^^^^^^
+.. code-block:: python
 
-        .. code-block:: python
+    # Import Package
+    from getgauge.python import data_store
 
-            # Import Package
-            from getgauge.python import data_store
+    # Adding value 
+    data_store.spec["key"] = value
+    # OR
+    data_store.spec.key = value
 
-            # Adding value 
-            data_store.spec["key"] = value
-            # OR
-            data_store.spec.key = value
+    # Fetching value
+    data_store.spec["key"]
+    # OR
+    data_store.spec.key
 
-            # Fetching value 
-            data_store.spec["key"]
-            # OR
-            data_store.spec.key
+.. cssclass:: dynamic-content ruby
 
-    .. tab:: Ruby
+Ruby
+^^^^
+.. code-block:: ruby
 
-        .. code-block:: ruby
+    // Adding value
+    spec_store = DataStoreFactory.spec_datastore;
+    spec_store.put("element-id", "455678");
 
-            // Adding value
-            spec_store = DataStoreFactory.spec_datastore;
-            spec_store.put("element-id", "455678");
-
-            // Fetching Value
-            element_id = spec_store.get("element-id");
+    // Fetching Value
+    element_id = spec_store.get("element-id");
 
 SuiteStore
 ^^^^^^^^^^
@@ -1773,78 +1863,86 @@ Values are cleared after the entire test suite is executed.
    It is not recommended to use ``SuiteStore`` when executing specs in parallel.
    The values are not retained between parallel streams of execution.
 
-.. tab-container::
+.. cssclass:: dynamic-content csharp
 
-    .. tab:: CSharp
+CSharp
+^^^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    using Gauge.CSharp.Lib;
 
-            using Gauge.CSharp.Lib;
+    // Adding value 
+    var suiteStore = DataStoreFactory.SuiteDataStore;
+    suiteStore.Add("element-id", "455678");
 
-            // Adding value 
-            var suiteStore = DataStoreFactory.SuiteDataStore;
-            suiteStore.Add("element-id", "455678");
+    // Fetching Value
+    var suiteStore = DataStoreFactory.SuiteDataStore; 
+    var elementId = (string) suiteStore.Get("element-id");
 
-            // Fetching Value 
-            var suiteStore = DataStoreFactory.SuiteDataStore; 
-            var elementId = (string) suiteStore.Get("element-id");
+    // Avoid type cast by using generic Get 
+    var anotherElementId = suiteStore.Get("element-id");
 
-            // Avoid type cast by using generic Get 
-            var anotherElementId = suiteStore.Get("element-id");
+.. cssclass:: dynamic-content java
 
-    .. tab:: Java
+Java
+^^^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    // Import Package
+    import com.thoughtworks.gauge.datastore.*;
 
-            // Import Package 
-            import com.thoughtworks.gauge.datastore.*;
+    // Adding value
+    DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
+    suiteStore.put("element-id", "455678");
 
-            // Adding value
-            DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
-            suiteStore.put("element-id", "455678");
+    // Fetching value
+    DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
+    String elementId = (String) suiteStore.get("element-id");
 
-            // Fetching value
-            DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
-            String elementId = (String) suiteStore.get("element-id");
+.. cssclass:: dynamic-content javascript
 
-    .. tab:: JavaScript
+JavaScript
+^^^^^^^^^^
+.. code-block:: javascript
 
-        .. code-block:: javascript
+    // Adding value 
+    DataStore suiteStore = gauge.dataStore.suiteStore.put(key, value);
 
-            // Adding value 
-            DataStore suiteStore = gauge.dataStore.suiteStore.put(key, value);
-            
-            // Fetching value 
-            DataStore specStore = gauge.dataStore.suiteStore.get(key);
+    // Fetching value
+    DataStore specStore = gauge.dataStore.suiteStore.get(key);
 
-    .. tab:: Python
+.. cssclass:: dynamic-content python
 
-        .. code-block:: python
+Python
+^^^^^^
+.. code-block:: python
 
-            # Import Package 
-            from getgauge.python import data_store
-            
-            # Adding value 
-            data_store.suite["key"] = value
-            # OR
-            data_store.suite.key = value
+    # Import Package 
+    from getgauge.python import data_store
 
-            # Fetching value 
-            data_store.suite["key"]
-            # OR
-            data_store.suite.key
+    # Adding value 
+    data_store.suite["key"] = value
+    # OR
+    data_store.suite.key = value
 
-    .. tab:: Ruby
+    # Fetching value
+    data_store.suite["key"]
+    # OR
+    data_store.suite.key
 
-        .. code-block:: ruby
+.. cssclass:: dynamic-content ruby
 
-            // Adding value
-            suite_store = DataStoreFactory.suite_datastore;
-            suite_store.put("element-id", "455678");
+Ruby
+^^^^
+.. code-block:: ruby
 
-            // Fetching Value
-            suite_store = DataStoreFactory.suite_datastore;
-            element_id = suite_store.get("element-id");
+    // Adding value
+    suite_store = DataStoreFactory.suite_datastore;
+    suite_store.put("element-id", "455678");
+
+    // Fetching Value
+    suite_store = DataStoreFactory.suite_datastore;
+    element_id = suite_store.get("element-id");
 
 Taking Custom Screenshots
 -------------------------
@@ -1853,70 +1951,78 @@ When Gauge takes a screenshot, Gauge captures the displayed screen. This is the 
 If you want to customize this behavior and enable Gauge to take screenshots of your choice, (for example, you might want a screenshot of only a part of the screen by using webdriver)
 you can use appropriate APIs in the step implementation of the language runner used while creating the Gauge project.
 
-.. tab-container::
+.. cssclass:: dynamic-content csharp
 
-    .. tab:: CSharp
+CSharp
+^^^^^^
 
-        .. code-block:: java
+.. code-block:: java
 
-            //Using Webdriver public
-            class CustomScreenGrabber : ICustomScreenshotGrabber {
+    //Using Webdriver public
+    class CustomScreenGrabber : ICustomScreenshotGrabber {
 
-                // Return a screenshot byte array
-                public byte[] TakeScreenshot() {
-                    var driver = DriverFactory.getDriver();
-                    return ((ITakesScreenshot) driver).GetScreenshot().AsByteArray;
-                }
-            }
+        // Return a screenshot byte array
+        public byte[] TakeScreenshot() {
+            var driver = DriverFactory.getDriver();
+            return ((ITakesScreenshot) driver).GetScreenshot().AsByteArray;
+        }
+    }
 
-    .. tab:: Java
+.. cssclass:: dynamic-content java
 
-        .. code-block:: java
+Java
+^^^^^^
+.. code-block:: java
 
-            // Using Webdriver public class
-            CustomScreenGrabber implements ICustomScreenshotGrabber {
-                // Return a screenshot byte array
-                public byte[] takeScreenshot() {
-                    WebDriver driver = DriverFactory.getDriver();
-                    return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-                }
+    // Using Webdriver public class
+    CustomScreenGrabber implements ICustomScreenshotGrabber {
+        // Return a screenshot byte array
+        public byte[] takeScreenshot() {
+            WebDriver driver = DriverFactory.getDriver();
+            return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+        }
+    }
 
-            }
+.. cssclass:: dynamic-content javascript
 
-    .. tab:: JavaScript
+JavaScript
+^^^^^^^^^^
+.. code-block:: javascript
 
-        .. code-block:: javascript
-
-            // Using Taiko
-            // Return a screenshot byte array
-            gauge.screenshotFn = async function() {
-                return await screenshot({ encoding: 'base64' });
-            };
+    // Using Taiko
+    // Return a screenshot byte array
+    gauge.screenshotFn = async function() {
+        return await screenshot({ encoding: 'base64' });
+    };
 
 
-    .. tab:: Python
+.. cssclass:: dynamic-content python
 
-        .. code-block:: python
+Python
+^^^^^^
+.. code-block:: python
 
-            # Using Webdriver
-            from getgauge.python import screenshot
-            @custom_screen_grabber
-            # Return a screenshot byte array
-            def take_screenshot():
-                return Driver.driver.get_screenshot_as_png()
+    # Using Webdriver
+    from getgauge.python import screenshot
+    @custom_screen_grabber
+    # Return a screenshot byte array
+    def take_screenshot():
+        return Driver.driver.get_screenshot_as_png()
 
-    .. tab:: Ruby
+.. cssclass:: dynamic-content ruby
 
-        .. code-block:: ruby
+Ruby
+^^^^^^
+.. code-block:: ruby
 
-            # Using Webdriver
-            Gauge.configure do |config|
-                # Return a screenshot byte array
-                config.screengrabber = -> {
-                driver.save_screenshot('/tmp/screenshot.png')
-                return File.binread("/tmp/screenshot.png")
-                }
-            end
+    # Using Webdriver
+    Gauge.configure do |config|
+        # Return a screenshot byte array
+        config.screengrabber = -> {
+        driver.save_screenshot('/tmp/screenshot.png')
+        return File.binread("/tmp/screenshot.png")
+        }
+    end
 
 .. note::
    If multiple custom ScreenGrabber implementations are found in classpath then gauge will pick one randomly to capture the screen.
@@ -1930,45 +2036,53 @@ Custom messages or data can be added to execution reports by using APIs in the s
 
 These messages are displayed after the steps in the execution reports.
 
-.. tab-container::
+.. cssclass:: dynamic-content csharp
 
-    .. tab:: CSharp
+CSharp
+^^^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    GaugeMessages.WriteMessage("Custom message for report");
+    var id = "4567";
+    GaugeMessages.WriteMessage("User id is {0}", id);
 
-            GaugeMessages.WriteMessage("Custom message for report");
-            var id = "4567";
-            GaugeMessages.WriteMessage("User id is {0}", id);
+.. cssclass:: dynamic-content java
 
-    .. tab:: Java
+Java
+^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    Gauge.writeMessage("Custom message for report");
+    String id = "4567";
+    Gauge.writeMessage("User id is %s", id);
 
-            Gauge.writeMessage("Custom message for report");
-            String id = "4567";
-            Gauge.writeMessage("User id is %s", id);
+.. cssclass:: dynamic-content javascript
 
-    .. tab:: JavaScript
+JavaScript
+^^^^^^^^^^
+.. code-block:: javascript
 
-        .. code-block:: javascript
+    gauge.message("Custom message for report");
 
-            gauge.message("Custom message for report");
+.. cssclass:: dynamic-content python
 
-    .. tab:: Python
+Python
+^^^^^^
+.. code-block:: python
 
-        .. code-block:: python
+    from getgauge.python import Messages
 
-            from getgauge.python import Messages
+    Messages.write_message("Custom message for report")
 
-            Messages.write_message("Custom message for report")
+.. cssclass:: dynamic-content ruby
 
-    .. tab:: Ruby
+Ruby
+^^^^^^
+.. code-block:: ruby
 
-        .. code-block:: ruby
-
-            Gauge.write_message("Custom message for report")
-            id = "4567"
-            Gauge.write_message("User id is" + id)
+    Gauge.write_message("Custom message for report")
+    id = "4567"
+    Gauge.write_message("User id is" + id)
 
 .. _reports_custom_screenshots:
 
@@ -1982,39 +2096,47 @@ The APIs can be used in step implementations or hooks.
 
 These screenshots are displayed after steps in the execution reports.
 
-.. tab-container::
+.. cssclass:: dynamic-content csharp
 
-    .. tab:: CSharp
+CSharp
+^^^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    GaugeScreenshots.Capture();
 
-            GaugeScreenshots.Capture();
+.. cssclass:: dynamic-content java
 
-    .. tab:: Java
+Java
+^^^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    Gauge.captureScreenshot();
 
-            Gauge.captureScreenshot();
+.. cssclass:: dynamic-content javascript
 
-    .. tab:: JavaScript
+JavaScript
+^^^^^^^^^^
+.. code-block:: javascript
 
-        .. code-block:: javascript
+    gauge.screenshot();
 
-            gauge.screenshot();
+.. cssclass:: dynamic-content python
 
-    .. tab:: Python
+Python
+^^^^^^
+.. code-block:: python
 
-        .. code-block:: python
+    from getgauge.python import Screenshots
 
-            from getgauge.python import Screenshots
+    Screenshots.capture_screenshot()
 
-            Screenshots.capture_screenshot()
+.. cssclass:: dynamic-content ruby
 
-    .. tab:: Ruby
+Ruby
+^^^^^^
+.. code-block:: ruby
 
-        .. code-block:: ruby
-
-            Gauge.capture
+    Gauge.capture
 
 
 Continue on Failure
@@ -2028,73 +2150,81 @@ To make a step implementation continue on failure, the step implementation needs
 
 Each language runner uses a different syntax, depending on the language idioms, to allow a step implementation to be marked to continue on failure.
 
-.. tab-container::
+.. cssclass:: dynamic-content csharp
 
-    .. tab:: CSharp
+CSharp
+^^^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    // The ``[ContinueOnFailure]`` attribute tells Gauge to continue executing others
+    // steps even if the current step fails.
 
-            // The ``[ContinueOnFailure]`` attribute tells Gauge to continue executing others
-            // steps even if the current step fails.
+    public class StepImplementation {
+        [ContinueOnFailure]
+        [Step("Say <greeting> to <product name>")]
+        public void HelloWorld(string greeting, string name) {
+            // If there is an error here, Gauge will still execute next steps
+        }
 
-            public class StepImplementation {
-                [ContinueOnFailure]
-                [Step("Say <greeting> to <product name>")]
-                public void HelloWorld(string greeting, string name) {
-                    // If there is an error here, Gauge will still execute next steps
-                }
+    }
 
-            }
+.. cssclass:: dynamic-content java
 
-    .. tab:: Java
+Java
+^^^^^^
+.. code-block:: java
 
-        .. code-block:: java
+    // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
+    // steps even if the current step fails.
 
-            // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
-            // steps even if the current step fails.
+    public class StepImplementation {
+        @ContinueOnFailure
+        @Step("Say <greeting> to <product name>")
+        public void helloWorld(String greeting, String name) {
+            // If there is an error here, Gauge will still execute next steps
+        }
 
-            public class StepImplementation {
-                @ContinueOnFailure
-                @Step("Say <greeting> to <product name>")
-                public void helloWorld(String greeting, String name) {
-                    // If there is an error here, Gauge will still execute next steps
-                }
+    }
 
-            }
+.. cssclass:: dynamic-content javascript
 
-    .. tab:: JavaScript
+JavaScript
+^^^^^^^^^^
+.. code-block:: javascript
 
-        .. code-block:: javascript
+    // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
+    // steps even if the current step fails.
 
-            // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
-            // steps even if the current step fails.
+    gauge.step("Say <greeting> to <product>.", { continueOnFailure: true}, function (greeting,product) {
+    });
 
-            gauge.step("Say <greeting> to <product>.", { continueOnFailure: true}, function (greeting,product) {
-            });
+.. cssclass:: dynamic-content python
 
-    .. tab:: Python
+Python
+^^^^^^
+.. code-block:: python
 
-        .. code-block:: python
+    // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
+    // steps even if the current step fails.
 
-            // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
-            // steps even if the current step fails.
+    @continue_on_failure([RuntimeError])
+    @step("Say <greeting> to <product>")
+    def step2(greeting,product):
+        pass
 
-            @continue_on_failure([RuntimeError])
-            @step("Say <greeting> to <product>")
-            def step2(greeting,product):
-                pass
+.. cssclass:: dynamic-content ruby
 
-    .. tab:: Ruby
+Ruby
+^^^^^^
+.. code-block:: ruby
 
-        .. code-block:: ruby
+    # The ``:continue_on_failure => true`` keyword argument
+    # tells Gauge to continue executing other steps even
+    # if the current step fails.
 
-            # The ``:continue_on_failure => true`` keyword argument
-            # tells Gauge to continue executing other steps even
-            # if the current step fails.
-
-            step 'Say <greeting> to <name>', :continue_on_failure => true do |greeting, name|
-                # If there is an error here, Gauge will still execute next steps
-            end
+    step 'Say <greeting> to <name>', :continue_on_failure => true do |greeting, name|
+        # If there is an error here, Gauge will still execute next steps
+    end
 
 ``ContinueOnFailure`` can take an optional parameter to specify the list of error classes on which Gauge would continue to execute further steps in case of failure. 
 Having an optional parameter can be used to control for what type of errors the Gauge execution must continue, instead of just continuing execution for every error. 
@@ -2106,6 +2236,10 @@ This is currently supported only with Java and Python.
 
 If ``ContinueOnFailure`` has no parameters, then the step execution continues by default regardless of the type of error that occurs.
 
+.. cssclass:: dynamic-content java
+
+Java
+^^^^^^
 .. code-block:: java
   :caption: Java
 
@@ -2127,6 +2261,11 @@ If ``ContinueOnFailure`` has no parameters, then the step execution continues by
     // code here
   }
 
+
+.. cssclass:: dynamic-content python
+
+Python
+^^^^^^
 .. code-block:: python
   :caption: Python
 
@@ -2169,10 +2308,12 @@ Regardless of the language plugin used, few common files and directories are cre
 
 The following are the common files and directories in the Gauge project structure:
 
-* env
-* logs
-* specs
-* manifest.json
+.. cssclass:: key-points
+
+    * env
+    * logs
+    * specs
+    * manifest.json
 
 .. code-block:: text
 
@@ -2245,142 +2386,145 @@ When the Gauge project is initialized, depending on the language plugin used, la
 
 The following table shows the project structure for each of the languages when used for creating a Gauge project.
 
-.. tab-container:: languages
+.. cssclass:: dynamic-content csharp
 
-    .. tab:: CSharp
+CSharp
+^^^^^^
+.. code-block:: text
 
-        .. code-block:: text
-
-            ├── foo.csproj
-            ├── foo.sln
-            ├── manifest.json
-            ├── packages.config
-            ├── StepImplementation.cs
-            │
-            ├── env
-            │   └───default
-            │           csharp.properties
-            │
-            ├───packages
-                └───<Nuget Package Binaries>
-            ├───Properties
-            │       AssemblyInfo.cs
-            │
-            └───specs
-                    example.spec
-
-        
-        **packages.config**
-
-        Nuget Package Binaries contains nuget dependencies for Gauge.
-
-        **StepImplementation.cs**
-
-        This file contains the implementations for the sample steps defined in
-        ``example.spec``.
-
-        **csharp.properties**
-
-        | This file defines configurations for CSharp runner plugin.
-        | For more information about language-specific configuration, see :ref:`language_config`.
-
-    .. tab:: Java
-
-        .. code-block:: text
-
-            ├── manifest.json
-            ├── libs
-            └── src
-                └── test
-                    └── java
-                        └── StepImplementation.java
-            ├── env
-                └── default
-                    └── java.properties
-            └───specs
-                example.spec
+    ├── foo.csproj
+    ├── foo.sln
+    ├── manifest.json
+    ├── packages.config
+    ├── StepImplementation.cs
+    │
+    ├── env
+    │   └───default
+    │           csharp.properties
+    │
+    ├───packages
+        └───<Nuget Package Binaries>
+    ├───Properties
+    │       AssemblyInfo.cs
+    │
+    └───specs
+            example.spec
 
 
-        **libs**
+**packages.config**
 
-        This contains the additional java dependencies required for the project.
+Nuget Package Binaries contains nuget dependencies for Gauge.
 
-        **src**
+**StepImplementation.cs**
 
-        This directory contains the classes including step implementations.
+This file contains the implementations for the sample steps defined in
+``example.spec``.
 
-        **java.properties**
+**csharp.properties**
 
-        | This file defines configurations for Java runner plugin.
-        | For more information about language-specific configuration, see :ref:`language_config`.
+| This file defines configurations for CSharp runner plugin.
+| For more information about language-specific configuration, see :ref:`language_config`.
 
-    .. tab:: JavaScript
+.. cssclass:: dynamic-content java
 
-        .. code-block:: text
+Java
+^^^^^^
+.. code-block:: text
 
-            ├── manifest.json
-            └── tests
-                    └── step_implementation.js
-            ├── env
-                └── default
-                    └── js.properties
-            └───specs
-                    example.spec
+    ├── manifest.json
+    ├── libs
+    └── src
+        └── test
+            └── java
+                └── StepImplementation.java
+    ├── env
+        └── default
+            └── java.properties
+    └───specs
+        example.spec
 
-        **tests**
 
-        This directory contains the test code including step implementations.
+**libs**
 
-        **js.properties**
+This contains the additional java dependencies required for the project.
 
-        | This file defines configurations for Javascript runner plugin.
-        | For more information about language-specific configuration, see :ref:`language_config`.
+**src**
 
-    .. tab:: Python
+This directory contains the classes including step implementations.
 
-        .. code-block:: text
+**java.properties**
 
-            ├── manifest.json
-            └── step_impl
-                    └── step_impl.py
-            ├── env
-                └── default
-                    └── python.properties
-            └───specs
-                example.spec
+| This file defines configurations for Java runner plugin.
+| For more information about language-specific configuration, see :ref:`language_config`.
 
-        **step_impl**
+.. cssclass:: dynamic-content javascript
 
-        This directory contains the test code including step implementations.
+JavaScript
+^^^^^^^^^^
+.. code-block:: text
 
-        **python.properties**
+    ├── manifest.json
+    └── tests
+            └── step_implementation.js
+    ├── env
+        └── default
+            └── js.properties
+    └───specs
+            example.spec
 
-        | This file defines configurations for Python runner plugin.
-        | For more information about language-specific configuration, see :ref:`language_config`.
+**tests**
 
-    .. tab:: Ruby
+This directory contains the test code including step implementations.
 
-        .. code-block:: text
+**js.properties**
 
-            ├── manifest.json
-            ├── env
-            │   └── default
-            │       └── ruby.properties
-            └── step_implementations
-                └── step_implementation.rb
-            └───specs
-                    example.spec
+| This file defines configurations for Javascript runner plugin.
+| For more information about language-specific configuration, see :ref:`language_config`.
 
-        **step_implementations directory**
+.. cssclass:: dynamic-content python
 
-        This directory contains all the ``.rb`` files with the test code including step implementations in ruby.
+Python
+^^^^^^
+.. code-block:: text
 
-        **ruby.properties**
+    ├── manifest.json
+    └── step_impl
+            └── step_impl.py
+    ├── env
+        └── default
+            └── python.properties
+    └───specs
+        example.spec
 
-        | This file defines configurations for Ruby runner plugin.
-        | For more information about language-specific configuration, see :ref:`language_config`.
+**step_impl**
 
-Troubleshooting
-===============
+This directory contains the test code including step implementations.
 
-.. include:: errors.rst
+**python.properties**
+
+| This file defines configurations for Python runner plugin.
+| For more information about language-specific configuration, see :ref:`language_config`.
+
+.. cssclass:: dynamic-content ruby
+
+Ruby
+^^^^
+.. code-block:: text
+
+    ├── manifest.json
+    ├── env
+    │   └── default
+    │       └── ruby.properties
+    └── step_implementations
+        └── step_implementation.rb
+    └───specs
+            example.spec
+
+**step_implementations directory**
+
+This directory contains all the ``.rb`` files with the test code including step implementations in ruby.
+
+**ruby.properties**
+
+| This file defines configurations for Ruby runner plugin.
+| For more information about language-specific configuration, see :ref:`language_config`.

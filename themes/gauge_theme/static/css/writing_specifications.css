@@ -1,0 +1,14 @@
+.docs-container ul.key-points {
+    list-style: disc;
+    padding-left: 30px;
+}
+
+.param-syntax-char {
+    background-color: lightgray;
+    display: block;
+    width: 21px;
+    padding: 5px;
+    margin-bottom: 5px;
+    height: 25px;
+    line-height: 1;
+}
