@@ -107,59 +107,7 @@ Give a name to your project
 .. figure:: ../images/VSCode_enter_project_name.png
       :alt: Enter project name
 
-After you've successfully created a gauge project, you'll be able to see a sample project with an example specification.
-
-.. cssclass:: linux javascript dynamic-content
-.. figure:: ../images/linux/JS_folder_structure.png
-      :alt: folder structure
-
-.. cssclass:: linux python dynamic-content
-.. figure:: ../images/linux/Python_folder_structure.png
-      :alt: folder structure
-
-.. cssclass:: linux ruby dynamic-content
-.. figure:: ../images/linux/Ruby_folder_structure.png
-      :alt: folder structure
-
-.. cssclass:: linux java dynamic-content
-.. figure:: ../images/linux/Java_folder_structure.png
-      :alt: folder structure
-
-.. cssclass:: macos javascript dynamic-content
-.. figure:: ../images/mac/JS_folder_structure.png
-      :alt: folder structure
-
-.. cssclass:: macos python dynamic-content
-.. figure:: ../images/mac/Python_folder_structure.png
-      :alt: folder structure
-
-.. cssclass:: macos ruby dynamic-content
-.. figure:: ../images/mac/Ruby_folder_structure.png
-      :alt: folder structure
-
-.. cssclass:: macos java dynamic-content
-.. figure:: ../images/mac/Java_folder_structure.png
-      :alt: folder structure
-
-.. cssclass:: windows javascript dynamic-content
-.. figure:: ../images/windows/JS_folder_structure.png
-      :alt: folder structure
-
-.. cssclass:: windows python dynamic-content
-.. figure:: ../images/windows/Python_folder_structure.png
-      :alt: folder structure
-
-.. cssclass:: windows ruby dynamic-content
-.. figure:: ../images/windows/Ruby_folder_structure.png
-      :alt: folder structure
-
-.. cssclass:: windows java dynamic-content
-.. figure:: ../images/windows/Java_folder_structure.png
-      :alt: folder structure
-
-.. cssclass:: windows csharp dynamic-content
-.. figure:: ../images/windows/Csharp_folder_structure.png
-      :alt: folder structure
+.. include:: folder_structure.rst
 
 .. Note:: The file structure may vary depending on the language of your project. For ts example, we have created a Javascript project.
 
@@ -203,6 +151,11 @@ Choose the Project name, Project location, Project SDK and click :highlighted-sy
 
 .. figure:: ../images/Intellij_create_gauge_project.png
       :alt: Create project
+
+.. include:: folder_structure.rst
+
+.. figure:: ../images/Intellij_open_example.spec.png
+      :alt: Intellij Java file structure
 
 Next Step: Running a Specification
 ===================================

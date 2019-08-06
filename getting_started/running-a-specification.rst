@@ -49,11 +49,20 @@ Step 1
 ++++++
 Open the example spec. The Gauge specification file is present under :highlighted-syntax:`/specs/example.spec`
 
+.. figure:: ../images/Intellij_open_example.spec.png
+      :alt: Open example.spec file
+
 Step 2
 ++++++
-Run your Gauge specs in Intellij
+Run your Gauge specs in Intellij by clicking on the :highlighted-syntax:`Run example.spec`.
+
+.. figure:: ../images/Intellij_run_spec.png
+      :alt: Intellij run code lens
 
 You'll get immediate feedback in the output about what got executed.
+
+.. figure:: ../images/Intellij_execution_console.png
+      :alt: Intellij execution console
 
 .. cssclass:: csharp visualstudio dynamic-content
 
