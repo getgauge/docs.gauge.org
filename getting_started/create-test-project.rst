@@ -199,7 +199,7 @@ Once the plugin is installed, goto :highlighted-syntax:`File -> New Project`, se
 Step 2
 ++++++
 
-Choose the project name, location, java sdk and click :highlighted-syntax:`Finish`.
+Choose the Project name, Project location, Project SDK and click :highlighted-syntax:`Finish`.
 
 .. figure:: ../images/Intellij_create_gauge_project.png
       :alt: Create project

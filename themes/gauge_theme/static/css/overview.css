@@ -5,6 +5,7 @@
 
 .highlighted-syntax {
     background-color: lightgray;
+    border-radius: 4px;
 }
 
 .param-syntax-char {
