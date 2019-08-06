@@ -45,15 +45,21 @@ const setBackground = function (button) {
     let name = normalize(button.value);
     if (SELECTIONS[button.name] === name) {
         button.checked = true
-        button.parentElement.style.backgroundColor = "white"
+        button.parentElement.style.backgroundColor = "rgba(255, 204, 0, 0.1)"
+        button.parentElement.style.border = "solid 1px #ffcc00"
     };
 }
 
 const changeBackground = function () {
     let radios = document.querySelectorAll('.getting-started-radios');
     radios.forEach(element => {
-        let bg = element.checked ? "white" : "#fff9e5";
-        element.parentElement.style.backgroundColor = bg;
+        if (element.checked) {
+            element.parentElement.style.backgroundColor = "rgba(255, 204, 0, 0.1)";
+            element.parentElement.style.border = "solid 1px #ffcc00"
+        }else{
+            element.parentElement.style.backgroundColor = "#f2f2f2";
+            element.parentElement.style.border = ""
+        }
     });
 }
 

@@ -27,8 +27,7 @@ Select your setup to see the instructions for installing gauge.
       .. installationselection::
          :class: setup-selection
          :type: os
-         :title: Select your OS
-         :order: 1
+         :title: 1: Select your OS
 
          Linux
          MacOS
@@ -37,8 +36,7 @@ Select your setup to see the instructions for installing gauge.
       .. installationselection::
          :class: setup-selection
          :type: language
-         :title: Select a Language
-         :order: 2
+         :title: 2: Select a Language
 
          Csharp
          Java
@@ -49,8 +47,7 @@ Select your setup to see the instructions for installing gauge.
       .. installationselection::
          :class: setup-selection
          :type: ide
-         :title: Select an IDE/Editor
-         :order: 3
+         :title: 3: Select an IDE/Editor
 
          Intellij
          Visual Studio
@@ -64,6 +61,11 @@ Installation Instructions
 .. container::
 
    .. container:: applied-filters
+
+
+      .. container:: applied-filter-header
+
+         Setup
 
       .. container:: applied-filter
 

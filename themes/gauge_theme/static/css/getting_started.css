@@ -10,66 +10,115 @@
 }
 
 #installation-selection .setup-selection {
-    background-color: #fff9e5;
     width: 33%;
     text-align: center;
-    min-height: 200px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
-    border: 1px solid #ffcc01;
     margin-left: 10px;
     margin-right: 10px;
     padding-bottom: 5px;
     border-radius: 5px;
     align-items: center;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -khtml-border-radius: 5px;
 }
-
-
-.selections-order {
-    width: 34px;
-    height: 34px;
-    text-align: center;
-    margin-top: -17px;
-    background-color: white;
-    vertical-align: middle;
-    line-height: 35px;
-    border-radius: 50%;
-    border: 1px solid black;
-}
-
 
 #installation-selection .radioContainer {
     position: relative;
     width: 85%;
-    border-radius: 20px;
-    margin: 5px 0px 5px 10px;
+    height: 13%;
+    margin: 5px;
     cursor: pointer;
-    font-size: 18px;
-    border: 1px solid black;
+    padding-top: 1%;
+    font-size: 15px;
+    border-radius: 3px;
+    background-color: #f2f2f2;
 }
 
 /* Hide the browser's default radio button */
+
 #installation-selection input {
     display: none;
 }
 
-/* Add check mark font*/
+/* Show the indicator when checked */
 
-#installation-selection .checkmark:after {
-    content: '\f058';
+#installation-selection input:checked~.checkmark:after {
+    display: inline;
+    content: '\f192';
     font-family: FontAwesome;
     position: absolute;
-    display: none;
-    left: 4px;
+    bottom: 11%;
+    left: 4%;
     text-align: left;
 }
 
-/* Show the indicator when checked */
-#installation-selection input:checked~.checkmark:after {
-    display: inline;
+#installation-selection .circle {
+    position: absolute;
+    bottom: 30%;
+    left: 4%;
+    border: 1px solid black;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.selection-icon {
+    background-color: white;
+    position: absolute;
+    bottom: 18%;
+    left: 87%;
+    border: 0.5px solid grey;
+    width: 25px;
+    height: 25px;
+    border-radius: 20%;
+}
+
+/* Os */
+.selection-icon-linux::before {
+    content: url(../img/linux_icon.svg);
+}
+
+.selection-icon-macos::before {
+    content: url(../img/mac_os_icon.svg);
+}
+
+.selection-icon-windows::before {
+    content: url(../img/windows_os_icon.svg);
+}
+
+/* Languages */
+
+.selection-icon-csharp::before {
+    content: url(../img/csharp_icon.svg);
+}
+
+.selection-icon-java::before {
+    content: url(../img/java_icon.svg);
+}
+
+.selection-icon-javascript::before {
+    content: url(../img/javascript_icon.svg);
+}
+
+.selection-icon-python::before {
+    content: url(../img/python_icon.svg);
+}
+
+
+.selection-icon-ruby::before {
+    content: url(../img/ruby_icon.svg);
+}
+/* IDEs */
+.selection-ic on-intellij::before {
+    content: url(../img/idea_icon.svg);
+}
+
+.selection-icon-visualstudio::before {
+    content: url(../img/vs_icon.svg);
+}
+
+.selection-icon-vscode::before {
+    content: url(../img/vscode_icon.svg);
 }
 
 #choose-your-setup-to-install-gauge {
@@ -130,18 +179,14 @@
     border: none;
 }
 
-
-.nightly-installer .installer-icon::before,
-#alternate-installation .installer-icon::before,
-#install-using-dnf-package-manager .installer-icon::before,
-#install-using-shell-script-apt-get .installer-icon::before {
+.nightly-installer .installer-icon::before, #alternate-installation .installer-icon::before, #install-using-dnf-package-manager .installer-icon::before, #install-using-shell-script-apt-get .installer-icon::before {
     content: '...';
     padding-top: 2px;
     padding-left: 10px;
     font-weight: bolder;
 }
 
-.disabled{
+.disabled {
     cursor: not-allowed !important;
     opacity: 0.5;
 }
@@ -257,7 +302,6 @@
     font-weight: bolder;
     font-size: 17px;
 }
-
 
 #installation-instructions {
     margin: 40px 0;

@@ -1,4 +1,3 @@
-    
 from docutils import nodes
 from docutils.statemachine import StringList
 from docutils.parsers.rst import Directive, directives
