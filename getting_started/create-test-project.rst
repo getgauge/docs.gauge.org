@@ -193,7 +193,7 @@ Step 1
 
 Once the plugin is installed, goto :highlighted-syntax:`File -> New Project`, select :highlighted-syntax:`Gauge` and click :highlighted-syntax:`Next`.
 
-.. figure:: ../images/
+.. figure:: ../images/Intellij_select_gauge_project.png
       :alt: Select Gauge
 
 Step 2
@@ -201,7 +201,7 @@ Step 2
 
 Choose the project name, location, java sdk and click :highlighted-syntax:`Finish`.
 
-.. figure:: ../images/
+.. figure:: ../images/Intellij_create_gauge_project.png
       :alt: Create project
 
 Next Step: Running a Specification

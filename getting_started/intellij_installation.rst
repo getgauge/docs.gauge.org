@@ -20,7 +20,7 @@ Follow the steps to add the Gauge Intellij plugin from the IDE
 
 4. Type `Gauge` in the serach bar and click on :highlighted-syntax:`Install` option.
 
-.. figure:: ../images/Intellij_Gauge_install_plugin.jpg
+.. figure:: ../images/Intellij_Gauge_install_plugin.png
       :alt: Select template
 
 5. Once the installation is complete click on the :highlighted-syntax:`Restart IDE` to restart the IDE.
