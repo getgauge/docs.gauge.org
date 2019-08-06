@@ -35,7 +35,7 @@ versions: prune
 
 	# for latest version branch, generate html, singlehtml
 	(cd $(WORKDIR)/$(LATESTBRANCH);\
-	GAUGE_LATEST_VERSION=$(LATESTBRANCH) $(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/latest \
+	GAUGE_LATEST_VERSION=$(LATESTBRANCH) $(SPHINXBUILD) $(SPHINXOPTS) -b html . ../../html/latest -D site_url=https://docs.gauge.org/latest/ \
 		-D version=$(LATESTBRANCH) -D release=$(LATESTBRANCH) \
 		-A current_version=latest -A latest_version=$(LATESTBRANCH) -A versions="master latest"\
 		-A commit=$(shell git rev-parse --short HEAD) -A github_version=$(LATESTBRANCH);\
