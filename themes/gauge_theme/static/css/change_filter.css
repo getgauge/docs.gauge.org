@@ -16,11 +16,53 @@
     width: inherit;
 }
 
+.yellow-border {
+    border: solid 1px #ffcc00 !important;
+    border-radius: 5px !important;
+}
+
+.selection .radio-container {
+    position: relative;
+    height: 15%;
+    margin: 10px 0px -6px 0px;
+    cursor: pointer;
+    padding-top: 1px;
+}
+
+.selection input {
+    display: none;
+}
+
+.selection .selection-text{
+    margin-left: 30%
+}
+
+.selection input:checked~.checkmark:after {
+    display: inline;
+    content: '\f192';
+    font-family: FontAwesome;
+    position: absolute;
+    left: 4%;
+    top: 33%;
+    text-align: left;
+}
+
+.selection .circle {
+    display: block;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    left: 5%;
+    top: 50%;
+}
+
 #proj-setup-filter-section .applied-filters {
     width: inherit;
     font-size: 14px;
     display: flex;
-    padding: 1%;
+    padding: 10px;
     background: #fffae6;
     border-radius: 5px;
 }
@@ -51,42 +93,35 @@
     cursor: pointer;
 }
 
-.apply-filter:hover{
+.modify:hover {
     cursor: pointer;
 }
 
-#change-filter::after{
-    content: "     \270E";
-    transform: rotate(180deg);
+#change-filter {
+    text-decoration: underline;
 }
 
-.change-filter-btn{
+#change-filter::before {
+    content: "\270E";
+    display: inline-block;
+    margin: 1px;
+    -webkit-transform: rotate(80deg);
+    -moz-transform: rotate(80deg);
+    -o-transform: rotate(80deg);
+    -ms-transform: rotate(80deg);
+    transform: rotate(80deg);
+}
+
+.change-filter-btn {
     width: 20%;
 }
 
-.change-filter-btn::before {
-    content: "";
-    border-bottom: 10px solid #f8cd46;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    position: relative;
-    top: 3px;
-    left: 50px;
-}
-
-.cancel{
+.cancel {
     cursor: pointer;
 }
 
 #proj-setup-filter-section .proj-setup-filters {
-    border-left: 1px solid #c1bdbd;
-    border-right: 1px solid #c1bdbd;
-    border-bottom: 1px solid #c1bdbd;
-    border-top: 6px solid #f8cd46;
-    background-color: #f2f2f2;
     padding: 0 30px 0px 30px;
-    box-shadow: 1px 5px 8px gray;
-    margin-top: 9px;
 }
 
 #proj-setup-filter-section .proj-setup-filters .selections {
@@ -109,17 +144,13 @@
     justify-content: flex-end;
 }
 
-#proj-setup-filter-section .proj-setup-filters .filter-actions .filter-action {
-    padding: 10px;
-    font-size: 14px;
-}
 
 #proj-setup-filter-section .proj-setup-filters .filter-actions .filter-action h5 {
     padding: 2px 20px 2px 20px;
 }
 
-#proj-setup-filter-section .proj-setup-filters .filter-actions .filter-action.apply-filter h5 {
+#proj-setup-filter-section .proj-setup-filters .filter-actions .filter-action.modify h5 {
     border-radius: 25px;
-    border: 1px solid black;
-    background-color: white;
+    background-color: black;
+    color: #ffcc00;
 }

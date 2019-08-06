@@ -3,6 +3,10 @@
 
    .. container:: applied-filters
 
+      .. container:: applied-filter-header
+
+         Setup
+
       .. container:: applied-filter
 
          MacOs
@@ -18,7 +22,7 @@
       .. _change-filter:
       .. container::
 
-         Change Filter
+         modify setup
    .. cssclass:: hidden
    .. setupfilters::
       :section_name: proj-setup-filters

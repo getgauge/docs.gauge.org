@@ -1,6 +1,7 @@
 from docutils import nodes
-from docutils.statemachine import StringList
 from docutils.parsers.rst import Directive, directives
+from docutils.statemachine import StringList
+
 
 class heading_node(nodes.Element):
     tagname='h4'
@@ -20,7 +21,15 @@ def visit_input_node(self, node):
     text = ''
     for attr in node.attlist():
         attrs += attr[0] +"=" +'"'+ attr[1] +'"'
-    self.body.append('<span><input '+ attrs +'>'+ node.rawsource +'</span>')
+    tmpl = """
+    <label class="radio-container">
+        <span class="circle"></span>
+        <span class="selection-text">{}</span>
+        <input {}>
+        <span class="checkmark"></span>
+    </label>
+    """
+    self.body.append(tmpl.format(node.rawsource, attrs))
 
 def depart_input_node(self, node):
     pass
@@ -43,7 +52,7 @@ class SetupFiltersDirective(Directive):
         self.state.nested_parse(self.content, self.content_offset, node)
         buttons_container = nodes.container()
         buttons_container['classes'].append('filter-actions')
-        for button_text in ['Cancel', 'Apply Filter']:
+        for button_text in ['Cancel', 'Modify']:
             button_container = nodes.container()
             class_name = '-'.join(button_text.lower().split(' '))
             button_container['classes'].append(class_name)

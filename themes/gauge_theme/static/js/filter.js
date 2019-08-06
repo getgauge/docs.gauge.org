@@ -9,7 +9,7 @@ const changeFilter = function () {
     changeFilterBtn.onclick = showPopup;
     let cancelBtn = document.getElementsByClassName("cancel");
     cancelBtn[0].onclick = hidePopUp;
-    let applyBtn = document.getElementsByClassName("apply-filter");
+    let applyBtn = document.getElementsByClassName("modify");
     applyBtn[0].onclick = updateContent;
 };
 
@@ -17,16 +17,17 @@ const showPopup = function () {
     Object.values(SELECTIONS).forEach(selection => {
         document.querySelector(`input[value="${selection}"]`).checked=true;
     });
+    document.getElementById("proj-setup-filter-section").classList.add('yellow-border');
+    document.getElementsByClassName("applied-filters")[0].style.borderRadius = "5px 5px 0 0"
+    document.getElementById("change-filter").classList.add('disabled');
     let popUp = document.getElementsByClassName("proj-setup-filters");
-    let changeFilterBtn = document.getElementById("change-filter");
-    changeFilterBtn.classList.add("change-filter-btn");
     popUp[0].classList.remove("hidden");
 };
 
 const hidePopUp = function () {
+    document.getElementById("proj-setup-filter-section").classList.remove('yellow-border');
+    document.getElementById("change-filter").classList.remove('disabled');
     let popUp = document.getElementsByClassName("proj-setup-filters");
-    let changeFilterBtn = document.getElementById("change-filter");
-    changeFilterBtn.classList.remove("change-filter-btn");
     popUp[0].classList.add("hidden");
 };
 
@@ -67,7 +68,6 @@ const makeSelections = function(){
     const selections = document.querySelectorAll(".selection input");
     selections.forEach(selection => {
         if(Object.values(SELECTIONS).includes(selection.value)) {
-            console.log(selection.value);
             selection.checked = true;
         }
     })
