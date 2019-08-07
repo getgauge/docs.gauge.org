@@ -311,23 +311,6 @@ Or
 VSCode
 ------
 
-Why the debugger does not stop at the right breakpoint (gauge-java)?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Error:**
-
-Debugger does not stop at the right breakpoint (gauge-java)
-
-**Cause:**
-
-For more information about this issue, see `GitHub gauge-vscode issues
-<https://github.com/getgauge/gauge-vscode/issues/344>`_.
-
-**Solution:**
-
-This is a known issue. For more information about this issue, see `GitHub gauge-vscode issues
-<https://github.com/getgauge/gauge-vscode/issues/344>`_.
-
 GAUGE-VSCode-001 : Language client is not ready yet
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -357,7 +340,9 @@ Gauge-VS-001 : Gauge API not started
 
 **Error:**
 
-Gauge API not started
+.. code-block:: text
+
+    Gauge API not started
 
 **Cause:**
 
@@ -396,7 +381,9 @@ GAUGE-VS-002 : Incompatible Gauge Version installed
 
 **Error:**
 
-Incompatible Gauge Version installed
+.. code-block:: text
+
+    Incompatible Gauge Version installed
 
 **Cause:**
 
@@ -413,7 +400,9 @@ GAUGE-VS-003 : Unable to read Gauge version
 
 **Error:**
 
-Unable to read Gauge version
+.. code-block:: text
+
+    Unable to read Gauge version
 
 **Cause:**
 
