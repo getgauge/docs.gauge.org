@@ -1,3 +1,5 @@
+const HEADER_HEIGHT = 90;
+
 const updateToc = function () {
     let tocItems = document.querySelectorAll('ul.localtoc>ul>li>a>span');
     tocItems.forEach(item => {
@@ -17,7 +19,8 @@ const isElementInViewport = function (element) {
     return rect.bottom > 0 &&
         rect.right > 0 &&
         rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
-        rect.top < (window.innerHeight || document.documentElement.clientHeight);
+        rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.top > HEADER_HEIGHT;
 }
 
 const getTocElementBy = function (innerText) {
@@ -36,7 +39,7 @@ const removeActiveToc = function (headers) {
 }
 
 const updateActiveToc = function () {
-    let headers = document.querySelectorAll('h1, h2');
+    let headers = document.querySelectorAll('h1, h2 :not(.heading)');
     for (let header of headers) {
         let element = getTocElementBy(header.innerText);
         if (isElementInViewport(header)) {

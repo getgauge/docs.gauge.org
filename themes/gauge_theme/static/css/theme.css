@@ -147,9 +147,8 @@ footer {
   .navbtn {
     display: none;
   }
-  #sidebar {
+  #left-sidebar {
     min-width: 19%;
-    height: calc(100% - 100px);
     top: 100px;
     left: 2.5%;
     padding-top: 45px;
@@ -161,7 +160,6 @@ footer {
     right: 2.5%;
     top: 100px;
     width: 249px;
-    height: calc(100% - 100px);
     padding-top: 60px;
   }
   #search-icon {
@@ -767,7 +765,6 @@ code {
 
 .localtoc-container {
   max-height: 54%;
-  overflow-y: scroll;
   scrollbar-width: none;
   margin-bottom: 50px;
 }

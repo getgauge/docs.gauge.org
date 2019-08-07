@@ -19,3 +19,4 @@ Gauge documentation
     plugin
     writing-specifications
     troubleshooting
+    errors

@@ -1,4 +1,5 @@
 "use strict";
+const IGNORED_DISTANCE_FROM_TOP = 160;
 $(document).ready(function() {
     setGithubStar();
     copyCode($('.code-box'));
@@ -129,16 +130,24 @@ $(document).ready(function() {
         $(".main-table").clone(true).appendTo('#table-scroll').addClass('clone');
     });
 
-    const leftSideBarOffsetTop = +$('#sidebar').css('top').replace('px', '');
+    const leftSideBarOffsetTop = +$('#left-sidebar').css('top').replace('px', '');
+    const rightSideBarOffsetTop = +$('#right-sidebar').css('top').replace('px', '');
+    let sidebarOffsetTop = leftSideBarOffsetTop > rightSideBarOffsetTop ? leftSideBarOffsetTop : rightSideBarOffsetTop;
+
     $(window).on('scroll', function() {
-        let isFooterTouchingSidebar = $('#sidebar').innerHeight() >= $('footer').offset().top - window.scrollY;
+        const leftSideBarHeight = $('#left-sidebar').innerHeight();
+        const rightSideBarHeight = $('#right-sidebar').innerHeight();
+        const sidebarHeight = leftSideBarHeight > rightSideBarHeight ? leftSideBarHeight : rightSideBarHeight;
+
+        let isFooterTouchingSidebar = sidebarHeight >= $('footer').offset().top - window.scrollY - IGNORED_DISTANCE_FROM_TOP;
+
         if(isFooterTouchingSidebar) {
-            let sidebarOffsetTop = (leftSideBarOffsetTop ) - ($('#sidebar').innerHeight() - ($('footer').offset().top - window.scrollY) );
-            $('#sidebar').css('top',`${sidebarOffsetTop}px`)
-            $('.right-sidebar-container').css('top',`${sidebarOffsetTop}px`)
+            let sidebarOffset = (sidebarOffsetTop) - (sidebarHeight - ($('footer').offset().top - window.scrollY)) - IGNORED_DISTANCE_FROM_TOP;
+            $('#left-sidebar').css('top',`${sidebarOffset}px`)
+            $('#right-sidebar').css('top',`${sidebarOffset}px`)
         } else {
-            $('#sidebar').css('top',`${leftSideBarOffsetTop}px`);
-            $('.right-sidebar-container').css('top',`${leftSideBarOffsetTop}px`);
+            $('#left-sidebar').css('top',`${sidebarOffsetTop}px`);
+            $('#right-sidebar').css('top',`${sidebarOffsetTop}px`);
         }
         updateActiveToc();
     });

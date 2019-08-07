@@ -1,7 +1,10 @@
+.. role:: highlighted-syntax
+.. role:: intellij
+
 .. cssclass:: intellij dynamic-content
 
-Installing Gauge extension for Intellij IDEA
-============================================
+:intellij:`Installing Gauge extension for Intellij IDEA`
+========================================================
 
 .. cssclass:: code-block
 

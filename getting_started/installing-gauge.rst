@@ -1,7 +1,8 @@
 .. cssclass:: topic
+.. role:: heading
 
-Get Started
-===========
+:heading:`Get Started`
+======================
 
 This getting started guide walks you through the core features of Gauge. You'll be able to install
 Gauge and learn how to create a test automation project using Gauge.
@@ -11,7 +12,7 @@ most important concepts and features of the tool.
 
 
 Choose your Setup to Install Gauge
-----------------------------------
+==================================
 
 .. cssclass:: question-circle
 
