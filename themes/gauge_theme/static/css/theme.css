@@ -261,6 +261,11 @@ header.top:hover {
   padding: 10px;
 }
 
+.help-note ul {
+  list-style: none;
+  padding: 0px;
+}
+
 .help-note h4 {
   font-size: 16px;
 }
