@@ -33,12 +33,6 @@ Here's what a Gauge report looks like.
 .. figure:: ../images/HTML_report.png
     :alt: HTML report
 
-.. container:: page-navigator
-
-    .. container:: navigate-previous
-
-        `Running a Specification <running-a-specification.html>`__
-
 .. cssclass:: intellij dynamic-content
 
 :intellij:`Viewing Reports from Intellij IDEA`
@@ -52,6 +46,22 @@ Here's what a Gauge report looks like.
 
 .. figure:: ../images/HTML_report.png
     :alt: HTML report
+
+Next Step: Running a Specification
+==================================
+
+And, that concludes our getting started journey for Gauge. Hopefully this helped you install and set-up your first Gauge project. Gauge comes with powerful language & tool support as well as a versatile reporting functionality. We've covered the basics for all of these features in this guide.
+
+As a next step, the following resources are available:
+
+.. cssclass:: text-box
+
+    * `Write Specifications  <../writing-specifications.html>`__: This section has more in-depth detail on writing Gauge specifications and connecting them with the test scripts of your choice.
+
+    * `Examples <../examples-and-tutorials.html>`__: The examples section contains example projects of different languages and tools to help you get started with exactly what you need.
+    
+    * `Taiko Documentation <https://taiko.gauge.org/>`__:  The Taiko documentation site has all information you need to start recording test scripts using Taiko.
+
 
 .. container:: page-navigator
 

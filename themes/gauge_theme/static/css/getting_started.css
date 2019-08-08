@@ -352,3 +352,18 @@
 .active-rhs-toc {
   border-bottom: 3px solid rgb(245, 193, 14);
 }
+
+.text-box {
+    background-color: #F2F2F2 !important;
+    padding: 10px 0px 10px 40px;
+    font-size: 18px;
+    border-radius: 5px;
+    border-left: 4px solid #f5c10e;
+    margin: 2% 0 2% 0;
+    line-height: 35px;
+  }
+
+ul.text-box li a{
+    text-decoration: underline;
+    font-weight: bold;
+  }
