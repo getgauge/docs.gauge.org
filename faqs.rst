@@ -5,9 +5,6 @@
 FAQs
 ====
 
-.. include:: change_filter.rst
-
-
 This page lists FAQs (Frequently Asked Questions) about installing Gauge, running a Gauge specification (spec), configuring Gauge, language runners used with Gauge, and using text editors while writing a Gauge spec. 
 To understand these concepts, see Gauge documentation.
 
