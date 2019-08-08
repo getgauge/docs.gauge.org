@@ -1,10 +1,11 @@
+.. role:: heading
 .. role:: vscode
 .. role:: intellij
 .. role:: visualstudio
 .. cssclass:: topic
 
-Running a Specification
-=======================
+:heading:`Running a Specification`
+==================================
 
 .. include:: ../change_filter.rst
 .. role:: highlighted-syntax

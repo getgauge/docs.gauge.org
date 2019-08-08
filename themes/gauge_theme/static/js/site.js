@@ -131,25 +131,20 @@ $(document).ready(function() {
     });
 
     const leftSideBarOffsetTop = +$('#left-sidebar').css('top').replace('px', '');
-    const rightSideBarOffsetTop = +$('#right-sidebar').css('top').replace('px', '');
-    let sidebarOffsetTop = leftSideBarOffsetTop > rightSideBarOffsetTop ? leftSideBarOffsetTop : rightSideBarOffsetTop;
 
     $(window).on('scroll', function() {
         const leftSideBarHeight = $('#left-sidebar').innerHeight();
-        const rightSideBarHeight = $('#right-sidebar').innerHeight();
-        const sidebarHeight = leftSideBarHeight > rightSideBarHeight ? leftSideBarHeight : rightSideBarHeight;
 
-        let isFooterTouchingSidebar = sidebarHeight >= $('footer').offset().top - window.scrollY - IGNORED_DISTANCE_FROM_TOP;
+        let isFooterTouchingSidebar = leftSideBarHeight >= $('footer').offset().top - window.scrollY - IGNORED_DISTANCE_FROM_TOP;
 
         if(isFooterTouchingSidebar) {
-            let sidebarOffset = (sidebarOffsetTop) - (sidebarHeight - ($('footer').offset().top - window.scrollY)) - IGNORED_DISTANCE_FROM_TOP;
-            $('#left-sidebar').css('top',`${sidebarOffset}px`)
-            $('#right-sidebar').css('top',`${sidebarOffset}px`)
+            let sidebarOffsetTop = (leftSideBarOffsetTop) - (leftSideBarHeight - ($('footer').offset().top - window.scrollY)) - IGNORED_DISTANCE_FROM_TOP;
+            $('#left-sidebar').css('top',`${sidebarOffsetTop}px`)
+            $('#right-sidebar').css('top',`${sidebarOffsetTop}px`)
         } else {
-            $('#left-sidebar').css('top',`${sidebarOffsetTop}px`);
-            $('#right-sidebar').css('top',`${sidebarOffsetTop}px`);
+            $('#left-sidebar').css('top',`${leftSideBarOffsetTop}px`);
+            $('#right-sidebar').css('top',`${leftSideBarOffsetTop}px`);
         }
-        updateActiveToc();
     });
 });
 

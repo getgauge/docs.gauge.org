@@ -72,6 +72,7 @@ $(document).ready(() => {
   });
 
   $('ul.localtoc ul ul ul').remove();
+  $('ul.localtoc .heading').remove();
 
   // remove nested container classes, prevent overlap with sidebar
   $('.container .container').removeClass('container');

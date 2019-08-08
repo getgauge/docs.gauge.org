@@ -1,9 +1,10 @@
 .. role:: vscode
 .. role:: intellij
+.. role:: heading
 .. cssclass:: topic
 
-Create a Testing project using Gauge
-====================================
+:heading:`Create a Testing project using Gauge`
+===============================================
 
 .. include:: ../change_filter.rst
 

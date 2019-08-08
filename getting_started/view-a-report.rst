@@ -1,9 +1,10 @@
+.. role:: heading
 .. role:: vscode
 .. role:: intellij
 .. cssclass:: topic
 
-Viewing Reports
-===============
+:heading:`Viewing Reports`
+==========================
 
 .. include:: ../change_filter.rst
 
