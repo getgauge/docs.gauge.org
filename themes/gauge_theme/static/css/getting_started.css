@@ -74,6 +74,7 @@
 }
 
 /* Os */
+
 .selection-icon-linux::before {
     content: url(../img/linux_icon.svg);
 }
@@ -104,11 +105,12 @@
     content: url(../img/python_icon.svg);
 }
 
-
 .selection-icon-ruby::before {
     content: url(../img/ruby_icon.svg);
 }
+
 /* IDEs */
+
 .selection-ic on-intellij::before {
     content: url(../img/idea_icon.svg);
 }
@@ -196,6 +198,7 @@
     width: 100%;
     min-height: 75px;
     border: 1px solid #b1b1b1;
+    border-bottom: 0px;
     outline: none;
     padding: 0 10px 0 10px;
     display: none;
@@ -339,6 +342,7 @@
 .alternate-methods {
     width: fit-content;
     border-bottom: 1px solid black;
+    font-weight: bolder;
     cursor: pointer;
 }
 
@@ -350,9 +354,19 @@
 }
 
 .active-rhs-toc {
-  border-bottom: 3px solid rgb(245, 193, 14);
+    border-bottom: 3px solid rgb(245, 193, 14);
 }
 
+.collapsible.first {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.collapsible.last {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom: 1px solid #b1b1b1;
+}
 .text-box {
     background-color: #F2F2F2 !important;
     padding: 10px 0px 10px 40px;

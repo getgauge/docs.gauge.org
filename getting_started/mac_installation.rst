@@ -59,7 +59,7 @@ if HomeBrew is working properly, you should see something similar to the followi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-.. cssclass:: dynamic-content macos collapsible curl-installer
+.. cssclass:: dynamic-content macos collapsible curl-installer first
 
 :installer-icon:`Install using CURL`
 ------------------------------------
@@ -137,7 +137,7 @@ Or install Gauge to a [custom path] using
     npm install -g @getgauge/cli
 
 
-.. cssclass:: dynamic-content macos collapsible nightly-installer
+.. cssclass:: dynamic-content macos collapsible nightly-installer last
 
 :installer-icon:`Nightly Installation`
 --------------------------------------
