@@ -94,7 +94,7 @@ Step 2:
 =======
 .. include:: vscode_installation.rst
 .. include:: intellij_installation.rst
-
+.. include:: visualStudio_installation.rst
 
 Next Step:
 ==========
