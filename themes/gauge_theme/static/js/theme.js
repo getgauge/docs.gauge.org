@@ -93,10 +93,16 @@ $(document).ready(() => {
   });
 
   $('ul.localtoc a').click(function () {
-    var sectionId = $(this).attr('href');
+    const sectionId = $(this).attr('href');
+    let scrollTop = $(sectionId).offset().top;
+
+    if($(sectionId).css('display') == "none"){
+      $(sectionId).css('display','inline-block');
+      scrollTop = $(sectionId).offset().top - 100; 
+    }
 
     $('body,html').animate({
-      scrollTop: $(sectionId).offset().top
+      scrollTop: scrollTop
     }, 500);
   });
 
