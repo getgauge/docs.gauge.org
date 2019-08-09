@@ -48,7 +48,7 @@ Gauge can be installed on any flavour of Linux using the shell script. The Follo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-.. cssclass:: dynamic-content linux collapsible
+.. cssclass:: dynamic-content linux collapsible first
 
 :installer-icon:`Install using DNF Package Manager`
 ---------------------------------------------------
@@ -60,9 +60,11 @@ Install Gauge using dfn by running this command
 .. cssclass:: dynamic-content linux collapsible-content
 .. code-block:: console
 
-    echo -e \
-    "[gauge-nightly]\nname-gauge-nightly\nbaseurl-http://dl.bintray.com/gauge/gauge-rpm/gauge-nightly\ngpgcheck-0\nenabled-1" \
-    | sudo tee /etc/yum.repos.d/gauge-nightly.repo
+    echo -e "[gauge-nightly]\nname-gauge-nightly\nbaseurl-http://dl.bintray.com/gauge/gauge-rpm/gauge-nightly\ngpgcheck-0\nenabled-1" | sudo tee /etc/yum.repos.d/gauge-nightly.repo
+
+.. cssclass:: dynamic-content linux collapsible-content
+.. code-block:: console
+
     sudo dnf install gauge
 
 
@@ -136,46 +138,12 @@ Or install Gauge to a [custom path] using
 
     curl -SsL https://downloads.gauge.org/stable | sh -s -- --location-[custom path]
 
-.. cssclass:: dynamic-content linux collapsible
+.. cssclass:: dynamic-content linux collapsible last
 
-:installer-icon:`Alternate Installation`
+:installer-icon:`Nightly Installation`
 ----------------------------------------
 
 .. cssclass:: dynamic-content linux collapsible-content
 
-Nightly release are latest development snapshots of Gauge. They have the latest features being developed, but are unstable. Downnload the Gauge archive from here. Extract it to a location and add it to system path.
-
-.. cssclass:: dynamic-content linux collapsible-content
-.. code-block:: console
-
-    [gauge-nightly]
-    name-gauge-nightly
-    baseurl-http://dl.bintray.com/gauge/gauge-rpm/gauge-nightly
-    gpgcheck-0
-    enabled-1
-
-.. cssclass:: dynamic-content linux collapsible-content
-
-Use this command to do it in one step.
-
-.. cssclass:: dynamic-content linux collapsible-content
-.. code-block:: console
-
-    echo -e \
-    "[gauge-nightly]\nname-gauge-nightly\nbaseurl-http://dl.bintray.com/gauge/gauge-rpm/gauge-nightly\ngpgcheck-0\nenabled-1" \
-    | sudo tee /etc/yum.repos.d/gauge-nightly.repo
-
-.. cssclass:: dynamic-content linux collapsible-content
-
-Install Gauge using yum or dnf.
-
-.. cssclass:: dynamic-content linux collapsible-content
-.. code-block:: console
-
-    sudo yum install gauge
-
-.. cssclass:: dynamic-content linux collapsible-content
-.. code-block:: console
-
-    sudo dnf install gauge
-
+Nightly releases are latest development snapshots of Gauge. They have the latest features being developed, but are unstable.
+Download the Gauge archive from `here <https://bintray.com/gauge/Gauge/Nightly/_latestVersion>`__.

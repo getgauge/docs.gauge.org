@@ -111,16 +111,16 @@
 
 /* IDEs */
 
-.selection-ic on-intellij::before {
-    content: url(../img/idea_icon.svg);
+.selection-icon-intellij::before {
+    content: url(../img/intellij_icon.svg);
 }
 
 .selection-icon-visualstudio::before {
-    content: url(../img/vs_icon.svg);
+    content: url(../img/visual_studio_icon.svg);
 }
 
 .selection-icon-vscode::before {
-    content: url(../img/vscode_icon.svg);
+    content: url(../img/vs_code_icon.svg);
 }
 
 #choose-your-setup-to-install-gauge {
@@ -146,6 +146,7 @@
     display: inline-block;
     margin-right: 10px;
     border: 1px solid gray;
+    border-radius: 3px;
     padding: 5px;
     margin: 0 10px;
     width: 35px;
@@ -154,38 +155,42 @@
 
 #install-using-windows-installer .installer-icon::before {
     Content: url(../img/windows_installer_icon.svg);
-    border: none;
-    width: 50px;
 }
 
 #install-using-chocolatey-package-manager .installer-icon::before {
-    Content: url(../img/chocolatey.org.ico);
+    Content: url(../img/chocolatey_icon.svg);
 }
 
 .zip-installer .installer-icon::before {
-    Content: url(../img/file-archive-regular.svg);
-    height: 43px;
+    content: url(../img/zip_icon.svg);
 }
 
 .npm-installer .installer-icon::before {
-    Content: url(../img/npm-logo.svg);
+    Content: url(../img/npm_icon.svg);
 }
 
 .curl-installer .installer-icon::before {
-    content: url(../img/curl-symbol.svg);
+    content: url(../img/curl_icon.svg);
 }
 
 #install-using-homebrew .installer-icon::before {
-    content: '\f0fc';
-    font-family: FontAwesome;
-    border: none;
+    content: url(../img/homebrew_icon.svg);
 }
 
-.nightly-installer .installer-icon::before, #alternate-installation .installer-icon::before, #install-using-dnf-package-manager .installer-icon::before, #install-using-shell-script-apt-get .installer-icon::before {
-    content: '...';
-    padding-top: 2px;
-    padding-left: 10px;
-    font-weight: bolder;
+.nightly-installer .installer-icon::before {
+    content: url(../img/nightly_icon.svg)
+}
+
+#install-using-dnf-package-manager .installer-icon::before {
+    content: url(../img/dnf_icon.svg)
+}
+
+#alternate-installation .installer-icon::before {
+    content: url(../img/nightly_icon.svg)
+}
+
+#install-using-shell-script-apt-get .installer-icon::before {
+    content: url(../img/apt_icon.svg);
 }
 
 .disabled {
@@ -367,6 +372,7 @@
     border-bottom-right-radius: 3px;
     border-bottom: 1px solid #b1b1b1;
 }
+
 .text-box {
     background-color: #F2F2F2 !important;
     padding: 10px 0px 10px 40px;
@@ -375,9 +381,9 @@
     border-left: 4px solid #f5c10e;
     margin: 2% 0 2% 0;
     line-height: 35px;
-  }
+}
 
-ul.text-box li a{
+ul.text-box li a {
     text-decoration: underline;
     font-weight: bold;
-  }
+}

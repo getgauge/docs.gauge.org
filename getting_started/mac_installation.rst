@@ -144,12 +144,5 @@ Or install Gauge to a [custom path] using
 
 .. cssclass:: dynamic-content macos collapsible-content
 
-Nightly release are latest development snapshots of Gauge. They have the latest features being developed, but are unstable. Downnload the Gauge archive from here. Extract it to a location and add it to system path.
-
-.. cssclass:: dynamic-content macos collapsible-content
-
-`gauge-1.0.6.nightly-2019-07-19-darwin.x86.zip <https://bintray.com/gauge/Gauge/download_file?file_path=darwin%2Fgauge-1.0.6.nightly-2019-07-19-darwin.x86.zip>`__
-
-.. cssclass:: dynamic-content macos collapsible-content
-
-`gauge-1.0.6.nightly-2019-07-19-darwin.x86_64.zip <https://bintray.com/gauge/Gauge/download_file?file_path=darwin%2Fgauge-1.0.6.nightly-2019-07-19-darwin.x86_64.zip>`__
+Nightly releases are latest development snapshots of Gauge. They have the latest features being developed, but are unstable.
+Download the Gauge archive from `here <https://bintray.com/gauge/Gauge/Nightly/_latestVersion>`__.
