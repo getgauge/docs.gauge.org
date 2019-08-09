@@ -2244,7 +2244,6 @@ If ``ContinueOnFailure`` has no parameters, then the step execution continues by
 Java
 ^^^^^^
 .. code-block:: java
-  :caption: Java
 
   @ContinueOnFailure({AssertionError.class, CustomError.class})
   @Step("hello")
@@ -2270,7 +2269,6 @@ Java
 Python
 ^^^^^^
 .. code-block:: python
-  :caption: Python
 
   @continue_on_failure([RuntimeError])
   @step("Step 2")
