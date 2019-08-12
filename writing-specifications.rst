@@ -4,6 +4,8 @@
 .. role:: visualstudio
 .. _write_gauge_specification:
 
+.. cssclass:: topic
+
 :heading:`Write Gauge specifications`
 =====================================
 .. include:: change_filter.rst

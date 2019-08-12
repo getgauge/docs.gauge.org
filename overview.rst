@@ -1,7 +1,8 @@
 .. cssclass:: topic
+.. role:: heading
 
-What is Gauge
-==============
+:heading:`What is Gauge`
+========================
 
 Gauge is a free and open source test automation framework. Gauge makes test automation a
 natural part of the software development cycle by removing any hurdle that comes in the way of

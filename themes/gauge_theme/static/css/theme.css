@@ -159,7 +159,7 @@ footer {
     right: 2.5%;
     top: 100px;
     width: 249px;
-    padding-top: 60px;
+    padding-top: 45px;
   }
   #search-icon {
     top: 44px;
@@ -575,14 +575,14 @@ code {
 }
 
 .row.banner {
-  margin: 30px 0px 50px 0px;
+  margin: 20px 0px 50px 0px;
 }
 
 .row.banner .col-md-6 {
   padding: 0;
 }
 
-.banner_header {
+.banner_heading {
   font-size: 24px;
   line-height: 32px;
 }
@@ -1720,6 +1720,8 @@ img {
   width: 100%;
   font-size: 13px;
   line-height: normal;
+  position: relative;
+  top: 50px;
 }
 
 .edit-page>a {

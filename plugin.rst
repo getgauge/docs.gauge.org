@@ -1,6 +1,8 @@
+.. cssclass:: topic
+.. role:: heading
 
-Using Plugins
-=============
+:heading:`Using Plugins`
+========================
 .. include:: change_filter.rst
 
 | This page provides information about different types of plugins supported by Gauge and plugin installation and uninstallation. Plugins help you to use additional features of Gauge.

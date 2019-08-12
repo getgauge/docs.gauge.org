@@ -1,5 +1,8 @@
-Troubleshooting
-===============
+.. cssclass:: topic
+.. role:: heading
+
+:heading:`Troubleshooting`
+==========================
 
 .. _execution-troubleshooting:
 

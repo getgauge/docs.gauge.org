@@ -1,7 +1,9 @@
 .. _run_gauge_specifications:
+.. cssclass:: topic
+.. role:: heading
 
-Run Gauge specifications
-========================
+:heading:`Run Gauge specifications`
+===================================
 
 .. include:: change_filter.rst
 

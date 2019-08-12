@@ -1,6 +1,8 @@
-======================
-Examples And Tutorials
-======================
+.. cssclass:: topic
+.. role:: heading
+
+:heading:`Examples And Tutorials`
+=================================
 
 
 ========

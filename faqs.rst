@@ -1,9 +1,11 @@
 .. role:: vscode
 .. role:: javascript
 .. role:: python
+.. cssclass:: topic
+.. role:: heading
 
-FAQs
-====
+:heading:`FAQs`
+===============
 
 This page lists FAQs (Frequently Asked Questions) about installing Gauge, running a Gauge specification (spec), configuring Gauge, language runners used with Gauge, and using text editors while writing a Gauge spec. 
 To understand these concepts, see Gauge documentation.
