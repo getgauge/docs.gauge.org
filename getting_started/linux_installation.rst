@@ -110,7 +110,7 @@ Install Gauge using dfn by running this command
 
 .. cssclass:: dynamic-content linux collapsible-content
 
-.. code-block:: text
+.. code-block:: console
 
     npm install -g @getgauge/cli
 

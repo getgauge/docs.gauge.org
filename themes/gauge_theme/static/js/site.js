@@ -2,7 +2,7 @@
 const IGNORED_DISTANCE_FROM_TOP = 160;
 $(document).ready(function() {
     setGithubStar();
-    copyCode($('.code-box'));
+    copyCode($('.highlight .go'));
     getLocationhash();
     videoContentChange();
     videoEndchange();
@@ -156,13 +156,14 @@ function copyCode(element) {
     });
 
     $('.copyBtn').click(function() {
-        var value = $(this).prev().text();
+        var value = this.parentElement.innerText.split('\nCopy')[0];
         var $copied_text = $(this).nextAll('.copied-text');
-        codeBox = $(this).next();
+        var codeBox = $(this).next('.codeBox');
         codeBox.val(value);
         codeBox.select();
         document.execCommand('copy');
         $($copied_text).fadeIn();
+        $($copied_text).css('display', 'inline-block');
         setTimeout(function() {
             $($copied_text).fadeOut();
         }, 3000);

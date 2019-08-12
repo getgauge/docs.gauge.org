@@ -85,9 +85,9 @@ Download the following zip installer.
 
 .. cssclass:: dynamic-content windows collapsible-content
 
-.. custom-code-block:: powershell
+.. code-block:: console
 
-    PS>  Expand-Archive -Path gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-windows.x86_64.zip -DestinationPath custom_path
+    Expand-Archive -Path gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-windows.x86_64.zip -DestinationPath custom_path
 
 
 .. cssclass:: dynamic-content windows collapsible npm-installer
@@ -114,7 +114,7 @@ Download the following zip installer.
 
 .. cssclass:: dynamic-content windows collapsible-content
 
-.. code-block:: text
+.. code-block:: console
 
     npm install -g @getgauge/cli
 

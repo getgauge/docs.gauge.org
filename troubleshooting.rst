@@ -75,7 +75,7 @@ Gradle unable to execute Gauge specs, despite adding GaugeTask
 
 **Error:**
 
-.. code-block:: console
+.. code-block:: text
 
     * What went wrong:
     A problem occurred evaluating root project 'INDYGauge'.
@@ -89,7 +89,7 @@ This error occurs when Gradle is unable to recognize the GaugeTask.
 
 Use the fully qualified name for GaugeTask as shown below:
 
-.. code-block:: console
+.. code-block:: text
 
     task customGauge(type: com.thoughtworks.gauge.gradle.GaugeTask) {
         gauge {
@@ -286,7 +286,7 @@ ImportError: No module named getgauge
 
 Install the ``getgauge`` package by using ``pip`` as follows:
 
-::
+.. code-block:: console
 
     [sudo] pip install getgauge
 
@@ -331,7 +331,7 @@ GAUGE-VSCode-001 : Language client is not ready yet
 
 Install ``getgauge`` package by running the following command:
 
-::
+.. code-block:: console
 
     [sudo] pip install getgauge
 

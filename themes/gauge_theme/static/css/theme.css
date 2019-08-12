@@ -369,11 +369,6 @@ footer {
   color: #aaaaaa;
 }
 
-highlight-console .highlight pre span.go:before {
-  content: '> ';
-  color: #aaaaaa;
-}
-
 .highlight .c1 {
   color: #aaaaaa;
 }
@@ -388,6 +383,47 @@ highlight-console .highlight pre span.go:before {
 
 .highlight pre {
   margin: 0;
+}
+
+
+.copyBtn {
+    float: right;
+    width: 44px;
+    height: 26px;
+    background: #D8D8D8;
+    outline: none;
+    border: none;
+    font-size: 13px;
+    font-family: 'SourceCodePro-Medium';
+    color: #1E1E1E;
+    top: 15px;
+    border-radius: 3px;
+    transition: all 0.25s;
+}
+
+@media (min-width: 768px) {
+  .copyBtn {
+    display: inline-block;
+  }
+}
+
+.copyBtn:hover {
+  opacity: 0.8;
+}
+
+.copied-text {
+  float: right;
+  font-size: 13px;
+  font-family: monospace;
+  color: grey;
+  right: 63px;
+  top: 16px;
+  padding-right: 10px;
+  display: none;
+}
+
+.codeBox {
+  opacity: 0;
 }
 
 .index-page ul {
