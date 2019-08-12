@@ -8,7 +8,7 @@
 
 .. admonition:: System Requirements
 
-      `Visual Studio 2017 <https://www.techspot.com/downloads/6278-visual-studio.html>`__
+      `Visual Studio 2017 <https://visualstudio.microsoft.com/vs/older-downloads/>`__
 
 
 Follow the steps to add the Gauge Visual Studio plugin from the IDE

@@ -101,7 +101,7 @@ Next Step:
 
 .. cssclass:: csharp dynamic-content
 
-   Now that you've install Gauge, you can go ahead and create a C# testing project using Gauge.
+   Now that you've install Gauge, you can go ahead and create a CSharp testing project using Gauge.
 
 .. cssclass:: java dynamic-content
 
