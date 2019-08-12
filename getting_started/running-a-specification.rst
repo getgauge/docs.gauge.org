@@ -71,16 +71,23 @@ You'll get immediate feedback in the output about what got executed.
 ===========================================================
 Step 1
 ++++++
-Open the example spec. The Gauge specification file is present under :highlighted-syntax:`/specs/example.spec`
+When you build the test project, all the test scenarios appear in Test Explorer.
+If Test Explorer is not visible, choose :highlighted-syntax:`Test` on the Visual Studio menu, choose :highlighted-syntax:`Windows`, and then choose :highlighted-syntax:`Test Explorer`.
+
 
 Step 2
 ++++++
-Run your Gauge specs in Visual Studio
+* To run all the scenarios in a solution, choose :highlighted-syntax:`Run All`.
+* To run all the scenarios of a specification, choose :highlighted-syntax:`Run...` and then choose the group on the menu.
+* To run one or more scenarios, select the individual scenarios that you want to run, open the context menu for a selected scenario and then choose :highlighted-syntax:`Run Selected Tests`.
 
+.. figure:: ../images/VisualStudio_run_specification.png
+      :alt: Run specification
 
+You'll get immediate feedback in the Text Explorer about what got executed.
 
-You'll get immediate feedback in the output about what got executed.
-
+.. figure:: ../images/VisualStudio_TextExplorer.png
+      :alt: Visual Studio text explorer
 
 Next Step:
 ==========
