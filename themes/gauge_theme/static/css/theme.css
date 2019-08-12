@@ -57,16 +57,7 @@ footer {
   height: 40px;
   border-radius: 3px;
   border: 1px solid lightgray;
-}
-
-.left-sidebar-container nav {
-  position: absolute;
-  background-color: white;
-  width: 90%;
-  left: -100%;
-  z-index: 1;
-  transition: left .2s;
-  transition-timing-function: ease-in-out;
+  line-height: 1;
 }
 
 .left-sidebar-container nav.open {
@@ -113,6 +104,16 @@ footer {
   footer {
     width: 100%;
   }
+
+  .left-sidebar-container nav {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    left: -100%;
+    z-index: 1;
+    transition: left .2s;
+    transition-timing-function: ease-in-out;
+  }
 }
 
 @media (min-width: 830px) {
@@ -149,13 +150,17 @@ footer {
     left: 2.5%;
     padding-top: 45px;
     position: fixed;
+    height: 100%;
   }
 
   .right-sidebar-container {
     right: 2.5%;
     top: 100px;
-    width: 249px;
-    padding-top: 45px;
+    width: 249px; 
+    padding-top: 60px;
+  }
+  #search-icon {
+    top: 44px;
   }
 
   #search {
@@ -167,9 +172,10 @@ footer {
     background-color: var(--left-side-bar-color);
   }
   .left-sidebar-container nav {
-    position: unset;
+    position: initial;
     background-color: var(--left-side-bar-color);
     padding-left: 20px;
+    width: max-content;
   }
   .sliding-docs-toc.docs-toc {
     display: none;
@@ -1348,11 +1354,11 @@ header.top::after {
   }
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .link_home a {
     display: none;
   }
-}
+} */
 
 @media (max-width: 768px) {
   .github-button {

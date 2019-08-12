@@ -1,5 +1,5 @@
 "use strict";
-const IGNORED_DISTANCE_FROM_TOP = 160;
+// const IGNORED_DISTANCE_FROM_TOP = 160;
 $(document).ready(function() {
     setGithubStar();
     copyCode($('.highlight .go'));
@@ -133,12 +133,12 @@ $(document).ready(function() {
     const leftSideBarOffsetTop = +$('#left-sidebar').css('top').replace('px', '');
 
     $(window).on('scroll', function() {
-        const leftSideBarHeight = $('#left-sidebar').innerHeight();
+        const leftSideBarHeight = window.innerHeight + 100;
 
-        let isFooterTouchingSidebar = leftSideBarHeight >= $('footer').offset().top - window.scrollY - IGNORED_DISTANCE_FROM_TOP;
+        let isFooterTouchingSidebar = leftSideBarHeight >= $('footer').offset().top - window.scrollY;
 
         if(isFooterTouchingSidebar) {
-            let sidebarOffsetTop = (leftSideBarOffsetTop) - (leftSideBarHeight - ($('footer').offset().top - window.scrollY)) - IGNORED_DISTANCE_FROM_TOP;
+            let sidebarOffsetTop = (leftSideBarOffsetTop) - (leftSideBarHeight - ($('footer').offset().top - window.scrollY));
             $('#left-sidebar').css('top',`${sidebarOffsetTop}px`)
             $('#right-sidebar').css('top',`${sidebarOffsetTop}px`)
         } else {
