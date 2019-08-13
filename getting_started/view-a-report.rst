@@ -1,6 +1,7 @@
 .. role:: heading
 .. role:: vscode
 .. role:: intellij
+.. role:: visualstudio
 .. cssclass:: topic
 
 :heading:`Viewing Reports`
@@ -47,6 +48,21 @@ Here's what a Gauge report looks like.
 
 .. figure:: ../images/HTML_report.png
     :alt: HTML report
+
+.. cssclass:: visualstudio dynamic-content
+
+:visualstudio:`Viewing Reports from Visual Studio`
+==================================================
+
+Once the specifications are run you will get immediate feedback in the output screen of Visual Studio.
+
+Once you've run the sample spec, you can view the HTML report of the tests run by opening the :highlighted-syntax:`index.html` file available in :highlighted-syntax:`$PROJECT_ROOT/reports/html-report/index.html`
+
+Here's what a Gauge report looks like.
+
+.. figure:: ../images/HTML_report.png
+    :alt: HTML report
+
 
 Next Step: Running a Specification
 ==================================
