@@ -1,8 +1,8 @@
 .. cssclass:: visualstudio dynamic-content
 .. role:: visualstudio
 
-:visualstudio:`Installing Gauge extension for Visual Studio`
-============================================================
+:visualstudio:`Step 2: Installing Gauge extension for Visual Studio`
+====================================================================
 
 .. cssclass:: code-block
 

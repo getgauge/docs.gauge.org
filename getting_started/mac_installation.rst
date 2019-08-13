@@ -3,8 +3,8 @@
 .. role:: macos
 .. cssclass:: dynamic-content macos
 
-:macos:`Installing Gauge on MacOS`
-==================================
+:macos:`Step 1: Installing Gauge on MacOS`
+==========================================
 
 This section gives specific instructions on setting up Gauge in a Mac OS environment.
 
@@ -53,11 +53,9 @@ if HomeBrew is working properly, you should see something similar to the followi
 
 
 
-.. cssclass:: dynamic-content macos
+.. cssclass:: dynamic-content macos alternate-installation
 
 :alternate-methods:`Alternate Installation Methods`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 
 .. cssclass:: dynamic-content macos collapsible curl-installer first
 

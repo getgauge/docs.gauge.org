@@ -3,8 +3,8 @@
 .. role:: alternate-methods
 .. cssclass:: dynamic-content windows
 
-:windows:`Installing Gauge on Windows`
-======================================
+:windows:`Step 1: Installing Gauge on Windows`
+==============================================
 
 This section gives specific instructions on setting up Gauge in a Microsoft Windows environment.
 
@@ -30,10 +30,9 @@ Once you finished installing Gauge, you can go ahead and `install the Gauge Exte
     Gauge automatically sends `telemetry data <https://gauge.org/telemetry>`__ to help us improve the product. If you prefer not to have this data sent, you can choose to  `opt out <https://manpage.gauge.org/gauge_telemetry.html>`__.
 
 
-.. cssclass:: dynamic-content windows
+.. cssclass:: dynamic-content windows alternate-installation
 
 :alternate-methods:`Alternate Installation Methods`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. cssclass:: dynamic-content windows collapsible first
 

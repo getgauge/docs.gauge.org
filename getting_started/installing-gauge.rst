@@ -82,16 +82,12 @@ Installation Instructions
 
 .. cssclass:: steps
 
-Step1:
-======
 .. include:: mac_installation.rst
 .. include:: windows_installation.rst
 .. include:: linux_installation.rst
 
 .. cssclass:: steps
 
-Step 2:
-=======
 .. include:: vscode_installation.rst
 .. include:: intellij_installation.rst
 .. include:: visualStudio_installation.rst

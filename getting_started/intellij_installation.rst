@@ -3,8 +3,8 @@
 
 .. cssclass:: intellij dynamic-content
 
-:intellij:`Installing Gauge extension for Intellij IDEA`
-========================================================
+:intellij:`Step 2: Installing Gauge extension for Intellij IDEA`
+================================================================
 
 .. cssclass:: code-block
 
@@ -27,5 +27,7 @@ Follow the steps to add the Gauge Intellij plugin from the IDE
       :alt: Select template
 
 5. Once the installation is complete click on the :highlighted-syntax:`Restart IDE` to restart the IDE.
+
+.. cssclass:: other-install-options
 
 `Other install options <https://github.com/getgauge/Intellij-Plugin#installing-nightly>`__

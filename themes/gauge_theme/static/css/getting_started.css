@@ -127,15 +127,8 @@
     margin-top: 50px;
 }
 
-.question-circle::after {
-    Content: url(../img/question-circle-solid.svg);
-    display: inline-block;
-    width: 13px;
-    margin-left: 4px;
-}
-
 .steps {
-    margin-bottom: -125px;
+    margin-bottom: -115px;
 }
 
 #install-using-windows-installer .installer-icon {
@@ -317,9 +310,48 @@
 
 .extension-link {
     background-color: #ffcc00;
-    width: fit-content;
+    width: max-content;
     border-radius: 25px;
     padding: 4px;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+#next-step h1{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.other-install-options{
+    padding: 10px 0px;
+    margin-bottom: 50px;
+}
+
+.other-install-options::after{
+    content: url("../img/external_icon.svg");
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
+
+.vscode-installation-note::after{
+    content: url("../../../../_images/vscode_installation.png");
+    width: 100%;
+    display: flex;
+}
+
+.extension-link::after{
+    content: url("../img/external_icon.svg");
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
+
+h3:has(.alternate-methods){
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e2e2e2;
 }
 
 .extension-link a {
@@ -344,10 +376,14 @@
     margin-top: 35px;
 }
 
+.alternate-installation{
+    border-bottom: 1px solid #e2e2e2;
+    padding: 10px 0px 40px 0px;
+}
+
 .alternate-methods {
-    width: fit-content;
+    width: max-content;
     border-bottom: 1px solid black;
-    font-weight: bolder;
     cursor: pointer;
 }
 

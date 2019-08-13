@@ -276,6 +276,13 @@ header.top:hover {
   font-weight: bolder;
 }
 
+.figure{
+  margin: 15px 0px;
+  -webkit-box-shadow: 0px 10px 37px -11px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 10px 37px -11px rgba(0,0,0,0.75);
+  box-shadow: 0px 10px 37px -11px rgba(0,0,0,0.75);
+}
+
 .docs-container {
   min-width: 60%;
   flex: 2;
@@ -288,15 +295,19 @@ header.top:hover {
 }
 
 .docs-container h1 {
-  font-size: 24px;
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 20px;
 }
 
 .docs-container h2 {
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .docs-container h3 {
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .docs-toc .sub-toc {
@@ -1499,8 +1510,7 @@ footer {
 
 img {
   max-width: 100%;
-  padding: 10px 0px 10px 0px;
-  margin: 10px 0px 0px 0px;
+  width: 100%;
 }
 
 .foolinks {
