@@ -1,6 +1,3 @@
-.. role:: vscode
-.. role:: javascript
-.. role:: python
 .. cssclass:: topic
 .. role:: heading
 
@@ -18,35 +15,37 @@ Installation
 Where is the Gauge executable installed by default?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. cssclass:: dynamic-content windows
+.. tab-container:: platforms
 
-`%ProgramFiles%\\gauge\\bin`
+    .. tab:: Windows
 
-.. cssclass:: dynamic-content macos
+        `%ProgramFiles%\\gauge\\bin`
 
-`/usr/local/bin`
+    .. tab:: macOS
 
-.. cssclass:: dynamic-content linux
+        `/usr/local/bin`
 
-`/usr/local/bin`
+    .. tab:: linux
 
+        `/usr/local/bin`
 
 
 Where are the plugins installed by default?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. cssclass:: dynamic-content windows
+.. tab-container:: platforms
 
-`%APPDATA%\\gauge\\plugins`
+    .. tab:: Windows
 
-.. cssclass:: dynamic-content macos
+        `%APPDATA%\\gauge\\plugins`
 
-`~/.gauge/plugins`
+    .. tab:: macOS
 
-.. cssclass:: dynamic-content linux
+        `~/.gauge/plugins`
 
-`~/.gauge/plugins`
+    .. tab:: linux
 
+        `~/.gauge/plugins`
 
 What is GAUGE_HOME?
 ^^^^^^^^^^^^^^^^^^^
@@ -57,32 +56,9 @@ How can I manually install a plugin?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Download the plugin's zip file from github release and install the plugin by using the ``-f`` flag.
 
-.. cssclass:: dynamic-content csharp
 .. code-block:: console
 
-   gauge install csharp -f <path_to_gauge_csharp_zip_file>
-
-.. cssclass:: dynamic-content java
-.. code-block:: console
-
-   gauge install java -f <path_to_gauge_java_zip_file>
-
-.. cssclass:: dynamic-content javascript
-.. code-block:: console
-
-   gauge install js -f <path_to_gauge_js_zip_file>
-
-.. cssclass:: dynamic-content python
-.. code-block:: console
-
-   gauge install python -f <path_to_gauge_python_zip_file>
-
-.. cssclass:: dynamic-content ruby
-.. code-block:: console
-
-   gauge install ruby -f <path_to_gauge_ruby_zip_file>
-
-
+   gauge install <plugin_name> -f <path_to_gauge_csharp_zip_file>
 
 Configuration
 -------------
@@ -133,33 +109,108 @@ You can specify a custom directory by changing the ``logs_directory`` property u
 
 Where does gauge non project specific logs like plugin installation etc.?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. tab-container:: platforms
 
-.. cssclass:: dynamic-content windows
+    .. tab:: Windows
 
-`%APPDATA%\\gauge\\logs`
+        `%APPDATA%\\gauge\\logs`
 
-.. cssclass:: dynamic-content macos
+    .. tab:: macOS
 
-`~/.gauge/logs`
+        `~/.gauge/logs`
 
-.. cssclass:: dynamic-content linux
+    .. tab:: linux
 
-`~/.gauge/logs`
+        `~/.gauge/logs`
+
+Uninstall Gauge
+---------------
+
+How can I uninstall Gauge?
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Remove the Plugins before uninstalling Gauge. For information about removing plugins, see :ref:`plugins-uninstallation`.
+
+.. admonition:: Prerequisite
+
+   Remove the Plugins before uninstalling Gauge. For information about removing plugins, see :ref:`plugins-uninstallation`.
+
+   While uninstalling Gauge, you must remove the Gauge folder (~/.gauge in Mac/Linux and in %APPDATA%\Gauge in windows) manually. This folder contains Gauge config, logs and plugins.
 
 
-.. cssclass:: dynamic-content javascript
-.. _js_faq:
+.. tab-container:: platforms
 
-:javascript:`Gauge Javascript`
-==============================
+    .. tab:: Windows
+
+        Uninstall Gauge by using `Chocolatey <https://github.com/chocolatey/choco/wiki/CommandsUninstall>`__ .
+
+        .. code-block:: console
+
+            choco uninstall gauge
+
+    .. tab:: macOS
+
+        Uninstall Gauge by using `HomeBrew <https://docs.brew.sh/FAQ.html#how-do-i-uninstall-a-formula>`__ .
+
+        .. code-block:: console
+
+            brew uninstall gauge
+
+    .. tab:: Debian/APT
+
+        Uninstall Gauge by using the `apt-get <https://linux.die.net/man/8/apt-get>`__ command:
+
+        .. code-block:: console
+
+            sudo apt-get remove gauge
+
+    .. tab:: YUM/DNF
+
+        You can uninstall Gauge in one of the following ways:
+
+        Uninstall by using ``yum``.
+
+        .. code-block:: console
+
+            yum remove gauge
+
+        OR
+
+        Uninstall by using ``dnf``.
+
+        .. code-block:: console
+
+            dnf remove gauge
+
+    .. tab:: Freebsd
+
+        Delete the Gauge files from the installed location.
+
+    .. tab:: Curl
+
+        Delete the Gauge files from the installed location.
+
+    .. tab:: NPM
+
+        Uninstall Gauge by using ``npm``.
+
+        .. code-block:: console
+
+            npm uninstall -g @getgauge/cli
+
+.. note::
+    If you have installed Gauge on your system by downloading the Gauge release from GitHub, then delete the Gauge files from the installed location.
+
+Gauge Javascript
+----------------
 
 How to debug without IDE
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 gauge-js supports debugging your test implementation code using node-inspector.
 
 Requirements
--------------
+^^^^^^^^^^^^
 
 Ensure you have the latest Chrome browser and node-inspector installed. Please consult the node-inspector documentation for installation instructions.
 Ensure that the binaries node-debug and node-inspector are available on PATH.
@@ -194,14 +245,11 @@ The debugger exposes entire gauge-js runner code.
 You need to be quick enough to hit continue in the browser when node-inspector launches. If this takes too long, gauge will timeout connecting to the API. A workaround for this is to increase the runner_connection_timeout property to an acceptable value.
 
 
-.. cssclass:: dynamic-content python
-.. _python_faq:
-
-:python:`Gauge Python`
-======================
+Gauge Python
+------------
 
 How to change/rename default step implementation(``step_impl``) directory
---------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create ``python.properties`` file in the ``<PROJECT_DIR>/env/default`` directory and add the following line to it.
 
@@ -214,7 +262,7 @@ Create ``python.properties`` file in the ``<PROJECT_DIR>/env/default`` directory
 
 
 How to use different version of python while running specs
------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By default the language runner uses ``python`` command to run specs. To change the default behaviour, add ``GAUGE_PYTHON_COMMAND`` property to the ``python.properties`` file in the ``<PROJECT_DIR>/env/default`` directory.
 
@@ -225,7 +273,7 @@ By default the language runner uses ``python`` command to run specs. To change t
     GAUGE_PYTHON_COMMAND = python2
 
 How to debug gauge-python without using an IDE
------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Gauge-Python supports debugging your test implementation code using `pbd`_.
 
@@ -244,24 +292,19 @@ The typical usage to break into the debugger from a running program is to insert
 Execution will stop where it finds the above statement and you can debug.
 
 
-.. cssclass:: dynamic-content vscode
-.. _vscode_faq:
-
-:vscode:`Gauge VS Code`
-========================
+Gauge VS Code
+-------------
 
 Why are some features not working?
------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you notice that any of the documented features (ex. goto definition, Code Lens of implementation files, find usages)
 are not working then make sure the required language runner is installed, by running ``gauge version``.
 If not installed, install using ``gauge install <plugin_name>``.
 
 
-.. cssclass:: dynamic-content vscode
-
 Why does the debugger not stop at the right breakpoint (gauge-java)?
----------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In Java projects, if the debugger does not stop at the right breakpoint, it is related to `this issue
 <https://github.com/getgauge/gauge-vscode/issues/344>`_.
