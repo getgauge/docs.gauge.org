@@ -139,7 +139,14 @@ const showAlternateMethods = function () {
     }
 }
 
+const detectOs = function(){
+    if (navigator.appVersion.indexOf("Win")!=-1) SELECTIONS.os="windows";
+    if (navigator.appVersion.indexOf("Mac")!=-1) SELECTIONS.os="macos";
+    if (navigator.appVersion.indexOf("Linux")!=-1) SELECTIONS.os="linux";
+}
+
 const addOnloadEvents = function () {
+    detectOs()
     updateSelections();
     updateInstallationSetup();
     showContents();
