@@ -146,7 +146,9 @@ footer {
     padding: 14px 20px;
     border-bottom: 1px solid lightgray;
   }
-
+  .right-sidebar-container {
+    padding-top: 20px;
+  }
 }
 
 @media (min-width: 834px) {
@@ -171,7 +173,7 @@ footer {
     min-width: 19%;
     top: 100px;
     padding-left: 2%;
-    padding-top: 45px;
+    padding-top: 64px;
     position: fixed;
     height: 100%;
     background-color: var(--left-side-bar-color);
@@ -179,8 +181,13 @@ footer {
 
   .left-sidebar-container nav {
     position: initial;
+    padding-top: 30px;
     background-color: var(--left-side-bar-color);
     width: max-content;
+  }
+
+  .right-sidebar-container {
+    padding-top: 60px;
   }
 }
 
@@ -199,7 +206,6 @@ footer {
   }
   .right-sidebar-container {
     padding-left: 30px;
-    padding-top: 20px;
   }
 
   .localtoc-container > .mobile-local-toc + ul {
@@ -207,7 +213,6 @@ footer {
     font-size: 8px;
     list-style: disc inside;
   }
-
   .mobile-local-toc + ul li > a {
     color: #337ab7;
     font-size: 13px;
@@ -240,10 +245,6 @@ footer {
     right: 2.5%;
     top: 100px;
     width: 249px;
-    padding-top: 60px;
-  }
-  #search-icon {
-    top: 44px;
   }
 
   #search {
@@ -564,7 +565,7 @@ body {
   padding: 5px 5px 5px 29px;
   background-repeat: no-repeat;
   position: relative;
-  top: 44px;
+  top: 31px;
   z-index: 1;
   background-size: 14px;
   left: 12px;
