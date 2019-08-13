@@ -240,9 +240,10 @@
       {% if pagename != 'index' %}
       <div id="right-sidebar" class="right-sidebar-container containers">
         <div class="localtoc-container">
-          <ul class="localtoc">
+          <span class='mobile-local-toc collapsed' onclick="document.getElementsByClassName('mobile-local-toc')[0].classList.toggle('collapsed')">In this page</span>
+          <!-- <ul class="localtoc"> -->
             {{ toc }}
-          </ul>
+          <!-- </ul> -->
         </div>
         <div class="col-md-9 help-note">
           <h4>Need Help?</h4>
