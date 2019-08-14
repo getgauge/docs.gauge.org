@@ -284,8 +284,9 @@ footer {
   }
 }
 
-h1, h2, h3, h4 {
-  font-family: "URWGeometric-SemiBold";
+strong{
+  font-size: 18px;
+  color: black;
 }
 
 * {
@@ -380,6 +381,7 @@ header.top:hover {
   flex: 2;
   background-color: white;
   padding: 10px 30px;
+  margin-bottom: 80px;
 }
 
 .docs-container::-webkit-scrollbar {

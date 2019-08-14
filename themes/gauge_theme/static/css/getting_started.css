@@ -337,6 +337,30 @@
     margin-right: 5px;
 }
 
+.answers{
+    padding-left: 0px !important;
+    padding-top: 50px;
+    border-top: 1px solid #e2e2e2;
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+.category{
+    border-top: 1px solid #e2e2e2;
+    padding-top: 40px;
+}
+
+.category-title>h1{
+    padding-bottom: 0px !important;
+    padding-top: 20px;
+}
+
+.question{
+    margin-bottom: 5px;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
 .vscode-installation-note::after{
     content: url("../img/VScode_install.png");
     width: 100%;
