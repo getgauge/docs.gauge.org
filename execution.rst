@@ -4,7 +4,7 @@ Execution
 Specify Directory
 -----------------
 
-By convention, specifications are stored in the the ``./specs/`` 
+By convention, specifications are stored in the ``./specs/`` 
 sub-directory in the project root.Gauge scans the directory(ies) passed 
 and picks up valid specification files.
 
