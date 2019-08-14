@@ -188,7 +188,7 @@ Next Step: Running a Specification
 
 Now that you have successfully added/initialized a new Gauge testing project, we can look at how to run a specification by using the sample spec in the test folder
 
-.. Note:: To learn more about how to test specifications in Gauge work and other gauge terminologies please look at our Overview Section.
+.. Note:: To learn more about how to test specifications in Gauge work and other gauge terminologies please look at our `Overview <../overview.html>`__  Section.
 
 .. container:: page-navigator
 
