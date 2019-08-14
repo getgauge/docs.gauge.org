@@ -336,7 +336,7 @@
 }
 
 .vscode-installation-note::after{
-    content: url("../img/install_vscode.png");
+    content: url("../img/VScode_install.png");
     width: 100%;
     display: flex;
 }
