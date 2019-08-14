@@ -136,7 +136,7 @@ Or install Gauge to a [custom path] using
 
     curl -SsL https://downloads.gauge.org/stable | sh -s -- --location-[custom path]
 
-.. cssclass:: dynamic-content linux collapsible last
+.. cssclass:: dynamic-content linux collapsible nightly-installer last
 
 :installer-icon:`Nightly Installation`
 ----------------------------------------
