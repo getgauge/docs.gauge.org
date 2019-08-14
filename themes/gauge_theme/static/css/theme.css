@@ -201,7 +201,7 @@ footer {
   footer {
     width: 100%;
   }
-  .help-note, .edit-page {
+  .edit-page {
     display: none;
   }
   .right-sidebar-container {
@@ -334,14 +334,7 @@ header.top:hover {
   text-decoration: none;
 }
 
-.help-note {
-  background-color: var(--left-side-bar-color);
-  font-size: 12px;
-  width: 90%;
-  padding: 10px;
-}
-
-.localtoc-container ul,  .help-note ul {
+.localtoc-container ul {
   list-style: none;
   padding: 0px;
 }
@@ -354,14 +347,6 @@ header.top:hover {
   line-height: 1.85;
   letter-spacing: normal;
   color: #666666;
-}
-
-.help-note h4 {
-  font-size: 16px;
-}
-
-.help-note a {
-  text-decoration: underline;
 }
 
 .sub-heading {
@@ -1722,16 +1707,9 @@ img {
   }
 }
 
-.foolinks .icon_gitter, .help-note .icon_gitter, .foolinks .icon_google, .help-note .icon_google, .foolinks .icon_stack, .help-note .icon_stack, .foolinks .icon_contribute {
+.foolinks .icon_gitter, .foolinks .icon_google, .foolinks .icon_stack, .foolinks .icon_contribute {
   padding: 5px 0 5px 25px;
   display: block;
-}
-
-.help-note .icon_gitter {
-  background: url("../img/icon_gitter.svg") no-repeat 0 7px;
-  background-size: auto 20px;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
 }
 
 .foolinks .icon_gitter {
@@ -1748,13 +1726,6 @@ img {
   background-size: auto 20px;
 }
 
-.help-note .icon_google {
-  background: url("../img/icon_google-group.svg") no-repeat 0 8px;
-  background-size: auto 18px;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
 .foolinks .icon_google {
   background: url("//gauge.org/assets/images/footer-icons/icon_google-group.svg") no-repeat 0 8px;
   background-size: auto 18px;
@@ -1766,13 +1737,6 @@ img {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   background: url("//gauge.org/assets/images/footer-icons/icon_google-group_hover.svg") no-repeat 0 8px;
-  background-size: auto 18px;
-}
-
-.help-note .icon_stack {
-  background: url("../img/icon_stack_overflow.svg") no-repeat 0 7px;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   background-size: auto 18px;
 }
 
