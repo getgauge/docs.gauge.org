@@ -500,6 +500,28 @@ starts multiple threads for parallel execution.
 .. note::
    Currently, only the Java language runner supports parallel execution of specs by using threads.
 
+Run specs before parallel execution
+-----------------------------------
+
+Specs can be filtered based on tags to run in parallel, so that only those will be run in parallel after executing other specs in serial.
+
+Set ``allow_filtered_parallel_execution`` variable to ``true`` in ``/env/default/default.properties`` to enable this feature.
+
+Execution can be done by the command:
+
+.. code-block:: console
+
+    gauge run specs --parallel --only "parallelizable"
+
+
+This runs all the specs that are not tagged as ``parallelizable`` in serial first,
+and then runs the tagged ones in parallel.
+
+
+.. note::
+    This feature is currently available in gauge >= 1.0.5
+
+
 Test suite execution by using the ``--strategy`` option
 -------------------------------------------------------
 The ``--strategy`` option allows you to set the strategy for parallel execution of tests. 

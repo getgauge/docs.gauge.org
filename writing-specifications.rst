@@ -118,7 +118,7 @@ The components of a spec are listed as follows:
    Comments - optional, non-executable component when the spec is run
 
 Specification heading
----------------------
+=====================
 
 A specification must begin with a spec heading. A specification must contain only one spec heading.
 
@@ -154,8 +154,9 @@ In the following example, ``# Search specificaiton`` is the spec heading, follow
 
 .. _longstart-scenarios:
 
-
+Scenario
 ========
+
 Each scenario represents a single workflow in a particular specification. A
 specification must contain at least one scenario.
 
@@ -196,6 +197,43 @@ In the following example, the spec, ``Search specification`` contains the scenar
     * Search for product "Cup Cakes"
     * "Cup Cakes" should show up in the search results
 
+Table driven scenario
+---------------------
+
+Gauge 1.0.3 adds an experimental feature to provide a table at scenario level. Gauge will iterate over the table and run that particular scenario against each row.
+Set ``allow_scenario_datatable`` variable to ``true`` in ``/env/default/default.properties`` to enable this feature.
+
+Example
+^^^^^^^
+
+.. code-block:: gauge
+
+    # Search specification
+
+    ## Vowel counts in multiple word
+
+     |Word  |Vowel Count|
+     |------|-----------|
+     |Gauge |3          |
+     |Mingle|2          |
+     |Snap  |1          |
+     |GoCD  |1          |
+     |Rhythm|0          |
+
+    This is the second scenario in this specification
+
+    Here's a step that takes a table
+
+    * The word <Word> has <Vowel Count> vowels.
+
+Since this is ans experimental feature there are few cases in which it currently does not work:
+
+* IDE plugins does not support this feature.
+* CSV files can not be used as table for scenario.
+* Reporting plugins does not accommodate this feature.
+
+.. note::
+    This feature is currently available in gauge >= 1.0.3,
 
 .. _longstart-steps:
 
@@ -991,7 +1029,7 @@ Python
 .. cssclass:: dynamic-content ruby
 
 Ruby
-^^^^^^
+^^^^
 .. code-block:: ruby
 
     step 'Create a user <user name>','Create another user <user name>' do |user_name|
