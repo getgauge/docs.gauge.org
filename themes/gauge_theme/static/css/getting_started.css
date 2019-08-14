@@ -128,7 +128,9 @@
 }
 
 .steps {
-    margin-bottom: -115px;
+    margin-bottom: -100px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e2e2;
 }
 
 #install-using-windows-installer .installer-icon {
@@ -377,8 +379,7 @@ h3:has(.alternate-methods){
 }
 
 .alternate-installation{
-    border-bottom: 1px solid #e2e2e2;
-    padding: 10px 0px 40px 0px;
+    padding: 10px 0px 20px 0px;
 }
 
 .alternate-methods {
