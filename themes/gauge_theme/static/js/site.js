@@ -137,7 +137,7 @@ $(document).ready(function() {
 
         let isFooterTouchingSidebar = leftSideBarHeight >= $('footer').offset().top - window.scrollY;
 
-        if(isFooterTouchingSidebar) {
+        if(window.scrollY && isFooterTouchingSidebar) {
             let sidebarOffsetTop = (leftSideBarOffsetTop) - (leftSideBarHeight - ($('footer').offset().top - window.scrollY));
             $('#left-sidebar').css('top',`${sidebarOffsetTop}px`)
             $('#right-sidebar').css('top',`${sidebarOffsetTop}px`)
