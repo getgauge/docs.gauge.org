@@ -1843,3 +1843,7 @@ img {
   width: 5%;
   margin-bottom: 1%;
 }
+
+.visuallyhidden{
+  display: none;
+}
