@@ -1313,7 +1313,7 @@ img {
   margin-bottom: 1%;
 }
 .visuallyhidden {
-  display: none;
+    display: none;
 }
 
 
@@ -1346,6 +1346,8 @@ img {
     float: left;
     width: 100px;
     margin: 17px 0 0 0;
+    position: relative;
+    top: 15px;
   }
   nav.nav {
     display: block;
@@ -1454,7 +1456,7 @@ img {
 @media (min-width:1200px) {
   .logo {
     width: 180px;
-    margin: 25px 0 0 0;
+    margin: 10px 0 0 0;
     height: 40px;
   }
   .main-nav a {
