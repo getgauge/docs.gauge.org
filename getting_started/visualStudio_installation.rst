@@ -9,6 +9,8 @@
 .. admonition:: System Requirements
 
       `Visual Studio 2017 <https://visualstudio.microsoft.com/vs/older-downloads/>`__
+      
+      `Gauge Visual Studio Templates <https://marketplace.visualstudio.com/items?itemName=vs-publisher-1071478.gauge-visualstudio-templates>`__
 
 
 Follow the steps to add the Gauge Visual Studio plugin from the IDE
