@@ -56,11 +56,8 @@
 <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
 {%- endmacro %}
 
-{%- if html_tag %}
-{{ html_tag }}
-{%- else %}
-<html xmlns="http://www.w3.org/1999/xhtml" {% if language is not none %} lang="{{ language }}" {% endif %}>
-{%- endif %}
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang = "en">
 
 <head>
   <!-- Google Tag Manager -->
