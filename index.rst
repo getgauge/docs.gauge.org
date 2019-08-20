@@ -6,7 +6,7 @@ Gauge documentation
 
     browse
     configuration
-    examples-and-tutorials
+    examples
     execution
     experimental-feature
     faqs

@@ -1,0 +1,139 @@
+#examples>table,
+#integration-with-ci-cd>table {
+    border: none;
+}
+
+.examples-table th {
+    color: black;
+    font-weight: bolder;
+    text-align: left;
+    background: none;
+    border: none;
+}
+
+.examples-table td {
+    text-align: left;
+    border: none;
+    border-top: solid 1px #e2e2e2;
+}
+
+.examples-table tr:nth-child(even) {
+    border: none;
+    background: none;
+}
+
+.examples-table tr:hover {
+    border: none;
+    background: none;
+}
+
+#examples>.examples-table>tbody>tr>td>a,
+#integration-with-ci-cd>.examples-table>tbody>tr>td>a {
+    color: black;
+    text-decoration: underline;
+}
+
+#examples>.examples-table>tbody>tr>td>a::after,
+#integration-with-ci-cd>.examples-table>tbody>tr>td>a::after {
+    content: url('../img/external_icon.svg');
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    position: relative;
+    right: -4px;
+    top: 2px;
+}
+
+/* icons */
+
+.examples-table .maven-logo::before,
+.examples-table .gradle-logo::before,
+.examples-table .selenium-logo::before,
+.examples-table .sahi-logo::before,
+.examples-table .selendroid-logo::before,
+.examples-table .guice-logo::before,
+.examples-table .spring-logo::before,
+.examples-table .perfecto-logo::before,
+.examples-table .taiko-logo::before,
+.examples-table .gocd-logo::before,
+.examples-table .teamcity-logo::before,
+.examples-table .travis-logo::before,
+.examples-table .circleci-logo::before,
+.examples-table .jenkins-logo::before,
+.examples-table .azure-logo::before,
+.examples-table .docker-logo::before {
+    display: inline-block;
+    width: 31px;
+    height: 31px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    margin-left: 5px;
+    top: 9px;
+    position: relative;
+    left: -5px;
+    padding: 3px;
+}
+
+.examples-table .maven-logo::before {
+    content: url(../img/maven.svg);
+}
+
+.examples-table .gradle-logo::before {
+    content: url(../img/gradle.svg);
+}
+
+.examples-table .selenium-logo::before {
+    content: url(../img/selenium.svg);
+}
+
+.examples-table .sahi-logo::before {
+    content: url(../img/sahi.svg);
+}
+
+.examples-table .selendroid-logo::before {
+    content: url(../img/selendroid.svg);
+}
+
+.examples-table .guice-logo::before {
+    content: url(../img/guice.svg);
+}
+
+.examples-table .spring-logo::before {
+    content: url(../img/spring.svg);
+}
+
+.examples-table .perfecto-logo::before {
+    content: url(../img/perfecto.svg);
+}
+
+.examples-table .taiko-logo::before {
+    content: url(../img/taiko.svg);
+}
+
+.examples-table .gocd-logo::before {
+    content: url(../img/gocd.svg);
+}
+
+.examples-table .teamcity-logo::before {
+    content: url(../img/teamcity.svg);
+}
+
+.examples-table .travis-logo::before {
+    content: url(../img/travisci.svg);
+}
+
+.examples-table .circleci-logo::before {
+    content: url(../img/circleci.svg);
+}
+
+.examples-table .jenkins-logo::before {
+    content: url(../img/jenkins.svg);
+}
+
+.examples-table .azure-logo::before {
+    content: url(../img/azure.svg);
+}
+
+.examples-table .docker-logo::before {
+    content: url(../img/docker.svg);
+}
