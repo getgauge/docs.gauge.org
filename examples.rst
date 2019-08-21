@@ -28,6 +28,7 @@
 
 
 .. cssclass:: dynamic-content csharp examples-table
+
 Listed below are examples for using Gauge to set up test projects for C# language along with different frameworks.
 
 .. cssclass:: dynamic-content csharp examples-table
@@ -47,6 +48,7 @@ Listed below are examples for using Gauge to set up test projects for C# languag
      - `Read more <https://github.com/getgauge-examples/gauge-example-csharp>`__
 
 .. cssclass:: dynamic-content java examples-table
+
 Listed below are examples for using Gauge to set up test projects for Java language along with different frameworks.
 
 .. cssclass:: dynamic-content java examples-table
@@ -86,6 +88,7 @@ Listed below are examples for using Gauge to set up test projects for Java langu
      - `Read more <https://github.com/AmirAtPerfecto/Gauge-Perfecto-Sample>`__
 
 .. cssclass:: dynamic-content javascript examples-table
+
 Listed below are examples for using Gauge to set up test projects for Javascript language along with different frameworks.
 
 .. cssclass:: dynamic-content javascript examples-table
@@ -105,6 +108,7 @@ Listed below are examples for using Gauge to set up test projects for Javascript
      - `Read more <https://github.com/getgauge-examples/js-taiko>`__
 
 .. cssclass:: dynamic-content python examples-table
+
 Listed below are examples for using Gauge to set up test projects for Python language along with different frameworks.
 
 .. cssclass:: dynamic-content python examples-table
@@ -125,6 +129,7 @@ Listed below are examples for using Gauge to set up test projects for Python lan
 
 
 .. cssclass:: dynamic-content ruby examples-table
+
 Listed below are examples for using Gauge to set up test projects for Ruby language along with different frameworks.
 
 .. cssclass:: dynamic-content ruby examples-table
