@@ -81,7 +81,7 @@ todo_include_todos = True
 # a list of builtin themes.
 #
 
-site_url = 'https://docs.gauge.org/master/'
+site_url = 'https://docs-preview.gauge.org/'
 
 html_theme = "gauge_theme"
 
