@@ -21,7 +21,7 @@ Follow the steps to add the Gauge VSCode code plugin from the IDE
 
 .. cssclass:: vscode-installation-note
 .. note::
-      You can install VS Code by
+      If you don't have VS Code installed, you can install it by clicking on :highlighted-syntax:`Get it now` link in the browser popup.
 
 | 2. On the extension page that opens in the IDEs, click the install button
 

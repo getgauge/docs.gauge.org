@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: master/
 
-sitemap: https://docs.gauge.org/latest/sitemap.xml
+sitemap: https://docs.gauge.org/sitemap.xml

@@ -1,6 +1,7 @@
-from sphinx.writers.html import HTMLTranslator
 from os import environ
+
 from sphinx.directives import CodeBlock
+from sphinx.writers.html import HTMLTranslator
 
 
 class Highlighter(object):

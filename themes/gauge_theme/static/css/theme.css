@@ -5,6 +5,8 @@
 @import url("change_filter.css");
 @import url("getting_started.css");
 @import url("writing_specifications.css");
+@import url("examples.css");
+
 
 .hidden {
   visibility: hidden;
@@ -76,7 +78,6 @@ footer {
 }
 
 .search-container {
-  line-height: 1px;
   width: 90%;
 }
 
@@ -905,7 +906,7 @@ ul.breadcrumbs li a {
 
 .navbtn {
   position: absolute;
-  top: 126px;
+  top: 146px;
   right: 20px;
   margin: auto;
   width: 20px;
