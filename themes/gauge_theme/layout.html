@@ -220,7 +220,12 @@
 
 
       <!-- Content Holder -->
+      {% if pagename == 'index' %}
+      <div class="docs-container no-right-bar containers">
+      {% else %}
       <div class="docs-container containers">
+      {% endif %}
+      
         <!-- <div class="row col-md-12 bigContainer"> -->
 
         {% if pagename == 'index' %}
@@ -229,7 +234,7 @@
         <div class="edit-page">
           <a href="https://github.com/getgauge/docs.gauge.org/edit/master/{{pagename}}.rst">
             <i class="fab fa-github"></i>
-            <u>improve this page</u> </a>
+            <u>Improve this page</u> </a>
         </div>
         <!-- {% include '_breadcrumbs.html' %} -->
         <a href="javascript:" id="return-to-top"><i></i></a>

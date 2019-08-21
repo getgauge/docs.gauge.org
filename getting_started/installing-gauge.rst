@@ -10,6 +10,7 @@ Gauge and learn how to create a test automation project using Gauge.
 If you are new to Gauge, check out the `Overview <../overview.html>`__ section in the docs for a quick introduction to the
 most important concepts and features of the tool.
 
+.. cssclass:: sub-heading
 
 Choose your Setup to Install Gauge
 ==================================
@@ -54,6 +55,8 @@ Select your setup to see the instructions for installing gauge.
          Visual Studio
          VS Code
 
+
+.. cssclass:: sub-heading
 
 Installation Instructions
 =========================

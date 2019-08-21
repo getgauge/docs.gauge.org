@@ -41,3 +41,8 @@
     font-family: 'URWGeometric-ExtraLight';
     src: url('../font/urw-geometric/URWGeometric-ExtraLight.eot?#iefix') format('embedded-opentype'), url('../font/urw-geometric/URWGeometric-ExtraLight.otf') format('opentype'), url('../font/urw-geometric/URWGeometric-ExtraLight.woff') format('woff'), url('../font/urw-geometric/URWGeometric-ExtraLight.ttf') format('truetype'), url('../font/urw-geometric/URWGeometric-ExtraLight.svg#URWGeometric-ExtraLight') format('svg');
 }
+
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('../font/open-sans/OpenSans-Bold.ttf');
+ }
