@@ -1362,6 +1362,11 @@ img {
     display: none;
 }
 
+.local-toc-header {
+  display: none;
+  font-weight: bolder;
+  color: black;
+}
 
 @media (min-width:576px) {
   .feature-desc {
@@ -1714,6 +1719,10 @@ img {
   }
   .feature-desc {
     min-height: 104px;
+  }
+
+  .local-toc-header {
+    display: block;
   }
   /* .gauge-features__feature {
     width: 46%;
