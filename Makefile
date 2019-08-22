@@ -24,4 +24,5 @@ serve: preview-build
 	(cd $(BUILDDIR) && python3 -m http.server)
 
 auto-build:
+	GAUGE_LATEST_VERSION=$(LATESTVERSION) \
 	sphinx-autobuild . $(BUILDDIR)
