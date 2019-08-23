@@ -129,7 +129,6 @@ const checkForAlgoliaSearch = function () {
 
 const showAlgoliaSearchContents = function () {
     let searchId = window.location.hash;
-    console.log(searchId);
     let dynamicElems = document.querySelectorAll(".dynamic-content");
     dynamicElems.forEach(elem => {
         elem.classList.add('hidden');
@@ -149,6 +148,19 @@ const updateToc = function () {
             parentClass.add('hidden');
         } else {
             parentClass.remove('hidden');
+        }
+    })
+}
+
+const updateTocForAlgolia = function () {
+    let tocItems = document.querySelectorAll('.localtoc-container > ul > li > a > span');
+    let searchId = window.location.hash
+    tocItems.forEach(item => {
+        let parentClass = item.parentElement.parentElement.classList;
+        if (item.innerText.toLowerCase().replace(/\s/g, "-") == searchId.substr(1, searchId.length)) {
+            parentClass.remove('hidden');
+        } else {
+            parentClass.add('hidden');
         }
     })
 }

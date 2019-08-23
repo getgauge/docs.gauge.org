@@ -11,6 +11,9 @@ const updateSelections = function () {
     if (!searchParam) {
         insertUrlParam();
     }
+}
+
+const addClickEventOnSetup = function () {
     document.querySelectorAll(".search").forEach(setOnclickEvent);
 }
 
@@ -148,22 +151,23 @@ const detectOs = function () {
 }
 
 const addOnloadEvents = function () {
+    detectOs();
     if (checkForAlgoliaSearch()) {
         showAlgoliaSearchContents();
+        updateTocForAlgolia();
         updateSelections();
+    } else {
+        updateSelections();
+        showContents();
         updateToc();
-        return;
     }
-    detectOs()
-    updateSelections();
+    addClickEventOnSetup();
     updateInstallationSetup();
-    showContents();
     expandInstaller();
     changeFilter();
     showAlternateMethods();
     setLanguageButtons();
     showRelevantIde();
-    updateToc();
 }
 
 window.onload = addOnloadEvents;
