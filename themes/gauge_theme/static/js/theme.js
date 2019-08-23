@@ -128,8 +128,8 @@ $(document).ready(() => {
       let subTocList = elemSelector.find('ul.sub-toc li')
       subTocList.each((_, subToc) => {
         let tocLink = subToc.children[0]
-        let location = window.location.hostname + window.location.pathname;
-        if (location == "docs.gauge.org/" || location == "docs-preview.gauge.org/"  ) location = "/index.html"
+        let location = window.location.pathname;
+        if (location == "/" ) location = "/index.html"
         if (tocLink && tocLink.href.match(location)) {
           $(subToc).addClass('active-toc expanded');
           elemSelector.addClass('active-toc expanded');
@@ -138,8 +138,8 @@ $(document).ready(() => {
       })
     } else {
       let tocLink = toc.children[0]
-      let location = window.location.hostname + window.location.pathname;
-      if (location == "docs.gauge.org/" || location == "docs-preview.gauge.org/"  ) location = "/index.html"
+      let location = window.location.pathname;
+      if (location == "/" ) location = "/index.html"
       if (tocLink && tocLink.pathname.match(location)) {
         elemSelector.addClass('active-toc');
       }
