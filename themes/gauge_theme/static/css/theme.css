@@ -410,7 +410,7 @@ body {
   padding: 5px 5px 5px 29px;
   background-repeat: no-repeat;
   position: relative;
-  top: 35px;
+  top: 42px;
   z-index: 1;
   background-size: 14px;
   left: 11px;
@@ -903,7 +903,7 @@ ul.breadcrumbs li a {
 
 .navbtn {
   position: absolute;
-  top: 146px;
+  top: 148px;
   right: 20px;
   margin: auto;
   width: 20px;

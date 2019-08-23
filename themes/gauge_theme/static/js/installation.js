@@ -56,7 +56,7 @@ const changeBackground = function () {
         if (element.checked) {
             element.parentElement.style.backgroundColor = "rgba(255, 204, 0, 0.1)";
             element.parentElement.style.border = "solid 1px #ffcc00"
-        }else{
+        } else {
             element.parentElement.style.backgroundColor = "#f2f2f2";
             element.parentElement.style.border = ""
         }
@@ -101,7 +101,7 @@ const insertUrlParam = function () {
 }
 
 const isContentClass = function (child) {
-    return child.classList && child.classList.length >= 1;
+    return child.classList && child.classList.contains('toggle');
 }
 
 const hideOtherInstallation = function (coll) {
@@ -139,13 +139,19 @@ const showAlternateMethods = function () {
     }
 }
 
-const detectOs = function(){
-    if (navigator.appVersion.indexOf("Win")!=-1) SELECTIONS.os="windows";
-    if (navigator.appVersion.indexOf("Mac")!=-1) SELECTIONS.os="macos";
-    if (navigator.appVersion.indexOf("Linux")!=-1) SELECTIONS.os="linux";
+const detectOs = function () {
+    if (navigator.appVersion.indexOf("Win") != -1) SELECTIONS.os = "windows";
+    if (navigator.appVersion.indexOf("Mac") != -1) SELECTIONS.os = "macos";
+    if (navigator.appVersion.indexOf("Linux") != -1) SELECTIONS.os = "linux";
 }
 
 const addOnloadEvents = function () {
+    if (checkForAlgoliaSearch()) {
+        showAlgoliaSearchContents();
+        updateSelections();
+        updateToc();
+        return;
+    }
     detectOs()
     updateSelections();
     updateInstallationSetup();

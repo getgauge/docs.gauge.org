@@ -27,23 +27,15 @@ You can install Gauge using any of the following methods.
     - Terminal
 
 
-.. cssclass:: dynamic-content macos
-
 1. Install brew if you haven't already: Go to the brew website, https://brew.sh/, and follow the
 directions there.
-
-.. cssclass:: dynamic-content macos
 
 2. Run the brew Command to Install Gauge: Installing Gauge using brew is as easy as the
 directions there.
 
-.. cssclass:: dynamic-content macos
-
 .. code-block:: console
 
     brew install gauge
-
-.. cssclass:: dynamic-content macos
 
 if HomeBrew is working properly, you should see something similar to the following:
 
@@ -62,20 +54,20 @@ if HomeBrew is working properly, you should see something similar to the followi
 :installer-icon:`Install using CURL`
 ------------------------------------
 
-.. cssclass:: dynamic-content macos collapsible-content
+.. cssclass:: toggle collapsible-content
 
 Install Gauge to /usr/local/bin by running
 
-.. cssclass:: dynamic-content macos collapsible-content
+.. cssclass:: toggle collapsible-content
 .. code-block:: console
 
     curl -Ssl https://downloads.gauge.org/stable | sh
 
-.. cssclass:: dynamic-content macos collapsible-content
+.. cssclass:: toggle collapsible-content
 
 Or install Gauge to a [custom path] using
 
-.. cssclass:: dynamic-content macos collapsible-content
+.. cssclass:: toggle collapsible-content
 .. code-block:: console
 
     curl -Ssl https://downloads.gauge.org/stable | sh -- --location=[custom path]
@@ -85,7 +77,7 @@ Or install Gauge to a [custom path] using
 :installer-icon:`Install using ZIP file`
 ----------------------------------------
 
-.. cssclass:: dynamic-content macos collapsible-content
+.. cssclass:: toggle collapsible-content
 
     .. admonition:: System Requirements
 
@@ -100,7 +92,7 @@ Or install Gauge to a [custom path] using
 
     2. Run the following command in your Commnad line tool to complete the installation.
 
-.. cssclass:: dynamic-content macos collapsible-content
+.. cssclass:: toggle collapsible-content
 .. code-block:: console
 
     unzip -o gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-darwin.x86_64.zip -d /usr/local/bin
@@ -111,7 +103,7 @@ Or install Gauge to a [custom path] using
 :installer-icon:`Install using NPM installation`
 ------------------------------------------------
 
-.. cssclass:: dynamic-content macos collapsible-content
+.. cssclass:: toggle collapsible-content
 
     .. admonition:: System Requirements
 
@@ -128,7 +120,7 @@ Or install Gauge to a [custom path] using
     You can install Gauge by running the following command in Terminal.
 
 
-.. cssclass:: dynamic-content macos collapsible-content
+.. cssclass:: toggle collapsible-content
 
 .. code-block:: console
 
@@ -140,7 +132,7 @@ Or install Gauge to a [custom path] using
 :installer-icon:`Nightly Installation`
 --------------------------------------
 
-.. cssclass:: dynamic-content macos collapsible-content
+.. cssclass:: toggle collapsible-content
 
 Nightly releases are latest development snapshots of Gauge. They have the latest features being developed, but are unstable.
 Download the Gauge archive from `here <https://bintray.com/gauge/Gauge/Nightly/_latestVersion>`__.

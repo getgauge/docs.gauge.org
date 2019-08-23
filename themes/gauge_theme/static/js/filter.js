@@ -123,6 +123,24 @@ const showContents = function () {
     });
 }
 
+const checkForAlgoliaSearch = function () {
+    return window.location.search == "" && window.location.hash != "";
+}
+
+const showAlgoliaSearchContents = function () {
+    let searchId = window.location.hash;
+    console.log(searchId);
+    let dynamicElems = document.querySelectorAll(".dynamic-content");
+    dynamicElems.forEach(elem => {
+        elem.classList.add('hidden');
+    });
+    searchId && document.querySelector(searchId).classList.remove('hidden');
+    searchId && document.querySelector(searchId).childNodes.forEach(child => {
+        child.classList && child.classList.remove('hidden')
+    });
+}
+
+
 const updateToc = function () {
     let tocItems = document.querySelectorAll('.localtoc-container > ul > li > a > span');
     tocItems.forEach(item => {
