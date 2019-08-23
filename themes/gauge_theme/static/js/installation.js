@@ -104,11 +104,12 @@ const isContentClass = function (child) {
     return child.classList && child.classList.contains('toggle');
 }
 
-const hideOtherInstallation = function (coll) {
+const hideOtherInstallation = function (coll, clickedElem) {
     for (let i = 0; i < coll.length; i++) {
         coll[i].childNodes.forEach(child => {
-            if (isContentClass(child)) {
-                child.classList.add('collapsible-content')
+            if (i != clickedElem) {
+                coll[i].firstElementChild.classList.remove('expand-collapsible')
+                isContentClass(child) && child.classList.add('collapsible-content')
             }
         });
     }
@@ -118,10 +119,11 @@ const expandInstaller = function () {
     var coll = document.getElementsByClassName("collapsible");
     for (let i = 0; i < coll.length; i++) {
         coll[i].onclick = function () {
-            hideOtherInstallation(coll);
+            hideOtherInstallation(coll, i);
+            coll[i].firstElementChild.classList.toggle('expand-collapsible')
             coll[i].childNodes.forEach(child => {
                 if (isContentClass(child)) {
-                    child.classList.remove('collapsible-content');
+                    child.classList.toggle('collapsible-content');
                 }
             });
         }
@@ -134,7 +136,7 @@ const showAlternateMethods = function () {
     alternateMethods.onclick = function () {
         let collapsibleClasss = document.querySelectorAll(`.${SELECTIONS.os}+.collapsible`);
         collapsibleClasss.forEach(coll => {
-            coll.style.display = 'inline-block';
+            coll.classList.toggle('inline-display');
         })
     }
 }

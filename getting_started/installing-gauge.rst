@@ -83,14 +83,9 @@ Installation Instructions
 
          VS Code
 
-.. cssclass:: steps
-
 .. include:: mac_installation.rst
 .. include:: windows_installation.rst
 .. include:: linux_installation.rst
-
-.. cssclass:: steps
-
 .. include:: vscode_installation.rst
 .. include:: intellij_installation.rst
 .. include:: visualStudio_installation.rst

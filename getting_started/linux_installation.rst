@@ -67,11 +67,11 @@ Install Gauge using dfn by running this command
 
 .. cssclass:: toggle collapsible-content
 
-1. Download the zip installer.
-.. cssclass:: toggle collapsible-content
-`gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip>`__
-.. cssclass:: toggle collapsible-content
-2. Extract to a location and add it to system path using the following command.
+    1. Download the zip installer.
+
+    `gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip>`__
+
+    2. Extract to a location and add it to system path using the following command.
 
 .. cssclass:: toggle collapsible-content
 .. custom-code-block:: console
