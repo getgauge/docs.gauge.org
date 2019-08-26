@@ -10,6 +10,7 @@ preview-build:
 	cp preview-robots.txt $(BUILDDIR)/robots.txt
 	# copy verification file
 	cp googlefaad68ffc626de37.html $(BUILDDIR)
+	for i in _build/html/_static/css/*; do uglifycss $$i --output $$i; done;
 
 prod-build:
 	rm -rf $(BUILDDIR)
@@ -19,6 +20,7 @@ prod-build:
 	cp robots.txt $(BUILDDIR)/robots.txt
 	# copy verification file
 	cp googlefaad68ffc626de37.html $(BUILDDIR)
+	for i in _build/html/_static/css/*; do uglifycss $$i --output $$i; done;
 
 serve: preview-build
 	(cd $(BUILDDIR) && python3 -m http.server)

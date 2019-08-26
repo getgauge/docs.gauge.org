@@ -6,7 +6,6 @@
 #installation-selection .setup-selections {
     display: flex;
     flex-direction: row;
-    /* margin: 10px; */
 }
 
 #installation-selection .setup-selection {
@@ -15,7 +14,6 @@
     min-height: 300px;
     display: flex;
     flex-direction: column;
-    /* margin-left: 10px;*/
     margin-right: 20px; 
     padding-bottom: 5px;
     border-radius: 5px;
@@ -87,7 +85,6 @@
     content: url(../img/windows_os_icon.svg);
 }
 
-/* Languages */
 
 .selection-icon-csharp::before {
     content: url(../img/csharp_icon.svg);
@@ -109,7 +106,6 @@
     content: url(../img/ruby_icon.svg);
 }
 
-/* IDEs */
 
 .selection-icon-intellij::before {
     content: url(../img/intellij_icon.svg);
@@ -130,7 +126,6 @@
 .steps {
     margin-bottom: -100px;
     padding-bottom: 20px;
-    /* border-bottom: 1px solid #e2e2e2; */
 }
 
 #install-using-windows-installer .installer-icon {
