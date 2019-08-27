@@ -15,6 +15,8 @@ preview-build:
 	find $(BUILDDIR)/*/*/*.js -type f -exec gzip -v -9 {} \; -exec mv -v {}.gz {} \;
 	find $(BUILDDIR)/*/*.css -type f -exec gzip -v -9 {} \; -exec mv -v {}.gz {} \;
 	find $(BUILDDIR)/*/*/*.css -type f -exec gzip -v -9 {} \; -exec mv -v {}.gz {} \;
+	find $(BUILDDIR)/*.html -type f -exec gzip -v -9 {} \; -exec mv -v {}.gz {} \;
+	find $(BUILDDIR)/*/*.html -type f -exec gzip -v -9 {} \; -exec mv -v {}.gz {} \;
 
 prod-build:
 	rm -rf $(BUILDDIR)
@@ -29,6 +31,8 @@ prod-build:
 	find $(BUILDDIR)/*/*/*.js -type f -exec gzip -v -9 {} \; -exec mv -v {}.gz {} \;
 	find $(BUILDDIR)/*/*.css -type f -exec gzip -v -9 {} \; -exec mv -v {}.gz {} \;
 	find $(BUILDDIR)/*/*/*.css -type f -exec gzip -v -9 {} \; -exec mv -v {}.gz {} \;
+	find $(BUILDDIR)/*.html -type f -exec gzip -v -9 {} \; -exec mv -v {}.gz {} \;
+	find $(BUILDDIR)/*/*.html -type f -exec gzip -v -9 {} \; -exec mv -v {}.gz {} \;
 
 serve: preview-build
 	(cd $(BUILDDIR) && python3 -m http.server)
