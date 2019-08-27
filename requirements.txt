@@ -2,3 +2,4 @@ sphinx==2.2.0
 sphinx-sitemap
 sphinx-autobuild
 csscompressor
+jsmin
