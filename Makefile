@@ -12,6 +12,7 @@ preview-build:
 	cp googlefaad68ffc626de37.html $(BUILDDIR)
 	for i in $(BUILDDIR)/_static/css/*; do python3 -m csscompressor $$i --output $$i; done;
 	find $(BUILDDIR)/_static/css -type f -exec gzip -v -9 {} \; -exec mv -v {}.gz {} \;
+	find $(BUILDDIR)/_static/js -type f -exec gzip -v -9 {} \; -exec mv -v {}.gz {} \;
 
 prod-build:
 	rm -rf $(BUILDDIR)
@@ -23,6 +24,7 @@ prod-build:
 	cp googlefaad68ffc626de37.html $(BUILDDIR)
 	for i in $(BUILDDIR)/_static/css/*; do python3 -m csscompressor $$i --output $$i; done;
 	find $(BUILDDIR)/_static/css -type f -exec gzip -v -9 {} \; -exec mv -v {}.gz {} \;
+	find $(BUILDDIR)/_static/js -type f -exec gzip -v -9 {} \; -exec mv -v {}.gz {} \;
 
 serve: preview-build
 	(cd $(BUILDDIR) && python3 -m http.server)
