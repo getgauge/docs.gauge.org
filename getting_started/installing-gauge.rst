@@ -29,7 +29,7 @@ Select your setup to see the instructions for installing gauge.
       .. installationselection::
          :class: setup-selection
          :type: os
-         :title: 1: Select your OS
+         :title: 1. Select your OS
 
          Linux
          MacOS
@@ -38,7 +38,7 @@ Select your setup to see the instructions for installing gauge.
       .. installationselection::
          :class: setup-selection
          :type: language
-         :title: 2: Select a Language
+         :title: 2. Select a Language
 
          Csharp
          Java
@@ -49,7 +49,7 @@ Select your setup to see the instructions for installing gauge.
       .. installationselection::
          :class: setup-selection
          :type: ide
-         :title: 3: Select an IDE/Editor
+         :title: 3. Select an IDE/Editor
 
          Intellij
          Visual Studio

@@ -27,10 +27,6 @@
     src: url('../font/urw-geometric/URWGeometric-Regular.eot?#iefix') format('embedded-opentype'), url('../font/urw-geometric/URWGeometric-Regular.otf') format('opentype'), url('../font/urw-geometric/URWGeometric-Regular.woff') format('woff'), url('../font/urw-geometric/URWGeometric-Regular.ttf') format('truetype'), url('../font/urw-geometric/RWGeometric-Regular.svg#URWGeometric-Regular') format('svg');
 }
 
-@font-face {
-    font-family: 'URWGeometric-Medium';
-    src: url('../font/urw-geometric/URWGeometric-Medium.eot?#iefix') format('embedded-opentype'), url('../font/urw-geometric/URWGeometric-Medium.otf') format('opentype'), url('../font/urw-geometric/URWGeometric-Medium.woff') format('woff'), url('../font/urw-geometric/URWGeometric-Medium.ttf') format('truetype'), url('../font/urw-geometric/URWGeometric-Medium.svg#URWGeometric-Medium') format('svg');
-}
 
 @font-face {
     font-family: 'URWGeometric-Light';

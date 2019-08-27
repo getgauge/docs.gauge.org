@@ -15,6 +15,8 @@
     padding: 0px;
     width: inherit;
     margin-bottom: 20px;
+    background: #fffae6;
+    height: 35px;
 }
 
 .yellow-border {
@@ -63,24 +65,32 @@
     width: inherit;
     font-size: 14px;
     display: flex;
-    padding: 10px;
-    background: #fffae6;
     border-radius: 5px;
+    height: 35px;
+    padding: 5px 0px;
 }
 
 #proj-setup-filter-section .applied-filters .applied-filter {
-    padding: 0px 19px 0px 10px;
+    padding: 0px 20px 0px 10px;
     background-color: white;
     border-radius: 30px;
     border: 1px solid grey;
-    margin-right: 12px;
+    margin-right: 10px;
+    height: 25px;
+    font-size: 12px;
+    margin-left: 3px;
 }
+
 
 #proj-setup-filter-section .applied-filters .applied-filter-header {
     background-color: #fff0b8;
-    margin: -10px 10px -10px -10px;
-    padding: 1%;
+    margin:auto 2px;
     border-radius: 5px 0 0 5px;
+    padding: 4px 3px;
+    position: relative;
+    top: -5px;
+    left: -2px;
+    font-size: 13px;
 }
 
 #proj-setup-filter-section .applied-filters .applied-filter::before {
