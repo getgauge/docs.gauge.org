@@ -60,7 +60,7 @@ Listed below are examples for using Gauge to set up test projects for Java langu
      - Link
 
    * - :maven_logo:`Maven` + :selenium_logo:`Selenium`
-     - This is an example project for doing web automation testing with Gauge and Selenium. It uses Gradle as build tool
+     - This is an example project for doing web automation testing with Gauge and Selenium. It uses Maven as build tool
      - `Read more <https://github.com/getgauge-examples/java-maven-selenium>`__
 
    * - :gradle_logo:`Gradle` + :selenium_logo:`Selenium`
@@ -82,10 +82,6 @@ Listed below are examples for using Gauge to set up test projects for Java langu
    * - :spring_logo:`Spring`
      - This is an example project for doing web automation testing with Gauge and Spring.
      - `Read more <https://github.com/getgauge-examples/ioc-spring#gauge-with-spring>`__
-
-   * - :perfecto_logo:`Perfecto`
-     - This is an example project for doing web automation testing with Gauge and Perfecto.
-     - `Read more <https://github.com/AmirAtPerfecto/Gauge-Perfecto-Sample>`__
 
 .. cssclass:: dynamic-content javascript examples-table
 
