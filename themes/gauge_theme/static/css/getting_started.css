@@ -6,7 +6,6 @@
 #installation-selection .setup-selections {
     display: flex;
     flex-direction: row;
-    /* margin: 10px; */
 }
 
 #installation-selection .setup-selection {
@@ -15,7 +14,6 @@
     min-height: 300px;
     display: flex;
     flex-direction: column;
-    /* margin-left: 10px;*/
     margin-right: 20px; 
     padding-bottom: 5px;
     border-radius: 5px;
@@ -96,7 +94,6 @@
     content: url(../img/windows_os_icon.svg);
 }
 
-/* Languages */
 
 .selection-icon-csharp::before {
     content: url(../img/csharp_icon.svg);
@@ -118,7 +115,6 @@
     content: url(../img/ruby_icon.svg);
 }
 
-/* IDEs */
 
 .selection-icon-intellij::before {
     content: url(../img/intellij_icon.svg);
@@ -139,7 +135,6 @@
 .steps {
     margin-bottom: -100px;
     padding-bottom: 20px;
-    /* border-bottom: 1px solid #e2e2e2; */
 }
 
 #install-using-windows-installer .installer-icon {
@@ -196,6 +191,22 @@
     content: url(../img/apt_icon.svg);
 }
 
+.collapsible .installer-icon::after {
+    content: url(../img/angle-down-solid.svg);
+    margin-right: 10px;
+    padding: 5px;
+    width: 20px;
+    float: right;
+}
+
+.expand-collapsible {
+    background-color: #e2e2e2;
+    border-bottom: 3px solid #ffcc00;
+    padding: 10px;
+    margin: 10px -10px;
+}
+
+
 .disabled {
     cursor: not-allowed !important;
     opacity: 0.5;
@@ -204,7 +215,7 @@
 .collapsible {
     cursor: pointer;
     width: 100%;
-    min-height: 75px;
+    min-height: 60px;
     border: 1px solid #b1b1b1;
     border-bottom: 0px;
     outline: none;
@@ -328,17 +339,17 @@
     margin: 30px 0px;
 }
 
-#next-step h1{
+#next-step h1 {
     padding-bottom: 0px;
     margin-bottom: 0px;
 }
 
-.other-install-options{
+.other-install-options {
     padding: 10px 0px;
     margin-bottom: 50px;
 }
 
-.other-install-options::after{
+.other-install-options::after {
     content: url("../img/external_icon.svg");
     display: inline-block;
     height: 20px;
@@ -378,7 +389,7 @@
     width: 100%;
 }
 
-.extension-link::after{
+.extension-link::after {
     content: url("../img/external_icon.svg");
     display: inline-block;
     height: 20px;
@@ -388,7 +399,7 @@
     top: 4px;
 }
 
-h3:has(.alternate-methods){
+h3:has(.alternate-methods) {
     padding-bottom: 40px;
     border-bottom: 1px solid #e2e2e2;
 }
@@ -482,7 +493,7 @@ span.installer-icon {
     font-size: 18px;
     font-weight: 600;
     color: #1e1e1e;
-  } 
+  }
   span.installer-icon:before {
     position: relative;
     top: 10px;
@@ -607,4 +618,8 @@ span.installer-icon {
     .edit-page {
         display: none;
       }
+    
+    .inline-display {
+        display: inline-block;
+    }
 }

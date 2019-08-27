@@ -336,7 +336,6 @@ footer {
 }
 
 .localtoc>ul>li>a {
-  /* border-bottom: 0.5px solid rgba(85, 85, 85, 0.3); */
   font-size: 14px;
 }
 
@@ -931,7 +930,7 @@ ul.breadcrumbs li a {
 
 .navbtn {
   position: absolute;
-  top: 146px;
+  top: 148px;
   right: 20px;
   margin: auto;
   width: 20px;
@@ -1135,10 +1134,7 @@ header.top::after {
 
 
 .sticky.top, .open.top {
-  /* background: #1e1e1e;
-  -webkit-transition: all 0.2s ease-in-out; */
   transition: all 0.2s ease-in-out;
-  /* height: 65px; */
 }
 
 .sticky .bar, .open .bar {
@@ -1163,11 +1159,6 @@ header.top::after {
   transition: all 0.2s ease-in-out;
 }
 
-/* @media (min-width: 768px) {
-      .sticky .main-nav a,
-      .open .main-nav a {
-        color: #fff; } } */
-
 .sticky .main-nav a:hover, .open .main-nav a:hover {
   color: var(--gauge-yellow);
   -webkit-transition: all 0.2s ease-in-out;
@@ -1183,8 +1174,6 @@ footer {
   justify-content: center;
   width:100%;
 }
-
-
 
 img {
   max-width: 100%;
@@ -1399,6 +1388,7 @@ img {
   margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 .dynamic-content p a {
   font-family: 'URWGeometric-Medium';
   font-size: 16px;
@@ -1460,6 +1450,11 @@ img {
 .doc-toc-group.collapsed>a:after
 {
   display: none;
+}
+.local-toc-header {
+  display: none;
+  font-weight: bolder;
+  color: black;
 }
 
 @media (min-width:576px) {
@@ -1575,9 +1570,6 @@ img {
     text-align: left;
     padding-left: 0px;
   }
-  /* .docs-container {
-    margin-left: 20px;
-  } */
 }
 
 @media (min-width:992px) {
@@ -1725,6 +1717,7 @@ img {
   }
   #overview , #get-started {
     margin-top: 20px;
+    padding-top: 64px;
   }
 }
 
@@ -1750,7 +1743,6 @@ img {
   }
 
   #search {
-    /* width: 100%; */
     border: 2px solid lightgray;
     margin-bottom: 12px;
   }
@@ -1798,15 +1790,12 @@ img {
   .feature-desc {
     min-height: 104px;
   }
-  /* .gauge-features__feature {
-    width: 46%;
-    min-height: 150px;
-  } */
+
+  .local-toc-header {
+    display: block;
+  }
 }
 
-@media (min-width:screen-lg) {
-  
-}
 
 @media (max-width: 767.98px) {
   nav.nav {
@@ -1863,6 +1852,3 @@ img {
     padding: 20px 0 20px 0px;
   }
 }
-
-
-

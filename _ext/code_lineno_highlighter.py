@@ -21,9 +21,9 @@ class Highlighter(object):
 
 
 class AnchorLineNoHTMLTranslator(HTMLTranslator):
-    def __init__(self, builder, *args, **kwargs):
-        HTMLTranslator.__init__(self, builder, *args, **kwargs)
-        self.highlighter = Highlighter(builder.highlighter)
+    def __init__(self, *args):
+        HTMLTranslator.__init__(self, *args)
+        self.highlighter = Highlighter(self.builder.highlighter)
 
     def visit_literal_block(self, node):
         if node['ids']:

@@ -43,6 +43,15 @@
 {%- endfor %}
 {%- endmacro %}
 
+<link rel="preconnect" href="https://s3.amazonaws.com">
+<link rel="preconnect" href="https://user-event-tracker.crazyegg.com">
+<link rel="preconnect" href="https://stats.g.doubleclick.net">
+<link rel="preconnect" href="https://api.github.com">
+<link rel="preconnect" href="https://script.crazyegg.com">
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://surveys-static.survicate.com">
+<link rel="preconnect" href="https://survey.survicate.com">
+
 {%- macro css() %}
 <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
 <link rel="stylesheet" href="{{ pathto('_static/css/change_filter.css', 1) }}" type="text/css" />
@@ -57,7 +66,7 @@
 {%- endmacro %}
 
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang = "en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
 <head>
   <!-- Google Tag Manager -->
@@ -116,7 +125,7 @@
       <nav class="nav">
         <ul class="main-nav">
           <li class="githubstar-box">
-            <a href="//github.com/getgauge/gauge" aria-label="Gauge Github" target="_blank"  rel="noopener">
+            <a href="//github.com/getgauge/gauge" aria-label="Gauge Github" target="_blank" rel="noopener">
               <span class="github-icon"></span>
               <span class="github_star"></span></a>
           </li>
@@ -131,9 +140,9 @@
   </header>
 
   <!-- <div class="wrapper-container"> -->
-    <!-- <div class="main-content"> -->
+  <!-- <div class="main-content"> -->
 
-      <!--Left Sidebar  -->
+  <!--Left Sidebar  -->
 
       <div id="left-sidebar" class="left-sidebar-container containers">
         <div class='side-nav-header'>
@@ -185,7 +194,7 @@
             <ul>
               <li><a href="/index.html" class="toc-link">DOCS HOME</a> </li>
               <li><a href="/overview.html" class="toc-link">OVERVIEW</a> </li>
-              <li class="doc-toc-group collapsed"><a href="#">GET STARTED</a>
+              <li class="doc-toc-group collapsed"><a>GET STARTED</a>
                 <ul class="sub-toc collapsed">
                   <li><a href="/getting_started/installing-gauge.html" class="toc-link">Installing Gauge</a>
                   </li>
@@ -197,57 +206,94 @@
                 </ul>
               </li>
 
-                <li><a href="/writing-specifications.html" class="toc-link">WRITE
-                    SPECIFICATIONS</a> </li>
-                <li><a href="/execution.html" class="toc-link">RUN SPECIFICATIONS</a> </li>
-                <li><a href="/plugin.html" class="toc-link">USING PLUGINS</a> </li>
-                <li><a href="//manpage.gauge.org" class="toc-link">COMMAND REFRERENCE  <i class="fa fa-external-link" aria-hidden="true"></i></a> </li>
-                <li><a href="/configuration.html" class="toc-link">CONFIGURATION</a> </li>
-                <li><a href="/examples.html" class="toc-link">EXAMPLES</a> </li>
-                <li><a href="/faqs.html" class="toc-link">FAQs</a> </li>
-                <li><a href="/troubleshooting.html" class="toc-link">TROUBLESHOOTING GUIDE</a> </li>
-                <li><a href="//taiko.gauge.org/#integrating-gauge" class="toc-link">GAUGE WITH TAIKO  <i class="fa fa-external-link" aria-hidden="true"></i></a> </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+              <li><a href="/writing-specifications.html" class="toc-link">WRITE
+                  SPECIFICATIONS</a> </li>
+              <li><a href="/execution.html" class="toc-link">RUN SPECIFICATIONS</a> </li>
+              <li><a href="//manpage.gauge.org" class="toc-link">COMMAND REFERENCE</a> </li>
+              <li><a href="/configuration.html" class="toc-link">CONFIGURATION</a> </li>
+              <li><a href="/examples.html" class="toc-link">EXAMPLES</a> </li>
+              <li><a href="" class="toc-link">FAQs</a> </li>
+              <li><a href="/troubleshooting.html" class="toc-link">TROUBLESHOOTING GUIDE</a> </li>
+              <li><a href="//taiko.gauge.org/#integrating-gauge" class="toc-link">GAUGE WITH TAIKO</a> </li>
+            </ul>
+          </li>
+          <li class="link_examples"><a href="{{gaugehome}}/blog">Blog</a></li>
+        </ul>
       </div>
+      <div class="fixed-docs-toc docs-toc">
+        <ul>
+          <li><a href="/index.html" class="toc-link">DOCS HOME</a> </li>
+          <li><a href="/overview.html" class="toc-link">OVERVIEW</a> </li>
+          <li class="doc-toc-group collapsed"><a href="#">GET STARTED</a>
+            <ul class="sub-toc collapsed">
+              <li><a href="/getting_started/installing-gauge.html" class="toc-link">Installing Gauge</a>
+              </li>
+              <li><a href="/getting_started/create-test-project.html" class="toc-link">Create a test
+                  Project</a> </li>
+              <li><a href="/getting_started/running-a-specification.html" class="toc-link">Running a
+                  Specification</a> </li>
+              <li><a href="/getting_started/view-a-report.html" class="toc-link">Viewing Report</a> </li>
+            </ul>
+          </li>
+
+          <li><a href="/writing-specifications.html" class="toc-link">WRITE
+              SPECIFICATIONS</a> </li>
+          <li><a href="/execution.html" class="toc-link">RUN SPECIFICATIONS</a> </li>
+          <li><a href="/plugin.html" class="toc-link">USING PLUGINS</a> </li>
+          <li><a href="//manpage.gauge.org" class="toc-link">COMMAND REFERENCE <i class="fa fa-external-link"
+                aria-hidden="true"></i></a> </li>
+          <li><a href="/configuration.html" class="toc-link">CONFIGURATION</a> </li>
+          <li><a href="/examples.html" class="toc-link">EXAMPLES</a> </li>
+          <li><a href="/faqs.html" class="toc-link">FAQs</a> </li>
+          <li><a href="/troubleshooting.html" class="toc-link">TROUBLESHOOTING GUIDE</a> </li>
+          <li><a href="//taiko.gauge.org/#integrating-gauge" class="toc-link">GAUGE WITH TAIKO <i
+                class="fa fa-external-link" aria-hidden="true"></i></a> </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  </div>
 
 
 
 
-      <!-- Content Holder -->
+  <!-- Content Holder -->
+  {% if pagename == 'index' %}
+  <div class="docs-container no-right-bar containers">
+    {% else %}
+    <div class="docs-container containers">
+      {% endif %}
+
+      <!-- <div class="row col-md-12 bigContainer"> -->
+
       {% if pagename == 'index' %}
-      <div class="docs-container no-right-bar containers">
+      {% include '_landing.html' %}
       {% else %}
-      <div class="docs-container containers">
-      {% endif %}
-      
-        <!-- <div class="row col-md-12 bigContainer"> -->
-
-        {% if pagename == 'index' %}
-        {% include '_landing.html' %}
-        {% else %}
-        <div class="edit-page">
-          <a href="https://github.com/getgauge/docs.gauge.org/edit/master/{{pagename}}.rst">
-            <i class="fab fa-github"></i>
-            <u>Improve this page</u> </a>
-        </div>
-        <!-- {% include '_breadcrumbs.html' %} -->
-        <a href="javascript:" aria-label= "Return to top" id="return-to-top"><i></i></a>
-        {% block body %}{% endblock %}
-        {% endif %}
-        <!-- </div> -->
+      <div class="edit-page">
+        <a href="https://github.com/getgauge/docs.gauge.org/edit/master/{{pagename}}.rst">
+          <i class="fab fa-github"></i>
+          <u>Improve this page</u> </a>
       </div>
-      <!-- Right Sidebar -->
-      {% if pagename != 'index' %}
-      <div id="right-sidebar" class="right-sidebar-container containers">
-        <div class="localtoc-container">
-          <span class='mobile-local-toc collapsed' onclick="document.getElementsByClassName('mobile-local-toc')[0].classList.toggle('collapsed')" onkeypress="document.getElementsByClassName('mobile-local-toc')[0].classList.toggle('collapsed')">In this page</span>
-            {{ toc }}
-        </div>
-      </div>
+      <!-- {% include '_breadcrumbs.html' %} -->
+      <a href="javascript:" aria-label="Return to top" id="return-to-top"><i></i></a>
+      {% block body %}{% endblock %}
       {% endif %}
+      <!-- </div> -->
+    </div>
+    <!-- Right Sidebar -->
+    {% if pagename != 'index' %}
+    <div id="right-sidebar" class="right-sidebar-container containers">
+      <div class="localtoc-container">
+        <span class='local-toc-header'>In this page</span>
+        <span class='mobile-local-toc collapsed'
+          onclick="document.getElementsByClassName('mobile-local-toc')[0].classList.toggle('collapsed');"
+          onkeypress="document.getElementsByClassName('mobile-local-toc')[0].classList.toggle('collapsed')">
+          In this page
+        </span>
+        {{ toc }}
+      </div>
+    </div>
+    {% endif %}
     <!-- </div> -->
     {%- endblock %}
 
@@ -263,7 +309,7 @@
               <li> <a href="{{gaugehome}}/plugins/">Plugins</a> </li>
               <li> <a href="/">Documentation</a> </li>
               <li> <a href="{{gaugehome}}/blog/">Blog</a></li>
-              <li> <a href="//brandfolder.com/twproducts" target="_blank"  rel="noopener">Press Kit</a></li>
+              <li> <a href="//brandfolder.com/twproducts" target="_blank" rel="noopener">Press Kit</a></li>
 
             </ul>
           </nav>
@@ -273,9 +319,9 @@
           <nav class="footer_links">
             <ul class="foolinks">
               <li> <a href="browse.html">Table of Contents</a> </li>
-              <li> <a href="//waffle.io/getgauge/gauge" target="_blank"  rel="noopener">Roadmap</a> </li>
-              <li> <a href="//manpage.gauge.org/" target="_blank"  rel="noopener">Gauge Commands</a> </li>
-              <li><a href="//thoughtworks.com/privacy-policy" target="_blank"  rel="noopener">Privacy</a></li>
+              <li> <a href="//waffle.io/getgauge/gauge" target="_blank" rel="noopener">Roadmap</a> </li>
+              <li> <a href="//manpage.gauge.org/" target="_blank" rel="noopener">Gauge Commands</a> </li>
+              <li><a href="//thoughtworks.com/privacy-policy" target="_blank" rel="noopener">Privacy</a></li>
             </ul>
           </nav>
         </div>
@@ -295,13 +341,14 @@
           <h5>Follow us</h5>
           <nav class="footer_links">
             <ul class="foolinks">
-              <li> <a href="//github.com/getgauge/gauge" aria-label="Gauge Github" target="_blank"  rel="noopener"><i class="fab fa-github"></i></a> <a
-                  href="//twitter.com/getgauge" aria-label="Gauge twitter" target="_blank"  rel="noopener"><i class="fab fa-twitter"></i></a></li>
+              <li> <a href="//github.com/getgauge/gauge" aria-label="Gauge Github" target="_blank" rel="noopener"><i
+                    class="fab fa-github"></i></a> <a href="//twitter.com/getgauge" aria-label="Gauge twitter"
+                  target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li>
             </ul>
           </nav>
           <div class="licence">
-            <p>Gauge is an open-source project, sponsored by <a href="//www.thoughtworks.com/"
-                target="_blank"  rel="noopener">ThoughtWorks Inc.</a> under the GPL License, Version 3.0</p>
+            <p>Gauge is an open-source project, sponsored by <a href="//www.thoughtworks.com/" target="_blank"
+                rel="noopener">ThoughtWorks Inc.</a> under the GPL License, Version 3.0</p>
           </div>
         </div>
       </div>
@@ -309,8 +356,8 @@
       {{- script() }}
       {%- endblock %}
     </footer>
-  <!-- </div> -->
-  {%- endblock %}
+    <!-- </div> -->
+    {%- endblock %}
 </body>
 
 </html>

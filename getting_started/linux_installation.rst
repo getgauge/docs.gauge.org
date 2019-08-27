@@ -13,25 +13,19 @@ Gauge can be installed on any flavour of Linux using the shell script. The Follo
 :installer-icon:`Install Using Shell Script APT_GET`
 ----------------------------------------------------
 
-.. cssclass:: dynamic-content linux
-
 1. First, add Gauge's GPG key with this command:
 
-.. cssclass:: dynamic-content linux
 .. code-block:: console
 
     sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
 
-.. cssclass:: dynamic-content linux
 
 2. Then add Gauge to the repository list using:
 
-.. cssclass:: dynamic-content linux
 .. code-block:: console
 
     echo deb https://dl.bintray.com/gauge/gauge-deb nightly main | sudo tee - a /etc/apt/sources.list
 
-.. cssclass:: dynamic-content linux
 .. code-block:: console
 
     sudo apt-get update
@@ -51,16 +45,16 @@ Gauge can be installed on any flavour of Linux using the shell script. The Follo
 :installer-icon:`Install using DNF Package Manager`
 ---------------------------------------------------
 
-.. cssclass:: dynamic-content linux collapsible-content
+.. cssclass:: toggle collapsible-content
 
 Install Gauge using dfn by running this command
 
-.. cssclass:: dynamic-content linux collapsible-content
+.. cssclass:: toggle collapsible-content
 .. code-block:: console
 
     echo -e "[gauge-nightly]\nname-gauge-nightly\nbaseurl-http://dl.bintray.com/gauge/gauge-rpm/gauge-nightly\ngpgcheck-0\nenabled-1" | sudo tee /etc/yum.repos.d/gauge-nightly.repo
 
-.. cssclass:: dynamic-content linux collapsible-content
+.. cssclass:: toggle collapsible-content
 .. code-block:: console
 
     sudo dnf install gauge
@@ -71,15 +65,15 @@ Install Gauge using dfn by running this command
 :installer-icon:`Install using ZIP file`
 ----------------------------------------
 
-.. cssclass:: dynamic-content linux collapsible-content
+.. cssclass:: toggle collapsible-content
 
-1. Download the zip installer.
-.. cssclass:: dynamic-content linux collapsible-content
-`gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip>`__
-.. cssclass:: dynamic-content linux collapsible-content
-2. Extract to a location and add it to system path using the following command.
+    1. Download the zip installer.
 
-.. cssclass:: dynamic-content linux collapsible-content
+    `gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip>`__
+
+    2. Extract to a location and add it to system path using the following command.
+
+.. cssclass:: toggle collapsible-content
 .. custom-code-block:: console
 
     unzip -o gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip -d /usr/local/bin
@@ -89,7 +83,7 @@ Install Gauge using dfn by running this command
 :installer-icon:`Install using NPM installation`
 ------------------------------------------------
 
-.. cssclass:: dynamic-content linux collapsible-content
+.. cssclass:: toggle collapsible-content
 
     .. admonition:: System Requirements
 
@@ -106,7 +100,7 @@ Install Gauge using dfn by running this command
     You can install Gauge by running the following command in Terminal.
 
 
-.. cssclass:: dynamic-content linux collapsible-content
+.. cssclass:: toggle collapsible-content
 
 .. code-block:: console
 
@@ -118,20 +112,20 @@ Install Gauge using dfn by running this command
 :installer-icon:`Install Using CURL`
 ------------------------------------
 
-.. cssclass:: dynamic-content linux collapsible-content
+.. cssclass:: toggle collapsible-content
 
 Install Gauge to /usr/local/bin by running
 
-.. cssclass:: dynamic-content linux collapsible-content
+.. cssclass:: toggle collapsible-content
 .. code-block:: console
 
     curl -SsL https://downloads.gauge.org/stable | sh
 
-.. cssclass:: dynamic-content linux collapsible-content
+.. cssclass:: toggle collapsible-content
 
 Or install Gauge to a [custom path] using
 
-.. cssclass:: dynamic-content linux collapsible-content
+.. cssclass:: toggle collapsible-content
 .. code-block:: console
 
     curl -SsL https://downloads.gauge.org/stable | sh -s -- --location-[custom path]
@@ -141,7 +135,7 @@ Or install Gauge to a [custom path] using
 :installer-icon:`Nightly Installation`
 ----------------------------------------
 
-.. cssclass:: dynamic-content linux collapsible-content
+.. cssclass:: toggle collapsible-content
 
 Nightly releases are latest development snapshots of Gauge. They have the latest features being developed, but are unstable.
 Download the Gauge archive from `here <https://bintray.com/gauge/Gauge/Nightly/_latestVersion>`__.

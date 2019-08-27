@@ -19,4 +19,10 @@ Gauge documentation
     plugin
     writing-specifications
     troubleshooting
-    errors
+    howto/ci_cd/azure
+    howto/ci_cd/circle
+    howto/ci_cd/docker
+    howto/ci_cd/gocd
+    howto/ci_cd/jenkins
+    howto/ci_cd/teamcity
+    howto/ci_cd/travis

@@ -129,7 +129,7 @@ $(document).ready(() => {
       subTocList.each((_, subToc) => {
         let tocLink = subToc.children[0]
         let location = window.location.pathname;
-        if (location == "/master/" || location == "/latest/") location = "/index.html"
+        if (location == "/" ) location = "/index.html"
         if (tocLink && tocLink.href.match(location)) {
           $(subToc).addClass('active-toc expanded');
           elemSelector.addClass('active-toc expanded');
@@ -139,7 +139,7 @@ $(document).ready(() => {
     } else {
       let tocLink = toc.children[0]
       let location = window.location.pathname;
-      if (location == "/master/" || location == "/latest/") location = "/index.html"
+      if (location == "/" ) location = "/index.html"
       if (tocLink && tocLink.pathname.match(location)) {
         elemSelector.addClass('active-toc');
       }
