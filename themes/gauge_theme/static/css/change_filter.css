@@ -16,7 +16,6 @@
     width: inherit;
     margin-bottom: 20px;
     background: #fffae6;
-    height: 35px;
 }
 
 .yellow-border {
@@ -45,8 +44,8 @@
     content: '\f192';
     font-family: FontAwesome;
     position: absolute;
-    left: 4%;
-    top: 33%;
+    left: 5%;
+    top: 50%;
     text-align: left;
 }
 
@@ -85,15 +84,15 @@
 
 #proj-setup-filter-section .applied-filters .applied-filter-header {
     background-color: #fff0b8;
-    margin: 5px 2px;
+    margin:auto 2px;
     border-radius: 5px 0 0 5px;
     padding: 7px 5px;
     position: relative;
-    top: -10px;
+    top: -5px;
     left: -2px;
     font-size: 13px;
     font-family: "Open Sans";
-    height: 35px;
+    height:35px
 }
 
 #proj-setup-filter-section .applied-filters .applied-filter::before {

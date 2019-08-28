@@ -1472,6 +1472,16 @@ img {
   color: black;
 }
 
+.question .tab-selector.nav li {
+  list-style-type: none;
+  padding: 5px 12px 5px 28px;
+}
+
+.question .tab-selector.nav {
+  display: flex;
+  padding-left: 0px;
+}
+
 @media (min-width:576px) {
   .feature-desc {
     min-height: auto;

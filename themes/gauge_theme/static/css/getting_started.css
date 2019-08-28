@@ -378,11 +378,11 @@
     padding-top: 20px;
 }
 
-.question {
+/* .question {
     margin-bottom: 5px;
     margin-top: 20px;
     padding-top: 20px;
-}
+} */
 
 .vscode-installation-note::after {
     content: url("../img/VScode_install.png");
