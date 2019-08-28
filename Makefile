@@ -1,4 +1,4 @@
-BUILDDIR = _build/html
+BUILDDIR = _build
 LATESTVERSION = $(shell git for-each-ref --sort='-*authordate' --format='%(refname:strip=3)' refs/remotes/ | grep -E "(^[0-9]+\.[0-9]+\.[0-9]+)" | head -n1)
 
 
@@ -10,11 +10,8 @@ preview-build:
 	cp preview-robots.txt $(BUILDDIR)/robots.txt
 	# copy verification file
 	cp googlefaad68ffc626de37.html $(BUILDDIR)
-	for i in $(BUILDDIR)/_static/**/*.css; do python3 -m csscompressor $$i --output $$i; done;
-	for i in $(BUILDDIR)/_static/**/*.js; do python3 -m jsmin $$i > minified; cp minified $$i; done;
-	for i in $(BUILDDIR)/_static/*.js; do python3 -m jsmin $$i > minified; cp minified $$i; done;
-	for i in $(BUILDDIR)/_static/*.css; do python3 -m jsmin $$i > minified; cp minified $$i; done;
-	rm minified
+	for i in $(BUILDDIR)/_static/css/*.css; do python3 -m csscompressor $$i >> $(BUILDDIR)/_static/app.min.css; done;
+	for i in $(BUILDDIR)/_static/js/*.js; do python3 -m jsmin $$i >> $(BUILDDIR)/_static/app.min.js; done;
 
 prod-build:
 	rm -rf $(BUILDDIR)
