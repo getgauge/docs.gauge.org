@@ -112,6 +112,8 @@
 
 #change-filter {
     text-decoration: underline;
+    font-family: 'OpenSans-Bold';
+    color:#5e5e5e;
 }
 
 #change-filter::before {
@@ -135,6 +137,13 @@
 
 #proj-setup-filter-section .proj-setup-filters {
     padding: 0 30px 0px 30px;
+    background: #fff;
+}
+
+.proj-setup-filters.docutils h4 {
+    margin-top: 0px;
+    padding-top: 25px;
+    font-size: 16px;
 }
 
 #proj-setup-filter-section .proj-setup-filters .selections {
@@ -160,10 +169,18 @@
 
 #proj-setup-filter-section .proj-setup-filters .filter-actions .filter-action h5 {
     padding: 2px 20px 2px 20px;
+    font-size: 14px;
+    font-family: 'OpenSans-Bold';
 }
 
 #proj-setup-filter-section .proj-setup-filters .filter-actions .filter-action.modify h5 {
     border-radius: 25px;
     background-color: black;
     color: #ffcc00;
+    font-size: 14px;
+    font-family: 'OpenSans-Bold';
+}
+.selection.docutils label span {
+    font-size: 14px;
+    font-family: "Open Sans";
 }
