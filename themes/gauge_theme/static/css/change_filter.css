@@ -71,7 +71,7 @@
 }
 
 #proj-setup-filter-section .applied-filters .applied-filter {
-    padding: 0px 20px 0px 10px;
+    padding: 2px 20px 0px 10px;
     background-color: white;
     border-radius: 30px;
     border: 1px solid grey;
@@ -79,18 +79,21 @@
     height: 25px;
     font-size: 12px;
     margin-left: 3px;
+    font-family: "Open Sans";
 }
 
 
 #proj-setup-filter-section .applied-filters .applied-filter-header {
     background-color: #fff0b8;
-    margin:auto 2px;
+    margin: 5px 2px;
     border-radius: 5px 0 0 5px;
-    padding: 4px 3px;
+    padding: 7px 5px;
     position: relative;
-    top: -5px;
+    top: -10px;
     left: -2px;
     font-size: 13px;
+    font-family: "Open Sans";
+    height: 35px;
 }
 
 #proj-setup-filter-section .applied-filters .applied-filter::before {

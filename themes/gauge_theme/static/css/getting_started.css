@@ -54,7 +54,7 @@
     content: '\f192';
     font-family: FontAwesome;
     position: absolute;
-    bottom: 8px;
+    bottom: 13px;
     left: 14px;
     text-align: left;
 }
@@ -489,10 +489,10 @@ ul.text-box li a {
     padding: 0px;
 }
 span.installer-icon {
-    font-family: 'URWGeometric-Medium';
-    font-size: 18px;
+    font-family: 'OpenSans-Bold';
+    font-size: 13px;
     font-weight: 600;
-    color: #1e1e1e;
+    color: #7e7e7e;
   }
   span.installer-icon:before {
     position: relative;
@@ -622,4 +622,18 @@ span.installer-icon {
     .inline-display {
         display: inline-block;
     }
+    .sliding-docs-toc.docs-toc ul li a {
+        font-size: 16px;
+        text-decoration: none;
+        list-style-type: none;
+        color: #1e1e1e;
+        font-weight: 600;
+        font-family: 'OpenSans';
+      }
+      .sliding-docs-toc.docs-toc>ul>li {
+        padding-bottom: 0px;
+      }
+      .sliding-docs-toc.docs-toc {
+        padding-top: 30px;
+      }
 }
