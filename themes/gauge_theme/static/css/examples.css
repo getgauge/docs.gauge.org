@@ -9,17 +9,25 @@
     text-align: left;
     background: none;
     border: none;
+    font-family: 'OpenSans-Bold';
+    font-size: 13px;
 }
 
 .examples-table td {
     text-align: left;
     border: none;
     border-top: solid 1px #e2e2e2;
+    font-family: "Open Sans";
+    font-size: 12px;
 }
 
 .examples-table tr:nth-child(even) {
     border: none;
     background: none;
+}
+.examples-table td span {
+    font-size: 14px;
+    font-size:"Open Sans";
 }
 
 .examples-table tr:hover {
@@ -135,4 +143,31 @@
 
 .examples-table .docker-logo::before {
     content: url(../img/docker.svg);
+}
+
+colgroup col:first-child {
+    width: 45%;
+}
+
+colgroup col:nth-child(2) {
+    width: 35%;
+}
+
+colgroup col:last-child {
+    width: 20%;
+}
+
+@media (max-width:576px) { 
+    .examples-table thead {
+        display: none;
+    }
+    .examples-table tr td {
+        display: block;
+    }
+    .examples-table td {
+        border-top:0px;
+    }
+    .examples-table tr {
+        border-bottom: 1px solid #ccc;
+    }
 }

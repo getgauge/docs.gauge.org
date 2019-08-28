@@ -73,9 +73,11 @@ ul li {
 
 .mobile-local-toc {
   cursor: pointer;
-  color: #337ab7;
+  color: #2c82be;
   width: 110px;
   display: block;
+  font-size: 14px;
+  font-family: "Open Sans";
 }
 
 .mobile-local-toc.collapsed + ul {
