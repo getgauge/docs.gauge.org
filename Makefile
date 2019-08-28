@@ -1,5 +1,5 @@
 BUILDDIR = _build
-LATESTVERSION = $(shell git for-each-ref --sort='-*authordate' --format='%(refname:strip=3)' refs/remotes/ | grep -E "(^[0-9]+\.[0-9]+\.[0-9]+)" | head -n1)
+LATESTVERSION = $(shell cat data/gauge_version.txt)
 
 
 preview-build:
