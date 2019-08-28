@@ -1176,6 +1176,9 @@ footer {
   justify-content: center;
   width:100%;
 }
+footer .fa-twitter:before,footer .fa-github:before {
+  content: ''!important;
+}
 
 img {
   max-width: 100%;
@@ -1211,7 +1214,7 @@ img {
 
 .foolinks .fab {
   font-size: 23px;
-  padding: 0px 20px 0px 0px;
+  padding: 0px 30px 0px 0px;
 }
 
 .footer_items {
