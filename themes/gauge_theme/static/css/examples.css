@@ -33,8 +33,7 @@
     text-decoration: underline;
 }
 
-#examples>.examples-table>tbody>tr>td>a::after,
-#integration-with-ci-cd>.examples-table>tbody>tr>td>a::after {
+#examples>.examples-table>tbody>tr>td>a::after{
     content: url('../img/external_icon.svg');
     display: inline-block;
     height: 15px;
