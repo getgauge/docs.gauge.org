@@ -409,7 +409,7 @@ footer {
 
 .codeBox {
   opacity: 0;
-  display: none;
+  width: 10px;
 }
 
 .index-page ul {
@@ -1404,7 +1404,6 @@ img {
   margin-bottom: 20px;
 }
 
-<<<<<<< HEAD
 .dynamic-content p a {
   font-family: 'URWGeometric-Medium';
   font-size: 16px;

@@ -103,45 +103,44 @@ const insertUrlParam = function () {
     }
 }
 
-const isContentClass = function (child) {
+const isToggleClass = function (child) {
     return child.classList && child.classList.contains('toggle');
 }
 
-const hideOtherInstallation = function (coll, clickedElem) {
-    for (let i = 0; i < coll.length; i++) {
-        coll[i].childNodes.forEach(child => {
-            if (i != clickedElem) {
-                coll[i].firstElementChild.classList.remove('expand-collapsible')
-                isContentClass(child) && child.classList.add('collapsible-content')
+const hideOtherInstallation = function (clickedElem) {
+    document.querySelectorAll('.collapsible h2').forEach((collapsible) => {
+        if (collapsible != clickedElem) {
+            collapsible.classList.remove('expand-collapsible');
+            var children = collapsible.parentElement.children;
+            for (let i = 0; i < children.length; i++) {
+                isToggleClass(children[i]) && children[i].classList.add('collapsible-content');
             }
-        });
-    }
+        }
+    });
 }
 
 const expandInstaller = function () {
-    var coll = document.getElementsByClassName("collapsible");
-    for (let i = 0; i < coll.length; i++) {
-        coll[i].onclick = function () {
-            hideOtherInstallation(coll, i);
-            coll[i].firstElementChild.classList.toggle('expand-collapsible')
-            coll[i].childNodes.forEach(child => {
-                if (isContentClass(child)) {
-                    child.classList.toggle('collapsible-content');
-                }
-            });
+    document.querySelectorAll('.collapsible h2').forEach((collapsible) => {
+        collapsible.onclick = function () {
+            hideOtherInstallation(collapsible);
+            var children = collapsible.parentElement.children;
+            children[0].classList.toggle('expand-collapsible');
+            for (let i = 0; i < children.length; i++) {
+                isToggleClass(children[i]) && children[i].classList.toggle('collapsible-content');
+            }
         }
-    }
+    })
 }
 
 const showAlternateMethods = function () {
-    let alternateMethods = document.querySelector(`.${SELECTIONS.os} .alternate-methods`);
-    if (!alternateMethods) return;
-    alternateMethods.onclick = function () {
-        let collapsibleClasss = document.querySelectorAll(`.${SELECTIONS.os}+.collapsible`);
-        collapsibleClasss.forEach(coll => {
-            coll.classList.toggle('inline-display');
-        })
-    }
+    document.querySelectorAll('.alternate-methods').forEach(alternateMethod => {
+        alternateMethod.onclick = function () {
+            let collapsibleClasss = document.querySelectorAll(`.${SELECTIONS.os}+.collapsible`);
+            collapsibleClasss.forEach(coll => {
+                coll.classList.toggle('inline-display');
+            })
+        }
+    });
 }
 
 const detectOs = function () {

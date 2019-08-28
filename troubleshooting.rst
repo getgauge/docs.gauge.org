@@ -4,6 +4,37 @@
 :heading:`Troubleshooting`
 ==========================
 
+.. _installtion-troubleshooting:
+
+Installtion
+-----------
+
+Gauge installtion via NPM (npm install @getgauge/cli -g)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Error message:**
+
+.. code-block:: json
+
+   { [Error: EACCES: permission denied, open 'bin/gauge'] errno: -13, code: 'EACCES', syscall: 'open', path: 'bin/gauge' }
+
+**Cause:**
+
+If npm was invoked with root privileges, then it will change the uid to the user
+account or uid specified by the user config, which defaults to nobody.
+
+
+**Solution:**
+
+Set the unsafe-perm flag to run scripts with root privileges.
+
+For example run the following command:
+
+.. code-block:: console
+
+   npm install -g @getgauge/cli --unsafe-perm
+
+
 .. _execution-troubleshooting:
 
 Execution (Run Gauge specification)

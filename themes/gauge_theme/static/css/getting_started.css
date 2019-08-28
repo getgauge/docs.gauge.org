@@ -14,7 +14,7 @@
     min-height: 300px;
     display: flex;
     flex-direction: column;
-    margin-right: 20px; 
+    margin-right: 20px;
     padding-bottom: 5px;
     border-radius: 5px;
     align-items: center;
@@ -39,7 +39,7 @@
     font-weight: 600;
     font-family: 'URWGeometric-Medium';
     color: #000000;
-  }
+}
 
 /* Hide the browser's default radio button */
 
@@ -356,11 +356,11 @@
     width: 20px;
     margin-right: 5px;
     position: relative;
-    top:5px;
-    left:5px;
+    top: 5px;
+    left: 5px;
 }
 
-.answers{
+.answers {
     padding-left: 0px !important;
     padding-top: 50px;
     border-top: 1px solid #e2e2e2;
@@ -368,23 +368,23 @@
     margin-bottom: 70px;
 }
 
-.category{
+.category {
     border-top: 1px solid #e2e2e2;
     padding-top: 40px;
 }
 
-.category-title>h1{
+.category-title>h1 {
     padding-bottom: 0px !important;
     padding-top: 20px;
 }
 
-.question{
+.question {
     margin-bottom: 5px;
     margin-top: 20px;
     padding-top: 20px;
 }
 
-.vscode-installation-note::after{
+.vscode-installation-note::after {
     content: url("../img/VScode_install.png");
     width: 100%;
 }
@@ -428,7 +428,7 @@ h3:has(.alternate-methods) {
     margin-top: 35px;
 }
 
-.alternate-installation{
+.alternate-installation {
     padding: 10px 0px 20px 0px;
 }
 
@@ -448,7 +448,7 @@ h3:has(.alternate-methods) {
     border-top: 3px solid #000000;
     transform: rotate(-135deg);
     top: -3px;
-    left:16px;
+    left: 16px;
 }
 
 .active-rhs-toc {
@@ -464,7 +464,7 @@ h3:has(.alternate-methods) {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
     border-bottom: 1px solid #b1b1b1;
-    margin-bottom:30px;
+    margin-bottom: 30px;
 }
 
 .text-box {
@@ -483,23 +483,29 @@ ul.text-box li a {
 }
 
 .steps h1 {
-    font-size: 20px!important;
+    font-size: 20px !important;
     font-weight: 600;
-    margin-bottom: 20px!important;
+    margin-bottom: 20px !important;
     padding: 0px;
 }
+
 span.installer-icon {
     font-family: 'OpenSans-Bold';
     font-size: 13px;
     font-weight: 600;
     color: #7e7e7e;
-  }
-  span.installer-icon:before {
+}
+
+span.installer-icon:before {
     position: relative;
     top: 10px;
-  }
+}
 
-  @media screen and (max-width: 768px) and (min-width: 660px) {
+.inline-display {
+    display: inline-block;
+}
+
+@media screen and (max-width: 768px) and (min-width: 660px) {
     #installation-selection .setup-selection {
         width: 33%;
         text-align: center;
@@ -512,6 +518,7 @@ span.installer-icon {
         border-radius: 5px;
         align-items: center;
     }
+
     #installation-selection .radioContainer {
         position: relative;
         width: 100%;
@@ -521,40 +528,47 @@ span.installer-icon {
         padding-top: 10px;
         font-size: 15px;
         border-radius: 3px;
-        background-color: transparent!important;
+        background-color: transparent !important;
         text-align: left;
         padding-left: 40px;
         padding-top: 6px;
-      }
-      .selection-icon {
-        display:none;
-      }
-      .docs-container {
-          margin: 10px;
-          padding-right: 60px!important;
-      }
-      .docs-container h2 {
-        font-size: 14px!important;
-        margin-right:auto;
-      }
-      .mobile-local-toc {
-        width: 150px!important;
+    }
+
+    .selection-icon {
+        display: none;
+    }
+
+    .docs-container {
+        margin: 10px;
+        padding-right: 60px !important;
+    }
+
+    .docs-container h2 {
+        font-size: 14px !important;
+        margin-right: auto;
+    }
+
+    .mobile-local-toc {
+        width: 150px !important;
         display: block;
         padding-left: 38px;
-      }
-      .localtoc-container > ul {
-        padding: 10px 30px!important;
     }
+
+    .localtoc-container>ul {
+        padding: 10px 30px !important;
+    }
+
     .edit-page {
         display: none;
-      }
+    }
 }
 
 @media (max-width:576px) {
     #installation-selection .setup-selections {
-    display: flex;
-    flex-direction: column;
+        display: flex;
+        flex-direction: column;
     }
+
     #installation-selection .setup-selection {
         width: 100%;
         text-align: center;
@@ -567,47 +581,59 @@ span.installer-icon {
         border-radius: 5px;
         align-items: center;
     }
+
     #installation-selection .radioContainer {
         position: relative;
         width: 100%;
         height: 45px;
         margin: 5px;
         cursor: pointer;
-        padding:10px;
+        padding: 10px;
         font-size: 15px;
         border-radius: 3px;
-        background-color:#f2f2f2;;
-      }
-      .selection-icon {
-        display:block;
-      }
-      #installation-selection .circle {
+        background-color: #f2f2f2;
+        ;
+    }
+
+    .selection-icon {
+        display: block;
+    }
+
+    #installation-selection .circle {
         left: 90px;
-      }
-      #installation-selection input:checked~.checkmark:after {
+    }
+
+    #installation-selection input:checked~.checkmark:after {
         left: 90px;
-        bottom:8px;
-      }
-      .docs-container h2 {
-          margin-right: auto;
-      }
-      .selection-icon {
-       left: 280px;
-      }
-      .localtoc-container {
+        bottom: 8px;
+    }
+
+    .docs-container h2 {
+        margin-right: auto;
+    }
+
+    .selection-icon {
+        left: 280px;
+    }
+
+    .localtoc-container {
         margin-bottom: 0px;
     }
+
     .mobile-local-toc {
         text-align: center;
         padding-left: 30px;
     }
-    .localtoc-container > ul {
+
+    .localtoc-container>ul {
         padding: 10px 30px;
     }
+
     .doc-toc-group.collapsed>a:after {
-        top: -4px!important;
+        top: -4px !important;
         left: 25px;
     }
+
     .doc-toc-group.expanded>a:after {
         border-left: 3px solid black;
         border-top: 3px solid black;
@@ -615,13 +641,11 @@ span.installer-icon {
         top: 2px;
         left: 25px;
     }
+
     .edit-page {
         display: none;
-      }
-    
-    .inline-display {
-        display: inline-block;
     }
+
     .sliding-docs-toc.docs-toc ul li a {
         font-size: 16px;
         text-decoration: none;
@@ -629,11 +653,13 @@ span.installer-icon {
         color: #1e1e1e;
         font-weight: 600;
         font-family: 'OpenSans';
-      }
-      .sliding-docs-toc.docs-toc>ul>li {
+    }
+
+    .sliding-docs-toc.docs-toc>ul>li {
         padding-bottom: 0px;
-      }
-      .sliding-docs-toc.docs-toc {
+    }
+
+    .sliding-docs-toc.docs-toc {
         padding-top: 30px;
-      }
+    }
 }
