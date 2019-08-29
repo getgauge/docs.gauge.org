@@ -35,7 +35,7 @@ body {
 p {
   font-size: 14px;
   font-family: "Open Sans";
-
+  font-weight: normal;
 }
 
 h1 {
@@ -459,7 +459,7 @@ body {
   text-decoration: none;
   font-family: "Open Sans";
   font-size: 16px;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 2.13;
   letter-spacing: normal;
   color: #1e1e1e;
@@ -1140,7 +1140,9 @@ header.top::after {
   color: #333;
 }
 
-
+.algolia-autocomplete {
+  width: 100%;
+}
 
 .sticky.top, .open.top {
   transition: all 0.2s ease-in-out;
@@ -1606,7 +1608,6 @@ img {
   .align-middle .algolia-autocomplete {
     display: block;
     width: 80%;
-    float: right;
   }
   ul.breadcrumbs {
     display: inline-block;
@@ -1753,11 +1754,7 @@ img {
   .side-nav-header {
     border-bottom: 1px solid #ccc;
   }
-  .algolia-autocomplete {
-    width: 100%;
-    margin-left: 25px;
-    margin-bottom: 17px;
-  }
+  
   .localtoc-container > ul {
     margin: 10px 0px;
     padding-left: 15px;
@@ -1791,6 +1788,7 @@ img {
     border: 2px solid lightgray;
     margin-bottom: 12px;
     width:92%;
+    margin-left: 25px;
   }
   .left-sidebar-container nav {
     position: initial;
