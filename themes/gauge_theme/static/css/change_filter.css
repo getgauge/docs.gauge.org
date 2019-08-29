@@ -1,9 +1,9 @@
 @media (min-width: 1200px) {
     #proj-setup-filter-section {
-        width: 750px;
-    }
-    #proj-setup-filter-section .applied-filters {
-        width: 750px;
+        width: 640px;
+    } 
+     #proj-setup-filter-section .applied-filters {
+        width: 640px;
     }
     #proj-setup-filter-section .proj-setup-filters {
         width: inherit;
@@ -12,10 +12,10 @@
 
 #proj-setup-filter-section {
     margin: 0px;
-    padding: 0px;
     width: inherit;
     margin-bottom: 20px;
     background: #fffae6;
+    position: relative;
 }
 
 .yellow-border {
@@ -61,45 +61,46 @@
 }
 
 #proj-setup-filter-section .applied-filters {
-    width: inherit;
-    font-size: 14px;
+    position: relative;
     display: flex;
     border-radius: 5px;
     height: 35px;
-    padding: 5px 0px;
+    padding-left: 0px;
 }
-
-#proj-setup-filter-section .applied-filters .applied-filter {
-    padding: 0px 20px 0px 10px;
-    background-color: white;
-    border-radius: 30px;
-    border: 1px solid grey;
-    margin-right: 10px;
-    height: 25px;
-    font-size: 12px;
-    margin-left: 3px;
-    font-family: "Open Sans";
-}
-
 
 #proj-setup-filter-section .applied-filters .applied-filter-header {
     background-color: #fff0b8;
     margin:auto 2px;
     border-radius: 5px 0 0 5px;
-    padding: 7px 5px;
+    padding: 6px 7px;
     position: relative;
-    top: -5px;
-    left: -2px;
-    font-size: 13px;
+    top: 0px;
+    left: -15px;
+    font-size: 14px;
     font-family: "Open Sans";
-    height:35px
+    height:35px;
+    width: 52px!important;
+}
+
+#proj-setup-filter-section .applied-filters .applied-filter {
+    padding: 0px 15px 0px 10px;
+    background-color: white;
+    border-radius: 30px;
+    border: 1px solid grey;
+    margin-right: 10px;
+    margin-left: 10px;
+    height: 25px;
+    font-size: 14px;
+    margin-left: 3px;
+    font-family: "Open Sans";
+    margin-top: 6px;
 }
 
 #proj-setup-filter-section .applied-filters .applied-filter::before {
     content: '\f058';
     font-family: FontAwesome;
     border-radius: 50%;
-    margin-right: 9px;
+    margin-right: 8px;
 }
 
 #change-filter:hover {
@@ -113,7 +114,10 @@
 #change-filter {
     text-decoration: underline;
     font-family: 'OpenSans-Bold';
-    color:#5e5e5e;
+    color: #5e5e5e;
+    flex: 1;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 #change-filter::before {
