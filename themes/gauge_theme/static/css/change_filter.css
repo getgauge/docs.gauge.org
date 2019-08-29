@@ -146,6 +146,11 @@
     font-size: 16px;
 }
 
+.proj-setup-filters.docutils .selection input:checked~.checkmark:after {
+    left: 5%;
+    top: 35%;
+}
+
 #proj-setup-filter-section .proj-setup-filters .selections {
     display: flex;
     justify-content: space-between;

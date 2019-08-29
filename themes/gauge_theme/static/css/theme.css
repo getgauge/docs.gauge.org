@@ -73,18 +73,20 @@ ul li {
 
 .mobile-local-toc {
   cursor: pointer;
-  color: #2c82be;
+  color: #5e5e5e;
   width: 110px;
   display: block;
   font-size: 14px;
-  font-family: "Open Sans";
+  font-family: 'OpenSans-Bold';
+  padding-left: 15px;
+  padding-top: 12px;
 }
 
 .mobile-local-toc.collapsed + ul {
   display: none;
 }
 
-.mobile-local-toc::after {
+/* .mobile-local-toc::after {
   content: ' ';
   border-left: 2px solid #337ab7;
   border-top: 2px solid #337ab7;
@@ -95,7 +97,7 @@ ul li {
   left: 90px;
   transform: rotate(45deg);
   top: -11px;
-}
+} */
 
 .mobile-local-toc.collapsed::after {
   transform: rotate(-135deg);
@@ -456,13 +458,16 @@ body {
 .docs-toc a {
   text-decoration: none;
   font-family: "Open Sans";
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
-  line-height: 2.29;
+  line-height: 2.13;
   letter-spacing: normal;
-  color: #7e7e7e;
+  color: #1e1e1e;
  }
 
+ ul.sub-toc.collapsed li a {
+  font-size: 14px;
+}
 
 .docs-toc li {
   line-height: 34px;
@@ -678,8 +683,8 @@ code {
 }
 
 .link-text {
-  color: #333333;
-  border-bottom: 1px dotted #333333;
+  color: #1e1e1e;
+  border-bottom: 1px dotted #1e1e1e;
   display: inlie-block;
   font-size: 12px;
   font-family: "Open Sans";
@@ -1487,7 +1492,7 @@ img {
     min-height: auto;
   }
   .localtoc-container > ul {
-    margin: 10px 0px;
+    margin: 1px 0px;
     padding-left: 0px;
   }
 }
@@ -1818,10 +1823,7 @@ img {
     max-width: 100%;
   }
 
-  .mobile-local-toc {
-    display: none;
-  }
-  .mobile-local-toc.collapsed + ul {
+   .mobile-local-toc.collapsed + ul {
     display: block;
   }
   footer {
