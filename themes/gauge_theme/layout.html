@@ -32,7 +32,7 @@
 {% endif %}
 
 {% set css_files = ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'] %}
-{% set script_files = script_files + ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', '_static/app.min.js'] %}
+{% set script_files = script_files + ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', '_static/js/app.min.js'] %}
 {% set title = 'Gauge Documentation' %}
 
 {%- macro script() %}
@@ -44,7 +44,6 @@
 {%- endmacro %}
 
 {%- macro css() %}
-<link rel="stylesheet" href="{{ pathto('_static/app.min.css', 1) }}" type="text/css" />
 {%- for css in css_files %}
 {%- if css|attr("filename") %}
 {{ css_tag(css) }}

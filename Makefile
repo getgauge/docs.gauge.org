@@ -10,8 +10,11 @@ preview-build:
 	cp preview-robots.txt $(BUILDDIR)/robots.txt
 	# copy verification file
 	cp googlefaad68ffc626de37.html $(BUILDDIR)
-	for i in $(BUILDDIR)/_static/css/*.css; do python3 -m csscompressor $$i >> $(BUILDDIR)/_static/app.min.css; done;
-	for i in $(BUILDDIR)/_static/js/*.js; do python3 -m jsmin $$i >> $(BUILDDIR)/_static/app.min.js; done;
+	# minify and concat css and js
+	for i in $(BUILDDIR)/_static/css/*.css; do python3 -m csscompressor $$i >> $(BUILDDIR)/_static/css/app.min.css; done;
+	for i in $(BUILDDIR)/_static/js/*.js; do python3 -m jsmin $$i >> $(BUILDDIR)/_static/js/app.min.js; done;
+	find $(BUILDDIR)/_static/css -type f ! -name '*.min.css' | xargs rm
+	find $(BUILDDIR)/_static/js -type f ! -name '*.min.js' | xargs rm
 
 prod-build:
 	rm -rf $(BUILDDIR)
@@ -21,10 +24,11 @@ prod-build:
 	cp robots.txt $(BUILDDIR)/robots.txt
 	# copy verification file
 	cp googlefaad68ffc626de37.html $(BUILDDIR)
-	for i in $(BUILDDIR)/_static/**/*.css; do python3 -m csscompressor $$i --output $$i; done;
-	for i in $(BUILDDIR)/_static/**/*.js; do python3 -m jsmin $$i > minified; cp minified $$i; done;
-	for i in $(BUILDDIR)/_static/*.js; do python3 -m jsmin $$i > minified; cp minified $$i; done;
-	for i in $(BUILDDIR)/_static/*.css; do python3 -m jsmin $$i > minified; cp minified $$i; done;
+	# minify and concat css and js
+	for i in $(BUILDDIR)/_static/css/*.css; do python3 -m csscompressor $$i >> $(BUILDDIR)/_static/css/app.min.css; done;
+	for i in $(BUILDDIR)/_static/js/*.js; do python3 -m jsmin $$i >> $(BUILDDIR)/_static/js/app.min.js; done;
+	find $(BUILDDIR)/_static/css -type f ! -name '*.min.css' | xargs rm
+	find $(BUILDDIR)/_static/js -type f ! -name '*.min.js' | xargs rm
 
 serve: preview-build
 	(cd $(BUILDDIR) && python3 -m http.server)
