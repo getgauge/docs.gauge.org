@@ -44,15 +44,15 @@ Step 1
 
 .. cssclass:: macos dynamic-content
 
-      Once the extension is installed, press Cmd + shift + p to display the editor's command pallete, and then execute the following command to create a new testing project in Gauge:
+      Once the extension is installed, press Cmd + shift + p to display the editor's command palette, and then execute the following command to create a new testing project in Gauge:
 
 .. cssclass:: windows dynamic-content
 
-      Once the extension is installed, press ctrl + shift + p to display the editor's command pallete, and then execute the following command to create a new testing project in Gauge:
+      Once the extension is installed, press ctrl + shift + p to display the editor's command palette, and then execute the following command to create a new testing project in Gauge:
 
 .. cssclass:: linux dynamic-content
 
-      Once the extension is installed, press ctrl + shift + p to display the editor's command pallete, and then execute the following command to create a new testing project in Gauge:
+      Once the extension is installed, press ctrl + shift + p to display the editor's command palette, and then execute the following command to create a new testing project in Gauge:
 
 :highlighted-syntax:`Gauge: Create new Gauge Project`
 
@@ -111,7 +111,7 @@ Give a name to your project
 
 .. include:: folder_structure.rst
 
-.. Note:: The file structure may vary depending on the language of your project. For ts example, we have created a Javascript project.
+.. Note:: The file structure may vary depending on the language of your project. For this example, we have created a Javascript project.
 
 .. cssclass:: javascript dynamic-content
 .. figure:: ../images/VSCode_JS_project_file_structure.png

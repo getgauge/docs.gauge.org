@@ -95,23 +95,23 @@ Next Step:
 
 .. cssclass:: csharp dynamic-content
 
-   Now that you've install Gauge, you can go ahead and create a CSharp testing project using Gauge.
+   Now that you've installed Gauge, you can go ahead and create a CSharp testing project using Gauge.
 
 .. cssclass:: java dynamic-content
 
-   Now that you've install Gauge, you can go ahead and create a Java testing project using Gauge.
+   Now that you've installed Gauge, you can go ahead and create a Java testing project using Gauge.
 
 .. cssclass:: javascript dynamic-content
 
-   Now that you've install Gauge, you can go ahead and create a JavaScript testing project using Gauge.
+   Now that you've installed Gauge, you can go ahead and create a JavaScript testing project using Gauge.
 
 .. cssclass:: python dynamic-content
 
-   Now that you've install Gauge, you can go ahead and create a Python testing project using Gauge.
+   Now that you've installed Gauge, you can go ahead and create a Python testing project using Gauge.
 
 .. cssclass:: ruby dynamic-content
 
-   Now that you've install Gauge, you can go ahead and create a Ruby testing project using Gauge.
+   Now that you've installed Gauge, you can go ahead and create a Ruby testing project using Gauge.
 
 
 
