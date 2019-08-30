@@ -1401,7 +1401,7 @@ img {
 }
 .gpl__icontext--block {
   position: relative;
-  top: -17px;
+  top: 0px;
   display: inline-block;
   font-size: 16px;
 }
@@ -1525,7 +1525,7 @@ ul.sub-toc.collapsed li.doc-toc-group a::after {
     display:none;
   }
   .algolia-autocomplete {
-    margin-left: 6px;
+    margin-left: 0px;
   }
   #search {
     width: 100%;
@@ -1683,12 +1683,7 @@ ul.sub-toc.collapsed li.doc-toc-group a::after {
   .left-sidebar-container {
     grid-column: 2/4;
   }
-  .algolia-autocomplete {
-    margin-left: 30px;
-  }
-  #search-icon {
-    left: 44px;
-  }
+  
   h1 {
     font-size: 28px;
   }
@@ -1772,6 +1767,20 @@ ul.sub-toc.collapsed li.doc-toc-group a::after {
   .edit-page { 
     top:40px;
   }
+  .side-nav-header {
+    border-bottom: 1px solid #ccc;
+    padding: 27px 18px;
+  }
+  #search-icon {
+    left: 28px;
+  }
+  .fixed-docs-toc.docs-toc {
+    display: block;
+    padding-left: 43px!important;
+  }
+  .algolia-autocomplete {
+    margin-left: 11%;
+  }
 }
 
 @media (max-width:860px) {
@@ -1821,6 +1830,7 @@ ul.sub-toc.collapsed li.doc-toc-group a::after {
     position: fixed;
     height: 100%;
     border-right:1px solid #ccc;
+    z-index: 9;
   }
 
   .left-sidebar-container nav {
@@ -1837,8 +1847,13 @@ ul.sub-toc.collapsed li.doc-toc-group a::after {
   }
   .side-nav-header {
     border-bottom: 1px solid #ccc;
-    margin: 25px 0px 0px 0px;
-    padding-bottom: 29px;
+    padding: 27px 15px;
+  }
+  #search-icon {
+    left: 15%;
+  }
+  .algolia-autocomplete {
+    margin-left:8%;
   }
   
   .localtoc-container > ul {
@@ -1857,6 +1872,7 @@ ul.sub-toc.collapsed li.doc-toc-group a::after {
   }
   .right-sidebar-container {
     grid-column: 4/9;
+    top:60px;
   }
   .docs-container {
     grid-column: 3/4;
@@ -1866,14 +1882,14 @@ ul.sub-toc.collapsed li.doc-toc-group a::after {
     max-width: 100em;
     padding: 17px 25px;
   }
-
-  .right-sidebar-container {
-    top: 60px;
-  }
-
   #search {
-    border: 2px solid lightgray;
+    border: 1px solid lightgray;
     width:84%;
+  }
+  #seach::placeholder {
+    color: #5e5e5e;
+    opacity: 1; /* Firefox */
+    font-family: 'URWGeometric-Regular';
   }
   .left-sidebar-container nav {
     position: initial;

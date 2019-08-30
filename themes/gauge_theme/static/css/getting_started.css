@@ -680,7 +680,7 @@ span.installer-icon:before {
     }
 
     .sliding-docs-toc.docs-toc>ul>li {
-        padding-bottom: 0px;
+        padding-bottom: 0px!important;
     }
 
     .sliding-docs-toc.docs-toc {
