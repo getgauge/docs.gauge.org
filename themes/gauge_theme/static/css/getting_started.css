@@ -579,6 +579,9 @@ span.installer-icon:before {
     #search-icon { 
         left:15px!important;
     }
+    .docs-toc li {
+        list-style-type: none;
+    }
 }
 
 @media (max-width:576px) {
@@ -670,7 +673,7 @@ span.installer-icon:before {
         text-decoration: none;
         list-style-type: none;
         color: #1e1e1e;
-        font-weight: 600;
+        font-weight: normal;
         font-family: 'OpenSans';
     }
 
@@ -701,4 +704,13 @@ span.installer-icon:before {
     #search-icon { 
         left:15px!important;
     }
+    .docs-toc li {
+        list-style-type: none;
+    }
+    .doc-toc-group.expanded>a:after {
+        right:-12px;
+    }
+    .mobile-local-toc {
+        display:none;
+      }
 }

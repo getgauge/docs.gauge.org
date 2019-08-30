@@ -1498,6 +1498,9 @@ img {
 .fixed-docs-toc .doc-toc-group.expanded>a:after {
   display: none;
 }
+ul.sub-toc.collapsed li.doc-toc-group a::after {
+  display: none;
+}
 
 @media (min-width:576px) {
   .feature-desc {
@@ -1506,6 +1509,21 @@ img {
   .localtoc-container > ul {
     margin: 1px 0px;
     padding-left: 0px;
+  }
+  .sliding-docs-toc.docs-toc ul li {
+    list-style-type: none;
+  }
+  .mobile-local-toc {
+    display:none;
+  }
+  .algolia-autocomplete {
+    margin-left: 0px;
+  }
+  #search {
+    width: 100%;
+  }
+  #search-icon {
+    left:12px;
   }
 }
 
@@ -1612,6 +1630,7 @@ img {
     text-align: left;
     padding-left: 0px;
   }
+
 }
 
 @media (min-width:992px) {
@@ -1640,6 +1659,9 @@ img {
   }
   .left-sidebar-container {
     grid-column: 2/4;
+  }
+  .algolia-autocomplete {
+    margin-left: 50px;
   }
 }
 
