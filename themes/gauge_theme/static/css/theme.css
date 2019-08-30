@@ -1462,6 +1462,7 @@ img {
   color: #1e1e1e;
   padding-left:13px!important;
   padding-top:5px!important;
+  list-style-type:none;
 }
 .dynamic-content pre {
   overflow: hidden;
@@ -1502,6 +1503,13 @@ ul.sub-toc.collapsed li.doc-toc-group a::after {
   display: none;
 }
 
+.localtoc-container ul li ul li a:hover {
+  border-left: 2px solid #ffcc00;
+  padding-left: 7px;
+  height: 80%;
+  font-weight: bold;
+}
+
 @media (min-width:576px) {
   .feature-desc {
     min-height: auto;
@@ -1517,13 +1525,25 @@ ul.sub-toc.collapsed li.doc-toc-group a::after {
     display:none;
   }
   .algolia-autocomplete {
-    margin-left: 0px;
+    margin-left: 6px;
   }
   #search {
     width: 100%;
   }
   #search-icon {
     left:12px;
+  }
+  .docs-toc a {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 22px;
+  }
+  h2 {
+      font-size: 20px;
+  }
+  h3 {
+      font-size: 18px;
   }
 }
 
@@ -1630,6 +1650,9 @@ ul.sub-toc.collapsed li.doc-toc-group a::after {
     text-align: left;
     padding-left: 0px;
   }
+  .edit-page { 
+    top:10px;
+  }
 
 }
 
@@ -1661,7 +1684,25 @@ ul.sub-toc.collapsed li.doc-toc-group a::after {
     grid-column: 2/4;
   }
   .algolia-autocomplete {
-    margin-left: 50px;
+    margin-left: 30px;
+  }
+  #search-icon {
+    left: 44px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  h3 {
+    font-size: 20px;
+  }
+  
+  h4 {
+    font-size: 18px;
   }
 }
 
@@ -1694,9 +1735,13 @@ ul.sub-toc.collapsed li.doc-toc-group a::after {
   .left-sidebar-container {
     min-width: 21%!important;
   }
+  .fixed-docs-toc.docs-toc {
+    display: block;
+    padding-left: 50px;
+}
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1367px) {
   .gauge-features__feature {
       width: 24%;
   }
@@ -1720,6 +1765,12 @@ ul.sub-toc.collapsed li.doc-toc-group a::after {
   h3.banner-heading {
     font-size: 16px;
     font-family: 'OpenSans-Bold';
+  }
+  .docs-toc a {
+    font-size: 16px;
+  }
+  .edit-page { 
+    top:40px;
   }
 }
 
@@ -1758,7 +1809,7 @@ ul.sub-toc.collapsed li.doc-toc-group a::after {
   }
   .fixed-docs-toc.docs-toc {
     display: block;
-    padding-left: 50px;
+    padding-left: 30px;
   }
 
   .left-sidebar-container {

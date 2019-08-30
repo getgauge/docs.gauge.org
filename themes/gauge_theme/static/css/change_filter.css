@@ -10,6 +10,7 @@
     }
 }
 
+
 #proj-setup-filter-section {
     margin: 0px;
     width: inherit;
@@ -94,6 +95,7 @@
     margin-left: 3px;
     font-family: "Open Sans";
     margin-top: 6px;
+    font-weight: normal;
 }
 
 #proj-setup-filter-section .applied-filters .applied-filter::before {

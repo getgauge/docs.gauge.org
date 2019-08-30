@@ -492,9 +492,9 @@ ul.text-box li a {
 }
 
 span.installer-icon {
-    font-family: 'OpenSans-Bold';
+    font-family: 'OpenSans';
     font-size: 13px;
-    font-weight: 600;
+    font-weight: normal;
     color: #7e7e7e;
 }
 
@@ -614,9 +614,11 @@ span.installer-icon:before {
         font-size: 15px;
         border-radius: 3px;
         background-color: #f2f2f2;
-        ;
+        padding-left:140px;
     }
-
+    #installation-selection input:checked~.checkmark:after {
+        top: 11px;
+    }
     .selection-icon {
         display: block;
     }
@@ -712,5 +714,14 @@ span.installer-icon:before {
     }
     .mobile-local-toc {
         display:none;
-      }
+    }
+    h1 {
+    font-size: 22px!important;
+    }
+    h2 {
+        font-size: 20px!important;
+    }
+    h3 {
+        font-size: 18px!important;
+    }
 }
