@@ -64,7 +64,7 @@
     position: relative;
     display: flex;
     border-radius: 5px;
-    height: 35px;
+    height: 40px;
     padding-left: 0px;
 }
 
@@ -78,7 +78,7 @@
     left: -15px;
     font-size: 14px;
     font-family: "Open Sans";
-    height:35px;
+    height:40px;
     width: 52px!important;
 }
 
@@ -118,6 +118,7 @@
     flex: 1;
     font-size: 12px;
     font-weight: bold;
+    margin-top:2px;
 }
 
 #change-filter::before {

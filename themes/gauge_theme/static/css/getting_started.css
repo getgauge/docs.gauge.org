@@ -570,6 +570,15 @@ span.installer-icon:before {
         right: 0px;
         text-align: right;
     }
+    #search {
+        width: 100%;
+    }
+    .algolia-autocomplete {
+        margin-left: 0px!important;
+    }
+    #search-icon { 
+        left:15px!important;
+    }
 }
 
 @media (max-width:576px) {
@@ -682,5 +691,14 @@ span.installer-icon:before {
         top: -28px;
         right: 0px;
         text-align: right;
+    }
+    #search {
+        width: 100%;
+    }
+    .algolia-autocomplete {
+        margin-left: 0px!important;
+    }
+    #search-icon { 
+        left:15px!important;
     }
 }

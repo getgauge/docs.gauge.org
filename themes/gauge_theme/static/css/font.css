@@ -42,3 +42,8 @@
     font-family: 'OpenSans-Bold';
     src: url('../font/open-sans/OpenSans-Bold.ttf');
  }
+
+ @font-face {
+    font-family: 'SourceCodePro-Medium';
+    src: url('../font/source-code-pro/SourceCodePro-Medium.eot?#iefix') format('embedded-opentype'), url('../font/source-code-pro/SourceCodePro-Medium.otf') format('opentype'), url('../font/source-code-pro/SourceCodePro-Medium.ttf.woff') format('woff'), url('../font/source-code-pro/SourceCodePro-Medium.ttf') format('truetype');
+ }

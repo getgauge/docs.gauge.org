@@ -48,7 +48,7 @@ h2 {
   font-size: 24px;
   font-family: 'URWGeometric-Medium';
   margin-top: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 h3 {
@@ -70,6 +70,12 @@ ul li {
   font-family: "Open Sans";
   font-weight: normal;
 }
+
+/* .localtoc-container ul:nth-child(2) li a:hover  {
+  border-left: 2px solid#ffcc00;
+  padding-left: 6px;
+  font-weight: bold;
+} */
 
 .mobile-local-toc {
   cursor: pointer;
@@ -134,7 +140,6 @@ footer {
 }
 
 #search {
-  width: 100%;
   padding: 5px 5px 5px 29px;
   font-size: 80%;
   height: 40px;
@@ -283,11 +288,6 @@ header.top:hover {
   padding:0px;
 }
 
-.docs-container h2 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom:20px;
-}
 
 .docs-container h3 {
   font-size: 16px;
@@ -380,11 +380,12 @@ footer {
   margin: 0;
 }
 
+.highlight pre span {
+  font-family: 'SourceCodePro-Medium';
+}
 
 .copyBtn {
     float: right;
-    width: 44px;
-    height: 24px;
     background: #D8D8D8;
     outline: none;
     border: none;
@@ -395,6 +396,7 @@ footer {
     border-radius: 3px;
     transition: all 0.25s;
 }
+
 .copyBtn:hover {
   opacity: 0.8;
 }
@@ -443,6 +445,7 @@ body {
 
 .algolia-autocomplete {
   width: 100%;
+  margin-left: 50px;
 }
 
 #search-icon {
@@ -453,8 +456,9 @@ body {
   top: 14px;
   z-index: 1;
   background-size: 14px;
-  left: 35px;
+  left: 65px;
   height: 16px;
+  color:#5e5e5e;
 }
 
 .docs-toc a {
@@ -1045,7 +1049,7 @@ header.top {
   height: 100%;
   background: #1e1e1e;
   border-bottom: 5px solid var(--gauge-yellow);
-  padding: 0px 2% 0px 2%;
+  padding: 0px 3% 0px 3%;
 }
 
 header.top::after {
@@ -1732,7 +1736,7 @@ img {
   }
   .fixed-docs-toc.docs-toc {
     display: block;
-    padding-left: 25px;
+    padding-left: 50px;
   }
 
   .left-sidebar-container {
@@ -1760,8 +1764,8 @@ img {
   }
   .side-nav-header {
     border-bottom: 1px solid #ccc;
-    padding-bottom: 22px;
-    margin-top: 22px;
+    margin: 25px 0px 0px 0px;
+    padding-bottom: 29px;
   }
   
   .localtoc-container > ul {
@@ -1787,6 +1791,7 @@ img {
   .docs-container.no-right-bar {
     grid-column: 3/6!important;
     max-width: 100em;
+    padding: 17px 25px;
   }
 
   .right-sidebar-container {
@@ -1795,9 +1800,7 @@ img {
 
   #search {
     border: 2px solid lightgray;
-    margin-bottom: 12px;
-    width:92%;
-    margin-left: 25px;
+    width:84%;
   }
   .left-sidebar-container nav {
     position: initial;
