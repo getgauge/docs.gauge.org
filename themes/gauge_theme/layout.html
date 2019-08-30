@@ -32,12 +32,21 @@
 {% endif %}
 
 {% set css_files = ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'] %}
-{% set script_files = script_files + ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', '_static/js/app.min.js'] %}
+{% set script_files = ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', '_static/js/app.min.js'] %}
 {% set title = 'Gauge Documentation' %}
 
 {%- macro script() %}
-<script type="text/javascript" id="documentation_options" data-url_root="{{ pathto('', 1) }}"
-  src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
+<script>
+var DOCUMENTATION_OPTIONS = {
+    URL_ROOT: "{{pathto('',1)}}",
+    VERSION: '0.9.9',
+    LANGUAGE: 'None',
+    COLLAPSE_INDEX: false,
+    FILE_SUFFIX: '.html',
+    HAS_SOURCE: true,
+    SOURCELINK_SUFFIX: '.txt',
+    NAVIGATION_WITH_KEYS: false
+};</script>
 {%- for scriptfile in script_files %}
 <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
 {%- endfor %}
