@@ -21,17 +21,19 @@ in a spec file.To learn more about how specifications work you can look at the o
 .. cssclass:: vscode dynamic-content
 
 :vscode:`Running a Specification using VS Code`
-================================================
+-----------------------------------------------
 
 Step 1
-++++++
+~~~~~~
+
 Open the example spec. The Gauge specification file is present under :highlighted-syntax:`/specs/example.spec`
 
 .. figure:: ../images/VSCode_open_example.spec.png
       :alt: Open example.spec file
 
 Step 2
-++++++
+~~~~~~
+
 Run your Gauge specs in VS Code by choosing the option to :highlighted-syntax:`Run Spec`
 
 .. figure:: ../images/VSCode_run_code_lens.png
@@ -45,16 +47,19 @@ You'll get immediate feedback in the output about what got executed.
 .. cssclass:: java intellij dynamic-content
 
 :intellij:`Running a Specification using Intellij`
-===================================================
+--------------------------------------------------
+
 Step 1
-++++++
+~~~~~~
+
 Open the example spec. The Gauge specification file is present under :highlighted-syntax:`/specs/example.spec`
 
 .. figure:: ../images/Intellij_open_example.spec.png
       :alt: Open example.spec file
 
 Step 2
-++++++
+~~~~~~
+
 Run your Gauge specs in Intellij by clicking on the :highlighted-syntax:`Run example.spec`.
 
 .. figure:: ../images/Intellij_run_spec.png
@@ -68,15 +73,18 @@ You'll get immediate feedback in the output about what got executed.
 .. cssclass:: csharp visualstudio dynamic-content
 
 :visualstudio:`Running a Specification using Visual Studio`
-===========================================================
+-----------------------------------------------------------
+
 Step 1
-++++++
+~~~~~~
+
 When you build the test project, all the test scenarios appear in Test Explorer.
 If Test Explorer is not visible, choose :highlighted-syntax:`Test` on the Visual Studio menu, choose :highlighted-syntax:`Windows`, and then choose :highlighted-syntax:`Test Explorer`.
 
 
 Step 2
-++++++
+~~~~~~
+
 * To run all the scenarios in a solution, choose :highlighted-syntax:`Run All`.
 * To run all the scenarios of a specification, choose :highlighted-syntax:`Run...` and then choose the group on the menu.
 * To run one or more scenarios, select the individual scenarios that you want to run, open the context menu for a selected scenario and then choose :highlighted-syntax:`Run Selected Tests`.
@@ -90,7 +98,8 @@ You'll get immediate feedback in the Text Explorer about what got executed.
       :alt: Visual Studio text explorer
 
 Next Step:
-==========
+----------
+
 Now that you have successfully run a Gauge specification, you can go ahead and view the report from VS code.
 
 .. container:: page-navigator
