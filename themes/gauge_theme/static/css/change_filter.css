@@ -17,6 +17,7 @@
     margin-bottom: 20px;
     background: #fffae6;
     position: relative;
+    padding: 0px;
 }
 
 .yellow-border {
@@ -58,7 +59,7 @@
     width: 12px;
     height: 12px;
     left: 5%;
-    top: 50%;
+    top: 18px;
 }
 
 #proj-setup-filter-section .applied-filters {
@@ -71,7 +72,7 @@
 
 #proj-setup-filter-section .applied-filters .applied-filter-header {
     background-color: #fff0b8;
-    margin:auto 2px;
+    margin:auto 16px;
     border-radius: 5px 0 0 5px;
     padding: 6px 7px;
     position: relative;
@@ -160,7 +161,7 @@
 
 .proj-setup-filters.docutils .selection input:checked~.checkmark:after {
     left: 5%;
-    top: 35%;
+    top: 14px;
 }
 
 #proj-setup-filter-section .proj-setup-filters .selections {
@@ -185,7 +186,7 @@
 
 
 #proj-setup-filter-section .proj-setup-filters .filter-actions .filter-action h5 {
-    padding: 2px 20px 2px 20px;
+    padding: 5px 20px;
     font-size: 14px;
     font-family: 'OpenSans-Bold';
 }

@@ -1849,6 +1849,10 @@ p a {
 .row.banner {
   margin-left: 0px;
 }
+.proj-setup-filters.docutils .selection input:checked~.checkmark:after {
+  left: 5%;
+  top: 12px;
+}
 
 }
 
@@ -1962,7 +1966,7 @@ p a {
     display: grid;
     grid-template-areas: 'header header header' 'left-nav main-content right-nav' 'footer footer footer'; 
     grid-template-rows: 100px auto auto;
-    grid-template-columns: 17% 50% 29%;
+    grid-template-columns: 18% 50% 29%;
     grid-column-gap: 30px;    
   }
   
