@@ -14,7 +14,7 @@
 .. cssclass:: vscode dynamic-content
 
 :vscode:`Creating a Testing Project in VS Code`
-================================================
+-----------------------------------------------
 
 Gauge projects can be created and executed in Visual studio code using the Gauge extension for VSCode.
 
@@ -40,7 +40,7 @@ Gauge projects can be created and executed in Visual studio code using the Gauge
 
 
 Step 1
-++++++
+~~~~~~
 
 .. cssclass:: macos dynamic-content
 
@@ -60,7 +60,8 @@ Step 1
       :alt: Create project
 
 Step 2
-++++++
+~~~~~~
+
 .. cssclass:: csharp dynamic-content
 
       Select the csharp template to create the sample testing project
@@ -85,7 +86,7 @@ Step 2
       :alt: Select template
 
 Step 3
-++++++
+~~~~~~
 
 Choose a location to create a new folder to create a new project
 
@@ -102,7 +103,7 @@ Choose a location to create a new folder to create a new project
       :alt: Select project folder
 
 Step 4
-++++++
+~~~~~~
 
 Give a name to your project
 
@@ -132,14 +133,14 @@ Give a name to your project
 .. cssclass:: intellij dynamic-content
 
 :intellij:`Creating a Testing Project in Intellij Idea`
-=======================================================
+-------------------------------------------------------
 
 Gauge projects can be created and executed in Intellij Idea using the Gauge plugin for Intellij Idea.
 
 In this guide, you'll be able to learn how to add a sample Java testing project in Intellij Idea
 
 Step 1
-++++++
+~~~~~~
 
 Once the plugin is installed, goto :highlighted-syntax:`File -> New Project`, select :highlighted-syntax:`Gauge` and click :highlighted-syntax:`Next`.
 
@@ -147,7 +148,7 @@ Once the plugin is installed, goto :highlighted-syntax:`File -> New Project`, se
       :alt: Select Gauge
 
 Step 2
-++++++
+~~~~~~
 
 Choose the Project name, Project location, Project SDK and click :highlighted-syntax:`Finish`.
 
@@ -163,14 +164,14 @@ Choose the Project name, Project location, Project SDK and click :highlighted-sy
 .. cssclass:: visualstudio dynamic-content
 
 :visualstudio:`Creating a Testing Project in Visual Studio`
-===========================================================
+-----------------------------------------------------------
 
 Gauge projects can be created and executed in Visual Studio using the Gauge extension for Visual Studio.
 
 In this guide, you'll be able to learn how to add a sample CSharp testing project in Visual Studio Idea
 
 Step 1
-++++++
+~~~~~~
 
 Once the Gauge extension is installed, goto :highlighted-syntax:`File -> New Project`, select :highlighted-syntax:`Gauge Test Project`.
 Enter :highlighted-syntax:`Name`, :highlighted-syntax:`Location` and :highlighted-syntax:`Solution name` and click :highlighted-syntax:`Ok`.
@@ -184,7 +185,7 @@ Enter :highlighted-syntax:`Name`, :highlighted-syntax:`Location` and :highlighte
       :alt: Visual Studio CSharp file structure
 
 Next Step: Running a Specification
-===================================
+-----------------------------------
 
 Now that you have successfully added/initialized a new Gauge testing project, we can look at how to run a specification by using the sample spec in the test folder
 
