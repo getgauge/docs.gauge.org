@@ -130,9 +130,9 @@
     content: url(../img/vs_code_icon.svg);
 }
 
-#choose-your-setup-to-install-gauge {
+/* #choose-your-setup-to-install-gauge {
     margin-top: 50px;
-}
+} */
 
 .steps {
     margin-bottom: -100px;
@@ -222,7 +222,7 @@
     border: 1px solid #b1b1b1;
     border-bottom: 0px;
     outline: none;
-    padding: 0 10px 0 10px;
+    padding: 0 10px 18px 10px;
     display: none;
 }
 
@@ -359,7 +359,9 @@
 
 .other-install-options {
     padding: 10px 0px;
-    margin-bottom: 50px;
+}
+.other-install-options a {
+    text-decoration: underline;
 }
 
 .other-install-options::after {
@@ -516,6 +518,13 @@ span.installer-icon:before {
 
 .inline-display {
     display: inline-block;
+}
+
+h3 span.installer-icon {
+    color: #1e1e1e;
+    font-size: 20px;
+    font-family: 'URWGeometric-Medium';
+    font-weight: 600;
 }
 
 /* @media screen and (max-width: 768px) and (min-width: 660px) {

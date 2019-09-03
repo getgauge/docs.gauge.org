@@ -1967,6 +1967,11 @@ p a {
     margin: 10px 0 0 0;
     height: 40px;
   }
+  .mobile-local-toc {
+    text-align: left;
+    padding-left: 15px;
+    margin-left: 24px;
+  }
  
   .sticky .logo, .open .logo {
     -webkit-transition: all 0.2s ease-in-out;
