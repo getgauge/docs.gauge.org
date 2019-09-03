@@ -38,6 +38,7 @@ p ,a, ul li{
   font-family: "OpenSans-Regular";
   font-weight: normal;
   color:#1e1e1e;
+  text-align: justify;
 }
 
 h1 {
@@ -201,7 +202,10 @@ header.top:hover {
 }
 
 .localtoc-container ul li > ul {
-  padding-left: 25px;
+  padding-left: 0px;
+}
+.localtoc-container ul li ul li ul {
+  padding-left: 15px;
 }
 .localtoc-container ul  a {
   line-height: 1.85;
@@ -209,6 +213,8 @@ header.top:hover {
   color: #5e5e5e;
   text-decoration: none;
 }
+
+
 
 .sub-heading {
   font-weight: bolder;
@@ -1537,7 +1543,7 @@ p a {
 }
 
 .localtoc-container>ul {
-    padding: 10px 30px;
+    padding: 10px 0px;
 }
 
 .doc-toc-group.collapsed>a:after {
@@ -1582,9 +1588,9 @@ p a {
     top:34px;
     left: 6%;
   }
-  div#right-sidebar {
+  .right-sidebar-container {
     margin-top: 48px;
-}
+  }
   
   .docs-toc li {
       list-style-type: none;
@@ -1649,7 +1655,7 @@ p a {
     margin-top: 114px;
   }
   div.topic {
-    margin-top: 31px;
+    margin-top: 34px;
   }
   .fixed-docs-toc.docs-toc {
     display: block;
@@ -1677,12 +1683,12 @@ p a {
   }
   .localtoc-container>ul {
     margin: 10px 0;
-    padding-left: 15px;
+    padding-left: 0px;
     display: none;
   }
   .mobile-local-toc {
     text-align: left;
-    margin-left: 11px;
+    margin-left: 0px;
   }
 
   .left-sidebar-container nav {
@@ -1816,7 +1822,7 @@ p a {
   }
 
   .right-sidebar-container {
-    margin-top: 48px;
+    margin-top: 56px;
   }
   
 
@@ -1933,10 +1939,13 @@ p a {
     display: none;
   }
   .docs-container.no-right-bar.containers .topic {
-    margin-top: 13px;
+    margin-top: 16px;
   }
   .docs-container.no-right-bar {
     margin-top: 8px!important;
+  }
+  .docs-container.no-right-bar.containers .edit-page {
+    top: 38px;
   }
  
 }
@@ -1954,7 +1963,7 @@ p a {
     display: block;
   }
   .edit-page {
-    top: 45px;
+    top: 50px;
   }
   .docs-container.no-right-bar {
     max-width: 100em;
@@ -1973,7 +1982,7 @@ p a {
   }
   .localtoc-container>ul {
     margin: 10px 0;
-    padding-left: 15px;
+    padding-left: 0px;
     display: block;
   }
   .mobile-local-toc {
@@ -1988,8 +1997,8 @@ p a {
   }
   .mobile-local-toc {
     text-align: left;
-    padding-left: 15px;
-    margin-left: 24px;
+    padding-left: 0px;
+    margin-left: 0px;
   }
  
   .sticky .logo, .open .logo {
@@ -2031,7 +2040,9 @@ p a {
     max-width:100em;
   }
  
- 
+  div.topic {
+    margin-top: 31px;
+  }
   h3.banner-heading {
     font-family: 'OpenSans-Bold';
   }
@@ -2052,6 +2063,9 @@ p a {
   .docs-container.no-right-bar {
     max-width: 100em;
     width: 1000px;
+  }
+  .right-sidebar-container a {
+    font-size: 14px;
   }
   
 }
