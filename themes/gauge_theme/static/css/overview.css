@@ -4,12 +4,15 @@
 }
 
 .highlighted-syntax {
-    background-color: lightgray;
+    background-color: #eeeeee;
     border-radius: 4px;
+    padding: 3px 12px;
+    font-family: 'SourceCodePro-Medium';
+    font-size: 14px;
 }
 
 .param-syntax-char {
-    background-color: lightgray;
+    background-color: #eeeeee;
     display: block;
     width: 21px;
     padding: 5px;
@@ -25,4 +28,8 @@
 .topic h1{
     border-bottom: solid 1px #e2e2e2;
     margin:0px;
+}
+
+div#next-step-running-a-specification,div#next-step {
+    margin-top: 40px;
 }
