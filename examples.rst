@@ -21,11 +21,9 @@
 
 
 :heading:`Examples`
-=================================
+===================
 
 .. include:: change_filter.rst
-
-
 
 .. cssclass:: dynamic-content csharp examples-table
 
@@ -146,7 +144,7 @@ Listed below are examples for using Gauge to set up test projects for Ruby langu
 
 
 Integration with CI/CD
-++++++++++++++++++++++
+----------------------
 
 Gauge can be easily integrated with any `Continuous Integration <https://martinfowler.com/articles/continuousIntegration.html>`__ environment.
 
