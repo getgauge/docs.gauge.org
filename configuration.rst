@@ -32,8 +32,9 @@ You can also use the ``gauge config`` command to change the value of a key in th
 
    gauge config [flags] [args]
 
+.. cssclass:: example
+
 Example
-^^^^^^^
 
 For example, to change the value of ``check_updates`` in ``gauge.properties``, use the command in the following way:
 
@@ -160,99 +161,89 @@ For more details about running language plugins as an environment, see :ref:`Env
 
 .. cssclass:: dynamic-content java
 
-Java
-^^^^
-If you have installed Java, then you can  make Java specific configuration changes in the ``java.properties`` file. 
-The following *key value* pairs are listed in ``java.properties``:
+    If you have installed Java, then you can  make Java specific configuration changes in the ``java.properties`` file. 
+    The following *key value* pairs are listed in ``java.properties``:
 
-.. code-block:: python
-    :linenos:
-    :name: java.properties
+    .. code-block:: python
+        :linenos:
+        :name: java.properties
 
-    # Specify an alternate Java home if you want to use a custom version of the Java Development Kit (JDK).
-    gauge_java_home = PATH_TO_JAVA_HOME
+        # Specify an alternate Java home if you want to use a custom version of the Java Development Kit (JDK).
+        gauge_java_home = PATH_TO_JAVA_HOME
 
-    # Use this property if you need to override the build path for the Gauge project.
-    # IntelliJ and Eclipse out directory are usually auto-detected.
-    gauge_custom_build_path = PATH_TO_CUSTOM_BUILDPATH
+        # Use this property if you need to override the build path for the Gauge project.
+        # IntelliJ and Eclipse out directory are usually auto-detected.
+        gauge_custom_build_path = PATH_TO_CUSTOM_BUILDPATH
 
-    # Specify the directory where additional libraries are kept.
-    # You can specify multiple directory names separated with a comma `,`
-    # `libs` directory in the gauge project is added by default.
-    gauge_additional_libs = libs/*, PATH_TO_NEW_LIBRARY
+        # Specify the directory where additional libraries are kept.
+        # You can specify multiple directory names separated with a comma `,`
+        # `libs` directory in the gauge project is added by default.
+        gauge_additional_libs = libs/*, PATH_TO_NEW_LIBRARY
 
-    # Specify the JVM arguments passed to Java while launching.
-    # Enter multiple values separated by comma (,). For example, Xmx1024m, Xms128m
-    gauge_jvm_args = <JVM_ARGS>
+        # Specify the JVM arguments passed to Java while launching.
+        # Enter multiple values separated by comma (,). For example, Xmx1024m, Xms128m
+        gauge_jvm_args = <JVM_ARGS>
 
-    # Specify the directory containing Java files to be compiled.
-    # You can specify multiple directory names separated with a comma (,).
-    gauge_custom_compile_dir =
+        # Specify the directory containing Java files to be compiled.
+        # You can specify multiple directory names separated with a comma (,).
+        gauge_custom_compile_dir =
 
-    # Specify the level at which the in-memory objects should be cleared
-    # Possible values are suite, spec, and scenario. Default value is scenario.
-    gauge_clear_state_level = scenario
+        # Specify the level at which the in-memory objects should be cleared
+        # Possible values are suite, spec, and scenario. Default value is scenario.
+        gauge_clear_state_level = scenario
 
 .. cssclass:: dynamic-content javascript
 
-Javascript
-^^^^^^^^^^
-| If you have installed JavaScript, then you can make JavaScript specific configuration changes in the ``js.properties`` file. 
-| The following *key value* pairs are listed in ``js.properties``:
+    If you have installed JavaScript, then you can make JavaScript specific configuration changes in the ``js.properties`` file. 
+    The following *key value* pairs are listed in ``js.properties``:
 
-.. code-block:: python
-    :linenos:
-    :name: js.properties
+    .. code-block:: python
+        :linenos:
+        :name: js.properties
 
-    # Use this property if you need to override the timeout of a step when Gauge runs the step in a specification.
-    test_timeout = 10000
+        # Use this property if you need to override the timeout of a step when Gauge runs the step in a specification.
+        test_timeout = 10000
 
-    # Change this to true to enable browser debugging support
-    DEBUG = false
+        # Change this to true to enable browser debugging support
+        DEBUG = false
 
-    # Comma separated list of directories or paths (a path should be relative to project root).
-    STEP_IMPL_DIR = tests
+        # Comma separated list of directories or paths (a path should be relative to project root).
+        STEP_IMPL_DIR = tests
 
 .. cssclass:: dynamic-content python
 
-Python
-^^^^^^
-| If you have installed Python, then you can make Python specific configuration changes in the ``python.properties`` file. 
-| The following *key value* pair is listed in ``python.properties``:
+    If you have installed Python, then you can make Python specific configuration changes in the ``python.properties`` file. 
+    The following *key value* pair is listed in ``python.properties``:
 
-.. code-block:: python
-    :linenos:
-    :name: python
+    .. code-block:: python
+        :linenos:
+        :name: python
 
-    # Comma separated list of dirs. path should be relative to project root.
-    STEP_IMPL_DIR = tests
+        # Comma separated list of dirs. path should be relative to project root.
+        STEP_IMPL_DIR = tests
 
 .. cssclass:: dynamic-content csharp
 
-Csharp
-^^^^^^
-| If you have installed Csharp, then you can make Csharp specific configuration changes in the ``csharp.properties`` file. 
-| The following *key value* pair is listed in ``csharp.properties``:
+    If you have installed Csharp, then you can make Csharp specific configuration changes in the ``csharp.properties`` file. 
+    The following *key value* pair is listed in ``csharp.properties``:
 
-.. code-block:: text
-    :linenos:
-    :name: csharp
+    .. code-block:: text
+        :linenos:
+        :name: csharp
 
-    # Holds the location of the created Gauge project
-    GAUGE_CSHARP_PROJECT_FILE = /Users/nivedhasenthil/Desktop/sample-csharp/SampleCsharp.csproj
+        # Holds the location of the created Gauge project
+        GAUGE_CSHARP_PROJECT_FILE = /Users/nivedhasenthil/Desktop/sample-csharp/SampleCsharp.csproj
 
-    # The build configuration when running tests for the Gauge project
-    GAUGE_CSHARP_PROJECT_CONFIG = Debug
+        # The build configuration when running tests for the Gauge project
+        GAUGE_CSHARP_PROJECT_CONFIG = Debug
 
-    # The build platform when running tests for the Gauge project
-    GAUGE_CSHARP_PROJECT_PLATFORM = Any CPU
+        # The build platform when running tests for the Gauge project
+        GAUGE_CSHARP_PROJECT_PLATFORM = Any CPU
 
 .. cssclass:: dynamic-content ruby
 
-Ruby
-^^^^
-| If you have installed Ruby, then you can make Ruby specific configuration changes in the ``ruby.properties`` file.
-| Ruby do not have any specific default configuration properties of its own currently. 
+If you have installed Ruby, then you can make Ruby specific configuration changes in the ``ruby.properties`` file.
+Ruby do not have any specific default configuration properties of its own currently. 
 
 
 HTTP_PROXY setting while using Gauge
@@ -263,7 +254,7 @@ you are behind a proxy, you must configure the proxy settings so
 that Gauge connects to the internet via the proxy server.
 
 Without Authentication
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 If authentication is not required, set the environment variable
 ``HTTP_PROXY`` to proxy server URL.
@@ -285,7 +276,7 @@ If authentication is not required, set the environment variable
     set HTTP_PROXY=http://server-ip:port
 
 With Authentication
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 If authentication is required, set the environment variable
 ``HTTP_PROXY`` to proxy server URL along with the credentials.
@@ -325,8 +316,9 @@ A Gauge project can have multiple environments. ``default`` is the default envir
 Gauge uses the ``–env`` flag to load an environment, when Gauge runs a specification. If ``–env`` is not specified, then the ``default`` environment is chosen during run time. 
 Multiple environments can be specified along with the ``–env`` flag.
 
+.. cssclass:: example
+
 Example
-^^^^^^^
 
 The following example shows an ``env`` directory structure for a Java project.  
 ``default.properties`` and ``java.properties`` are the ``.properties`` files created when you create a Gauge project with Java as the language runner. 
@@ -345,6 +337,7 @@ You can use or change the key value pairs in these ``.properties`` files as per 
 
 Create a new environment in a Gauge project
 -------------------------------------------
+
 For ease of testing, you can create an environment in addition to the ``default`` existing environment in your Gauge project .  
 You can create a new ``.properties`` file or add an existing property file to this new environment and customize the configuration properties as per your requirements.
 
@@ -365,8 +358,10 @@ You can create a new ``.properties`` file or add an existing property file to th
 
       mkdir <name_of_env>
 
+.. cssclass:: example
+
 Example
-^^^^^^^
+
 
 For example, create an environment called ``ci``.
 
@@ -384,8 +379,9 @@ A ``ci`` environment is created at ``<project_root>/env``.
    
    You can add any number of ``.properties`` file to your environment.
 
+.. cssclass:: example
+
 Example
-^^^^^^^
 
 | The following example shows multiple environments in a Gauge project, where ``env`` is located at ``<project_root>``. 
 | ``ci``, ``dev``, and ``experimental`` are newly created environments in addition to the already existing ``default`` environment. 
@@ -433,8 +429,9 @@ If ``-env`` is not specified, then the ``default`` environment is loaded during 
 
 ``<name_of_env>`` - name of the environment that you choose to load
 
+.. cssclass:: example
+
 Example
-^^^^^^^
 
 In the following example, the ``ci`` environment is loaded when Gauge runs a specification.
 
@@ -446,6 +443,7 @@ In the following example, the ``ci`` environment is loaded when Gauge runs a spe
 
 Run a Gauge specification with multiple environments
 ----------------------------------------------------
+
 You can load multiple environments by using the ``-env`` flag when Gauge runs a specification. 
 This allows ease of testing.
 
@@ -472,8 +470,9 @@ Gauge specification with multiple environments:
 
 ``<name_of_env_1,2>`` - names of the environments that you choose to load
 
+.. cssclass:: example
+
 Example
-^^^^^^^
 
 In the following example, ``ci``, ``experimental``, and ``default`` environments are loaded when Gauge runs a specification.
 
@@ -483,16 +482,20 @@ In the following example, ``ci``, ``experimental``, and ``default`` environments
 
 As per the rules of precedence, environment variables from ``ci`` are set first, followed by ``experimental``, and then ``default``.
 
+.. cssclass:: example
+
 Example
-^^^^^^^
+
 In the following example, environment variables from ``ci`` are set first, followed by ``default``, and then ``experimental``.
 
 .. code-block:: console
 
    gauge run –env “ ci, default, experimental” specs
 
+.. cssclass:: example
+
 Example
-^^^^^^^
+
 In the following example, though ``default`` environment is not explicitly specified as an argument to ``--env``, Gauge automatically adds this environment at the end of the list, which is after ``experimental``.
 
 .. code-block:: console
@@ -547,7 +550,8 @@ For more information about local configuration, see :ref:`Local configuration of
 
 
 Examples of Gauge workflows
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Some of the possible Gauge workflows are listed on this page for your understanding.
 
 Workflow : User runs ``gauge run specs``
