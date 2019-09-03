@@ -1,225 +1,97 @@
 "use strict";
-// const IGNORED_DISTANCE_FROM_TOP = 160;
-$(document).ready(function() {
-    setGithubStar();
-    copyCode($('.highlight .go'));
-    getLocationhash();
-    videoContentChange();
-    videoEndchange();
+document.addEventListener("DOMContentLoaded", function() {
+	setGithubStar();
+	copyCode(document.querySelectorAll(".highlight .go"));
 
-    $('.tab_item').click(function(e) {
-        e.preventDefault();
-        var id = $(this).attr('data-attr');
-        id = ('#' + id);
-        $(this).parent().find('.active-tab').removeClass('active-tab');
-        $(this).parent().parent().find('.tab-content-container').find('.tab-content').removeClass('active')
-        $(this).addClass('active-tab');
-        $(this).parent().parent().find('.tab-content-container').find(id).addClass('active');
-    });
+	// mobile nav button
 
+	document.querySelector(".navbtn").addEventListener("click", function() {
+		document.querySelector(".bar").classList.toggle("animate");
+		document
+			.querySelector(".left-sidebar-container nav")
+			.classList.toggle("open");
+	});
 
-    // get started
-    $('.tab-nav_item').click(function(e) {
-        e.preventDefault();
-        var id = $(this).attr('data-attr');
-        id = ('#' + id);
-        $('.tab-nav_item').removeClass('active-tab');
-        $('.content-container > .tab-content').removeClass('active')
-        $(this).addClass('active-tab');
-        $(id).addClass('active');
-        history.pushState({ urlPath: window.location.pathname }, "", id)
-    });
+	//sticky header
+	window.scroll(function(event) {
+		if (event.target.scrollTop() > 20) {
+			document.querySelector(".top").classList.add("sticky");
+		} else {
+			document.querySelector(".top").classList.remove("sticky");
+		}
+	});
 
-    $('.mobile-heading').click(function(e) {
-        e.preventDefault();
-        var id = $(this).attr('data-attr');
-        id = ('#' + id);
-        $(this).toggleClass('open');
+	// Github star count
+	function gitHubStars() {
+		fetch("https://api.github.com/repos/getgauge/gauge")
+			.then(res => res.json())
+			.then(data => {
+				if (data["stargazers_count"] != undefined) {
+					window.localStorage.setItem("star", data["stargazers_count"]);
+				}
+			});
+	}
 
-        var icon = $(this).find('.expander')
+	function setGithubStar() {
+		gitHubStars();
+		const star = window.localStorage.getItem("star");
+		document.querySelector(".github_star").innerText = star;
+	}
 
-        if (icon.hasClass('arrow-active') == true) {
-            icon.removeClass('arrow-active').addClass('arrow')
-        } else {
-            icon.removeClass('arrow').addClass('arrow-active')
-        }
+	const leftSidebar = document.querySelector("#left-sidebar");
+	const leftSideBarOffsetTop = +window
+		.getComputedStyle(leftSidebar)
+		.top.replace("px", "");
 
-        $(id).toggleClass('active');
-    });
+	window.addEventListener("scroll", function() {
+		const leftSideBarHeight = window.innerHeight + 100;
+		const footerOffsetTop = document.querySelector("footer").offsetTop;
 
+		let isFooterTouchingSidebar =
+			leftSideBarHeight >= footerOffsetTop - window.scrollY;
 
-    // mobile nav button
-
-    $('.navbtn').on('click', function() {
-        $('.bar').toggleClass('animate');
-        // $('body').toggleClass('noscroll');
-        // $('.top').toggleClass('open');
-        // $('.nav').slideToggle();
-        $('.left-sidebar-container nav').toggleClass('open');
-        
-    });
-
-    //sticky header
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 20) {
-            $('.top').addClass('sticky');
-        } else {
-            $('.top').removeClass('sticky');
-        }
-    });
-
-    // Github star count
-    function gitHubStars() {
-        $.ajax({
-            url: "https://api.github.com/repos/getgauge/gauge",
-            success: function(data) {
-                if (data['stargazers_count'] != undefined) {
-                    window.localStorage.setItem('star', data['stargazers_count'])
-                }
-            }
-        })
-    }
-
-    function setGithubStar() {
-        gitHubStars();
-        var star = window.localStorage.getItem('star')
-        $('.github_star').text(star);
-    }
-
-    $(".gdpr-cookie-banner .close").click(function() {
-        document.cookie = "cookie-consent=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
-        $(".gdpr-cookie-banner").hide();
-    });
-
-    if (document.cookie.indexOf("cookie-consent=true") >= 0) {
-        $(".gdpr-cookie-banner").hide();
-    }
-
-    if ($(".tab-nav-get_started").length) {
-        var packageName = determinePackageNameBasedOnOS();
-        $(".tab-nav-get_started li.tab-nav_item[data-attr='" + packageName + "']").click();
-    }
-
-    if ($(".tab-nav").length) {
-        var tab = window.location.hash.substr(1);
-        var target = $(".tab-nav li[data-attr='" + tab + "'");
-        if (target && target.length) {
-            target.click();
-        }
-    }
-    $('.hgt-menu-item').click(function() {
-        var sectionId = $(this).attr('href');
-        $('body,html').animate({
-            scrollTop: $(sectionId).offset().top - 100
-        }, 500);
-    });
-
-    $('.cntl-txt').click(function() {
-        var id = $(this).attr('href');
-        $('.sidebar-content').removeClass('active-content');
-        $(id).addClass('active-content');
-        $('.sidebar_item').removeClass('active_item');
-        $('.sidebar_get-started').find(`[data-attr="${id}"]`).addClass('active_item');
-
-        $('body, html').animate({
-            scrollTop: 0
-        }, 500);
-    });
-
-    $(document).ready(function() {
-        $(".main-table").clone(true).appendTo('#table-scroll').addClass('clone');
-    });
-
-    const leftSideBarOffsetTop = +$('#left-sidebar').css('top').replace('px', '');
-
-    $(window).on('scroll', function() {
-        const leftSideBarHeight = window.innerHeight + 100;
-
-        let isFooterTouchingSidebar = leftSideBarHeight >= $('footer').offset().top - window.scrollY;
-
-        if(window.scrollY && isFooterTouchingSidebar) {
-            let sidebarOffsetTop = (leftSideBarOffsetTop) - (leftSideBarHeight - ($('footer').offset().top - window.scrollY));
-            $('#left-sidebar').css('top',`${sidebarOffsetTop}px`)
-            $('#right-sidebar').css('top',`${sidebarOffsetTop}px`)
-        } else {
-            $('#left-sidebar').css('top',`${leftSideBarOffsetTop}px`);
-            $('#right-sidebar').css('top',`${leftSideBarOffsetTop}px`);
-        }
-    });
+		if (window.scrollY && isFooterTouchingSidebar) {
+			let sidebarOffsetTop =
+				leftSideBarOffsetTop -
+				(leftSideBarHeight - (footerOffsetTop - window.scrollY));
+			document.querySelector(
+				"#left-sidebar"
+			).style.top = `${sidebarOffsetTop}px`;
+			document.querySelector(
+				"#right-sidebar"
+			).style.top = `${sidebarOffsetTop}px`;
+		} else {
+			document.querySelector(
+				"#left-sidebar"
+			).style.top = `${leftSideBarOffsetTop}px`;
+			document.querySelector(
+				"#right-sidebar"
+			).style.top = `${leftSideBarOffsetTop}px`;
+		}
+	});
 });
 
-function copyCode(element) {
-    $(element).each(function() {
-        $(this).append("<button class='copyBtn'>Copy</button>");
-        $(this).append("<input class='codeBox' value='none'> </input>");
-        $(this).append('<span class="copied-text">copied</span>');
-    });
+function copyCode(elements) {
+	elements.forEach(function(element) {
+		element.innerHTML += "<button class='copyBtn'>Copy</button>";
+		element.innerHTML += "<input class='codeBox' value='none'> </input>";
+		element.innerHTML += '<span class="copied-text">copied</span>';
+	});
 
-    $('.copyBtn').click(function() {
-        var value = this.parentElement.innerText.split('\nCopy')[0];
-        var $copied_text = $(this).nextAll('.copied-text');
-        var codeBox = $(this).next('.codeBox');
-        codeBox.val(value);
-        codeBox.select();
-        document.execCommand('copy');
-        $($copied_text).fadeIn();
-        $($copied_text).css('display', 'inline-block');
-        setTimeout(function() {
-            $($copied_text).fadeOut();
-        }, 3000);
-    });
-}
-
-function getLocationhash() {
-    var hash = window.location.hash;
-    if (hash != "") {
-        $('.sidebar-content').removeClass('active-content');
-        $(hash).addClass('active-content');
-        $('.sidebar_item').removeClass('active_item');
-        $('.sidebar_get-started').find(`[data-attr="${hash}"]`).addClass('active_item');
-    }
-}
-
-function videoContentChange() {
-    $('.card-nav_item').click(function() {
-        var videoId = '#' + $(this).attr('data-attr');
-        $('.card').removeClass('active-card');
-        $(videoId).addClass('active-card');
-        $('.card-nav_item').removeClass('active');
-        $(this).addClass('active');
-        $(videoId).find('iframe').addClass('iframe-visible');
-    });
-}
-
-function videoEndchange() {
-    var video = $('.video_item');
-
-    video.on('ended', function() {
-        let parent = $(this).parent().parent().parent();
-        let nextItem = parent.next();
-        let videoId = parent.attr('id');
-        console.log(videoId);
-        let li = $(".card-nav").find(`[data-attr='${videoId}']`);
-        console.log(li);
-        let nextLi = li.next();
-        console.log(nextLi);
-
-        parent.removeClass('active-card');
-        li.removeClass('active');
-        nextItem.addClass('active-card');
-        nextLi.addClass('active');
-    });
-
-    var addCssToIframe = function() {
-        if ($("iframe").contents().find("head") != undefined) {
-            $('iframe')
-                .contents()
-                .find("head")
-                .append(
-                    '<link rel="stylesheet" href="/assets/stylesheets/site.css" type="text/css" />');
-        }
-    };
-
-    setTimeout(addCssToIframe, 500);
-
+	document.querySelectorAll(".copyBtn").forEach(btn =>
+		btn.addEventListener("click", function() {
+			const value = this.parentElement.innerText.split("\nCopy")[0];
+			const copied_text = this.nextElementSibling.nextElementSibling;
+			const codeBox = this.nextElementSibling;
+			codeBox.value = value;
+			codeBox.select();
+			document.execCommand("copy");
+			copied_text.classList.remove("fadeOut");
+			copied_text.classList.add("fadeIn");
+			setTimeout(function() {
+				copied_text.classList.remove("fadeIn");
+				copied_text.classList.add("fadeOut");
+			}, 3000);
+		})
+	);
 }

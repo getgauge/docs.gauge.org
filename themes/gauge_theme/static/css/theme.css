@@ -238,6 +238,16 @@ div.topic {
   margin-top: 34px;
 }
 
+.fadeIn{
+  opacity: 1 !important;
+  transition: opacity 1s;
+}
+
+.fadeOut{
+  opacity: 0 !important;
+  transition: opacity 1s;
+}
+
 .topic h1 {
   border-bottom: solid 1px #cccccc;
   width: 99%;
@@ -374,7 +384,8 @@ footer {
   right: 63px;
   top: 16px;
   padding-right: 10px;
-  display: none;
+  display: inline-block;
+  opacity: 0;
 }
 
 .codeBox {
