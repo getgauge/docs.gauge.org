@@ -1,7 +1,7 @@
 BUILDDIR = _build
 LATESTVERSION = $(shell cat data/gauge_version.txt)
-CSS_FILES = $(BUILDDIR)/_static/basic.css $(BUILDDIR)/_static/pygments.css $(BUILDDIR)/_static/css/application.css $(BUILDDIR)/_static/css/change_filter.css $(BUILDDIR)/_static/css/examples.css $(BUILDDIR)/_static/css/font.css $(BUILDDIR)/_static/css/getting_started.css $(BUILDDIR)/_static/css/overview.css $(BUILDDIR)/_static/css/theme.css $(BUILDDIR)/_static/css/writing_specifications.css
-JS_FILES = $(BUILDDIR)/_static/underscore.js $(BUILDDIR)/_static/underscore-1.3.1.js $(BUILDDIR)/_static/jquery.js $(BUILDDIR)/_static/jquery-3.4.1.js $(BUILDDIR)/_static/doctools.js $(BUILDDIR)/_static/searchtools.js $(BUILDDIR)/_static/language_data.js $(BUILDDIR)/_static/js/filter.js $(BUILDDIR)/_static/js/installation.js $(BUILDDIR)/_static/js/site.js $(BUILDDIR)/_static/js/theme.js
+CSS_FILES = $(BUILDDIR)/_static/pygments.css $(BUILDDIR)/_static/css/change_filter.css $(BUILDDIR)/_static/css/examples.css $(BUILDDIR)/_static/css/font.css $(BUILDDIR)/_static/css/getting_started.css $(BUILDDIR)/_static/css/overview.css $(BUILDDIR)/_static/css/theme.css $(BUILDDIR)/_static/css/writing_specifications.css
+JS_FILES = $(BUILDDIR)/_static/js/filter.js $(BUILDDIR)/_static/js/installation.js $(BUILDDIR)/_static/js/site.js $(BUILDDIR)/_static/js/theme.js
 
 preview-build:
 	rm -rf $(BUILDDIR)

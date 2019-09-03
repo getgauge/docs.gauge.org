@@ -1,148 +1,87 @@
-$(document).ready(() => {
-  var faqToc = $('.faq-toc');
+document.addEventListener("DOMContentLoaded", () => {
+	// const faqToc = document.querySelector(".faq-toc");
 
-  if (faqToc) {
-    // get all H2 nodes, these are the groups in the ToC
-    var root = $('.faq-toc > ul');
-    // remove the H1 from toc.
-    faqToc.append($('.faq-toc > ul > li > ul'));
-    root.remove();
-    faqToc.insertAfter('#faqs > h1');
+	// if (faqToc) {
+	// 	// get all H2 nodes, these are the groups in the ToC
+	// 	var root = document.querySelectorAll(".faq-toc > ul");
+	// 	// remove the H1 from toc.
+	// 	faqToc.appendChild(document.querySelector(".faq-toc > ul > li > ul"));
+	// 	root.remove();
+	// 	faqToc.parentNode.insertBefore("#faqs > h1", faqToc.nextSibling);
 
-    $('ul > li > ul > li > ul', faqToc).remove();
-    // faqToc.remove();
-  }
+	// 	document
+	// 		.querySelectorAll("ul > li > ul > li > ul", faqToc)
+	// 		.forEach(elem => elem.parentNode.removeChild(elem));
+	// }
 
-  // remove container class to prevent overlap with sidebar
-  $('.tab, .tabs').removeClass('container');
+	var host = window.location.hostname;
+	var tag = host == "docs.gauge.org" ? "prod" : "preview";
+	// wire up algolia search
+	docsearch({
+		apiKey: "5008b0d9ea4d9e639a17a123bea077fe",
+		indexName: "gauge",
+		inputSelector: "#search",
+		algoliaOptions: { facetFilters: ["tags:" + tag] },
+		debug: false // Set debug to true if you want to inspect the dropdown
+	});
 
-  // create tabs from content
-  $('div.tabs').each(function () {
-    var tabSelector = $('<ul />', { class: "tab-selector nav nav-pills" });
-    var i = 0;
+	document
+		.querySelectorAll(".localtoc-container ul ul ul ul")
+		.forEach(elem => elem.parentNode.removeChild(elem));
+	document
+		.querySelectorAll(".localtoc-container ul .heading")
+		.forEach(elem => elem.parentNode.removeChild(elem));
 
-    $('.tab', this).each(function () {
-      var tab = $('<li />', {
-        class: $(this).attr('id'),
-      });
-      var tabanchor = $('<a />', {
-        text: $(this).find('.tab-title').text()
-      });
-      tab.append(tabanchor);
+	// remove nested container classes, prevent overlap with sidebar
+	document
+		.querySelectorAll(".container .container")
+		.forEach(elem => elem.classList.remove("container"));
 
-      $(this).find('.tab-title').remove();
-      if (i++) {
-        $(this).hide();
-      } else {
-        tab.addClass('active');
-      }
-      tabSelector.append(tab);
-    });
+	// ===== Scroll to Top ====
+	window.addEventListener("scroll", function() {
+		if (window.pageYOffset >= 50) {
+			// If page is scrolled more than 50px
+			document.querySelector("#return-to-top").classList.remove("fadeOut"); // Fade in the arrow
+			document.querySelector("#return-to-top").classList.add("fadeIn"); // Fade in the arrow
+		} else {
+			document.querySelector("#return-to-top").classList.remove("fadeIn"); // Else fade out the arrow
+			document.querySelector("#return-to-top").classList.add("fadeOut"); // Else fade out the arrow
+		}
+	});
 
-    $('.tab', this).eq(0).before(tabSelector);
-    tabSelector = null;
-    i = null;
-  });
+	document
+		.querySelector("#return-to-top")
+		.addEventListener("click", function() {
+			// When arrow is clicked
+			document.querySelector("body,html").scrollTop = 0; // Scroll to top of body
+		});
 
-  $('.tab-selector li').click(function (e) {
-    e.preventDefault();
-    if ($(this).hasClass('active')) return;
+	document.querySelectorAll(".headerlink").forEach(elem =>
+		elem.addEventListener("click", function() {
+			var sectionId = this.getAttribute("href");
+			const top = document.querySelector(sectionId).offset().top;
+			document.querySelector("body,html").scrollTop = top;
+		})
+	);
 
-    var tabs = $(this).parents('.tabs');
+	document.querySelectorAll(".docs-toc li.doc-toc-group").forEach(elem =>
+		elem.addEventListener("click", function(event, selector) {
+			if (!event.currentTarget.className.match("active-toc")) {
+				event.currentTarget.classList.add("active-toc");
+			}
+			event.stopPropagation();
+		})
+	);
 
-    var sel_class = $(this).attr('class');
-    $('div.tab', tabs).hide();
-    $('div#' + sel_class, tabs).show();
-
-    $('ul.tab-selector li', tabs).removeClass('active');
-    $('ul.tab-selector li.' + sel_class, tabs).addClass('active');
-
-    sel_class = null;
-  });
-
-  var host = window.location.hostname;
-  var tag = host == "docs.gauge.org" ? "prod" : "preview";
-  // wire up algolia search
-  docsearch({
-    apiKey: '5008b0d9ea4d9e639a17a123bea077fe',
-    indexName: 'gauge',
-    inputSelector: '#search',
-    algoliaOptions: { 'facetFilters': ["tags:" + tag] },
-    debug: false // Set debug to true if you want to inspect the dropdown
-  });
-
-  $('.localtoc-container ul ul ul ul').remove();
-  $('.localtoc-container ul .heading').remove();
-
-  // remove nested container classes, prevent overlap with sidebar
-  $('.container .container').removeClass('container');
-
-  // ===== Scroll to Top ==== 
-  $(window).scroll(function () {
-    if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
-      $('#return-to-top').fadeIn(200);    // Fade in the arrow
-    } else {
-      $('#return-to-top').fadeOut(200);   // Else fade out the arrow
-    }
-  });
-
-  $('#return-to-top').click(function () {      // When arrow is clicked
-    $('body,html').animate({
-      scrollTop: 0                       // Scroll to top of body
-    }, 500);
-  });
-
-  $('ul.localtoc a').click(function () {
-    const sectionId = $(this).attr('href');
-    let scrollTop = $(sectionId).offset().top;
-
-    if($(sectionId).css('display') == "none"){
-      $(sectionId).css('display','inline-block');
-      scrollTop = $(sectionId).offset().top - 100; 
-    }
-
-    $('body,html').animate({
-      scrollTop: scrollTop
-    }, 500);
-  });
-
-  $('.headerlink').click(function () {
-    var sectionId = $(this).attr('href');
-    $('body,html').animate({
-      scrollTop: $(sectionId).offset().top
-    }, 500);
-  });
-
-  jQuery('.docs-toc li.doc-toc-group').on('click', function (event, selector) {
-    if (!event.currentTarget.className.match('active-toc')) {
-      $(event.currentTarget).addClass('active-toc');
-    };
-    $(event.currentTarget).toggleClass('collapsed');
-    $(event.currentTarget).toggleClass("expanded");
-    event.stopPropagation();
-  })
-
-  jQuery('.docs-toc > ul > li, ul.sub-toc > li').each((_, toc) => {
-    let elemSelector = $(toc);
-    if (toc.className.match('doc-toc-group')) {
-      let subTocList = elemSelector.find('ul.sub-toc li')
-      subTocList.each((_, subToc) => {
-        let tocLink = subToc.children[0]
-        let location = window.location.pathname;
-        if (location == "/" ) location = "/index.html"
-        if (tocLink && tocLink.href.match(location)) {
-          $(subToc).addClass('active-toc expanded');
-          elemSelector.addClass('active-toc expanded');
-          elemSelector.removeClass('collapsed');
-        }
-      })
-    } else {
-      let tocLink = toc.children[0]
-      let location = window.location.pathname;
-      if (location == "/" ) location = "/index.html"
-      if (tocLink && tocLink.pathname.match(location)) {
-        elemSelector.addClass('active-toc');
-      }
-    }
-  });
+	document
+		.querySelectorAll(".docs-toc > ul > li, ul.sub-toc > li")
+		.forEach(toc => {
+			let elemSelector = toc;
+			let tocLink = toc.children[0];
+			let location = window.location.pathname;
+			if (location == "/") location = "/index.html";
+			if (tocLink && tocLink.pathname.match(location)) {
+				elemSelector.classList.add("active-toc");
+			}
+		});
 });
