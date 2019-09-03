@@ -1543,7 +1543,7 @@ p a {
 }
 
 .localtoc-container>ul {
-    padding: 10px 0px;
+    padding: 10px 25px;
 }
 
 .doc-toc-group.collapsed>a:after {
@@ -1655,7 +1655,7 @@ p a {
     margin-top: 114px;
   }
   div.topic {
-    margin-top: 34px;
+    margin-top: -50px;
   }
   .fixed-docs-toc.docs-toc {
     display: block;
@@ -1688,7 +1688,7 @@ p a {
   }
   .mobile-local-toc {
     text-align: left;
-    margin-left: 0px;
+    margin-left: 12px;
   }
 
   .left-sidebar-container nav {
@@ -1822,7 +1822,7 @@ p a {
   }
 
   .right-sidebar-container {
-    margin-top: 56px;
+    margin-top: 0px;
   }
   
 
@@ -1947,6 +1947,9 @@ p a {
   .docs-container.no-right-bar.containers .edit-page {
     top: 38px;
   }
+  .topic h1 {
+    padding-bottom: 6px;
+  }
  
 }
 
@@ -1963,7 +1966,7 @@ p a {
     display: block;
   }
   .edit-page {
-    top: 50px;
+    top: 15px;
   }
   .docs-container.no-right-bar {
     max-width: 100em;
@@ -1989,7 +1992,15 @@ p a {
     text-align: left;
     margin-left: 0px;
   }
- 
+  .right-sidebar-container {
+  margin-top: 62px;
+  }
+  .edit-page {
+    top: 56px;
+  }
+  .topic h1 {
+    padding-bottom: 10px;
+  }
   .logo {
     width: 180px;
     margin: 10px 0 0 0;
@@ -2000,7 +2011,9 @@ p a {
     padding-left: 0px;
     margin-left: 0px;
   }
- 
+  div.topic {
+    margin-top: 34px;
+  }
   .sticky .logo, .open .logo {
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
@@ -2051,10 +2064,10 @@ p a {
   .left-sidebar-container {
     width: 300px;
   }
-  p,a, ul li,span.installer-icon {
+  p,a, ul li {
     font-size: 16px;
   }
-  .fixed-docs-toc.docs-toc li a {
+  .fixed-docs-toc.docs-toc li a,span.installer-icon {
     font-size: 14px!important;
   }
   .edit-page {

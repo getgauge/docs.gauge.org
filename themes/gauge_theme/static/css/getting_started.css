@@ -484,8 +484,8 @@ h3:has(.alternate-methods) {
 
 .text-box {
     background-color: #F2F2F2 !important;
-    padding: 10px 0px 10px 40px;
-    font-size: 18px;
+    padding: 10px 40px;
+    font-size: 14px;
     border-radius: 5px;
     border-left: 4px solid #f5c10e;
     margin: 2% 0 2% 0;
