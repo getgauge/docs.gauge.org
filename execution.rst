@@ -76,24 +76,30 @@ To run specifications stored in multiple directories (including sub-directories)
 
 ``<path_dir2>`` ``<path_dir3>`` - location of the directories where specifications are stored
 
+.. cssclass:: example
+
 Example - single directory
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 In the following example, specifications stored at ``test_specs`` are run:
 
 .. code-block:: console
 
     gauge run test_specs
 
+.. cssclass:: example
+
 Example - multiple directories
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 In the following example, specifications stored at ``specs`` and ``test_specs`` are run:
 
 .. code-block:: console
 
     gauge run specs test_specs
 
+.. cssclass:: example
+
 Example - sub-directories
-^^^^^^^^^^^^^^^^^^^^^^^^^
+
 In the following example, specifications stored at ``sub1_specs`` and ``sub2_specs`` are run: 
 
 .. code-block:: console
@@ -120,16 +126,20 @@ To run multiple specifications, use the following command:
 
     gauge run <path_to_spec1> <path_to_spec2> <path_to_spec3>
 
+.. cssclass:: example
+
 Example - run a single specification file
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 In the following example, Gauge runs the ``example.spec`` stored in the ``specs`` directory:
 
 .. code-block:: console
 
     gauge run specs/example.spec
 
+.. cssclass:: example
+
 Example - run multiple specification files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 In the following example, Gauge runs multiple specifications stored in ``specs`` and its sub-directory, ``sub1_specs``:
 
 .. code-block:: console
@@ -163,8 +173,10 @@ To run multiple scenarios, use the following command:
 
 .. _spec_example_scenario:
 
+.. cssclass:: example
+
 Example
-^^^^^^^
+
 Consider the following specification, ``spec1.spec`` located at ``specs`` directory:
 
 .. code-block:: gauge
@@ -183,7 +195,8 @@ Consider the following specification, ``spec1.spec`` located at ``specs`` direct
     * Navigation to configuration page is restricted.
 
 Single scenario
-...............
+~~~~~~~~~~~~~~~~
+
 To run only the second scenario, ``User Login``, of ``spec1.spec``, use the following command:
 
 .. code-block:: console
@@ -201,7 +214,8 @@ Hence, you can also mention line 9 in the command as follows:
 In both cases, the ``User Login`` scenario is run.
 
 Multiple scenarios
-..................
+~~~~~~~~~~~~~~~~~~~
+
 In addition to ``spec1`` used as an :ref:`example <spec_example_scenario>` previously, let us consider another spec, ``test1``, in the ``specs`` directory as follows:
 
 .. code-block:: gauge
@@ -250,8 +264,10 @@ When this command is run, only the scenarios and specifications which are tagged
 
 .. _spec_example_tag:
 
+.. cssclass:: example
+
 Example
-^^^^^^^
+
 Consider the following spec in the ``specs`` directory, which has tags ``search`` and ``admin``. 
 The scenario, ``Successful search``, is tagged with ``successful`` and the scenario, ``Unsuccessful search`` has no tags.
 
@@ -320,8 +336,9 @@ Tags                               Selects specs/scenarios that
 ``(TagA | TagB) & TagC``           have either [``TagA`` and ``TagC``] or [``TagB`` and ``TagC``]
 ================================== ===============================================================
 
+.. cssclass:: example
+
 Example
-^^^^^^^
 
 Consider the spec of the previous :ref:`example <spec_example_tag>` - if all the scenarios tagged with ``search`` and ``successful`` must be run, then use the following command:
 
@@ -356,8 +373,10 @@ The header names from the table can be used in the steps within angular brackets
 When a spec is run, each scenario is executed for every data row of the table.
 Table parameters are written in Multi-Markdown table formats.
 
+.. cssclass:: example
+
 Example
-^^^^^^^
+
 In the following specification ``hello.spec``, the data table is defined at the beginning of the spec. 
 The step uses the ``name`` column from the data table as a dynamic parameter.
 When the spec is run, ``Scenario`` and ``Second Scenario`` are executed first for the first row values ``1``, ``Alice`` followed by the second and third row values from the table.
@@ -381,7 +400,7 @@ When the spec is run, ``Scenario`` and ``Second Scenario`` are executed first fo
     * Say "namaste" to <name>
 
 Selected data table rows
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 By default, scenarios in a spec are run for every data table row. 
 Scenarios can also be run against selected data table rows by using the ``--table-rows`` flag along with specifying the row numbers for which the scenarios should be run. 
 If there are multiple row numbers, the row numbers should be separated by commas. 
@@ -390,8 +409,10 @@ A range of table rows can also be specified.
 .. important::
    Only a single specification can be run while using the ``--table-rows`` flag.
 
+.. cssclass:: example
+
 Examples
-^^^^^^^^
+
 In the following example, the scenarios in ``hello.spec`` (see :ref:`Data driven execution <table_driven_execution>`) are run only for the first row of the data table.
 
 .. code-block:: console
@@ -413,14 +434,16 @@ In the following example, the scenarios in ``hello.spec`` (see :ref:`Data driven
     gauge run --table-rows "1-3" specs/hello.spec
 
 External CSV for data table
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Data Tables for a specification can also be passed from an external CSV file. 
 
 For more information about external CSV files used in data tables, see :ref:`parameters`.
 
+.. cssclass:: example
+
 Example
-^^^^^^^
+
 In this example, ``users.csv`` is the external CSV file that contains the following data table:
 
 .. code-block:: gauge
@@ -472,8 +495,10 @@ OR
 
     gauge run -p specs
 
+.. cssclass:: example
+
 Example
-^^^^^^^
+
 In the following example, four parallel execution streams are created.
 
 .. code-block:: console
@@ -483,7 +508,7 @@ In the following example, four parallel execution streams are created.
 .. _parallel execution using threads:
 
 Parallel execution by using threads
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In parallel execution, every stream starts a new worker process. This can be optimized 
 by using multithreading instead of processes. Multithreading uses only one worker process and 
@@ -527,8 +552,8 @@ Test suite execution by using the ``--strategy`` option
 The ``--strategy`` option allows you to set the strategy for parallel execution of tests. 
 This option has two values: ``lazy`` and ``eager``. By default, the option is set to ``lazy``. 
 
-``lazy``
-^^^^^^^^
+lazy
+~~~~
 The ``lazy`` feature enables Gauge to dynamically allocate specs to streams during execution instead of at the beginning of execution. 
 This allows Gauge to optimise the resources on your system or execution environment. 
 Such optimization is useful because some specs might take more time to get executed than the others. 
@@ -553,17 +578,21 @@ OR
     This is because the grouping of tests depends on allocation of tests before the beginning of test execution, however, ``lazy`` is used during execution of tests.  
     Using the ``-g`` flag with ``--strategy=lazy`` has no impact on your test suite execution.
 
+.. cssclass:: example
+
 Example
-.......
+
 If there are 100 tests, which have to be run across four streams or cores, Gauge dynamically assigns the next spec in queue to the stream that has completed its previous test execution and is waiting for more work.
 
-``eager``
-^^^^^^^^^
+eager
+~~~~~
 When the ``-g (grouping)`` flag is used, the value of the ``strategy`` option is ``eager``. 
 In this strategy, Gauge allocates specs to streams at the beginning of test execution. 
 
+.. cssclass:: example
+
 Example
-.......
+
 When ``eager`` is used, if 100 tests are run, these tests are equally distributed before execution in the number of streams as mentioned by the ``-n`` option.
 
 .. code-block:: console
@@ -571,7 +600,7 @@ When ``eager`` is used, if 100 tests are run, these tests are equally distribute
     gauge run -n=4 --strategy="eager" specs
 
 Executing a group of specification
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 Gauge sorts the specifications by alphabetical order and then distributes these specifications into groups.
 You can use the ``--group`` \| ``-g`` flag to execute a specific group of specs.
 
@@ -587,8 +616,10 @@ Use the following command to execute a group of specifications:
 | ``-n`` - number of groups
 | ``-g`` - group number
 
+.. cssclass:: example
+
 Example
-.......
+
 In the following example, Gauge creates four groups of specification and selects the second group for execution.
 
 .. code-block:: console
@@ -616,8 +647,10 @@ For example, if three scenarios failed during ``gauge run specs``, the failed sc
 
 When the ``--failed`` flag is used with the ``gauge run`` command, the flags that were set during the previous execution is once again set.
 
+.. cssclass:: example
+
 Example
-^^^^^^^
+
 | Consider an example, where specs are run with a ``--env`` and ``--verbose`` flags.
 | Three scenarios fail during this run.
 
@@ -639,7 +672,7 @@ Hence, ``gauge run --failed`` is equivalent to the following command:
     gauge run --env="chrome" --verbose specs <path_to_failed_scenarios>
 
 Rerun failed scenarios by using ``--max-retries-count``
--------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 You can use the ``--max-retries-count`` flag to rerun failed tests for a specific number of times.
 
 .. note::
@@ -651,8 +684,10 @@ Use the following command to rerun failed tests for a specific number of times:
 
     gauge run --max-retries-count=<number of retries>
 
+.. cssclass:: example
+
 Example
-^^^^^^^
+
 In the following example, Gauge reruns a failed test for a maximum of three times and then marks the spec as failed. 
 
 .. code-block:: console
@@ -660,7 +695,7 @@ In the following example, Gauge reruns a failed test for a maximum of three time
     gauge run --max-retries-count=3
 
 Rerun failed scenarios by using ``--retry-only``
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 You can filter scenarios that must be rerun a specific number of times when failed by using the ``--retry-only`` flag.
 The value of this flag is the tag used to associate the scenario(s).
 
@@ -675,8 +710,10 @@ Use the following command to rerun failed scenarios for a specific number of tim
 .. note::
    Tags can also be used with expressions. For more information about using tags with expressions, see :ref:`Tag expressions <tag_expressions>` .
 
+.. cssclass:: example
+
 Example
-^^^^^^^
+
 In the following example, Gauge reruns only those scenarios that have the ``should-retry`` tag . 
 Gauge runs these scenarios thrice as specified by the ``--max-retries-count`` flag.
 
@@ -691,12 +728,14 @@ Errors during execution
 -----------------------
 
 Parse errors
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 This occurs if the spec or concept file doesn't follow the 
 expected :ref:`specifications <spec_syntax>` or :ref:`concepts <concept>` syntax.
 
-**Example:**
+.. cssclass:: example
+
+Example
 
 .. code-block:: text
 
@@ -765,7 +804,7 @@ List of various Parse errors:
 +-------------------------------------------+--------------------------------+
 
 Validation Errors
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 These are errors for which `Gauge` skips executing the spec where the error occurs.
 
@@ -776,7 +815,9 @@ There are two types of validation error which can occurs
     2. Duplicate step implementation
         If the spec file has a step that is implemented multiple times in the projects.
 
-**Example**
+.. cssclass:: example
+
+Example
 
 .. code-block:: text
 
@@ -785,43 +826,3 @@ There are two types of validation error which can occurs
 .. code-block:: text
 
     [ValidationError] foo.spec:11 Duplicate step implementation => 'Vowels in English language are <table>'
-
-Troubleshooting
-===============
-
-Ensure that the latest version of gauge and `gauge plugins <//gauge.org/plugins/>`__. 
-
-Run ``gauge update -c`` to check if there are updates available for gauge and the plugins.
-
-Validation Errors
------------------
-
-.. code-block:: text
-
-    [WARN] Validation failed. The following steps have errors
-    ...
-
-These generally occur if step implementation is not found for a particular step.
-
-- Ensure the :ref:`step implementation <language-steps>` for the step has been added.
-- The :ref:`step template <language-steps>` marking the step in code is case sensitive and should match the step usage in the spec file.
-
-Compatibility errors
---------------------
-
-.. code-block:: text
-
-    Failed to start a runner. Compatible runner version to 0.0.7 not found
-
--  The language plugin installed is not compatible with the gauge version installed.
--  Run ``gauge install language_NAME`` to install the latest compatible version. See :ref:`plugin installation <install_plugins>` for
-   more details
-
-Execution Errors
-----------------
-
-.. code-block:: text
-
-    Error: too many open files
-
--  This error occurs when the upper limit to open the number of files is too low. To fix the error, increase the upper limit by adding the command ``ulimit -S -n 2048`` to your ``~/.profile`` file and relogin.

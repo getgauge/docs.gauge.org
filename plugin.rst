@@ -46,7 +46,7 @@ If the plugin is already installed, Gauge just adds the plugin to the project.
     The html-report and screenshot plugins are installed automatically on the first run.
 
 Install a specific plugin version
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To install a specific version of a plugin, use the ``--version`` flag on your command line:
 
@@ -76,7 +76,7 @@ To install a specific version of a plugin, use the ``--version`` flag on your co
     gauge install csharp --version <plugin_version>
 
 Install plugins offline 
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 You can also install a plugin from a zip file instead of downloading from the plugin repository by using the following command:
 
@@ -108,7 +108,7 @@ You can also install a plugin from a zip file instead of downloading from the pl
 You can download the latest version of a plugin from the ``Releases`` section of the plugin's GitHub repository. See the `plugin list <https://gauge.org/plugins/>`_ to find the Gauge repositories.
 
 Customize plugin install location
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: dynamic-content windows
 
@@ -204,6 +204,8 @@ Uninstall Plugins
 
 Uninstall the plugins by using the following command:
 
+.. cssclass:: example
+
 Example:
 
 .. cssclass:: dynamic-content java
@@ -233,6 +235,8 @@ Example:
 
 To uninstall a specific version of the plugin, use the
 ``--version`` flag.
+
+.. cssclass:: example
 
 Example:
 
@@ -319,14 +323,15 @@ The different types of plugins currently supported by Gauge are as follows:
 
 .. 1. :ref:`IDE Plugins <ide_plugins>` (As per discussion, IDE plugins are not exactly a type of Gauge plugins. Hence, moved this out of "Types of Plugins" and kept it under a seperate heading)
 
-2. :ref:`Language Runners/Plugins <language_plugins>`
-3. :ref:`Reporting Plugins <reporting_plugins>`
+1. :ref:`Language Runners/Plugins <language_plugins>`
+2. :ref:`Reporting Plugins <reporting_plugins>`
+3. :ref:`IDE Plugins <ide_plugins>`
 4. :ref:`Other Plugins <other_plugins>`
 
 .. _language_plugins:
 
 Language Plugins
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 Language plugins or language runners enable the users to write the implementation of specifications in a language of the user's choice. When you intitialize a Gauge project, the language plugin is installed by default.
 
 .. _install-language-runner:
@@ -393,7 +398,7 @@ Language plugins or language runners enable the users to write the implementatio
 .. _reporting_plugins:
 
 Reporting Plugins
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 Reporting plugins generate execution reports in various formats. Depending on the format of the report you need, you can install the appropriate plugin.
 
@@ -423,25 +428,10 @@ Reporting plugins generate execution reports in various formats. Depending on th
 
         For more information about Flash plugin for Gauge, see `Gauge GitHub for Flash <https://github.com/getgauge/Flash>`__ .
 
-.. _other_plugins:
-
-Other Plugins
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-The spectacle plugin generates a readable HTML format of the specifications:
-
-        .. code-block:: console
-
-           gauge install spectacle
-
-        For more information about gauge spectacle, see `Gauge GitHub for Spectacle <https://github.com/getgauge/spectacle>`__
-
-Gauge also supports the dependency management workflow with custom plugins for `Maven <https://github.com/getgauge/gauge-maven-plugin>`__ and `Gradle <https://github.com/getgauge/gauge-gradle-plugin>`__.
-
 .. _ide_plugins:
 
 IDE Plugins
-------------
+~~~~~~~~~~~~
 
 Gauge has plugins for popular IDEs that improve the experience of authoring test specifications. We recommend that you use the VSCode plugin. However, Gauge can be used without a plugin on any editor of your choice.
 
@@ -460,3 +450,17 @@ Gauge has plugins for popular IDEs that improve the experience of authoring test
     Gauge projects can be created and run in Visual Studio by using the `Gauge extension for Visual Studio <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__.
     This plugin currently supports Gauge with C#.
 
+.. _other_plugins:
+
+Other Plugins
+~~~~~~~~~~~~~
+
+The spectacle plugin generates a readable HTML format of the specifications:
+
+        .. code-block:: console
+
+           gauge install spectacle
+
+        For more information about gauge spectacle, see `Gauge GitHub for Spectacle <https://github.com/getgauge/spectacle>`__
+
+Gauge also supports the dependency management workflow with custom plugins for `Maven <https://github.com/getgauge/gauge-maven-plugin>`__ and `Gradle <https://github.com/getgauge/gauge-gradle-plugin>`__.
