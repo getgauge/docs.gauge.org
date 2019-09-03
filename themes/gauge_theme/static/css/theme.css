@@ -1625,6 +1625,7 @@ p a {
     grid-template-columns: 25% 69%;
     grid-column-gap: 60px;
     overflow-x: hidden;
+    font-size: 14px;
   }
   .fixed-docs-toc.docs-toc {
     display: none;
@@ -1934,7 +1935,9 @@ p a {
   .docs-container.no-right-bar.containers .topic {
     margin-top: 13px;
   }
-  
+  .docs-container.no-right-bar {
+    margin-top: 8px!important;
+  }
  
 }
 
@@ -1952,6 +1955,10 @@ p a {
   }
   .edit-page {
     top: 45px;
+  }
+  .docs-container.no-right-bar {
+    max-width: 100em;
+    width: 600px;
   }
 }
 
@@ -2001,6 +2008,10 @@ p a {
   .feature-desc {
     min-height: 104px;
   }
+  .docs-container.no-right-bar {
+    max-width: 100em;
+    width: 900px;
+  }
  
 }
 
@@ -2038,6 +2049,10 @@ p a {
   .edit-page {
     top: 50px;
   }
+  .docs-container.no-right-bar {
+    max-width: 100em;
+    width: 1000px;
+  }
   
 }
 
@@ -2049,8 +2064,12 @@ p a {
     grid-template-columns: 18% 50% 29%;
     grid-column-gap: 30px;    
     overflow-x: hidden;
+    font-size: 16px;
   }
-  
+  .docs-container.no-right-bar {
+    max-width: 100em;
+    width: 1100px;
+  }
 }
 
 
