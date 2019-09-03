@@ -12,7 +12,7 @@
 .. cssclass:: vscode dynamic-content
 
 :vscode:`Viewing Reports from VS Code`
-======================================
+--------------------------------------
 
 Once the specifications are run you will get immediate feedback in the output screen of VS Code.
 
@@ -38,7 +38,7 @@ Here's what a Gauge report looks like.
 .. cssclass:: intellij dynamic-content
 
 :intellij:`Viewing Reports from Intellij IDEA`
-==============================================
+----------------------------------------------
 
 Once the specifications are run you will get immediate feedback in the output screen of Intellij.
 
@@ -52,7 +52,7 @@ Here's what a Gauge report looks like.
 .. cssclass:: visualstudio dynamic-content
 
 :visualstudio:`Viewing Reports from Visual Studio`
-==================================================
+--------------------------------------------------
 
 Once the specifications are run you will get immediate feedback in the output screen of Visual Studio.
 
@@ -65,7 +65,7 @@ Here's what a Gauge report looks like.
 
 
 Next Step: Running a Specification
-==================================
+----------------------------------
 
 And, that concludes our getting started journey for Gauge. Hopefully this helped you install and set-up your first Gauge project. Gauge comes with powerful language & tool support as well as a versatile reporting functionality. We've covered the basics for all of these features in this guide.
 
