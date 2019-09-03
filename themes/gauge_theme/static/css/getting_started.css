@@ -199,6 +199,7 @@
     padding: 5px;
     width: 20px;
     float: right;
+    margin-top: 14px;
 }
 
 .expand-collapsible {
@@ -446,8 +447,8 @@ h3:has(.alternate-methods) {
     height: 10px;
     position: relative;
     display: inline-block;
-    border-left: 3px solid #000000;
-    border-top: 3px solid #000000;
+    border-left: 2px solid #1e1e1e;
+    border-top: 2px solid #1e1e1e;
     transform: rotate(-135deg);
     top: -3px;
     left: 16px;
@@ -492,10 +493,10 @@ ul.text-box li a {
 }
 
 span.installer-icon {
-    font-family: 'OpenSans';
-    font-size: 13px;
+    font-family: "Open Sans";
+    font-size: 12px;
     font-weight: normal;
-    color: #7e7e7e;
+    color: #5e5e5e;
 }
 
 span.installer-icon:before {
@@ -507,7 +508,7 @@ span.installer-icon:before {
     display: inline-block;
 }
 
-@media screen and (max-width: 768px) and (min-width: 660px) {
+/* @media screen and (max-width: 768px) and (min-width: 660px) {
     #installation-selection .setup-selection {
         width: 33%;
         text-align: center;
@@ -581,147 +582,5 @@ span.installer-icon:before {
     }
     .docs-toc li {
         list-style-type: none;
-    }
-}
-
-@media (max-width:576px) {
-    
-    #installation-selection .setup-selections {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #installation-selection .setup-selection {
-        width: 100%;
-        text-align: center;
-        min-height: auto;
-        display: flex;
-        flex-direction: column;
-        margin-left: 0px;
-        margin-right: 0px;
-        padding-bottom: 5px;
-        border-radius: 5px;
-        align-items: center;
-    }
-
-    #installation-selection .radioContainer {
-        position: relative;
-        width: 100%;
-        height: 45px;
-        margin: 5px;
-        cursor: pointer;
-        padding: 10px;
-        font-size: 15px;
-        border-radius: 3px;
-        background-color: #f2f2f2;
-        padding-left:140px;
-    }
-    #installation-selection input:checked~.checkmark:after {
-        top: 11px;
-    }
-    .selection-icon {
-        display: block;
-    }
-
-    #installation-selection .circle {
-        left: 90px;
-    }
-
-    #installation-selection input:checked~.checkmark:after {
-        left: 90px;
-        bottom: 8px;
-    }
-
-    .docs-container h2 {
-        margin-right: auto;
-    }
-
-    .selection-icon {
-        left: 280px;
-    }
-
-    .localtoc-container {
-        margin-bottom: 0px;
-    }
-
-    .mobile-local-toc {
-        text-align: center;
-        padding-left: 30px;
-    }
-
-    .localtoc-container>ul {
-        padding: 10px 30px;
-    }
-
-    .doc-toc-group.collapsed>a:after {
-        top: -4px !important;
-        left: 25px;
-    }
-
-    .doc-toc-group.expanded>a:after {
-        border-left: 3px solid black;
-        border-top: 3px solid black;
-        transform: rotate(45deg);
-        top: 2px;
-        left: 25px;
-    }
-
-    .edit-page {
-        display: none;
-    }
-
-    .sliding-docs-toc.docs-toc ul li a {
-        font-size: 16px;
-        text-decoration: none;
-        list-style-type: none;
-        color: #1e1e1e;
-        font-weight: normal;
-        font-family: 'OpenSans';
-    }
-
-    .sliding-docs-toc.docs-toc>ul>li {
-        padding-bottom: 0px!important;
-    }
-
-    .sliding-docs-toc.docs-toc {
-        padding-top: 30px;
-    }
-    
-    .edit-page {
-        display: none;
-    }
-    #change-filter {
-        display: block;
-        position: absolute;
-        top: -28px;
-        right: 0px;
-        text-align: right;
-    }
-    #search {
-        width: 100%;
-    }
-    .algolia-autocomplete {
-        margin-left: 0px!important;
-    }
-    #search-icon { 
-        left:15px!important;
-    }
-    .docs-toc li {
-        list-style-type: none;
-    }
-    .doc-toc-group.expanded>a:after {
-        right:-12px;
-    }
-    .mobile-local-toc {
-        display:none;
-    }
-    h1 {
-    font-size: 22px!important;
-    }
-    h2 {
-        font-size: 20px!important;
-    }
-    h3 {
-        font-size: 18px!important;
     }
 }
