@@ -17,7 +17,7 @@
     text-align: left;
     border: none;
     border-top: solid 1px #e2e2e2;
-    font-family: "Open Sans";
+    font-family: "OpenSans-Regular";
     font-size: 12px;
 }
 
@@ -27,7 +27,7 @@
 }
 .examples-table td span {
     font-size: 14px;
-    font-size:"Open Sans";
+    font-family: "OpenSans-Regular";
 }
 
 .examples-table tr:hover {

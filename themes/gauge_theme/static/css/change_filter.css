@@ -78,7 +78,7 @@
     top: 0px;
     left: -15px;
     font-size: 14px;
-    font-family: "Open Sans";
+    font-family: "OpenSans-Regular";
     height:40px;
     width: 52px!important;
 }
@@ -93,7 +93,7 @@
     height: 25px;
     font-size: 14px;
     margin-left: 3px;
-    font-family: "Open Sans";
+    font-family: "OpenSans-Regular";
     margin-top: 6px;
     font-weight: normal;
     max-width: 148px;
@@ -199,5 +199,5 @@
 }
 .selection.docutils label span {
     font-size: 14px;
-    font-family: "Open Sans";
+    font-family: "OpenSans-Regular";
 }

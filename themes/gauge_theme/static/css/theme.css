@@ -35,8 +35,9 @@ body {
 
 p ,a, ul li{
   font-size: 14px;
-  font-family: "Open Sans";
+  font-family: "OpenSans-Regular";
   font-weight: normal;
+  color:#1e1e1e;
 }
 
 h1 {
@@ -68,7 +69,7 @@ h4 {
 
 ul li {
   font-size: 14px;
-  font-family: "Open Sans";
+  font-family: "OpenSans-Regular";
   font-weight: normal;
 }
 
@@ -427,7 +428,7 @@ body {
 
 .docs-toc a {
   text-decoration: none;
-  font-family: "Open Sans";
+  font-family: "OpenSans-Regular";
   font-weight: normal;
   line-height: 2.13;
   letter-spacing: normal;
@@ -565,7 +566,7 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 
 .description {
   color: #1e1e1e;
-  font-family: "Open Sans";
+  font-family: "OpenSans-Regular";
   line-height: 1.86;
   font-weight: normal;
 }
@@ -630,7 +631,7 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 }
 .feature-desc {
   color: #1e1e1e;
-  font-family: "Open Sans";
+  font-family: "OpenSans-Regular";
   font-weight: normal;
   min-height: 76px;
 }
@@ -639,7 +640,7 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
   color: #1e1e1e;
   border-bottom: 1px dotted #1e1e1e;
   display: inlie-block;
-  font-family: "Open Sans";
+  font-family: "OpenSans-Regular";
   font-weight: normal;
 }
 
@@ -1304,7 +1305,7 @@ img {
 .edit-page u {
   position: relative;
   top:-4px;
-  font-family: 'Open Sans';
+  font-family: "OpenSans-Regular";
 }
 
 .edit-page>a {
@@ -1339,7 +1340,7 @@ img {
 }
 
 .dynamic-content p a {
-  font-family: 'Open Sans';
+  font-family: "OpenSans-Regular";
   font-weight: normal;
   color:#1e1e1e;
   text-transform: capitalize;
@@ -1354,7 +1355,7 @@ p a:visited {
   color:#1e1e1e!important;
 }
 .dynamic-content p a:visited {
-    font-family: 'Open Sans';
+  font-family: "OpenSans-Regular";
     font-weight: normal;
     color:#1e1e1e;
     border-bottom:none;
@@ -1362,12 +1363,12 @@ p a:visited {
 
 
 .dynamic-content p {
-  font-family: 'Open Sans';
+  font-family: "OpenSans-Regular";
   color: #1e1e1e;
   font-weight: normal;
 }
 .dynamic-content span.alternate-methods {
-  font-family: 'Open Sans';
+  ffont-family: "OpenSans-Regular";
   font-weight: normal;
   color: #1e1e1e;
 }
@@ -1378,7 +1379,7 @@ p a:visited {
   color: #1e1e1e;
 }
 .admonition-system-requirements .last {
-  font-family: 'Open Sans';
+  font-family: "OpenSans-Regular";
   font-weight: 100;
   color: #1e1e1e;
   padding-left:13px!important;
@@ -1890,7 +1891,7 @@ p a {
     display: grid;
     grid-template-areas: 'header header header' 'left-nav main-content right-nav' 'footer footer footer';
     grid-template-rows: 100px auto auto;
-    grid-template-columns: 21% 50% 29%;
+    grid-template-columns: 17% 54% 29%;
     grid-column-gap: 30px;    
   }
  
@@ -1920,7 +1921,13 @@ p a {
 }
 
 @media only screen and (min-width: 1367px) {
-
+  body {
+    display: grid;
+    grid-template-areas: 'header header header' 'left-nav main-content right-nav' 'footer footer footer';
+    grid-template-rows: 100px auto auto;
+    grid-template-columns: 21% 50% 29%;
+    grid-column-gap: 30px;    
+  }
   .feature-desc {
     min-height: 104px;
   }
