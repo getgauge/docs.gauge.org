@@ -1615,7 +1615,7 @@ p a {
   .side-nav-header {
     border-bottom: 1px solid #ccc;
     padding: 27px 15px;
-    margin-top: 124px;
+    margin-top: 114px;
   }
   div.topic {
     margin-top: 31px;
@@ -1895,7 +1895,7 @@ p a {
     display: grid;
     grid-template-areas: 'header header header' 'left-nav main-content right-nav' 'footer footer footer';
     grid-template-rows: 100px auto auto;
-    grid-template-columns: 17% 54% 29%;
+    grid-template-columns: 19% 54% 27%;
     grid-column-gap: 30px;    
   }
  
@@ -1929,7 +1929,7 @@ p a {
     display: grid;
     grid-template-areas: 'header header header' 'left-nav main-content right-nav' 'footer footer footer';
     grid-template-rows: 100px auto auto;
-    grid-template-columns: 21% 50% 29%;
+    grid-template-columns: 19% 50% 29%;
     grid-column-gap: 30px;    
   }
   .feature-desc {
@@ -1953,6 +1953,17 @@ p a {
   }
   .edit-page {
     top: 50px;
+  }
+  
+}
+
+@media only screen and (min-width: 1440px) {
+  body {
+    display: grid;
+    grid-template-areas: 'header header header' 'left-nav main-content right-nav' 'footer footer footer'; 
+    grid-template-rows: 100px auto auto;
+    grid-template-columns: 17% 50% 29%;
+    grid-column-gap: 30px;    
   }
   
 }
