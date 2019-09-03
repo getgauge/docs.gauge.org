@@ -1565,9 +1565,10 @@ p a {
   #search {
       width: 100%;
       padding: 0px 35px;
+      height: 40px;
   }
   #search-icon {
-    top:27px;
+    top:34px;
     left: 6%;
   }
   div#right-sidebar {
@@ -1607,6 +1608,9 @@ p a {
   #search {
     width: 220px;
     padding-left: 25px;
+    font-size: 16px;
+    height:40px;
+    padding-left: 35px;
   }
   .side-nav-header {
     border-bottom: 1px solid #ccc;
@@ -1637,7 +1641,7 @@ p a {
     left: 1%;
   }
   #search-icon {
-    top: 9px;
+    top: 14px;
     left: 6%;
   }
 
