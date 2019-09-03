@@ -13,35 +13,35 @@
 This page provides information about what a specification is, how to write a specification, and other related information such as concepts, step implementation, specs directory, and so on.  
 
 Text editor for specs
-=====================
+----------------------
 
 You can author Gauge specifications by using any text editor. It is recommended that you use the IDE plugin.
 
 .. cssclass:: dynamic-content vscode
 
 :vscode:`VSCode`
-----------------
+~~~~~~~~~~~~~~~~
 Gauge projects can be created and run in Visual Studio Code by using the `Gauge extension for VSCode <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__.
 This plugin currently supports Gauge with Java, JavaScript, Ruby, Python, C# (.Net Core), and TypeScript.
 
 .. cssclass:: dynamic-content intellij
 
 :intellij:`IntelliJ IDEA`
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Gauge projects can be created and run in IntelliJ IDEA by using the `Gauge plugin for IntelliJ IDEA <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__.
 This plugin only supports Gauge with Java.
 
 .. cssclass:: dynamic-content visualstudio
 
 :visualstudio:`Visual Studio`
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Gauge projects can be created and run in Visual Studio by using the `Gauge extension for Visual Studio <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__.
 This plugin currently supports Gauge with C# (.Net framework).
 
 .. _specs:
 
 Specifications (spec)
-=====================
+----------------------
 
 A specification is a business test case which describes a particular feature of the application that needs testing.  
 Gauge specifications support a ``.spec`` or ``.md`` file format and these specifications are written in a syntax similar to Markdown.
@@ -54,7 +54,8 @@ Gauge specifications support a ``.spec`` or ``.md`` file format and these specif
 .. _specs_directory:
 
 Specs directory
----------------
+~~~~~~~~~~~~~~~~
+
 When a Gauge project is created and initialized, a ``specs`` directory is automatically created at ``<project_root>`` with a sample file, ``example.spec``.
 This sample file helps you understand how to write a specification.
 
@@ -63,8 +64,9 @@ This sample file helps you understand how to write a specification.
 
    For more information about ``default.properties``, see :ref:`local_configuration_Gauge`.
 
+.. cssclass:: example
+
 Example
-^^^^^^^
 
 The following is an example of a Gauge specification:
 
@@ -99,6 +101,7 @@ For more information about Markdown, see `Markdown Syntax <https://daringfirebal
 
 Components of a specification
 -----------------------------
+
 A specification consists of different sections; some of which are mandatory and few are optional.
 The components of a spec are listed as follows:
 
@@ -118,7 +121,7 @@ The components of a spec are listed as follows:
    Comments - optional, non-executable component when the spec is run
 
 Specification heading
-=====================
+~~~~~~~~~~~~~~~~~~~~~
 
 A specification must begin with a spec heading. A specification must contain only one spec heading.
 
@@ -137,8 +140,9 @@ or
     Spec Heading
     ============
 
+.. cssclass:: example
+
 Example
--------
 
 In the following example, ``# Search specificaiton`` is the spec heading, followed by tags and steps (statements preceded by ``*``).
 
@@ -155,7 +159,7 @@ In the following example, ``# Search specificaiton`` is the spec heading, follow
 .. _longstart-scenarios:
 
 Scenario
-========
+~~~~~~~~
 
 Each scenario represents a single workflow in a particular specification. A
 specification must contain at least one scenario.
@@ -179,8 +183,10 @@ or
 | A scenario contains one or more :ref:`steps <step_syntax>` in it.
 | A scenario can be tagged by using :ref:`tags <longstart-tags>`.
 
+.. cssclass:: example
+
 Example
--------
+
 In the following example, the spec, ``Search specification`` contains the scenario, ``## Successful search``. This scenario heading is followed by tags and steps.
 
 .. code-block:: gauge
@@ -198,13 +204,12 @@ In the following example, the spec, ``Search specification`` contains the scenar
     * "Cup Cakes" should show up in the search results
 
 Table driven scenario
----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 Gauge 1.0.3 adds an experimental feature to provide a table at scenario level. Gauge will iterate over the table and run that particular scenario against each row.
 Set ``allow_scenario_datatable`` variable to ``true`` in ``/env/default/default.properties`` to enable this feature.
 
 Example
-^^^^^^^
 
 .. code-block:: gauge
 
@@ -238,7 +243,7 @@ Since this is ans experimental feature there are few cases in which it currently
 .. _longstart-steps:
 
 Step
-====
+~~~~
 
 Steps are the executable components of a specification that are written by using the Markdown unordered list syntax.
 In a specification, steps can exist either within a scenario or outside a scenario. 
@@ -251,8 +256,10 @@ This code is run when the steps inside a spec are executed.
 
 .. _step_syntax:
 
+.. cssclass:: example
+
 Example
--------
+
 In the following example, the two sentences preceded by asterisk, \*\, are the unordered steps listed inside the ``Successful search`` scenario.
 
 .. code-block:: gauge
@@ -282,14 +289,15 @@ The values written in *quotes*, ``"``, are parameters that are passed into the e
 .. _parameters:
 
 Parameters
-==========
+~~~~~~~~~~
 
 Steps are defined to take values as parameters so that they can be reused with different parameter values.
 
 The equivalent code of the step implementation for that particular language plugin must also have the same number of parameters as mentioned in the step.
 
+.. cssclass:: example
+
 Examples
---------
 
 In the following example, parameter values are ``“Cup Cakes”`` (within double quotes) within the two steps.
 
@@ -320,12 +328,13 @@ A step can have the following types of parameters:
     * Special parameters
 
 1. Simple parameters
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Simple parameters are values, which are used in a step within double quotes.
 
+.. cssclass:: example
+
 Example
-^^^^^^^
 
 In the following examples, ``Cup Cakes``, ``gauge-java``, and ``100`` are values within double quotes and are used in steps: 
 
@@ -336,15 +345,17 @@ In the following examples, ``Cup Cakes``, ``gauge-java``, and ``100`` are values
    * Write “100” line specification
 
 2. Dynamic Parameters
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 Dynamic parameters are used as placeholders instead of actual values. 
 These parameters are used when referring to a table column value of a data table. Data tables are defined at the beginning of a spec. 
 Dynamic parameters are also used as values in a Concept.
 Dynamic parameters have the following syntax: ``<dynamic_param>``.
 
+.. cssclass:: example
+
 Example: Dynamic Parameters used in a spec which has a data table
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 In the following example, ``<name>`` is a dynamic parameter. 
 ``<name>`` can take the values mentioned in the "name" column of the table. In this case, the values are "Alice", "Bob", or "Eve".
 
@@ -363,9 +374,11 @@ In the following example, ``<name>`` is a dynamic parameter.
 
     ## Second scenario
     * Say "namaste" to <name>.
-     
+
+.. cssclass:: example
+
 Example: Dynamic parameters used in a Concept
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 In the following example, ``<username>`` and ``<project_name>`` are used in a Concept.
 
 .. code-block:: gauge
@@ -393,14 +406,16 @@ In the following example, ``<username>`` and ``<project_name>`` are used in a Co
 | For more information about using dynamic parameters in inline tables, see :ref:`example_inline_data_driven_table`.
 
 3. Table Parameters
--------------------
+^^^^^^^^^^^^^^^^^^^^
 Table parameters are used when a step is executed for multiple values in a table.
 For a step with an inline table parameter, the entire table becomes the parameter value.
 
 .. _example_inline_table:
 
+.. cssclass:: example
+
 Example
-^^^^^^^
+
 In the following example, the step has an inline table parameter.
 
 .. code-block:: gauge
@@ -419,14 +434,16 @@ In the following example, the step has an inline table parameter.
    Inline data tables can be used as special CSV parameters. For more information about CSV parameters, see :ref:`special csv parameter<special_parameter_csv>`.
 
 Dynamic parameters used in inline tables
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""
 
 Dynamic parameters can be used in inline tables, which are used within a step. These parameters can take values from the data tables.
 
 .. _example_inline_data_driven_table:
 
+.. cssclass:: example
+
 Example
-^^^^^^^
+
 In the following example, ``<name>`` is a dynamic parameter, which is used in the inline table.
 This parameter takes values from the data table.
 
@@ -450,7 +467,7 @@ This parameter takes values from the data table.
 
 
 4. Special Parameters
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 Special parameters provide the ability to pass large and complex data such as tables and files into the steps as parameters.
 
 | A special parameter has the following syntax: ``<prefix:value>``.
@@ -465,14 +482,15 @@ The two types of special parameters are as follows:
 .. _special_parameter_file:
 
 Special Parameter: File
------------------------
+"""""""""""""""""""""""
 
 | These are used to read files and pass the file content as a string parameter to the steps in a specification.
 | The syntax of file is as follows: ``<file:[value]>`` .
 | ``[value]`` is the absolute or relative path to the file located at ``<project_root>`` (location at which the Gauge project is created). 
 
+.. cssclass:: example
+
 Examples
-^^^^^^^^
 
 In the following example, ``email.txt`` is the absolute value of the special parameter, ``file``.
 
@@ -490,14 +508,16 @@ In the following example, ``content.txt`` is the file located at  ``<project_roo
 .. _special_parameter_csv:
 
 Special Parameter: CSV
-----------------------
+"""""""""""""""""""""""
 
 | Tables are used to pass table values into steps by using the values from an external CSV file. 
 | The syntax of this parameter is as follows: ``<table:[value]>``
 | ``[value]`` is the absolute or relative path to the file located at ``<project_root>`` (location at which the Gauge project is created). 
 
+.. cssclass:: example
+
 Examples
-^^^^^^^^
+
 In the following example, ``data.csv`` is the absolute value of the special parameter, ``table``.
 
 .. code-block:: gauge
@@ -523,7 +543,7 @@ The following is an example of a sample CSV file, with the first row as table he
 .. _longstart-tags:
 
 Tags
-====
+~~~~
 
 Tags are used to associate labels with specifications or scenarios. 
 Tags help in searching or filtering specs or scenarios.
@@ -534,8 +554,10 @@ A tag applied to a spec automatically applies to a scenario as well.
 
 When the number of tags used is more, tags can be defined in multiple lines to enhance readability. 
 
+.. cssclass:: example
+
 Example: Single line tag
-------------------------
+
 | In the following example, both the specification, ``Search specification``, and scenario, ``Successful search``, have tags. 
 | ``search`` and ``admin`` tags, which are used for the spec also apply to the scenario.
 | Additionally, the scenario has its own set of tag, which is ``successful``.
@@ -548,8 +570,10 @@ Example: Single line tag
     ## Successful search
        Tags: successful
 
+.. cssclass:: example
+
 Example: Multi-line tag
------------------------
+
 | In the following example, both the specification and scenario have tags in multiple lines.
 | Tags have to be indented when written in multiple lines.
 
@@ -566,12 +590,14 @@ Example: Multi-line tag
      login-success
 
 How to add comments in a specification
-======================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Any sentence in plain text which does not follow any syntax is seen as a comment in a spec.
 Comments help enhance readability of a spec without being executed.
 
+.. cssclass:: example
+
 Example
--------
+
 In the following example, ``The admin user must be able to search for available products on the search page`` is a comment. 
 This is in plain text without any syntax and provides information about the spec. 
 Similarly, ``For an existing product name, the search result will contain the product name`` is also a comment within the scenario and provides information about the scenario.
@@ -597,7 +623,7 @@ These comments enhance readability without getting executed when the spec is run
 .. _concept:
 
 Concepts
-========
+~~~~~~~~
 Concepts provide the ability to combine re-usable, logical groups of steps into a single unit. 
 A concept presents the summary of a business intent by combining logical groups of steps. 
 
@@ -608,7 +634,7 @@ Multiple concepts can be used within a spec and concepts can be nested too.
 When the spec is run, all concepts and their steps are executed in the defined order.
 
 Defining a concept
-------------------
+^^^^^^^^^^^^^^^^^^
 Concepts are defined in a ``.cpt`` file format at ``<project_root>/specs``, where ``<project_root>`` is the location at which the Gauge project is created. 
 Concepts can also be inside nested directories within the ``specs`` directory. 
 Multiple concept definitions can be invoked from within a concept definition.
@@ -617,13 +643,15 @@ A concept definition consists of a concept header and concept steps.
 .. _concept_header:
 
 Concept header
---------------
+^^^^^^^^^^^^^^
 Concept header defines the name of the concept and the parameters used in the concept. 
 Concept header is written in the ``H1`` format of Markdown syntax. 
 Parameters are defined as ``<parameters>``.
 
+.. cssclass:: example
+
 Example
-^^^^^^^
+
 | In the following example, the concept header is preceded by ``#``. 
 | ``<username>`` and ``<project_name>`` are parameters used in the concept.
 
@@ -634,13 +662,15 @@ Example
 .. _concept_steps:
 
 Concept steps
--------------
+^^^^^^^^^^^^^
 Concept steps are used in a way similar to using steps in a specification. These follow the concept header.
 If parameters are used from the the concept header, then these parameters must be used within ``< >``. 
 Parameters within concepts steps can also have static values, which are written within double quotes ``" "``.
 
+.. cssclass:: example
+
 Example
-^^^^^^^
+
 The following example shows a concept ``(.cpt)`` file with a concept header (preceded by ``#``) and ``<username>`` and ``<project_name>`` as parameters. 
 Parameters are defined in the concept header. This concept has three steps.
 "password" is the static value of another parameter used in one of the concept steps.
@@ -666,7 +696,7 @@ This concept is invoked from a spec as follows:
     * Login as user "john" and create project "Gauge java"
 
 Contexts
-========
+~~~~~~~~
 
 Contexts or Context steps are steps defined in a spec prior to a scenario. 
 These steps allow you to specify a set of conditions that are necessary for executing scenarios in a spec. 
@@ -674,8 +704,10 @@ If there are multiple scenarios, context steps are executed prior to every scena
 A context step must be preceded by ``*`` and are executed in the defined order. 
 Hence, they are similar to steps used in a scenario or concept.
 
+.. cssclass:: example
+
 Example
--------
+
 | In the following example, the context steps are ``User is logged in as Mike`` and ``Navigate to the project page``.
 | These steps are defined and executed prior to the two scenarios, ``## Delete single project`` and ``## Delete multiple projects``.
 
@@ -709,7 +741,8 @@ When the spec is run, the workflow is as follows:
 .. _longstart-teardown:
 
 Tear Down Steps
-===============
+~~~~~~~~~~~~~~~
+
 Tear Down Steps are defined in a spec after the last scenario. 
 These steps allow you to specify some sort of a conclusion after every execution of a scenario in a spec. 
 They are used to perform a tear down function.
@@ -727,8 +760,10 @@ Three or more consecutive underscores, ``___``, indicates the start of tear down
     * Tear down step 2
     * Tear down step 3
 
+.. cssclass:: example
+
 Example
--------
+
 In the following example, the tear down steps that start after the three or more consecutive underscores, ___, are 
 ``Logout user "mike"`` and ``Delete user "mike"``.
 
@@ -767,7 +802,7 @@ When the spec is run, the workflow is as follows:
 .. _language-steps:
 
 Step implementations
-====================
+~~~~~~~~~~~~~~~~~~~~
 Every step implementation has an equivalent code as per the language plugin used while installing Gauge. 
 The code is run when the steps inside a spec are executed. 
 The code must have the same number of parameters as mentioned in the step.
@@ -775,11 +810,13 @@ The code must have the same number of parameters as mentioned in the step.
 Steps can be implemented in different ways such as simple step, step with table, step alias, and enum data type used as step parameters.
 
 Simple step
------------
+^^^^^^^^^^^
 This is a simple step implementation, which has simple parameters.
 
+.. cssclass:: example
+
 Example
-^^^^^^^
+
 In the following example of a step, “hello” and “gauge” are two simple parameters. 
 Hence, the step implementation must also contain the same number of parameters. 
 The Implementation section shows the step implementation for different language plugins.
@@ -789,13 +826,10 @@ The Implementation section shows the step implementation for different language 
   * Say "hello" to "gauge"
 
 Implementation
---------------
+""""""""""""""
 
 .. cssclass:: dynamic-content csharp
 
-
-CSharp
-^^^^^^
 .. code-block:: java
 
     // The Method can be written in **any C# class** as long as it is part of the project.
@@ -809,8 +843,6 @@ CSharp
 
 .. cssclass:: dynamic-content java
 
-Java
-^^^^
 .. code-block:: java
 
     // This Method can be written in any java class as long as it is in classpath.
@@ -825,8 +857,6 @@ Java
 
 .. cssclass:: dynamic-content javascript
 
-JavaScript
-^^^^^^^^^^
 .. code-block:: javascript
 
     step("Say <greeting> to <name>", async function(greeting, name) {
@@ -835,8 +865,6 @@ JavaScript
 
 .. cssclass:: dynamic-content python
 
-Python
-^^^^^^
 .. code-block:: python
 
     @step("Say <greeting> to <product name>")
@@ -845,8 +873,6 @@ Python
 
 .. cssclass:: dynamic-content ruby
 
-Ruby
-^^^^
 .. code-block:: ruby
 
     step 'Say <greeting> to <product name>' do |greeting, name|
@@ -854,11 +880,13 @@ Ruby
     end
 
 Step with table
-===============
+^^^^^^^^^^^^^^^^
 When steps have an inline table as a parameter, the step implementation must have the appropriate parameter.
 
+.. cssclass:: example
+
 Example
--------
+
 In the following example, “hobbit” and the table are step parameters. 
 The Implementation section shows the step implementation for different language plugins.
 
@@ -872,12 +900,10 @@ The Implementation section shows the step implementation for different language 
     |789|samwise|
 
 Implementation
---------------
+""""""""""""""
 
 .. cssclass:: dynamic-content csharp
 
-CSharp
-^^^^^^
 .. code-block:: java
 
     // Here Table is a custom data structure defined by gauge.
@@ -895,8 +921,6 @@ CSharp
 
 .. cssclass:: dynamic-content java
 
-Java
-^^^^
 .. code-block:: java
 
     // Table is a custom data structure defined by gauge.
@@ -911,8 +935,6 @@ Java
 
 .. cssclass:: dynamic-content javascript
 
-JavaScript
-^^^^^^^^^^
 .. code-block:: javascript
 
     step("Create following <race> characters <table>", async function(race, table) {
@@ -921,8 +943,6 @@ JavaScript
 
 .. cssclass:: dynamic-content python
 
-Python
-^^^^^^
 .. code-block:: python
 
     # Here Table is a custom data structure defined by gauge.
@@ -933,8 +953,6 @@ Python
 
 .. cssclass:: dynamic-content ruby
 
-Ruby
-^^^^^^
 .. code-block:: ruby
 
     # Here table is a custom data structure defined by gauge-ruby.
@@ -945,7 +963,7 @@ Ruby
     end
 
 Step alias
-==========
+^^^^^^^^^^
 Step alias is a feature when there are multiple step names for the same step functionality. 
 The parameters in the step implementation must match the number and type of parameters used in all the steps names. 
 Step alias feature can be used in a specification when the same functionality is expressed in different ways.
@@ -954,8 +972,10 @@ This enhances readability of the specification.
 Step alias feature helps you follow a good software engineering practice such as the DRY (Don't Repeat Yourself) principle at the code level, while ensuring that the functionality is expressed clearly.
 You can browse the web for more information about the DRY principle.
 
+.. cssclass:: example
+
 Example 1
----------
+
 In the following example, ``Create a user "user 1"`` and ``Create another user "user 2"`` are step aliases because they have the same functionality, but are expressed differently.
 However, ``Verify "user 1" has access to dashboard`` and ``Verify "user 2" has access to dashboard`` are *not* step aliases.
 The Implementation section shows the step implementation for different language plugins.
@@ -972,12 +992,10 @@ The Implementation section shows the step implementation for different language 
     * Verify "user 2" has access to dashboard
 
 Implementation
---------------
+""""""""""""""
 
 .. cssclass:: dynamic-content csharp
 
-CSharp
-^^^^^^
 .. code-block:: java
 
     public class Users {
@@ -991,8 +1009,6 @@ CSharp
 
 .. cssclass:: dynamic-content java
 
-Java
-^^^^
 .. code-block:: java
 
     public class Users {
@@ -1006,8 +1022,6 @@ Java
 
 .. cssclass:: dynamic-content javascript
 
-JavaScript
-^^^^^^^^^^
 .. code-block:: javascript
 
     step(["Create a user <username>", "Create another user <username>"], function (username) {
@@ -1016,8 +1030,6 @@ JavaScript
 
 .. cssclass:: dynamic-content python
 
-Python
-^^^^^^
 .. code-block:: python
 
     from getgauge.python import step
@@ -1028,16 +1040,16 @@ Python
 
 .. cssclass:: dynamic-content ruby
 
-Ruby
-^^^^
 .. code-block:: ruby
 
     step 'Create a user <user name>','Create another user <user name>' do |user_name|
         // create user user_name
     end
 
+.. cssclass:: example
+
 Example 2
-^^^^^^^^^
+
 In the following example, the functionality of sending an email in both scenarios is the same. 
 However, the steps are expressed differently. 
 The Implementation section shows the step implementation for different language plugins.
@@ -1056,12 +1068,10 @@ The Implementation section shows the step implementation for different language 
     * An email confirming the "order" is sent
 
 Implementation
---------------
+"""""""""""""""
 
 .. cssclass:: dynamic-content csharp
 
-CSharp
-^^^^^^
 .. code-block:: java
 
     public class Users {
@@ -1075,8 +1085,6 @@ CSharp
 
 .. cssclass:: dynamic-content java
 
-Java
-^^^^^^
 .. code-block:: java
 
     public class Users {
@@ -1090,8 +1098,6 @@ Java
 
 .. cssclass:: dynamic-content javascript
 
-JavaScript
-^^^^^^^^^^
 .. code-block:: javascript
 
     step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"], function (email_type) {
@@ -1099,9 +1105,6 @@ JavaScript
     });
 
 .. cssclass:: dynamic-content python
-
-Python
-^^^^^^
 
 .. code-block:: python
 
@@ -1113,8 +1116,6 @@ Python
 
 .. cssclass:: dynamic-content ruby
 
-Ruby
-^^^^^^
 .. code-block:: ruby
 
     step 'A <email_type> email is sent to the user', 'An email confirming the <email_type> is sent' do |email_type|
