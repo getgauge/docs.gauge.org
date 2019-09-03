@@ -1126,7 +1126,7 @@ Implementation
 .. cssclass:: dynamic-content java
 
 Enum as a step parameter
-========================
+~~~~~~~~~~~~~~~~~~~~~~~~
 The constant values of "Enum" data type can be used as parameters in a step. 
 However, the type of parameter should match the Enum name in the step implementation code.
 
@@ -1135,8 +1135,10 @@ However, the type of parameter should match the Enum name in the step implementa
 
 .. cssclass:: dynamic-content java
 
+.. cssclass:: example
+
 Example
--------
+
 In the following example, the parameter ``SOUTH`` is of the "Enum" data type. 
 In the equivalent code, the parameter ``<direction>`` matches with the Enum name, ``Direction``.
 The Implementation section shows the step implementation for Java.
@@ -1146,7 +1148,7 @@ The Implementation section shows the step implementation for Java.
   * Navigate towards "SOUTH"
 
 Implementation
---------------
+^^^^^^^^^^^^^^
 
 .. code-block:: java
 
@@ -1159,7 +1161,7 @@ Implementation
 
 
 Refactoring (``gauge refactor``)
-================================
+--------------------------------
 
 Gauge allows you to rephrase a step, add and remove parameters, and change the order of parameters in all spec files and code files of a project. 
 
@@ -1177,8 +1179,10 @@ The following command is used to rephrase a step:
 .. note::
   This command must be issued at ``<project_root>``, location at which the Gauge project is created.
 
+.. cssclass:: example
+
 Example
--------
+
 Consider the following spec:
 
 .. code-block:: gauge
@@ -1192,7 +1196,7 @@ Consider the following spec:
 To rephrase the step, ``gauge refactor`` command can be used in the following ways:
 
 Method 1
---------
+~~~~~~~~~
 
 .. code-block:: console
 
@@ -1202,7 +1206,7 @@ Method 1
    Use the appropriate syntax while giving values in quotes, " ", in the command.
 
 Method 2
---------
+~~~~~~~~~
 
 .. code-block:: console
 
@@ -1219,7 +1223,7 @@ Both the methods give the same result - the new step is as follows:
     * The word "gauge" has "3" vowels and "2" consonants
 
 Use cases of Refactoring
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 Let us consider a few examples that show how to add a parameter, remove a parameter, and change the order of parameters.
 
 Consider the following spec:
@@ -1233,7 +1237,7 @@ Consider the following spec:
     * The word "gauge" has "3" vowels
 
 How to add a parameter
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 In the following example, a new parameter has been added to the step.
 
 .. code-block:: console
@@ -1251,7 +1255,7 @@ The result is as follows:
     * The word "gauge" has "3" vowels and "2" consonants
 
 How to change the order of parameters
--------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In the following example, the order of parameters within the step has been changed.
 
 .. code-block:: console
@@ -1269,7 +1273,7 @@ The result is as follows:
     * The word "gauge" has "2" consonants and "3" vowels
 
 How to delete a parameter
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 In the following example, a parameter has been deleted.
 
 .. code-block:: console
@@ -1289,7 +1293,7 @@ The result is as follows:
 .. _execution_hooks:
 
 Execution hooks
-===============
+---------------
 
 Test execution hooks can be used to run arbitrary test code at different
 levels during the test suite execution.
@@ -1301,12 +1305,10 @@ You can configure the level at which Gauge clears the in-memory objects by using
 For more information about configuring the appropriate environment variable in the ``default.properties`` file, see :ref:`local_configuration_Gauge`.
 
 Implementation
---------------
+~~~~~~~~~~~~~~
 
 .. cssclass:: dynamic-content csharp
 
-CSharp
-^^^^^^
 .. code-block:: java
 
     public class ExecutionHooks
@@ -1356,8 +1358,6 @@ CSharp
 
 .. cssclass:: dynamic-content java
 
-Java
-^^^^
 .. code-block:: java
 
     public class ExecutionHooks {
@@ -1406,8 +1406,6 @@ Java
 
 .. cssclass:: dynamic-content javascript
 
-JavaScript
-^^^^^^^^^^
 .. code-block:: javascript
 
     beforeSuite(fn, [opts]) {
@@ -1444,8 +1442,6 @@ JavaScript
 
 .. cssclass:: dynamic-content python
 
-Python
-^^^^^^
 .. code-block:: python
 
     from getgauge.python import before_step, after_step, before_scenario, after_scenario, before_spec, after_spec, before_suite, after_suite
@@ -1484,8 +1480,6 @@ Python
 
 .. cssclass:: dynamic-content ruby
 
-Ruby
-^^^^
 .. code-block:: ruby
 
     before_suite do
@@ -1521,13 +1515,11 @@ Ruby
     end
 
 Current Execution Context in the Hook
--------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 To get additional information about the current specification and scenario and step execution, an additional parameter called  ``ExecutionContext`` can be added to the :ref:`hooks <execution_hooks>` method.
 
 .. cssclass:: dynamic-content csharp
 
-CSharp
-^^^^^^
 .. code-block:: java
 
     using Gauge.CSharp.Lib;
@@ -1549,8 +1541,6 @@ CSharp
 
 .. cssclass:: dynamic-content java
 
-Java
-^^^^
 .. code-block:: java
 
     @BeforeScenario
@@ -1567,8 +1557,6 @@ Java
 
 .. cssclass:: dynamic-content javascript
 
-JavaScript
-^^^^^^^^^^
 .. code-block:: javascript
 
     beforeScenario(function (context) {
@@ -1583,8 +1571,6 @@ JavaScript
 
 .. cssclass:: dynamic-content python
 
-Python
-^^^^^^
 .. code-block:: python
 
     from getgauge.python import before_step, after_scenario
@@ -1599,8 +1585,6 @@ Python
 
 .. cssclass:: dynamic-content ruby
 
-Ruby
-^^^^
 .. code-block:: ruby
 
     before_spec do |execution_info|
@@ -1615,7 +1599,7 @@ Ruby
 .. _filtering_hooks_with_tags:
 
 Filtering Hooks execution based on tags
----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 You can specify tags for which the execution :ref:`hooks <execution_hooks>` can run. 
 
 This ensures that the hook only runs on scenarios and specifications that have the specified tags.
@@ -1625,8 +1609,6 @@ This ensures that the hook only runs on scenarios and specifications that have t
 
 .. cssclass:: dynamic-content csharp
 
-CSharp
-^^^^^^
 .. code-block:: java
 
     // A before spec hook that runs when tag1 and tag2
@@ -1647,8 +1629,6 @@ CSharp
 
 .. cssclass:: dynamic-content java
 
-Java
-^^^^
 .. code-block:: java
 
     // A before spec hook that runs when tag1 and tag2
@@ -1668,8 +1648,6 @@ Java
 
 .. cssclass:: dynamic-content javascript
 
-JavaScript
-^^^^^^^^^^
 .. code-block:: javascript
 
     // A before spec hook that runs when tag1 and tag2
@@ -1687,8 +1665,6 @@ JavaScript
 
 .. cssclass:: dynamic-content python
 
-Python
-^^^^^^
 .. code-block:: python
 
     // A before spec hook that runs when tag1 and tag2
@@ -1706,8 +1682,6 @@ Python
 
 .. cssclass:: dynamic-content ruby
 
-Ruby
-^^^^
 .. code-block:: ruby
 
     # A before spec hook that runs when
@@ -1724,20 +1698,18 @@ Ruby
     end
 
 Data Store
-==========
+-----------
 Data (Objects) can be shared in steps defined in different classes at runtime using DataStores exposed by Gauge.
 
 There are three different types of DataStores based on the lifecycle of when in-memory objects get cleared.
 
 ScenarioStore
--------------
+~~~~~~~~~~~~~
 This DataStore keeps values added to memory during the lifecycle of the scenario execution. 
 Values are cleared after every scenario is executed.
 
 .. cssclass:: dynamic-content csharp
 
-CSharp
-^^^^^^
 .. code-block:: java
 
     using Gauge.CSharp.Lib;
@@ -1754,8 +1726,6 @@ CSharp
 
 .. cssclass:: dynamic-content java
 
-Java
-^^^^
 .. code-block:: java
 
     import com.thoughtworks.gauge.datastore.*;
@@ -1769,8 +1739,6 @@ Java
 
 .. cssclass:: dynamic-content javascript
 
-JavaScript
-^^^^^^^^^^
 .. code-block:: javascript
 
     // Adding value
@@ -1781,8 +1749,6 @@ JavaScript
 
 .. cssclass:: dynamic-content python
 
-Python
-^^^^^^
 .. code-block:: python
 
     # Import Package
@@ -1800,8 +1766,6 @@ Python
 
 .. cssclass:: dynamic-content ruby
 
-Ruby
-^^^^
 .. code-block:: ruby
 
     // Adding value
@@ -1814,15 +1778,13 @@ Ruby
 
 
 SpecStore
----------
+~~~~~~~~~
 This DataStore keeps values added to memory during the lifecycle of the specification execution. 
 
 Values are cleared after every specification is executed.
 
 .. cssclass:: dynamic-content csharp
 
-CSharp
-^^^^^^^^^^
 .. code-block:: java
 
     using Gauge.CSharp.Lib;
@@ -1839,8 +1801,6 @@ CSharp
 
 .. cssclass:: dynamic-content java
 
-Java
-^^^^
 .. code-block:: java
 
     // Import Package
@@ -1855,8 +1815,6 @@ Java
 
 .. cssclass:: dynamic-content javascript
 
-JavaScript
-^^^^^^^^^^
 .. code-block:: javascript
 
     // Adding value
@@ -1867,8 +1825,6 @@ JavaScript
 
 .. cssclass:: dynamic-content python
 
-Python
-^^^^^^
 .. code-block:: python
 
     # Import Package
@@ -1886,8 +1842,6 @@ Python
 
 .. cssclass:: dynamic-content ruby
 
-Ruby
-^^^^
 .. code-block:: ruby
 
     // Adding value
@@ -1898,7 +1852,7 @@ Ruby
     element_id = spec_store.get("element-id");
 
 SuiteStore
-----------
+~~~~~~~~~~
 This DataStore keeps values added to memory during the lifecycle of the entire test suite execution. 
 
 Values are cleared after the entire test suite is executed.
@@ -1909,8 +1863,6 @@ Values are cleared after the entire test suite is executed.
 
 .. cssclass:: dynamic-content csharp
 
-CSharp
-^^^^^^
 .. code-block:: java
 
     using Gauge.CSharp.Lib;
@@ -1928,8 +1880,6 @@ CSharp
 
 .. cssclass:: dynamic-content java
 
-Java
-^^^^^^
 .. code-block:: java
 
     // Import Package
@@ -1945,8 +1895,6 @@ Java
 
 .. cssclass:: dynamic-content javascript
 
-JavaScript
-^^^^^^^^^^
 .. code-block:: javascript
 
     // Adding value 
@@ -1957,8 +1905,6 @@ JavaScript
 
 .. cssclass:: dynamic-content python
 
-Python
-^^^^^^
 .. code-block:: python
 
     # Import Package 
@@ -1976,8 +1922,6 @@ Python
 
 .. cssclass:: dynamic-content ruby
 
-Ruby
-^^^^
 .. code-block:: ruby
 
     // Adding value
@@ -1997,9 +1941,6 @@ you can use appropriate APIs in the step implementation of the language runner u
 
 .. cssclass:: dynamic-content csharp
 
-CSharp
-^^^^^^
-
 .. code-block:: java
 
     //Using Webdriver public
@@ -2014,8 +1955,6 @@ CSharp
 
 .. cssclass:: dynamic-content java
 
-Java
-^^^^^^
 .. code-block:: java
 
     // Using Webdriver public class
@@ -2029,8 +1968,6 @@ Java
 
 .. cssclass:: dynamic-content javascript
 
-JavaScript
-^^^^^^^^^^
 .. code-block:: javascript
 
     // Using Taiko
@@ -2042,8 +1979,6 @@ JavaScript
 
 .. cssclass:: dynamic-content python
 
-Python
-^^^^^^
 .. code-block:: python
 
     # Using Webdriver
@@ -2055,8 +1990,6 @@ Python
 
 .. cssclass:: dynamic-content ruby
 
-Ruby
-^^^^^^
 .. code-block:: ruby
 
     # Using Webdriver
@@ -2082,8 +2015,6 @@ These messages are displayed after the steps in the execution reports.
 
 .. cssclass:: dynamic-content csharp
 
-CSharp
-^^^^^^
 .. code-block:: java
 
     GaugeMessages.WriteMessage("Custom message for report");
@@ -2092,8 +2023,6 @@ CSharp
 
 .. cssclass:: dynamic-content java
 
-Java
-^^^^
 .. code-block:: java
 
     Gauge.writeMessage("Custom message for report");
@@ -2102,16 +2031,12 @@ Java
 
 .. cssclass:: dynamic-content javascript
 
-JavaScript
-^^^^^^^^^^
 .. code-block:: javascript
 
     gauge.message("Custom message for report");
 
 .. cssclass:: dynamic-content python
 
-Python
-^^^^^^
 .. code-block:: python
 
     from getgauge.python import Messages
@@ -2120,8 +2045,6 @@ Python
 
 .. cssclass:: dynamic-content ruby
 
-Ruby
-^^^^^^
 .. code-block:: ruby
 
     Gauge.write_message("Custom message for report")
@@ -2142,32 +2065,24 @@ These screenshots are displayed after steps in the execution reports.
 
 .. cssclass:: dynamic-content csharp
 
-CSharp
-^^^^^^
 .. code-block:: java
 
     GaugeScreenshots.Capture();
 
 .. cssclass:: dynamic-content java
 
-Java
-^^^^^^
 .. code-block:: java
 
     Gauge.captureScreenshot();
 
 .. cssclass:: dynamic-content javascript
 
-JavaScript
-^^^^^^^^^^
 .. code-block:: javascript
 
     gauge.screenshot();
 
 .. cssclass:: dynamic-content python
 
-Python
-^^^^^^
 .. code-block:: python
 
     from getgauge.python import Screenshots
@@ -2176,8 +2091,6 @@ Python
 
 .. cssclass:: dynamic-content ruby
 
-Ruby
-^^^^^^
 .. code-block:: ruby
 
     Gauge.capture
@@ -2196,8 +2109,6 @@ Each language runner uses a different syntax, depending on the language idioms, 
 
 .. cssclass:: dynamic-content csharp
 
-CSharp
-^^^^^^
 .. code-block:: java
 
     // The ``[ContinueOnFailure]`` attribute tells Gauge to continue executing others
@@ -2214,8 +2125,6 @@ CSharp
 
 .. cssclass:: dynamic-content java
 
-Java
-^^^^^^
 .. code-block:: java
 
     // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
@@ -2232,8 +2141,6 @@ Java
 
 .. cssclass:: dynamic-content javascript
 
-JavaScript
-^^^^^^^^^^
 .. code-block:: javascript
 
     // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
@@ -2244,8 +2151,6 @@ JavaScript
 
 .. cssclass:: dynamic-content python
 
-Python
-^^^^^^
 .. code-block:: python
 
     // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
@@ -2258,8 +2163,6 @@ Python
 
 .. cssclass:: dynamic-content ruby
 
-Ruby
-^^^^^^
 .. code-block:: ruby
 
     # The ``:continue_on_failure => true`` keyword argument
@@ -2282,8 +2185,6 @@ If ``ContinueOnFailure`` has no parameters, then the step execution continues by
 
 .. cssclass:: dynamic-content java
 
-Java
-^^^^^^
 .. code-block:: java
 
   @ContinueOnFailure({AssertionError.class, CustomError.class})
@@ -2307,8 +2208,6 @@ Java
 
 .. cssclass:: dynamic-content python
 
-Python
-^^^^^^
 .. code-block:: python
 
   @continue_on_failure([RuntimeError])
@@ -2338,14 +2237,14 @@ Python
 .. _project_structure:
 
 Gauge Project Structure
-=======================
+-----------------------
 When a Gauge project is initialized for a particular language plugin, a project structure is created at ``<project_root>``. 
 The project structure consists of language-specific files depending on the language plugin used and some common files and directories for all language plugins.
 
 ``<project_root>`` - location at which the Gauge project is created.
 
 Common Gauge project files
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 Regardless of the language plugin used, few common files and directories are created when a Gauge project is initialized. 
 
 The following are the common files and directories in the Gauge project structure:
@@ -2423,15 +2322,13 @@ After the plugin is installed, manifest.json has the following content:
 For more information about installing a plugin and related details, see :ref:`install_plugins`.
 
 Language-specific project files
--------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 When the Gauge project is initialized, depending on the language plugin used, language-specific files are created in the project.
 
 The following table shows the project structure for each of the languages when used for creating a Gauge project.
 
 .. cssclass:: dynamic-content csharp
 
-CSharp
-^^^^^^
 .. code-block:: text
 
     ├── foo.csproj
@@ -2469,8 +2366,6 @@ This file contains the implementations for the sample steps defined in
 
 .. cssclass:: dynamic-content java
 
-Java
-^^^^^^
 .. code-block:: text
 
     ├── manifest.json
@@ -2501,8 +2396,6 @@ This directory contains the classes including step implementations.
 
 .. cssclass:: dynamic-content javascript
 
-JavaScript
-^^^^^^^^^^
 .. code-block:: text
 
     ├── manifest.json
@@ -2525,8 +2418,6 @@ This directory contains the test code including step implementations.
 
 .. cssclass:: dynamic-content python
 
-Python
-^^^^^^
 .. code-block:: text
 
     ├── manifest.json
@@ -2549,8 +2440,6 @@ This directory contains the test code including step implementations.
 
 .. cssclass:: dynamic-content ruby
 
-Ruby
-^^^^
 .. code-block:: text
 
     ├── manifest.json
