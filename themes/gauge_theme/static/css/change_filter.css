@@ -85,7 +85,7 @@
 }
 
 #proj-setup-filter-section .applied-filters .applied-filter {
-    padding: 0px 8px 0px 10px;
+    padding: 0px 12px;
     background-color: white;
     border-radius: 30px;
     border: 1px solid grey;
@@ -95,7 +95,7 @@
     font-size: 14px;
     margin-left: 3px;
     font-family: "OpenSans-Regular";
-    margin-top: 6px;
+    margin-top: 8px;
     font-weight: normal;
     max-width: 148px;
     width:auto;

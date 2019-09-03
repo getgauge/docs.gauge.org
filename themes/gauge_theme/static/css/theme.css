@@ -1585,16 +1585,34 @@ p a {
   .nav {
     display: none;
   }
+  #proj-setup-filter-section .applied-filters .applied-filter-header {
+    background-color: #fff0b8;
+    margin: auto 16px;
+    border-radius: 5px 0 0 5px;
+    padding: 6px 2px;
+    position: relative;
+    top: 0;
+    left: -15px;
+    font-size: 13px;
+    font-family: "OpenSans-Regular";
+    height: 40px;
+    width: 39px !important;
+  }
+  #change-filter {
+    position: absolute;
+    right: 0px;
+    top: -24px;
+  }
 }
-
 
 @media only screen and (min-width: 768px) {
   body {
     display: grid;
-    grid-template-areas: 'header header' 'left-nav main-content' 'footer footer';
-    grid-template-rows: 100px auto auto;
-    grid-template-columns: 29% 65%;
+    grid-template-areas: 'header header' 'left-nav right-nav' 'left-nav main-content' 'footer footer';
+    grid-template-rows: 100px auto auto auto;
+    grid-template-columns: 25% 69%;
     grid-column-gap: 60px;
+    overflow-x: hidden;
   }
   .fixed-docs-toc.docs-toc {
     display: none;
@@ -1643,6 +1661,15 @@ p a {
   #search-icon {
     top: 14px;
     left: 6%;
+  }
+  .localtoc-container>ul {
+    margin: 10px 0;
+    padding-left: 15px;
+    display: none;
+  }
+  .mobile-local-toc {
+    text-align: left;
+    margin-left: 11px;
   }
 
   .left-sidebar-container nav {
@@ -1799,69 +1826,87 @@ p a {
     padding-bottom: 5px;
     border-radius: 5px;
     align-items: center;
-}
-#installation-selection .radioContainer {
-  position: relative;
-  width: 100%;
-  height: 45px;
-  margin: 5px;
-  cursor: pointer;
-  padding-top: 10px;
-  font-size: 14px;
-  border-radius: 3px;
-  background-color: #f2f2f2;
-  text-align: left;
-  padding-left: 46px;
-  font-family: 'OpenSans';
-  font-weight: normal;
-}
-#installation-selection .circle {
-  position: absolute;
-  bottom: 15px;
-  left: 14px;
-  border: 1px solid black;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-.selection-icon {
-  background-color: white;
-  position: absolute;
-  bottom: 18%;
-  right: 10px;
-  border: .5px solid grey;
-  width: 25px;
-  height: 25px;
-  border-radius: 20%;
-}
-#installation-selection input {
-  display: none;
-}
-#installation-selection input:checked~.checkmark:after {
-  display: inline;
-  content: '\f192';
-  font-family: FontAwesome;
-  position: absolute;
-  top: 9px;
-  left: 14px;
-  text-align: left;
-}
-.row.banner {
-  margin-left: 0px;
-}
-.proj-setup-filters.docutils .selection input:checked~.checkmark:after {
-  left: 5%;
-  top: 12px;
-}
+  }
+  #installation-selection .radioContainer {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    margin: 5px;
+    cursor: pointer;
+    padding-top: 10px;
+    font-size: 14px;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    text-align: left;
+    padding-left: 46px;
+    font-family: 'OpenSans';
+    font-weight: normal;
+  }
+  #installation-selection .circle {
+    position: absolute;
+    bottom: 15px;
+    left: 14px;
+    border: 1px solid black;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  .selection-icon {
+    background-color: white;
+    position: absolute;
+    bottom: 18%;
+    right: 10px;
+    border: .5px solid grey;
+    width: 25px;
+    height: 25px;
+    border-radius: 20%;
+  }
+  #installation-selection input {
+    display: none;
+  }
+  #installation-selection input:checked~.checkmark:after {
+    display: inline;
+    content: '\f192';
+    font-family: FontAwesome;
+    position: absolute;
+    top: 9px;
+    left: 14px;
+    text-align: left;
+  }
+  .row.banner {
+    margin-left: 0px;
+  }
+  .proj-setup-filters.docutils .selection input:checked~.checkmark:after {
+    left: 5%;
+    top: 12px;
+  }
+  #change-filter {
+    position: relative;
+    right: 0;
+    top: 2px;
+  }
+  #proj-setup-filter-section .applied-filters .applied-filter-header {
+    background-color: #fff0b8;
+    margin: auto 16px;
+    border-radius: 5px 0 0 5px;
+    padding: 6px 7px;
+    position: relative;
+    top: 0;
+    left: -15px;
+    font-size: 14px;
+    font-family: "OpenSans-Regular";
+    height: 40px;
+    width: 54px !important;
+  }
 
 }
 
 @media only screen and (min-width:810px) {
   body {
     display: grid;
-    grid-template-areas: 'header header' 'left-nav main-content' 'footer footer';
-    grid-template-rows: 100px auto auto;
-    grid-template-columns: 27% 63%;
+    grid-template-areas: 'header header' 'left-nav right-nav' 'left-nav main-content' 'footer footer';
+    grid-template-rows: 100px auto auto auto;
+    grid-template-columns: 24% 71%;
     grid-column-gap: 60px;
     overflow-x: hidden;
   }
@@ -1877,21 +1922,25 @@ p a {
   .docs-container.no-right-bar.containers .topic {
     margin-top: 13px;
   }
+  
  
 }
 
 @media only screen and (min-width:960px) {
   body {
     display: grid;
-    grid-template-areas: 'header header' 'left-nav main-content' 'footer footer';
-    grid-template-rows: 100px auto auto;
-    grid-template-columns: 20% 70%;
+    grid-template-areas: 'header header' 'left-nav right-nav' 'left-nav main-content' 'footer footer';
+    grid-template-rows: 100px auto auto auto;
+    grid-template-columns: 21% 73%;
     grid-column-gap: 60px;
+    overflow-x: hidden;
   }
   .fixed-docs-toc.docs-toc {
     display: block;
   }
- 
+  .edit-page {
+    top: 45px;
+  }
 }
 
 @media only screen and (min-width: 1201px) {
@@ -1901,6 +1950,16 @@ p a {
     grid-template-rows: 100px auto auto;
     grid-template-columns: 19% 54% 27%;
     grid-column-gap: 30px;    
+    overflow-x: hidden;
+  }
+  .localtoc-container>ul {
+    margin: 10px 0;
+    padding-left: 15px;
+    display: block;
+  }
+  .mobile-local-toc {
+    text-align: left;
+    margin-left: 0px;
   }
  
   .logo {
@@ -1934,7 +1993,8 @@ p a {
     grid-template-areas: 'header header header' 'left-nav main-content right-nav' 'footer footer footer';
     grid-template-rows: 100px auto auto;
     grid-template-columns: 19% 50% 29%;
-    grid-column-gap: 30px;    
+    grid-column-gap: 30px; 
+    overflow-x: hidden;   
   }
   .feature-desc {
     min-height: 104px;
@@ -1955,6 +2015,9 @@ p a {
   p,a, ul li,span.installer-icon {
     font-size: 16px;
   }
+  .fixed-docs-toc.docs-toc li a {
+    font-size: 14px!important;
+  }
   .edit-page {
     top: 50px;
   }
@@ -1968,6 +2031,7 @@ p a {
     grid-template-rows: 100px auto auto;
     grid-template-columns: 18% 50% 29%;
     grid-column-gap: 30px;    
+    overflow-x: hidden;
   }
   
 }

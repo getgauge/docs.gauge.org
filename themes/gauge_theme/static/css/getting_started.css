@@ -258,9 +258,11 @@
 .navigate-next a::before {
     content: "NEXT";
     display: block;
-    font-weight: bolder;
-    color: black;
+    font-weight: 600;
+    color: #1e1e1e;
     margin: 0px 18px;
+    font-family: 'URWGeometric-Medium';
+    font-size: 16px;
 }
 
 .navigate-next a::after {
@@ -269,14 +271,18 @@
     width: 13px;
     align-self: center;
     margin: 0px 0px 0px 5px;
+    position: relative;
+    top: 3px;
 }
 
 .navigate-previous a::before {
     content: "PREVIOUS";
     display: block;
-    font-weight: bolder;
-    color: black;
+    font-weight: 600;
+    color: #1e1e1e;
     margin: 0px 18px;
+    font-family: 'URWGeometric-Medium';
+    font-size: 16px;
 }
 
 .navigate-previous a::after {
@@ -284,8 +290,10 @@
     display: block;
     width: 13px;
     align-self: center;
-    margin: 5px 5px 0px 0px;
+    margin: 0px 5px 0px 0px;
     float: left;
+    position: relative;
+    top: 3px;
 }
 
 .navigate-next img {
@@ -308,9 +316,11 @@
 }
 
 .page-navigator a {
-    border-bottom: 1px solid #b1b1b1;
-    color: #b1b1b1 !important;
+    border-bottom: 1px solid #666666;
+    color: #666666 !important;
     padding: 0px;
+    font-family:  "OpenSans-Regular";
+    padding-bottom: 0px!important;
 }
 
 .page-navigator a:hover {
