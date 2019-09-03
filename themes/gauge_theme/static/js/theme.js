@@ -71,7 +71,7 @@ $(document).ready(() => {
     debug: false // Set debug to true if you want to inspect the dropdown
   });
 
-  $('.localtoc-container ul ul ul').remove();
+  $('.localtoc-container ul ul ul ul').remove();
   $('.localtoc-container ul .heading').remove();
 
   // remove nested container classes, prevent overlap with sidebar

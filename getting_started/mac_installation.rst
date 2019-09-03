@@ -4,7 +4,7 @@
 .. cssclass:: dynamic-content macos
 
 :macos:`Step 1: Installing Gauge on MacOS`
-==========================================
+------------------------------------------
 
 This section gives specific instructions on setting up Gauge in a Mac OS environment.
 
@@ -14,7 +14,7 @@ You can install Gauge using any of the following methods.
 .. cssclass:: dynamic-content macos
 
 :installer-icon:`Install Using HomeBrew`
-----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. admonition:: System Requirements
 
@@ -52,7 +52,7 @@ if HomeBrew is working properly, you should see something similar to the followi
 .. cssclass:: dynamic-content macos collapsible curl-installer first
 
 :installer-icon:`Install using CURL`
-------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: toggle collapsible-content
 
@@ -75,7 +75,7 @@ Or install Gauge to a [custom path] using
 .. cssclass:: dynamic-content macos collapsible zip-installer
 
 :installer-icon:`Install using ZIP file`
-----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: toggle collapsible-content
 
@@ -101,7 +101,7 @@ Or install Gauge to a [custom path] using
 .. cssclass:: dynamic-content macos collapsible npm-installer
 
 :installer-icon:`Install using NPM installation`
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: toggle collapsible-content
 
@@ -130,7 +130,7 @@ Or install Gauge to a [custom path] using
 .. cssclass:: dynamic-content macos collapsible nightly-installer last
 
 :installer-icon:`Nightly Installation`
---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: toggle collapsible-content
 

@@ -13,7 +13,7 @@ most important concepts and features of the tool.
 .. cssclass:: sub-heading
 
 Choose your Setup to Install Gauge
-==================================
+----------------------------------
 
 .. cssclass:: question-circle
 
@@ -59,7 +59,7 @@ Select your setup to see the instructions for installing gauge.
 .. cssclass:: sub-heading
 
 Installation Instructions
-=========================
+-------------------------
 
 .. _proj-setup-filter-section:
 .. container::
@@ -91,7 +91,7 @@ Installation Instructions
 .. include:: visualStudio_installation.rst
 
 Next Step:
-==========
+----------
 
 .. cssclass:: csharp dynamic-content
 

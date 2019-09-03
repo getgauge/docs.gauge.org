@@ -4,14 +4,14 @@
 .. cssclass:: dynamic-content linux
 
 :linux:`Step 1: Installing Gauge on Linux`
-==========================================
+------------------------------------------
 
 Gauge can be installed on any flavour of Linux using the shell script. The Following steps will guide you to a quick install on a linux box.
 
 .. cssclass:: dynamic-content linux
 
 :installer-icon:`Install Using Shell Script APT_GET`
-----------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. First, add Gauge's GPG key with this command:
 
@@ -43,7 +43,7 @@ Gauge can be installed on any flavour of Linux using the shell script. The Follo
 .. cssclass:: dynamic-content linux collapsible first
 
 :installer-icon:`Install using DNF Package Manager`
----------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: toggle collapsible-content
 
@@ -63,7 +63,7 @@ Install Gauge using dfn by running this command
 .. cssclass:: dynamic-content linux collapsible zip-installer
 
 :installer-icon:`Install using ZIP file`
-----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: toggle collapsible-content
 
@@ -81,7 +81,7 @@ Install Gauge using dfn by running this command
 .. cssclass:: dynamic-content linux collapsible npm-installer
 
 :installer-icon:`Install using NPM installation`
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: toggle collapsible-content
 
@@ -110,7 +110,7 @@ Install Gauge using dfn by running this command
 .. cssclass:: dynamic-content linux collapsible curl-installer
 
 :installer-icon:`Install Using CURL`
-------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: toggle collapsible-content
 
@@ -133,7 +133,7 @@ Or install Gauge to a [custom path] using
 .. cssclass:: dynamic-content linux collapsible nightly-installer last
 
 :installer-icon:`Nightly Installation`
-----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: toggle collapsible-content
 

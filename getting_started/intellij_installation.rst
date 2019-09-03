@@ -4,7 +4,7 @@
 .. cssclass:: intellij dynamic-content
 
 :intellij:`Step 2: Installing Gauge extension for Intellij IDEA`
-================================================================
+-----------------------------------------------------------------
 
 .. cssclass:: code-block
 

@@ -4,14 +4,14 @@
 .. cssclass:: dynamic-content windows
 
 :windows:`Step 1: Installing Gauge on Windows`
-==============================================
+----------------------------------------------
 
 This section gives specific instructions on setting up Gauge in a Microsoft Windows environment.
 
 .. cssclass:: dynamic-content windows
 
 :installer-icon:`Install using Windows Installer`
---------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download the following installation bundle to get the latest stable release of Gauge.
 
@@ -35,7 +35,7 @@ Once you finished installing Gauge, you can go ahead and `install the Gauge Exte
 .. cssclass:: dynamic-content windows collapsible first
 
 :installer-icon:`Install using Chocolatey Package Manager`
-----------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: code-block toggle collapsible-content
 
@@ -66,7 +66,7 @@ Once you finished installing Gauge, you can go ahead and `install the Gauge Exte
 .. cssclass:: dynamic-content windows collapsible zip-installer
 
 :installer-icon:`Install using Zip file`
-----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: toggle collapsible-content
 
@@ -90,7 +90,7 @@ Download the following zip installer.
 .. cssclass:: dynamic-content windows collapsible npm-installer
 
 :installer-icon:`Install using NPM installation`
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: toggle collapsible-content
 
@@ -120,7 +120,7 @@ Download the following zip installer.
 .. cssclass:: dynamic-content windows collapsible nightly-installer last
 
 :installer-icon:`Nightly Installation`
---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: toggle collapsible-content
 
