@@ -2,6 +2,19 @@ from docutils import nodes
 from docutils.parsers.rst import Directive, directives
 from docutils.statemachine import StringList
 
+DISPLAY_SELECTION_MAP = {
+    'Visual Studio Code': 'vscode',
+    'Visual Studio': 'visualstudio',
+    'IntelliJ IDEA': 'intellij',
+    'C#': 'csharp',
+    'Javascript': 'javascript',
+    'Java': 'java',
+    'Python': 'python',
+    'Ruby': 'ruby',
+    'MacOS': 'macos',
+    'Linux': 'linux',
+    'Windows': 'windows',
+}
 
 class heading_node(nodes.Element):
     tagname='h4'
@@ -33,9 +46,6 @@ def visit_input_node(self, node):
 
 def depart_input_node(self, node):
     pass
-
-def normalize(param):
-    return param.replace(" ","").lower()
 
 class SetupFiltersDirective(Directive):
     optional_arguments = 0
@@ -88,7 +98,7 @@ class SetupFilterDirective(Directive):
             _input = input_node(content)
             _input['type'] = 'radio'
             _input['name'] = options['type']
-            _input['value'] = normalize(content)
+            _input['value'] = DISPLAY_SELECTION_MAP[content]
             if content == options['selected']:
                 _input['checked'] = 'true'
             container += _input

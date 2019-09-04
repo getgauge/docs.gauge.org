@@ -9,15 +9,15 @@
 
       .. container:: applied-filter
 
-         MacOs
+         MacOS
 
       .. container:: applied-filter
 
-         JavaScript
+         Javascript
 
       .. container:: applied-filter
 
-         VS Code
+         Visual Studio Code
 
       .. _change-filter:
       .. container::
@@ -41,11 +41,11 @@
          :class: selection
          :type: language
          :title: 2 : Select a Language
-         :selected: JavaScript
+         :selected: Javascript
 
-         Csharp
+         C#
          Java
-         JavaScript
+         Javascript
          Python
          Ruby
 
@@ -53,8 +53,8 @@
          :class: selection
          :type: ide
          :title: 3 : Select an IDE/Editor
-         :selected: VS Code
+         :selected: Visaul Studio Code
 
-         Intellij
+         IntelliJ IDEA
          Visual Studio
-         VS Code
+         Visual Studio Code

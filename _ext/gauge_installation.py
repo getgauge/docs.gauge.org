@@ -2,20 +2,6 @@ from docutils import nodes
 from docutils.parsers.rst import Directive, directives
 from docutils.statemachine import StringList
 
-SELECTION_DISPLAY_MAP = {
-    'vscode': 'Visual Studio Code',
-    'visualstudio': 'Visual Studio',
-    'intelijidea': 'IntelijJ Idea',
-    'csharp': 'C#',
-    'javascript': 'Javascript',
-    'java': 'Java',
-    'python': 'Python',
-    'ruby': 'Ruby',
-    'macos': 'Mac Os',
-    'linux': 'Linux',
-    'windows': 'Windows',
-}
-
 DISPLAY_SELECTION_MAP = {
     'Visual Studio Code': 'vscode',
     'Visual Studio': 'visualstudio',
