@@ -1,18 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-	// const faqToc = document.querySelector(".faq-toc");
-
-	// if (faqToc) {
-	// 	// get all H2 nodes, these are the groups in the ToC
-	// 	var root = document.querySelectorAll(".faq-toc > ul");
-	// 	// remove the H1 from toc.
-	// 	faqToc.appendChild(document.querySelector(".faq-toc > ul > li > ul"));
-	// 	root.remove();
-	// 	faqToc.parentNode.insertBefore("#faqs > h1", faqToc.nextSibling);
-
-	// 	document
-	// 		.querySelectorAll("ul > li > ul > li > ul", faqToc)
-	// 		.forEach(elem => elem.parentNode.removeChild(elem));
-	// }
 
 	var host = window.location.hostname;
 	var tag = host == "docs.gauge.org" ? "prod" : "preview";
