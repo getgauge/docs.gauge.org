@@ -14,14 +14,14 @@ const changeFilter = function () {
 };
 
 const showPopup = function () {
+    let popUp = document.getElementsByClassName("proj-setup-filters");
+    popUp[0].classList.remove("hidden");
     Object.values(SELECTIONS).forEach(selection => {
         document.querySelector(`input[value="${selection}"]`).checked = true;
     });
     document.getElementById("proj-setup-filter-section").classList.add('yellow-border');
     document.getElementsByClassName("applied-filters")[0].style.borderRadius = "5px 5px 0 0"
     document.getElementById("change-filter").classList.add('disabled');
-    let popUp = document.getElementsByClassName("proj-setup-filters");
-    popUp[0].classList.remove("hidden");
 };
 
 const hidePopUp = function () {

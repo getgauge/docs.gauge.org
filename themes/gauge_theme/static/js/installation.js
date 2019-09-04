@@ -1,5 +1,18 @@
 let SELECTIONS = { os: "macos", language: "javascript", ide: "vscode" };
+const SELECTION_DISPLAY_NAMES = {
+    'vscode': 'Visual Studio Code',
+    'visualstudio': 'Visual Studio',
+    'intelijidea': 'IntelijJ Idea',
+    'csharp': 'C#',
+    'javascript': 'Javascript',
+    'java': 'Java',
+    'python': 'Python',
+    'ruby': 'Ruby',
+    'macos': 'Mac Os',
+    'linux': 'Linux',
+    'windows': 'Windows',
 
+}
 const updateSelections = function () {
     let searchParam = window.location.search;
     let localStorage = window.localStorage;
@@ -69,9 +82,9 @@ const changeBackground = function () {
 const updateInstallationSetup = function () {
     let appliedFilter = document.querySelectorAll(".applied-filter");
     if (appliedFilter.length < 1) return;
-    appliedFilter[0].innerText = SELECTIONS.os;
-    appliedFilter[1].innerText = SELECTIONS.language;
-    appliedFilter[2].innerText = SELECTIONS.ide;
+    appliedFilter[0].innerText = SELECTION_DISPLAY_NAMES[SELECTIONS.os] || SELECTIONS.os;
+    appliedFilter[1].innerText = SELECTION_DISPLAY_NAMES[SELECTIONS.language] || SELECTIONS.language;
+    appliedFilter[2].innerText = SELECTION_DISPLAY_NAMES[SELECTIONS.ide] || SELECTIONS.ide;
 }
 
 const updateURLAndSelection = function () {
