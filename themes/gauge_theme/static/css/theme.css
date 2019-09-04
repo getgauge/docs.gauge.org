@@ -1161,6 +1161,7 @@ img {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   display: inline-block;
+  font-size: 13px;
 }
 
 .foolinks a:hover {
@@ -1175,6 +1176,7 @@ img {
 
 .foolinks .fab {
   padding: 0px 30px 0px 0px;
+  font-size: 20px;
 }
 
 .footer_items {
@@ -1184,6 +1186,8 @@ img {
   color: var(--gauge-yellow);
   font-weight: 400;
   margin: 0 0 30px;
+  font-size: 14px;
+  font-family: 'URWGeometric-Medium';
 }
 
 .footer {
@@ -1282,6 +1286,10 @@ img {
   color: #C1C1C0 !important;
   text-decoration: none;
 }
+.licence p {
+  color: #c1c1c0;
+}
+
 
 .main-highlight {
   background: var(--gauge-yellow);
@@ -1802,7 +1810,6 @@ p.last {
   }
   .footer_items.follow {
     width: 34%;
-    padding-left: 30px;
   }
   .licence {
     position: static;
