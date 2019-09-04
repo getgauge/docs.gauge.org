@@ -1888,7 +1888,7 @@ p a {
     content: '\f192';
     font-family: FontAwesome;
     position: absolute;
-    top: 9px;
+    top: 15px;
     left: 14px;
     text-align: left;
   }
@@ -1897,12 +1897,12 @@ p a {
   }
   .proj-setup-filters.docutils .selection input:checked~.checkmark:after {
     left: 5%;
-    top: 12px;
+    top: 18px;
   }
   #change-filter {
     position: relative;
     right: 0;
-    top: 2px;
+    top: 8px;
   }
   #proj-setup-filter-section .applied-filters .applied-filter-header {
     background-color: #fff0b8;
@@ -1999,7 +1999,7 @@ p a {
     top: 56px;
   }
   .topic h1 {
-    padding-bottom: 10px;
+    padding-bottom: 3px;
   }
   .logo {
     width: 180px;
