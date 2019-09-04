@@ -40,7 +40,7 @@ Select your setup to see the instructions for installing gauge.
          :type: language
          :title: 2. Select a Language
 
-         Csharp
+         C#
          Java
          JavaScript
          Python
@@ -51,9 +51,9 @@ Select your setup to see the instructions for installing gauge.
          :type: ide
          :title: 3. Select an IDE/Editor
 
-         Intellij
+         IntelliJ IDEA
          Visual Studio
-         VS Code
+         Visual Studio Code
 
 
 .. cssclass:: sub-heading
@@ -81,7 +81,7 @@ Installation Instructions
 
       .. container:: applied-filter
 
-         VS Code
+         Visual Studio Code
 
 .. include:: mac_installation.rst
 .. include:: windows_installation.rst
@@ -95,7 +95,7 @@ Next Step:
 
 .. cssclass:: csharp dynamic-content
 
-   Now that you've installed Gauge, you can go ahead and create a CSharp testing project using Gauge.
+   Now that you've installed Gauge, you can go ahead and create a C# testing project using Gauge.
 
 .. cssclass:: java dynamic-content
 

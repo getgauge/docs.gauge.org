@@ -58,7 +58,7 @@ To install a specific version of a plugin, use the ``--version`` flag on your co
 .. cssclass:: dynamic-content javascript
 .. code-block:: console
 
-    gauge install javascript --version <plugin_version>
+    gauge install js --version <plugin_version>
 
 .. cssclass:: dynamic-content python
 .. code-block:: console
@@ -75,7 +75,7 @@ To install a specific version of a plugin, use the ``--version`` flag on your co
 
     gauge install csharp --version <plugin_version>
 
-Install plugins offline 
+Install plugins offline
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 You can also install a plugin from a zip file instead of downloading from the plugin repository by using the following command:
@@ -88,7 +88,7 @@ You can also install a plugin from a zip file instead of downloading from the pl
 .. cssclass:: dynamic-content javascript
 .. code-block:: console
 
-    gauge install javascript --file ZIP_FILE_PATH
+    gauge install js --file ZIP_FILE_PATH
 
 .. cssclass:: dynamic-content python
 .. code-block:: console
@@ -143,7 +143,7 @@ You can update a plugin by using the ``gauge update`` command. This command down
 .. cssclass:: dynamic-content javascript
 .. code-block:: console
 
-    gauge update javascript
+    gauge update js
 
 .. cssclass:: dynamic-content python
 .. code-block:: console
@@ -174,7 +174,7 @@ You can update a plugin by using the ``gauge update`` command. This command down
 .. cssclass:: dynamic-content javascript
 .. code-block:: console
 
-    gauge update javascript --version <plugin_version>
+    gauge update js --version <plugin_version>
 
 .. cssclass:: dynamic-content python
 .. code-block:: console
@@ -216,7 +216,7 @@ Example:
 .. cssclass:: dynamic-content javascript
 .. code-block:: console
 
-    gauge uninstall javascript
+    gauge uninstall js
 
 .. cssclass:: dynamic-content python
 .. code-block:: console
@@ -248,7 +248,7 @@ Example:
 .. cssclass:: dynamic-content javascript
 .. code-block:: console
 
-    gauge uninstall javascript --version <plugin_version>
+    gauge uninstall js --version <plugin_version>
 
 .. cssclass:: dynamic-content python
 .. code-block:: console
@@ -280,7 +280,7 @@ If :ref:`plugin installation <install_plugins>` fails due to a network connectio
 .. cssclass:: dynamic-content javascript
 .. code-block:: console
 
-    gauge install javascript -f path_to_zip_file
+    gauge install js -f path_to_zip_file
 
 .. cssclass:: dynamic-content python
 .. code-block:: console
@@ -437,7 +437,7 @@ Gauge has plugins for popular IDEs that improve the experience of authoring test
 
 .. cssclass:: dynamic-content vscode
 
-    Gauge projects can be created and run in Visual Studio Code by using the `Gauge extension for VSCode <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__.
+    Gauge projects can be created and run in Visual Studio Code by using the `Gauge extension for Visual Studio Code <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__.
     This plugin currently supports Gauge with Java, JavaScript, Ruby, Python, C# (.Net Core), and TypeScript.
 
 .. cssclass:: dynamic-content intellij

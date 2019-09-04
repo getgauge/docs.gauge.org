@@ -20,8 +20,8 @@ in a spec file.To learn more about how specifications work you can look at the o
 
 .. cssclass:: vscode dynamic-content
 
-:vscode:`Running a Specification using VS Code`
------------------------------------------------
+:vscode:`Running a Specification using Visual Studio Code`
+----------------------------------------------------------
 
 Step 1
 ~~~~~~
@@ -34,15 +34,15 @@ Open the example spec. The Gauge specification file is present under :highlighte
 Step 2
 ~~~~~~
 
-Run your Gauge specs in VS Code by choosing the option to :highlighted-syntax:`Run Spec`
+Run your Gauge specs in Visual Studio Code by choosing the option to :highlighted-syntax:`Run Spec`
 
 .. figure:: ../images/VSCode_run_code_lens.png
-      :alt: VSCode JS run code lens
+      :alt: Visual Studio Code Javascript run code lens
 
 You'll get immediate feedback in the output about what got executed.
 
 .. figure:: ../images/VSCode_execution_console.png
-      :alt: VSCode JS execution console
+      :alt: Visual Studio Code Javascript execution console
 
 .. cssclass:: java intellij dynamic-content
 
@@ -63,12 +63,12 @@ Step 2
 Run your Gauge specs in Intellij by clicking on the :highlighted-syntax:`Run example.spec`.
 
 .. figure:: ../images/Intellij_run_spec.png
-      :alt: Intellij run code lens
+      :alt: IntelliJ IDEA run code lens
 
 You'll get immediate feedback in the output about what got executed.
 
 .. figure:: ../images/Intellij_execution_console.png
-      :alt: Intellij execution console
+      :alt: IntelliJ IDEA execution console
 
 .. cssclass:: csharp visualstudio dynamic-content
 

@@ -2,13 +2,13 @@ let SELECTIONS = { os: "macos", language: "javascript", ide: "vscode" };
 const SELECTION_DISPLAY_NAMES = {
     'vscode': 'Visual Studio Code',
     'visualstudio': 'Visual Studio',
-    'intelijidea': 'IntelijJ Idea',
+    'intellij': 'IntelliJ IDEA',
     'csharp': 'C#',
     'javascript': 'Javascript',
     'java': 'Java',
     'python': 'Python',
     'ruby': 'Ruby',
-    'macos': 'Mac Os',
+    'macos': 'MacOS',
     'linux': 'Linux',
     'windows': 'Windows',
 

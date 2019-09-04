@@ -11,24 +11,24 @@
 
 .. cssclass:: vscode dynamic-content
 
-:vscode:`Viewing Reports from VS Code`
+:vscode:`Viewing Reports from Visual Studio Code`
 --------------------------------------
 
-Once the specifications are run you will get immediate feedback in the output screen of VS Code.
+Once the specifications are run you will get immediate feedback in the output screen of Visual Studio Code.
 
 Once you've run the sample spec, you can view the HTML report of the tests run by following either of the steps below:
 
-Open the html report by clicking on the view summary link in VS Code
+Open the html report by clicking on the view summary link in Visual Studio Code
 
 .. figure:: ../images/VSCode_report_link.png
-    :alt: VSCode execution report link
+    :alt: Visual Studio Code execution report link
 
 OR
 
 In the editor's command pallete type Gauge: Show Last Run Report to view the report in the browser
 
 .. figure:: ../images/VSCode_show_last_run_report.png
-    :alt: VSCode show last run report command
+    :alt: Visual Studio Code show last run report command
 
 Here's what a Gauge report looks like.
 
@@ -37,10 +37,10 @@ Here's what a Gauge report looks like.
 
 .. cssclass:: intellij dynamic-content
 
-:intellij:`Viewing Reports from Intellij IDEA`
+:intellij:`Viewing Reports from IntelliJ IDEA`
 ----------------------------------------------
 
-Once the specifications are run you will get immediate feedback in the output screen of Intellij.
+Once the specifications are run you will get immediate feedback in the output screen of IntelliJ IDEA.
 
 Once you've run the sample spec, you can view the HTML report of the tests run by opening the :highlighted-syntax:`index.html` file available in :highlighted-syntax:`$PROJECT_ROOT/reports/html-report/index.html`
 

@@ -19,7 +19,7 @@ Install Gauge for your OS (Operating System)
     .. tab:: Windows
 
        Gauge can be installed by using `Chocolatey <https://chocolatey.org/>`__ .
-       
+
        Install Gauge at the command line prompt of your OS by using the following command:
 
         .. code-block:: console

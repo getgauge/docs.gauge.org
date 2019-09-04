@@ -16,27 +16,27 @@
 :vscode:`Creating a Testing Project in VS Code`
 -----------------------------------------------
 
-Gauge projects can be created and executed in Visual studio code using the Gauge extension for VSCode.
+Gauge projects can be created and executed in Visual Studio Code using the Gauge extension for Visual Studio Code.
 
 .. cssclass:: csharp dynamic-content
 
-      In this guide, you'll be able to learn how to add a sample CSharp testing project in VSCode
+      In this guide, you'll be able to learn how to add a sample C# testing project in Visual Studio Code
 
 .. cssclass:: java dynamic-content
 
-      In this guide, you'll be able to learn how to add a sample Java testing project in VSCode
+      In this guide, you'll be able to learn how to add a sample Java testing project in Visual Studio Code
 
 .. cssclass:: javascript dynamic-content
 
-      In this guide, you'll be able to learn how to add a sample Javascript testing project in VSCode
+      In this guide, you'll be able to learn how to add a sample Javascript testing project in Visual Studio Code
 
 .. cssclass:: python dynamic-content
 
-      In this guide, you'll be able to learn how to add a sample Python testing project in VSCode
+      In this guide, you'll be able to learn how to add a sample Python testing project in Visual Studio Code
 
 .. cssclass:: ruby dynamic-content
 
-      In this guide, you'll be able to learn how to add a sample Ruby testing project in VSCode
+      In this guide, you'll be able to learn how to add a sample Ruby testing project in Visual Studio Code
 
 
 Step 1
@@ -64,7 +64,7 @@ Step 2
 
 .. cssclass:: csharp dynamic-content
 
-      Select the csharp template to create the sample testing project
+      Select the C# template to create the sample testing project
 
 .. cssclass:: java dynamic-content
 
@@ -132,12 +132,12 @@ Give a name to your project
 
 .. cssclass:: intellij dynamic-content
 
-:intellij:`Creating a Testing Project in Intellij Idea`
+:intellij:`Creating a Testing Project in IntelliJ IDEA`
 -------------------------------------------------------
 
-Gauge projects can be created and executed in Intellij Idea using the Gauge plugin for Intellij Idea.
+Gauge projects can be created and executed in IntelliJ IDEA using the Gauge plugin for IntelliJ IDEA.
 
-In this guide, you'll be able to learn how to add a sample Java testing project in Intellij Idea
+In this guide, you'll be able to learn how to add a sample Java testing project in IntelliJ IDEA
 
 Step 1
 ~~~~~~
@@ -168,7 +168,7 @@ Choose the Project name, Project location, Project SDK and click :highlighted-sy
 
 Gauge projects can be created and executed in Visual Studio using the Gauge extension for Visual Studio.
 
-In this guide, you'll be able to learn how to add a sample CSharp testing project in Visual Studio Idea
+In this guide, you'll be able to learn how to add a sample C# testing project in Visual Studio
 
 Step 1
 ~~~~~~

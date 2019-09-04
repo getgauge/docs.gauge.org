@@ -172,7 +172,7 @@ For more details about running language plugins as an environment, see :ref:`Env
         gauge_java_home = PATH_TO_JAVA_HOME
 
         # Use this property if you need to override the build path for the Gauge project.
-        # IntelliJ and Eclipse out directory are usually auto-detected.
+        # IntelliJ Idea and Eclipse out directory are usually auto-detected.
         gauge_custom_build_path = PATH_TO_CUSTOM_BUILDPATH
 
         # Specify the directory where additional libraries are kept.

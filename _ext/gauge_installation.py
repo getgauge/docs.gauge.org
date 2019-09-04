@@ -2,13 +2,43 @@ from docutils import nodes
 from docutils.parsers.rst import Directive, directives
 from docutils.statemachine import StringList
 
+SELECTION_DISPLAY_MAP = {
+    'vscode': 'Visual Studio Code',
+    'visualstudio': 'Visual Studio',
+    'intelijidea': 'IntelijJ Idea',
+    'csharp': 'C#',
+    'javascript': 'Javascript',
+    'java': 'Java',
+    'python': 'Python',
+    'ruby': 'Ruby',
+    'macos': 'Mac Os',
+    'linux': 'Linux',
+    'windows': 'Windows',
+}
+
+DISPLAY_SELECTION_MAP = {
+    'Visual Studio Code': 'vscode',
+    'Visual Studio': 'visualstudio',
+    'IntelliJ IDEA': 'intellij',
+    'C#': 'csharp',
+    'Javascript': 'javascript',
+    'Java': 'java',
+    'Python': 'python',
+    'Ruby': 'ruby',
+    'MacOS': 'macos',
+    'Linux': 'linux',
+    'Windows': 'windows',
+}
+
 
 class setup_heading_node(nodes.Element):
-    tagname='h2'
+    tagname = 'h2'
+
 
 def visit_setup_heading_node(self, node):
     self.body.append(node.starttag())
     self.body.append(node.rawsource)
+
 
 def depart_setup_heading_node(self, node):
     self.body.append(node.endtag())
@@ -17,11 +47,12 @@ def depart_setup_heading_node(self, node):
 class setup_input_node(nodes.Element):
     pass
 
+
 def visit_setup_input_node(self, node):
     attrs = ''
     text = ''
     for attr in node.attlist():
-        attrs += attr[0] +"=" +'"'+ attr[1] +'"'
+        attrs += attr[0] + "=" + '"' + attr[1] + '"'
     tmpl = """
     <label class="radioContainer">
         <span class="circle"></span>
@@ -31,13 +62,18 @@ def visit_setup_input_node(self, node):
         <span class="checkmark"></span>
     </label>
     """
-    self.body.append(tmpl.format(normalize(node.rawsource), node.rawsource, attrs))
+    self.body.append(tmpl.format(
+        normalize(node.rawsource), node.rawsource, attrs))
+
 
 def depart_setup_input_node(self, node):
     pass
 
+
 def normalize(param):
-    return param.replace(" ","").lower()
+    selectionName = DISPLAY_SELECTION_MAP.get(param)
+    return param.replace(" ", "").lower() if selectionName is None else selectionName
+
 
 class InstallationSelections(Directive):
     optional_arguments = 0
@@ -56,6 +92,7 @@ class InstallationSelections(Directive):
         wrapper += node
         wrapper += buttons_container
         return [wrapper]
+
 
 class InstallationSelection(Directive):
     optional_arguments = 0
@@ -79,10 +116,13 @@ class InstallationSelection(Directive):
             container += _input
         return [container]
 
+
 def setup(app):
 
-    app.add_node(setup_heading_node, html=(visit_setup_heading_node, depart_setup_heading_node))
-    app.add_node(setup_input_node, html=(visit_setup_input_node, depart_setup_input_node))
+    app.add_node(setup_heading_node, html=(
+        visit_setup_heading_node, depart_setup_heading_node))
+    app.add_node(setup_input_node, html=(
+        visit_setup_input_node, depart_setup_input_node))
 
     app.add_directive('installationselections', InstallationSelections)
     app.add_directive('installationselection', InstallationSelection)

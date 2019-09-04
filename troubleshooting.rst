@@ -342,8 +342,8 @@ Or
 
 * If you cannot use other Python versions, create ``step_impl/__init__.py`` file.
 
-VSCode
-------
+Visual Studio Code
+------------------
 
 GAUGE-VSCode-001 : Language client is not ready yet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -366,8 +366,9 @@ Install ``getgauge`` package by running the following command:
 
     [sudo] pip install getgauge
 
-VS
---
+
+Visual Studio
+-------------
 
 Gauge-VS-001 : Gauge API not started
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -388,12 +389,12 @@ This behavior is flaky, hence sometimes the Gauge API does not get started.
 
 1) | Ensure that the latest Gauge is installed and available in ``PATH``. 
    | You can install Gauge by following the instructions as specified in the `Getting Started page <//gauge.org/get_started>`__.
-2) | As you are using Gauge with Visual Studio, it is assumed that you are using Gauge with CSharp, and hence you must install the CSharp plugin by using the following command:
+2) | As you are using Gauge with Visual Studio, it is assumed that you are using Gauge with C#, and hence you must install the C# plugin by using the following command:
 
    .. code-block:: console
 
       gauge install csharp
-   
+
 3) Verify the previous two steps by running the following command:
 
    .. code-block:: console
@@ -401,13 +402,13 @@ This behavior is flaky, hence sometimes the Gauge API does not get started.
       gauge version
 
 4) If the Windows firewall is enabled, ensure that you can run ``gauge.exe``. 
-   
+
 5) Ensure that Gauge can use the port range 46337-46997 in the firewall because Gauge-VisualStudio uses this port number by default.
 
 6) | If port range 46337-46997 has a conflict or these ports cannot be used in the firewall, then set a different port in Gauge-VisualStudio. 
-   
+
    1) To set a different port, select ``Tools->Option->Gauge->API Options``.
-   
+
    Ensure that the port set is white-listed in your firewall.
 
 GAUGE-VS-002 : Incompatible Gauge Version installed
@@ -453,8 +454,8 @@ Gauge-Visualstudio support requires ``gauge.exe`` to be more than a certain mini
 
 2. Navigate to the ``Output Window`` of Visual Studio and see the log for suggested actions.
 
-IntelliJ
---------
+IntelliJ IDEA
+-------------
 
 GAUGE-IntelliJ-001 : Gauge API Not Started
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -475,7 +476,7 @@ GAUGE-IntelliJ-001 : Gauge API Not Started
 - If Gauge is not installed, `Install Gauge <//gauge.org/get_started>`__.
 - If Gauge is installed at custom location, add ``custom_install_location/bin`` to ``PATH``
 - At custom installation location, set ``GAUGE_ROOT`` to ``custom_install_location``.
-- Restart Intellij.
+- Restart IntelliJ.
 
 GAUGE-IntelliJ-002 : Error adding module to project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

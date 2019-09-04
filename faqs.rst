@@ -70,7 +70,8 @@ Gauge Python
 
 .. cssclass:: category-title
 
-Gauge VS Code
+
+Gauge Visual Studio Code
 -------------
 
 `Why are some features not working? <#why-are-some-features-not-working>`__
@@ -407,8 +408,8 @@ Execution will stop where it finds the above statement and you can debug.
 
 .. cssclass:: category
 
-:heading:`Gauge VS Code`
-------------------------
+:heading:`Gauge Visual Studio Code`
+----------------------------------
 
 .. cssclass:: question
 

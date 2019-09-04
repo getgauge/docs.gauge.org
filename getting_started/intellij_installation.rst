@@ -3,17 +3,17 @@
 
 .. cssclass:: intellij dynamic-content
 
-:intellij:`Step 2: Installing Gauge extension for Intellij IDEA`
+:intellij:`Step 2: Installing Gauge extension for IntelliJ IDEA`
 -----------------------------------------------------------------
 
 .. cssclass:: code-block
 
 .. admonition:: System Requirements
 
-      `Latest Intellij IDEA <https://www.jetbrains.com/idea/download/>`__
+      `Latest IntelliJ IDEA <https://www.jetbrains.com/idea/download/>`__
 
 
-Follow the steps to add the Gauge Intellij plugin from the IDE
+Follow the steps to add the Gauge IntelliJ IDEA plugin from the IDE
 
 1. Open the Settings dialog.
 
