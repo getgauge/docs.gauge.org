@@ -80,7 +80,7 @@ function copyCode(elements) {
 
 	document.querySelectorAll(".copyBtn").forEach(btn =>
 		btn.addEventListener("click", function() {
-			const value = this.parentElement.innerText.split("\nCopy")[0];
+			const value = this.parentElement.innerText.split("Copy")[0].trim();
 			const copied_text = this.nextElementSibling.nextElementSibling;
 			const codeBox = this.nextElementSibling;
 			codeBox.value = value;
