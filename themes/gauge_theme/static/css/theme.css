@@ -33,7 +33,7 @@ body {
   grid-template-columns: 21% 45% 34%;
 }
 
-p ,a, ul li,.line{
+p ,a, ul li,ol li,.line{
   font-size: 14px;
   font-family: "OpenSans-Regular";
   font-weight: normal;
