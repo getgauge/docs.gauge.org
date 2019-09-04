@@ -12,29 +12,37 @@
 
 This page provides information about what a specification is, how to write a specification, and other related information such as concepts, step implementation, specs directory, and so on.  
 
-Text editor for specs
-----------------------
-
-You can author Gauge specifications by using any text editor. It is recommended that you use the IDE plugin.
-
 .. cssclass:: dynamic-content vscode
 
 :vscode:`VSCode`
-~~~~~~~~~~~~~~~~
+----------------
+
+.. note::
+    You can author Gauge specifications by using any text editor. It is recommended that you use the IDE plugin.
+
 Gauge projects can be created and run in Visual Studio Code by using the `Gauge extension for VSCode <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__.
 This plugin currently supports Gauge with Java, JavaScript, Ruby, Python, C# (.Net Core), and TypeScript.
+
 
 .. cssclass:: dynamic-content intellij
 
 :intellij:`IntelliJ IDEA`
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
+
+.. note::
+    You can author Gauge specifications by using any text editor. It is recommended that you use the IDE plugin.
+
 Gauge projects can be created and run in IntelliJ IDEA by using the `Gauge plugin for IntelliJ IDEA <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__.
 This plugin only supports Gauge with Java.
 
 .. cssclass:: dynamic-content visualstudio
 
 :visualstudio:`Visual Studio`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
+
+.. note::
+    You can author Gauge specifications by using any text editor. It is recommended that you use the IDE plugin.
+
 Gauge projects can be created and run in Visual Studio by using the `Gauge extension for Visual Studio <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__.
 This plugin currently supports Gauge with C# (.Net framework).
 
