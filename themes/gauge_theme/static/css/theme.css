@@ -1557,6 +1557,10 @@ p.last {
     text-align: left;
 }
 
+.mobile-local-toc.collapsed + ul{
+  display: none;
+}
+
 .localtoc-container>ul {
     padding: 10px 25px;
 }
@@ -1704,6 +1708,10 @@ p.last {
   .mobile-local-toc {
     text-align: left;
     margin-left: 12px;
+  }
+
+  .mobile-local-toc + ul{
+    display: inline-block;
   }
 
   .left-sidebar-container nav {
@@ -1976,6 +1984,11 @@ p.last {
     grid-column-gap: 60px;
     overflow-x: hidden;
   }
+
+  .mobile-local-toc.collapsed + ul{
+    display: inline-block;
+  }
+
   .fixed-docs-toc.docs-toc {
     display: block;
   }
