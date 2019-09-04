@@ -13,7 +13,7 @@ To understand these concepts, see Gauge Documentation.
 .. cssclass:: category-title
 
 Installation
-============
+------------
 
 `Where is the Gauge executable installed by default? <#where-is-the-gauge-executable-installed-by-default>`__
 
@@ -26,14 +26,14 @@ Installation
 .. cssclass:: category-title
 
 Configuration
-=============
+-------------
 
 `How can I increase the language runner timeout? <#how-can-i-increase-the-language-runner-timeout>`__
 
 .. cssclass:: category-title
 
 Logs
-====
+----
 
 `Where does gauge log the test execution output. warnings, validation results etc <#where-does-gauge-log-the-test-execution-output-warnings-validation-results-etc>`__
 
@@ -46,21 +46,21 @@ Logs
 .. cssclass:: category-title
 
 Uninstall Gauge
-===============
+---------------
 
 `How can I uninstall Gauge <#how-can-i-uninstall-gauge>`__
 
 .. cssclass:: category-title
 
 Gauge Javascript
-================
+----------------
 
 `How to debug without IDE <#how-to-debug-without-ide>`__
 
 .. cssclass:: category-title
 
 Gauge Python
-============
+------------
 
 `How to change/rename default step implementation(step_impl) directory <#how-to-change-rename-default-step-implementation-step-impl-directory>`__
 
@@ -71,7 +71,7 @@ Gauge Python
 .. cssclass:: category-title
 
 Gauge VS Code
-=============
+-------------
 
 `Why are some features not working? <#why-are-some-features-not-working>`__
 
@@ -80,7 +80,7 @@ Gauge VS Code
 .. cssclass:: category-title
 
 I don't see my question here
-============================
+-----------------------------
 
 If you have any questions that are not answered you can get help from our `Google group <//groups.google.com/forum/#!forum/getgauge>`__ or you can chat with fellow Gauge users in the `Gitter channel <//gitter.im/getgauge/chat>`__. You might also use `Stack Overflow <//stackoverflow.com/questions/tagged/getgauge>`__ for “HOW DO I” type questions. For other questions and discussions,
 
@@ -92,7 +92,7 @@ If you have any questions that are not answered you can get help from our `Googl
 .. cssclass:: question
 
 Where is the Gauge executable installed by default?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: answer
 
@@ -113,7 +113,7 @@ Where is the Gauge executable installed by default?
 .. cssclass:: question
 
 Where are the plugins installed by default?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tab-container:: platforms
 
@@ -132,14 +132,14 @@ Where are the plugins installed by default?
 .. cssclass:: question
 
 What is GAUGE_HOME?
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 ``GAUGE_HOME`` environment variable can be used to customize config files and plugins installation location.
 
 .. cssclass:: question
 
 How can I manually install a plugin?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download the plugin's zip file from github release and install the plugin by using the ``-f`` flag.
 
@@ -159,7 +159,7 @@ Download the plugin's zip file from github release and install the plugin by usi
 .. cssclass:: question
 
 How can I increase the language runner timeout?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By setting
 
@@ -175,7 +175,7 @@ By setting
 .. cssclass:: question
 
 Where does gauge log the test execution output. warnings, validation results etc?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You'll find the logged at ``logs/gauge.log`` in your projects directory.
 
@@ -186,7 +186,7 @@ You'll find the logged at ``logs/gauge.log`` in your projects directory.
 .. cssclass:: question
 
 Where can I find gauge API logs for debugging IDE plugins?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You'll find that at ``logs/api.log`` in your projects directory.
 
@@ -197,7 +197,7 @@ You'll find that at ``logs/api.log`` in your projects directory.
 .. cssclass:: question
 
 How can I customize the log directory location?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can specify a custom directory by changing the ``logs_directory`` property under
 ``env/default/default.properties`` Refer to :ref:`project's properties<default_properties>`.
@@ -209,7 +209,7 @@ You can specify a custom directory by changing the ``logs_directory`` property u
 .. cssclass:: question
 
 Where does gauge non project specific logs like plugin installation etc.?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tab-container:: platforms
 
@@ -233,7 +233,7 @@ Where does gauge non project specific logs like plugin installation etc.?
 .. cssclass:: question
 
 How can I uninstall Gauge?
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Remove the Plugins before uninstalling Gauge. For information about removing plugins, see :ref:`plugins-uninstallation`.
 
@@ -315,7 +315,7 @@ Remove the Plugins before uninstalling Gauge. For information about removing plu
 .. cssclass:: question
 
 How to debug without IDE
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 gauge-js supports debugging your test implementation code using node-inspector.
 
@@ -359,7 +359,7 @@ You need to be quick enough to hit continue in the browser when node-inspector l
 .. cssclass:: question
 
 How to change/rename default step implementation(``step_impl``) directory
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create ``python.properties`` file in the ``<PROJECT_DIR>/env/default`` directory and add the following line to it.
 
@@ -374,7 +374,7 @@ Create ``python.properties`` file in the ``<PROJECT_DIR>/env/default`` directory
 .. cssclass:: question
 
 How to use different version of python while running specs
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default the language runner uses ``python`` command to run specs. To change the default behaviour, add ``GAUGE_PYTHON_COMMAND`` property to the ``python.properties`` file in the ``<PROJECT_DIR>/env/default`` directory.
 
@@ -387,7 +387,7 @@ By default the language runner uses ``python`` command to run specs. To change t
 .. cssclass:: question
 
 How to debug gauge-python without using an IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Gauge-Python supports debugging your test implementation code using `pbd`_.
 
@@ -413,7 +413,7 @@ Execution will stop where it finds the above statement and you can debug.
 .. cssclass:: question
 
 Why are some features not working?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you notice that any of the documented features (ex. goto definition, Code Lens of implementation files, find usages)
 are not working then make sure the required language runner is installed, by running ``gauge version``.
@@ -422,7 +422,7 @@ If not installed, install using ``gauge install <plugin_name>``.
 .. cssclass:: question
 
 Why does the debugger not stop at the right breakpoint (gauge-java)?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In Java projects, if the debugger does not stop at the right breakpoint, it is related to `this issue
 <https://github.com/getgauge/gauge-vscode/issues/344>`_.
