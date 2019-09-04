@@ -33,7 +33,7 @@ body {
   grid-template-columns: 21% 45% 34%;
 }
 
-p ,a, ul li{
+p ,a, ul li,.line{
   font-size: 14px;
   font-family: "OpenSans-Regular";
   font-weight: normal;
@@ -1454,7 +1454,14 @@ ul.sub-toc.collapsed li.doc-toc-group a::after {
 p a {
   border-bottom: 0px;
 }
-
+p.first.admonition-title {
+  font-weight: bold;
+  font-family: 'OpenSans-Bold';
+  padding-bottom: 10px!important;
+}
+p.last {
+  padding-bottom: 10px!important;
+}
 
 
 
@@ -1858,7 +1865,7 @@ p a {
     background-color: #f2f2f2;
     text-align: left;
     padding-left: 46px;
-    font-family: 'OpenSans';
+    font-family: "OpenSans-Regular";
     font-weight: normal;
   }
   #installation-selection .circle {
@@ -1939,7 +1946,7 @@ p a {
     display: none;
   }
   .docs-container.no-right-bar.containers .topic {
-    margin-top: 16px;
+    margin-top: 13px;
   }
   .docs-container.no-right-bar {
     margin-top: 8px!important;
@@ -2067,7 +2074,7 @@ p a {
   p,a, ul li {
     font-size: 16px;
   }
-  .fixed-docs-toc.docs-toc li a,span.installer-icon {
+  .fixed-docs-toc.docs-toc li a {
     font-size: 14px!important;
   }
   .edit-page {
