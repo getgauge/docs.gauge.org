@@ -6,11 +6,11 @@
 
 .. _installtion-troubleshooting:
 
-Installtion
------------
+Installation
+------------
 
-Gauge installtion via NPM (npm install @getgauge/cli -g)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gauge installation via NPM (npm install @getgauge/cli -g)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Error message:**
 
@@ -41,7 +41,7 @@ Execution (Run Gauge specification)
 -------------------------------------
 
 Validation failure warning
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Error message:**
 
@@ -61,7 +61,7 @@ This error occurs if the step implementation for a particular step does not exis
   | The code for the step in the step implementation file is case sensitive.
 
 Failed to start a runner
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Error:**
 
@@ -84,7 +84,7 @@ Run the following command:
 For more information about plugin installation, see :ref:`install_plugins`.
 
 Too many open files
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 **Error:**
 
@@ -102,7 +102,7 @@ The upper limit to the number of open files is low.
 2. Log out and log in again for the changes to take effect.
 
 Gradle unable to execute Gauge specs, despite adding GaugeTask
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Error:**
 
@@ -134,7 +134,7 @@ Use the fully qualified name for GaugeTask as shown below:
     }
 
 Parse errors
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 **Error:**
 
@@ -220,7 +220,7 @@ necessary for writing a spec or concept.
 | For more information about how to write a concept, see :ref:`concept`. 
 
 Validation Errors
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 Validation errors are those for which Gauge does not run the spec when the error occurs.
 
 **Error:**
@@ -263,7 +263,7 @@ Configuration
 -------------
 
 gRPC issues
-^^^^^^^^^^^^
+~~~~~~~~~~~
 
 **Error:**
 
@@ -303,7 +303,7 @@ Gauge Python
 ------------
 
 ImportError: No module named getgauge
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Error:**
 
@@ -324,7 +324,7 @@ Install the ``getgauge`` package by using ``pip`` as follows:
 .. _Installation: ./installation.html
 
 ImportError: No module named step_impl.<file_name>
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Error:**
 
@@ -346,7 +346,7 @@ VSCode
 ------
 
 GAUGE-VSCode-001 : Language client is not ready yet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Error:**
 
@@ -370,7 +370,7 @@ VS
 --
 
 Gauge-VS-001 : Gauge API not started
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Error:**
 
@@ -411,7 +411,7 @@ This behavior is flaky, hence sometimes the Gauge API does not get started.
    Ensure that the port set is white-listed in your firewall.
 
 GAUGE-VS-002 : Incompatible Gauge Version installed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Error:**
 
@@ -430,7 +430,7 @@ Gauge-VisualStudio support requires ``gauge.exe`` to be above a certain minimum 
 Install the latest version of Gauge and update your Gauge VisualStudio plugin.
 
 GAUGE-VS-003 : Unable to read Gauge version
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Error:**
 
@@ -457,7 +457,7 @@ IntelliJ
 --------
 
 GAUGE-IntelliJ-001 : Gauge API Not Started
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Error:**
 
@@ -478,7 +478,7 @@ GAUGE-IntelliJ-001 : Gauge API Not Started
 - Restart Intellij.
 
 GAUGE-IntelliJ-002 : Error adding module to project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Error:**
 
@@ -495,7 +495,7 @@ This error occurs when the ``create new project`` option is used to open an exis
 Use the ``open`` option to open an existing Gauge project.
 
 GAUGE-IntelliJ-003 : Steps marked as unimplemented
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Error:**
 
@@ -515,13 +515,13 @@ IntelliJ or Gauge plugin are not configured correctly.
 - Check dependencies for a gauge maven project and simple gauge java project.
 
 For a gauge maven project
-.........................
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Add the gauge-java dependency in the ``pom.xml``.
 -  Enable auto-import for the project; in ``File > Settings > Maven > Importing``, select the checkbox ``Import Maven projects automatically``.
 
 For a simple gauge java project
-...............................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1) In ``Project Settings -> Modules``, select the gauge module. 
 2) Ensure that the following are present in the ``dependencies`` tab: ``gauge-lib`` and ``project-lib``.
@@ -529,7 +529,7 @@ For a simple gauge java project
    | ``gauge-lib`` and ``project-lib`` are added automatically.
 
 GAUGE-IntelliJ-004 : Project Build failing with compilation error but the Java Files do not mark any errors.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Error:**
 
