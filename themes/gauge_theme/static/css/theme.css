@@ -124,6 +124,11 @@ footer {
   left: 20px;
 }
 
+.left-sidebar-container nav.open > .fixed-docs-toc{
+  display: inline-block !important;
+  margin: 20px;
+}
+
 .sliding-nav.disabled {
   display: none;
 }
