@@ -11,6 +11,7 @@
     border: none;
     font-family: 'OpenSans-Bold';
     font-size: 13px;
+    padding:10px 0px;
 }
 
 .examples-table td {
@@ -19,15 +20,47 @@
     border-top: solid 1px #e2e2e2;
     font-family: "OpenSans-Regular";
     font-size: 12px;
+    padding: 15px 0px;
+}
+
+.examples-table tr:first-child td {
+    border-top:0px;
+}
+
+.examples-table td span {
+    margin: -11px 0px;
+    display: inline-block;
+    padding-bottom: 30px;
 }
 
 .examples-table tr:nth-child(even) {
     border: none;
     background: none;
 }
-.examples-table td span {
+.cicd-table tr {
+    border-bottom: 1px solid #ccc;
+    margin: 4px 0px;
+}
+.cicd-table tr:last-child {
+    border-bottom:0px;
+}
+
+.cicd-table td {
+    border:0px;
+    padding:12px 0px;
     font-size: 14px;
     font-family: "OpenSans-Regular";
+}
+.cicd-table tr td span {
+    position: relative;
+    bottom: 8px;
+    font-size: 14px;
+    font-family: "OpenSans-Regular";
+}
+.cicd-table .gocd-logo::before {
+    content: url(../img/gocd.svg);
+    position: relative;
+    top: 1px;
 }
 
 .examples-table tr:hover {
@@ -62,13 +95,13 @@
 .examples-table .spring-logo::before,
 .examples-table .perfecto-logo::before,
 .examples-table .taiko-logo::before,
-.examples-table .gocd-logo::before,
-.examples-table .teamcity-logo::before,
-.examples-table .travis-logo::before,
-.examples-table .circleci-logo::before,
-.examples-table .jenkins-logo::before,
-.examples-table .azure-logo::before,
-.examples-table .docker-logo::before {
+.cicd-table .gocd-logo::before,
+.cicd-table .teamcity-logo::before,
+.cicd-table .travis-logo::before,
+.cicd-table .circleci-logo::before,
+.cicd-table .jenkins-logo::before,
+.cicd-table .azure-logo::before,
+.cicd-table .docker-logo::before {
     display: inline-block;
     width: 31px;
     height: 31px;
@@ -117,45 +150,80 @@
     content: url(../img/taiko.svg);
 }
 
-.examples-table .gocd-logo::before {
+.cicd-table .gocd-logo::before {
     content: url(../img/gocd.svg);
 }
 
-.examples-table .teamcity-logo::before {
+.cicd-table .teamcity-logo::before {
     content: url(../img/teamcity.svg);
 }
 
-.examples-table .travis-logo::before {
+.cicd-table .travis-logo::before {
     content: url(../img/travisci.svg);
 }
 
-.examples-table .circleci-logo::before {
+.cicd-table .circleci-logo::before {
     content: url(../img/circleci.svg);
 }
 
-.examples-table .jenkins-logo::before {
+.cicd-table .jenkins-logo::before {
     content: url(../img/jenkins.svg);
 }
 
-.examples-table .azure-logo::before {
+.cicd-table .azure-logo::before {
     content: url(../img/azure.svg);
 }
 
-.examples-table .docker-logo::before {
+.cicd-table .docker-logo::before {
     content: url(../img/docker.svg);
 }
 
-colgroup col:first-child {
-    width: 45%;
+.examples-table colgroup col:first-child {
+    width: 38%;
 }
 
-colgroup col:nth-child(2) {
-    width: 35%;
+.examples-table colgroup col:nth-child(2) {
+    width: 38%;
 }
 
-colgroup col:last-child {
-    width: 20%;
+.examples-table th:last-child {
+    text-align: center;
+    padding-left: 38px;
 }
+
+.examples-table colgroup col:last-child {
+    width: 24%; 
+    text-align: right;
+}
+
+.examples-table tbody tr td:nth-child(2) {
+    padding: 10px 30px 0px 0px;
+}
+
+.cicd-table colgroup col:first-child {
+    width: 33%;
+}
+
+.examples-table tr td:last-child {
+    text-align: right;
+}
+.cicd-table colgroup col:nth-child(2) {
+    width: 43%;
+}
+.cicd-table colgroup col:last-child {
+    width: 24%;
+}
+.cicd-table tr {
+    background: transparent!important;
+}
+
+.cicd-table tr td:last-child {
+    text-align: right;
+}
+.cicd-table tr td a.reference.external,.examples-table tr td a.reference.external {
+    font-size: 13px;
+}
+
 
 @media (max-width:576px) { 
     .examples-table thead {
@@ -169,5 +237,8 @@ colgroup col:last-child {
     }
     .examples-table tr {
         border-bottom: 1px solid #ccc;
+    }
+    .cicd-table col {
+        width: 100%;
     }
 }
