@@ -780,7 +780,7 @@ tr:hover {
 }
 
 .admonition>p {
-  padding: 0 0 0 10px !important;
+  padding: 0 10px 0 10px !important;
   margin: 0px;
 }
 
@@ -1503,6 +1503,18 @@ p.last {
   background: #f9f9f9;
 }
 
+p.experimental-feature {
+  background: #5e5e5e;
+  padding: 3px 16px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 13px;
+  font-family: 'OpenSans-SemiBold';
+  font-weight: 600;
+  display: inline-block;
+}
+
+
 
 @media only screen and (min-width: 250px) {
   body {
@@ -1616,7 +1628,7 @@ p.last {
     list-style-type: none;
     color: #1e1e1e;
     font-weight: normal;
-    font-family: 'OpenSans';
+    font-family: "OpenSans-Regular";
 }
 
 .sliding-docs-toc.docs-toc>ul>li {

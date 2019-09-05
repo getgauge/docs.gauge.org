@@ -49,6 +49,11 @@
  }
 
  @font-face {
+    font-family: 'OpenSans-SemiBold';
+    src: url('../font/open-sans/OpenSans-Semibold.ttf');
+ }
+
+ @font-face {
     font-family: 'OpenSans-extrabolditalic';
     src: url('../font/open-sans/OpenSans-ExtraBoldItalic.ttf');
  }
