@@ -72,7 +72,7 @@ Gauge Python
 
 
 Gauge Visual Studio Code
--------------
+------------------------
 
 `Why are some features not working? <#why-are-some-features-not-working>`__
 
@@ -81,7 +81,7 @@ Gauge Visual Studio Code
 .. cssclass:: category-title
 
 I don't see my question here
------------------------------
+----------------------------    
 
 If you have any questions that are not answered you can get help from our `Google group <//groups.google.com/forum/#!forum/getgauge>`__ or you can chat with fellow Gauge users in the `Gitter channel <//gitter.im/getgauge/chat>`__. You might also use `Stack Overflow <//stackoverflow.com/questions/tagged/getgauge>`__ for “HOW DO I” type questions. For other questions and discussions,
 
@@ -409,7 +409,7 @@ Execution will stop where it finds the above statement and you can debug.
 .. cssclass:: category
 
 :heading:`Gauge Visual Studio Code`
-----------------------------------
+-----------------------------------
 
 .. cssclass:: question
 
