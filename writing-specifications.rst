@@ -2337,137 +2337,145 @@ Language-specific project files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 When the Gauge project is initialized, depending on the language plugin used, language-specific files are created in the project.
 
-The following table shows the project structure for each of the languages when used for creating a Gauge project.
+The following project structure shows the project structure for the selected language when used for creating a Gauge project.
 
 .. cssclass:: dynamic-content csharp
 
-.. code-block:: text
+.. container::
 
-    ├── foo.csproj
-    ├── foo.sln
-    ├── manifest.json
-    ├── packages.config
-    ├── StepImplementation.cs
-    │
-    ├── env
-    │   └───default
-    │           csharp.properties
-    │
-    ├───packages
-        └───<Nuget Package Binaries>
-    ├───Properties
-    │       AssemblyInfo.cs
-    │
-    └───specs
-            example.spec
+    .. code-block:: text
 
+        ├── foo.csproj
+        ├── foo.sln
+        ├── manifest.json
+        ├── packages.config
+        ├── StepImplementation.cs
+        │
+        ├── env
+        │   └───default
+        │           csharp.properties
+        │
+        ├───packages
+            └───<Nuget Package Binaries>
+        ├───Properties
+        │       AssemblyInfo.cs
+        │
+        └───specs
+                example.spec
 
-**packages.config**
+    **packages.config**
 
-Nuget Package Binaries contains nuget dependencies for Gauge.
+    Nuget Package Binaries contains nuget dependencies for Gauge.
 
-**StepImplementation.cs**
+    **StepImplementation.cs**
 
-This file contains the implementations for the sample steps defined in
-``example.spec``.
+    This file contains the implementations for the sample steps defined in
+    ``example.spec``.
 
-**csharp.properties**
+    **csharp.properties**
 
-| This file defines configurations for CSharp runner plugin.
-| For more information about language-specific configuration, see :ref:`language_config`.
+    | This file defines configurations for CSharp runner plugin.
+    | For more information about language-specific configuration, see :ref:`language_config`.
 
 .. cssclass:: dynamic-content java
 
-.. code-block:: text
+.. container::
 
-    ├── manifest.json
-    ├── libs
-    └── src
-        └── test
-            └── java
-                └── StepImplementation.java
-    ├── env
-        └── default
-            └── java.properties
-    └───specs
-        example.spec
+    .. code-block:: text
 
+        ├── manifest.json
+        ├── libs
+        └── src
+            └── test
+                └── java
+                    └── StepImplementation.java
+        ├── env
+            └── default
+                └── java.properties
+        └───specs
+            example.spec
 
-**libs**
+    **libs**
 
-This contains the additional java dependencies required for the project.
+    This contains the additional java dependencies required for the project.
 
-**src**
+    **src**
 
-This directory contains the classes including step implementations.
+    This directory contains the classes including step implementations.
 
-**java.properties**
+    **java.properties**
 
-| This file defines configurations for Java runner plugin.
-| For more information about language-specific configuration, see :ref:`language_config`.
+    | This file defines configurations for Java runner plugin.
+    | For more information about language-specific configuration, see :ref:`language_config`.
 
 .. cssclass:: dynamic-content javascript
 
-.. code-block:: text
+.. container::
 
-    ├── manifest.json
-    └── tests
-            └── step_implementation.js
-    ├── env
-        └── default
-            └── js.properties
-    └───specs
-            example.spec
+    .. code-block:: text
 
-**tests**
+        ├── manifest.json
+        └── tests
+                └── step_implementation.js
+        ├── env
+            └── default
+                └── js.properties
+        └───specs
+                example.spec
 
-This directory contains the test code including step implementations.
+    **tests**
 
-**js.properties**
+    This directory contains the test code including step implementations.
 
-| This file defines configurations for Javascript runner plugin.
-| For more information about language-specific configuration, see :ref:`language_config`.
+    **js.properties**
+
+    | This file defines configurations for Javascript runner plugin.
+    | For more information about language-specific configuration, see :ref:`language_config`.
 
 .. cssclass:: dynamic-content python
 
-.. code-block:: text
+.. container::
 
-    ├── manifest.json
-    └── step_impl
-            └── step_impl.py
-    ├── env
-        └── default
-            └── python.properties
-    └───specs
-        example.spec
+    .. code-block:: text
 
-**step_impl**
+        ├── manifest.json
+        └── step_impl
+                └── step_impl.py
+        ├── env
+            └── default
+                └── python.properties
+        └───specs
+            example.spec
 
-This directory contains the test code including step implementations.
+    **step_impl**
 
-**python.properties**
+    This directory contains the test code including step implementations.
 
-| This file defines configurations for Python runner plugin.
-| For more information about language-specific configuration, see :ref:`language_config`.
+    **python.properties**
+
+    | This file defines configurations for Python runner plugin.
+    | For more information about language-specific configuration, see :ref:`language_config`.
 
 .. cssclass:: dynamic-content ruby
 
-.. code-block:: text
+.. container::
 
-    ├── manifest.json
-    ├── env
-    │   └── default
-    │       └── ruby.properties
-    └── step_implementations
-        └── step_implementation.rb
-    └───specs
-            example.spec
+    .. code-block:: text
 
-**step_implementations directory**
+        ├── manifest.json
+        ├── env
+        │   └── default
+        │       └── ruby.properties
+        └── step_implementations
+            └── step_implementation.rb
+        └───specs
+                example.spec
 
-This directory contains all the ``.rb`` files with the test code including step implementations in ruby.
+    **step_implementations directory**
 
-**ruby.properties**
+    This directory contains all the ``.rb`` files with the test code including step implementations in ruby.
 
-| This file defines configurations for Ruby runner plugin.
-| For more information about language-specific configuration, see :ref:`language_config`.
+    **ruby.properties**
+
+    | This file defines configurations for Ruby runner plugin.
+    | For more information about language-specific configuration, see :ref:`language_config`.
