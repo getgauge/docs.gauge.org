@@ -1994,10 +1994,6 @@ p.last {
     overflow-x: hidden;
   }
 
-  .mobile-local-toc.collapsed + ul{
-    display: inline-block;
-  }
-
   .fixed-docs-toc.docs-toc {
     display: block;
   }
@@ -2018,6 +2014,10 @@ p.last {
     grid-template-columns: 19% 54% 27%;
     grid-column-gap: 30px;    
     overflow-x: hidden;
+  }
+
+  .mobile-local-toc.collapsed + ul{
+    display: inline-block;
   }
   .localtoc-container>ul {
     margin: 10px 0;
