@@ -1503,8 +1503,7 @@ p.last {
   .algolia-autocomplete {
     width: 84%;
     top:16px;
-    left:3%;
-    border: 1px solid #ccc;  
+    left:3%;  
   }
   a.reference.external {
     padding-bottom: 3px;
@@ -1627,23 +1626,41 @@ p.last {
     display: none;
   }
   #proj-setup-filter-section .applied-filters .applied-filter-header {
-    background-color: #fff0b8;
-    margin: auto 16px;
+    background-color: #FFF0B8;
+    margin-right: 0px;
     border-radius: 5px 0 0 5px;
-    padding: 6px 2px;
+    padding: 12px 2px;
     position: relative;
     top: 0;
     left: -15px;
     font-size: 13px;
     font-family: "OpenSans-Regular";
     height: 40px;
-    width: 39px !important;
+    width: auto!important;
     color:#1e1e1e;
   }
   #change-filter {
     position: absolute;
     right: 0px;
-    top: -24px;
+    top: -18px;
+  }
+  #proj-setup-filter-section .applied-filters .applied-filter {
+    padding: 2px 14px;
+    margin-right: 10px;
+    margin-left: 0px;
+    height: 27px;
+    font-size: 13px;
+    margin-left: 0px;
+    font-family: "OpenSans-Regular";
+    margin-top: 7px;
+    font-weight: normal;
+    max-width: 250px;
+    width: auto;
+    display: inline-block;
+  }
+  .proj-setup-filters.docutils .selection input:checked~.checkmark:after {
+    left: 5%;
+    top: 18px;
   }
 }
 
@@ -1668,10 +1685,10 @@ p.last {
   }
   .edit-page {
     display: block;
-    top:18px;
+    top:-10px;
   }
   #search {
-    width: 180px;
+    width: 200px;
     padding-left: 25px;
     font-size: 16px;
     height:40px;
@@ -1931,22 +1948,22 @@ p.last {
     top: 18px;
   }
   #change-filter {
-    position: relative;
+    position: absolute;
     right: 0;
-    top: 8px;
+    top: -18px;
   }
   #proj-setup-filter-section .applied-filters .applied-filter-header {
     background-color: #fff0b8;
-    margin: auto 16px;
+    margin-right: 0px;
     border-radius: 5px 0 0 5px;
     padding: 10px 7px;
     position: relative;
     top: 0;
     left: -15px;
-    font-size: 14px;
+    font-size: 13px;
     font-family: "OpenSans-Regular";
     height: 40px;
-    width: 54px !important;
+    width: auto!important;
   }
 
 }
@@ -1980,6 +1997,11 @@ p.last {
   }
   .topic h1 {
     padding-bottom: 6px;
+  }
+  #change-filter {
+    position: relative;
+    right: 0;
+    top: 5px;
   }
  
 }
