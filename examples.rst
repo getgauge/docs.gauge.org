@@ -162,7 +162,7 @@ For example, to run the specs use ``gauge run specs``
 
 See below some examples demonstrating specific use cases using Gauge and integrating it with your favourite CI/CD tool.
 
-.. cssclass:: dynamic-content examples-table
+.. cssclass:: dynamic-content cicd-table
 .. list-table::
 
    * - :gocd_logo:`GoCD`
