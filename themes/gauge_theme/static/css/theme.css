@@ -1666,7 +1666,7 @@ p.last {
     top: -18px;
   }
   #proj-setup-filter-section .applied-filters .applied-filter {
-    padding: 2px 14px;
+    padding: 2px 8px;
     margin-right: 10px;
     margin-left: 0px;
     height: 27px;
@@ -1682,6 +1682,9 @@ p.last {
   .proj-setup-filters.docutils .selection input:checked~.checkmark:after {
     left: 5%;
     top: 18px;
+  }
+  .selection .radio-container {
+    margin: 10px 0 0px -10px;
   }
 }
 

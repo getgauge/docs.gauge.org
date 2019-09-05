@@ -38,7 +38,7 @@
 }
 
 .selection .selection-text{
-    margin-left: 30%
+    margin-left: 28px;
 }
 
 .selection input:checked~.checkmark:after {
