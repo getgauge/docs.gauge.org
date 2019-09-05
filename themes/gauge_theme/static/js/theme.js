@@ -23,21 +23,22 @@ document.addEventListener("DOMContentLoaded", () => {
 		.querySelectorAll(".container .container")
 		.forEach(elem => elem.classList.remove("container"));
 
+	const returnToTopBtn = document.querySelector("#return-to-top");
 	// ===== Scroll to Top ====
 	window.addEventListener("scroll", function() {
-		if (window.pageYOffset >= 50) {
-			// If page is scrolled more than 50px
-			document.querySelector("#return-to-top").classList.remove("fadeOut"); // Fade in the arrow
-			document.querySelector("#return-to-top").classList.add("fadeIn"); // Fade in the arrow
-		} else {
-			document.querySelector("#return-to-top").classList.remove("fadeIn"); // Else fade out the arrow
-			document.querySelector("#return-to-top").classList.add("fadeOut"); // Else fade out the arrow
+		
+		if(returnToTopBtn){
+			if (window.pageYOffset >= 50) {
+				// If page is scrolled more than 50px
+				returnToTopBtn.classList.remove("fadeOut"); // Fade in the arrow
+				returnToTopBtn.classList.add("fadeIn"); // Fade in the arrow
+			} else {
+				returnToTopBtn.classList.remove("fadeIn"); // Else fade out the arrow
+				returnToTopBtn.classList.add("fadeOut"); // Else fade out the arrow
+			}
 		}
 	});
-
-	document
-		.querySelector("#return-to-top")
-		.addEventListener("click", function() {
+	returnToTopBtn && returnToTopBtn.addEventListener("click", function() {
 			// When arrow is clicked
 			document.querySelector("body,html").scrollTop = 0; // Scroll to top of body
 		});

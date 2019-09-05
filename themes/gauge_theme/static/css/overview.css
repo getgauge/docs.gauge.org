@@ -4,11 +4,11 @@
 }
 
 .highlighted-syntax {
-    background-color: #e4e2e2;
+    background-color: #eeeeee;
     border-radius: 4px;
     padding: 3px 12px;
-    font-family: 'SourceCodePro-Medium';
-    font-size: 14px;
+    font-family: 'source code pro';
+    font-size: 16px;
 }
 
 .param-syntax-char {
