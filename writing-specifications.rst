@@ -214,6 +214,10 @@ In the following example, the spec, ``Search specification`` contains the scenar
 Table driven scenario
 ^^^^^^^^^^^^^^^^^^^^^^
 
+.. cssclass:: experimental-feature
+
+Experimental Feature
+
 Gauge 1.0.3 adds an experimental feature to provide a table at scenario level. Gauge will iterate over the table and run that particular scenario against each row.
 Set ``allow_scenario_datatable`` variable to ``true`` in ``/env/default/default.properties`` to enable this feature.
 

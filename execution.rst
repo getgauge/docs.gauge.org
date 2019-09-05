@@ -528,6 +528,10 @@ starts multiple threads for parallel execution.
 Run specs before parallel execution
 -----------------------------------
 
+.. cssclass:: experimental-feature
+
+Experimental Feature
+
 Specs can be filtered based on tags to run in parallel, so that only those will be run in parallel after executing other specs in serial.
 
 Set ``allow_filtered_parallel_execution`` variable to ``true`` in ``/env/default/default.properties`` to enable this feature.
