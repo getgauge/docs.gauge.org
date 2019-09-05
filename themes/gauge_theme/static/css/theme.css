@@ -1475,7 +1475,9 @@ p.first.admonition-title {
 p.last {
   padding-bottom: 10px!important;
 }
-
+#other-plugins blockquote {
+  margin: 0px;
+}
 
 
 @media only screen and (min-width: 250px) {
