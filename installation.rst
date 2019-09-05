@@ -54,7 +54,7 @@ Install Gauge for your OS (Operating System)
 
         .. code-block:: console
 
-           echo deb https://dl.bintray.com/gauge/gauge-deb nightly main | sudo tee -a /etc/apt/sources.list
+           echo deb https://dl.bintray.com/gauge/gauge-deb stable main | sudo tee -a /etc/apt/sources.list
 
         3. Install Gauge by using the following command:
 

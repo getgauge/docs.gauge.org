@@ -71,10 +71,11 @@ const changeBackground = function () {
     radios.forEach(element => {
         if (element.checked) {
             element.parentElement.style.backgroundColor = "rgba(255, 204, 0, 0.1)";
-            element.parentElement.style.border = "solid 1px #ffcc00"
+            element.parentElement.style.border = "solid 1px #ffcc00";
+            element.parentElement.style.fontWeight = "bold";
         } else {
             element.parentElement.style.backgroundColor = "#f2f2f2";
-            element.parentElement.style.border = ""
+            element.parentElement.style.border = "";
         }
     });
 }
