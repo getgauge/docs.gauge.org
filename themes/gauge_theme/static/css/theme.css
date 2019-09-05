@@ -2002,8 +2002,8 @@ p.last {
     display: grid;
     grid-template-areas: 'header header' 'left-nav right-nav' 'left-nav main-content' 'footer footer';
     grid-template-rows: 100px auto auto auto;
-    grid-template-columns: 24% 71%;
-    grid-column-gap: 60px;
+    grid-template-columns: 260px auto;
+    grid-column-gap: 5px;
     overflow-x: hidden;
   }
   .fixed-docs-toc.docs-toc {
@@ -2040,8 +2040,8 @@ p.last {
     display: grid;
     grid-template-areas: 'header header' 'left-nav right-nav' 'left-nav main-content' 'footer footer';
     grid-template-rows: 100px auto auto auto;
-    grid-template-columns: 21% 73%;
-    grid-column-gap: 60px;
+    grid-template-columns: 260px auto;
+    grid-column-gap: 5px;
     overflow-x: hidden;
   }
 
@@ -2062,8 +2062,8 @@ p.last {
     display: grid;
     grid-template-areas: 'header header header' 'left-nav main-content right-nav' 'footer footer footer';
     grid-template-rows: 100px auto auto;
-    grid-template-columns: 19% 54% 27%;
-    grid-column-gap: 30px;    
+    grid-template-columns: 260px 44rem auto;
+    grid-column-gap: 5px;    
     overflow-x: hidden;
   }
 
@@ -2129,8 +2129,8 @@ p.last {
     display: grid;
     grid-template-areas: 'header header header' 'left-nav main-content right-nav' 'footer footer footer';
     grid-template-rows: 100px auto auto;
-    grid-template-columns: 19% 50% 29%;
-    grid-column-gap: 30px; 
+    grid-template-columns: 300px 44rem auto;
+    grid-column-gap: 5px; 
     overflow-x: hidden;   
   }
   .feature-desc {
@@ -2182,7 +2182,7 @@ p.last {
     display: grid;
     grid-template-areas: 'header header header' 'left-nav main-content right-nav' 'footer footer footer'; 
     grid-template-rows: 100px auto auto;
-    grid-template-columns: 20% 50% 29%;
+    grid-template-columns: 300px 50rem auto;
     grid-column-gap: 5px;    
     overflow-x: hidden;
     font-size: 16px;
