@@ -262,6 +262,7 @@
     margin: 0px 18px;
     font-family: 'URWGeometric-Medium';
     font-size: 16px;
+    text-align: right;
 }
 
 .navigate-next a::after {
