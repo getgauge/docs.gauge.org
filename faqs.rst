@@ -72,7 +72,7 @@ Gauge Python
 
 
 Gauge Visual Studio Code
--------------
+------------------------
 
 `Why are some features not working? <#why-are-some-features-not-working>`__
 
@@ -81,7 +81,7 @@ Gauge Visual Studio Code
 .. cssclass:: category-title
 
 I don't see my question here
------------------------------
+----------------------------    
 
 If you have any questions that are not answered you can get help from our `Google group <//groups.google.com/forum/#!forum/getgauge>`__ or you can chat with fellow Gauge users in the `Gitter channel <//gitter.im/getgauge/chat>`__. You might also use `Stack Overflow <//stackoverflow.com/questions/tagged/getgauge>`__ for “HOW DO I” type questions. For other questions and discussions,
 
@@ -97,38 +97,34 @@ Where is the Gauge executable installed by default?
 
 .. cssclass:: answer
 
-.. tab-container:: platforms
+Windows
+^^^^^^^
+:highlighted-syntax:`%ProgramFiles%\\gauge\\bin`
 
-    .. tab:: Windows
+macOS
+^^^^^
+:highlighted-syntax:`/usr/local/bin`
 
-        :highlighted-syntax:`%ProgramFiles%\\gauge\\bin`
-
-    .. tab:: macOS
-
-        :highlighted-syntax:`/usr/local/bin`
-
-    .. tab:: linux
-
-        :highlighted-syntax:`/usr/local/bin`
+linux
+^^^^^
+:highlighted-syntax:`/usr/local/bin`
 
 .. cssclass:: question
 
 Where are the plugins installed by default?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tab-container:: platforms
+Windows
+^^^^^^^^
+:highlighted-syntax:`%APPDATA%\\gauge\\plugins`
 
-    .. tab:: Windows
+macOS
+^^^^^
+:highlighted-syntax:`~/.gauge/plugins`
 
-        :highlighted-syntax:`%APPDATA%\\gauge\\plugins`
-
-    .. tab:: macOS
-
-        :highlighted-syntax:`~/.gauge/plugins`
-
-    .. tab:: linux
-
-        :highlighted-syntax:`~/.gauge/plugins`
+linux
+^^^^^
+:highlighted-syntax:`~/.gauge/plugins`
 
 .. cssclass:: question
 
@@ -212,19 +208,17 @@ You can specify a custom directory by changing the ``logs_directory`` property u
 Where does gauge non project specific logs like plugin installation etc.?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tab-container:: platforms
+Windows
+^^^^^^^
+:highlighted-syntax:`%APPDATA%\\gauge\\logs`
 
-    .. tab:: Windows
+macOS
+^^^^^
+:highlighted-syntax:`~/.gauge/logs`
 
-        :highlighted-syntax:`%APPDATA%\\gauge\\logs`
-
-    .. tab:: macOS
-
-        :highlighted-syntax:`~/.gauge/logs`
-
-    .. tab:: linux
-
-        :highlighted-syntax:`~/.gauge/logs`
+linux
+^^^^^
+:highlighted-syntax:`~/.gauge/logs`
 
 .. cssclass:: category
 
@@ -244,66 +238,67 @@ Remove the Plugins before uninstalling Gauge. For information about removing plu
 
     While uninstalling Gauge, you must remove the Gauge folder (~/.gauge in Mac/Linux and in %APPDATA%\Gauge in windows) manually. This folder contains Gauge config, logs and plugins.
 
+Windows
+^^^^^^^
+Uninstall Gauge by using `Chocolatey <https://github.com/chocolatey/choco/wiki/CommandsUninstall>`__ .
 
-.. tab-container:: platforms
+.. code-block:: console
 
-    .. tab:: Windows
+    choco uninstall gauge
 
-        Uninstall Gauge by using `Chocolatey <https://github.com/chocolatey/choco/wiki/CommandsUninstall>`__ .
+macOS
+^^^^^
+Uninstall Gauge by using `HomeBrew <https://docs.brew.sh/FAQ.html#how-do-i-uninstall-a-formula>`__ .
 
-        .. code-block:: console
+.. code-block:: console
 
-            choco uninstall gauge
+    brew uninstall gauge
 
-    .. tab:: macOS
+Debian/APT
+^^^^^^^^^^
 
-        Uninstall Gauge by using `HomeBrew <https://docs.brew.sh/FAQ.html#how-do-i-uninstall-a-formula>`__ .
+Uninstall Gauge by using the `apt-get <https://linux.die.net/man/8/apt-get>`__ command:
 
-        .. code-block:: console
+.. code-block:: console
 
-            brew uninstall gauge
+    sudo apt-get remove gauge
 
-    .. tab:: Debian/APT
+YUM/DNF
+^^^^^^^
 
-        Uninstall Gauge by using the `apt-get <https://linux.die.net/man/8/apt-get>`__ command:
+You can uninstall Gauge in one of the following ways:
 
-        .. code-block:: console
+Uninstall by using ``yum``.
 
-            sudo apt-get remove gauge
+.. code-block:: console
 
-    .. tab:: YUM/DNF
+    yum remove gauge
 
-        You can uninstall Gauge in one of the following ways:
+OR
 
-        Uninstall by using ``yum``.
+Uninstall by using ``dnf``.
 
-        .. code-block:: console
+.. code-block:: console
 
-            yum remove gauge
+    dnf remove gauge
 
-        OR
+Freebsd
+^^^^^^^
 
-        Uninstall by using ``dnf``.
+Delete the Gauge files from the installed location.
 
-        .. code-block:: console
+Curl
+^^^^^
 
-            dnf remove gauge
+Delete the Gauge files from the installed location.
 
-    .. tab:: Freebsd
+NPM
+^^^
+Uninstall Gauge by using ``npm``.
 
-        Delete the Gauge files from the installed location.
+.. code-block:: console
 
-    .. tab:: Curl
-
-        Delete the Gauge files from the installed location.
-
-    .. tab:: NPM
-
-        Uninstall Gauge by using ``npm``.
-
-        .. code-block:: console
-
-            npm uninstall -g @getgauge/cli
+    npm uninstall -g @getgauge/cli
 
 .. note::
     If you have installed Gauge on your system by downloading the Gauge release from GitHub, then delete the Gauge files from the installed location.
@@ -409,7 +404,7 @@ Execution will stop where it finds the above statement and you can debug.
 .. cssclass:: category
 
 :heading:`Gauge Visual Studio Code`
-----------------------------------
+-----------------------------------
 
 .. cssclass:: question
 

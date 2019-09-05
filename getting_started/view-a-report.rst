@@ -12,7 +12,7 @@
 .. cssclass:: vscode dynamic-content
 
 :vscode:`Viewing Reports from Visual Studio Code`
---------------------------------------
+-------------------------------------------------
 
 Once the specifications are run you will get immediate feedback in the output screen of Visual Studio Code.
 
