@@ -50,23 +50,23 @@ document.addEventListener("DOMContentLoaded", function() {
 		let isFooterTouchingSidebar =
 			leftSideBarHeight >= footerOffsetTop - window.scrollY;
 
+		const leftSideBar = document.querySelector(
+				"#left-sidebar"
+			);
+
+		const rightSidebar = document.querySelector(
+				"#right-sidebar"
+			);
+
 		if (window.scrollY && isFooterTouchingSidebar) {
 			let sidebarOffsetTop =
 				leftSideBarOffsetTop -
 				(leftSideBarHeight - (footerOffsetTop - window.scrollY));
-			document.querySelector(
-				"#left-sidebar"
-			).style.top = `${sidebarOffsetTop}px`;
-			document.querySelector(
-				"#right-sidebar"
-			).style.top = `${sidebarOffsetTop}px`;
+			leftSideBar.style.top = `${sidebarOffsetTop}px`;
+			rightSidebar && (rightSidebar.style.top = `${sidebarOffsetTop}px`);
 		} else {
-			document.querySelector(
-				"#left-sidebar"
-			).style.top = `${leftSideBarOffsetTop}px`;
-			document.querySelector(
-				"#right-sidebar"
-			).style.top = `${leftSideBarOffsetTop}px`;
+			leftSideBar.style.top = `${leftSideBarOffsetTop}px`;
+			rightSidebar && (rightSidebar.style.top = `${leftSideBarOffsetTop}px`);
 		}
 	});
 });
