@@ -402,31 +402,31 @@ Reporting Plugins
 
 Reporting plugins generate execution reports in various formats. Depending on the format of the report you need, you can install the appropriate plugin.
 
-.. tab-container:: reports
+HTML-Report
+^^^^^^^^^^^^
+.. code-block:: console
 
-    .. tab:: HTML-Report
+    gauge install html-report
 
-        .. code-block:: console
+For more information about HTML report generation plugin for Gauge, see `Gauge GitHub for HTML report generation <https://github.com/getgauge/html-report>`__ .
 
-            gauge install html-report
+XML-Report
+^^^^^^^^^^
 
-        For more information about HTML report generation plugin for Gauge, see `Gauge GitHub for HTML report generation <https://github.com/getgauge/html-report>`__ .
+.. code-block:: console
 
-    .. tab:: XML-Report
+    gauge install xml-report
 
-        .. code-block:: console
+For more information about XML-report generation plugin for Gauge, see `Gauge GitHub for XML report generation <https://github.com/getgauge/xml-report>`__ .
 
-            gauge install xml-report
+Flash
+^^^^^
 
-        For more information about XML-report generation plugin for Gauge, see `Gauge GitHub for XML report generation <https://github.com/getgauge/xml-report>`__ .
+.. code-block:: console
 
-    .. tab:: Flash
+    gauge install flash
 
-        .. code-block:: console
-
-            gauge install flash
-
-        For more information about Flash plugin for Gauge, see `Gauge GitHub for Flash <https://github.com/getgauge/Flash>`__ .
+For more information about Flash plugin for Gauge, see `Gauge GitHub for Flash <https://github.com/getgauge/Flash>`__ .
 
 .. _ide_plugins:
 
