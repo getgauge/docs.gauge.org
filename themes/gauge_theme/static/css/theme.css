@@ -1461,14 +1461,17 @@ p a:visited {
 ul.sub-toc.collapsed li.doc-toc-group a::after {
   display: none;
 }
-
-.localtoc-container ul li a:hover {
-  border-left: 2px solid #ffcc00;
-  padding-left: 7px;
-  height: 80%;
-  font-weight: bold;
+#right-sidebar ul li {
+  position: relative;
 }
-
+.localtoc-container ul li a:hover::before  {
+  content: "|";
+  background-color: #fc0;
+  position: absolute;
+  left: -7px;
+  color: transparent;
+  width: 2px;
+}
 p a {
   border-bottom: 0px;
 }
