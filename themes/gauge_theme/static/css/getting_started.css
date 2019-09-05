@@ -401,22 +401,37 @@
 
 .vscode-installation-note::after {
     content: "";
+    background-image: url(../img/VScode_install.png);
+    display: block;
     width: 100%;
     height: 250px;
-    background-image:url("../img/VScode_install.png");
-    display: block;
+    background-repeat: no-repeat;
 }
 
 .extension-link::after {
-    content: url("../img/external_icon.svg");
-    display: inline-block;
-    height: 20px;
-    width: 20px;
-    margin-right: 5px;
+    content: "";
+    margin-left: 4px;
     position: relative;
     top: 3px;
-    margin-left:10px;
+    background-image: url(../img/external_icon.png);
+    background-size: cover;
+    display: inline-block;
+    width: 21px;
+    height: 20px; 
 }
+
+.download-icon::after {
+    content: "";
+    margin-left: 4px;
+    position: relative;
+    top: 3px;
+    background-image: url(../img/download_icon.svg);
+    background-size: cover;
+    display: inline-block;
+    width: 21px;
+    height: 20px; 
+}
+
 
 h3:has(.alternate-methods) {
     padding-bottom: 40px;
@@ -427,14 +442,8 @@ h3:has(.alternate-methods) {
     text-decoration: none;
     border: none;
 }
-
-.download-icon::after {
-    Content: url(../img/download_icon.svg);
-    display: inline-block;
-    width: 20px;
-    margin-left: 4px;
-    position: relative;
-    top: 4px;
+.extension-link a:hover {
+    border-bottom: 0px!important;
 }
 
 .code-block {

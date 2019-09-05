@@ -2183,6 +2183,10 @@ p.last {
     max-width: 100em;
     width: 1100px;
   }
+  .selection-icon {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 
