@@ -68,7 +68,7 @@ h4 {
   margin-bottom: 10px;
 }
 
-ul li {
+ul li,ol li, code span {
   font-size: 14px;
   font-family: "OpenSans-Regular";
   font-weight: normal;
@@ -1482,8 +1482,20 @@ p.last {
   margin: 0px;
 }
 
-#troubleshooting .section {
+#troubleshooting > .section {
   border-bottom: 1px solid #ccc;
+}
+
+#parse-errors table tr td {
+  font-family: "OpenSans-Regular";
+}
+
+#parse-errors table th {
+  text-align: left;
+  font-family: "OpenSans-Regular";
+}
+#parse-errors table tr:hover {
+  background: #f9f9f9;
 }
 
 
@@ -2132,7 +2144,7 @@ p.last {
   .left-sidebar-container {
     width: 300px;
   }
-  p,a, ul li,ol li {
+  p,a, ul li,ol li,code span {
     font-size: 16px;
   }
   .line {
