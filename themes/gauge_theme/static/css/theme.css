@@ -368,10 +368,10 @@ footer {
 .highlight pre {
   margin: 0;
 }
-
+/* 
 .highlight pre span {
   font-family: 'SourceCodePro-Medium';
-}
+} */
 
 .copyBtn {
     float: right;
