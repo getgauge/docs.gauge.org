@@ -210,7 +210,7 @@ header.top:hover {
   padding-left: 0px;
 }
 .localtoc-container ul li ul li ul {
-  padding-left: 15px;
+  padding-left: 5px;
 }
 .localtoc-container ul  a {
   line-height: 1.85;
@@ -290,7 +290,7 @@ h3.banner-heading {
 
 .docs-toc .sub-toc {
   font-family: "URWGeometric-Medium";
-  padding-left: 10px;
+  padding-left: 5px;
 }
 /* 
 .docs-toc .sub-toc a {
@@ -1350,6 +1350,8 @@ img {
   font-family: FontAwesome;
   font-style: normal;
   font-size: 18px;
+  position: relative;
+  bottom:2px;
 }
 
 #gpl_icon {
@@ -2177,8 +2179,8 @@ p.last {
     display: grid;
     grid-template-areas: 'header header header' 'left-nav main-content right-nav' 'footer footer footer'; 
     grid-template-rows: 100px auto auto;
-    grid-template-columns: 18% 50% 29%;
-    grid-column-gap: 30px;    
+    grid-template-columns: 20% 50% 29%;
+    grid-column-gap: 5px;    
     overflow-x: hidden;
     font-size: 16px;
   }
