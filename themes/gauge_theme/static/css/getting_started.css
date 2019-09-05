@@ -399,8 +399,11 @@
 } */
 
 .vscode-installation-note::after {
-    content: url("../img/VScode_install.png");
+    content: "";
     width: 100%;
+    height: 250px;
+    background-image:url("../img/VScode_install.png");
+    display: block;
 }
 
 .extension-link::after {
