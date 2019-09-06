@@ -1,3 +1,7 @@
+.. meta::
+    :description: You can configure Gauge as per your requirements by using the key value pairs in the gauge.properties and default.properties files...
+    :keywords: configuration global local language testing project vscode idea visualstudio automation mac windows linux
+
 .. cssclass:: topic
 .. role:: heading
 
