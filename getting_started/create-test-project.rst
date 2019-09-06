@@ -2,6 +2,11 @@
 .. role:: intellij
 .. role:: visualstudio
 .. role:: heading
+
+.. meta::
+    :description: This is a quick overview to create a test gauge project on different setups. It guides you through how to create a test project with gauge on different os, in different languages, and on different ides...
+    :keywords: create testing project vscode idea visualstudio automation
+
 .. cssclass:: topic
 
 :heading:`Create a Testing project using Gauge`
