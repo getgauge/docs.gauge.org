@@ -1,3 +1,7 @@
+.. meta::
+    :description: Instructions for running Gauge specifications, passing arguments, data driven execution, parallel execution, re-running failed tests, verbose reporting and more.
+    :keywords: parallel execution rerun failed run specification testing project vscode idea visualstudio automation mac windows linux
+
 .. _run_gauge_specifications:
 .. cssclass:: topic
 .. role:: heading

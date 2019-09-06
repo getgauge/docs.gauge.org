@@ -1,3 +1,7 @@
+.. meta::
+    :description: This page lists FAQs (Frequently Asked Questions) about installing Gauge, running a Gauge specification (spec), configuring Gauge, language runners used with Gauge, and using text editors while writing a Gauge specification.
+    :keywords: faqs testing vscode idea visualstudio automation mac windows linux java javascript ruby python c#
+
 .. cssclass:: topic
 .. role:: heading
 .. role:: highlighted-syntax

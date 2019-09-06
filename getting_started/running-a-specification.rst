@@ -1,3 +1,7 @@
+.. meta::
+    :description: This is a quick overview of how to run a gauge project on different setups. It guides you through how to run a test project with gauge on different os, in different languages, and on different ides...
+    :keywords: run specification testing project vscode idea visualstudio automation
+
 .. role:: heading
 .. role:: vscode
 .. role:: intellij

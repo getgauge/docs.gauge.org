@@ -1,3 +1,7 @@
+.. meta::
+  :description: Gauge is a light-weight cross-platform test automation framework for writing user acceptance tests in Markdown format.
+  :keywords: gauge docs testing automation
+
 Gauge documentation
 
 .. container:: index-page

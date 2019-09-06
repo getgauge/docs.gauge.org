@@ -2,6 +2,11 @@
 .. role:: intellij
 .. role:: visualstudio
 .. role:: heading
+
+.. meta::
+    :description: A quick guide for creating Gauge test projects on Windows, macOS, Ubuntu/Linux using Visual Studio Code, IntelliJ IDEA and Visual Studio for the languages Java, JavaScript, Python, Ruby, C#
+    :keywords: create testing project vscode idea visualstudio automation
+
 .. cssclass:: topic
 
 :heading:`Create a Testing project using Gauge`
