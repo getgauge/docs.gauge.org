@@ -1176,8 +1176,8 @@ Implementation
     }
 
 
-Refactoring (``gauge refactor``)
---------------------------------
+Refactoring (gauge refactor)
+----------------------------
 
 Gauge allows you to rephrase a step, add and remove parameters, and change the order of parameters in all spec files and code files of a project. 
 
