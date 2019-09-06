@@ -1,5 +1,5 @@
 .. meta::
-    :description: In this page there are examples for using Gauge to set up test projects for different languages along with different frameworks.
+    :description: Example Gauge projects for different languages and frameworks.
     :keywords: language testing project vscode idea visualstudio automation mac windows linux java javascript ruby python c#
 
 .. cssclass:: topic

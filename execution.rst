@@ -1,5 +1,5 @@
 .. meta::
-    :description: This page provides information about how to run a specification, multiple arguments that can be used with the gauge run command when a spec is executed, verbose reporting, data driven execution, parallel execution of specs, how to rerun failed and flaky tests, errors that occur when a spec is run, and troubleshooting information...
+    :description: Instructions for running Gauge specifications, passing arguments, data driven execution, parallel execution, re-running failed tests, verbose reporting and more.
     :keywords: parallel execution rerun failed run specification testing project vscode idea visualstudio automation mac windows linux
 
 .. _run_gauge_specifications:

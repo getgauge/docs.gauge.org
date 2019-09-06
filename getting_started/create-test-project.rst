@@ -4,7 +4,7 @@
 .. role:: heading
 
 .. meta::
-    :description: This is a quick overview to create a test gauge project on different setups. It guides you through how to create a test project with gauge on different os, in different languages, and on different ides...
+    :description: A quick guide for creating Gauge test projects on Windows, macOS, Ubuntu/Linux using Visual Studio Code, IntelliJ IDEA and Visual Studio for the languages Java, JavaScript, Python, Ruby, C#
     :keywords: create testing project vscode idea visualstudio automation
 
 .. cssclass:: topic

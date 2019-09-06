@@ -1,5 +1,5 @@
 .. meta::
-  :description: Gauge is a light-weight cross-platform test automation tool with the ability to author test cases in the business language.
+  :description: Gauge is a light-weight cross-platform test automation framework for writing user acceptance tests in Markdown format.
   :keywords: gauge docs testing automation
 
 Gauge documentation
