@@ -1,3 +1,7 @@
+.. meta::
+    :description: This is a quick overview of how to write tests in gauge. It describes about different terminologies of gauge and information you need to write tests in gauge.
+    :keywords: write test specification testing project vscode idea visualstudio automation mac windows linux
+
 .. role:: heading
 .. role:: vscode
 .. role:: intellij

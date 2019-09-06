@@ -1,3 +1,7 @@
+.. meta::
+    :description: This is a quick overview of how to view the report of last test run. It guides you through how to view report of last execution on different os, in different languages, and on different ides...
+    :keywords: view report testing project vscode idea visualstudio automation
+
 .. role:: heading
 .. role:: vscode
 .. role:: intellij
