@@ -2,7 +2,7 @@
 .. role:: visualstudio
 
 :visualstudio:`Step 2: Installing Gauge extension for Visual Studio`
---------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: code-block
 

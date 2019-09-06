@@ -1,17 +1,16 @@
 .. role:: installer-icon
 .. role:: windows
 .. role:: alternate-methods
+
 .. cssclass:: dynamic-content windows
 
 :windows:`Step 1: Installing Gauge on Windows`
-----------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section gives specific instructions on setting up Gauge in a Microsoft Windows environment.
 
-.. cssclass:: dynamic-content windows
-
 :installer-icon:`Install using Windows Installer`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Download the following installation bundle to get the latest stable release of Gauge.
 
@@ -28,14 +27,14 @@ Once you finished installing Gauge, you can go ahead and `install the Gauge Exte
     Gauge automatically sends `telemetry data <https://gauge.org/telemetry>`__ to help us improve the product. If you prefer not to have this data sent, you can choose to  `opt out <https://manpage.gauge.org/gauge_telemetry.html>`__.
 
 
-.. cssclass:: dynamic-content windows alternate-installation
+.. cssclass:: alternate-installation
 
 :alternate-methods:`Alternate Installation Methods`
 
-.. cssclass:: dynamic-content windows collapsible first
+.. cssclass:: collapsible first
 
 :installer-icon:`Install using Chocolatey Package Manager`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. cssclass:: code-block toggle collapsible-content
 
@@ -63,10 +62,10 @@ Once you finished installing Gauge, you can go ahead and `install the Gauge Exte
 
     choco install gauge
 
-.. cssclass:: dynamic-content windows collapsible zip-installer
+.. cssclass:: collapsible zip-installer
 
 :installer-icon:`Install using Zip file`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. cssclass:: toggle collapsible-content
 
@@ -87,10 +86,10 @@ Download the following zip installer.
     Expand-Archive -Path gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-windows.x86_64.zip -DestinationPath custom_path
 
 
-.. cssclass:: dynamic-content windows collapsible npm-installer
+.. cssclass:: collapsible npm-installer
 
 :installer-icon:`Install using NPM installation`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. cssclass:: toggle collapsible-content
 
@@ -117,10 +116,10 @@ Download the following zip installer.
 
 
 
-.. cssclass:: dynamic-content windows collapsible nightly-installer last
+.. cssclass:: collapsible nightly-installer last
 
 :installer-icon:`Nightly Installation`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. cssclass:: toggle collapsible-content
 

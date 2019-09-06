@@ -2,7 +2,7 @@
 .. role:: vscode
 
 :vscode:`Step 2: Installing Gauge extension for Visual Studio Code`
--------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: code-block
 

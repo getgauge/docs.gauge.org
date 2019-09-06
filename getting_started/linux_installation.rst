@@ -1,17 +1,16 @@
 .. role:: alternate-methods
 .. role:: installer-icon
 .. role:: linux
+
 .. cssclass:: dynamic-content linux
 
 :linux:`Step 1: Installing Gauge on Linux`
-------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Gauge can be installed on any flavour of Linux using the shell script. The Following steps will guide you to a quick install on a linux box.
 
-.. cssclass:: dynamic-content linux
-
 :installer-icon:`Install Using Shell Script APT_GET`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. First, add Gauge's GPG key with this command:
 
@@ -36,14 +35,14 @@ Gauge can be installed on any flavour of Linux using the shell script. The Follo
     Gauge automatically sends `telemetry data <https://gauge.org/telemetry>`__ to help us improve the product. If you prefer not to have this data sent, you can choose to  `opt out <https://manpage.gauge.org/gauge_telemetry.html>`__.
 
 
-.. cssclass:: dynamic-content linux alternate-installation
+.. cssclass:: alternate-installation
 
 :alternate-methods:`Alternate Installation Methods`
 
-.. cssclass:: dynamic-content linux collapsible first
+.. cssclass:: collapsible first
 
 :installer-icon:`Install using DNF Package Manager`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. cssclass:: toggle collapsible-content
 
@@ -60,10 +59,10 @@ Install Gauge using dfn by running this command
     sudo dnf install gauge
 
 
-.. cssclass:: dynamic-content linux collapsible zip-installer
+.. cssclass:: collapsible zip-installer
 
 :installer-icon:`Install using ZIP file`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. cssclass:: toggle collapsible-content
 
@@ -78,10 +77,10 @@ Install Gauge using dfn by running this command
 
     unzip -o gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip -d /usr/local/bin
 
-.. cssclass:: dynamic-content linux collapsible npm-installer
+.. cssclass:: collapsible npm-installer
 
 :installer-icon:`Install using NPM installation`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. cssclass:: toggle collapsible-content
 
@@ -106,11 +105,10 @@ Install Gauge using dfn by running this command
 
     npm install -g @getgauge/cli
 
-
-.. cssclass:: dynamic-content linux collapsible curl-installer
+.. cssclass:: collapsible curl-installer
 
 :installer-icon:`Install Using CURL`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. cssclass:: toggle collapsible-content
 
@@ -130,10 +128,10 @@ Or install Gauge to a [custom path] using
 
     curl -SsL https://downloads.gauge.org/stable | sh -s -- --location-[custom path]
 
-.. cssclass:: dynamic-content linux collapsible nightly-installer last
+.. cssclass:: collapsible nightly-installer last
 
 :installer-icon:`Nightly Installation`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. cssclass:: toggle collapsible-content
 

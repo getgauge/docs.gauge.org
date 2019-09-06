@@ -122,7 +122,7 @@ const isToggleClass = function (child) {
 }
 
 const hideOtherInstallation = function (clickedElem) {
-    document.querySelectorAll('.collapsible h3').forEach((collapsible) => {
+    document.querySelectorAll('.collapsible h4').forEach((collapsible) => {
         if (collapsible != clickedElem) {
             collapsible.classList.remove('expand-collapsible');
             var children = collapsible.parentElement.children;
@@ -134,7 +134,7 @@ const hideOtherInstallation = function (clickedElem) {
 }
 
 const expandInstaller = function () {
-    document.querySelectorAll('.collapsible h3').forEach((collapsible) => {
+    document.querySelectorAll('.collapsible h4').forEach((collapsible) => {
         collapsible.onclick = function () {
             hideOtherInstallation(collapsible);
             var children = collapsible.parentElement.children;
@@ -149,8 +149,8 @@ const expandInstaller = function () {
 const showAlternateMethods = function () {
     document.querySelectorAll('.alternate-methods').forEach(alternateMethod => {
         alternateMethod.onclick = function () {
-            let collapsibleClasss = document.querySelectorAll(`.${SELECTIONS.os}+.collapsible`);
-            collapsibleClasss.forEach(coll => {
+            let collapsibleClass = document.querySelectorAll('.collapsible');
+            collapsibleClass.forEach(coll => {
                 coll.classList.toggle('inline-display');
             })
         }
