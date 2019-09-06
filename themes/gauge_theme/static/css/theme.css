@@ -736,16 +736,8 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
   margin-bottom: 20px;
 }
 
-#rightNav li.active>a {
-  border-bottom: 1px solid #ccc;
-}
-
 .localtoc ul li ul a:hover {
   border-bottom: 1px dotted rgb(245, 193, 14);
-}
-
-#rightNav .rst-breadcrumbs-buttons a:hover {
-  border: 1px solid transparent;
 }
 
 table {
@@ -813,41 +805,8 @@ tr:hover {
   padding: 0px 20px;
 }
 
-ul.breadcrumbs {
-  list-style: none;
-  border: 1px solid transparent;
-  margin: 0;
-  padding: 0;
-  display: block;
-  width: 100%
-}
 .content>.section>h1:nth-child(1) {
   margin-top: 10px;
-}
-
-.breadcrumbs-container {
-  padding-top: 16px;
-  margin: 98px 0px 0px 0px;
-}
-
-ul.breadcrumbs {
-  margin-left: -3px;
-}
-
-ul.breadcrumbs li {
-  display: inline-flex;
-  width: auto;
-  border: 1px solid transparent;
-}
-
-ul.breadcrumbs li a {
-  padding: 0px 5px 0px 0px;
-}
-
-.breadcrumbs-aside {
-  float: left;
-  width: 100%;
-  margin: 5px 0px;
 }
 
 .linenodiv pre {
