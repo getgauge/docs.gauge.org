@@ -18,7 +18,6 @@ Gauge documentation
     getting_started/installing-gauge
     getting_started/running-a-specification
     getting_started/view-a-report
-    installation
     overview
     plugin
     writing-specifications

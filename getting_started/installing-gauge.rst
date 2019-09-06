@@ -60,6 +60,8 @@ Select your setup to see the instructions for installing gauge.
          Visual Studio Code
 
 
+.. _installation-instructions:
+
 .. cssclass:: sub-heading
 
 Installation Instructions

@@ -533,7 +533,7 @@ span.installer-icon:before {
     display: inline-block;
 }
 
-h3 span.installer-icon {
+h4 span.installer-icon {
     color: #1e1e1e;
     font-size: 20px;
     font-family: 'URWGeometric-Medium';
