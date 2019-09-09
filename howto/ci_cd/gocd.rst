@@ -10,7 +10,7 @@ Setup
 -  `Setup a new pipeline on Go <https://docs.gocd.io/current/configuration/quick_pipeline_setup.html>`__
 
    .. image:: images/Gauge_Pipeline.png
--  :ref:`Download and Install Gauge <installation-instructions>`on the Go Agents
+-  :ref:`Download and Install Gauge <installation-instructions>` on the Go Agents
 -  Install the required gauge :ref:`language plugin <install_plugins>` on the Go agents.
 
 Tips on Installation
@@ -26,12 +26,12 @@ Tips on Installation
 Create execution task
 ---------------------
 
--  Create a new task which will run ``gauge run specs``.
+-  Create a new task which will run :highlighted-syntax:`gauge run specs`.
 -  If you want to run only a subset of specs, you can use :ref:`tagged_execution`. 
-    Eg. ``gauge run --tags "tag1 & tag2" specs``
--  Adding a flag ``-p`` runs them using :ref:`parallel_execution`.
--  Run against specific :ref:`environments` using the ``--env`` flag
--  See the `Manpage <https://manpage.gauge.org>` __ for list of all the flags that can be used.
+    Eg. :highlighted-syntax:`gauge run --tags tag1 & tag2 specs`
+-  Adding a flag :highlighted-syntax:`-p` runs them using :ref:`parallel_execution`.
+-  Run against specific :ref:`environments` using the :highlighted-syntax:`--env` flag
+-  See the `Manpage <https://manpage.gauge.org>`__ for list of all the flags that can be used.
 
    .. figure:: images/Configuring_Gauge.png
       :alt: adding new task
