@@ -548,14 +548,6 @@ tr:hover {
   margin: 2% 0 2% 0;
 }
 
-.edit-on-github {
-  background-image: url(../img/github-logo.svg);
-  background-size: 16px 16px;
-  background-repeat: no-repeat;
-  background-position-y: center;
-  padding: 0px 20px;
-}
-
 .content>.section>h1:nth-child(1) {
   margin-top: 10px;
 }
@@ -798,6 +790,32 @@ header.top::after {
   height: 18px;
 }
 
+.edit-page a::before {
+  content: url("../img/github-brands.svg");
+  width: 16px;
+  right: 6px;
+  position: relative;
+  display: inline-block;
+}
+
+.foolinks .github-icon::before {
+  content: url("../img/github-logo.svg");
+  width: 30px;
+  right: 6px;
+  position: relative;
+  display: inline-block;
+  margin: 0px 5px;
+}
+
+.foolinks .twitter-icon::before {
+  content: url("../img/twitter.svg");
+  width: 30px;
+  right: 6px;
+  position: relative;
+  display: inline-block;
+  margin: 0px 5px;
+}
+
 .githubstar-box span {
   color: #fff;
   padding: 0 4px;
@@ -847,10 +865,6 @@ footer {
   display: flex;
   justify-content: center;
   width:100%;
-}
-
-footer .fa-twitter:before,footer .fa-github:before {
-  content: ''!important;
 }
 
 img {
@@ -1035,14 +1049,6 @@ img {
 .edit-page>a {
   color: #337ab7;
   text-decoration: none;
-}
-
-.edit-page .fa-github {
-  font-family: FontAwesome;
-  font-style: normal;
-  font-size: 18px;
-  position: relative;
-  bottom:2px;
 }
 
 #gpl_icon {
@@ -1290,22 +1296,6 @@ p.experimental-feature {
     display: none;
   }
 
-  .sliding-docs-toc.docs-toc ul li a {
-    text-decoration: none;
-    list-style-type: none;
-    color: #1e1e1e;
-    font-weight: normal;
-    font-family: "OpenSans-Regular";
-  }
-
-  .sliding-docs-toc.docs-toc>ul>li {
-    padding-bottom: 0px!important;
-  }
-
-  .sliding-docs-toc.docs-toc {
-    padding-top: 30px;
-  }
-
   #search {
     width: 100%;
     padding: 0px 35px;
@@ -1372,7 +1362,7 @@ p.experimental-feature {
 
   .proj-setup-filters.docutils .selection input:checked~.checkmark:after {
     left: 5%;
-    top: 18px;
+    top: 16px;
   }
 
   .selection .radio-container {
@@ -1666,13 +1656,11 @@ p.experimental-feature {
   }
 
   #installation-selection input:checked~.checkmark:after {
-    display: inline;
-    content: '\f192';
-    font-family: FontAwesome;
+    content: url("../img/radio-button.svg");
     position: absolute;
-    top: 15px;
+    top: 13px;
     left: 14px;
-    text-align: left;
+    width: 12px;
   }
 
   .row.banner {
@@ -1681,7 +1669,7 @@ p.experimental-feature {
 
   .proj-setup-filters.docutils .selection input:checked~.checkmark:after {
     left: 5%;
-    top: 18px;
+    top: 16px;
   }
 
   #change-filter {

@@ -31,7 +31,7 @@
 {% set gaugehome = '//gauge.org' %}
 {% endif %}
 
-{% set css_files = ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'] %}
+{% set css_files = ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css'] %}
 {% set script_files = ['https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', '_static/js/app.min.js'] %}
 {% set title = 'Gauge Documentation' %}
 
@@ -194,7 +194,6 @@ var DOCUMENTATION_OPTIONS = {
         {% else %}
         <div class="edit-page">
           <a href="https://github.com/getgauge/docs.gauge.org/edit/master/{{pagename}}.rst">
-            <i class="fab fa-github"></i>
             <u>Improve this page</u> </a>
         </div>
         <a href="javascript:" aria-label= "Return to top" id="return-to-top"><i></i></a>
@@ -256,8 +255,8 @@ var DOCUMENTATION_OPTIONS = {
           <h5>Follow us</h5>
           <nav class="footer_links">
             <ul class="foolinks">
-              <li> <a href="//github.com/getgauge/gauge" aria-label="Gauge Github" target="_blank"  rel="noopener"><i class="fab fa-github"></i></a> <a
-                  href="//twitter.com/getgauge" aria-label="Gauge twitter" target="_blank"  rel="noopener"><i class="fab fa-twitter"></i></a></li>
+              <li> <a href="//github.com/getgauge/gauge" aria-label="Gauge Github" target="_blank"  rel="noopener" class="github-icon"></a> <a
+                  href="//twitter.com/getgauge" aria-label="Gauge twitter" target="_blank"  rel="noopener" class="twitter-icon"></i></a></li>
             </ul>
           </nav>
           <div class="licence">

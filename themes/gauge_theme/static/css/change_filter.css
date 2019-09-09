@@ -43,11 +43,11 @@
 
 .selection input:checked~.checkmark:after {
     display: inline;
-    content: '\f192';
-    font-family: FontAwesome;
+    content: url("../img/radio-button.svg");
     position: absolute;
     left: 5%;
     top: 50%;
+    width: 12px;
     text-align: left;
 }
 
@@ -103,12 +103,10 @@
 }
 
 #proj-setup-filter-section .applied-filters .applied-filter::before {
-    content: '\f058';
-    font-family: FontAwesome;
-    border-radius: 50%;
+    content: url("../img/check-circle-solid.svg");
     padding-right: 10px;
     display: inline-block;
-    width: 10px ;
+    width: 11px;
 }
 
 #change-filter:hover {
