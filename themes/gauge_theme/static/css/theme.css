@@ -68,6 +68,13 @@ h4 {
   margin-bottom: 10px;
 }
 
+h5 {
+  font-size: 16px;
+  font-family: 'URWGeometric-Medium';
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
 ul li,ol li, code span {
   font-size: 14px;
   font-family: "OpenSans-Regular";
