@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	const returnToTopBtn = document.querySelector("#return-to-top");
 	// ===== Scroll to Top ====
 	window.addEventListener("scroll", function() {
-		
 		if(returnToTopBtn){
 			if (window.pageYOffset >= 50) {
 				// If page is scrolled more than 50px

@@ -334,7 +334,6 @@ footer {
   padding: 15px;
   margin: 15px 0 15px 0;
   background-color: #222222 !important;
-  overflow: auto;
 }
 
 .highlight pre {
@@ -348,11 +347,11 @@ footer {
   border: none;
   font-family: 'SourceCodePro-Medium';
   color: #1e1e1e;
-  top: 15px;
   border-radius: 3px;
   transition: all 0.25s;
   padding: 5px 15px;
   font-size: 13px;
+  top: -40px;
 }
 
 .copyBtn:hover {
@@ -360,14 +359,14 @@ footer {
 }
 
 .copied-text {
-  float: right;
   font-family: monospace;
   color: grey;
-  right: 63px;
-  top: 16px;
   padding-right: 10px;
-  display: inline-block;
+  float: right;
+  right: -70px;
   opacity: 0;
+  position: relative;
+  top: -10px;
 }
 
 .codeBox {
@@ -1112,7 +1111,9 @@ p a:visited {
 }
 
 .dynamic-content pre {
-  overflow: hidden;
+  overflow: scroll;
+  width: 88%;
+  min-height: 40px;
 }
 
 .dynamic-content h2 {
@@ -1503,6 +1504,7 @@ p.experimental-feature::before {
 
   .copyBtn {
     display: inline-block;
+    position: relative;
   }
 
   header.top {
