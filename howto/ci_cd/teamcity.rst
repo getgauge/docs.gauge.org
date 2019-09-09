@@ -1,38 +1,39 @@
 Tutorial: Integrating Gauge with TeamCity
 =========================================
 
--  `Download <//gauge.org/get_started>`__ and Install
-   Gauge on the agents. Read more on installing Gauge
-   `here <https://docs.gauge.org/installing.html#installation>`__.
--  Install the required Gauge :ref:`language plugins <install_plugins>` on
-   the agents as: ``gauge install <language>``
+Setup
+-----
+
+-  :ref:`Download and Install Gauge <installation-instructions>` on the agents.
+-  Install the required gauge :ref:`language plugin <install_plugins>` on the agents.
 
 Tips on Installation
 --------------------
 
 -  Gauge is installed system wide by default and not user wide. However,
    plugins are installed per user. So plugins should be installed via
-   user account with which the TeamCity agent executes. Refer default
-   install location of Gauge and its plugins
-   `here <https://docs.gauge.org/troubleshooting.html#gauge-installation>`__.
+   user account with which the TeamCity executes. Refer :ref:`default install
+   location of Gauge and its plugins <installation-faq>`.
 
--  Alternately, you can set `custom location for
-   plugins <https://docs.gauge.org/troubleshooting.html#custom-plugin-install-location>`__
+-  Alternately, you can set :ref:`custom location for plugins <custom-plugin-installation>`
    so that its accessible to TeamCity agent running as a different user.
+
 
 Create execution task
 ---------------------
 
 -  Create a new project in TeamCity pointing to Gauge project repository
    URL.
--  Add a build step which will run ``gauge run specs``. 
-    image:: images/TeamCity_buildStep.png
+-  Add a build step which will run :highlighted-syntax:`gauge run specs`.
+
+    .. image:: images/TeamCity_buildStep.png
 
 -  If you want to run only a subset of specs, you can use :ref:`tagged_execution`. 
-    Eg. ``gauge run --tags "tag1 & tag2" specs``
--  Adding a flag ``-p`` runs them using :ref:`parallel_execution`.
--  Run against specific :ref:`environments` using the ``--env`` flag.
--  See the `Manpage <https://manpage.gauge.org>` __ for list of all the flags that can be used.
+    Eg. :highlighted-syntax:`gauge run --tags tag1 & tag2 specs`
+-  Adding a flag :highlighted-syntax:`-p` runs them using :ref:`parallel_execution`.
+-  Run against specific :ref:`environments` using the :highlighted-syntax:`--env` flag
+-  See the `Manpage <https://manpage.gauge.org>`__ for list of all the flags that can be used.
+
 
 Reports
 -------
@@ -50,8 +51,8 @@ Reports
    tab <https://confluence.jetbrains.com/display/TCD9/Including+Third-Party+Reports+in+the+Build+Results>`__
    to view your html reports generated.
 
-   To add custom tab, go to Project Settings -> Report tabs -> Add a new
-   build report tab.
+   To add custom tab, go to :highlighted-syntax:`Project Settings -> Report tabs -> Add a new
+   build report tab`.
 
    .. figure:: images/TeamCity_ReportTab.png
       :alt: report tab
