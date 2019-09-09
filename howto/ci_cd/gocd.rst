@@ -10,7 +10,7 @@ Setup
 -  `Setup a new pipeline on Go <https://docs.gocd.io/current/configuration/quick_pipeline_setup.html>`__
 
    .. image:: images/Gauge_Pipeline.png
--  `Download <//gauge.org/get_started>`__ and Install Gauge on the Go Agents
+-  :ref:`Download and Install Gauge <installation-instructions>`on the Go Agents
 -  Install the required gauge :ref:`language plugin <install_plugins>` on the Go agents.
 
 Tips on Installation
@@ -18,13 +18,10 @@ Tips on Installation
 
 -  Gauge is installed system wide by default and not user wide. However,
    plugins are installed per user. So plugins should be installed via
-   user account with which the Go agent executes. Refer default install
-   location of Gauge and its plugins
-   `here <https://docs.gauge.org/troubleshooting.html#gauge-installation>`__.
+   user account with which the Go agent executes. Refer :ref:`default install
+   location of Gauge and its plugins <installation-faq>`.
 
--  Alternately, you can set `custom location for
-   plugins <https://docs.gauge.org/troubleshooting.html#custom-plugin-install-location>`__
-   so that its accessible to Go agent running as a different user.
+-  Alternately, you can set :ref:`custom location for plugins <custom-plugin-installation>` so that its accessible to Go agent running as a different user.
 
 Create execution task
 ---------------------

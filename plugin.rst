@@ -111,6 +111,8 @@ You can also install a plugin from a zip file instead of downloading from the pl
 
 You can download the latest version of a plugin from the ``Releases`` section of the plugin's GitHub repository. See the `plugin list <https://gauge.org/plugins/>`_ to find the Gauge repositories.
 
+.. _custom-plugin-installation:
+
 Customize plugin install location
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
