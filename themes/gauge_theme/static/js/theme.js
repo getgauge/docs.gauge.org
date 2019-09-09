@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		.forEach(elem => elem.parentNode.removeChild(elem));
 	document
 		.querySelectorAll(".localtoc-container ul .heading")
-		.forEach(elem => elem.parentNode.removeChild(elem));
+		.forEach(elem => elem.parentNode.remove());
 
 	// remove nested container classes, prevent overlap with sidebar
 	document
