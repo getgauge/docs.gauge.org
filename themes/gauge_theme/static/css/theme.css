@@ -1204,6 +1204,11 @@ p.experimental-feature::before {
   display: inline-block;
   margin: 5px 5px 0px 0px;
 }
+
+.highlight .nt {
+  color: #FC88B2 !important;
+}
+
 @media only screen and (min-width: 250px) {
   body {
     display: grid;
