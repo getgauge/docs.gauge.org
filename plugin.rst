@@ -120,7 +120,7 @@ Customize plugin install location
 
 .. cssclass:: dynamic-content macos
 
-    By default the plugins are stored at ``~/.gauge/plugins`` in Mac OS X and Linux systems.
+    By default the plugins are stored at ``~/.gauge/plugins`` in macOS X and Linux systems.
 
 .. cssclass:: dynamic-content linux
 
@@ -314,7 +314,7 @@ Plugins are installed in the ``.gauge/plugins`` directory in the user's home dir
 
 .. cssclass:: dynamic-content macos
 
-    The plugin installation directory for ``Mac OS X`` operating system is  ``~/.gauge/plugins``
+    The plugin installation directory for ``macOS X`` operating system is  ``~/.gauge/plugins``
 
 .. cssclass:: dynamic-content linux
 

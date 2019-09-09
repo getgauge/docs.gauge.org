@@ -4,10 +4,10 @@
 
 .. cssclass:: dynamic-content macos
 
-:macos:`Step 1: Installing Gauge on MacOS`
+:macos:`Step 1: Installing Gauge on macOS`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section gives specific instructions on setting up Gauge in a Mac OS environment.
+This section gives specific instructions on setting up Gauge in a macOS environment.
 
 You can install Gauge using any of the following methods.
 
@@ -16,7 +16,7 @@ You can install Gauge using any of the following methods.
 
 .. admonition:: System Requirements
 
-    - Mac OS
+    - macOS
 
     - Homebrew
 
@@ -78,7 +78,7 @@ Or install Gauge to a [custom path] using
 
     .. admonition:: System Requirements
 
-        - Mac OS
+        - macOS
 
         - Commandline tool
 

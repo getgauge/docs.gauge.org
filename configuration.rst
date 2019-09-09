@@ -28,7 +28,7 @@ For example, you can have separate Gauge reports or a single, new, time-stamped 
 
 Global configuration of Gauge (``gauge.properties``)
 ----------------------------------------------------
-``gauge.properties`` is a ``.properties`` file that contains all Gauge specific configurations. You can use or change the *key value* pairs present in this file to configure Gauge across all Gauge projects. This file is located at ``~/.gauge/config`` in Mac OS and Linux systems and at ``%APPDATA%\Gauge\config`` in Windows systems.
+``gauge.properties`` is a ``.properties`` file that contains all Gauge specific configurations. You can use or change the *key value* pairs present in this file to configure Gauge across all Gauge projects. This file is located at ``~/.gauge/config`` in macOS and Linux systems and at ``%APPDATA%\Gauge\config`` in Windows systems.
 
 You can also use the ``gauge config`` command to change the value of a key in the ``gauge.properties`` file.
 

@@ -11,7 +11,7 @@ DISPLAY_SELECTION_MAP = {
     'Java': 'java',
     'Python': 'python',
     'Ruby': 'ruby',
-    'MacOS': 'macos',
+    'macOS': 'macos',
     'Linux': 'linux',
     'Windows': 'windows',
 }

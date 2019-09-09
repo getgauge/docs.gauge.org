@@ -36,7 +36,7 @@ Select your setup to see the instructions for installing gauge.
          :title: 1. Select your OS
 
          Linux
-         MacOS
+         macOS
          Windows
 
       .. installationselection::
@@ -79,7 +79,7 @@ Installation Instructions
 
       .. container:: applied-filter
 
-         MacOs
+         macOS
 
       .. container:: applied-filter
 

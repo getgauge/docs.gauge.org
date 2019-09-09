@@ -8,7 +8,7 @@ const SELECTION_DISPLAY_NAMES = {
     'java': 'Java',
     'python': 'Python',
     'ruby': 'Ruby',
-    'macos': 'MacOS',
+    'macos': 'macOS',
     'linux': 'Linux',
     'windows': 'Windows',
 
