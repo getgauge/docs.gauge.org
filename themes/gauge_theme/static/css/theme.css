@@ -190,6 +190,12 @@ header.top:hover {
 .localtoc-container ul li ul li ul {
   padding-left: 5px;
 }
+
+.localtoc-container ul li ul li ul li:before {
+  content: '- ';
+  color: #5e5e5e;
+}
+
 .localtoc-container ul  a {
   line-height: 1.85;
   letter-spacing: normal;
