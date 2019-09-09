@@ -1205,13 +1205,14 @@ p.experimental-feature::before {
   margin: 5px 5px 0px 0px;
 }
 
-.highlight .nt {
+.highlight .nt,.o,.kn {
   color: #FC88B2 !important;
 }
 
 .highlight .nf,.l {
   background: #222 !important;
 }
+
 
 @media only screen and (min-width: 250px) {
   body {
