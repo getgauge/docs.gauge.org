@@ -113,7 +113,6 @@ var DOCUMENTATION_OPTIONS = {
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   {% endblock %}
-  <!-- {{ toctree }} -->
   {%- block header %}{% endblock %}
 
   {%- block content %}
@@ -190,9 +189,6 @@ var DOCUMENTATION_OPTIONS = {
       {% else %}
       <div class="docs-container containers">
       {% endif %}
-      
-        <!-- <div class="row col-md-12 bigContainer"> -->
-
         {% if pagename == 'index' %}
         {% include '_landing.html' %}
         {% else %}
@@ -204,7 +200,6 @@ var DOCUMENTATION_OPTIONS = {
         <a href="javascript:" aria-label= "Return to top" id="return-to-top"><i></i></a>
         {% block body %}{% endblock %}
         {% endif %}
-        <!-- </div> -->
       </div>
       <!-- Right Sidebar -->
       {% if pagename != 'index' %}
@@ -215,7 +210,6 @@ var DOCUMENTATION_OPTIONS = {
         </div>
       </div>
       {% endif %}
-    <!-- </div> -->
     {%- endblock %}
 
     {%- block footer %}
@@ -276,7 +270,6 @@ var DOCUMENTATION_OPTIONS = {
       {{- script() }}
       {%- endblock %}
     </footer>
-  <!-- </div> -->
   {%- endblock %}
 </body>
 
