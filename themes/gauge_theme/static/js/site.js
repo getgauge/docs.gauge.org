@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function copyCode(elements) {
 	elements.forEach(function(element) {
 		element.innerHTML += "<button class='copyBtn'>Copy</button>";
-		element.innerHTML += "<input class='codeBox' value='none'> </input>";
+		element.innerHTML += "<input aria-label='clipboard' class='codeBox' value='none'> </input>";
 		element.innerHTML += '<span class="copied-text">copied</span>';
 	});
 
