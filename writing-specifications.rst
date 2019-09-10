@@ -1,5 +1,5 @@
 .. meta::
-    :description: This page provides information about what a specification is, how to write a specification, and other related information such as concepts, step implementation, specs directory, and so on.
+    :description: A quick tour of what a specification is, how to write a specification, and other related information such as concepts, step implementation, specs directory, and so on.
     :keywords: write test specification testing project vscode idea visualstudio automation mac windows linux
 
 .. role:: heading

@@ -1,5 +1,5 @@
 .. meta::
-    :description: This is tutorial of how to integrate Gauge with Travis CI
+    :description: This is tutorial on how to integrate Gauge with Travis CI
     :keywords: testing gauge travis automation
 
 Tutorial: Integrating Gauge with Travis CI
