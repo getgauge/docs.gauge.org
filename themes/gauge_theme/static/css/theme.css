@@ -335,7 +335,9 @@ footer {
 }
 
 .highlight pre {
-  margin: 0;
+  margin: 0px;
+  overflow: scroll;
+  min-height: 40px;
 }
 
 .copyBtn {
@@ -353,23 +355,16 @@ footer {
 }
 
 .copyBtn:hover {
-  opacity: 0.8;
+  cursor: pointer;
+  background: rgb(247, 247, 247);
 }
 
-.copied-text {
-  font-family: monospace;
-  color: grey;
-  padding-right: 10px;
-  float: right;
-  right: -70px;
-  opacity: 0;
-  position: relative;
-  top: -10px;
-}
 
 .codeBox {
   opacity: 0;
   width: 10px;
+  top: -38px;
+  position: relative;
 }
 
 body {
@@ -1074,7 +1069,7 @@ img {
 .dynamic-content p a:hover {
   color: #1e1e1e;
   background-color: transparent;
-  border-bottom: 1px transparent solid;  
+  border-bottom: 1px transparent solid;
 }
 
 p a:visited {
@@ -1098,12 +1093,6 @@ p a:visited {
   font-family: "OpenSans-Regular";
   font-weight: normal;
   color: #1e1e1e;
-}
-
-.dynamic-content pre {
-  overflow: scroll;
-  width: 88%;
-  min-height: 40px;
 }
 
 .dynamic-content h2 {
@@ -1754,6 +1743,10 @@ p.experimental-feature::before {
     position: relative;
     right: 0;
     top: 5px;
+  }
+
+  .highlight-console .highlight pre {
+    width: 88%;
   }
 }
 

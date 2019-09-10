@@ -77,22 +77,18 @@ function copyCode(elements) {
 		if (!parentElement) return;
 		parentElement.innerHTML += "<button class='copyBtn'>Copy</button>";
 		parentElement.innerHTML += "<input aria-label='clipboard' class='codeBox' value='none'> </input>";
-		parentElement.innerHTML += '<span class="copied-text">copied</span>';
 	});
 
 	document.querySelectorAll(".copyBtn").forEach(btn =>
 		btn.addEventListener("click", function() {
 			const value = this.parentElement.firstElementChild.innerText;
-			const copied_text = this.nextElementSibling.nextElementSibling;
 			const codeBox = this.nextElementSibling;
 			codeBox.value = value;
 			codeBox.select();
 			document.execCommand("copy");
-			copied_text.classList.remove("fadeOut");
-			copied_text.classList.add("fadeIn");
-			setTimeout(function() {
-				copied_text.classList.remove("fadeIn");
-				copied_text.classList.add("fadeOut");
+			this.innerText = 'Copied'
+			setTimeout(() => {
+				this.innerText = 'Copy'
 			}, 3000);
 		})
 	);
