@@ -42,21 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			document.querySelector("body,html").scrollTop = 0; // Scroll to top of body
 		});
 
-	expandAlternateMethods();
-
-	document.querySelectorAll(".headerlink").forEach(elem =>
-		elem.addEventListener("click", function() {
-			var sectionId = this.getAttribute("href");
-			const header = document.querySelector(sectionId);
-			const top = header.offsetTop;
-
-			if (window.getComputedStyle(header).display == "none") {
-				header.style.display = "inline-block";
-			}
-			document.querySelector("body,html").scrollTop = top;
-		})
-	);
-
 	document.querySelectorAll(".docs-toc li.doc-toc-group").forEach(elem =>
 		elem.addEventListener("click", function(event, selector) {
 			if (!event.currentTarget.className.match("active-toc")) {
@@ -79,17 +64,18 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 });
 
-function expandAlternateMethods() {
-	var sectionId = window.location.hash;
-	if (sectionId) {
-		const header = document.querySelector(sectionId);
-		const top = header.offsetTop;
+const scrollToHeader = function() {
+	const sectionId = window.location.hash;
+	const header = document.querySelector(sectionId);
+	const top = header.offsetTop;
 
-		if (header.classList.contains("collapsible")) {
-			document
-				.querySelectorAll(".collapsible")
-				.forEach(elem => elem.classList.add("inline-display"));
-		}
-		document.querySelector("body,html").scrollTop = top;
+	if (header.classList.contains("collapsible")) {
+		document
+			.querySelectorAll(".collapsible")
+			.forEach(elem => elem.classList.add("inline-display"));
 	}
-}
+	document.querySelector("body,html").scrollTop = top - 100;
+	event.stopPropagation();
+};
+
+window.addEventListener("hashchange", scrollToHeader, true);
