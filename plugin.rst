@@ -416,6 +416,8 @@ HTML-Report
 
 For more information about HTML report generation plugin for Gauge, see `Gauge GitHub for HTML report generation <https://github.com/getgauge/html-report>`__ .
 
+.. _xml-report:
+
 XML-Report
 ^^^^^^^^^^
 
