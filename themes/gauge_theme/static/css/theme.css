@@ -329,8 +329,6 @@ footer {
 }
 
 .highlight {
-  border: 0.5px solid;
-  border-radius: 5px;
   padding: 15px;
   margin: 15px 0 15px 0;
   background-color: #222222 !important;
