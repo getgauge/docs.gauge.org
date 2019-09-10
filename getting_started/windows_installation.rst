@@ -16,7 +16,7 @@ Download the following installation bundle to get the latest stable release of G
 
 .. cssclass:: extension-link download-icon
 
-`windows Installer <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-windows.x86_64.exe>`__
+`Windows Installer <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-windows.x86_64.exe>`__
 
 .. figure:: ../images/windows/installer.png
       :alt: Windows installer
@@ -71,9 +71,9 @@ Once you finished installing Gauge, you can go ahead and `install the Gauge Exte
 
 Download the following zip installer.
 
-.. cssclass:: toggle collapsible-content extension-link
+.. cssclass:: toggle collapsible-content
 
-`gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-windows.x86_64.zip <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-windows.x86_64.zip>`__
+`Zip Installer <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-windows.x86_64.zip>`__
 
 .. cssclass:: toggle collapsible-content
 
@@ -81,7 +81,7 @@ Download the following zip installer.
 
 .. cssclass:: toggle collapsible-content
 
-.. code-block:: console
+.. custom-code-block:: console
 
     Expand-Archive -Path gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-windows.x86_64.zip -DestinationPath custom_path
 
