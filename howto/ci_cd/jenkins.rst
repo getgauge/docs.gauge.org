@@ -26,6 +26,7 @@ Create execution task
 ---------------------
 
 -  Create a new job which will run :highlighted-syntax:`gauge run specs`.
+
    - In :highlighted-syntax:`Source Code Management` select :highlighted-syntax:`Git` give the git repository url.
    - In :highlighted-syntax:`Build` select :highlighted-syntax:`Execute Shell` and specify the command :highlighted-syntax:`gauge run specs`.
 
