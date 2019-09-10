@@ -66,16 +66,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const scrollToHeader = function() {
 	const sectionId = window.location.hash;
-	const header = document.querySelector(sectionId);
-	const top = header.offsetTop;
+	if(sectionId){
+		const header = document.querySelector(sectionId);
 
-	if (header.classList.contains("collapsible")) {
-		document
+		if (header.classList.contains("collapsible")) {
+			document
 			.querySelectorAll(".collapsible")
 			.forEach(elem => elem.classList.add("inline-display"));
+		}
+		const top = header.offsetTop;
+		document.querySelector("body,html").scrollTop = top - 100;
+		event.stopPropagation();
 	}
-	document.querySelector("body,html").scrollTop = top - 100;
-	event.stopPropagation();
 };
 
+window.addEventListener("load", scrollToHeader);
 window.addEventListener("hashchange", scrollToHeader, true);
