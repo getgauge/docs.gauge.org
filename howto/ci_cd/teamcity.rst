@@ -1,5 +1,7 @@
-Tutorial: Integrating Gauge with TeamCity
-=========================================
+.. role:: heading
+
+:heading:`Tutorial: Integrating Gauge with TeamCity`
+====================================================
 
 Setup
 -----

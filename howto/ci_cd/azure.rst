@@ -1,5 +1,7 @@
-Tutorial: Integrating Gauge with Azure
-======================================
+.. role:: heading
+
+:heading:`Tutorial: Integrating Gauge with Azure`
+=================================================
 
 `Azure Pipelines <https://dev.azure.com/>`__ Build, test, and deploy with CI/CD that works with any language,
  platform, and cloud. Connect to GitHub or any other Git provider and deploy continuously.

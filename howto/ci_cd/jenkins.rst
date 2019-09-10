@@ -1,5 +1,7 @@
-Tutorial: Integrating Gauge with Jenkins
-========================================
+.. role:: heading
+
+:heading:`Tutorial: Integrating Gauge with Jenkins`
+===================================================
 
 `Jenkins <https://jenkins.io/>`__ is a continuous integration and deployment
 tool.
