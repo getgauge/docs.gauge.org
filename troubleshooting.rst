@@ -1,5 +1,5 @@
 .. meta::
-    :description: Some common problems and the way to troubleshoot them.
+    :description: Some common problems and ways to troubleshoot them.
     :keywords: troubleshoot testing vscode idea visualstudio automation mac windows linux java javascript ruby python c#
 
 .. cssclass:: topic

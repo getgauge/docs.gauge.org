@@ -1,5 +1,5 @@
 .. meta::
-    :description: This is tutorial on how to integrate Gauge with GoCD
+    :description: A tutorial on how to integrate Gauge with GoCD
     :keywords: testing gauge gocd automation
     
 Tutorial: Integrating Gauge with GoCD

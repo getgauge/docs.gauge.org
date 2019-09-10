@@ -1,5 +1,5 @@
 .. meta::
-    :description: This is tutorial on how to integrate Gauge with TeamCity
+    :description: A tutorial on how to integrate Gauge with TeamCity
     :keywords: testing gauge teamcity automation
 
 Tutorial: Integrating Gauge with TeamCity

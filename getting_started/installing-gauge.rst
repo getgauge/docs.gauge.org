@@ -1,5 +1,5 @@
 .. meta::
-   :description: A simple guide to install Gauge on your system depending on your os...
+   :description: A simple guide for installing Gauge on Windows, macOS, Ubuntu/Linux, FreeBSD
    :keywords: install gauge macos linux windows testing automation
 
 .. cssclass:: topic
