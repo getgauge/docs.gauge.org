@@ -21,7 +21,7 @@ Tips on Installation
    user account with which the Go agent executes. Refer :ref:`default install
    location of Gauge and its plugins <installation-faq>`.
 
--  Alternately, you can set :ref:`custom location for plugins <custom-plugin-installation>` so that its accessible to Go agent running as a different user.
+-  Alternately, you can set :ref:`custom location for plugins <custom-plugin-installation>` so that it is accessible to Go agent running as a different user.
 
 Create execution task
 ---------------------
