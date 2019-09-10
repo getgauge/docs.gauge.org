@@ -1,3 +1,7 @@
+.. meta::
+    :description: This is tutorial of how to install Gauge in Docker
+    :keywords: testing gauge docker automation
+
 Gauge can be easily installed on `Docker <https://www.docker.com/what-docker>`__ container.
 
 Prerequisites

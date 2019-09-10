@@ -1,3 +1,7 @@
+.. meta::
+    :description: This is tutorial of how to integrate Gauge with CircleCI
+    :keywords: testing gauge circleci automation
+
 Tutorial: Integrating Gauge with CircleCI
 =========================================
 
