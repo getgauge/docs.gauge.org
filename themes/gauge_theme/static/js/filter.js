@@ -53,6 +53,9 @@ const isLanguageClass = element => LANGUAGE_CLASSES.includes(element.value);
 const isIdeClass = element => IDE_CLASSES.includes(element.value);
 const isRelevantIde = (language, ide) => COMBINATIONS[language].includes(ide);
 const isSelectedIdeDisabled = (ideElement, selectedIde) => ideElement.value == selectedIde && ideElement.disabled;
+const hasAllSelectionClasses = (selectedClasses) => selectedClasses.every(isSelected);
+const isDynamicContent = (element) => element.classList && element.classList.contains('dynamic-content');
+const isElementHidden = (element) => element.classList.contains('hidden')
 
 const disableNonRelevantIde = function (ideElement, languageBtn) {
     ideElement.parentElement.classList.remove('disabled');
@@ -107,36 +110,39 @@ const setLanguageButtons = function () {
     languageElements.forEach(elem => elem.onclick = showRelevantIde.bind(elem))
 }
 
-const hasMultipleSelection = function (selectedClasses) {
-    let hasAllselectedClasses = selectedClasses.every(isSelected);
-    return hasAllselectedClasses;
-}
-
 const showContents = function () {
     let dynamicElems = document.querySelectorAll(".dynamic-content");
     dynamicElems.forEach(elem => {
         elem.classList.add('hidden');
         let classes = selectedClasses(elem);
-        if (hasMultipleSelection(classes)) {
+        if (hasAllSelectionClasses(classes)) {
             elem.classList.remove('hidden');
         }
     });
 }
 
-const checkForAlgoliaSearch = function () {
-    return window.location.search == "" && window.location.hash != "";
-}
-
-const showAlgoliaSearchContents = function () {
-    let searchId = window.location.hash;
-    let dynamicElems = document.querySelectorAll(".dynamic-content");
-    dynamicElems.forEach(elem => {
-        elem.classList.add('hidden');
-    });
-    searchId && document.querySelector(searchId).classList.remove('hidden');
-    searchId && document.querySelector(searchId).childNodes.forEach(child => {
-        child.classList && child.classList.remove('hidden')
-    });
+const showContentsForSearch = function (searchId) {
+    let searchElement = document.querySelector(searchId);
+    let parentSearchElement = searchElement.parentElement;
+    if (isElementHidden(parentSearchElement)) {
+        parentSearchElement.parentElement.childNodes.forEach(element => {
+            isDynamicContent(element) && element.classList.add('hidden');
+        })
+        parentSearchElement.classList.remove('hidden');
+    } else if (isElementHidden(searchElement)) {
+        searchElement.parentElement.childNodes.forEach(element => {
+            isDynamicContent(element) && element.classList.add('hidden');
+        })
+        searchElement.classList.remove('hidden');
+    } else {
+        searchElement.childNodes.forEach(element => {
+            if (isDynamicContent(element)) {
+                element.classList.add('hidden');
+                let classes = selectedClasses(element);
+                hasAllSelectionClasses(classes) && element.classList.remove('hidden');
+            }
+        })
+    }
 }
 
 
@@ -152,12 +158,11 @@ const updateToc = function () {
     })
 }
 
-const updateTocForAlgolia = function () {
-    let tocItems = document.querySelectorAll('.localtoc-container > ul > li > ul > li > a > span');
-    let searchId = window.location.hash
+const updateTocForSearch = function (searchId) {
+    let tocItems = document.querySelectorAll('.localtoc-container > ul > li > ul > li > a > span, .localtoc-container > ul > li > ul > li > ul > li > a > span');
     tocItems.forEach(item => {
         let parentClass = item.parentElement.parentElement.classList;
-        if (item.innerText.toLowerCase().replace(/\s/g, "-") == searchId.substr(1, searchId.length)) {
+        if (item.innerText.toLowerCase().replace(':', '').replace(/\s/g, "-") == searchId.substr(1, searchId.length)) {
             parentClass.remove('hidden');
         } else {
             parentClass.add('hidden');

@@ -161,22 +161,22 @@ const detectOs = function () {
     if (navigator.appVersion.indexOf("Win") != -1) SELECTIONS.os = "windows";
     if (navigator.appVersion.indexOf("Mac") != -1) SELECTIONS.os = "macos";
     if (
-			navigator.appVersion.indexOf("Linux") != -1 ||
-			navigator.appVersion.indexOf("X11") != -1
-		)
-			SELECTIONS.os = "linux";
+        navigator.appVersion.indexOf("Linux") != -1 ||
+        navigator.appVersion.indexOf("X11") != -1
+    )
+        SELECTIONS.os = "linux";
 }
 
 const addOnloadEvents = function () {
+    let hash = window.location.hash;
+    let searchParams = window.location.search
     detectOs();
-    if (checkForAlgoliaSearch()) {
-        showAlgoliaSearchContents();
-        updateTocForAlgolia();
-        updateSelections();
-    } else {
-        updateSelections();
-        showContents();
-        updateToc();
+    updateSelections();
+    showContents();
+    updateToc();
+    if (!searchParams && hash) {
+        showContentsForSearch(hash);
+        updateTocForSearch(hash);
     }
     addClickEventOnSetup();
     updateInstallationSetup();
