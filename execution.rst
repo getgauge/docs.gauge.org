@@ -225,8 +225,8 @@ In addition to ``spec1`` used as an :ref:`example <spec_example_scenario>` previ
 .. code-block:: gauge
     :linenos:
     :name: specify_additional_scenario
-    
-    # Search specification    
+
+    # Search specification
 
     ## Successful search
     * Log in as "admin"
@@ -277,10 +277,12 @@ The scenario, ``Successful search``, is tagged with ``successful`` and the scena
 
 .. code-block:: gauge
     :linenos:
+    :name: spec_tag
 
     # Search Specification
 
-    The admin user must be able to search for available products on the search page.
+    The admin user must be able to search for available
+    products on the search page.
 
     Tags: search,  admin
 
@@ -291,14 +293,16 @@ The scenario, ``Successful search``, is tagged with ``successful`` and the scena
 
     Tags: successful
 
-    For an existing product name, the search result will contain the product name.
+    For an existing product name, the search result will
+    contain the product name.
 
     * Search for product "Cup Cakes"
     * "Cup Cakes" should show up in the search results
 
     ## Unsuccessful search
 
-    On an unknown product name search, the search results will be empty
+    On an unknown product name search, the search results
+    will be empty
 
     * Search for product "unknown"
     * The search results will be empty

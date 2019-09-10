@@ -511,14 +511,6 @@ th, td {
   padding: 8px;
 }
 
-tr:nth-child(even) {
-  background: #efefef;
-}
-
-tr:hover {
-  background: #d1d1d1;
-}
-
 .admonition {
   background-color: #F2F2F2 !important;
   padding: 10px 0px 10px 0px;
@@ -1214,6 +1206,14 @@ p.experimental-feature::before {
   background: #222 !important;
 }
 
+.highlight-gauge {
+  background: #222222;
+  color: whitesmoke;
+}
+
+.linenodiv a {
+  color: whitesmoke !important;
+}
 
 @media only screen and (min-width: 250px) {
   body {
