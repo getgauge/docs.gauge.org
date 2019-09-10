@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
 	var host = window.location.hostname;
 	var tag = host == "docs.gauge.org" ? "prod" : "preview";
 	// wire up algolia search
@@ -26,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const returnToTopBtn = document.querySelector("#return-to-top");
 	// ===== Scroll to Top ====
 	window.addEventListener("scroll", function() {
-		if(returnToTopBtn){
+		if (returnToTopBtn) {
 			if (window.pageYOffset >= 50) {
 				// If page is scrolled more than 50px
 				returnToTopBtn.classList.remove("fadeOut"); // Fade in the arrow
@@ -37,15 +36,23 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		}
 	});
-	returnToTopBtn && returnToTopBtn.addEventListener("click", function() {
+	returnToTopBtn &&
+		returnToTopBtn.addEventListener("click", function() {
 			// When arrow is clicked
 			document.querySelector("body,html").scrollTop = 0; // Scroll to top of body
 		});
 
+	expandAlternateMethods();
+
 	document.querySelectorAll(".headerlink").forEach(elem =>
 		elem.addEventListener("click", function() {
 			var sectionId = this.getAttribute("href");
-			const top = document.querySelector(sectionId).offset().top;
+			const header = document.querySelector(sectionId);
+			const top = header.offsetTop;
+
+			if (window.getComputedStyle(header).display == "none") {
+				header.style.display = "inline-block";
+			}
 			document.querySelector("body,html").scrollTop = top;
 		})
 	);
@@ -71,3 +78,18 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		});
 });
+
+function expandAlternateMethods() {
+	var sectionId = window.location.hash;
+	if (sectionId) {
+		const header = document.querySelector(sectionId);
+		const top = header.offsetTop;
+
+		if (header.classList.contains("collapsible")) {
+			document
+				.querySelectorAll(".collapsible")
+				.forEach(elem => elem.classList.add("inline-display"));
+		}
+		document.querySelector("body,html").scrollTop = top;
+	}
+}
