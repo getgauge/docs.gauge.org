@@ -1175,15 +1175,15 @@ p.last {
   border-bottom: 1px solid #ccc;
 }
 
-#parse-errors table tr td {
+#parse-errors table tr td, #tag-expressions table tr td {
   font-family: "OpenSans-Regular";
 }
 
-#parse-errors table th {
+#parse-errors table th, #tag-expressions table th{
   text-align: left;
   font-family: "OpenSans-Regular";
 }
-#parse-errors table tr:hover {
+#parse-errors table tr:hover, #tag-expressions table tr:hover {
   background: #f9f9f9;
 }
 
