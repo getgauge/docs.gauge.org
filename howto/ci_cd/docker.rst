@@ -13,12 +13,15 @@ Prerequisites
 Docker image for Gauge
 ----------------------
 
--  Create a ``Dockerfile`` file in your project root.
--  Add these lines in ``Dockerfile`` according to the platform on which
+-  Create a :highlighted-syntax:`Dockerfile` file in your project root.
+-  Add these lines in :highlighted-syntax:`Dockerfile` according to the platform on which
    you want to build.
 
+.. cssclass:: example
+
+DockerFile
+
 .. code-block:: yaml
-  :caption: DockerFile
 
     FROM ubuntu
 
@@ -45,7 +48,7 @@ Run Gauge specs on Docker
 -------------------------
 
 - Build the docker image tagged as test
-    docker build . -t test
+    :highlighted-syntax:`docker build . -t test`
 
 - Mount the docker image with the <project_directory> and run the specs in the container
-    docker run -v `pwd`:/<project_directory> -w="/<project_directory>" test gauge run specs
+    :highlighted-syntax:`docker run -v pwd:/<project_directory> -w="/<project_directory>" test gauge run specs`
