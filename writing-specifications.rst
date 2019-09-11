@@ -156,7 +156,7 @@ or
 
 Example
 
-In the following example, ``# Search specificaiton`` is the spec heading, followed by tags and steps (statements preceded by ``*``).
+In the following example, :highlighted-syntax:`# Search specification` is the spec heading, followed by tags and steps (statements preceded by ``*``).
 
 .. code-block:: gauge
 

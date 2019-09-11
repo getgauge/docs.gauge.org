@@ -4,6 +4,10 @@
     
 Tutorial: Integrating Gauge with GoCD
 =====================================
+.. role:: heading
+
+:heading:`Tutorial: Integrating Gauge with GoCD`
+================================================
 
 `GoCD <https://www.gocd.io/>`__ is a continuous integration and deployment
 tool.
@@ -14,7 +18,7 @@ Setup
 -  `Setup a new pipeline on Go <https://docs.gocd.io/current/configuration/quick_pipeline_setup.html>`__
 
    .. image:: images/Gauge_Pipeline.png
--  `Download <//gauge.org/get_started>`__ and Install Gauge on the Go Agents
+-  :ref:`Download and Install Gauge <installation-instructions>` on the Go Agents
 -  Install the required gauge :ref:`language plugin <install_plugins>` on the Go agents.
 
 Tips on Installation
@@ -22,23 +26,20 @@ Tips on Installation
 
 -  Gauge is installed system wide by default and not user wide. However,
    plugins are installed per user. So plugins should be installed via
-   user account with which the Go agent executes. Refer default install
-   location of Gauge and its plugins
-   `here <https://docs.gauge.org/troubleshooting.html#gauge-installation>`__.
+   user account with which the Go agent executes. Refer :ref:`default install
+   location of Gauge and its plugins <installation-faq>`.
 
--  Alternately, you can set `custom location for
-   plugins <https://docs.gauge.org/troubleshooting.html#custom-plugin-install-location>`__
-   so that its accessible to Go agent running as a different user.
+-  Alternately, you can set :ref:`custom location for plugins <custom-plugin-installation>` so that it is accessible to Go agent running as a different user.
 
 Create execution task
 ---------------------
 
--  Create a new task which will run ``gauge run specs``.
+-  Create a new task which will run :highlighted-syntax:`gauge run specs`.
 -  If you want to run only a subset of specs, you can use :ref:`tagged_execution`. 
-    Eg. ``gauge run --tags "tag1 & tag2" specs``
--  Adding a flag ``-p`` runs them using :ref:`parallel_execution`.
--  Run against specific :ref:`environments` using the ``--env`` flag
--  See the `Manpage <https://manpage.gauge.org>` __ for list of all the flags that can be used.
+    Eg. :highlighted-syntax:`gauge run --tags tag1 & tag2 specs`
+-  Adding a flag :highlighted-syntax:`-p` runs them using :ref:`parallel_execution`.
+-  Run against specific :ref:`environments` using the :highlighted-syntax:`--env` flag
+-  See the `Manpage <https://manpage.gauge.org>`__ for list of all the flags that can be used.
 
    .. figure:: images/Configuring_Gauge.png
       :alt: adding new task

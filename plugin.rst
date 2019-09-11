@@ -10,7 +10,7 @@
 .. include:: change_filter.rst
 
 | This page provides information about different types of plugins supported by Gauge and plugin installation and uninstallation. Plugins help you to use additional features of Gauge.
-| For information about installing Gauge on your system, see :ref:`install_gauge`.
+| For information about installing Gauge on your system, see :ref:`installation-instructions`
 
 .. _install_plugins:
 
@@ -111,6 +111,8 @@ You can also install a plugin from a zip file instead of downloading from the pl
 
 You can download the latest version of a plugin from the ``Releases`` section of the plugin's GitHub repository. See the `plugin list <https://gauge.org/plugins/>`_ to find the Gauge repositories.
 
+.. _custom-plugin-installation:
+
 Customize plugin install location
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -120,7 +122,7 @@ Customize plugin install location
 
 .. cssclass:: dynamic-content macos
 
-    By default the plugins are stored at ``~/.gauge/plugins`` in Mac OS X and Linux systems.
+    By default the plugins are stored at ``~/.gauge/plugins`` in macOS X and Linux systems.
 
 .. cssclass:: dynamic-content linux
 
@@ -314,7 +316,7 @@ Plugins are installed in the ``.gauge/plugins`` directory in the user's home dir
 
 .. cssclass:: dynamic-content macos
 
-    The plugin installation directory for ``Mac OS X`` operating system is  ``~/.gauge/plugins``
+    The plugin installation directory for ``macOS X`` operating system is  ``~/.gauge/plugins``
 
 .. cssclass:: dynamic-content linux
 
@@ -413,6 +415,8 @@ HTML-Report
     gauge install html-report
 
 For more information about HTML report generation plugin for Gauge, see `Gauge GitHub for HTML report generation <https://github.com/getgauge/html-report>`__ .
+
+.. _xml-report:
 
 XML-Report
 ^^^^^^^^^^

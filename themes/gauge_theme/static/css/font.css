@@ -6,10 +6,10 @@
 }
 
 @font-face {
-  font-family: 'URWGeometric-SemiBold';
-  font-display: swap;
-  src: url('../font/urw-geometric/354267_1_0.eot');
-  src: url('../font/urw-geometric/354267_1_0.eot?#iefix') format('embedded-opentype'), url('../font/urw-geometric/354267_1_0.woff2') format('woff2'), url('../font/urw-geometric/354267_1_0.woff') format('woff'), url('../font/urw-geometric/354267_1_0.ttf') format('truetype');
+    font-family: 'URWGeometric-SemiBold';
+    font-display: swap;
+    src: url('../font/urw-geometric/354267_1_0.eot');
+    src: url('../font/urw-geometric/354267_1_0.eot?#iefix') format('embedded-opentype'), url('../font/urw-geometric/354267_1_0.woff2') format('woff2'), url('../font/urw-geometric/354267_1_0.woff') format('woff'), url('../font/urw-geometric/354267_1_0.ttf') format('truetype');
 }
 
 @font-face {
@@ -59,6 +59,7 @@
 
  @font-face {
     font-family: 'OpenSans-SemiBold';
+    font-display: swap;
     src: url('../font/open-sans/OpenSans-Semibold.ttf');
  }
 

@@ -9,7 +9,7 @@
 
       .. container:: applied-filter
 
-         MacOS
+         macOS
 
       .. container:: applied-filter
 
@@ -31,10 +31,10 @@
          :class: selection
          :type: os
          :title: 1 : Select your os
-         :selected: MacOS
+         :selected: macOS
 
          Linux
-         MacOS
+         macOS
          Windows
 
       .. setupfilter::

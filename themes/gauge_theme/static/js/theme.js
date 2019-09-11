@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
 	var host = window.location.hostname;
 	var tag = host == "docs.gauge.org" ? "prod" : "preview";
 	// wire up algolia search
@@ -16,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		.forEach(elem => elem.parentNode.removeChild(elem));
 	document
 		.querySelectorAll(".localtoc-container ul .heading")
-		.forEach(elem => elem.parentNode.removeChild(elem));
+		.forEach(elem => elem.parentNode.remove());
 
 	// remove nested container classes, prevent overlap with sidebar
 	document
@@ -26,8 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const returnToTopBtn = document.querySelector("#return-to-top");
 	// ===== Scroll to Top ====
 	window.addEventListener("scroll", function() {
-		
-		if(returnToTopBtn){
+		if (returnToTopBtn) {
 			if (window.pageYOffset >= 50) {
 				// If page is scrolled more than 50px
 				returnToTopBtn.classList.remove("fadeOut"); // Fade in the arrow
@@ -38,18 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		}
 	});
-	returnToTopBtn && returnToTopBtn.addEventListener("click", function() {
+	returnToTopBtn &&
+		returnToTopBtn.addEventListener("click", function() {
 			// When arrow is clicked
 			document.querySelector("body,html").scrollTop = 0; // Scroll to top of body
 		});
-
-	document.querySelectorAll(".headerlink").forEach(elem =>
-		elem.addEventListener("click", function() {
-			var sectionId = this.getAttribute("href");
-			const top = document.querySelector(sectionId).offset().top;
-			document.querySelector("body,html").scrollTop = top;
-		})
-	);
 
 	document.querySelectorAll(".docs-toc li.doc-toc-group").forEach(elem =>
 		elem.addEventListener("click", function(event, selector) {
@@ -72,3 +63,22 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		});
 });
+
+const scrollToHeader = function() {
+	const sectionId = window.location.hash;
+	if(sectionId){
+		const header = document.querySelector(sectionId);
+
+		if (header.classList.contains("collapsible")) {
+			document
+			.querySelectorAll(".collapsible")
+			.forEach(elem => elem.classList.add("inline-display"));
+		}
+		const top = header.offsetTop;
+		document.querySelector("body,html").scrollTop = top - 100;
+		event.stopPropagation();
+	}
+};
+
+window.addEventListener("load", scrollToHeader);
+window.addEventListener("hashchange", scrollToHeader, true);

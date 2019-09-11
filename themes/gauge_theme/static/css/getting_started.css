@@ -51,13 +51,11 @@
 /* Show the indicator when checked */
 
 #installation-selection input:checked~.checkmark:after {
-    display: inline;
-    content: '\f192';
-    font-family: FontAwesome;
+    content: url("../img/radio-button.svg");
     position: absolute;
-    top: 9px;
+    top: 13px;
     left: 14px;
-    text-align: left;
+    width: 12px;
 }
 
 #installation-selection .circle {
@@ -533,7 +531,7 @@ span.installer-icon:before {
     display: inline-block;
 }
 
-h3 span.installer-icon {
+h4 span.installer-icon {
     color: #1e1e1e;
     font-size: 20px;
     font-family: 'URWGeometric-Medium';

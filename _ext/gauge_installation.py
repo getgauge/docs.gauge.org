@@ -11,7 +11,7 @@ DISPLAY_SELECTION_MAP = {
     'Java': 'java',
     'Python': 'python',
     'Ruby': 'ruby',
-    'MacOS': 'macos',
+    'macOS': 'macos',
     'Linux': 'linux',
     'Windows': 'windows',
 }
@@ -43,7 +43,7 @@ def visit_setup_input_node(self, node):
     <label class="radioContainer">
         <span class="circle"></span>
         <span class="selection-icon selection-icon-{}"></span>
-        {}
+        <span class="selection-content">{}</span>
         <input class="search getting-started-radios" {}>
         <span class="checkmark"></span>
     </label>

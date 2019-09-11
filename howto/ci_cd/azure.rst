@@ -4,9 +4,16 @@
 
 Tutorial: Integrating Gauge with Azure
 ======================================
+.. role:: heading
 
-`Azure Pipelines <https://dev.azure.com/>`__ Build, test, and deploy with CI/CD that works with any language,
- platform, and cloud. Connect to GitHub or any other Git provider and deploy continuously.
+:heading:`Tutorial: Integrating Gauge with Azure`
+=================================================
+
+`Azure Pipelines <https://dev.azure.com/>`__ build, test, and deploy with CI/CD that works with any language, platform and cloud.
+Connect to Github or any other Git provider and deploy continuously.
+
+Setup
+-----
 
 -  Login to Azure DevOps with GitHub/Microsoft account.
 -  Create a new project and a build pipeline
@@ -17,15 +24,19 @@ Tutorial: Integrating Gauge with Azure
 
     .. image:: images/azure_github_repo.png
 
+
 Creating tasks
 --------------
 
--  Create a ``azure-pipelines.yml`` file in your project root.
--  Add these lines in ``azure-pipelines.yml`` according to the platform on which
+-  Create a :highlighted-syntax:`azure-pipelines.yml` file in your project root.
+-  Add these lines in :highlighted-syntax:`azure-pipelines.yml` according to the platform on which
    you want to build.
 
+.. cssclass:: example
+
+macOS
+
 .. code-block:: yaml
-   :caption: macOS
 
         trigger:
         - master
@@ -44,8 +55,11 @@ Creating tasks
                 gauge run specs
             displayName: 'gauge test'
 
+.. cssclass:: example
+
+Linux
+
 .. code-block:: yaml
-    :caption: Linux
 
         trigger:
         -   master
@@ -67,8 +81,12 @@ Creating tasks
                 gauge run specs
             displayName: 'gauge test'´
 
+
+.. cssclass:: example
+
+Windows
+
 .. code-block:: yaml
-    :caption: Windows
 
     pool:
         vmImage: 'vs2017-win2016'
@@ -88,17 +106,12 @@ Creating tasks
             gauge run specs
         displayName: 'gauge test'
 
+-  If you want to run only a subset of specs, you can use :ref:`tagged_execution`.
+    Eg. :highlighted-syntax:`gauge run --tags tag1 & tag2 specs` in your :highlighted-syntax:`azure-pipelines.yml`.
 
-
-* If you want to run only a subset of specs, you can use :ref: `tagged_execution`.
-  Example: add ``script: gauge run --tags "tag1 & tag2" specs`` in your ``azure-pipelines.yml``.
-
-* Adding a flag ``-p`` runs them using :ref: `parallel_execution`.
-  Example: ``script: gauge run -p specs`` in your ``azure-pipelines.yml``.
-
-* Run against specific :ref: `environments` using the ``--env`` flag.
-
-* See the `Manpage <https://manpage.gauge.org>` __ for list of all the flags that can be used.
+-  Adding a flag :highlighted-syntax:`-p` runs them using :ref:`parallel_execution`.
+-  Run against specific :ref:`environments` using the :highlighted-syntax:`--env` flag
+-  See the `Manpage <https://manpage.gauge.org>`__ for list of all the flags that can be used.
 
 
 Reports
@@ -109,11 +122,10 @@ Reports
    .. figure:: images/azure_console_output.png
       :alt: console output
 
--  Gauge generates ``html-report`` after execution whose location can be
-   set by environment variable ``gauge_reports_dir``. This defaults to
-   ``reports`` directory in the Gauge project.
+-  Gauge generates **html-report** after execution whose location can be
+   set by environment variable :highlighted-syntax:`gauge_reports_dir`. This defaults to
+   :highlighted-syntax:`reports` directory in the Gauge project.
 
 -  You can upload Gauge execution reports to your choice of hosted web
-   server. Read
-   `more <https://docs.microsoft.com/en-us/azure/devops/artifacts/>`__ for
+   server. Read `more <https://docs.microsoft.com/en-us/azure/devops/artifacts/>`__ for
    uploading artifacts.

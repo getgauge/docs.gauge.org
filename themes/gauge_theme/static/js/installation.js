@@ -8,7 +8,7 @@ const SELECTION_DISPLAY_NAMES = {
     'java': 'Java',
     'python': 'Python',
     'ruby': 'Ruby',
-    'macos': 'MacOS',
+    'macos': 'macOS',
     'linux': 'Linux',
     'windows': 'Windows',
 
@@ -122,7 +122,7 @@ const isToggleClass = function (child) {
 }
 
 const hideOtherInstallation = function (clickedElem) {
-    document.querySelectorAll('.collapsible h3').forEach((collapsible) => {
+    document.querySelectorAll('.collapsible h4').forEach((collapsible) => {
         if (collapsible != clickedElem) {
             collapsible.classList.remove('expand-collapsible');
             var children = collapsible.parentElement.children;
@@ -134,7 +134,7 @@ const hideOtherInstallation = function (clickedElem) {
 }
 
 const expandInstaller = function () {
-    document.querySelectorAll('.collapsible h3').forEach((collapsible) => {
+    document.querySelectorAll('.collapsible h4').forEach((collapsible) => {
         collapsible.onclick = function () {
             hideOtherInstallation(collapsible);
             var children = collapsible.parentElement.children;
@@ -149,8 +149,8 @@ const expandInstaller = function () {
 const showAlternateMethods = function () {
     document.querySelectorAll('.alternate-methods').forEach(alternateMethod => {
         alternateMethod.onclick = function () {
-            let collapsibleClasss = document.querySelectorAll(`.${SELECTIONS.os}+.collapsible`);
-            collapsibleClasss.forEach(coll => {
+            let collapsibleClass = document.querySelectorAll('.collapsible');
+            collapsibleClass.forEach(coll => {
                 coll.classList.toggle('inline-display');
             })
         }
@@ -161,22 +161,22 @@ const detectOs = function () {
     if (navigator.appVersion.indexOf("Win") != -1) SELECTIONS.os = "windows";
     if (navigator.appVersion.indexOf("Mac") != -1) SELECTIONS.os = "macos";
     if (
-			navigator.appVersion.indexOf("Linux") != -1 ||
-			navigator.appVersion.indexOf("X11") != -1
-		)
-			SELECTIONS.os = "linux";
+        navigator.appVersion.indexOf("Linux") != -1 ||
+        navigator.appVersion.indexOf("X11") != -1
+    )
+        SELECTIONS.os = "linux";
 }
 
 const addOnloadEvents = function () {
+    let hash = window.location.hash;
+    let searchParams = window.location.search
     detectOs();
-    if (checkForAlgoliaSearch()) {
-        showAlgoliaSearchContents();
-        updateTocForAlgolia();
-        updateSelections();
-    } else {
-        updateSelections();
-        showContents();
-        updateToc();
+    updateSelections();
+    showContents();
+    updateToc();
+    if (!searchParams && hash) {
+        showContentsForSearch(hash);
+        updateTocForSearch(hash);
     }
     addClickEventOnSetup();
     updateInstallationSetup();

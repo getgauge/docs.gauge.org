@@ -79,7 +79,7 @@ As a next step, the following resources are available:
 
     * `Write Specifications  <../writing-specifications.html>`__: This section has more in-depth detail on writing Gauge specifications and connecting them with the test scripts of your choice.
 
-    * `Examples <../examples-and-tutorials.html>`__: The examples section contains example projects of different languages and tools to help you get started with exactly what you need.
+    * `Examples <../examples.html>`__: The examples section contains example projects of different languages and tools to help you get started with exactly what you need.
     
     * `Taiko Documentation <https://taiko.gauge.org/>`__:  The Taiko documentation site has all information you need to start recording test scripts using Taiko.
 

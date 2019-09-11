@@ -73,24 +73,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function copyCode(elements) {
 	elements.forEach(function(element) {
-		element.innerHTML += "<button class='copyBtn'>Copy</button>";
-		element.innerHTML += "<input class='codeBox' value='none'> </input>";
-		element.innerHTML += '<span class="copied-text">copied</span>';
+		let parentElement = element.parentElement.parentElement;
+		if (!parentElement) return;
+		parentElement.innerHTML += "<button class='copyBtn'>Copy</button>";
+		parentElement.innerHTML += "<input aria-label='clipboard' class='codeBox' value='none'> </input>";
 	});
 
 	document.querySelectorAll(".copyBtn").forEach(btn =>
 		btn.addEventListener("click", function() {
-			const value = this.parentElement.innerText.split("Copy")[0].trim();
-			const copied_text = this.nextElementSibling.nextElementSibling;
+			const value = this.parentElement.firstElementChild.innerText;
 			const codeBox = this.nextElementSibling;
 			codeBox.value = value;
 			codeBox.select();
 			document.execCommand("copy");
-			copied_text.classList.remove("fadeOut");
-			copied_text.classList.add("fadeIn");
-			setTimeout(function() {
-				copied_text.classList.remove("fadeIn");
-				copied_text.classList.add("fadeOut");
+			this.innerText = 'Copied'
+			setTimeout(() => {
+				this.innerText = 'Copy'
 			}, 3000);
 		})
 	);

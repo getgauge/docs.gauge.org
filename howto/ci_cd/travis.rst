@@ -4,24 +4,34 @@
 
 Tutorial: Integrating Gauge with Travis CI
 ==========================================
+.. role:: heading
+
+:heading:`Tutorial: Integrating Gauge with Travis CI`
+=====================================================
 
 `Travis CI <https://travis-ci.org/>`__ is a hosted, distributed
 continuous integration service used to build and test software projects
 hosted at GitHub.
 
--  Login to Travis CI and goto ``accounts`` menu.
+Setup
+-----
+
+-  Login to Travis CI and goto :highlighted-syntax:`accounts` menu.
 -  Choose your project repository to be built and flick that switch on.
     .. figure:: images/travis_account.png
 
 Creating tasks
 --------------
 
--  Create a ``.travis.yml`` file in your project root.
--  Add these lines in ``.travis.yml`` according to the platform on which
+-  Create a :highlighted-syntax:`.travis.yml` file in your project root.
+-  Add these lines in :highlighted-syntax:`.travis.yml` according to the platform on which
    you want to build.
 
+.. cssclass:: example
+
+OS X
+
 .. code-block:: yaml
-  :caption: OS X
 
     language:
         -  language_name
@@ -37,8 +47,11 @@ Creating tasks
 
     sudo: false
 
+.. cssclass:: example
+
+Linux
+
 .. code-block:: yaml
-  :caption: Linux
 
     language:
         - language_name
@@ -57,15 +70,11 @@ Creating tasks
 
     sudo: true
 
-* If you want to run only a subset of specs, you can use :ref:`tagged_execution`.
-  Example: add ``script: gauge run --tags "tag1 & tag2" specs`` in your ``.travis.yml``.
-
-* Adding a flag ``-p`` runs them using :ref:`parallel_execution`.
-  Example: ``script: gauge run -p specs`` in your ``.travis.yml``.
-
-* Run against specific :ref:`environments` using the ``--env`` flag.
-
-* See the `Manpage <https://manpage.gauge.org>` __ for list of all the flags that can be used.
+-  If you want to run only a subset of specs, you can use :ref:`tagged_execution`.
+    Eg. :highlighted-syntax:`gauge run --tags tag1 & tag2 specs`
+-  Adding a flag :highlighted-syntax:`-p` runs them using :ref:`parallel_execution`.
+-  Run against specific :ref:`environments` using the :highlighted-syntax:`--env` flag
+-  See the `Manpage <https://manpage.gauge.org>`__ for list of all the flags that can be used.
 
 
 Reports
@@ -76,11 +85,10 @@ Reports
    .. figure:: images/travis_console.png
       :alt: console output
 
--  Gauge generates ``html-report`` after execution whose location can be
-   set by environment variable ``gauge_reports_dir``. This defaults to
-   ``reports`` directory in the Gauge project.
+-  Gauge generates **html-report** after execution whose location can be
+   set by environment variable :highlighted-syntax:`gauge_reports_dir`. This defaults to
+   :highlighted-syntax:`reports` directory in the Gauge project.
 
 -  You can upload Gauge execution reports to your choice of hosted web
-   server. Read
-   `more <https://docs.travis-ci.com/user/uploading-artifacts/>`__ for
+   server. Read `more <https://docs.travis-ci.com/user/uploading-artifacts/>`__ for
    uploading artifacts.

@@ -36,7 +36,7 @@ Select your setup to see the instructions for installing gauge.
          :title: 1. Select your OS
 
          Linux
-         MacOS
+         macOS
          Windows
 
       .. installationselection::
@@ -60,6 +60,8 @@ Select your setup to see the instructions for installing gauge.
          Visual Studio Code
 
 
+.. _installation-instructions:
+
 .. cssclass:: sub-heading
 
 Installation Instructions
@@ -77,7 +79,7 @@ Installation Instructions
 
       .. container:: applied-filter
 
-         MacOs
+         macOS
 
       .. container:: applied-filter
 
