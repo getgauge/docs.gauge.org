@@ -3,6 +3,8 @@
     :keywords: testing gauge docker automation
 .. role:: heading
 
+.. cssclass:: topic
+
 :heading:`Tutorial: Integrating Gauge with Docker`
 ==================================================
 

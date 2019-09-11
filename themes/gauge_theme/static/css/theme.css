@@ -232,7 +232,7 @@ header.top:hover {
 div.topic {
   border: 0px;
   padding: 0px;
-  margin-top: 34px;
+  margin-top: 20px;
 }
 
 .fadeIn{
@@ -336,6 +336,7 @@ footer {
   padding: 15px;
   margin: 15px 0 15px 0;
   background-color: #222222 !important;
+  padding-bottom: 0px;
 }
 
 .highlight pre {
@@ -1423,7 +1424,7 @@ p.experimental-feature::before {
   }
 
   div.topic {
-    margin-top: 0px;
+    margin-top: -15px;
   }
 
   .docs-container.no-right-bar.containers .topic {
@@ -1751,6 +1752,9 @@ p.experimental-feature::before {
 
   .highlight-console .highlight pre {
     width: 88%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
 }
 
@@ -1828,7 +1832,7 @@ p.experimental-feature::before {
   }
 
   div.topic {
-    margin-top: 34px;
+    margin-top: 20px;
   }
 
   .sticky .logo, .open .logo {
@@ -1877,7 +1881,7 @@ p.experimental-feature::before {
   }
  
   div.topic {
-    margin-top: 31px;
+    margin-top: 20px;
   }
 
   h3.banner-heading {

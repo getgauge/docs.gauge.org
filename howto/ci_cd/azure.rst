@@ -6,6 +6,8 @@ Tutorial: Integrating Gauge with Azure
 ======================================
 .. role:: heading
 
+.. cssclass:: topic
+
 :heading:`Tutorial: Integrating Gauge with Azure`
 =================================================
 
