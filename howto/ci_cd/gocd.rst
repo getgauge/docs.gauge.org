@@ -1,5 +1,7 @@
 .. role:: heading
 
+.. cssclass:: topic
+
 :heading:`Tutorial: Integrating Gauge with GoCD`
 ================================================
 
