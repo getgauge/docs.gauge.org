@@ -1,3 +1,6 @@
+.. meta::
+    :description: A tutorial on how to install Gauge in Docker
+    :keywords: testing gauge docker automation
 .. role:: heading
 
 .. cssclass:: topic

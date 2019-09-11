@@ -1,5 +1,5 @@
 .. meta::
-    :description: This page provides information about different types of plugins supported by Gauge and plugin installation and uninstallation. Plugins help you to use additional features of Gauge.
+    :description: A quick tour of different types of plugins supported by Gauge and plugin installation and uninstallation. Plugins help you to use additional features of Gauge.
     :keywords: plugin testing project vscode idea visualstudio automation mac windows linux
 
 .. cssclass:: topic

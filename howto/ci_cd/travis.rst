@@ -1,10 +1,15 @@
+.. meta::
+    :description: A tutorial on how to integrate Gauge with Travis CI
+    :keywords: testing gauge travis automation
+
+Tutorial: Integrating Gauge with Travis CI
+==========================================
 .. role:: heading
 
 .. cssclass:: topic
 
 :heading:`Tutorial: Integrating Gauge with Travis CI`
 =====================================================
-
 
 `Travis CI <https://travis-ci.org/>`__ is a hosted, distributed
 continuous integration service used to build and test software projects
