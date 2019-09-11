@@ -7,6 +7,10 @@
 @import url("writing_specifications.css");
 @import url("examples.css");
 
+.selection-content {
+  position: absolute;
+  bottom: 13px;
+}
 
 .hidden {
   visibility: hidden;
