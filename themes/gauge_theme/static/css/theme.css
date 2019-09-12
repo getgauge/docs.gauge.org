@@ -9,7 +9,7 @@
 
 .selection-content {
   position: absolute;
-  bottom: 13px;
+  bottom: 12px;
 }
 
 .hidden {
@@ -1273,7 +1273,7 @@ p.experimental-feature::before {
 
   #installation-selection input:checked~.checkmark:after {
     left: 60px;
-    top: 15px;
+    top: 11px;
   }
 
   .docs-container h2 {
@@ -1381,7 +1381,7 @@ p.experimental-feature::before {
 
   .proj-setup-filters.docutils .selection input:checked~.checkmark:after {
     left: 5%;
-    top: 16px;
+    top: 14px;
   }
 
   .selection .radio-container {
@@ -1678,7 +1678,7 @@ p.experimental-feature::before {
   #installation-selection input:checked~.checkmark:after {
     content: url("../img/radio-button.svg");
     position: absolute;
-    top: 13px;
+    top: 11px;
     left: 14px;
     width: 12px;
   }
@@ -1689,7 +1689,7 @@ p.experimental-feature::before {
 
   .proj-setup-filters.docutils .selection input:checked~.checkmark:after {
     left: 5%;
-    top: 16px;
+    top: 15px;
   }
 
   #change-filter {
@@ -1754,6 +1754,12 @@ p.experimental-feature::before {
     display: flex;
     justify-content: center;
     flex-direction: column;
+  }
+  .selection-content {
+    left: 35px;
+  }
+  #installation-selection input:checked~.checkmark:after {
+    top: 12px;
   }
 }
 
@@ -1865,6 +1871,12 @@ p.experimental-feature::before {
     grid-template-columns: 300px 44rem auto;
     grid-column-gap: 5px; 
     overflow-x: hidden;   
+  }
+  #installation-selection input:checked~.checkmark:after {
+    top: 11px;
+  }
+  .proj-setup-filters.docutils .selection input:checked~.checkmark:after {
+    top: 14px;
   }
 
   .feature-desc {
