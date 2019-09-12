@@ -329,10 +329,12 @@ footer {
 }
 .docs-toc li>a.toc-link:hover {
   border-bottom: 2px solid rgb(245, 193, 14);
+  border-width: thin;
 }
 
 .localtoc-container ul li a:hover {
   border-bottom: 2px solid rgb(245, 193, 14);
+  border-width: thin;
 }
 
 
@@ -1260,9 +1262,10 @@ p.experimental-feature::before {
 .animate-fadeIn {
   position: relative;
   -webkit-animation-name: fadeIn;
-  -webkit-animation-duration: 2s;
+  -webkit-animation-duration: 4s;
   animation-name: fadeIn;
-  animation-duration: 2s
+  animation-duration: 4s;
+  transition-delay: 4s;
 }
 
 @-webkit-keyframes animatebottom {
@@ -1277,12 +1280,12 @@ p.experimental-feature::before {
 
 @keyframes fadeIn {
   from {
-    bottom:-100px;
     opacity: 0;
+    transition-delay: 4s;
   }
   to {
-    bottom:0px;
     opacity: 1;
+    transition-delay: 4s;
   }
 }
 
