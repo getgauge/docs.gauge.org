@@ -1,9 +1,7 @@
 .. meta::
     :description: A tutorial on how to integrate Gauge with Jenkins
     :keywords: testing gauge jenkins automation
-
-Tutorial: Integrating Gauge with Jenkins
-========================================
+    
 .. role:: heading
 
 .. cssclass:: topic

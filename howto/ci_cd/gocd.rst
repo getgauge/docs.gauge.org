@@ -2,8 +2,6 @@
     :description: A tutorial on how to integrate Gauge with GoCD
     :keywords: testing gauge gocd automation
     
-Tutorial: Integrating Gauge with GoCD
-=====================================
 .. role:: heading
 
 .. cssclass:: topic
