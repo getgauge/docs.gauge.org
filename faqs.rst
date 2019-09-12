@@ -36,6 +36,12 @@ Configuration
 
 .. cssclass:: category-title
 
+Execution
+----------
+`What is the order of execution of scenarios in a specification? <#what-is-the-order-of-execution-of-scenarios-in-a-specification>`__
+
+.. cssclass:: category-title
+
 Logs
 ----
 
@@ -169,6 +175,19 @@ By setting
     runner_connection_timeout = 3000
 
 .. cssclass:: category
+
+:heading:`Execution`
+--------------------
+
+.. cssclass:: question
+
+What is the order of execution of scenarios in a specification?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The scenarios should execute in the order they are specified when running in serial mode.
+But, when executed in parallel or when a scenario/specification uses a data table (data driven tests), all scenarios are parallelized and hence there will not be any order maintained.
+
+We suggest that scenarios should be independent of each other.
 
 :heading:`Logs`
 ---------------
