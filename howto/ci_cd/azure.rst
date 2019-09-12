@@ -2,8 +2,6 @@
     :description: A tutorial on how to integrate Gauge with Azure
     :keywords: testing gauge azure automation
 
-Tutorial: Integrating Gauge with Azure
-======================================
 .. role:: heading
 
 .. cssclass:: topic
