@@ -344,7 +344,7 @@ footer {
 
 .highlight pre {
   margin: 0px;
-  overflow: scroll;
+  overflow: auto;
   min-height: 40px;
 }
 
@@ -359,7 +359,7 @@ footer {
   transition: all 0.25s;
   padding: 5px 15px;
   font-size: 13px;
-  top: -40px;
+  top: -31px;
 }
 
 .copyBtn:hover {
@@ -1365,7 +1365,7 @@ p.experimental-feature::before {
   }
 
   #proj-setup-filter-section .applied-filters .applied-filter {
-    padding: 2px 8px;
+    padding: 0px 8px;
     margin-right: 10px;
     margin-left: 0px;
     height: 27px;
