@@ -1253,10 +1253,11 @@ p.experimental-feature::before {
 /* Add animation to "page content" */
 .animate-bottom {
   position: relative;
-  -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 2s;
-  animation-name: animatebottom;
-  animation-duration: 2s
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 4s;
+  animation-name: fadeIn;
+  animation-duration: 4s;
+  transition-delay: 4s;
 }
 
 .animate-fadeIn {
