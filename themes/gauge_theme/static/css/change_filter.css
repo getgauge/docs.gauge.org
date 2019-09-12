@@ -85,7 +85,7 @@
 }
 
 #proj-setup-filter-section .applied-filters .applied-filter {
-    padding: 2px 14px;
+    padding: 0px 14px;
     background-color: white;
     border-radius: 30px;
     border: 1px solid grey;

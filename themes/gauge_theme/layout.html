@@ -107,7 +107,7 @@ var DOCUMENTATION_OPTIONS = {
 </head>
 {%- block body_tag %}
 
-<body>
+<body onload="loaderFunction()" style="margin:0;">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5C33ML2" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
@@ -187,7 +187,7 @@ var DOCUMENTATION_OPTIONS = {
       {% if pagename == 'index' %}
       <div class="docs-container no-right-bar containers">
       {% else %}
-      <div class="docs-container containers">
+      <div class="docs-container containers animate-fadeIn">
       {% endif %}
         {% if pagename == 'index' %}
         {% include '_landing.html' %}
@@ -202,7 +202,8 @@ var DOCUMENTATION_OPTIONS = {
       </div>
       <!-- Right Sidebar -->
       {% if pagename != 'index' %}
-      <div id="right-sidebar" class="right-sidebar-container containers">
+      
+      <div id="right-sidebar" class="right-sidebar-container containers animate-bottom">
         <div class="localtoc-container">
           <span class='mobile-local-toc collapsed' onclick="document.getElementsByClassName('mobile-local-toc')[0].classList.toggle('collapsed')" onkeypress="document.getElementsByClassName('mobile-local-toc')[0].classList.toggle('collapsed')">In this page</span>
             {{ toc }}
@@ -273,3 +274,4 @@ var DOCUMENTATION_OPTIONS = {
 </body>
 
 </html>
+
