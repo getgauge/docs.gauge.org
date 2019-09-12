@@ -35,7 +35,7 @@ body {
   'footer footer footer';
   grid-template-rows: 240px auto auto;
   grid-template-columns: 21% 45% 34%;
-  line-height: 1.5em;
+  line-height: 1.6em;
 }
 
 p ,a, ul li,ol li,.line{
@@ -43,8 +43,10 @@ p ,a, ul li,ol li,.line{
   font-family: "OpenSans-Regular";
   font-weight: normal;
   color:#1e1e1e;
+  line-height: 1.6em;
+}
+.docs-container p,.docs-container a,.docs-container ul,.docs-container li,.docs-container ol,.docs-container .line,.docs-container pre,.docs-container span {
   text-align: justify;
-  line-height: 1.5em;
 }
 
 h1 {
@@ -85,7 +87,7 @@ ul li,ol li, code span {
   font-size: 14px;
   font-family: "OpenSans-Regular";
   font-weight: normal;
-  line-height: 1.5em;
+  line-height: 1.6em;
 }
 
 .mobile-local-toc {
@@ -225,7 +227,7 @@ header.top:hover {
  background-color: white;
   padding:25px;
   margin-bottom: 80px;
-  max-width: 50em;
+  max-width: 45em;
 }
 
 .docs-container::-webkit-scrollbar {
@@ -323,8 +325,16 @@ footer {
 }
 
 .docs-toc .active-toc>a.toc-link {
-  border-bottom: 3px solid rgb(245, 193, 14);
+  border-bottom: 2px solid rgb(245, 193, 14);
 }
+.docs-toc li>a.toc-link:hover {
+  border-bottom: 2px solid rgb(245, 193, 14);
+}
+
+.localtoc-container ul li a:hover {
+  border-bottom: 2px solid rgb(245, 193, 14);
+}
+
 
 .highlight-console .highlight pre span.go:before {
   content: '> ';
@@ -1131,14 +1141,14 @@ ul.sub-toc.collapsed li.doc-toc-group a::after {
   position: relative;
 }
 
-.localtoc-container ul li a:hover::before  {
+/* .localtoc-container ul li a:hover::before  {
   content: "|";
   background-color: #fc0;
   position: absolute;
   left: -7px;
   color: transparent;
   width: 2px;
-}
+} */
 
 p a {
   border-bottom: 0px;
@@ -1210,6 +1220,77 @@ p.experimental-feature::before {
   color: whitesmoke !important;
 }
 
+/* Center the loader */
+#loader {
+  position: absolute;
+  right: 14%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 2s;
+  animation-name: animatebottom;
+  animation-duration: 2s
+}
+
+.animate-fadeIn {
+  position: relative;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 2s;
+  animation-name: fadeIn;
+  animation-duration: 2s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+@keyframes fadeIn {
+  from {
+    bottom:-100px;
+    opacity: 0;
+  }
+  to {
+    bottom:0px;
+    opacity: 1;
+  }
+}
+
+/* #contentDiv {
+  display: none;
+} */
+
+
 @media only screen and (min-width: 250px) {
   body {
     display: grid;
@@ -1273,7 +1354,7 @@ p.experimental-feature::before {
 
   #installation-selection input:checked~.checkmark:after {
     left: 60px;
-    top: 11px;
+    top: 10px;
   }
 
   .docs-container h2 {
@@ -1282,6 +1363,11 @@ p.experimental-feature::before {
 
   .localtoc-container {
     margin-bottom: 0px;
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
   }
 
   .mobile-local-toc {
@@ -1364,7 +1450,7 @@ p.experimental-feature::before {
     top: -18px;
   }
 
-  #proj-setup-filter-section .applied-filters .applied-filter {
+  /* #proj-setup-filter-section .applied-filters .applied-filter {
     padding: 0px 8px;
     margin-right: 10px;
     margin-left: 0px;
@@ -1377,11 +1463,11 @@ p.experimental-feature::before {
     max-width: 250px;
     width: auto;
     display: inline-block;
-  }
+  } */
 
   .proj-setup-filters.docutils .selection input:checked~.checkmark:after {
     left: 5%;
-    top: 14px;
+    top: 13px;
   }
 
   .selection .radio-container {
@@ -1427,11 +1513,11 @@ p.experimental-feature::before {
   }
 
   div.topic {
-    margin-top: -8px;
+    margin-top: -12px;
   }
 
   .docs-container.no-right-bar.containers .topic {
-    margin-top: 26px;
+    margin-top: 23px;
   }
 
   .fixed-docs-toc.docs-toc {
@@ -1732,7 +1818,7 @@ p.experimental-feature::before {
   }
 
   .docs-container.no-right-bar.containers .topic {
-    margin-top: 18px;
+    margin-top: 16px;
   }
 
   .docs-container.no-right-bar {
@@ -1792,7 +1878,7 @@ p.experimental-feature::before {
     display: grid;
     grid-template-areas: 'header header header' 'left-nav main-content right-nav' 'footer footer footer';
     grid-template-rows: 100px auto auto;
-    grid-template-columns: 260px 44rem auto;
+    grid-template-columns: 260px 45em auto;
     grid-column-gap: 5px;    
     overflow-x: hidden;
   }
@@ -1868,15 +1954,15 @@ p.experimental-feature::before {
     display: grid;
     grid-template-areas: 'header header header' 'left-nav main-content right-nav' 'footer footer footer';
     grid-template-rows: 100px auto auto;
-    grid-template-columns: 300px 44rem auto;
+    grid-template-columns: 300px 45em auto;
     grid-column-gap: 5px; 
     overflow-x: hidden;   
   }
   #installation-selection input:checked~.checkmark:after {
-    top: 11px;
+    top: 12px;
   }
   .proj-setup-filters.docutils .selection input:checked~.checkmark:after {
-    top: 14px;
+    top: 15px;
   }
 
   .feature-desc {
@@ -1888,7 +1974,7 @@ p.experimental-feature::before {
   }
  
   div.topic {
-    margin-top: 20px;
+    margin-top: 18px;
   }
 
   h3.banner-heading {
@@ -1932,7 +2018,7 @@ p.experimental-feature::before {
     font-size: 14px;
   }
   .docs-container.no-right-bar.containers .topic {
-    margin-top: 13px;
+    margin-top: 11px;
   }
 }
 
@@ -1941,7 +2027,7 @@ p.experimental-feature::before {
     display: grid;
     grid-template-areas: 'header header header' 'left-nav main-content right-nav' 'footer footer footer'; 
     grid-template-rows: 100px auto auto;
-    grid-template-columns: 300px 50rem auto;
+    grid-template-columns: 300px 45em auto;
     grid-column-gap: 5px;    
     overflow-x: hidden;
     font-size: 16px;
@@ -1956,4 +2042,10 @@ p.experimental-feature::before {
     width: 30px;
     height: 30px;
   }
+  #installation-selection input:checked~.checkmark:after {
+    top: 10px;
+  }
+  .proj-setup-filters.docutils .selection input:checked~.checkmark:after {
+    top: 13px;
+}
 }
