@@ -40,6 +40,8 @@ Execution
 ----------
 `What is the order of execution of scenarios in a specification? <#what-is-the-order-of-execution-of-scenarios-in-a-specification>`__
 
+`Why we cannot skip all tests dynamically during a gauge run if there is a test failure? <#why-we-cannot-skip-all-tests-dynamically-during-a-gauge-run-if-there-is-a-test-failure>`__
+
 .. cssclass:: category-title
 
 Logs
@@ -188,6 +190,16 @@ The scenarios should execute in the order they are specified when running in ser
 But, when executed in parallel or when a scenario/specification uses a data table (data driven tests), all scenarios are parallelized and hence there will not be any order maintained.
 
 We suggest that scenarios should be independent of each other.
+
+.. cssclass:: question
+
+Why we cannot skip all tests dynamically during a gauge run if there is a test failure?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If execution of a step fails, that step is marked as failed and execution of further steps in that scenario will be skipped and the execution of the next scenario begins.
+This is done because we encourage scenarios to be independent of each other.
+
+.. cssclass:: category
 
 :heading:`Logs`
 ---------------
