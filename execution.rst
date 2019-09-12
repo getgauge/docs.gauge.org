@@ -818,7 +818,7 @@ List of various Parse errors:
 Validation Errors
 ~~~~~~~~~~~~~~~~~
 
-These are errors for which `Gauge` skips executing the spec where the error occurs.
+These are errors for which `Gauge` skips executing the scenario where the error occurs.
 
 There are two types of validation error which can occurs
 
