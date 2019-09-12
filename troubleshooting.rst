@@ -225,7 +225,7 @@ necessary for writing a spec or concept.
 
 Validation Errors
 ~~~~~~~~~~~~~~~~~
-Validation errors are those for which Gauge does not run the spec when the error occurs.
+Validation errors are those for which Gauge does not run the scenario when the error occurs.
 
 **Error:**
 
