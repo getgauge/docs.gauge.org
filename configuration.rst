@@ -305,8 +305,8 @@ Gauge configuration while using build tools
 -------------------------------------------
 If you are using Gauge with the build tools such as Maven or Gradle, then you must be aware of specific configuration properties.
 
-| For configuration information while using Gauge with Maven, see `GitHub for Gauge Maven Plugin <https://github.com/getgauge/gauge-maven-plugin/blob/master/README.md>`__ .
-| For configuration information while using Gauge with Gradle, see `GitHub for Gauge Gradle Plugin <https://github.com/getgauge/gauge-gradle-plugin/blob/master/Readme.md>`__ .
+| For configuration information while using Gauge with Maven, see Gauge Maven Plugin  `repository <https://github.com/getgauge/gauge-maven-plugin/blob/master/README.md>`__.
+| For configuration information while using Gauge with Gradle, see Gauge Gradle Plugin `repository  <https://github.com/getgauge/gauge-gradle-plugin/blob/master/Readme.md>`__.
 
 .. _environments:
 

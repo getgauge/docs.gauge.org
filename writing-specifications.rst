@@ -24,7 +24,7 @@ This page provides information about what a specification is, how to write a spe
 .. note::
     You can author Gauge specifications by using any text editor. It is recommended that you use the IDE plugin.
 
-Gauge projects can be created and run in Visual Studio Code by using the `Gauge extension for Visual Studio Code <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__.
+Gauge projects can be created and run in Visual Studio Code by using the `Gauge extension <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__ for Visual Studio Code.
 This plugin currently supports Gauge with Java, JavaScript, Ruby, Python, C# (.Net Core), and TypeScript.
 
 
@@ -36,7 +36,7 @@ This plugin currently supports Gauge with Java, JavaScript, Ruby, Python, C# (.N
 .. note::
     You can author Gauge specifications by using any text editor. It is recommended that you use the IDE plugin.
 
-Gauge projects can be created and run in IntelliJ IDEA by using the `Gauge plugin for IntelliJ IDEA <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__.
+Gauge projects can be created and run in IntelliJ IDEA by using the `Gauge plugin <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__ for IntelliJ IDEA.
 This plugin only supports Gauge with Java.
 
 .. cssclass:: dynamic-content visualstudio
@@ -47,7 +47,7 @@ This plugin only supports Gauge with Java.
 .. note::
     You can author Gauge specifications by using any text editor. It is recommended that you use the IDE plugin.
 
-Gauge projects can be created and run in Visual Studio by using the `Gauge extension for Visual Studio <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__.
+Gauge projects can be created and run in Visual Studio by using the `Gauge extension <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__ for Visual Studio.
 This plugin currently supports Gauge with C# (.Net framework).
 
 .. _specs:
