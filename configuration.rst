@@ -50,7 +50,7 @@ This changes the value of the key, ``check_updates``, to ``false``.
 
 The list of *key value* pairs present in ``gauge.properties`` are listed as follows:
 
-.. code-block:: python
+.. code-block:: gauge
     :linenos:
     :name: gauge_properties
 
@@ -104,7 +104,7 @@ This file is located at ``<project_root>/env/default``, where ``<project_root>``
 
 The list of *key value* pairs present in ``default.properties`` are listed as follows:
 
-.. code-block:: python
+.. code-block:: gauge
     :linenos:
     :name: default_properties
 
@@ -168,7 +168,7 @@ For more details about running language plugins as an environment, see :ref:`Env
     If you have installed Java, then you can  make Java specific configuration changes in the ``java.properties`` file. 
     The following *key value* pairs are listed in ``java.properties``:
 
-    .. code-block:: python
+    .. code-block:: gauge
         :linenos:
         :name: java.properties
 
