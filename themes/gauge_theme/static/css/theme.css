@@ -1290,9 +1290,10 @@ p.experimental-feature::before {
   }
 }
 
-/* #contentDiv {
-  display: none;
-} */
+
+.highlight-gauge .highlight {
+  padding: 0px;
+}
 
 
 @media only screen and (min-width: 250px) {
