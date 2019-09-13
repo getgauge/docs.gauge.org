@@ -25,7 +25,7 @@ You can install Gauge using any of the following methods.
     - Terminal
 
 
-1. Install brew if you haven't already: Go to the brew website, https://brew.sh/, and follow the
+1. Install brew if you haven't already: Go to the `brew website <https://brew.sh>`__, and follow the
 directions there.
 
 2. Run the brew Command to Install Gauge: Installing Gauge using brew is as easy as the
