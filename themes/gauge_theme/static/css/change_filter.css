@@ -66,8 +66,8 @@
     position: relative;
     display: flex;
     border-radius: 5px;
-    height: 40px;
     padding-left: 0px;
+    overflow: hidden;
 }
 
 #proj-setup-filter-section .applied-filters .applied-filter-header {
@@ -80,7 +80,6 @@
     left: -15px;
     font-size: 14px;
     font-family: "OpenSans-Regular";
-    height:40px;
     width: 52px!important;
 }
 

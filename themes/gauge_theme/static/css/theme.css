@@ -1294,6 +1294,10 @@ p.experimental-feature::before {
 .highlight-gauge .highlight {
   padding: 0px;
 }
+#configure-gauge div  {
+  width: 100%;
+  overflow-x: auto;
+}
 
 
 @media only screen and (min-width: 250px) {
@@ -1444,7 +1448,6 @@ p.experimental-feature::before {
     left: -15px;
     font-size: 13px;
     font-family: "OpenSans-Regular";
-    height: 40px;
     width: auto!important;
     color:#1e1e1e;
   }
@@ -1799,7 +1802,6 @@ p.experimental-feature::before {
     left: -15px;
     font-size: 13px;
     font-family: "OpenSans-Regular";
-    height: 40px;
     width: auto!important;
   }
 }
