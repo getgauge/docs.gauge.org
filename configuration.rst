@@ -50,7 +50,7 @@ This changes the value of the key, ``check_updates``, to ``false``.
 
 The list of *key value* pairs present in ``gauge.properties`` are listed as follows:
 
-.. code-block:: python
+.. code-block:: gauge
     :linenos:
     :name: gauge_properties
 
@@ -104,7 +104,7 @@ This file is located at ``<project_root>/env/default``, where ``<project_root>``
 
 The list of *key value* pairs present in ``default.properties`` are listed as follows:
 
-.. code-block:: python
+.. code-block:: gauge
     :linenos:
     :name: default_properties
 
@@ -168,7 +168,7 @@ For more details about running language plugins as an environment, see :ref:`Env
     If you have installed Java, then you can  make Java specific configuration changes in the ``java.properties`` file. 
     The following *key value* pairs are listed in ``java.properties``:
 
-    .. code-block:: python
+    .. code-block:: gauge
         :linenos:
         :name: java.properties
 
@@ -305,8 +305,8 @@ Gauge configuration while using build tools
 -------------------------------------------
 If you are using Gauge with the build tools such as Maven or Gradle, then you must be aware of specific configuration properties.
 
-| For configuration information while using Gauge with Maven, see `GitHub for Gauge Maven Plugin <https://github.com/getgauge/gauge-maven-plugin/blob/master/README.md>`__ .
-| For configuration information while using Gauge with Gradle, see `GitHub for Gauge Gradle Plugin <https://github.com/getgauge/gauge-gradle-plugin/blob/master/Readme.md>`__ .
+| For configuration information while using Gauge with Maven, see Gauge Maven Plugin  `repository <https://github.com/getgauge/gauge-maven-plugin/blob/master/README.md>`__.
+| For configuration information while using Gauge with Gradle, see Gauge Gradle Plugin `repository  <https://github.com/getgauge/gauge-gradle-plugin/blob/master/Readme.md>`__.
 
 .. _environments:
 
