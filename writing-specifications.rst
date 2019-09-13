@@ -24,7 +24,7 @@ This page provides information about what a specification is, how to write a spe
 .. note::
     You can author Gauge specifications by using any text editor. It is recommended that you use the IDE plugin.
 
-Gauge projects can be created and run in Visual Studio Code by using the `Gauge extension for Visual Studio Code <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__.
+Gauge projects can be created and run in Visual Studio Code by using the `Gauge extension <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__ for Visual Studio Code.
 This plugin currently supports Gauge with Java, JavaScript, Ruby, Python, C# (.Net Core), and TypeScript.
 
 
@@ -36,7 +36,7 @@ This plugin currently supports Gauge with Java, JavaScript, Ruby, Python, C# (.N
 .. note::
     You can author Gauge specifications by using any text editor. It is recommended that you use the IDE plugin.
 
-Gauge projects can be created and run in IntelliJ IDEA by using the `Gauge plugin for IntelliJ IDEA <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__.
+Gauge projects can be created and run in IntelliJ IDEA by using the `Gauge plugin <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__ for IntelliJ IDEA.
 This plugin only supports Gauge with Java.
 
 .. cssclass:: dynamic-content visualstudio
@@ -47,7 +47,7 @@ This plugin only supports Gauge with Java.
 .. note::
     You can author Gauge specifications by using any text editor. It is recommended that you use the IDE plugin.
 
-Gauge projects can be created and run in Visual Studio by using the `Gauge extension for Visual Studio <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__.
+Gauge projects can be created and run in Visual Studio by using the `Gauge extension <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__ for Visual Studio.
 This plugin currently supports Gauge with C# (.Net framework).
 
 .. _specs:
@@ -2233,21 +2233,15 @@ If ``ContinueOnFailure`` has no parameters, then the step execution continues by
 
 .. note::
 
-   ``ContinueOnFailure`` is executed after the step method is executed. 
+   * ``ContinueOnFailure`` is executed after the step method is executed. If there is a failure in executing the step, for example, due to parameter count or type mismatch, then Gauge does not execute the ``ContinueOnFailure`` feature.
 
-    If there is a failure in executing the step, for example, due to parameter count or type mismatch, then Gauge does not execute the ``ContinueOnFailure`` feature.
+   * ``ContinueOnFailure`` does not apply to :ref:`hooks <execution_hooks>`. Hooks always fail on first error.
 
-   ``ContinueOnFailure`` does not apply to :ref:`hooks <execution_hooks>`. 
+   * Each step implementation has to be marked explicitly if the step needs to continue on failure.
 
-    Hooks always fail on first error.
+   * It is not possible to globally apply ``ContinueOnFailure`` on all the steps.
 
-   Each step implementation has to be marked explicitly if the step needs to continue on failure. 
-
-    It is not possible to globally apply ``ContinueOnFailure`` on all the steps.
-
-   If an implementation uses step aliases, marking that implementation to continue on failure ensures that all the aliases also continue on failure. 
-
-    So, if a step alias is supposed to break on failure and another step alias is supposed to continue on failure, the step aliases need to be extracted to two different step implementations.
+   * If an implementation uses step aliases, marking that implementation to continue on failure ensures that all the aliases also continue on failure. So, if a step alias is supposed to break on failure and another step alias is supposed to continue on failure, the step aliases need to be extracted to two different step implementations.
 
 
 .. _project_structure:
