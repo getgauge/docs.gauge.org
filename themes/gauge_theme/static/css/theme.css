@@ -1290,13 +1290,14 @@ p.experimental-feature::before {
   }
 }
 
-
-.highlight-gauge .highlight {
-  padding: 0px;
-}
 #configure-gauge div  {
   width: 100%;
   overflow-x: auto;
+}
+
+.linenos .linenodiv {
+  padding: 15px 0px;
+  padding-bottom: 0;
 }
 
 
