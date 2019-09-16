@@ -1455,8 +1455,8 @@ p.experimental-feature::before {
 
   #change-filter {
     position: absolute;
-    right: 0px;
-    top: -18px;
+    right: 0;
+    top: 41px;
   }
 
   /* #proj-setup-filter-section .applied-filters .applied-filter {
@@ -1482,6 +1482,29 @@ p.experimental-feature::before {
   .selection .radio-container {
     margin: 10px 0 0px -10px;
   }
+  #proj-setup-filter-section .applied-filters .applied-filter {
+    padding: 0 4px;
+    margin-right: 5px;
+    margin-left: 0;
+    font-size: 10px;
+    margin-top: 13px;
+    height: 26px;
+  }
+}
+@media only screen and (min-width: 410px) {
+  #proj-setup-filter-section .applied-filters .applied-filter {
+    padding: 0 4px;
+    margin-right: 5px;
+    margin-left: 0;
+    font-size: 13px;
+    margin-top: 13px;
+    height: 26px;
+ }
+ #change-filter {
+  position: relative;
+  right: 0;
+  top: 9px;
+}
 }
 
 @media only screen and (min-width: 768px) {
@@ -1505,6 +1528,14 @@ p.experimental-feature::before {
   .edit-page {
     display: block;
     top:-10px;
+  }
+  #proj-setup-filter-section .applied-filters .applied-filter {
+    padding: 0 6px;
+    margin-right: 5px;
+    margin-left: 0;
+    font-size: 13px;
+    margin-top: 7px;
+    height: 26px;
   }
 
   #search {
@@ -1788,16 +1819,16 @@ p.experimental-feature::before {
   }
 
   #change-filter {
-    position: absolute;
+    position: relative;
     right: 0;
-    top: -18px;
+    top: 0px;
   }
 
   #proj-setup-filter-section .applied-filters .applied-filter-header {
     background-color: #fff0b8;
     margin-right: 0px;
     border-radius: 5px 0 0 5px;
-    padding: 10px 7px;
+    padding: 8px 7px;
     position: relative;
     top: 0;
     left: -15px;

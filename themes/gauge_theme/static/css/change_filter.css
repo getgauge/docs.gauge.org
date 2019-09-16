@@ -63,7 +63,6 @@
 }
 
 #proj-setup-filter-section .applied-filters {
-    position: relative;
     display: flex;
     border-radius: 5px;
     padding-left: 0px;
@@ -84,26 +83,24 @@
 }
 
 #proj-setup-filter-section .applied-filters .applied-filter {
-    padding: 0px 14px;
+    padding: 0 14px;
     background-color: white;
     border-radius: 30px;
     border: 1px solid grey;
-    margin-right: 10px;
-    margin-left: 10px;
-    height: 27px;
+    margin-right: 5px;
+    margin-left: 0px;
     font-size: 14px;
-    margin-left: 3px;
     font-family: "OpenSans-Regular";
-    margin-top: 7px;
+    margin-top: 8px;
     font-weight: normal;
-    max-width: 185px;
-    width:auto;
+    width: auto;
     display: inline-block;
+    height: 26px;
 }
 
 #proj-setup-filter-section .applied-filters .applied-filter::before {
     content: url("../img/check-circle-solid.svg");
-    padding-right: 10px;
+    padding-right: 5px;
     display: inline-block;
     width: 11px;
 }
