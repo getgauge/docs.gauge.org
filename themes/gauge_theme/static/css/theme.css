@@ -1490,7 +1490,7 @@ p.experimental-feature::before {
   #change-filter {
     position: absolute;
     right: 30px;
-    top: 102px;
+    top: 78px;
   }
 
   /* #proj-setup-filter-section .applied-filters .applied-filter {
@@ -1517,13 +1517,14 @@ p.experimental-feature::before {
     margin: 10px 0 0px 0px;
   }
   #proj-setup-filter-section .applied-filters .applied-filter {
-    padding: 0 4px;
+    padding: 0 3px;
     margin-right: 5px;
-    margin-left: 0;
-    font-size: 10px;
+    margin-left: 0px;
+    font-size: 9px;
     margin-top: 13px;
     height: 26px;
   }
+
 }
 @media only screen and (min-width: 410px) {
   #proj-setup-filter-section .applied-filters .applied-filter {
@@ -1537,11 +1538,19 @@ p.experimental-feature::before {
  #change-filter {
   position: absolute;
   right: 30px;
-  top: 102px;
+  top: 78px;
   }
   .copyBtn {
    top: -28px;
    position: relative;
+  }
+  #proj-setup-filter-section .applied-filters .applied-filter {
+    padding: 0 6px;
+    margin-right: 1px;
+    margin-left: 0;
+    font-size: 13px;
+    margin-top: 13px;
+    height: 26px;
   }
 }
 
