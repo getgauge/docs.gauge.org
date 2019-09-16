@@ -192,8 +192,8 @@ or
     Scenario heading
     ----------------
 
-| A scenario contains one or more :ref:`steps <step_syntax>` in it.
-| A scenario can be tagged by using :ref:`tags <longstart-tags>`.
+A scenario contains one or more :ref:`steps <step_syntax>` in it.
+A scenario can be tagged by using :ref:`tags <longstart-tags>`.
 
 .. cssclass:: example
 
@@ -302,8 +302,9 @@ The values written in *quotes*, ``"``, are parameters that are passed into the e
    * ``<``
    * ``>``
 
-| For more information about Context Steps and Tear Down steps, see :ref:`Context Steps<longstart-context>` and :ref:`longstart-teardown`.
-| For more information about how to write step implementations for different languages, see :ref:`language-steps`.
+.. note::
+    * For more information about Context Steps and Tear Down steps, see :ref:`Context Steps<longstart-context>` and :ref:`longstart-teardown`.
+    * For more information about how to write step implementations for different languages, see :ref:`language-steps`.
 
 .. _parameters:
 
@@ -384,9 +385,9 @@ In the following example, ``<name>`` is a dynamic parameter.
 
         |id| name      |
         |--|-----------|
-        |1 | Alice    |
-        |2 | Bob   |
-        |3 | Eve |
+        |1 | Alice     |
+        |2 | Bob       |
+        |3 | Eve       |
 
     ## First scenario
     * Say "hello" to <name>.
@@ -2289,8 +2290,9 @@ A ``env/default`` directory is created when a Gauge project is initialized.
 The default directory has the ``default.properties`` file, which contains the default environment variables set during spec execution.
 This directory also has the language specific ``.property`` file which contains language-specific environment variables.
 
-| For more information about environments, see :ref:`environments`. 
-| For more information about the ``default.properties`` file, see :ref:`local_configuration_Gauge`.
+.. note::
+    * For more information about environments, see :ref:`environments`.
+    * For more information about the ``default.properties`` file, see :ref:`local_configuration_Gauge`.
 
 Specs Directory
 ^^^^^^^^^^^^^^^
@@ -2376,8 +2378,8 @@ The following project structure shows the project structure for the selected lan
 
     **csharp.properties**
 
-    | This file defines configurations for CSharp runner plugin.
-    | For more information about language-specific configuration, see :ref:`language_config`.
+    This file defines configurations for CSharp runner plugin.
+    For more information about language-specific configuration, see :ref:`language_config`.
 
 .. cssclass:: dynamic-content java
 
@@ -2407,8 +2409,8 @@ The following project structure shows the project structure for the selected lan
 
     **java.properties**
 
-    | This file defines configurations for Java runner plugin.
-    | For more information about language-specific configuration, see :ref:`language_config`.
+    This file defines configurations for Java runner plugin.
+    For more information about language-specific configuration, see :ref:`language_config`.
 
 .. cssclass:: dynamic-content javascript
 
@@ -2431,8 +2433,8 @@ The following project structure shows the project structure for the selected lan
 
     **js.properties**
 
-    | This file defines configurations for Javascript runner plugin.
-    | For more information about language-specific configuration, see :ref:`language_config`.
+    This file defines configurations for Javascript runner plugin.
+    For more information about language-specific configuration, see :ref:`language_config`.
 
 .. cssclass:: dynamic-content python
 
@@ -2455,8 +2457,8 @@ The following project structure shows the project structure for the selected lan
 
     **python.properties**
 
-    | This file defines configurations for Python runner plugin.
-    | For more information about language-specific configuration, see :ref:`language_config`.
+    This file defines configurations for Python runner plugin.
+    For more information about language-specific configuration, see :ref:`language_config`.
 
 .. cssclass:: dynamic-content ruby
 
@@ -2479,5 +2481,5 @@ The following project structure shows the project structure for the selected lan
 
     **ruby.properties**
 
-    | This file defines configurations for Ruby runner plugin.
-    | For more information about language-specific configuration, see :ref:`language_config`.
+    This file defines configurations for Ruby runner plugin.
+    For more information about language-specific configuration, see :ref:`language_config`.

@@ -943,7 +943,7 @@ img {
   margin-bottom: 30px;
 }
 
-.footer_items h5 {
+.footer_items .footer_heading {
   color: var(--gauge-yellow);
   font-weight: 400;
   margin: 0 0 30px;
@@ -2021,7 +2021,7 @@ p.experimental-feature::before {
     font-family: 'OpenSans-Bold';
   }
 
-  .footer_items h5 {
+  .footer_items .footer_heading {
     font-size: 18px;
   }
 

@@ -32,10 +32,11 @@ You can use the following command at ``<project_root>`` to run a Gauge specifica
 
     gauge run [args] [flags]
 
-| ``<project_root>`` - location at which a Gauge project is created
-| ``[args]`` - directories in which specifications are stored, location of specification files and scenarios
-| ``[flags]`` - options that can be used with this command such as ``--tags``, ``-e``, ``-f``, and so on
-| For more information about ``gauge run`` command, see the Gauge man page.
+* ``<project_root>`` - location at which a Gauge project is created
+* ``[args]`` - directories in which specifications are stored, location of specification files and scenarios
+* ``[flags]`` - options that can be used with this command such as ``--tags``, ``-e``, ``-f``, and so on
+
+For more information about ``gauge run`` command, see the Gauge man page.
 
 .. note::
     Gauge specifications can also be run from within the IDE
@@ -427,15 +428,15 @@ In the following example, the scenarios in ``hello.spec`` (see :ref:`Data driven
 
     gauge run --table-rows "1" specs/hello.spec
 
-| In the following example, multiple rows are specified by separating them with commas. 
-| The scenarios from the ``hello.spec`` are run for the first and third rows of the data table.
+In the following example, multiple rows are specified by separating them with commas.
+The scenarios from the ``hello.spec`` are run for the first and third rows of the data table.
 
 .. code-block:: console
 
     gauge run --table-rows "1,3" specs/hello.spec
 
-| In the following example, a range of table rows is specified.
-| The scenarios from the ``hello.spec`` are run for the first, second, and third rows of the data table.
+In the following example, a range of table rows is specified.
+The scenarios from the ``hello.spec`` are run for the first, second, and third rows of the data table.
 
 .. code-block:: console
 
@@ -522,8 +523,8 @@ In parallel execution, every stream starts a new worker process. This can be opt
 by using multithreading instead of processes. Multithreading uses only one worker process and 
 starts multiple threads for parallel execution.
 
-| To use the multithreading feature, the ``enable_multithreading`` environment variable must be set to ``true``. If not already present, you can add this variable to the ``default.properties`` file. 
-| For more information about ``default.properties``, see :ref:`local_configuration_Gauge`.
+To use the multithreading feature, the ``enable_multithreading`` environment variable must be set to ``true``. If not already present, you can add this variable to the ``default.properties`` file.
+For more information about ``default.properties``, see :ref:`local_configuration_Gauge`.
 
 
 .. admonition:: Prerequisites
@@ -625,8 +626,8 @@ Use the following command to execute a group of specifications:
 
     gauge run -n=<number_of_groups> -g=<group_number> specs
 
-| ``-n`` - number of groups
-| ``-g`` - group number
+* ``-n`` - number of groups
+* ``-g`` - group number
 
 .. cssclass:: example
 
@@ -663,8 +664,8 @@ When the ``--failed`` flag is used with the ``gauge run`` command, the flags tha
 
 Example
 
-| Consider an example, where specs are run with a ``--env`` and ``--verbose`` flags.
-| Three scenarios fail during this run.
+Consider an example, where specs are run with a ``--env`` and ``--verbose`` flags.
+Three scenarios fail during this run.
 
 .. code-block:: console
 
