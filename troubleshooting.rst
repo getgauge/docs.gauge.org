@@ -18,7 +18,7 @@ Gauge installation via NPM (npm install @getgauge/cli -g)
 
 **Error message:**
 
-.. code-block:: json
+.. code-block:: js
 
    { [Error: EACCES: permission denied, open 'bin/gauge'] errno: -13, code: 'EACCES', syscall: 'open', path: 'bin/gauge' }
 

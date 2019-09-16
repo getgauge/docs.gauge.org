@@ -11,7 +11,7 @@
 :heading:`Running a Specification`
 ==================================
 
-.. include:: ../change_filter.rst
+.. include:: .../partials/change_filter.rst
 .. role:: highlighted-syntax
 .. role:: param-syntax-char
 

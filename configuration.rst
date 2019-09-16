@@ -7,7 +7,7 @@
 
 :heading:`Configure Gauge`
 ==========================
-.. include:: change_filter.rst
+.. include:: ./partials/change_filter.rst
 
 You can configure Gauge as per your requirements by using the *key value* pairs in the ``gauge.properties`` and ``default.properties`` files. 
 

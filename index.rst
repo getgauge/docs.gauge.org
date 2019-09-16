@@ -12,7 +12,6 @@ Gauge documentation
     configuration
     examples
     execution
-    experimental-feature
     faqs
     getting_started/create-test-project
     getting_started/installing-gauge

@@ -27,7 +27,7 @@
 :heading:`Examples`
 ===================
 
-.. include:: change_filter.rst
+.. include:: ./partials/change_filter.rst
 
 .. cssclass:: dynamic-content csharp examples-table
 
