@@ -1313,13 +1313,11 @@ p.experimental-feature::before {
     opacity: 0;
     -webkit-transition-duration: 4s; /* Safari */
     -webkit-transition-delay: 4s;
-    transition-delay: 4s;
   }
   to {
     opacity: 1;
     -webkit-transition-duration: 0s; /* Safari */
     -webkit-transition-delay: 0s;
-    transition-delay: 0s;
   }
 }
 
