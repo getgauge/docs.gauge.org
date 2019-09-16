@@ -1330,8 +1330,7 @@ p.experimental-feature::before {
 }
 
 .linenos .linenodiv {
-  padding: 15px 0px;
-  padding-bottom: 0;
+  padding: 0px;
 }
 
 #validation-errors div {
