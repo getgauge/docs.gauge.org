@@ -53,15 +53,17 @@
 #installation-selection input:checked~.checkmark:after {
     content: url("../img/radio-button.svg");
     position: absolute;
-    top: 13px;
-    left: 14px;
+    top: 10px;
+    left: 5px;
     width: 12px;
+    height: 12px;
+    border-radius: 50%;
 }
 
 #installation-selection .circle {
     position: absolute;
-    bottom: 15px;
-    left: 14px;
+    top: 16px;
+    left: 5px;
     border: 1px solid black;
     width: 12px;
     height: 12px;

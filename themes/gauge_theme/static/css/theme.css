@@ -1344,10 +1344,7 @@ p.experimental-feature::before {
     flex-direction: column;
   }
 
-  .selection-icon {
-    right: 40px;
-  }
-
+ 
   .algolia-autocomplete {
     width: 84%;
     top:16px;
@@ -1381,18 +1378,10 @@ p.experimental-feature::before {
     padding: 10px;
     border-radius: 3px;
     background-color: #f2f2f2;
-    padding-left:90px;
+    padding-left:30px;
   }
   
-  #installation-selection .circle {
-    left: 60px;
-  }
-
-  #installation-selection input:checked~.checkmark:after {
-    left: 60px;
-    top: 10px;
-  }
-
+ 
   .docs-container h2 {
     margin-right: auto;
   }
@@ -1769,23 +1758,6 @@ p.experimental-feature::before {
     padding-left: 25px;
   }
 
-  #installation-selection .setup-selections {
-    display: flex;
-    flex-direction: row;
-  }
-
-  #installation-selection .setup-selection {
-    width: 33%;
-    text-align: center;
-    min-height: 300px;
-    display: flex;
-    flex-direction: column;
-    margin-right: 20px;
-    padding-bottom: 5px;
-    border-radius: 5px;
-    align-items: center;
-  }
-
   #installation-selection .radioContainer {
     position: relative;
     width: 100%;
@@ -1802,21 +1774,13 @@ p.experimental-feature::before {
     font-weight: normal;
   }
 
-  #installation-selection .circle {
-    position: absolute;
-    bottom: 15px;
-    left: 14px;
-    border: 1px solid black;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-  }
+  
 
   .selection-icon {
     background-color: white;
     position: absolute;
     bottom: 18%;
-    right: 10px;
+    right: 4px;
     border: .5px solid grey;
     width: 25px;
     height: 25px;
@@ -1827,13 +1791,7 @@ p.experimental-feature::before {
     display: none;
   }
 
-  #installation-selection input:checked~.checkmark:after {
-    content: url("../img/radio-button.svg");
-    position: absolute;
-    top: 11px;
-    left: 14px;
-    width: 12px;
-  }
+
 
   .row.banner {
     margin-left: 0px;
@@ -1874,6 +1832,26 @@ p.experimental-feature::before {
     overflow-x: hidden;
   }
 
+  #installation-selection .setup-selections {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #installation-selection .setup-selection {
+    width: 33%;
+    text-align: center;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    align-items: center;
+  }
+  #installation-selection .setup-selection:last-child {
+    margin-right: 0px;
+  }
+
   .fixed-docs-toc.docs-toc {
     display: block;
   }
@@ -1907,11 +1885,10 @@ p.experimental-feature::before {
     flex-direction: column;
   }
   .selection-content {
-    left: 35px;
+    left: 25px;
+    bottom:11px;
   }
-  #installation-selection input:checked~.checkmark:after {
-    top: 12px;
-  }
+
 }
 
 @media only screen and (min-width:960px) {
@@ -2023,9 +2000,7 @@ p.experimental-feature::before {
     grid-column-gap: 5px; 
     overflow-x: hidden;   
   }
-  #installation-selection input:checked~.checkmark:after {
-    top: 12px;
-  }
+ 
   .proj-setup-filters.docutils .selection input:checked~.checkmark:after {
     top: 15px;
   }
@@ -2107,9 +2082,7 @@ p.experimental-feature::before {
     width: 30px;
     height: 30px;
   }
-  #installation-selection input:checked~.checkmark:after {
-    top: 10px;
-  }
+ 
   .proj-setup-filters.docutils .selection input:checked~.checkmark:after {
     top: 13px;
 }
