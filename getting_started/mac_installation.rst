@@ -16,7 +16,7 @@ You can install Gauge using any of the following methods.
 
 .. admonition:: System Requirements
 
-    - macOS
+    - macOS  >= Mac OS X v10.6
 
     - Homebrew
 
@@ -61,9 +61,19 @@ if HomeBrew is working properly, you should see something similar to the followi
 
 .. cssclass:: toggle collapsible-content
 
-Install Gauge to /usr/local/bin by running
+    .. admonition:: System Requirements
+
+        - macOS >= Mac OS X v10.6
+
+        - Commandline tool (`curl` command)
+
+        - Terminal
+
+
+    Install Gauge to /usr/local/bin by running
 
 .. cssclass:: toggle collapsible-content
+
 .. code-block:: console
 
     curl -Ssl https://downloads.gauge.org/stable | sh
@@ -86,9 +96,9 @@ Or install Gauge to a [custom path] using
 
     .. admonition:: System Requirements
 
-        - macOS
+        - macOS >= Mac OS X v10.6
 
-        - Commandline tool
+        - Commandline tool (`unzip` command)
 
         - Terminal
 
@@ -112,8 +122,9 @@ Or install Gauge to a [custom path] using
 
     .. admonition:: System Requirements
 
-        `Node.js <nodejs.org>`__
+        - `Node.js <nodejs.org>`__  >= 10.16.3 (LTS)
 
+        - `NPM <npmjs.org>`__ >= (6.9.0)
 
         To install gauge using NPM you will need the latest node version.
 

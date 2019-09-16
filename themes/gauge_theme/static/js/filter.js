@@ -13,6 +13,10 @@ const changeFilter = function () {
     applyBtn[0].onclick = updateContent;
 };
 
+const refreshPage = function () {
+    window.location.reload();
+}; 
+
 const showPopup = function () {
     let popUp = document.getElementsByClassName("proj-setup-filters");
     popUp[0].classList.remove("hidden");
@@ -44,6 +48,7 @@ const updateContent = function () {
         if (selectedItem.checked) applyCombination(selectedItem);
     });
     hidePopUp();
+    refreshPage();
 }
 
 const isSelected = selection => Object.values(SELECTIONS).includes(selection);

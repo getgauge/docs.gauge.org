@@ -356,8 +356,34 @@ footer {
 
 .highlight pre {
   margin: 0px;
-  overflow: auto;
   min-height: 40px;
+}
+.line {
+  overflow: hidden!important;
+}
+
+#write-gauge-specifications div,#run-gauge-specifications div {
+  overflow-x: auto;
+  margin: 0px;
+}
+#proj-setup-filter-section .applied-filters .applied-filter {
+  overflow: hidden;
+}
+span.go {
+  overflow: auto;
+}
+
+span.go::-webkit-scrollbar {
+  background: transparent;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px transparent;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px #ffffff;
 }
 
 .copyBtn {
@@ -917,7 +943,7 @@ img {
   margin-bottom: 30px;
 }
 
-.footer_items h5 {
+.footer_items .footer_heading {
   color: var(--gauge-yellow);
   font-weight: 400;
   margin: 0 0 30px;
@@ -1269,7 +1295,7 @@ p.experimental-feature::before {
   transition-delay: 4s;
 }
 
-@-webkit-keyframes animatebottom {
+/* @-webkit-keyframes animatebottom {
   from { bottom:-100px; opacity:0 } 
   to { bottom:0px; opacity:1 }
 }
@@ -1277,22 +1303,31 @@ p.experimental-feature::before {
 @keyframes animatebottom { 
   from{ bottom:-100px; opacity:0 } 
   to{ bottom:0; opacity:1 }
-}
+} */
 
 @keyframes fadeIn {
   from {
     opacity: 0;
+    -webkit-transition-duration: 4s; /* Safari */
+    -webkit-transition-delay: 4s;
     transition-delay: 4s;
   }
   to {
     opacity: 1;
-    transition-delay: 4s;
+    -webkit-transition-duration: 0s; /* Safari */
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
   }
 }
 
+#configure-gauge div  {
+  width: 100%;
+  overflow-x: auto;
+}
 
-.highlight-gauge .highlight {
-  padding: 0px;
+.linenos .linenodiv {
+  padding: 15px 0px;
+  padding-bottom: 0;
 }
 
 
@@ -1313,10 +1348,7 @@ p.experimental-feature::before {
     flex-direction: column;
   }
 
-  .selection-icon {
-    right: 40px;
-  }
-
+ 
   .algolia-autocomplete {
     width: 84%;
     top:16px;
@@ -1350,18 +1382,10 @@ p.experimental-feature::before {
     padding: 10px;
     border-radius: 3px;
     background-color: #f2f2f2;
-    padding-left:90px;
+    padding-left:30px;
   }
   
-  #installation-selection .circle {
-    left: 60px;
-  }
-
-  #installation-selection input:checked~.checkmark:after {
-    left: 60px;
-    top: 10px;
-  }
-
+ 
   .docs-container h2 {
     margin-right: auto;
   }
@@ -1444,15 +1468,14 @@ p.experimental-feature::before {
     left: -15px;
     font-size: 13px;
     font-family: "OpenSans-Regular";
-    height: 40px;
     width: auto!important;
     color:#1e1e1e;
   }
 
   #change-filter {
     position: absolute;
-    right: 0px;
-    top: -18px;
+    right: 0;
+    top: 41px;
   }
 
   /* #proj-setup-filter-section .applied-filters .applied-filter {
@@ -1478,6 +1501,29 @@ p.experimental-feature::before {
   .selection .radio-container {
     margin: 10px 0 0px -10px;
   }
+  #proj-setup-filter-section .applied-filters .applied-filter {
+    padding: 0 4px;
+    margin-right: 5px;
+    margin-left: 0;
+    font-size: 10px;
+    margin-top: 13px;
+    height: 26px;
+  }
+}
+@media only screen and (min-width: 410px) {
+  #proj-setup-filter-section .applied-filters .applied-filter {
+    padding: 0 4px;
+    margin-right: 5px;
+    margin-left: 0;
+    font-size: 13px;
+    margin-top: 13px;
+    height: 26px;
+ }
+ #change-filter {
+  position: relative;
+  right: 0;
+  top: 9px;
+}
 }
 
 @media only screen and (min-width: 768px) {
@@ -1501,6 +1547,14 @@ p.experimental-feature::before {
   .edit-page {
     display: block;
     top:-10px;
+  }
+  #proj-setup-filter-section .applied-filters .applied-filter {
+    padding: 0 6px;
+    margin-right: 5px;
+    margin-left: 0;
+    font-size: 13px;
+    margin-top: 7px;
+    height: 26px;
   }
 
   #search {
@@ -1708,23 +1762,6 @@ p.experimental-feature::before {
     padding-left: 25px;
   }
 
-  #installation-selection .setup-selections {
-    display: flex;
-    flex-direction: row;
-  }
-
-  #installation-selection .setup-selection {
-    width: 33%;
-    text-align: center;
-    min-height: 300px;
-    display: flex;
-    flex-direction: column;
-    margin-right: 20px;
-    padding-bottom: 5px;
-    border-radius: 5px;
-    align-items: center;
-  }
-
   #installation-selection .radioContainer {
     position: relative;
     width: 100%;
@@ -1741,21 +1778,13 @@ p.experimental-feature::before {
     font-weight: normal;
   }
 
-  #installation-selection .circle {
-    position: absolute;
-    bottom: 15px;
-    left: 14px;
-    border: 1px solid black;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-  }
+  
 
   .selection-icon {
     background-color: white;
     position: absolute;
     bottom: 18%;
-    right: 10px;
+    right: 4px;
     border: .5px solid grey;
     width: 25px;
     height: 25px;
@@ -1766,13 +1795,7 @@ p.experimental-feature::before {
     display: none;
   }
 
-  #installation-selection input:checked~.checkmark:after {
-    content: url("../img/radio-button.svg");
-    position: absolute;
-    top: 11px;
-    left: 14px;
-    width: 12px;
-  }
+
 
   .row.banner {
     margin-left: 0px;
@@ -1784,22 +1807,21 @@ p.experimental-feature::before {
   }
 
   #change-filter {
-    position: absolute;
+    position: relative;
     right: 0;
-    top: -18px;
+    top: 0px;
   }
 
   #proj-setup-filter-section .applied-filters .applied-filter-header {
     background-color: #fff0b8;
     margin-right: 0px;
     border-radius: 5px 0 0 5px;
-    padding: 10px 7px;
+    padding: 8px 7px;
     position: relative;
     top: 0;
     left: -15px;
     font-size: 13px;
     font-family: "OpenSans-Regular";
-    height: 40px;
     width: auto!important;
   }
 }
@@ -1812,6 +1834,26 @@ p.experimental-feature::before {
     grid-template-columns: 260px auto;
     grid-column-gap: 5px;
     overflow-x: hidden;
+  }
+
+  #installation-selection .setup-selections {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #installation-selection .setup-selection {
+    width: 33%;
+    text-align: center;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    align-items: center;
+  }
+  #installation-selection .setup-selection:last-child {
+    margin-right: 0px;
   }
 
   .fixed-docs-toc.docs-toc {
@@ -1847,11 +1889,10 @@ p.experimental-feature::before {
     flex-direction: column;
   }
   .selection-content {
-    left: 35px;
+    left: 25px;
+    bottom:11px;
   }
-  #installation-selection input:checked~.checkmark:after {
-    top: 12px;
-  }
+
 }
 
 @media only screen and (min-width:960px) {
@@ -1963,9 +2004,7 @@ p.experimental-feature::before {
     grid-column-gap: 5px; 
     overflow-x: hidden;   
   }
-  #installation-selection input:checked~.checkmark:after {
-    top: 12px;
-  }
+ 
   .proj-setup-filters.docutils .selection input:checked~.checkmark:after {
     top: 15px;
   }
@@ -1986,7 +2025,7 @@ p.experimental-feature::before {
     font-family: 'OpenSans-Bold';
   }
 
-  .footer_items h5 {
+  .footer_items .footer_heading {
     font-size: 18px;
   }
 
@@ -2047,9 +2086,7 @@ p.experimental-feature::before {
     width: 30px;
     height: 30px;
   }
-  #installation-selection input:checked~.checkmark:after {
-    top: 10px;
-  }
+ 
   .proj-setup-filters.docutils .selection input:checked~.checkmark:after {
     top: 13px;
 }

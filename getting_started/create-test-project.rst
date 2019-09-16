@@ -16,6 +16,40 @@
 
 .. role:: highlighted-syntax
 
+.. cssclass:: csharp dynamic-content
+
+      .. admonition:: System Requirements
+
+            * Dotnet Core Sdk >= 2.0
+
+.. cssclass:: java dynamic-content
+
+      .. admonition:: System Requirements
+
+            * JDK >= 11
+
+.. cssclass:: javascript dynamic-content
+
+      .. admonition:: System Requirements
+
+            * Nodejs >= 10.16.3 (LTS)
+
+.. cssclass:: python dynamic-content
+
+      .. admonition:: System Requirements
+
+            * Python >= 2.7
+
+            * Pip
+
+.. cssclass:: ruby dynamic-content
+
+      .. admonition:: System Requirements
+
+            * Ruby >= 2.3.0
+
+            * Bundler
+
 .. cssclass:: vscode dynamic-content
 
 :vscode:`Creating a Testing Project in VS Code`

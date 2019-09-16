@@ -66,9 +66,16 @@ Install Gauge using dfn by running this command
 
 .. cssclass:: toggle collapsible-content
 
+    .. admonition:: System Requirements
+
+        - Commandline tool (`unzip` command)
+
+        - Terminal
+
+
     1. Download the zip installer.
 
-    `Zip Installer <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip>`__
+        `Zip Installer <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-linux.x86_64.zip>`__
 
     2. Extract to a location and add it to system path using the following command.
 
@@ -86,7 +93,9 @@ Install Gauge using dfn by running this command
 
     .. admonition:: System Requirements
 
-        `Node.js <nodejs.org>`__
+        - `Node.js <nodejs.org>`__  >= 10.16.3 (LTS)
+
+        - `NPM <npmjs.org>`__ >= (6.9.0)
 
 
         To install gauge using NPM you will need the latest node version.
@@ -112,7 +121,14 @@ Install Gauge using dfn by running this command
 
 .. cssclass:: toggle collapsible-content
 
-Install Gauge to /usr/local/bin by running
+    .. admonition:: System Requirements
+
+        - Commandline tool (`curl` command)
+
+        - Terminal
+
+
+    Install Gauge to /usr/local/bin by running
 
 .. cssclass:: toggle collapsible-content
 .. code-block:: console

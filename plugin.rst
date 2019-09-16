@@ -131,8 +131,7 @@ Customize plugin install location
 You can also install the plugins at different locations.
 
 1. To install plugins at a different location, set ``GAUGE_HOME`` environment variable to the custom location. 
-2. | Run the ``plugin install`` command. 
-   | The plugin is installed at the ``GAUGE_HOME`` custom location.
+2. Run the ``plugin install`` command. The plugin is installed at the ``GAUGE_HOME`` custom location.
 
 For troubleshooting information during plugin installation, see :ref:`Troubleshooting plugin installation <troubleshoot_plugin_installation>`.
 

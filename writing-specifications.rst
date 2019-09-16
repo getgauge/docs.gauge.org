@@ -192,8 +192,8 @@ or
     Scenario heading
     ----------------
 
-| A scenario contains one or more :ref:`steps <step_syntax>` in it.
-| A scenario can be tagged by using :ref:`tags <longstart-tags>`.
+A scenario contains one or more :ref:`steps <step_syntax>` in it.
+A scenario can be tagged by using :ref:`tags <longstart-tags>`.
 
 .. cssclass:: example
 
@@ -263,7 +263,10 @@ Step
 
 Steps are the executable components of a specification that are written by using the Markdown unordered list syntax.
 In a specification, steps can exist either within a scenario or outside a scenario. 
-When steps are used outside a scenario, they can be of the following types: Context steps and Tear Down steps. 
+When steps are used outside a scenario, they can be of the following types:
+
+* Context steps
+* Tear Down steps.
 
 Steps also exist inside a Concept.
 
@@ -299,8 +302,9 @@ The values written in *quotes*, ``"``, are parameters that are passed into the e
    * ``<``
    * ``>``
 
-| For more information about Context Steps and Tear Down steps, see :ref:`Context Steps<longstart-context>` and :ref:`longstart-teardown`.
-| For more information about how to write step implementations for different languages, see :ref:`language-steps`.
+.. note::
+    * For more information about Context Steps and Tear Down steps, see :ref:`Context Steps<longstart-context>` and :ref:`longstart-teardown`.
+    * For more information about how to write step implementations for different languages, see :ref:`language-steps`.
 
 .. _parameters:
 
@@ -381,9 +385,9 @@ In the following example, ``<name>`` is a dynamic parameter.
 
         |id| name      |
         |--|-----------|
-        |1 | Alice    |
-        |2 | Bob   |
-        |3 | Eve |
+        |1 | Alice     |
+        |2 | Bob       |
+        |3 | Eve       |
 
     ## First scenario
     * Say "hello" to <name>.
@@ -405,8 +409,8 @@ In the following example, ``<username>`` and ``<project_name>`` are used in a Co
     * Navigate to project page
     * Create a project <project_name>
 
-| The dynamic parameters take actual values when a concept is invoked from within a spec. 
-| In the following specification, the concept is invoked within the "Successful login scenario" and the dynamic parameters, ``<username>`` and ``<project_name>`` take the values "john" and "Gauge java" respectively.
+The dynamic parameters take actual values when a concept is invoked from within a spec.
+In the following specification, the concept is invoked within the "Successful login scenario" and the dynamic parameters, ``<username>`` and ``<project_name>`` take the values "john" and "Gauge java" respectively.
 
 .. code-block:: gauge
 
@@ -416,10 +420,10 @@ In the following example, ``<username>`` and ``<project_name>`` are used in a Co
 
     * Login as user "john" and create project "Gauge java"
 
-
-| For more information about using dynamic parameters in table column values, see :ref:`table_driven_execution`.
-| For more information about concepts, see :ref:`concept`.
-| For more information about using dynamic parameters in inline tables, see :ref:`example_inline_data_driven_table`.
+.. note::
+    * For more information about using dynamic parameters in table column values, see :ref:`table_driven_execution`.
+    * For more information about concepts, see :ref:`concept`.
+    * For more information about using dynamic parameters in inline tables, see :ref:`example_inline_data_driven_table`.
 
 3. Table Parameters
 ^^^^^^^^^^^^^^^^^^^^
@@ -449,12 +453,12 @@ In the following example, the step has an inline table parameter.
 .. note::
    Inline data tables can be used as special CSV parameters. For more information about CSV parameters, see :ref:`special csv parameter<special_parameter_csv>`.
 
+.. _example_inline_data_driven_table:
+
 Dynamic parameters used in inline tables
 """"""""""""""""""""""""""""""""""""""""
 
 Dynamic parameters can be used in inline tables, which are used within a step. These parameters can take values from the data tables.
-
-.. _example_inline_data_driven_table:
 
 .. cssclass:: example
 
@@ -486,9 +490,10 @@ This parameter takes values from the data table.
 ^^^^^^^^^^^^^^^^^^^^^
 Special parameters provide the ability to pass large and complex data such as tables and files into the steps as parameters.
 
-| A special parameter has the following syntax: ``<prefix:value>``.
-| ``prefix`` - defines the special type of parameter such as file or table
-| ``value`` - defines the value for the type of special parameter
+A special parameter has the following syntax: ``<prefix:value>``.
+
+* ``prefix`` - defines the special type of parameter such as file or table
+* ``value`` - defines the value for the type of special parameter
 
 The two types of special parameters are as follows:
 
@@ -500,9 +505,9 @@ The two types of special parameters are as follows:
 Special Parameter: File
 """""""""""""""""""""""
 
-| These are used to read files and pass the file content as a string parameter to the steps in a specification.
-| The syntax of file is as follows: ``<file:[value]>`` .
-| ``[value]`` is the absolute or relative path to the file located at ``<project_root>`` (location at which the Gauge project is created). 
+These are used to read files and pass the file content as a string parameter to the steps in a specification.
+
+The syntax of file is as follows: ``<file:[value]>`` .``[value]`` is the absolute or relative path to the file located at ``<project_root>`` (location at which the Gauge project is created). 
 
 .. cssclass:: example
 
@@ -526,9 +531,9 @@ In the following example, ``content.txt`` is the file located at  ``<project_roo
 Special Parameter: CSV
 """""""""""""""""""""""
 
-| Tables are used to pass table values into steps by using the values from an external CSV file. 
-| The syntax of this parameter is as follows: ``<table:[value]>``
-| ``[value]`` is the absolute or relative path to the file located at ``<project_root>`` (location at which the Gauge project is created). 
+Tables are used to pass table values into steps by using the values from an external CSV file.
+The syntax of this parameter is as follows: ``<table:[value]>``
+``[value]`` is the absolute or relative path to the file located at ``<project_root>`` (location at which the Gauge project is created).
 
 .. cssclass:: example
 
@@ -574,9 +579,9 @@ When the number of tags used is more, tags can be defined in multiple lines to e
 
 Example: Single line tag
 
-| In the following example, both the specification, ``Search specification``, and scenario, ``Successful search``, have tags. 
-| ``search`` and ``admin`` tags, which are used for the spec also apply to the scenario.
-| Additionally, the scenario has its own set of tag, which is ``successful``.
+In the following example, both the specification, ``Search specification``, and scenario, ``Successful search``, have tags.
+``search`` and ``admin`` tags, which are used for the spec also apply to the scenario.
+Additionally, the scenario has its own set of tag, which is ``successful``.
 
 .. code-block:: gauge
 
@@ -590,8 +595,8 @@ Example: Single line tag
 
 Example: Multi-line tag
 
-| In the following example, both the specification and scenario have tags in multiple lines.
-| Tags have to be indented when written in multiple lines.
+In the following example, both the specification and scenario have tags in multiple lines.
+Tags have to be indented when written in multiple lines.
 
 .. code-block:: gauge
 
@@ -668,8 +673,8 @@ Parameters are defined as ``<parameters>``.
 
 Example
 
-| In the following example, the concept header is preceded by ``#``. 
-| ``<username>`` and ``<project_name>`` are parameters used in the concept.
+In the following example, the concept header is preceded by ``#``.
+``<username>`` and ``<project_name>`` are parameters used in the concept.
 
 .. code-block:: gauge
 
@@ -724,8 +729,8 @@ Hence, they are similar to steps used in a scenario or concept.
 
 Example
 
-| In the following example, the context steps are ``User is logged in as Mike`` and ``Navigate to the project page``.
-| These steps are defined and executed prior to the two scenarios, ``## Delete single project`` and ``## Delete multiple projects``.
+In the following example, the context steps are ``User is logged in as Mike`` and ``Navigate to the project page``.
+These steps are defined and executed prior to the two scenarios, ``## Delete single project`` and ``## Delete multiple projects``.
 
 When the spec is run, the workflow is as follows:
 
@@ -1616,8 +1621,8 @@ To get additional information about the current specification and scenario and s
 
 Filtering Hooks execution based on tags
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-You can specify tags for which the execution :ref:`hooks <execution_hooks>` can run. 
 
+You can specify tags for which the execution :ref:`hooks <execution_hooks>` can run.
 This ensures that the hook only runs on scenarios and specifications that have the specified tags.
 
 .. note:: 
@@ -2285,8 +2290,9 @@ A ``env/default`` directory is created when a Gauge project is initialized.
 The default directory has the ``default.properties`` file, which contains the default environment variables set during spec execution.
 This directory also has the language specific ``.property`` file which contains language-specific environment variables.
 
-| For more information about environments, see :ref:`environments`. 
-| For more information about the ``default.properties`` file, see :ref:`local_configuration_Gauge`.
+.. note::
+    * For more information about environments, see :ref:`environments`.
+    * For more information about the ``default.properties`` file, see :ref:`local_configuration_Gauge`.
 
 Specs Directory
 ^^^^^^^^^^^^^^^
@@ -2372,8 +2378,8 @@ The following project structure shows the project structure for the selected lan
 
     **csharp.properties**
 
-    | This file defines configurations for CSharp runner plugin.
-    | For more information about language-specific configuration, see :ref:`language_config`.
+    This file defines configurations for CSharp runner plugin.
+    For more information about language-specific configuration, see :ref:`language_config`.
 
 .. cssclass:: dynamic-content java
 
@@ -2403,8 +2409,8 @@ The following project structure shows the project structure for the selected lan
 
     **java.properties**
 
-    | This file defines configurations for Java runner plugin.
-    | For more information about language-specific configuration, see :ref:`language_config`.
+    This file defines configurations for Java runner plugin.
+    For more information about language-specific configuration, see :ref:`language_config`.
 
 .. cssclass:: dynamic-content javascript
 
@@ -2427,8 +2433,8 @@ The following project structure shows the project structure for the selected lan
 
     **js.properties**
 
-    | This file defines configurations for Javascript runner plugin.
-    | For more information about language-specific configuration, see :ref:`language_config`.
+    This file defines configurations for Javascript runner plugin.
+    For more information about language-specific configuration, see :ref:`language_config`.
 
 .. cssclass:: dynamic-content python
 
@@ -2451,8 +2457,8 @@ The following project structure shows the project structure for the selected lan
 
     **python.properties**
 
-    | This file defines configurations for Python runner plugin.
-    | For more information about language-specific configuration, see :ref:`language_config`.
+    This file defines configurations for Python runner plugin.
+    For more information about language-specific configuration, see :ref:`language_config`.
 
 .. cssclass:: dynamic-content ruby
 
@@ -2475,5 +2481,5 @@ The following project structure shows the project structure for the selected lan
 
     **ruby.properties**
 
-    | This file defines configurations for Ruby runner plugin.
-    | For more information about language-specific configuration, see :ref:`language_config`.
+    This file defines configurations for Ruby runner plugin.
+    For more information about language-specific configuration, see :ref:`language_config`.

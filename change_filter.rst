@@ -22,7 +22,7 @@
       .. _change-filter:
       .. container::
 
-         modify setup
+         Modify
    .. cssclass:: hidden
    .. setupfilters::
       :section_name: proj-setup-filters
