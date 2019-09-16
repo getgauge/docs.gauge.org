@@ -90,6 +90,10 @@ ul li,ol li, code span {
   line-height: 1.6em;
 }
 
+.pre { 
+  font-family: monospace!important;
+}
+
 .mobile-local-toc {
   cursor: pointer;
   color: #5e5e5e;
