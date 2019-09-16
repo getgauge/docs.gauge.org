@@ -375,7 +375,7 @@ span.go {
 
 span.go::-webkit-scrollbar {
   background: transparent;
-  height: 12px;
+  height: 10px;
 }
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px transparent;
