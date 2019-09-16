@@ -1331,6 +1331,9 @@ p.experimental-feature::before {
   padding-bottom: 0;
 }
 
+#validation-errors div {
+  margin-bottom: 10px;
+}
 
 @media only screen and (min-width: 250px) {
   body {
