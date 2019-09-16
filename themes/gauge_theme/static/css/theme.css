@@ -1337,6 +1337,10 @@ p.experimental-feature::before {
   margin-bottom: 10px;
 }
 
+#errors-during-execution table tr td ,#errors-during-execution table th{
+  padding: 5px 6px;
+}
+
 
 @media only screen and (min-width: 250px) {
   body {
