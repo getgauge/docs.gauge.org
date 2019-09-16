@@ -355,7 +355,6 @@ footer {
   padding: 15px;
   margin: 15px 0 15px 0;
   background-color: #222222 !important;
-  padding-bottom: 0px;
 }
 
 .highlight pre {
@@ -1361,9 +1360,7 @@ p.experimental-feature::before {
     justify-content: center;
     flex-direction: column;
   }
-  ul.last.simple {
-    padding-left: 20px;
-  }
+  
  
   .algolia-autocomplete {
     width: 84%;
