@@ -356,8 +356,34 @@ footer {
 
 .highlight pre {
   margin: 0px;
-  overflow: auto;
   min-height: 40px;
+}
+.line {
+  overflow: hidden!important;
+}
+
+#write-gauge-specifications div,#run-gauge-specifications div {
+  overflow-x: auto;
+  margin: 0px;
+}
+#proj-setup-filter-section .applied-filters .applied-filter {
+  overflow: hidden;
+}
+span.go {
+  overflow: auto;
+}
+
+span.go::-webkit-scrollbar {
+  background: transparent;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px transparent;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px #ffffff;
 }
 
 .copyBtn {

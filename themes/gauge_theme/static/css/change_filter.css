@@ -18,6 +18,7 @@
     background: #fffae6;
     position: relative;
     padding: 0px;
+    overflow: hidden!important;
 }
 
 .yellow-border {
