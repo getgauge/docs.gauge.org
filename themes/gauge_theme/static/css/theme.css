@@ -371,6 +371,9 @@ footer {
 }
 span.go {
   overflow: auto;
+  padding-bottom: 5px;
+  position: relative;
+  top: 11px;
 }
 
 span.go::-webkit-scrollbar {
