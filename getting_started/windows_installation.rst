@@ -69,15 +69,15 @@ Once you finished installing Gauge, you can go ahead and `install the Gauge Exte
 
 .. cssclass:: toggle collapsible-content
 
-Download the following zip installer.
+    .. admonition:: System Requirements
 
-.. cssclass:: toggle collapsible-content
+        - Powershell
 
-`Zip Installer <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-windows.x86_64.zip>`__
+    1. Download the following zip installer.
 
-.. cssclass:: toggle collapsible-content
+        `Zip Installer <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-windows.x86_64.zip>`__
 
-2. Extract it to a location and add it to system path using the following command in `Powershell <https://docs.microsoft.com/en-us/powershell/>`__.
+    2. Extract it to a location and add it to system path using the following command in `Powershell <https://docs.microsoft.com/en-us/powershell/>`__.
 
 .. cssclass:: toggle collapsible-content
 
@@ -95,7 +95,9 @@ Download the following zip installer.
 
     .. admonition:: System Requirements
 
-        `Node.js <nodejs.org>`__
+        - `Node.js <nodejs.org>`__  >= 10.16.3 (LTS)
+
+        - `NPM <npmjs.org>`__ >= (6.9.0)
 
 
         To install gauge using NPM you will need the latest node version.
