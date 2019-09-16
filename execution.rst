@@ -9,7 +9,7 @@
 :heading:`Run Gauge specifications`
 ===================================
 
-.. include:: change_filter.rst
+.. include:: ./partials/change_filter.rst
 
 
 This page provides information about how to run a specification, multiple arguments that can be used with the ``gauge run`` command when a spec is executed, 

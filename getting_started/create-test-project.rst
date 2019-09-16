@@ -12,7 +12,7 @@
 :heading:`Create a Testing project using Gauge`
 ===============================================
 
-.. include:: ../change_filter.rst
+.. include:: ../partials/change_filter.rst
 
 .. role:: highlighted-syntax
 
@@ -149,7 +149,7 @@ Give a name to your project
 .. figure:: ../images/VSCode_enter_project_name.png
       :alt: Enter project name
 
-.. include:: folder_structure.rst
+.. include:: ../partials/folder_structure.rst
 
 .. Note:: The file structure may vary depending on the language of your project. For this example, we have created a Javascript project.
 
@@ -194,7 +194,7 @@ Choose the Project name, Project location, Project SDK and click :highlighted-sy
 .. figure:: ../images/Intellij_create_gauge_project.png
       :alt: Create project
 
-.. include:: folder_structure.rst
+.. include:: ../partials/folder_structure.rst
 
 .. figure:: ../images/Intellij_open_example.spec.png
       :alt: Intellij Java file structure
@@ -218,7 +218,7 @@ Enter :highlighted-syntax:`Name`, :highlighted-syntax:`Location` and :highlighte
 .. figure:: ../images/VisualStudio_gauge_project_creation.png
       :alt: Create Gauge project
 
-.. include:: folder_structure.rst
+.. include:: ../partials/folder_structure.rst
 
 .. figure:: ../images/VisualStudio_open_example.spec.png
       :alt: Visual Studio CSharp file structure

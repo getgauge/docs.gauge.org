@@ -89,12 +89,12 @@ Installation Instructions
 
          Visual Studio Code
 
-.. include:: mac_installation.rst
-.. include:: windows_installation.rst
-.. include:: linux_installation.rst
-.. include:: vscode_installation.rst
-.. include:: intellij_installation.rst
-.. include:: visualStudio_installation.rst
+.. include:: ../partials/mac_installation.rst
+.. include:: ../partials/windows_installation.rst
+.. include:: ../partials/linux_installation.rst
+.. include:: ../partials/vscode_installation.rst
+.. include:: ../partials/intellij_installation.rst
+.. include:: ../partials/visualStudio_installation.rst
 
 Next Step:
 ----------

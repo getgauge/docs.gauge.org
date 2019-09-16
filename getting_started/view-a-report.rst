@@ -11,7 +11,7 @@
 :heading:`Viewing Reports`
 ==========================
 
-.. include:: ../change_filter.rst
+.. include:: ../partials/change_filter.rst
 
 .. cssclass:: vscode dynamic-content
 
