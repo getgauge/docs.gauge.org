@@ -1323,7 +1323,7 @@ p.experimental-feature::before {
   }
 }
 
-#configure-gauge div  {
+#configure-gauge div,#troubleshooting div  {
   width: 100%;
   overflow-x: auto;
 }
@@ -1526,6 +1526,10 @@ p.experimental-feature::before {
   position: absolute;
   right: 30px;
   top: 102px;
+  }
+  .copyBtn {
+   top: -28px;
+   position: relative;
   }
 }
 
