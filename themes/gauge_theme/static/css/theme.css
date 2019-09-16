@@ -585,7 +585,7 @@ th, td {
 
 .note {
   border-left: 4px solid var(--gauge-yellow);
-  padding: 14px;
+  padding: 10px 0 10px 0;
   border-radius: 5px;
   margin: 2% 0 2% 0;
 }
