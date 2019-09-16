@@ -1474,8 +1474,8 @@ p.experimental-feature::before {
 
   #change-filter {
     position: absolute;
-    right: 0;
-    top: 41px;
+    right: 30px;
+    top: 102px;
   }
 
   /* #proj-setup-filter-section .applied-filters .applied-filter {
@@ -1499,7 +1499,7 @@ p.experimental-feature::before {
   }
 
   .selection .radio-container {
-    margin: 10px 0 0px -10px;
+    margin: 10px 0 0px 0px;
   }
   #proj-setup-filter-section .applied-filters .applied-filter {
     padding: 0 4px;
@@ -1520,10 +1520,10 @@ p.experimental-feature::before {
     height: 26px;
  }
  #change-filter {
-  position: relative;
-  right: 0;
-  top: 9px;
-}
+  position: absolute;
+  right: 30px;
+  top: 102px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -1809,7 +1809,7 @@ p.experimental-feature::before {
   #change-filter {
     position: relative;
     right: 0;
-    top: 0px;
+    top: 6px;
   }
 
   #proj-setup-filter-section .applied-filters .applied-filter-header {

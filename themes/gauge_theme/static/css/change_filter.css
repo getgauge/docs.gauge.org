@@ -16,7 +16,6 @@
     width: inherit;
     margin-bottom: 20px;
     background: #fffae6;
-    position: relative;
     padding: 0px;
     overflow: hidden!important;
 }
@@ -172,6 +171,7 @@
 #proj-setup-filter-section .proj-setup-filters .selections .selection {
     display: inline-flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 #proj-setup-filter-section .proj-setup-filters .horizontal-line {
