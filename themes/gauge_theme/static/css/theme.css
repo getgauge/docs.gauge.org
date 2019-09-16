@@ -1352,10 +1352,13 @@ p.experimental-feature::before {
     flex-direction: column;
   }
   .highlight-console .highlight pre {
-    width: 80%;
+    width: 74%;
     display: flex;
     justify-content: center;
     flex-direction: column;
+  }
+  ul.last.simple {
+    padding-left: 20px;
   }
  
   .algolia-autocomplete {
@@ -1445,7 +1448,10 @@ p.experimental-feature::before {
     height: 40px;
     font-size: 14px;
   }
-
+  .copyBtn {
+    top: -24px;
+    position: relative;
+  }
   #search-icon {
     top:30px;
     left: 6%;
