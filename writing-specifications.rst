@@ -453,12 +453,12 @@ In the following example, the step has an inline table parameter.
 .. note::
    Inline data tables can be used as special CSV parameters. For more information about CSV parameters, see :ref:`special csv parameter<special_parameter_csv>`.
 
+.. _example_inline_data_driven_table:
+
 Dynamic parameters used in inline tables
 """"""""""""""""""""""""""""""""""""""""
 
 Dynamic parameters can be used in inline tables, which are used within a step. These parameters can take values from the data tables.
-
-.. _example_inline_data_driven_table:
 
 .. cssclass:: example
 
