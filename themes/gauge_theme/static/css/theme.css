@@ -1324,7 +1324,7 @@ p.experimental-feature::before {
   }
 }
 
-#configure-gauge div,#troubleshooting div  {
+#configure-gauge div,#troubleshooting div,#installation-instructions div {
   width: 100%;
   overflow-x: auto;
 }
@@ -1337,6 +1337,7 @@ p.experimental-feature::before {
 #validation-errors div {
   margin-bottom: 10px;
 }
+
 
 @media only screen and (min-width: 250px) {
   body {
