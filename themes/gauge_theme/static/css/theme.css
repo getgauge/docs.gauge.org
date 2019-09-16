@@ -1350,7 +1350,12 @@ p.experimental-feature::before {
     display: flex;
     flex-direction: column;
   }
-
+  .highlight-console .highlight pre {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
  
   .algolia-autocomplete {
     width: 84%;
