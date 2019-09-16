@@ -17,13 +17,23 @@ DISPLAY_SELECTION_MAP = {
 }
 
 class heading_node(nodes.Element):
-    tagname='h4'
+    tagname='h3'
+class top_heading_node(nodes.Element):
+    tagname='h2'
 
 def visit_heading_node(self, node):
     self.body.append(node.starttag())
     self.body.append(node.rawsource)
 
+
+def visit_top_heading_node(self, node):
+    self.body.append(node.starttag())
+    self.body.append(node.rawsource)
+
 def depart_heading_node(self, node):
+    self.body.append(node.endtag())
+
+def depart_top_heading_node(self, node):
     self.body.append(node.endtag())
 
 class input_node(nodes.Element):
@@ -68,10 +78,10 @@ class SetupFiltersDirective(Directive):
             button_container['classes'].append(class_name)
             button_container['classes'].append('filter-action')
             button = heading_node(button_text)
-            button.tagname = 'h5'
+            button.tagname = 'h3'
             button_container.append(button)
             buttons_container += button_container
-        wrapper += heading_node('Choose your setup')
+        wrapper += top_heading_node('Choose your setup')
         horizontal_line = nodes.container()
         horizontal_line['classes'] = ['horizontal-line']
         wrapper += horizontal_line
@@ -106,8 +116,8 @@ class SetupFilterDirective(Directive):
 
 def setup(app):
 
+    app.add_node(top_heading_node, html=(visit_top_heading_node, depart_top_heading_node))
     app.add_node(heading_node, html=(visit_heading_node, depart_heading_node))
-
     app.add_node(input_node, html=(visit_input_node, depart_input_node))
     app.add_directive('setupfilters', SetupFiltersDirective)
     app.add_directive('setupfilter', SetupFilterDirective)
