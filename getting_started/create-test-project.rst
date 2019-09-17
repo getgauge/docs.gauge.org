@@ -9,7 +9,7 @@
 
 .. cssclass:: topic
 
-:heading:`Create a Testing project using Gauge`
+:heading:`Create a Test Project`
 ===============================================
 
 .. include:: ../partials/change_filter.rst

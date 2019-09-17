@@ -5,7 +5,7 @@
 .. cssclass:: topic
 .. role:: heading
 
-:heading:`Get Started`
+:heading:`Installing Gauge`
 ======================
 
 This getting started guide walks you through the core features of Gauge. You'll be able to install

@@ -36,7 +36,7 @@ You can use the following command at ``<project_root>`` to run a Gauge specifica
 * ``[args]`` - directories in which specifications are stored, location of specification files and scenarios
 * ``[flags]`` - options that can be used with this command such as ``--tags``, ``-e``, ``-f``, and so on
 
-For more information about ``gauge run`` command, see the Gauge man page.
+For more information about ``gauge run`` command, see the Gauge manual page.
 
 .. note::
     Gauge specifications can also be run from within the IDE
