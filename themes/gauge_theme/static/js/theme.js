@@ -65,6 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const scrollToHeader = function() {
+	var shiftWindow = function() { scrollBy(0, -50) };
+	window.addEventListener("hashchange", shiftWindow);
+	function load() { if (window.location.hash) shiftWindow(); }
 	const sectionId = window.location.hash;
 	if(sectionId){
 		const header = document.querySelector(sectionId);
