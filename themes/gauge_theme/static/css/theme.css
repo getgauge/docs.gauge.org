@@ -258,7 +258,7 @@ div.topic {
 .topic h1 {
   border-bottom: solid 1px #cccccc;
   width: 99%;
-  padding-bottom:14px;
+  padding-bottom:12px;
   margin-bottom: 15px;
 }
 
@@ -1556,6 +1556,9 @@ p.experimental-feature::before {
     margin-top: 13px;
     height: 26px;
   }
+  #search {
+    border:1px solid #ccc;
+  }
 
 }
 @media only screen and (min-width: 410px) {
@@ -1601,12 +1604,12 @@ p.experimental-feature::before {
   }
 
   .docs-container.no-right-bar.containers .edit-page {
-    top:45px;
+    top:51px;
   }
 
   .edit-page {
     display: block;
-    top:-10px;
+    top:15px;
   }
   #proj-setup-filter-section .applied-filters .applied-filter {
     padding: 0 6px;
@@ -1632,11 +1635,11 @@ p.experimental-feature::before {
   }
 
   div.topic {
-    margin-top: -12px;
+    margin-top: -9px;
   }
 
   .docs-container.no-right-bar.containers .topic {
-    margin-top: 23px;
+    margin-top: 26px;
   }
 
   .fixed-docs-toc.docs-toc {
@@ -1926,7 +1929,7 @@ p.experimental-feature::before {
   }
 
   .docs-container.no-right-bar.containers .topic {
-    margin-top: 16px;
+    margin-top: 18px;
   }
 
   .docs-container.no-right-bar {
@@ -1934,7 +1937,7 @@ p.experimental-feature::before {
   }
 
   .docs-container.no-right-bar.containers .edit-page {
-    top: 38px;
+    top: 42px;
   }
 
   #change-filter {
@@ -2079,7 +2082,10 @@ p.experimental-feature::before {
   }
  
   div.topic {
-    margin-top: 18px;
+    margin-top: 26px;
+  }
+  .topic h1 {
+    padding-bottom:6px!important;
   }
 
   h3.banner-heading {
@@ -2123,7 +2129,7 @@ p.experimental-feature::before {
     font-size: 14px;
   }
   .docs-container.no-right-bar.containers .topic {
-    margin-top: 11px;
+    margin-top: 19px;
   }
 }
 
