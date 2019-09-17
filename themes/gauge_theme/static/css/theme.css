@@ -10,6 +10,7 @@
 .selection-content {
   position: absolute;
   bottom: 9px;
+  font-family: "OpenSans-Regular";
 }
 
 .hidden {
