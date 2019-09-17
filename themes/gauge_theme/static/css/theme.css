@@ -364,11 +364,6 @@ footer {
 .line {
   overflow: hidden!important;
 }
-
-#write-gauge-specifications div,#run-gauge-specifications div {
-  overflow-x: auto;
-  margin: 0px;
-}
 #proj-setup-filter-section .applied-filters .applied-filter {
   overflow: hidden;
 }
@@ -1327,7 +1322,37 @@ p.experimental-feature::before {
 #configure-gauge div,#troubleshooting div,#installation-instructions div {
   width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: auto; 
 }
+
+#write-gauge-specifications div,#run-gauge-specifications div {
+  overflow-x: auto;
+  margin: 0px;
+  -webkit-overflow-scrolling: auto; 
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #f9f9f9;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+
 
 .linenos .linenodiv {
   padding: 0px;
@@ -1340,6 +1365,7 @@ p.experimental-feature::before {
 #errors-during-execution table tr td ,#errors-during-execution table th{
   padding: 5px 6px;
 }
+
 
 
 @media only screen and (min-width: 250px) {
