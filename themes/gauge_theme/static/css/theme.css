@@ -1285,7 +1285,6 @@ p.experimental-feature::before {
   -webkit-animation-duration: 4s;
   animation-name: fadeIn;
   animation-duration: 4s;
-  transition-delay: 4s;
 }
 
 .animate-fadeIn {
@@ -1294,7 +1293,6 @@ p.experimental-feature::before {
   -webkit-animation-duration: 4s;
   animation-name: fadeIn;
   animation-duration: 4s;
-  transition-delay: 4s;
 }
 
 /* @-webkit-keyframes animatebottom {
@@ -1311,7 +1309,7 @@ p.experimental-feature::before {
   from {
     opacity: 0;
     -webkit-transition-duration: 4s; /* Safari */
-    -webkit-transition-delay: 4s;
+    -webkit-transition-delay: 2s;
   }
   to {
     opacity: 1;
@@ -2085,9 +2083,11 @@ p.experimental-feature::before {
     margin-top: 26px;
   }
   .topic h1 {
-    padding-bottom:6px!important;
+    padding-bottom:6px;
   }
-
+  .docs-container.no-right-bar.containers .topic h1 {
+    padding-bottom:9px;
+  }
   h3.banner-heading {
     font-family: 'OpenSans-Bold';
   }
