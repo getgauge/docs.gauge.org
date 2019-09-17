@@ -2143,6 +2143,9 @@ p.experimental-feature::before {
     overflow-x: hidden;
     font-size: 16px;
   }
+  .docs-container.no-right-bar.containers .topic {
+    margin-top: 16px;
+  }
 
   .docs-container.no-right-bar {
     max-width: 100em;
