@@ -7,3 +7,4 @@ tags
 *.pyc
 .vscode
 build.go
+node_modules
