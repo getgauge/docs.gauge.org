@@ -1772,6 +1772,7 @@ p.experimental-feature::before {
     -ms-flex-pack: center;
     justify-content: center;
     padding: 0;
+    z-index: 9;
   }
 
   .footer_items.engage {
