@@ -2110,3 +2110,22 @@ p.experimental-feature::before {
     top: 13px;
 }
 }
+
+fieldset {
+  border: none;
+}
+
+legend {
+  margin-top: 0;
+    padding-top: 25px;
+    font-size: 16px;
+    font-family: 'URWGeometric-Medium';
+    font-weight: bolder;
+    margin-right: auto;
+}
+
+.feature-header {
+  font-family: 'URWGeometric-Medium';
+  font-weight: bolder;
+  font-size: 20px;
+}

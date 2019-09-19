@@ -52,7 +52,7 @@ serve: preview-build
 
 test:local-build
 	python build_urls.py $(BUILDDIR)/sitemap.xml && \
-	cd ./tests/accessibility-tests && \
+	cd ./tests && \
 	npm install && \
 	npm test && \
 	cd ..
