@@ -87,7 +87,7 @@ Listed below are examples for using Gauge to set up test projects for Java langu
 
 .. cssclass:: dynamic-content javascript examples-table
 
-Listed below are examples for using Gauge to set up test projects for Javascript language along with different frameworks.
+Listed below are examples for using Gauge to set up test projects for JavaScript language along with different frameworks.
 
 .. cssclass:: dynamic-content javascript examples-table
 .. list-table::

@@ -64,7 +64,7 @@ Uninstall Gauge
 
 .. cssclass:: category-title
 
-Gauge Javascript
+Gauge JavaScript
 ----------------
 
 `How to debug without IDE <#how-to-debug-without-ide>`__
@@ -340,7 +340,7 @@ Uninstall Gauge by using ``npm``.
 
 .. cssclass:: category
 
-:heading:`Gauge Javascript`
+:heading:`Gauge JavaScript`
 ---------------------------
 
 .. cssclass:: question

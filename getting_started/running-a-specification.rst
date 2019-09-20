@@ -16,11 +16,11 @@
 .. role:: param-syntax-char
 
 Now that you successfully initialized a Gauge project with the JavaScript template, we can look at
-running a specification using the example spec in the test folder.
+running a specification using the example specification in the test folder.
 
 
 A test specification (spec) is a detailed statement of what will be tested. In Gauge, these are written
-in a spec file.To learn more about how specifications work you can look at the owerview section.
+in a :highlighted-syntax:`.spec` file. To learn more about how specifications work you can look at the overview section.
 
 .. cssclass:: vscode dynamic-content
 
@@ -41,12 +41,12 @@ Step 2
 Run your Gauge specs in Visual Studio Code by choosing the option to :highlighted-syntax:`Run Spec`
 
 .. figure:: ../images/VSCode_run_code_lens.png
-      :alt: Visual Studio Code Javascript run code lens
+      :alt: Visual Studio Code JavaScript run code lens
 
 You'll get immediate feedback in the output about what got executed.
 
 .. figure:: ../images/VSCode_execution_console.png
-      :alt: Visual Studio Code Javascript execution console
+      :alt: Visual Studio Code JavaScript execution console
 
 .. cssclass:: java intellij dynamic-content
 
