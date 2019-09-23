@@ -67,7 +67,7 @@ Gauge projects can be created and executed in Visual Studio Code using the Gauge
 
 .. cssclass:: javascript dynamic-content
 
-      In this guide, you'll be able to learn how to add a sample Javascript testing project in Visual Studio Code
+      In this guide, you'll be able to learn how to add a sample JavaScript testing project in Visual Studio Code
 
 .. cssclass:: python dynamic-content
 
@@ -151,7 +151,7 @@ Give a name to your project
 
 .. include:: ../partials/folder_structure.rst
 
-.. Note:: The file structure may vary depending on the language of your project. For this example, we have created a Javascript project.
+.. Note:: The file structure may vary depending on the language of your project. For this example, we have created a JavaScript project.
 
 .. cssclass:: javascript dynamic-content
 .. figure:: ../images/VSCode_JS_project_file_structure.png
@@ -226,9 +226,7 @@ Enter :highlighted-syntax:`Name`, :highlighted-syntax:`Location` and :highlighte
 Next Step: Running a Specification
 -----------------------------------
 
-Now that you have successfully added/initialized a new Gauge testing project, we can look at how to run a specification by using the sample spec in the test folder
-
-.. Note:: To learn more about how to test specifications in Gauge work and other gauge terminologies please look at our `Overview <../overview.html>`__  Section.
+Now that you have successfully added/initialized a new Gauge testing project, we can look at how to run a specification by using the sample specification in the test folder
 
 .. container:: page-navigator
 

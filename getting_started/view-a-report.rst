@@ -18,9 +18,9 @@
 :vscode:`Viewing Reports from Visual Studio Code`
 -------------------------------------------------
 
-Once the specifications are run you will get immediate feedback in the output screen of Visual Studio Code.
+Once the specifications are run you will get immediate feedback in the output console of Visual Studio Code.
 
-Once you've run the sample spec, you can view the HTML report of the tests run by following either of the steps below:
+You can also view the HTML report of tests run by following either of the steps below:
 
 Open the html report by clicking on the view summary link in Visual Studio Code
 
@@ -29,7 +29,7 @@ Open the html report by clicking on the view summary link in Visual Studio Code
 
 OR
 
-In the editor's command pallete type Gauge: Show Last Run Report to view the report in the browser
+In the editor's command palete type :highlighted-syntax:`Gauge: Show Last Run Report` to view the report in the browser
 
 .. figure:: ../images/VSCode_show_last_run_report.png
     :alt: Visual Studio Code show last run report command
@@ -67,10 +67,6 @@ Here's what a Gauge report looks like.
 .. figure:: ../images/HTML_report.png
     :alt: HTML report
 
-
-Next Step:
-----------
-
 And, that concludes our getting started journey for Gauge. Hopefully this helped you install and set-up your first Gauge project. Gauge comes with powerful language & tool support as well as a versatile reporting functionality. We've covered the basics for all of these features in this guide.
 
 As a next step, the following resources are available:
@@ -81,9 +77,6 @@ As a next step, the following resources are available:
 
     * `Examples <../examples.html>`__: The examples section contains example projects of different languages and tools to help you get started with exactly what you need.
     
-    * `Taiko Documentation <https://taiko.gauge.org/>`__:  The Taiko documentation site has all information you need to start recording test scripts using Taiko.
-
-
 .. container:: page-navigator
 
     .. container:: navigate-previous

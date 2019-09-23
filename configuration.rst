@@ -9,7 +9,7 @@
 ==========================
 .. include:: ./partials/change_filter.rst
 
-You can configure Gauge as per your requirements by using the *key value* pairs in the ``gauge.properties`` and ``default.properties`` files. 
+You can configure Gauge as per your requirements by using key value pairs in the ``gauge.properties`` and ``default.properties`` files. 
 
 
 The global key value pairs, in the ``gauge.properties`` file, allow you to configure Gauge across all Gauge projects. 
@@ -28,7 +28,10 @@ For example, you can have separate Gauge reports or a single, new, time-stamped 
 
 Global configuration of Gauge (``gauge.properties``)
 ----------------------------------------------------
-``gauge.properties`` is a ``.properties`` file that contains all Gauge specific configurations. You can use or change the *key value* pairs present in this file to configure Gauge across all Gauge projects. This file is located at ``~/.gauge/config`` in macOS and Linux systems and at ``%APPDATA%\Gauge\config`` in Windows systems.
+``gauge.properties`` is a ``.properties`` file that contains all Gauge specific configurations. 
+You can use or change the key value pairs present in this file to configure Gauge across all 
+Gauge projects. This file is located at ``~/.gauge/config`` in macOS and Linux systems and 
+at ``%APPDATA%\Gauge\config`` in Windows systems.
 
 You can also use the ``gauge config`` command to change the value of a key in the ``gauge.properties`` file.
 
@@ -48,7 +51,7 @@ For example, to change the value of ``check_updates`` in ``gauge.properties``, u
 
 This changes the value of the key, ``check_updates``, to ``false``.
 
-The list of *key value* pairs present in ``gauge.properties`` are listed as follows:
+The list of key value pairs present in ``gauge.properties`` are listed as follows:
 
 .. code-block:: gauge
     :linenos:
@@ -102,7 +105,7 @@ Local configuration of Gauge (``default.properties``)
 ``default.properties`` is a ``.properties`` file that contains *key value* pairs. You can use or change the key value pairs present in this file to configure a particular Gauge project. The changed value overrides the default value of a key.  
 This file is located at ``<project_root>/env/default``, where ``<project_root>`` is the location at which you have created your Gauge project.
 
-The list of *key value* pairs present in ``default.properties`` are listed as follows:
+The list of key value pairs present in ``default.properties`` are listed as follows:
 
 .. code-block:: gauge
     :linenos:
@@ -166,7 +169,7 @@ For more details about running language plugins as an environment, see :ref:`Env
 .. cssclass:: dynamic-content java
 
     If you have installed Java, then you can  make Java specific configuration changes in the ``java.properties`` file. 
-    The following *key value* pairs are listed in ``java.properties``:
+    The following key value pairs are listed in ``java.properties``:
 
     .. code-block:: gauge
         :linenos:
@@ -199,9 +202,9 @@ For more details about running language plugins as an environment, see :ref:`Env
 .. cssclass:: dynamic-content javascript
 
     If you have installed JavaScript, then you can make JavaScript specific configuration changes in the ``js.properties`` file. 
-    The following *key value* pairs are listed in ``js.properties``:
+    The following key value pairs are listed in ``js.properties``:
 
-    .. code-block:: python
+    .. code-block:: gauge
         :linenos:
         :name: js.properties
 
@@ -217,9 +220,9 @@ For more details about running language plugins as an environment, see :ref:`Env
 .. cssclass:: dynamic-content python
 
     If you have installed Python, then you can make Python specific configuration changes in the ``python.properties`` file. 
-    The following *key value* pair is listed in ``python.properties``:
+    The following key value pair is listed in ``python.properties``:
 
-    .. code-block:: python
+    .. code-block:: gauge
         :linenos:
         :name: python
 
@@ -229,9 +232,9 @@ For more details about running language plugins as an environment, see :ref:`Env
 .. cssclass:: dynamic-content csharp
 
     If you have installed Csharp, then you can make Csharp specific configuration changes in the ``csharp.properties`` file. 
-    The following *key value* pair is listed in ``csharp.properties``:
+    The following key value pair is listed in ``csharp.properties``:
 
-    .. code-block:: text
+    .. code-block:: gauge
         :linenos:
         :name: csharp
 
@@ -337,13 +340,15 @@ You can use or change the key value pairs in these ``.properties`` files as per 
          └── java.properties
 
 .. attention::
-   You can either create a new ``.properties`` file or use an existing file to add your custom *key value* pairs.
+   You can either create a new ``.properties`` file or use an existing file to add your custom key value pairs.
 
 Create a new environment in a Gauge project
 -------------------------------------------
 
-For ease of testing, you can create an environment in addition to the ``default`` existing environment in your Gauge project .  
-You can create a new ``.properties`` file or add an existing property file to this new environment and customize the configuration properties as per your requirements.
+For ease of testing, you can create an environment in addition to the ``default`` 
+existing environment in your Gauge project. You can create a new ``.properties`` file or add 
+an existing property file to this new environment and customize the configuration properties 
+as per your requirements.
 
 .. admonition:: Before you begin
 
@@ -355,19 +360,20 @@ You can create a new ``.properties`` file or add an existing property file to th
    
    ``default`` is the default environment.
 
-1. Create a directory in the ``env`` folder of your Gauge project.
-   The environment folder is present at ``<project_root>``, where ``project_root`` is the location at which you have created your Gauge project.
+Create a directory in the ``env`` folder of your Gauge project. The environment folder is 
+present at ``<project_root>``, where ``project_root`` is the location at which you have created 
+your Gauge project.
 
-   .. code-block:: console
+.. code-block:: console
 
-      mkdir <name_of_env>
+    mkdir <name_of_env>
 
 .. cssclass:: example
 
 Example
 
 
-For example, create an environment called ``ci``.
+Create an environment called ``ci``.
 
 .. code-block:: console
 
@@ -375,7 +381,7 @@ For example, create an environment called ``ci``.
    
 A ``ci`` environment is created at ``<project_root>/env``.
 
-2. If you want to add your own key value pairs, then create a ``.properties`` file within the newly created environment.
+If you want to add your own key value pairs, then create a ``.properties`` file within the newly created environment.
 
 .. note::
    
@@ -523,7 +529,8 @@ The rules of precedence to load the environment variables are as follows:
 * Environment variables from ``gauge.properties`` (global configuration of Gauge; located at ``<project_root>/env``).
 * Environment variables from the ``default`` environment.
   
-  .. note::
+.. note::
+
     If the ``default`` environment is not present, Gauge internally sets the environment variables which have the same value as mentioned in ``default.properties``.
   
 Gauge workflow with multiple environments

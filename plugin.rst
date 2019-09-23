@@ -26,7 +26,7 @@ To install a plugin and add the plugin to a Gauge project, use the following com
 .. cssclass:: dynamic-content javascript
 .. code-block:: console
 
-    gauge install javascript
+    gauge install js
 
 .. cssclass:: dynamic-content python
 .. code-block:: console
