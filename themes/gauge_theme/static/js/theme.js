@@ -65,9 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const scrollToHeader = function() {
-	var shiftWindow = function() { scrollBy(0, -50) };
+	var shiftWindow = function() { scrollBy(0, -120) };
+	if (location.hash) shiftWindow();
 	window.addEventListener("hashchange", shiftWindow);
-	function load() { if (window.location.hash) shiftWindow(); }
 	const sectionId = window.location.hash;
 	if(sectionId){
 		const header = document.querySelector(sectionId);
@@ -81,6 +81,7 @@ const scrollToHeader = function() {
 		document.querySelector("body,html").scrollTop = top - 100;
 		event.stopPropagation();
 	}
+
 };
 
 window.addEventListener("load", scrollToHeader);
