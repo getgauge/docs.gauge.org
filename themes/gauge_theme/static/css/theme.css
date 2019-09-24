@@ -98,7 +98,6 @@ ul li,ol li, code span {
 .mobile-local-toc {
   cursor: pointer;
   color: #5e5e5e;
-  width: 110px;
   display: inline-block;
   font-family: 'OpenSans-Bold';
   padding-left: 15px;
@@ -1077,6 +1076,7 @@ img {
   position: relative;
   top: 40px;
   right:10px;
+  padding-left: 16px;
 }
 
 .edit-page u {
@@ -1324,7 +1324,7 @@ p.experimental-feature::before {
   -webkit-overflow-scrolling: auto; 
 }
 
-#write-gauge-specifications div,#run-gauge-specifications div {
+#write-gauge-specifications div,#run-gauge-specifications div,#overview div {
   overflow-x: auto;
   margin: 0px;
   -webkit-overflow-scrolling: auto; 
@@ -1371,6 +1371,7 @@ p.experimental-feature::before {
 
 .docs-container.no-right-bar .edit-page {
   text-align: right;
+  display: block;
 }
 
 
