@@ -99,7 +99,7 @@ ul li,ol li, code span {
   cursor: pointer;
   color: #5e5e5e;
   width: 110px;
-  display: block;
+  display: inline-block;
   font-family: 'OpenSans-Bold';
   padding-left: 15px;
   padding-top: 12px;
@@ -1070,7 +1070,7 @@ img {
 }
 
 .edit-page {
-  text-align: right;
+  text-align: left;
   width: 100%;
   line-height: normal;
   position: relative;
@@ -1318,7 +1318,7 @@ p.experimental-feature::before {
   }
 }
 
-#configure-gauge div,#troubleshooting div,#installation-instructions div {
+#configure-gauge div,#troubleshooting div,#installation-instructions div ,#tutorial-integrating-gauge-with-azure div,#tutorial-integrating-gauge-with-docker div,#tutorial-integrating-gauge-with-travis-ci div {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: auto; 
@@ -1365,6 +1365,20 @@ p.experimental-feature::before {
   padding: 5px 6px;
 }
 
+.rightsibar-heading {
+  display: flex;
+}
+
+.mobile-local-toc {
+  flex:1;
+}
+.edit-page {
+  flex:3;
+}
+
+.docs-container.no-right-bar .edit-page {
+  text-align: right;
+}
 
 
 @media only screen and (min-width: 250px) {
@@ -1606,7 +1620,7 @@ p.experimental-feature::before {
   }
 
   .edit-page {
-    display: block;
+    display: inline-block;
     top:15px;
   }
   #proj-setup-filter-section .applied-filters .applied-filter {
@@ -1633,7 +1647,7 @@ p.experimental-feature::before {
   }
 
   div.topic {
-    margin-top: -9px;
+    margin-top: 13px;
   }
 
   .docs-container.no-right-bar.containers .topic {
@@ -1971,10 +1985,6 @@ p.experimental-feature::before {
     display: block;
   }
 
-  .edit-page {
-    top: 15px;
-  }
-
   .docs-container.no-right-bar {
     max-width: 100em;
     width: 600px;
@@ -1989,6 +1999,13 @@ p.experimental-feature::before {
     grid-template-columns: 260px 45em auto;
     grid-column-gap: 5px;    
     overflow-x: hidden;
+  }
+
+  .mobile-local-toc {
+    flex:1;
+  }
+  .edit-page {
+    flex:2;
   }
 
   .mobile-local-toc.collapsed + ul{
@@ -2007,13 +2024,9 @@ p.experimental-feature::before {
   }
 
   .right-sidebar-container {
-    margin-top: 60px;
+    margin-top: 56px;
   }
-
-  .edit-page {
-    top: 49px;
-  }
-
+  
   .logo {
     width: 180px;
     margin: 10px 0 0 0;
@@ -2027,7 +2040,7 @@ p.experimental-feature::before {
   }
 
   div.topic {
-    margin-top: 24px;
+    margin-top: 47px;
   }
 
   .sticky .logo, .open .logo {
@@ -2080,7 +2093,10 @@ p.experimental-feature::before {
   }
  
   div.topic {
-    margin-top: 26px;
+    margin-top: 51px;
+  }
+  .right-sidebar-container {
+    margin-top: 62px;
   }
   .topic h1 {
     padding-bottom:6px;
@@ -2114,10 +2130,6 @@ p.experimental-feature::before {
 
   .fixed-docs-toc.docs-toc li a {
     font-size: 14px!important;
-  }
-
-  .edit-page {
-    top: 51px;
   }
 
   .docs-container.no-right-bar {
