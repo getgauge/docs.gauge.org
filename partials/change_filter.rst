@@ -13,7 +13,7 @@
 
       .. container:: applied-filter
 
-         Javascript
+         JavaScript
 
       .. container:: applied-filter
 
@@ -41,11 +41,11 @@
          :class: selection
          :type: language
          :title: 2 : Select a Language
-         :selected: Javascript
+         :selected: JavaScript
 
          C#
          Java
-         Javascript
+         JavaScript
          Python
          Ruby
 

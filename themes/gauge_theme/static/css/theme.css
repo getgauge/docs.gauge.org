@@ -581,9 +581,10 @@ th, td {
 
 .note {
   border-left: 4px solid var(--gauge-yellow);
-  padding: 10px 0 10px 0;
+  padding: 10px;
   border-radius: 5px;
   margin: 2% 0 2% 0;
+  text-align: unset;
 }
 
 .content>.section>h1:nth-child(1) {
@@ -1108,11 +1109,10 @@ img {
   margin-bottom: 20px;
 }
 
-.dynamic-content p a {
+.dynamic-content p {
   font-family: "OpenSans-Regular";
   font-weight: normal;
   color:#1e1e1e;
-  text-transform: capitalize;
 }
 .dynamic-content p a:hover {
   color: #1e1e1e;
