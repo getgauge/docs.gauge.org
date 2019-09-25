@@ -23,8 +23,8 @@ Some of the key features of Gauge that makes it unique include:
 
 .. cssclass:: sub-heading
 
-The basics
-----------
+What is a Specification?
+------------------------
 
 Gauge specifications are written using a `Markdown <https://www.markdownguide.org>`__ 
 syntax. For example
@@ -40,6 +40,9 @@ In this specification ``Search the Internet`` is the `specification heading <wri
 ``Look for something`` is a `scenario <writing-specifications.html#scenario>`__
 with a `step <writing-specifications.html#step>`__ ``Goto Google’s home page`` 
 
+What is an Implementation?
+--------------------------
+
 You can implement the steps in a specification using a programming language 
 for example
 
@@ -50,7 +53,7 @@ for example
   });
 
 The Gauge runner reads and runs steps and its implementation for every scenario in 
-the specification andgenerates a report of passing or failing scenarios. 
+the specification and generates a report of passing or failing scenarios. 
 
 .. code-block:: gauge
 
@@ -69,8 +72,8 @@ the specification andgenerates a report of passing or failing scenarios.
   in Java, C#, Python, Typescript and Golang. You can use also use any 
   driver like Selenium or Appium while implementing your steps.
 
-Re-usability
-------------
+Re-using Steps
+--------------
 
 Gauge helps you focus on testing the flow of an application. Gauge
 does this by making steps as re-usable as possible. With Gauge, you 
@@ -131,6 +134,10 @@ The concept, ``Search Google for <query>`` can be used like a step in a specific
   ## Look for movies
   * Search Google for "Star wars"
 
+
+Data-Driven Testing
+-------------------
+
 Gauge also supports data driven testing using Markdown tables as well as external 
 csv files for example
 
@@ -151,6 +158,9 @@ This will execute the scenario for all rows in the table.
 
 In the examples above, we refactored a specification to be concise and flexible 
 without changing the implementation. 
+
+Other Features
+--------------
 
 This is brief introduction to a few Gauge features. Please browse through rest of the 
 documentation for features like
