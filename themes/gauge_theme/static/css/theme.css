@@ -639,7 +639,7 @@ th, td {
 .navbtn {
   position: absolute;
   top: 92px;
-  right: 20px;
+  right: 12px;
   margin: auto;
   width: 20px;
   height: 20px;
@@ -1403,6 +1403,11 @@ ul.main-nav li {
     width: 84%;
     top:16px;
     left:3%;  
+  }
+
+  .docs-container.no-right-bar .edit-page {
+    text-align: right;
+    display: none;
   }
 
   a.reference.external {
