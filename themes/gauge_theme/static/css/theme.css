@@ -1915,6 +1915,10 @@ ul.main-nav li {
     display: flex;
     flex-direction: row;
   }
+  .docs-container.no-right-bar .edit-page {
+    text-align: right;
+    display: block;
+    }
 
   #installation-selection .setup-selection {
     width: 33%;
