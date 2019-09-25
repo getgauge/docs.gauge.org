@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700");
 @import url("font.css");
 @import url("application.css");
 @import url("overview.css");
@@ -98,7 +98,7 @@ ul li,ol li, code span {
 .mobile-local-toc {
   cursor: pointer;
   color: #5e5e5e;
-  display: inline-block;
+  display: block;
   font-family: 'OpenSans-Bold';
   padding-left: 15px;
   padding-top: 12px;
@@ -241,7 +241,7 @@ header.top:hover {
 div.topic {
   border: 0px;
   padding: 0px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .fadeIn{
@@ -519,6 +519,7 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 
 .localtoc-container {
   max-height: 54%;
+  max-width: 20em;
   scrollbar-width: none;
 }
 
@@ -637,7 +638,7 @@ th, td {
 
 .navbtn {
   position: absolute;
-  top: 123px;
+  top: 92px;
   right: 20px;
   margin: auto;
   width: 20px;
@@ -729,19 +730,18 @@ header.top {
   left: 0px;
   width: 100%;
   z-index: 10;
-  height: 100px;
+  height: 65px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   border: none;
-  background-color: white;
+  border-bottom: 5px solid #ffcc00;
+  background: #1e1e1e !important;
 }
 
 .header-container {
+  margin: 0 auto;
   width: 100%;
-  height: 100%;
-  background: #1e1e1e;
-  border-bottom: 5px solid var(--gauge-yellow);
-  padding: 0px 2% 0px 2%;
+  padding: 0 2% 0 2%;
 }
 
 .search-container {
@@ -752,12 +752,6 @@ header.top::after {
   clear: both;
   content: "";
   display: block;
-}
-
-.header-container {
-  margin: 0 auto;
-  width: 100%;
-  line-height: 65px;
 }
 
 .header-container::after {
@@ -793,7 +787,7 @@ header.top::after {
 
 .main-nav li {
   display: block;
-  line-height: 24px;
+  line-height: 24px!important;
 }
 .main-nav a {
   text-decoration: none;
@@ -897,7 +891,7 @@ header.top::after {
 }
 
 .link_doc a {
-  color: var(--gauge-yellow);
+  color: var(--gauge-yellow)!important;
 }
 
 footer {
@@ -1071,12 +1065,11 @@ img {
 }
 
 .edit-page {
-  text-align: left;
+  text-align: right;
   line-height: normal;
   position: relative;
-  top: 40px;
+  top: 33px;
   right:10px;
-  padding-left: 16px;
 }
 
 .edit-page u {
@@ -1365,13 +1358,20 @@ p.experimental-feature::before {
   padding: 5px 6px;
 }
 
-.rightsibar-heading {
-  display: flex;
-}
-
 .docs-container.no-right-bar .edit-page {
   text-align: right;
   display: block;
+}
+
+ul.main-nav a {
+  font-size: 18px!important;
+  font-weight: 100!important;
+  font-family: 'Open Sans', sans-serif!important;
+  line-height: 24px!important;
+}
+
+ul.main-nav li {
+  font-family: 'Open Sans', sans-serif!important;
 }
 
 
@@ -1384,7 +1384,7 @@ p.experimental-feature::before {
     'right-nav'
     'main-content'
     'footer';
-    grid-template-rows: 100px auto auto auto auto;
+    grid-template-rows: 65px auto auto auto auto;
     grid-template-columns: 100%;
   }
   #installation-selection .setup-selections {
@@ -1495,7 +1495,7 @@ p.experimental-feature::before {
   }
 
   .right-sidebar-container {
-    margin-top: 48px;
+    margin-top: 44px;
   }
   
   .docs-toc li {
@@ -1598,7 +1598,7 @@ p.experimental-feature::before {
   body {
     display: grid;
     grid-template-areas: 'header header' 'left-nav right-nav' 'left-nav main-content' 'footer footer';
-    grid-template-rows: 100px auto auto auto;
+    grid-template-rows: 65px auto auto auto;
     grid-template-columns: 25% 69%;
     grid-column-gap: 60px;
     overflow-x: hidden;
@@ -1608,13 +1608,22 @@ p.experimental-feature::before {
     display: none;
   }
 
+  /* .header-container {
+    max-width: 720px;
+  } */
+
   .docs-container.no-right-bar.containers .edit-page {
-    top:51px;
+    top:24px;
+  }
+  .logo {
+    float: left;
+    width: 100px;
+    margin: 17px 0 0 0;
   }
 
   .edit-page {
-    display: inline-block;
-    top:16px;
+    display: block;
+    top:35px;
   }
   #proj-setup-filter-section .applied-filters .applied-filter {
     padding: 0 6px;
@@ -1636,15 +1645,15 @@ p.experimental-feature::before {
   .side-nav-header {
     border-bottom: 1px solid #ccc;
     padding: 27px 15px;
-    margin-top: 114px;
+    margin-top: 63px;
   }
 
   div.topic {
-    margin-top: 13px;
+    margin-top: 10px;
   }
 
   .docs-container.no-right-bar.containers .topic {
-    margin-top: 26px;
+    margin-top: 0px;
   }
 
   .fixed-docs-toc.docs-toc {
@@ -1720,17 +1729,9 @@ p.experimental-feature::before {
     transition: all 0.2s ease-in-out;
   }
 
-  .logo {
-    float: left;
-    width: 100px;
-    margin: 17px 0 0 0;
-    position: relative;
-    top: 15px;
-  }
-
   nav.nav {
     display: block;
-    margin-top: 17px;
+    margin-top: 12px;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     float: right;
@@ -1823,7 +1824,7 @@ p.experimental-feature::before {
   }
 
   .right-sidebar-container {
-    margin-top: 0px;
+    margin-top: 44px;
   }
   
   .localtoc-container > ul {
@@ -1899,7 +1900,7 @@ p.experimental-feature::before {
   body {
     display: grid;
     grid-template-areas: 'header header' 'left-nav right-nav' 'left-nav main-content' 'footer footer';
-    grid-template-rows: 100px auto auto auto;
+    grid-template-rows: 65px auto auto auto;
     grid-template-columns: 260px auto;
     grid-column-gap: 5px;
     overflow-x: hidden;
@@ -1934,7 +1935,7 @@ p.experimental-feature::before {
   }
 
   .docs-container.no-right-bar.containers .topic {
-    margin-top: 18px;
+    margin-top: 0px;
   }
 
   .docs-container.no-right-bar {
@@ -1942,7 +1943,7 @@ p.experimental-feature::before {
   }
 
   .docs-container.no-right-bar.containers .edit-page {
-    top: 42px;
+    top: 24px;
   }
 
   #change-filter {
@@ -1968,11 +1969,15 @@ p.experimental-feature::before {
   body {
     display: grid;
     grid-template-areas: 'header header' 'left-nav right-nav' 'left-nav main-content' 'footer footer';
-    grid-template-rows: 100px auto auto auto;
+    grid-template-rows: 65px auto auto auto;
     grid-template-columns: 260px auto;
     grid-column-gap: 5px;
     overflow-x: hidden;
   }
+
+  /* .header-container {
+    max-width: 960px;
+  } */
 
   .fixed-docs-toc.docs-toc {
     display: block;
@@ -1988,7 +1993,7 @@ p.experimental-feature::before {
   body {
     display: grid;
     grid-template-areas: 'header header header' 'left-nav main-content right-nav' 'footer footer footer';
-    grid-template-rows: 100px auto auto;
+    grid-template-rows: 65px auto auto;
     grid-template-columns: 260px 45em auto;
     grid-column-gap: 5px;    
     overflow-x: hidden;
@@ -1996,6 +2001,16 @@ p.experimental-feature::before {
 
   .mobile-local-toc.collapsed + ul{
     display: inline-block;
+  }
+
+  /* .header-container {
+    max-width: 1148px;
+  } */
+
+  .logo {
+    width: 180px;
+    margin: 12px 0 0 0;
+    height: 40px;
   }
 
   .localtoc-container>ul {
@@ -2010,13 +2025,7 @@ p.experimental-feature::before {
   }
 
   .right-sidebar-container {
-    margin-top: 56px;
-  }
-  
-  .logo {
-    width: 180px;
-    margin: 10px 0 0 0;
-    height: 40px;
+    margin-top: 44px;
   }
 
   .mobile-local-toc {
@@ -2026,7 +2035,7 @@ p.experimental-feature::before {
   }
 
   div.topic {
-    margin-top: 47px;
+    margin-top: 10px;
   }
 
   .sticky .logo, .open .logo {
@@ -2060,7 +2069,7 @@ p.experimental-feature::before {
   body {
     display: grid;
     grid-template-areas: 'header header header' 'left-nav main-content right-nav' 'footer footer footer';
-    grid-template-rows: 100px auto auto;
+    grid-template-rows: 65px auto auto;
     grid-template-columns: 300px 45em auto;
     grid-column-gap: 5px; 
     overflow-x: hidden;   
@@ -2079,10 +2088,10 @@ p.experimental-feature::before {
   }
  
   div.topic {
-    margin-top: 51px;
+    margin-top: 10px;
   }
   .right-sidebar-container {
-    margin-top: 62px;
+    margin-top: 44px;
   }
   .topic h1 {
     padding-bottom:6px;
@@ -2127,7 +2136,7 @@ p.experimental-feature::before {
     font-size: 14px;
   }
   .docs-container.no-right-bar.containers .topic {
-    margin-top: 19px;
+    margin-top: 0px;
   }
 }
 
@@ -2135,15 +2144,17 @@ p.experimental-feature::before {
   body {
     display: grid;
     grid-template-areas: 'header header header' 'left-nav main-content right-nav' 'footer footer footer'; 
-    grid-template-rows: 100px auto auto;
+    grid-template-rows: 65px auto auto;
     grid-template-columns: 300px 45em auto;
     grid-column-gap: 5px;    
     overflow-x: hidden;
     font-size: 16px;
   }
   .docs-container.no-right-bar.containers .topic {
-    margin-top: 16px;
+    margin-top: 0px;
   }
+
+
 
   .docs-container.no-right-bar {
     max-width: 100em;

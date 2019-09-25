@@ -193,6 +193,10 @@ var DOCUMENTATION_OPTIONS = {
         {% if pagename == 'index' %}
         {% include '_landing.html' %}
         {% else %}
+        <div class="edit-page">
+          <a href="https://github.com/getgauge/docs.gauge.org/edit/master/{{pagename}}.rst">
+            <u>Edit</u> </a>
+        </div>
         <a href="javascript:" aria-label= "Return to top" id="return-to-top"><i></i></a>
         {% block body %}{% endblock %}
         {% endif %}
@@ -202,17 +206,11 @@ var DOCUMENTATION_OPTIONS = {
       
       <div id="right-sidebar" class="right-sidebar-container containers animate-fadeIn">
         <div class="localtoc-container">
-          <div class="rightsibar-heading">
-            <span class='mobile-local-toc collapsed' onclick="document.getElementsByClassName('mobile-local-toc')[0].classList.toggle('collapsed')" onkeypress="document.getElementsByClassName('mobile-local-toc')[0].classList.toggle('collapsed')">In this page</span>
-            <span class="edit-page">
-                <a href="https://github.com/getgauge/docs.gauge.org/edit/master/{{pagename}}.rst">
-                  <u>Edit</u></a>
-              </span>
-            </div>
-            {{ toc }}
+         <span class='mobile-local-toc collapsed' onclick="document.getElementsByClassName('mobile-local-toc')[0].classList.toggle('collapsed')" onkeypress="document.getElementsByClassName('mobile-local-toc')[0].classList.toggle('collapsed')">In this page</span>
+           {{ toc }}
         </div>
       </div>
-      {% endif %}
+     {% endif %}
     {%- endblock %}
 
     {%- block footer %}
