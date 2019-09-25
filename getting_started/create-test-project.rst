@@ -78,8 +78,8 @@ Gauge projects can be created and executed in Visual Studio Code using the Gauge
       In this guide, you'll be able to learn how to add a sample Ruby testing project in Visual Studio Code
 
 
-Step 1
-~~~~~~
+Step 1: Create the Project
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: macos dynamic-content
 
@@ -98,8 +98,8 @@ Step 1
 .. figure:: ../images/VSCode_create_gauge_project.png
       :alt: Create project
 
-Step 2
-~~~~~~
+Step 2: Choose Template
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. cssclass:: csharp dynamic-content
 
@@ -124,8 +124,8 @@ Step 2
 .. figure:: ../images/VSCode_select_project_tempate.png
       :alt: Select template
 
-Step 3
-~~~~~~
+Step 3: Choose Project Folder Location
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Choose a location to create a new folder to create a new project
 
@@ -141,8 +141,8 @@ Choose a location to create a new folder to create a new project
 .. figure:: ../images/linux/VSCode_create_project_select_folder.png
       :alt: Select project folder
 
-Step 4
-~~~~~~
+Step 4: Name Your Project
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Give a name to your project
 
@@ -178,16 +178,16 @@ Gauge projects can be created and executed in IntelliJ IDEA using the Gauge plug
 
 In this guide, you'll be able to learn how to add a sample Java testing project in IntelliJ IDEA
 
-Step 1
-~~~~~~
+Step 1: Create a Project
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once the plugin is installed, goto :highlighted-syntax:`File -> New Project`, select :highlighted-syntax:`Gauge` and click :highlighted-syntax:`Next`.
 
 .. figure:: ../images/Intellij_select_gauge_project.png
       :alt: Select Gauge
 
-Step 2
-~~~~~~
+Step 2: Choose Project Name
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Choose the Project name, Project location, Project SDK and click :highlighted-syntax:`Finish`.
 
@@ -209,8 +209,8 @@ Gauge projects can be created and executed in Visual Studio using the Gauge exte
 
 In this guide, you'll be able to learn how to add a sample C# testing project in Visual Studio
 
-Step 1
-~~~~~~
+Create a Project
+~~~~~~~~~~~~~~~~
 
 Once the Gauge extension is installed, goto :highlighted-syntax:`File -> New Project`, select :highlighted-syntax:`Gauge Test Project`.
 Enter :highlighted-syntax:`Name`, :highlighted-syntax:`Location` and :highlighted-syntax:`Solution name` and click :highlighted-syntax:`Ok`.
@@ -222,9 +222,6 @@ Enter :highlighted-syntax:`Name`, :highlighted-syntax:`Location` and :highlighte
 
 .. figure:: ../images/VisualStudio_open_example.spec.png
       :alt: Visual Studio CSharp file structure
-
-Next Step: Running a Specification
------------------------------------
 
 Now that you have successfully added/initialized a new Gauge testing project, we can look at how to run a specification by using the sample specification in the test folder
 

@@ -27,16 +27,16 @@ in a :highlighted-syntax:`.spec` file. To learn more about how specifications wo
 :vscode:`Running a Specification using Visual Studio Code`
 ----------------------------------------------------------
 
-Step 1
-~~~~~~
+Step 1: Open Specification
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Open the example spec. The Gauge specification file is present under :highlighted-syntax:`/specs/example.spec`
 
 .. figure:: ../images/VSCode_open_example.spec.png
       :alt: Open example.spec file
 
-Step 2
-~~~~~~
+Step 2: Run Specification
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Run your Gauge specs in Visual Studio Code by choosing the option to :highlighted-syntax:`Run Spec`
 
@@ -53,16 +53,16 @@ You'll get immediate feedback in the output about what got executed.
 :intellij:`Running a Specification using Intellij`
 --------------------------------------------------
 
-Step 1
-~~~~~~
+Step 1: Open Specification
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Open the example spec. The Gauge specification file is present under :highlighted-syntax:`/specs/example.spec`
 
 .. figure:: ../images/Intellij_open_example.spec.png
       :alt: Open example.spec file
 
-Step 2
-~~~~~~
+Step 2: Run Specification
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Run your Gauge specs in Intellij by clicking on the :highlighted-syntax:`Run example.spec`.
 
@@ -79,15 +79,15 @@ You'll get immediate feedback in the output about what got executed.
 :visualstudio:`Running a Specification using Visual Studio`
 -----------------------------------------------------------
 
-Step 1
-~~~~~~
+Step 1: Open Test Explorer
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When you build the test project, all the test scenarios appear in Test Explorer.
 If Test Explorer is not visible, choose :highlighted-syntax:`Test` on the Visual Studio menu, choose :highlighted-syntax:`Windows`, and then choose :highlighted-syntax:`Test Explorer`.
 
 
-Step 2
-~~~~~~
+Step 2: Run Specification
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * To run all the scenarios in a solution, choose :highlighted-syntax:`Run All`.
 * To run all the scenarios of a specification, choose :highlighted-syntax:`Run...` and then choose the group on the menu.
@@ -100,9 +100,6 @@ You'll get immediate feedback in the Text Explorer about what got executed.
 
 .. figure:: ../images/VisualStudio_TextExplorer.png
       :alt: Visual Studio text explorer
-
-Next Step:
-----------
 
 Now that you have successfully run a Gauge specification, you can go ahead and view the report from VS code.
 

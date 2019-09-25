@@ -96,9 +96,6 @@ Installation Instructions
 .. include:: ../partials/intellij_installation.rst
 .. include:: ../partials/visualStudio_installation.rst
 
-Next Step:
-----------
-
 .. cssclass:: csharp dynamic-content
 
    Now that you've installed Gauge, you can go ahead and create a C# testing project using Gauge.
