@@ -65,9 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const scrollToHeader = function() {
-	var shiftWindow = function() { scrollBy(0, -120) };
-	if (location.hash) shiftWindow();
-	window.addEventListener("hashchange", shiftWindow);
 	const sectionId = window.location.hash;
 	if(sectionId){
 		const header = document.querySelector(sectionId);
@@ -79,10 +76,14 @@ const scrollToHeader = function() {
 		}
 		const top = header.offsetTop;
 		document.querySelector("body,html").scrollTop = top - 100;
-		event.stopPropagation();
+		document.querySelector(sectionId).style.paddingTop = "150px";
+		document.querySelector(sectionId).style.marginTop = "-150px";
+		//event.stopPropagation();
 	}
 
 };
 
+
 window.addEventListener("load", scrollToHeader);
 window.addEventListener("hashchange", scrollToHeader, true);
+window.addEventListener("popstate", scrollToHeader, true);
