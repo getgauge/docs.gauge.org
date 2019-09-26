@@ -75,7 +75,7 @@ const scrollToHeader = function() {
 			.forEach(elem => elem.classList.add("inline-display"));
 		}
 		const top = header.offsetTop;
-		document.querySelector("body,html").scrollTop = top - 100;
+		//document.querySelector("body,html").scrollTop = top - 100;
 		document.querySelector(sectionId).style.paddingTop = "150px";
 		document.querySelector(sectionId).style.marginTop = "-150px";
 		//event.stopPropagation();
