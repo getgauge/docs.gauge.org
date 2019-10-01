@@ -9,8 +9,6 @@
 
 This section gives specific instructions on setting up Gauge in a macOS environment.
 
-You can install Gauge using any of the following methods.
-
 :installer-icon:`Install Using HomeBrew`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -24,12 +22,13 @@ You can install Gauge using any of the following methods.
 
     - Terminal
 
+.. note::
+    Gauge automatically sends `telemetry data <https://gauge.org/telemetry>`__ to help us improve the product. If you prefer not to have this data sent, you can choose to  `opt out <https://manpage.gauge.org/gauge_telemetry.html>`__.
 
 1. Install brew if you haven't already: Go to the `brew website <https://brew.sh>`__, and follow the
 directions there.
 
-2. Run the brew Command to Install Gauge: Installing Gauge using brew is as easy as the
-directions there.
+2. Run the brew command to install Gauge
 
 .. code-block:: console
 
@@ -45,10 +44,6 @@ if HomeBrew is working properly, you should see something similar to the followi
     ######################################################################## 100.0%
     ==> Pouring gauge-1.0.6.mojave.bottle.tar.gz
     🍺  /usr/local/Cellar/gauge/1.0.6: 3 files, 18.5MB
-
-.. note::
-    Gauge automatically sends `telemetry data <https://gauge.org/telemetry>`__ to help us improve the product. If you prefer not to have this data sent, you can choose to  `opt out <https://manpage.gauge.org/gauge_telemetry.html>`__.
-
 
 .. cssclass:: alternate-installation
 
@@ -102,10 +97,10 @@ Or install Gauge to a [custom path] using
 
         - Terminal
 
-    1. For signed binaries first download the zip installer
+1. For signed binaries first download the zip installer
         `Zip Installer <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-darwin.x86_64.zip>`__
 
-    2. Run the following command in your Commnad line tool to complete the installation.
+2. Run the following command in your Commnad line tool to complete the installation.
 
 .. cssclass:: toggle collapsible-content
 .. code-block:: console

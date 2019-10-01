@@ -22,7 +22,8 @@ This page provides information about what a specification is, how to write a spe
 ----------------------------
 
 .. note::
-    You can author Gauge specifications by using any text editor. It is recommended that you use the IDE plugin.
+    You can author Gauge specifications by using any text editor. However for a better experience, 
+    it is recommended that you use Gauge IDE plugins.
 
 Gauge projects can be created and run in Visual Studio Code by using the `Gauge extension <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__ for Visual Studio Code.
 This plugin currently supports Gauge with Java, JavaScript, Ruby, Python, C# (.Net Core), and TypeScript.
@@ -115,7 +116,7 @@ Components of a specification
 -----------------------------
 
 A specification consists of different sections; some of which are mandatory and few are optional.
-The components of a spec are listed as follows:
+The components of a specification are listed as follows:
 
 .. cssclass:: key-points
 
@@ -128,16 +129,17 @@ The components of a spec are listed as follows:
 
 .. note::
    
-   Tags - optional, executable component when the spec is run
+   Tags - optional, executable component when the specification is run
 
-   Comments - optional, non-executable component when the spec is run
+   Comments - optional, non-executable component when the specification is run
 
 Specification heading
 ~~~~~~~~~~~~~~~~~~~~~
 
-A specification must begin with a spec heading. A specification must contain only one spec heading.
+A specification must begin with a specification heading. A specification must contain only 
+one specification heading.
 
-Spec heading is written in the `<H1>` Markdown syntax in one of the following ways:
+Specification heading is written in the `<H1>` Markdown syntax in one of the following ways:
 
 .. _spec_syntax:
 
@@ -156,7 +158,7 @@ or
 
 Example
 
-In the following example, :highlighted-syntax:`# Search specification` is the spec heading, followed by tags and steps (statements preceded by ``*``).
+In the following example, :highlighted-syntax:`# Search specification` is the specification heading, followed by tags and steps (statements preceded by ``*``).
 
 .. code-block:: gauge
 
@@ -199,7 +201,7 @@ A scenario can be tagged by using :ref:`tags <longstart-tags>`.
 
 Example
 
-In the following example, the spec, ``Search specification`` contains the scenario, ``## Successful search``. This scenario heading is followed by tags and steps.
+In the following example, the specification, ``Search specification`` contains the scenario, ``## Successful search``. This scenario heading is followed by tags and steps.
 
 .. code-block:: gauge
     
@@ -247,7 +249,7 @@ Example
 
     * The word <Word> has <Vowel Count> vowels.
 
-Since this is ans experimental feature there are few cases in which it currently does not work:
+Since this is an experimental feature there are few cases in which currently do not work:
 
 * IDE plugins does not support this feature.
 * CSV files can not be used as table for scenario.
@@ -293,7 +295,7 @@ In the following example, the two sentences preceded by asterisk, \*\, are the u
     * Search for product "Cup Cakes"
     * "Cup Cakes" should show up in the search results
 
-The values written in *quotes*, ``"``, are parameters that are passed into the equivalent code of the step implementation for that particular language plugin.
+The values written in quotes, ``"``, are parameters that are passed into the equivalent code of the step implementation for that particular language plugin.
 
 .. attention::
    The following characters are reserved for parameters and cannot be used in the text of a step:
@@ -319,7 +321,7 @@ The equivalent code of the step implementation for that particular language plug
 
 Examples
 
-In the following example, parameter values are ``“Cup Cakes”`` (within double quotes) within the two steps.
+In the following example, parameter values are ``"Cup Cakes"`` (within double quotes) within the two steps.
 
 .. code-block:: gauge
 
@@ -507,7 +509,7 @@ Special Parameter: File
 
 These are used to read files and pass the file content as a string parameter to the steps in a specification.
 
-The syntax of file is as follows: ``<file:[value]>`` .``[value]`` is the absolute or relative path to the file located at ``<project_root>`` (location at which the Gauge project is created). 
+The syntax of file is as follows: ``<file:[value]>``, ``[value]`` is the absolute or relative path to the file located at ``<project_root>`` (location at which the Gauge project is created). 
 
 .. cssclass:: example
 
@@ -519,7 +521,7 @@ In the following example, ``email.txt`` is the absolute value of the special par
 
     * Verify email text is <file:email.txt>
 
-In the following example, ``content.txt`` is the file located at  ``<project_root>/work/content.txt``. 
+In the following example, ``content.txt`` is the file located at  ``<project_root>/work/content.txt``, 
 ``/work/content.txt`` is the relative path passed as the value to ``file``.
 
 .. code-block:: gauge
@@ -569,8 +571,8 @@ Tags
 Tags are used to associate labels with specifications or scenarios. 
 Tags help in searching or filtering specs or scenarios.
 
-Tags are written as comma separated values in the spec with a prefix ``Tags:`` .
-Both scenarios and specifications can be separately tagged, however, only **one** set of tags can be added to a single specification or scenario.
+Tags are written as comma separated values in the specification with a prefix ``Tags:`` .
+Both scenarios and specifications can be separately tagged, however, only one set of tags can be added to a single specification or scenario.
 A tag applied to a spec automatically applies to a scenario as well.
 
 When the number of tags used is more, tags can be defined in multiple lines to enhance readability. 
@@ -580,7 +582,7 @@ When the number of tags used is more, tags can be defined in multiple lines to e
 Example: Single line tag
 
 In the following example, both the specification, ``Search specification``, and scenario, ``Successful search``, have tags.
-``search`` and ``admin`` tags, which are used for the spec also apply to the scenario.
+``search`` and ``admin`` tags, which are used for the specification also apply to the scenario.
 Additionally, the scenario has its own set of tag, which is ``successful``.
 
 .. code-block:: gauge
@@ -620,9 +622,9 @@ Comments help enhance readability of a spec without being executed.
 Example
 
 In the following example, ``The admin user must be able to search for available products on the search page`` is a comment. 
-This is in plain text without any syntax and provides information about the spec. 
+This is in plain text without any syntax and provides information about the specification. 
 Similarly, ``For an existing product name, the search result will contain the product name`` is also a comment within the scenario and provides information about the scenario.
-These comments enhance readability without getting executed when the spec is run.
+These comments enhance readability without getting executed when the specification is run.
 
 .. code-block:: gauge
 
@@ -652,7 +654,7 @@ A concept presents the summary of a business intent by combining logical groups 
 
 Concepts follow the same rules or guidelines that are required while using steps within a spec.
 Multiple concepts can be used within a spec and concepts can be nested too.
-When the spec is run, all concepts and their steps are executed in the defined order.
+When the specification is run, all concepts and their steps are executed in the defined order.
 
 Defining a concept
 ^^^^^^^^^^^^^^^^^^
@@ -721,7 +723,7 @@ Contexts
 
 Contexts or Context steps are steps defined in a spec prior to a scenario. 
 These steps allow you to specify a set of conditions that are necessary for executing scenarios in a spec. 
-If there are multiple scenarios, context steps are executed prior to every scenario in the spec. 
+If there are multiple scenarios, context steps are executed prior to every scenario in the specification. 
 A context step must be preceded by ``*`` and are executed in the defined order. 
 Hence, they are similar to steps used in a scenario or concept.
 
@@ -732,7 +734,7 @@ Example
 In the following example, the context steps are ``User is logged in as Mike`` and ``Navigate to the project page``.
 These steps are defined and executed prior to the two scenarios, ``## Delete single project`` and ``## Delete multiple projects``.
 
-When the spec is run, the workflow is as follows:
+When the specification is run, the workflow is as follows:
 
 1. Context steps execution
 2. ``Delete single project`` scenario execution
@@ -768,7 +770,7 @@ Tear Down Steps are defined in a spec after the last scenario.
 These steps allow you to specify some sort of a conclusion after every execution of a scenario in a spec. 
 They are used to perform a tear down function.
 
-If there are multiple scenarios, tear down steps are executed prior to every scenario in the spec. 
+If there are multiple scenarios, tear down steps are executed prior to every scenario in the specification. 
 A tear down step must be preceded by ``*`` and are executed in the defined order. 
 Hence, they are similar to steps used in a scenario or concept.
 
@@ -788,7 +790,7 @@ Example
 In the following example, the tear down steps that start after the three or more consecutive underscores, ___, are 
 ``Logout user "mike"`` and ``Delete user "mike"``.
 
-When the spec is run, the workflow is as follows:
+When the specification is run, the workflow is as follows:
 
 1. Context steps execution
 2. ``Delete single project`` scenario execution
@@ -840,7 +842,6 @@ Example
 
 In the following example of a step, “hello” and “gauge” are two simple parameters. 
 Hence, the step implementation must also contain the same number of parameters. 
-The Implementation section shows the step implementation for different language plugins.
 
 .. code-block:: gauge
 
@@ -909,7 +910,6 @@ When steps have an inline table as a parameter, the step implementation must hav
 Example
 
 In the following example, “hobbit” and the table are step parameters. 
-The Implementation section shows the step implementation for different language plugins.
 
 .. code-block:: gauge
 
@@ -990,8 +990,7 @@ The parameters in the step implementation must match the number and type of para
 Step alias feature can be used in a specification when the same functionality is expressed in different ways.
 This enhances readability of the specification.
 
-Step alias feature helps you follow a good software engineering practice such as the DRY (Don't Repeat Yourself) principle at the code level, while ensuring that the functionality is expressed clearly.
-You can browse the web for more information about the DRY principle.
+Step alias feature helps you follow good software engineering practices such as the DRY (Don't Repeat Yourself) principle at the code level, while ensuring that the functionality is expressed clearly.
 
 .. cssclass:: example
 
@@ -999,7 +998,6 @@ Example 1
 
 In the following example, ``Create a user "user 1"`` and ``Create another user "user 2"`` are step aliases because they have the same functionality, but are expressed differently.
 However, ``Verify "user 1" has access to dashboard`` and ``Verify "user 2" has access to dashboard`` are *not* step aliases.
-The Implementation section shows the step implementation for different language plugins.
 
 .. code-block:: gauge
 
@@ -1073,7 +1071,6 @@ Example 2
 
 In the following example, the functionality of sending an email in both scenarios is the same. 
 However, the steps are expressed differently. 
-The Implementation section shows the step implementation for different language plugins.
 
 .. code-block:: gauge
 
@@ -1097,7 +1094,8 @@ Implementation
 
     public class Users {
 
-        [Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})]
+        [Step({"A <email_type> email is sent to the user", 
+        "An email confirming the <email_type> is sent"})]
         public void SendEmail(string email_type) {
             // Send email of email_type
         }
@@ -1110,7 +1108,8 @@ Implementation
 
     public class Users {
 
-        @Step({"A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"})
+        @Step({"A <email_type> email is sent to the user", 
+        "An email confirming the <email_type> is sent"})
         public void sendEmail(String email_type) {
             // Send email of email_type
         }
@@ -1121,7 +1120,9 @@ Implementation
 
 .. code-block:: javascript
 
-    step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"], function (email_type) {
+    step(["A <email_type> email is sent to the user", 
+    "An email confirming the <email_type> is sent"], 
+    function (email_type) {
         // do cool stuff
     });
 
@@ -1131,7 +1132,8 @@ Implementation
 
     from getgauge.python import step
 
-    @step(["A <email_type> email is sent to the user", "An email confirming the <email_type> is sent"])
+    @step(["A <email_type> email is sent to the user", 
+    "An email confirming the <email_type> is sent"])
     def email(email_type):
         print("create {}.".format(email_type))
 
@@ -1139,7 +1141,8 @@ Implementation
 
 .. code-block:: ruby
 
-    step 'A <email_type> email is sent to the user', 'An email confirming the <email_type> is sent' do |email_type|
+    step 'A <email_type> email is sent to the user', 
+    'An email confirming the <email_type> is sent' do |email_type|
         email_service.send email_type
     end
 
@@ -1956,9 +1959,9 @@ Values are cleared after the entire test suite is executed.
 Taking Custom Screenshots
 -------------------------
 
-When Gauge takes a screenshot, Gauge captures the displayed screen. This is the default behavior. 
-If you want to customize this behavior and enable Gauge to take screenshots of your choice, (for example, you might want a screenshot of only a part of the screen by using webdriver)
-you can use appropriate APIs in the step implementation of the language runner used while creating the Gauge project.
+When Gauge takes a screenshot, Gauge captures whatever is displayed on the screen. This is the default behavior. 
+If you want to customize this behavior and enable Gauge to take screenshots of your choice, (for example, you might want a screenshot of only the browser page)
+you can use appropriate driver APIs in the step implementation of the language runner used while creating the Gauge project.
 
 .. cssclass:: dynamic-content csharp
 
@@ -2028,6 +2031,46 @@ you can use appropriate APIs in the step implementation of the language runner u
 
 .. _reports_custom_messages:
 
+Adding screenshots in reports
+-----------------------------
+If there is any failure while running a spec, Gauge captures a screenshot on such a failure. 
+This is the default behavior. 
+If you want to enable Gauge to capture a screenshot at any point in time when a spec is run, call:
+
+.. cssclass:: dynamic-content csharp
+
+.. code-block:: java
+
+    GaugeScreenshots.Capture();
+
+.. cssclass:: dynamic-content java
+
+.. code-block:: java
+
+    Gauge.captureScreenshot();
+
+.. cssclass:: dynamic-content javascript
+
+.. code-block:: javascript
+
+    gauge.screenshot();
+
+.. cssclass:: dynamic-content python
+
+.. code-block:: python
+
+    from getgauge.python import Screenshots
+
+    Screenshots.capture_screenshot()
+
+.. cssclass:: dynamic-content ruby
+
+.. code-block:: ruby
+
+    Gauge.capture
+
+The APIs can be used in step implementations or hooks. These screenshots are displayed after steps in the execution reports.
+
 Custom messages in reports
 --------------------------
 Custom messages or data can be added to execution reports by using APIs in the step implementations or hooks.
@@ -2073,49 +2116,6 @@ These messages are displayed after the steps in the execution reports.
     Gauge.write_message("User id is" + id)
 
 .. _reports_custom_screenshots:
-
-Adding screenshots in reports
------------------------------
-If there is any failure while running a spec, Gauge captures a screenshot on such a failure. 
-This is the default behavior. 
-If you want to enable Gauge to capture a screenshot at any point in time when a spec is run and add the screenshot to the reports, you can use appropriate APIs depending on the language runner used.
-
-The APIs can be used in step implementations or hooks. 
-
-These screenshots are displayed after steps in the execution reports.
-
-.. cssclass:: dynamic-content csharp
-
-.. code-block:: java
-
-    GaugeScreenshots.Capture();
-
-.. cssclass:: dynamic-content java
-
-.. code-block:: java
-
-    Gauge.captureScreenshot();
-
-.. cssclass:: dynamic-content javascript
-
-.. code-block:: javascript
-
-    gauge.screenshot();
-
-.. cssclass:: dynamic-content python
-
-.. code-block:: python
-
-    from getgauge.python import Screenshots
-
-    Screenshots.capture_screenshot()
-
-.. cssclass:: dynamic-content ruby
-
-.. code-block:: ruby
-
-    Gauge.capture
-
 
 Continue on Failure
 -------------------
@@ -2433,7 +2433,7 @@ The following project structure shows the project structure for the selected lan
 
     **js.properties**
 
-    This file defines configurations for Javascript runner plugin.
+    This file defines configurations for JavaScript runner plugin.
     For more information about language-specific configuration, see :ref:`language_config`.
 
 .. cssclass:: dynamic-content python

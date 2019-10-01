@@ -61,6 +61,7 @@ var DOCUMENTATION_OPTIONS = {
 {%- endif %}
 {%- endfor %}
 <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 {%- endmacro %}
 
 
@@ -194,7 +195,7 @@ var DOCUMENTATION_OPTIONS = {
         {% else %}
         <div class="edit-page">
           <a href="https://github.com/getgauge/docs.gauge.org/edit/master/{{pagename}}.rst">
-            <u>Improve this page</u> </a>
+            <u>Edit</u> </a>
         </div>
         <a href="javascript:" aria-label= "Return to top" id="return-to-top"><i></i></a>
         {% block body %}{% endblock %}
@@ -205,11 +206,11 @@ var DOCUMENTATION_OPTIONS = {
       
       <div id="right-sidebar" class="right-sidebar-container containers animate-fadeIn">
         <div class="localtoc-container">
-          <span class='mobile-local-toc collapsed' onclick="document.getElementsByClassName('mobile-local-toc')[0].classList.toggle('collapsed')" onkeypress="document.getElementsByClassName('mobile-local-toc')[0].classList.toggle('collapsed')">In this page</span>
-            {{ toc }}
+         <span class='mobile-local-toc collapsed' onclick="document.getElementsByClassName('mobile-local-toc')[0].classList.toggle('collapsed')" onkeypress="document.getElementsByClassName('mobile-local-toc')[0].classList.toggle('collapsed')">In this page</span>
+           {{ toc }}
         </div>
       </div>
-      {% endif %}
+     {% endif %}
     {%- endblock %}
 
     {%- block footer %}

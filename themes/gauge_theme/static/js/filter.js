@@ -33,7 +33,6 @@ const hidePopUp = function () {
     document.getElementById("change-filter").classList.remove('disabled');
     let popUp = document.getElementsByClassName("proj-setup-filters");
     popUp[0].classList.add("hidden");
-    refreshPage();
 };
 
 const applyCombination = function (element) {
@@ -47,6 +46,7 @@ const updateContent = function () {
     let selectionItems = document.querySelectorAll(".selection input");
     selectionItems.forEach(selectedItem => {
         if (selectedItem.checked) applyCombination(selectedItem);
+        refreshPage();
     });
     hidePopUp();
 }

@@ -63,6 +63,7 @@ const setBackground = function (button) {
         button.checked = true
         button.parentElement.style.backgroundColor = "rgba(255, 204, 0, 0.1)"
         button.parentElement.style.border = "solid 1px #ffcc00"
+        button.parentElement.children[0].style.display = "none"
     };
 }
 
@@ -73,9 +74,11 @@ const changeBackground = function () {
             element.parentElement.style.backgroundColor = "rgba(255, 204, 0, 0.1)";
             element.parentElement.style.border = "solid 1px #ffcc00";
             element.parentElement.style.fontWeight = "bold";
+            element.parentElement.children[0].style.display = "none";
         } else {
             element.parentElement.style.backgroundColor = "#f2f2f2";
             element.parentElement.style.border = "";
+            element.parentElement.children[0].style.display = "block";
         }
     });
 }

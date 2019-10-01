@@ -5,14 +5,14 @@
 .. cssclass:: topic
 .. role:: heading
 
-:heading:`Get Started`
-======================
+:heading:`Installing Gauge`
+===========================
 
-This getting started guide walks you through the core features of Gauge. You'll be able to install
-Gauge and learn how to create a test automation project using Gauge.
+This getting started guide takes you through the core features of Gauge. By the end of this guide,
+you'll be able to install Gauge and learn how to create your first Gauge test automation project.
 
-If you are new to Gauge, check out the `Overview <../overview.html>`__ section in the docs for a quick introduction to the
-most important concepts and features of the tool.
+If you are new to Gauge, check out the `Overview <../overview.html>`__ section in the docs for a quick 
+introduction to the most important features of the tool.
 
 .. cssclass:: sub-heading
 
@@ -95,9 +95,6 @@ Installation Instructions
 .. include:: ../partials/vscode_installation.rst
 .. include:: ../partials/intellij_installation.rst
 .. include:: ../partials/visualStudio_installation.rst
-
-Next Step:
-----------
 
 .. cssclass:: csharp dynamic-content
 

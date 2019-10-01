@@ -10,7 +10,7 @@ DISPLAY_SELECTION_MAP = {
     'Visual Studio': 'visualstudio',
     'IntelliJ IDEA': 'intellij',
     'C#': 'csharp',
-    'Javascript': 'javascript',
+    'JavaScript': 'javascript',
     'Java': 'java',
     'Python': 'python',
     'Ruby': 'ruby',

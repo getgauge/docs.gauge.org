@@ -171,44 +171,44 @@ List of various Parse errors:
 | Table does not belong to any step         | Ignores table;                 |
 |                                           | Gauge execution continues      |
 +-------------------------------------------+--------------------------------+
-| Table header cannot have repeated column  | Marks that spec as             |
+| Table header cannot have repeated column  | Marks that specification as    |
 | values                                    | failed; Gauge execution        |
 |                                           | continues for other spes       | 
 +-------------------------------------------+--------------------------------+
-| Teardown should have at least three       | Marks that spec as             |
+| Teardown should have at least three       | Marks that specification as    |
 | underscore characters                     | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
-| Scenario heading should have at least one | Marks that spec as             |
+| Scenario heading should have at least one | Marks that specification as    |
 | character                                 | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
-| Table header should be not blank          | Marks that spec as             |
+| Table header should be not blank          | Marks that specification as    |
 |                                           | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
-| Multiple spec headings found in the same  | Marks that spec as             |
+| Multiple spec headings found in the same  | Marks that specification as    |
 | file                                      | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
-| Scenario should be defined after the spec | Marks that spec as             |
+| Scenario should be defined after the spec | Marks that specification as    |
 | heading                                   | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
-| Could not resolve table from file         | Marks that spec as             |
+| Could not resolve table from file         | Marks that specification as    |
 |                                           | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
-| Spec does not have any element            | Marks that spec as             |
+| Spec does not have any element            | Marks that specification as    |
 |                                           | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
-| Spec heading not found                    | Marks that spec as             |
+| Spec heading not found                    | Marks that specification as    |
 |                                           | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
-| Spec heading should have at least one     | Marks that spec as             |
+| Spec heading should have at least one     | Marks that specification as    |
 | character                                 | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
-| Dynamic param could not be resolved       | Marks that spec as             |
+| Dynamic param could not be resolved       | Marks that specification as    |
 |                                           | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
-| Step should not be blank                  | Marks that spec as             |
+| Step should not be blank                  | Marks that specification as    |
 |                                           | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
-| Duplicate scenario definition found in    | Marks that spec as             |
+| Duplicate scenario definition found in    | Marks that specification as    |
 | the same specification                    | failed; continues for others   |
 +-------------------------------------------+--------------------------------+
 
