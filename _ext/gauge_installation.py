@@ -1,3 +1,6 @@
+import random
+import string
+
 from docutils import nodes
 from docutils.parsers.rst import Directive, directives
 from docutils.statemachine import StringList
@@ -15,6 +18,22 @@ DISPLAY_SELECTION_MAP = {
     'Linux': 'linux',
     'Windows': 'windows',
 }
+
+
+def create_random_id():
+    return ''.join([random.choice(string.ascii_letters + string.digits) for n in range(10)])
+
+
+class fieldset_node(nodes.Element):
+    tagname = 'fieldset'
+
+
+def visit_fieldset_node(self, node):
+    self.body.append(node.starttag())
+
+
+def depart_fieldset_node(self, node):
+    self.body.append(node.endtag())
 
 
 class setup_heading_node(nodes.Element):
@@ -40,16 +59,17 @@ def visit_setup_input_node(self, node):
     for attr in node.attlist():
         attrs += attr[0] + "=" + '"' + attr[1] + '"'
     tmpl = """
-    <label class="radioContainer">
+    <label class="radioContainer" for="{0}">
         <span class="circle"></span>
-        <span class="selection-icon selection-icon-{}"></span>
-        <span class="selection-content">{}</span>
-        <input class="search getting-started-radios" {}>
+        <span class="selection-icon selection-icon-{1}"></span>
+        <span class="selection-content">{2}</span>
+        <input id="{0}" class="search getting-started-radios" {3}>
         <span class="checkmark"></span>
     </label>
     """
-    self.body.append(tmpl.format(
-        normalize(node.rawsource), node.rawsource, attrs))
+    label_id = create_random_id()
+    self.body.append(tmpl.format(label_id, normalize(
+        node.rawsource), node.rawsource, attrs))
 
 
 def depart_setup_input_node(self, node):
@@ -90,9 +110,10 @@ class InstallationSelection(Directive):
 
     def run(self):
         options = self.options
-        container = nodes.container()
-        container['classes'].append(options['class'])
+        container = fieldset_node()
+        container['class'] = ' '.join([options['class'],"docutils", "contianer" ])
         heading = setup_heading_node(options['title'])
+        heading.tagname = "legend"
         container += heading
         for content in self.content:
             _input = setup_input_node(content)

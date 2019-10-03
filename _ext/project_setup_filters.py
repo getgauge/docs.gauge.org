@@ -1,3 +1,6 @@
+import random
+import string
+
 from docutils import nodes
 from docutils.parsers.rst import Directive, directives
 from docutils.statemachine import StringList
@@ -16,46 +19,71 @@ DISPLAY_SELECTION_MAP = {
     'Windows': 'windows',
 }
 
+
+def create_random_id():
+    return ''.join([random.choice(string.ascii_letters + string.digits) for n in range(10)])
+
+class fieldset_node(nodes.Element):
+    tagname = 'fieldset'
+
+
+def visit_fieldset_node(self, node):
+    self.body.append(node.starttag())
+
+
+def depart_fieldset_node(self, node):
+    self.body.append(node.endtag())
+
+
+
 class heading_node(nodes.Element):
-    tagname='h3'
-class top_heading_node(nodes.Element):
-    tagname='h2'
+    tagname = 'h3'
 
 def visit_heading_node(self, node):
-    self.body.append(node.starttag())
-    self.body.append(node.rawsource)
-
-
-def visit_top_heading_node(self, node):
     self.body.append(node.starttag())
     self.body.append(node.rawsource)
 
 def depart_heading_node(self, node):
     self.body.append(node.endtag())
 
+
+class top_heading_node(nodes.Element):
+    tagname = 'h2'
+
+
+def visit_top_heading_node(self, node):
+    self.body.append(node.starttag())
+    self.body.append(node.rawsource)
+
+
 def depart_top_heading_node(self, node):
     self.body.append(node.endtag())
 
+
 class input_node(nodes.Element):
     pass
+
 
 def visit_input_node(self, node):
     attrs = ''
     text = ''
     for attr in node.attlist():
-        attrs += attr[0] +"=" +'"'+ attr[1] +'"'
+        attrs += attr[0] + "=" + '"' + attr[1] + '"'
     tmpl = """
-    <label class="radio-container">
+    <label class="radio-container" for="{0}">
         <span class="circle"></span>
-        <span class="selection-text">{}</span>
-        <input {}>
+        <span class="selection-text">{1}</span>
+        <input id="{0}" {2}>
         <span class="checkmark"></span>
     </label>
     """
-    self.body.append(tmpl.format(node.rawsource, attrs))
+    label_id = create_random_id()
+    self.body.append(tmpl.format(label_id, node.rawsource, attrs))
+
 
 def depart_input_node(self, node):
     pass
+
 
 class SetupFiltersDirective(Directive):
     optional_arguments = 0
@@ -89,6 +117,7 @@ class SetupFiltersDirective(Directive):
         wrapper += buttons_container
         return [wrapper]
 
+
 class SetupFilterDirective(Directive):
     optional_arguments = 0
     final_argument_whitespace = True
@@ -100,9 +129,10 @@ class SetupFilterDirective(Directive):
 
     def run(self):
         options = self.options
-        container = nodes.container()
-        container['classes'].append(options['class'])
+        container = fieldset_node()
+        container['class'] = ' '.join([options['class'],"docutils", "contianer" ])
         heading = heading_node(options['title'])
+        heading.tagname = "legend"
         container += heading
         for content in self.content:
             _input = input_node(content)
@@ -114,10 +144,13 @@ class SetupFilterDirective(Directive):
             container += _input
         return [container]
 
+
 def setup(app):
 
-    app.add_node(top_heading_node, html=(visit_top_heading_node, depart_top_heading_node))
+    app.add_node(top_heading_node, html=(
+        visit_top_heading_node, depart_top_heading_node))
     app.add_node(heading_node, html=(visit_heading_node, depart_heading_node))
-    app.add_node(input_node, html=(visit_input_node, depart_input_node))
+    app.add_node(input_node,  html=(visit_input_node, depart_input_node))
+    app.add_node(fieldset_node,  html=(visit_fieldset_node, depart_fieldset_node))
     app.add_directive('setupfilters', SetupFiltersDirective)
     app.add_directive('setupfilter', SetupFilterDirective)

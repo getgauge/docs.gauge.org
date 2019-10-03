@@ -1357,6 +1357,16 @@ p.experimental-feature::before {
   margin-bottom: 10px;
 }
 
+fieldset.setup-selection {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.setup-selections legend {
+  text-align: left;
+  padding-left: 6px;
+  font-size: 18px;
+}
+
 #errors-during-execution table tr td ,#errors-during-execution table th{
   padding: 5px 6px;
 }
@@ -1859,7 +1869,7 @@ ul.main-nav li:nth-child(3),ul.main-nav li:nth-child(4) {
     position: relative;
     width: 100%;
     height: 45px;
-    margin: 5px;
+    margin: 10px 5px;
     cursor: pointer;
     padding-top: 10px;
     font-size: 14px;
@@ -2196,4 +2206,23 @@ ul.main-nav li:nth-child(3),ul.main-nav li:nth-child(4) {
   .proj-setup-filters.docutils .selection input:checked~.checkmark:after {
     top: 13px;
 }
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  margin-top: 0;
+    padding-top: 25px;
+    font-size: 16px;
+    font-family: 'URWGeometric-Medium';
+    font-weight: bolder;
+    margin-right: auto;
+}
+
+.feature-heading {
+  font-family: 'URWGeometric-Medium';
+  font-weight: bolder;
+  font-size: 20px;
 }
