@@ -27,7 +27,7 @@
 
 .selection .radio-container {
     position: relative;
-    height: 15%;
+    height: 30px;
     margin: 10px 0px -6px 0px;
     cursor: pointer;
     padding-top: 1px;
