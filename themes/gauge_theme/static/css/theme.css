@@ -1932,6 +1932,10 @@ ul.main-nav li:nth-child(3),ul.main-nav li:nth-child(4) {
     font-family: "OpenSans-Regular";
     width: auto!important;
   }
+  #proj-setup-filter-section .proj-setup-filters {
+    padding: 0 30px 0 30px;
+    background: #fff;
+  }
 }
 
 @media only screen and (min-width:810px) {
