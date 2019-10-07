@@ -97,10 +97,10 @@ Or install Gauge to a [custom path] using
 
         - Terminal
 
-1. For signed binaries first download the zip installer
-        `Zip Installer <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-darwin.x86_64.zip>`__
+    1. For signed binaries first download the zip installer
+            `Zip Installer <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-darwin.x86_64.zip>`__
 
-2. Run the following command in your Commnad line tool to complete the installation.
+    2. Run the following command in your Commnad line tool to complete the installation.
 
 .. cssclass:: toggle collapsible-content
 .. code-block:: console
