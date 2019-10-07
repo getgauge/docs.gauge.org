@@ -1322,6 +1322,10 @@ p.experimental-feature::before {
   -webkit-overflow-scrolling: auto; 
 }
 
+.cancel.filter-action.docutils,.modify.filter-action.docutils {
+  width: 88px!important;
+}
+
 #write-gauge-specifications div,#run-gauge-specifications div,#overview div {
   overflow-x: auto;
   margin: 0px;
