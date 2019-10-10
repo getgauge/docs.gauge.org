@@ -97,10 +97,6 @@ Listed below are examples for using Gauge to set up test projects for JavaScript
      - Description
      - Link
 
-   * - :selenium_logo:`Selenium Webdriver`
-     - This is an example project for doing web automation testing with Gauge and Selenium Webdriver.
-     - `Read more <https://github.com/renjithgr/gauge-js-selenium-webdriver>`__
-
    * - :taiko_logo:`Taiko`
      - This is an example project for doing web automation testing with Gauge and Taiko.
      - `Read more <https://github.com/getgauge-examples/js-taiko>`__
