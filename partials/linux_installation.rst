@@ -51,11 +51,6 @@ Install Gauge using dfn by running this command
 .. cssclass:: toggle collapsible-content
 .. code-block:: console
 
-    echo -e "[gauge-nightly]\nname-gauge-nightly\nbaseurl-http://dl.bintray.com/gauge/gauge-rpm/gauge-nightly\ngpgcheck-0\nenabled-1" | sudo tee /etc/yum.repos.d/gauge-nightly.repo
-
-.. cssclass:: toggle collapsible-content
-.. code-block:: console
-
     sudo dnf install gauge
 
 
@@ -143,13 +138,3 @@ Or install Gauge to a [custom path] using
 .. code-block:: console
 
     curl -SsL https://downloads.gauge.org/stable | sh -s -- --location-[custom path]
-
-.. cssclass:: collapsible nightly-installer last
-
-:installer-icon:`Nightly Installation`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. cssclass:: toggle collapsible-content
-
-Nightly releases are latest development snapshots of Gauge. They have the latest features being developed, but are unstable.
-`Download the Gauge archive <https://bintray.com/gauge/Gauge/Nightly/_latestVersion>`__.

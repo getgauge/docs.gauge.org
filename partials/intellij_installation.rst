@@ -28,6 +28,3 @@ Follow the steps to add the Gauge IntelliJ IDEA plugin from the IDE
 
 5. Once the installation is complete click on the :highlighted-syntax:`Restart IDE` to restart the IDE.
 
-.. cssclass:: other-install-options
-
-`Other install options <https://github.com/getgauge/Intellij-Plugin#installing-nightly>`__

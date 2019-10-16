@@ -136,14 +136,3 @@ Or install Gauge to a [custom path] using
 .. code-block:: console
 
     npm install -g @getgauge/cli
-
-
-.. cssclass:: collapsible nightly-installer last
-
-:installer-icon:`Nightly Installation`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. cssclass:: toggle collapsible-content
-
-Nightly releases are latest development snapshots of Gauge. They have the latest features being developed, but are unstable.
-`Download the Gauge archive <https://bintray.com/gauge/Gauge/Nightly/_latestVersion>`__.
