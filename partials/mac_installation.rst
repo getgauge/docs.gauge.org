@@ -22,8 +22,6 @@ This section gives specific instructions on setting up Gauge in a macOS environm
 
     - Terminal
 
-.. note::
-    Gauge automatically sends `telemetry data <https://gauge.org/telemetry>`__ to help us improve the product. If you prefer not to have this data sent, you can choose to  `opt out <https://manpage.gauge.org/gauge_telemetry.html>`__.
 
 1. Install brew if you haven't already: Go to the `brew website <https://brew.sh>`__, and follow the
 directions there.

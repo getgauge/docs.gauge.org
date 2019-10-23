@@ -30,11 +30,6 @@ Gauge can be installed on any flavour of Linux using the shell script. The Follo
     sudo apt-get update
     sudo apt-get install gauge
 
-
-.. note::
-    Gauge automatically sends `telemetry data <https://gauge.org/telemetry>`__ to help us improve the product. If you prefer not to have this data sent, you can choose to  `opt out <https://manpage.gauge.org/gauge_telemetry.html>`__.
-
-
 .. cssclass:: alternate-installation
 
 :alternate-methods:`Alternate Installation Methods`

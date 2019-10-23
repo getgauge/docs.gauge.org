@@ -63,15 +63,6 @@ The list of key value pairs present in ``gauge.properties`` are listed as follow
     # Set to a URL, which acts as plugin repository for Gauge.
     gauge_repository_url = https://downloads.gauge.org/plugin
 
-    # Record user opt in or opt out for telemetry
-    gauge_telemetry_action_recorded = false
-
-    # Allow Gauge to collect usage statistics anonymously
-    gauge_telemetry_enabled = true
-   
-    # Log request sent to Gauge telemetry engine
-    gauge_telemetry_log_enabled = false
-
     # Set to a URL, which acts as a template repository for Gauge.
     gauge_templates_url = https://downloads.gauge.org/templates
 
