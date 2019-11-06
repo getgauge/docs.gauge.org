@@ -959,7 +959,9 @@ Implementation
 .. code-block:: javascript
 
     step("Create following <race> characters <table>", async function(race, table) {
-        throw 'Unimplemented Step';
+        table.rows.forEach(function (row) {
+            console.log(`Name ${row.cells[1]}`);
+        });
     });
 
 .. cssclass:: dynamic-content python
