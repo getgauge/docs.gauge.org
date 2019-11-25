@@ -66,6 +66,8 @@ var DOCUMENTATION_OPTIONS = {
 
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang = "en">
+  <head>
+  {%- if not html5_doctype and not skip_ua_compatible %}
   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
   {%- endif %}
   {%- if use_meta_charset or html5_doctype %}
