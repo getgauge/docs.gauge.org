@@ -206,7 +206,6 @@ header.top:hover {
 }
 
 .localtoc-container ul li ul li ul li:before {
-  content: '- ';
   color: #5e5e5e;
 }
 
