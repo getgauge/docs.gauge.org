@@ -881,8 +881,41 @@ Implementation
 
 .. code-block:: javascript
 
-    step("Say <greeting> to <name>", async function(greeting, name) {
+    step("Say <greeting> to <name>", function(greeting, name) {
         throw 'Unimplemented Step';
+    });
+
+    // Asynchronous step implementation
+    step("Say <greeting> to <name>", async function(greeting, name) {
+        // Async code
+        throw 'Unimplemented Step';
+    });
+
+.. cssclass:: dynamic-content javascript
+
+Handling asynchronous code in steps with done
+
+.. cssclass:: dynamic-content javascript
+
+.. code-block:: javascript
+
+    step("Say <greeting> to <name>", function(greeting, name, done) {
+        try {
+            setTimeout(function () {
+                // Code for step
+                done();
+            }, 1000);
+        } catch(e) {
+            done(e);
+        }
+    });
+
+    // Handling errors in promises with done
+    step("Say <greeting> to <name>", function(greeting, name, done) {
+        // Let promise1 be some promise we need to wait for.
+        promise1
+            .then(done)
+            .catch(function(e) { done(e);});
     });
 
 .. cssclass:: dynamic-content python
@@ -1465,6 +1498,26 @@ Implementation
     afterStep(fn, [opts]) {
         // Code for after step
     }
+
+.. cssclass:: dynamic-content javascript
+
+Handling asynchronous code in hooks
+
+.. cssclass:: dynamic-content javascript
+
+.. code-block:: javascript
+
+    // using done
+    beforeStep(function (context, done) {
+        setTimeout(function() {
+            done();
+        }, 1000);
+    });
+
+    // using async functions
+    beforeStep(async function () {
+        // async code for before step
+    });
 
 .. cssclass:: dynamic-content python
 
@@ -2176,8 +2229,8 @@ Each language runner uses a different syntax, depending on the language idioms, 
 
 .. code-block:: python
 
-    // The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
-    // steps even if the current step fails.
+    # The ``@ContinueOnFailure`` annotation tells Gauge to continue executing other
+    # steps even if the current step fails.
 
     @continue_on_failure([RuntimeError])
     @step("Say <greeting> to <product>")
