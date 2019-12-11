@@ -21,8 +21,3 @@ jobs:
       run: |
         mkdir tests/logs
         make test
-
-    - uses: actions/upload-artifact@master
-      with:
-        name: screenshots
-        path: tests/logs
