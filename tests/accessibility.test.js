@@ -21,7 +21,6 @@ describe('accessibility', () => {
 
   urls.forEach(url => {
     test(`${url}`, async () => {
-      jest.setTimeout(20000);
       await goto(url);
       const audit = await accessibility.runAudit();
       let violations = audit.violations.filter(v => !excludedRules.includes(v.id))
