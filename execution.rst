@@ -455,13 +455,12 @@ Example
 
 In this example, ``users.csv`` is the external CSV file that contains the following data table:
 
-.. code-block:: gauge
+.. code-block:: text
 
-    |id| name    |
-    |--|---------|
-    |1 |Alice    |
-    |2 |Bob      |
-    |3 |Eve      |
+    id,name
+    1,Alice
+    2,Bob
+    3,Eve
 
 In the spec, the steps use the ``<name>`` column from the CSV file.
 
