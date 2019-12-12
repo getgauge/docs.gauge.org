@@ -1,0 +1,35 @@
+on:
+  push:
+    branches:
+      - master
+
+name: docs-preview
+
+jobs:
+  deploy:
+    name: Deploy gauge docs-preview
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-west-2
+
+    - name: create docs
+      run: |
+        virtualenv docs
+        source ./docs/bin/activate && pip install -r requirements.txt && make preview-build && deactivate
+
+    - name: Deploy docs to amazon S3
+      run: |
+        mkdir -p $HOME/.aws/
+        echo -e "[default]\naws_access_key_id = $aws_access_key_id\naws_secret_access_key = $aws_secret_access_key\nregion=$aws-region\noutput=json" > $HOME/.aws/config
+        aws s3 rm s3://docs-preview.gauge.org --recursive
+        cd _build
+        aws s3 sync . s3://docs-preview.gauge.org --cache-control max-age=604800,s-maxage=1800
