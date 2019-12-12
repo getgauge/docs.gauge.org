@@ -21,8 +21,14 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-west-2
 
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+
     - name: create docs
       run: |
+        pip install virtualenv
         virtualenv docs
         source ./docs/bin/activate && pip install -r requirements.txt && make preview-build && deactivate
 
