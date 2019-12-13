@@ -27,8 +27,7 @@ Gauge can be installed on any flavour of Linux using the shell script. The Follo
 
 .. code-block:: console
 
-    sudo apt-get update
-    sudo apt-get install gauge
+    sudo apt-get update && sudo apt-get install gauge
 
 .. cssclass:: alternate-installation
 
