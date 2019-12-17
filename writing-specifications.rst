@@ -1357,11 +1357,21 @@ Execution hooks
 Test execution hooks can be used to run arbitrary test code at different
 levels during the test suite execution.
 
-By default, Gauge clears the state after each scenario so that new objects are created for next scenario execution.
+.. cssclass:: dynamic-content java
 
-You can configure the level at which Gauge clears the in-memory objects by using the ``default.properties`` file.
+    By default, Gauge clears the state after each scenario so that new objects are created for next scenario execution.
 
-For more information about configuring the appropriate environment variable in the ``default.properties`` file, see :ref:`local_configuration_Gauge`.
+    You can configure the level at which Gauge clears the in-memory objects by using the ``java.properties`` file.
+
+    For more information about configuring the appropriate environment variable in the ``java.properties`` file, see :ref:`language_config`.
+
+.. cssclass:: dynamic-content csharp
+
+    By default, Gauge clears the state after each scenario so that new objects are created for next scenario execution.
+
+    You can configure the level at which Gauge clears the in-memory objects by using the ``csharp.properties`` file.
+
+    For more information about configuring the appropriate environment variable in the ``csharp.properties`` file, see :ref:`language_config`.
 
 Implementation
 ~~~~~~~~~~~~~~

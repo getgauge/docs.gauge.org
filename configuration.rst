@@ -122,14 +122,6 @@ The list of key value pairs present in ``default.properties`` are listed as foll
     # Set to true to use multithreading for parallel execution
     enable_multithreading = false
 
-    # Specify the level at which in-memory objects should get removed when
-    # Gauge runs a specification.
-    # Possible values for this property are 'suite', 'spec' or 'scenario'.
-    # default: 'scenario'.
-    # If set to 'spec', the objects are cleared after Gauge runs each specification 
-    # so that new objects are created when Gauge runs the next specification.
-    gauge_clear_state_level = spec
-    
     # The path to the gauge specifications directory. 
     # Takes a comma separated list of specification files or directories.
     gauge_specs_dir = specs
@@ -151,8 +143,9 @@ Configuration properties set in these files are available as environment variabl
 
 .. note::
   ``<language>.properties`` file is automatically created when a Gauge project is created and initialized with a language of your choice.
-   
+
 You can find the language specific ``.properties`` file at ``<project_root>/env/default/<language>.properties``, where ``<project_root>`` is the location at which you have created the Gauge project.
+
 For example, if you have installed Java on your system, then the path of the ``.properties`` file is ``<project_root>/env/default/java.properties``.
 
 For more details about running language plugins as an environment, see :ref:`Environments <environments>`.
@@ -230,13 +223,17 @@ For more details about running language plugins as an environment, see :ref:`Env
         :name: csharp
 
         # Holds the location of the created Gauge project
-        GAUGE_CSHARP_PROJECT_FILE = /Users/nivedhasenthil/Desktop/sample-csharp/SampleCsharp.csproj
+        GAUGE_CSHARP_PROJECT_FILE = SampleCsharp.csproj
 
         # The build configuration when running tests for the Gauge project
         GAUGE_CSHARP_PROJECT_CONFIG = Debug
 
         # The build platform when running tests for the Gauge project
         GAUGE_CSHARP_PROJECT_PLATFORM = Any CPU
+
+        # Specify the level at which the in-memory objects should be cleared
+        # Possible values are suite, spec, and scenario. Default value is scenario.
+        gauge_clear_state_level = scenario
 
 .. cssclass:: dynamic-content ruby
 
