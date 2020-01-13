@@ -2046,12 +2046,10 @@ you can use appropriate driver APIs in the step implementation of the language r
 
 .. code-block:: java
 
-    // Using Webdriver public class
-    CustomScreenGrabber implements ICustomScreenshotGrabber {
+    public class CustomScreenshotGrabber implements ICustomScreenshotGrabber {
         // Return a screenshot byte array
         public byte[] takeScreenshot() {
-            WebDriver driver = DriverFactory.getDriver();
-            return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            return  ((TakesScreenshot) Driver.webDriver).getScreenshotAs(OutputType.BYTES);
         }
     }
 
