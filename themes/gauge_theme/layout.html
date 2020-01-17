@@ -20,11 +20,6 @@
 {%- set url_root = pathto('', 1) %}
 {# XXX necessary? #}
 {%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
-{%- if not embedded and docstitle %}
-{%- set titlesuffix = " &#8212; "|safe + docstitle|e %}
-{%- else %}
-{%- set titlesuffix = "" %}
-{%- endif %}
 {% if theme_docs_version == 'master' %}
 {% set gaugehome = '//preview.gauge.org' %}
 {% else %}
@@ -77,7 +72,7 @@ var DOCUMENTATION_OPTIONS = {
   {%- endif %}
   {{- metatags }}
   {%- block htmltitle %}
-  <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+  <title>{{ title|striptags|e }}</title>
   {%- endblock %}
   {%- block css %}
   {{- css() }}
