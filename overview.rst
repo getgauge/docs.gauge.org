@@ -114,13 +114,13 @@ parameters
   * Goto Google's home page
   * Search for "Star wars"
 
-Or combine more than one step into `concepts <writing-specifications.html#concepts>`__
+Or combine more than one step into `concepts <writing-specifications.html#concepts>`__ using the .cpt file format
 
 .. code-block:: gauge
 
   # Search Google for <query>
   * Goto Google's home page
-  * Search for "Cup Cakes"
+  * Search for <query>
 
 The concept, ``Search Google for <query>`` can be used like a step in a specification
 
