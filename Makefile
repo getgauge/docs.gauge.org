@@ -48,11 +48,3 @@ prod-build:
 
 serve: preview-build
 	(cd $(BUILDDIR) && python3 -m http.server)
-
-
-test:local-build
-	python build_urls.py $(BUILDDIR)/sitemap.xml && \
-	cd ./tests && \
-	npm install && \
-	npm test && \
-	cd ..

@@ -19,5 +19,4 @@ jobs:
 
     - name: Run tests
       run: |
-        mkdir tests/logs
-        make test
+        make prod-build
