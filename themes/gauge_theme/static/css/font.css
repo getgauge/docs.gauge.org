@@ -1,13 +1,11 @@
-//Poppins Latin
 
 @font-face {
     font-family: 'PoppinsLatin-Medium';
     font-display: swap;
     src: url('../font/PoppinsLatin/PoppinsLatin-Medium.otf') format('opentype'),
-    url('../font/PoppinsLatin/PoppinsLatin-Medium.ttf') format('truetype');
+         url('../font/PoppinsLatin/PoppinsLatin-Medium.ttf') format('truetype');
 }
 
-// Open Sans
 
 @font-face {
     font-family: 'OpenSans-Bold';
@@ -33,7 +31,6 @@
     src: url('../font/open-sans/OpenSans-ExtraBoldItalic.ttf');
  }
 
- // Source Code Pro
  
  @font-face {
     font-family: 'SourceCodePro-Medium';
