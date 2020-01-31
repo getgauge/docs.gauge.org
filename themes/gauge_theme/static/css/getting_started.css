@@ -38,7 +38,7 @@
 
 .setup-selection h2 {
     font-size: 18px;
-    font-family: 'URWGeometric-Medium';
+    font-family: 'PoppinsLatin-Medium';
     color: #000000;
 }
 
@@ -259,7 +259,7 @@
     font-weight: 600;
     color: #1e1e1e;
     margin: 0px 18px;
-    font-family: 'URWGeometric-Medium';
+    font-family: 'PoppinsLatin-Medium';
     font-size: 16px;
     text-align: right;
 }
@@ -280,7 +280,7 @@
     font-weight: 600;
     color: #1e1e1e;
     margin: 0px 18px;
-    font-family: 'URWGeometric-Medium';
+    font-family: 'PoppinsLatin-Medium';
     font-size: 16px;
 }
 
@@ -535,7 +535,7 @@ span.installer-icon:before {
 h4 span.installer-icon {
     color: #1e1e1e;
     font-size: 20px;
-    font-family: 'URWGeometric-Medium';
+    font-family: 'PoppinsLatin-Medium';
     font-weight: 600;
 }
 
