@@ -52,34 +52,34 @@ p ,a, ul li,ol li,.line{
 
 h1 {
   font-size: 28px;
-  font-family: 'URWGeometric-Medium';
+  font-family: 'PoppinsLatin-Medium';
   margin-top: 0px;
 }
 
 h2 {
   font-size: 24px;
-  font-family: 'URWGeometric-Medium';
+  font-family: 'PoppinsLatin-Medium';
   margin-top: 20px;
   margin-bottom: 5px;
 }
 
 h3 {
   font-size: 20px;
-  font-family: 'URWGeometric-Medium';
+  font-family: 'PoppinsLatin-Medium';
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
 h4 {
   font-size: 18px;
-  font-family: 'URWGeometric-Medium';
+  font-family: 'PoppinsLatin-Medium';
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
 h5 {
   font-size: 16px;
-  font-family: 'URWGeometric-Medium';
+  font-family: 'PoppinsLatin-Medium';
   margin-top: 20px;
   margin-bottom: 10px;
 }
@@ -264,7 +264,7 @@ div.topic {
 .sub-heading h1 {
   font-weight: 600;
   font-style: normal;
-  font-family: 'URWGeometric-Medium';
+  font-family: 'PoppinsLatin-Medium';
   color: #000000;
   margin: 10px 0px;
   padding:0px;
@@ -280,7 +280,7 @@ h3.banner-heading {
 }
 
 .docs-toc .sub-toc {
-  font-family: "URWGeometric-Medium";
+  font-family: "PoppinsLatin-Medium";
   padding-left: 5px;
 }
 
@@ -948,7 +948,7 @@ img {
   font-weight: 400;
   margin: 0 0 30px;
   font-size: 14px;
-  font-family: 'URWGeometric-Medium';
+  font-family: 'PoppinsLatin-Medium';
 }
 
 .footer {
@@ -1084,7 +1084,7 @@ img {
 }
 
 .dynamic-content h1 {
-  font-family: 'URWGeometric-Medium';
+  font-family: 'PoppinsLatin-Medium';
   font-weight: 600;
   color: #1e1e1e;
   padding: 0px;
@@ -1130,7 +1130,7 @@ p a:visited {
 }
 
 #next-step h1 {
-  font-family: 'URWGeometric-Medium';
+  font-family: 'PoppinsLatin-Medium';
   font-weight: 600;
   color: #1e1e1e;
   padding: 0px;
@@ -2217,13 +2217,13 @@ legend {
   margin-top: 0;
     padding-top: 25px;
     font-size: 16px;
-    font-family: 'URWGeometric-Medium';
+    font-family: 'PoppinsLatin-Medium';
     font-weight: bolder;
     margin-right: auto;
 }
 
 .feature-heading {
-  font-family: 'URWGeometric-Medium';
+  font-family: 'PoppinsLatin-Medium';
   font-weight: bolder;
   font-size: 20px;
 }
