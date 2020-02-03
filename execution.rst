@@ -54,7 +54,7 @@ The arguments can be one of the following:
 * Path to specification files and scenarios
 * Combination of the arguments mentioned in this list
 
-Run specifications by using directory(s) as an agrument
+Run specifications by using directory(s) as an argument
 -------------------------------------------------------
 Specifications can be run from a single directory, sub-directories, or multiple directories. 
 You can specify the directory(s) or path to sub-directory(s) with the ``gauge run`` command.
