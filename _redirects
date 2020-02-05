@@ -1,2 +1,4 @@
+/latest/index.html /index.html 200
+
 # Redirect default Netlify subdomain to primary domain
 https://elastic-lalande-8b9fbc.netlify.com/* https://docs.gauge.org/:splat 301!
