@@ -67,7 +67,7 @@ the specification and generates a report of passing or failing scenarios.
 .. note::
 
   The examples in this article use Gauge specifications with JavaScript 
-  and `Taiko <https://taiko.gauge.org>`__, a node js library for automating
+  and `Taiko <https://docs.taiko.dev>`__, a node js library for automating
   browsers (Taiko). However Gauge supports writing step implementations 
   in Java, C#, Python, Typescript and Golang. You can use also use any 
   driver like Selenium or Appium while implementing your steps.
