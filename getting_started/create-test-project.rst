@@ -57,6 +57,8 @@
 
 Gauge projects can be created and executed in Visual Studio Code using the Gauge extension for Visual Studio Code.
 
+Please make sure that you have installed one plugin at-least. Visit https://docs.gauge.org/plugin.html to find a plugin to install.
+
 .. cssclass:: csharp dynamic-content
 
       In this guide, you'll be able to learn how to add a sample C# testing project in Visual Studio Code
