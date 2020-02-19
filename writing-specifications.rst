@@ -2046,11 +2046,23 @@ you can use appropriate driver APIs in the step implementation of the language r
 
 .. code-block:: java
 
-    public class CustomScreenshotGrabber implements ICustomScreenshotGrabber {
-        // Return a screenshot byte array
-        public byte[] takeScreenshot() {
-            return  ((TakesScreenshot) Driver.webDriver).getScreenshotAs(OutputType.BYTES);
+    public class CustomScreenshotGrabber implements CustomScreenshotWriter {
+
+        // Return a screenshot file name
+        @Override
+        public String takeScreenshot() {
+            TakesScreenshot driver = (TakesScreenshot) DriverFactory.getDriver();
+            String screenshotFileName = String.format("screenshot-%s.png", UUID.randomUUID().toString());
+            File screenshotFile = new File(Paths.get(System.getenv("gauge_screenshots_dir"), screenshotFileName).toString());
+            File tmpFile = driver.getScreenshotAs(OutputType.FILE);
+            try {
+                FileUtils.copyFile(tmpFile, screenshotFile);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return screenshotFileName;
         }
+
     }
 
 .. cssclass:: dynamic-content javascript
@@ -2058,9 +2070,11 @@ you can use appropriate driver APIs in the step implementation of the language r
 .. code-block:: javascript
 
     // Using Taiko
-    // Return a screenshot byte array
-    gauge.screenshotFn = async function() {
-        return await screenshot({ encoding: 'base64' });
+    // Return a screenshot file name
+    gauge.customScreenshotWriter = async function () {
+        const screenshotFilePath = path.join(process.env['gauge_screenshots_dir'], `screenshot-${process.hrtime.bigint()}.png`);
+        await screenshot({ path: screenshotFilePath });
+        return path.basename(screenshotFilePath);
     };
 
 
@@ -2069,11 +2083,17 @@ you can use appropriate driver APIs in the step implementation of the language r
 .. code-block:: python
 
     # Using Webdriver
-    from getgauge.python import screenshot
-    @custom_screen_grabber
-    # Return a screenshot byte array
+    from uuid import uuid1
+    from getgauge.python import custom_screenshot_writer
+
+    # Return a screenshot file name
+    @custom_screenshot_writer
     def take_screenshot():
-        return Driver.driver.get_screenshot_as_png()
+        conetnt = Driver.driver.get_screenshot_as_png()
+        file_name = os.path.join(os.getenv("gauge_screenshots_dir"), "screenshot-{0}.png".format(uuid1().int))
+        file = open(file_name, "w")
+        file.write(conetnt)
+        return os.path.basename(file_name)
 
 .. cssclass:: dynamic-content ruby
 
@@ -2081,10 +2101,11 @@ you can use appropriate driver APIs in the step implementation of the language r
 
     # Using Webdriver
     Gauge.configure do |config|
-        # Return a screenshot byte array
-        config.screengrabber = -> {
-        driver.save_screenshot('/tmp/screenshot.png')
-        return File.binread("/tmp/screenshot.png")
+        config.custom_screenshot_writer = -> {
+            screenshot_data = driver.screenshot_as(:png)
+            file = File.join(config.screenshot_dir, "screenshot-#{(Time.now.to_f*10000).to_i}.png")
+            File.write(file, screenshot_data)
+            File.basename(file)
         }
     end
 
