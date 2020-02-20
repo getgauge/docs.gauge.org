@@ -1549,7 +1549,6 @@ p.feature-desc {
   }
 
   #change-filter {
-    border: 1px solid blue;
     position: absolute;
     right: 30px;
     top: 66px;
