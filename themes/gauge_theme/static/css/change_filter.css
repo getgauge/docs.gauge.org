@@ -70,7 +70,8 @@
 }
 
 #proj-setup-filter-section .applied-filters .applied-filter-header {
-    background-color: #fff0b8;
+   /* background-color: #fff0b8;*/
+   background-color: red;
     margin:auto 16px;
     border-radius: 5px 0 0 5px;
     padding: 6px 7px;
