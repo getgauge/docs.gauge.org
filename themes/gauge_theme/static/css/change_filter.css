@@ -70,8 +70,7 @@
 }
 
 #proj-setup-filter-section .applied-filters .applied-filter-header {
-   /* background-color: #fff0b8;*/
-   background-color: red;
+    background-color: #fff0b8;
     margin:auto 16px;
     border-radius: 5px 0 0 5px;
     padding: 6px 7px;
@@ -97,6 +96,9 @@
     width: auto;
     display: inline-block;
     height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #proj-setup-filter-section .applied-filters .applied-filter::before {
@@ -104,6 +106,7 @@
     padding-right: 5px;
     display: inline-block;
     width: 11px;
+    line-height: 0;
 }
 
 #change-filter:hover {
