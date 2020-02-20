@@ -1549,7 +1549,11 @@ p.feature-desc {
   }
 
   #change-filter {
+<<<<<<< Updated upstream
     border: 1px solid red;
+=======
+    border: 1px solid blue;
+>>>>>>> Stashed changes
     position: absolute;
     right: 30px;
     top: 66px;
