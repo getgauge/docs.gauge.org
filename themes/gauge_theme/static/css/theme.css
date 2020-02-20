@@ -1928,6 +1928,15 @@ p.feature-desc {
     padding: 0 30px 0 30px;
     background: #fff;
   }
+
+  #proj-setup-filter-section .proj-setup-filters .selections .selection {
+    flex-direction: row;
+  }
+
+  .selection .selection-text{
+    margin-left: 28px;
+  }
+
 }
 
 @media only screen and (min-width:810px) {
