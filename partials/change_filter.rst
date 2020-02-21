@@ -54,8 +54,7 @@
          Visual Studio
          Visual Studio Code
 
-.. container::
-   .. _change-filter:
+ .. _change-filter:
    .. container:: Modify
    
    .. cssclass:: hidden
