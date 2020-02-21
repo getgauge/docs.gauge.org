@@ -19,9 +19,6 @@
 
          Visual Studio Code
 
-      
-   
-   .. cssclass:: hidden
    .. setupfilters::
       :section_name: proj-setup-filters
 
@@ -57,5 +54,7 @@
          Visual Studio
          Visual Studio Code
          
-.. _change-filter:
+      .. _change-filter:
       .. container:: Modify
+   
+   .. cssclass:: hidden
