@@ -214,7 +214,6 @@ header.top:hover {
   letter-spacing: normal;
   color: #5e5e5e;
   text-decoration: none;
-  padding-bottom: 6px;
 }
 
 .sub-heading {
@@ -1303,7 +1302,7 @@ p.experimental-feature::before {
 }
 
 #configure-gauge div,#troubleshooting div,#installation-instructions div ,#tutorial-integrating-gauge-with-azure div,#tutorial-integrating-gauge-with-docker div,#tutorial-integrating-gauge-with-travis-ci div {
-  width: 100%;
+  width: auto;
   overflow-x: auto;
   -webkit-overflow-scrolling: auto; 
 }
@@ -1547,12 +1546,13 @@ p.feature-desc {
     font-family: "OpenSans-Regular";
     width: auto!important;
     color:#1e1e1e;
+    margin-bottom: 40px;
   }
 
   #change-filter {
     position: absolute;
     right: 30px;
-    top: 66px;
+    top: 146px;
   }
 
   /* #proj-setup-filter-section .applied-filters .applied-filter {
@@ -1606,7 +1606,7 @@ p.feature-desc {
  #change-filter {
   position: absolute;
   right: 30px;
-  top: 66px;
+  top: 146px;
   }
   .copyBtn {
    top: -28px;
@@ -1619,6 +1619,7 @@ p.feature-desc {
     font-size: 12px;
     margin-top: 13px;
     height: 26px;
+    margin-bottom: 40px;
   }
 }
 
