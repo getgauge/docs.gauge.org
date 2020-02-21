@@ -214,6 +214,7 @@ header.top:hover {
   letter-spacing: normal;
   color: #5e5e5e;
   text-decoration: none;
+  padding-bottom: 6px;
 }
 
 .sub-heading {
