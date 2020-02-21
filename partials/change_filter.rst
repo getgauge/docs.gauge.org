@@ -1,4 +1,4 @@
-.. _proj-setup-filter-section::
+.. _proj-setup-filter-section:
 .. container::
 
    .. container:: applied-filters
