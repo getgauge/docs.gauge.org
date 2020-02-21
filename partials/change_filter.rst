@@ -53,8 +53,9 @@
          IntelliJ IDEA
          Visual Studio
          Visual Studio Code
-         
-      .. _change-filter:
-      .. container:: Modify
+
+.. container::
+   .. _change-filter:
+   .. container:: Modify
    
    .. cssclass:: hidden
