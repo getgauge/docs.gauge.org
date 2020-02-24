@@ -214,6 +214,7 @@ header.top:hover {
   letter-spacing: normal;
   color: #5e5e5e;
   text-decoration: none;
+  padding-bottom: 6px;
 }
 
 .sub-heading {
@@ -1302,7 +1303,7 @@ p.experimental-feature::before {
 }
 
 #configure-gauge div,#troubleshooting div,#installation-instructions div ,#tutorial-integrating-gauge-with-azure div,#tutorial-integrating-gauge-with-docker div,#tutorial-integrating-gauge-with-travis-ci div {
-  width: 100%;
+  width: auto;
   overflow-x: auto;
   -webkit-overflow-scrolling: auto; 
 }
@@ -1575,7 +1576,7 @@ p.feature-desc {
   }
 
   .selection .radio-container {
-    margin: 10px 0 0px 0px;
+    margin: 10px 30px 0px 0px;
   }
   #proj-setup-filter-section .applied-filters .applied-filter {
     padding: 0 3px;
@@ -1928,6 +1929,15 @@ p.feature-desc {
     padding: 0 30px 0 30px;
     background: #fff;
   }
+
+  #proj-setup-filter-section .proj-setup-filters .selections .selection {
+    flex-direction: row;
+  }
+
+  .selection .selection-text{
+    margin-left: 28px;
+  }
+
 }
 
 @media only screen and (min-width:810px) {

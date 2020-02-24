@@ -38,7 +38,7 @@
 }
 
 .selection .selection-text{
-    margin-left: 28px;
+    margin-left: 40px;
 }
 
 .selection input:checked~.checkmark:after {
@@ -96,6 +96,9 @@
     width: auto;
     display: inline-block;
     height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #proj-setup-filter-section .applied-filters .applied-filter::before {
@@ -103,6 +106,7 @@
     padding-right: 5px;
     display: inline-block;
     width: 11px;
+    line-height: 0;
 }
 
 #change-filter:hover {
@@ -166,6 +170,7 @@
 #proj-setup-filter-section .proj-setup-filters .selections {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
 }
 
 #proj-setup-filter-section .proj-setup-filters .selections .selection {

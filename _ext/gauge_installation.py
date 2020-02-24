@@ -111,7 +111,7 @@ class InstallationSelection(Directive):
     def run(self):
         options = self.options
         container = fieldset_node()
-        container['class'] = ' '.join([options['class'],"docutils", "contianer" ])
+        container['class'] = ' '.join([options['class'],"docutils", "container" ])
         heading = setup_heading_node(options['title'])
         heading.tagname = "legend"
         container += heading
