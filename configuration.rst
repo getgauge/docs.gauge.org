@@ -342,7 +342,7 @@ as per your requirements.
 
    Ensure that you have created and initialized a Gauge project with a language runner of your choice.
 
-.. admonition:: About this task:
+.. admonition:: About this task
    
    A Gauge project can have multiple environments.
    
@@ -452,7 +452,7 @@ This allows ease of testing.
    
    You must have already created the environments and added the ``.properties`` file in these environments.
 
-.. admonition:: About this task:
+.. admonition:: About this task
 
    Gauge loads the environment variables as per the rules of precedence.
    If there are common environment variables in a user-created environment and the ``default`` environment, then the ``default`` environment does not overwrite those variables which are already loaded from the user-created environment.
