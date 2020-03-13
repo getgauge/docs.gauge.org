@@ -167,7 +167,7 @@ documentation for features like
 
 * `Reports <../getting_started/view-a-report.html>`__
 * `Tags <../execution.html?#filter-specifications-and-scenarios-by-using-tags>`__
-* `Parallel execution  <../execution.html#filter-specifications-and-scenarios-by-using-tags>`__
+* `Parallel execution  <../execution.html#parallel-execution>`__
 * `Environments  <../configuration.html#using-environments-in-a-gauge-project>`__
 * `Screenshots  <../writing-specifications.html#taking-custom-screenshots>`__
 * `Plugins  <../plugin.html>`__

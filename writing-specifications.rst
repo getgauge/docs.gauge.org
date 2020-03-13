@@ -363,8 +363,8 @@ In the following examples, ``Cup Cakes``, ``gauge-java``, and ``100`` are values
 .. code-block:: gauge
 
    * Search for product "Cup Cakes"
-   * Create a “gauge-java” project
-   * Write “100” line specification
+   * Create a "gauge-java" project
+   * Write "100" line specification
 
 2. Dynamic Parameters
 ^^^^^^^^^^^^^^^^^^^^^
