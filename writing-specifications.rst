@@ -770,7 +770,7 @@ Tear Down Steps are defined in a spec after the last scenario.
 These steps allow you to specify some sort of a conclusion after every execution of a scenario in a spec. 
 They are used to perform a tear down function.
 
-If there are multiple scenarios, tear down steps are executed prior to every scenario in the specification. 
+If there are multiple scenarios, tear down steps are executed after every scenario in the specification. 
 A tear down step must be preceded by ``*`` and are executed in the defined order. 
 Hence, they are similar to steps used in a scenario or concept.
 
