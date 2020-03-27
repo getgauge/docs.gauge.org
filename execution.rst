@@ -40,7 +40,7 @@ For more information about ``gauge run`` command, see the Gauge manual page.
 
 .. note::
     Gauge specifications can also be run from within the IDE
-    (`Visual Studio Code <https://github.com/getgauge/gauge-vscode/blob/master/README.md#run-specifications-and-scenarios>`__)
+    (`VS Code <https://github.com/getgauge/gauge-vscode/blob/master/README.md#run-specifications-and-scenarios>`__)
 
 Multiple arguments passed to ``gauge run``
 ------------------------------------------

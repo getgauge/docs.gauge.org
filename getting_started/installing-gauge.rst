@@ -85,7 +85,7 @@ Installation Instructions
 
       .. container:: applied-filter
 
-         Visual Studio Code
+         VS Code
 
 .. include:: ../partials/mac_installation.rst
 .. include:: ../partials/windows_installation.rst

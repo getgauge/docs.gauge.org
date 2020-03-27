@@ -22,7 +22,7 @@ in a :highlighted-syntax:`.spec` file. To learn more about how specifications wo
 
 .. cssclass:: vscode dynamic-content
 
-:vscode:`Running a Specification using Visual Studio Code`
+:vscode:`Running a Specification using VS Code`
 ----------------------------------------------------------
 
 Step 1: Open Specification
@@ -36,15 +36,15 @@ Open the example spec. The Gauge specification file is present under :highlighte
 Step 2: Run Specification
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Run your Gauge specs in Visual Studio Code by choosing the option to :highlighted-syntax:`Run Spec`
+Run your Gauge specs in VS Code by choosing the option to :highlighted-syntax:`Run Spec`
 
 .. figure:: ../images/VSCode_run_code_lens.png
-      :alt: Visual Studio Code JavaScript run code lens
+      :alt: VS Code JavaScript run code lens
 
 You'll get immediate feedback in the output about what got executed.
 
 .. figure:: ../images/VSCode_execution_console.png
-      :alt: Visual Studio Code JavaScript execution console
+      :alt: VS Code JavaScript execution console
 
 Now that you have successfully run a Gauge specification, you can go ahead and view the report from VS code.
 

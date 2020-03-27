@@ -2,7 +2,7 @@
 .. role:: heading
 
 .. meta::
-    :description: A quick guide for creating Gauge test projects on Windows, macOS, Ubuntu/Linux using Visual Studio Code for the languages Java, JavaScript, Python, Ruby, C#
+    :description: A quick guide for creating Gauge test projects on Windows, macOS, Ubuntu/Linux using VS Code for the languages Java, JavaScript, Python, Ruby, C#
     :keywords: create testing project vscode automation
 
 .. cssclass:: topic
@@ -53,27 +53,27 @@
 :vscode:`Creating a Testing Project in VS Code`
 -----------------------------------------------
 
-Gauge projects can be created and executed in Visual Studio Code using the Gauge extension for Visual Studio Code.
+Gauge projects can be created and executed in VS Code using the Gauge extension for VS Code.
 
 .. cssclass:: csharp dynamic-content
 
-      In this guide, you'll be able to learn how to add a sample C# testing project in Visual Studio Code
+      In this guide, you'll be able to learn how to add a sample C# testing project in VS Code
 
 .. cssclass:: java dynamic-content
 
-      In this guide, you'll be able to learn how to add a sample Java testing project in Visual Studio Code
+      In this guide, you'll be able to learn how to add a sample Java testing project in VS Code
 
 .. cssclass:: javascript dynamic-content
 
-      In this guide, you'll be able to learn how to add a sample JavaScript testing project in Visual Studio Code
+      In this guide, you'll be able to learn how to add a sample JavaScript testing project in VS Code
 
 .. cssclass:: python dynamic-content
 
-      In this guide, you'll be able to learn how to add a sample Python testing project in Visual Studio Code
+      In this guide, you'll be able to learn how to add a sample Python testing project in VS Code
 
 .. cssclass:: ruby dynamic-content
 
-      In this guide, you'll be able to learn how to add a sample Ruby testing project in Visual Studio Code
+      In this guide, you'll be able to learn how to add a sample Ruby testing project in VS Code
 
 
 Step 1: Create the Project

@@ -16,14 +16,14 @@ This page provides information about what a specification is, how to write a spe
 
 .. cssclass:: dynamic-content vscode
 
-:vscode:`Visual Studio Code`
+:vscode:`VS Code`
 ----------------------------
 
 .. note::
     You can author Gauge specifications by using any text editor. However for a better experience, 
     it is recommended that you use Gauge IDE plugins.
 
-Gauge projects can be created and run in Visual Studio Code by using the `Gauge extension <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__ for Visual Studio Code.
+Gauge projects can be created and run in VS Code by using the `Gauge extension <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__ for VS Code.
 This plugin currently supports Gauge with Java, JavaScript, Ruby, Python, C# (.Net Core), and TypeScript.
 
 .. _specs:

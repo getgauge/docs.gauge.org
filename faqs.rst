@@ -428,7 +428,7 @@ Execution will stop where it finds the above statement and you can debug.
 
 .. cssclass:: category
 
-:heading:`Gauge Visual Studio Code`
+:heading:`Gauge VS Code`
 -----------------------------------
 
 .. cssclass:: question

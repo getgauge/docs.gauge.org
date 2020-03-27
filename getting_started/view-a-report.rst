@@ -13,24 +13,24 @@
 
 .. cssclass:: vscode dynamic-content
 
-:vscode:`Viewing Reports from Visual Studio Code`
+:vscode:`Viewing Reports from VS Code`
 -------------------------------------------------
 
-Once the specifications are run you will get immediate feedback in the output console of Visual Studio Code.
+Once the specifications are run you will get immediate feedback in the output console of VS Code.
 
 You can also view the HTML report of tests run by following either of the steps below:
 
-Open the html report by clicking on the view summary link in Visual Studio Code
+Open the html report by clicking on the view summary link in VS Code
 
 .. figure:: ../images/VSCode_report_link.png
-    :alt: Visual Studio Code execution report link
+    :alt: VS Code execution report link
 
 OR
 
 In the editor's command palete type :highlighted-syntax:`Gauge: Show Last Run Report` to view the report in the browser
 
 .. figure:: ../images/VSCode_show_last_run_report.png
-    :alt: Visual Studio Code show last run report command
+    :alt: VS Code show last run report command
 
 Here's what a Gauge report looks like.
 

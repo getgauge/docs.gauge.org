@@ -444,7 +444,7 @@ Gauge has plugins for popular IDEs that improve the experience of authoring test
 
 .. cssclass:: dynamic-content vscode
 
-    Gauge projects can be created and run in Visual Studio Code by using the `Gauge extension <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__  for Visual Studio Code.
+    Gauge projects can be created and run in VS Code by using the `Gauge extension <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__  for VS Code.
     This plugin currently supports Gauge with Java, JavaScript, Ruby, Python, C# (.Net Core), and TypeScript.
 
 .. _other_plugins:

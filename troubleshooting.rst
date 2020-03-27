@@ -346,7 +346,7 @@ Or
 
 * If you cannot use other Python versions, create ``step_impl/__init__.py`` file.
 
-Visual Studio Code
+VS Code
 ------------------
 
 GAUGE-VSCode-001 : Language client is not ready yet

@@ -17,7 +17,7 @@
 
       .. container:: applied-filter
 
-         Visual Studio Code
+         VS Code
 
       .. _change-filter:
       .. container::
@@ -53,6 +53,6 @@
          :class: selection
          :type: ide
          :title: 3 : IDE/Editor
-         :selected: Visual Studio Code
+         :selected: VS Code
 
-         Visual Studio Code
+         VS Code
