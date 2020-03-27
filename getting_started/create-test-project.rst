@@ -1,10 +1,9 @@
 .. role:: vscode
-.. role:: intellij
 .. role:: heading
 
 .. meta::
-    :description: A quick guide for creating Gauge test projects on Windows, macOS, Ubuntu/Linux using Visual Studio Code, IntelliJ IDEA and Visual Studio for the languages Java, JavaScript, Python, Ruby, C#
-    :keywords: create testing project vscode idea automation
+    :description: A quick guide for creating Gauge test projects on Windows, macOS, Ubuntu/Linux using Visual Studio Code for the languages Java, JavaScript, Python, Ruby, C#
+    :keywords: create testing project vscode automation
 
 .. cssclass:: topic
 
@@ -167,36 +166,6 @@ Give a name to your project
 .. cssclass:: java dynamic-content
 .. figure:: ../images/VSCode_Java_project_file_structure.png
       :alt: VSCode Java file structure
-
-.. cssclass:: intellij dynamic-content
-
-:intellij:`Creating a Testing Project in IntelliJ IDEA`
--------------------------------------------------------
-
-Gauge projects can be created and executed in IntelliJ IDEA using the Gauge plugin for IntelliJ IDEA.
-
-In this guide, you'll be able to learn how to add a sample Java testing project in IntelliJ IDEA
-
-Step 1: Create a Project
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Once the plugin is installed, goto :highlighted-syntax:`File -> New Project`, select :highlighted-syntax:`Gauge` and click :highlighted-syntax:`Next`.
-
-.. figure:: ../images/Intellij_select_gauge_project.png
-      :alt: Select Gauge
-
-Step 2: Choose Project Name
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Choose the Project name, Project location, Project SDK and click :highlighted-syntax:`Finish`.
-
-.. figure:: ../images/Intellij_create_gauge_project.png
-      :alt: Create project
-
-.. include:: ../partials/folder_structure.rst
-
-.. figure:: ../images/Intellij_open_example.spec.png
-      :alt: Intellij Java file structure
 
 
 Now that you have successfully added/initialized a new Gauge testing project, we can look at how to run a specification by using the sample specification in the test folder

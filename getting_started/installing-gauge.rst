@@ -33,7 +33,7 @@ Select your setup to see the instructions for installing gauge.
       .. installationselection::
          :class: setup-selection
          :type: os
-         :title: 1. Select your OS
+         :title: 1. OS
 
          Linux
          macOS
@@ -42,7 +42,7 @@ Select your setup to see the instructions for installing gauge.
       .. installationselection::
          :class: setup-selection
          :type: language
-         :title: 2. Select a Language
+         :title: 2. Language
 
          C#
          Java
@@ -53,10 +53,9 @@ Select your setup to see the instructions for installing gauge.
       .. installationselection::
          :class: setup-selection
          :type: ide
-         :title: 3. Select an IDE/Editor
+         :title: 3. IDE/Editor
 
-         IntelliJ IDEA
-         Visual Studio Code
+         VS Code
 
 
 .. _installation-instructions:
@@ -92,7 +91,6 @@ Installation Instructions
 .. include:: ../partials/windows_installation.rst
 .. include:: ../partials/linux_installation.rst
 .. include:: ../partials/vscode_installation.rst
-.. include:: ../partials/intellij_installation.rst
 
 .. cssclass:: csharp dynamic-content
 

@@ -1,6 +1,6 @@
 .. meta::
     :description: Instructions for running Gauge specifications, passing arguments, data driven execution, parallel execution, re-running failed tests, verbose reporting and more.
-    :keywords: parallel execution rerun failed run specification testing project vscode idea automation mac windows linux
+    :keywords: parallel execution rerun failed run specification testing project vscode automation mac windows linux
 
 .. _run_gauge_specifications:
 .. cssclass:: topic
@@ -40,8 +40,7 @@ For more information about ``gauge run`` command, see the Gauge manual page.
 
 .. note::
     Gauge specifications can also be run from within the IDE
-    (`Visual Studio Code <https://github.com/getgauge/gauge-vscode/blob/master/README.md#run-specifications-and-scenarios>`__,
-    `IntelliJ IDEA <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md#execution>`__, Visual Studio)
+    (`Visual Studio Code <https://github.com/getgauge/gauge-vscode/blob/master/README.md#run-specifications-and-scenarios>`__)
 
 Multiple arguments passed to ``gauge run``
 ------------------------------------------

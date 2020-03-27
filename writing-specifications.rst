@@ -1,10 +1,9 @@
 .. meta::
     :description: A quick tour of what a specification is, how to write a specification, and other related information such as concepts, step implementation, specs directory, and so on.
-    :keywords: write test specification testing project vscode idea automation mac windows linux
+    :keywords: write test specification testing project vscode automation mac windows linux
 
 .. role:: heading
 .. role:: vscode
-.. role:: intellij
 .. _write_gauge_specification:
 
 .. cssclass:: topic
@@ -26,18 +25,6 @@ This page provides information about what a specification is, how to write a spe
 
 Gauge projects can be created and run in Visual Studio Code by using the `Gauge extension <https://marketplace.visualstudio.com/items?itemName=getgauge.gauge>`__ for Visual Studio Code.
 This plugin currently supports Gauge with Java, JavaScript, Ruby, Python, C# (.Net Core), and TypeScript.
-
-
-.. cssclass:: dynamic-content intellij
-
-:intellij:`IntelliJ IDEA`
--------------------------
-
-.. note::
-    You can author Gauge specifications by using any text editor. It is recommended that you use the IDE plugin.
-
-Gauge projects can be created and run in IntelliJ IDEA by using the `Gauge plugin <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__ for IntelliJ IDEA.
-This plugin only supports Gauge with Java.
 
 .. _specs:
 

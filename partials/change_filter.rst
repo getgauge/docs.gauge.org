@@ -30,7 +30,7 @@
       .. setupfilter::
          :class: selection
          :type: os
-         :title: 1 : Select your os
+         :title: 1 : OS
          :selected: macOS
 
          Linux
@@ -40,7 +40,7 @@
       .. setupfilter::
          :class: selection
          :type: language
-         :title: 2 : Select a Language
+         :title: 2 : Language
          :selected: JavaScript
 
          C#
@@ -52,8 +52,7 @@
       .. setupfilter::
          :class: selection
          :type: ide
-         :title: 3 : Select an IDE/Editor
-         :selected: Visaul Studio Code
+         :title: 3 : IDE/Editor
+         :selected: Visual Studio Code
 
-         IntelliJ IDEA
          Visual Studio Code

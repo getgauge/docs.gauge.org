@@ -19,7 +19,7 @@ Some of the key features of Gauge that makes it unique include:
 * Extensible through plugins and hackable.
 * Supports data driven execution and external data sources
 * Helps you create maintainable test suites
-* Supports Visual Studio Code, Intellij IDEA, IDE Support
+* Great support for Visual Studio Code
 
 .. cssclass:: sub-heading
 

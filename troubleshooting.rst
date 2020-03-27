@@ -1,6 +1,6 @@
 .. meta::
     :description: Some common problems and ways to troubleshoot them.
-    :keywords: troubleshoot testing vscode idea automation mac windows linux java javascript ruby python c#
+    :keywords: troubleshoot testing vscode automation mac windows linux java javascript ruby python c#
 
 .. cssclass:: topic
 .. role:: heading
@@ -369,102 +369,4 @@ Install ``getgauge`` package by running the following command:
 .. code-block:: console
 
     [sudo] pip install getgauge
-
-
-IntelliJ IDEA
--------------
-
-GAUGE-IntelliJ-001 : Gauge API Not Started
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**Error:**
-
-.. code-block:: text
-
-    Could not start gauge api: Could not find executable in PATH or GAUGE_ROOT. Gauge is not installed.
-
-**Cause:**
-
-- Gauge is not installed
-- Gauge is installed at custom location and ``custom_install_location/bin`` is not in ``PATH``.
-
-**Solution:**
-
-- If Gauge is not installed, `Install Gauge <//gauge.org/get_started>`__.
-- If Gauge is installed at custom location, add ``custom_install_location/bin`` to ``PATH``
-- At custom installation location, set ``GAUGE_ROOT`` to ``custom_install_location``.
-- Restart IntelliJ.
-
-GAUGE-IntelliJ-002 : Error adding module to project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**Error:**
-
-.. code-block:: text
-
-    Given location is already a Gauge Project. Please try to initialize a Gauge project in a different location.
-
-**Cause:**
-
-This error occurs when the ``create new project`` option is used to open an existing Gauge project.
-
-**Solution:**
-
-Use the ``open`` option to open an existing Gauge project.
-
-GAUGE-IntelliJ-003 : Steps marked as unimplemented
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**Error:**
-
-Steps marked as unimplemented
-
-**Cause:**
-
-IntelliJ or Gauge plugin are not configured correctly.
-
-**Solution:**
-
-- Ensure that the ``src/test/java`` directory is marked as test sources root in the project. 
-- Right click on the ``src/test/java`` directory and select ``Mark Directory as -> Test sources root``.
-- Ensure that the project compiles. Press ctrl/cmd + F9 to build project or select ``Build -> Make project``.
-- Ensure ``Module SDK`` is set to a valid JDK under ``Module settings``.
-- Restart Intellij or close and reopen the project.
-- Check dependencies for a gauge maven project and simple gauge java project.
-
-For a gauge maven project
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
--  Add the gauge-java dependency in the ``pom.xml``.
--  Enable auto-import for the project; in ``File > Settings > Maven > Importing``, select the checkbox ``Import Maven projects automatically``.
-
-For a simple gauge java project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-1) In ``Project Settings -> Modules``, select the gauge module. 
-2) Ensure that the following are present in the ``dependencies`` tab: ``gauge-lib`` and ``project-lib``.
-3) | If the dependencies are not present, restart Intellij or close and reopen the project. 
-   | ``gauge-lib`` and ``project-lib`` are added automatically.
-
-GAUGE-IntelliJ-004 : Project Build failing with compilation error but the Java Files do not mark any errors.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**Error:**
-
-Project Build failing with compilation error but the Java Files do not mark any errors.
-
-**Cause:**
-
-This error occurs in versions lower than or equal to Java 1.7 on Windows.
-
-**Solution:**
-
-Set ``-Duser.home=USER_HOME`` in the ``IDEA_INSTALLATIONbinidea.exe.vmoptions`` file as follows:
-
-.. code-block:: text
-
-    -Duser.home=C:\\Users\\<username>
-
-For more details about this issue, see the `Intellij idea forum post <https://devnet.jetbrains.com/message/5545889#5545889>`__.
-
 
