@@ -1,6 +1,6 @@
 .. meta::
     :description: Some common problems and ways to troubleshoot them.
-    :keywords: troubleshoot testing vscode idea visualstudio automation mac windows linux java javascript ruby python c#
+    :keywords: troubleshoot testing vscode idea automation mac windows linux java javascript ruby python c#
 
 .. cssclass:: topic
 .. role:: heading
@@ -370,93 +370,6 @@ Install ``getgauge`` package by running the following command:
 
     [sudo] pip install getgauge
 
-
-Visual Studio
--------------
-
-Gauge-VS-001 : Gauge API not started
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**Error:**
-
-.. code-block:: text
-
-    Gauge API not started
-
-**Cause:**
-
-Gauge-VisualStudio support requires ``gauge.exe`` to run as a daemon. 
-Hence, Gauge-VisualStudio tries to launch Gauge as a child process in the same working directory as the Gauge project. 
-This behavior is flaky, hence sometimes the Gauge API does not get started. 
-
-**Solution:**
-
-1) | Ensure that the latest Gauge is installed and available in ``PATH``. 
-   | You can install Gauge by following the instructions as specified in the `Getting Started page <//gauge.org/get_started>`__.
-2) | As you are using Gauge with Visual Studio, it is assumed that you are using Gauge with C#, and hence you must install the C# plugin by using the following command:
-
-   .. code-block:: console
-
-      gauge install csharp
-
-3) Verify the previous two steps by running the following command:
-
-   .. code-block:: console
-
-      gauge version
-
-4) If the Windows firewall is enabled, ensure that you can run ``gauge.exe``. 
-
-5) Ensure that Gauge can use the port range 46337-46997 in the firewall because Gauge-VisualStudio uses this port number by default.
-
-6) | If port range 46337-46997 has a conflict or these ports cannot be used in the firewall, then set a different port in Gauge-VisualStudio. 
-
-   1) To set a different port, select ``Tools->Option->Gauge->API Options``.
-
-   Ensure that the port set is white-listed in your firewall.
-
-GAUGE-VS-002 : Incompatible Gauge Version installed
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**Error:**
-
-.. code-block:: text
-
-    Incompatible Gauge Version installed
-
-**Cause:**
-
-This error occurs when the version of Gauge installed is incompatible with the Gauge VisualStudio plugin version installed.
-
-Gauge-VisualStudio support requires ``gauge.exe`` to be above a certain minimum version of Gauge. 
-
-**Solution:**
-
-Install the latest version of Gauge and update your Gauge VisualStudio plugin.
-
-GAUGE-VS-003 : Unable to read Gauge version
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**Error:**
-
-.. code-block:: text
-
-    Unable to read Gauge version
-
-**Cause:**
-
-This error occurs when Gauge Visual Studio is unable to read the installed Gauge version.
-Gauge-Visualstudio support requires ``gauge.exe`` to be more than a certain minimum version of Gauge.
-
-**Solution:**
-
-1. Ensure that the latest version of Gauge is installed and available in ``PATH`` by using the following command:
-
-   .. code-block:: console
-
-      gauge version
-
-2. Navigate to the ``Output Window`` of Visual Studio and see the log for suggested actions.
 
 IntelliJ IDEA
 -------------

@@ -1,6 +1,6 @@
 .. meta::
     :description: A quick tour of different types of plugins supported by Gauge and plugin installation and uninstallation. Plugins help you to use additional features of Gauge.
-    :keywords: plugin testing project vscode idea visualstudio automation mac windows linux
+    :keywords: plugin testing project vscode idea automation mac windows linux
 
 .. cssclass:: topic
 .. role:: heading
@@ -451,11 +451,6 @@ Gauge has plugins for popular IDEs that improve the experience of authoring test
 
     Gauge projects can be created and run in IntelliJ IDEA by using the `Gauge plugin <https://github.com/getgauge/Intellij-Plugin/blob/master/README.md>`__ for IntelliJ IDEA.
     This plugin supports Gauge with Java only.
-
-.. cssclass:: dynamic-content visualstudio
-
-    Gauge projects can be created and run in Visual Studio by using the `Gauge extension <https://github.com/getgauge/gauge-visualstudio/blob/master/README.md>`__  for Visual Studio.
-    This plugin currently supports Gauge with C#.
 
 .. _other_plugins:
 

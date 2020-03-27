@@ -1,16 +1,15 @@
 let SELECTIONS = { os: "macos", language: "javascript", ide: "vscode" };
 const SELECTION_DISPLAY_NAMES = {
-    'vscode': 'Visual Studio Code',
-    'visualstudio': 'Visual Studio',
-    'intellij': 'IntelliJ IDEA',
-    'csharp': 'C#',
-    'javascript': 'Javascript',
-    'java': 'Java',
-    'python': 'Python',
-    'ruby': 'Ruby',
-    'macos': 'macOS',
-    'linux': 'Linux',
-    'windows': 'Windows',
+    'vscode': 'visual studio code',
+    'intellij': 'intellij idea',
+    'csharp': 'c#',
+    'javascript': 'javascript',
+    'java': 'java',
+    'python': 'python',
+    'ruby': 'ruby',
+    'macos': 'macos',
+    'linux': 'linux',
+    'windows': 'windows',
 
 }
 const updateSelections = function () {

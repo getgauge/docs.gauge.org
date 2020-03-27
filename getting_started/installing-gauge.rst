@@ -56,7 +56,6 @@ Select your setup to see the instructions for installing gauge.
          :title: 3. Select an IDE/Editor
 
          IntelliJ IDEA
-         Visual Studio
          Visual Studio Code
 
 
@@ -94,7 +93,6 @@ Installation Instructions
 .. include:: ../partials/linux_installation.rst
 .. include:: ../partials/vscode_installation.rst
 .. include:: ../partials/intellij_installation.rst
-.. include:: ../partials/visualStudio_installation.rst
 
 .. cssclass:: csharp dynamic-content
 

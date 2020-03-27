@@ -1,11 +1,10 @@
 .. meta::
     :description: A quick overview of how to run a Gauge project on different setups. It guides you through how to run a test project with Gauge on different os, in different languages, and on different ides...
-    :keywords: run specification testing project vscode idea visualstudio automation
+    :keywords: run specification testing project vscode idea automation
 
 .. role:: heading
 .. role:: vscode
 .. role:: intellij
-.. role:: visualstudio
 .. cssclass:: topic
 
 :heading:`Running a Specification`
@@ -73,33 +72,6 @@ You'll get immediate feedback in the output about what got executed.
 
 .. figure:: ../images/Intellij_execution_console.png
       :alt: IntelliJ IDEA execution console
-
-.. cssclass:: csharp visualstudio dynamic-content
-
-:visualstudio:`Running a Specification using Visual Studio`
------------------------------------------------------------
-
-Step 1: Open Test Explorer
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When you build the test project, all the test scenarios appear in Test Explorer.
-If Test Explorer is not visible, choose :highlighted-syntax:`Test` on the Visual Studio menu, choose :highlighted-syntax:`Windows`, and then choose :highlighted-syntax:`Test Explorer`.
-
-
-Step 2: Run Specification
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* To run all the scenarios in a solution, choose :highlighted-syntax:`Run All`.
-* To run all the scenarios of a specification, choose :highlighted-syntax:`Run...` and then choose the group on the menu.
-* To run one or more scenarios, select the individual scenarios that you want to run, open the context menu for a selected scenario and then choose :highlighted-syntax:`Run Selected Tests`.
-
-.. figure:: ../images/VisualStudio_run_specification.png
-      :alt: Run specification
-
-You'll get immediate feedback in the Text Explorer about what got executed.
-
-.. figure:: ../images/VisualStudio_TextExplorer.png
-      :alt: Visual Studio text explorer
 
 Now that you have successfully run a Gauge specification, you can go ahead and view the report from VS code.
 
