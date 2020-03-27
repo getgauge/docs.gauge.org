@@ -1,6 +1,6 @@
 .. meta::
     :description: FAQs (Frequently Asked Questions) about installing Gauge, running a Gauge specification (spec), configuring Gauge, language runners used with Gauge, and using text editors while writing a Gauge specification.
-    :keywords: faqs testing vscode idea visualstudio automation mac windows linux java javascript ruby python c#
+    :keywords: faqs testing vscode idea automation mac windows linux java javascript ruby python c#
 
 .. cssclass:: topic
 .. role:: heading
@@ -79,16 +79,6 @@ Gauge Python
 `How to use different version of python while running specs <#how-to-use-different-version-of-python-while-running-specs>`__
 
 `How to debug gauge-python without using an IDE <#how-to-debug-gauge-python-without-using-an-ide>`__
-
-.. cssclass:: category-title
-
-
-Gauge Visual Studio Code
-------------------------
-
-`Why are some features not working? <#why-are-some-features-not-working>`__
-
-`Why does the debugger not stop at the right breakpoint (gauge-java)? <#why-does-the-debugger-not-stop-at-the-right-breakpoint-gauge-java>`__
 
 .. cssclass:: category-title
 

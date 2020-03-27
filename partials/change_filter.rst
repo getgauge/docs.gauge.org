@@ -56,5 +56,4 @@
          :selected: Visaul Studio Code
 
          IntelliJ IDEA
-         Visual Studio
          Visual Studio Code

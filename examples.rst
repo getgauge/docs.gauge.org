@@ -1,6 +1,6 @@
 .. meta::
     :description: Example Gauge projects for different languages and frameworks.
-    :keywords: language testing project vscode idea visualstudio automation mac windows linux java javascript ruby python c#
+    :keywords: language testing project vscode idea automation mac windows linux java javascript ruby python c#
 
 .. cssclass:: topic
 

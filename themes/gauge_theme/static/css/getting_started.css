@@ -121,10 +121,6 @@
     content: url(../img/intellij_icon.svg);
 }
 
-.selection-icon-visualstudio::before {
-    content: url(../img/visual_studio_icon.svg);
-}
-
 .selection-icon-vscode::before {
     content: url(../img/vs_code_icon.svg);
 }

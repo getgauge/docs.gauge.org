@@ -7,7 +7,6 @@ from docutils.statemachine import StringList
 
 DISPLAY_SELECTION_MAP = {
     'Visual Studio Code': 'vscode',
-    'Visual Studio': 'visualstudio',
     'IntelliJ IDEA': 'intellij',
     'C#': 'csharp',
     'JavaScript': 'javascript',

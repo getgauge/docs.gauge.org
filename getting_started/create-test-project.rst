@@ -1,11 +1,10 @@
 .. role:: vscode
 .. role:: intellij
-.. role:: visualstudio
 .. role:: heading
 
 .. meta::
     :description: A quick guide for creating Gauge test projects on Windows, macOS, Ubuntu/Linux using Visual Studio Code, IntelliJ IDEA and Visual Studio for the languages Java, JavaScript, Python, Ruby, C#
-    :keywords: create testing project vscode idea visualstudio automation
+    :keywords: create testing project vscode idea automation
 
 .. cssclass:: topic
 
@@ -199,29 +198,6 @@ Choose the Project name, Project location, Project SDK and click :highlighted-sy
 .. figure:: ../images/Intellij_open_example.spec.png
       :alt: Intellij Java file structure
 
-
-.. cssclass:: visualstudio dynamic-content
-
-:visualstudio:`Creating a Testing Project in Visual Studio`
------------------------------------------------------------
-
-Gauge projects can be created and executed in Visual Studio using the Gauge extension for Visual Studio.
-
-In this guide, you'll be able to learn how to add a sample C# testing project in Visual Studio
-
-Create a Project
-~~~~~~~~~~~~~~~~
-
-Once the Gauge extension is installed, goto :highlighted-syntax:`File -> New Project`, select :highlighted-syntax:`Gauge Test Project`.
-Enter :highlighted-syntax:`Name`, :highlighted-syntax:`Location` and :highlighted-syntax:`Solution name` and click :highlighted-syntax:`Ok`.
-
-.. figure:: ../images/VisualStudio_gauge_project_creation.png
-      :alt: Create Gauge project
-
-.. include:: ../partials/folder_structure.rst
-
-.. figure:: ../images/VisualStudio_open_example.spec.png
-      :alt: Visual Studio CSharp file structure
 
 Now that you have successfully added/initialized a new Gauge testing project, we can look at how to run a specification by using the sample specification in the test folder
 
