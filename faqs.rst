@@ -1,6 +1,6 @@
 .. meta::
     :description: FAQs (Frequently Asked Questions) about installing Gauge, running a Gauge specification (spec), configuring Gauge, language runners used with Gauge, and using text editors while writing a Gauge specification.
-    :keywords: faqs testing vscode idea automation mac windows linux java javascript ruby python c#
+    :keywords: faqs testing vscode automation mac windows linux java javascript ruby python c#
 
 .. cssclass:: topic
 .. role:: heading
@@ -428,7 +428,7 @@ Execution will stop where it finds the above statement and you can debug.
 
 .. cssclass:: category
 
-:heading:`Gauge Visual Studio Code`
+:heading:`Gauge VS Code`
 -----------------------------------
 
 .. cssclass:: question

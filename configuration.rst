@@ -1,6 +1,6 @@
 .. meta::
     :description: Customise and configure Gauge using gauge.properties and default.properties files.
-    :keywords: configuration global local language testing project vscode idea automation mac windows linux
+    :keywords: configuration global local language testing project vscode automation mac windows linux
 
 .. cssclass:: topic
 .. role:: heading

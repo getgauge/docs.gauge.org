@@ -1,10 +1,9 @@
 .. meta::
     :description: A quick overview of how to view test reports. It guides you through how to view report of last execution on different os, in different languages, and on different ides..
-    :keywords: view report testing project vscode idea automation
+    :keywords: view report testing project vscode automation
 
 .. role:: heading
 .. role:: vscode
-.. role:: intellij
 .. cssclass:: topic
 
 :heading:`Viewing Reports`
@@ -14,44 +13,29 @@
 
 .. cssclass:: vscode dynamic-content
 
-:vscode:`Viewing Reports from Visual Studio Code`
+:vscode:`Viewing Reports from VS Code`
 -------------------------------------------------
 
-Once the specifications are run you will get immediate feedback in the output console of Visual Studio Code.
+Once the specifications are run you will get immediate feedback in the output console of VS Code.
 
 You can also view the HTML report of tests run by following either of the steps below:
 
-Open the html report by clicking on the view summary link in Visual Studio Code
+Open the html report by clicking on the view summary link in VS Code
 
 .. figure:: ../images/VSCode_report_link.png
-    :alt: Visual Studio Code execution report link
+    :alt: VS Code execution report link
 
 OR
 
 In the editor's command palete type :highlighted-syntax:`Gauge: Show Last Run Report` to view the report in the browser
 
 .. figure:: ../images/VSCode_show_last_run_report.png
-    :alt: Visual Studio Code show last run report command
+    :alt: VS Code show last run report command
 
 Here's what a Gauge report looks like.
 
 .. figure:: ../images/HTML_report.png
     :alt: HTML report
-
-.. cssclass:: intellij dynamic-content
-
-:intellij:`Viewing Reports from IntelliJ IDEA`
-----------------------------------------------
-
-Once the specifications are run you will get immediate feedback in the output screen of IntelliJ IDEA.
-
-Once you've run the sample spec, you can view the HTML report of the tests run by opening the :highlighted-syntax:`index.html` file available in :highlighted-syntax:`$PROJECT_ROOT/reports/html-report/index.html`
-
-Here's what a Gauge report looks like.
-
-.. figure:: ../images/HTML_report.png
-    :alt: HTML report
-
 
 And, that concludes our getting started journey for Gauge. Hopefully this helped you install and set-up your first Gauge project. Gauge comes with powerful language & tool support as well as a versatile reporting functionality. We've covered the basics for all of these features in this guide.
 

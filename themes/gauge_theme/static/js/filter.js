@@ -1,7 +1,7 @@
-const COMBINATIONS = { 'javascript': ['vscode'], 'java': ['vscode', 'intellij'], 'python': ['vscode'], 'ruby': ['vscode'], 'csharp': ['vscode'] };
-const SELECTION_CLASSES = ['macos', 'windows', 'linux', 'javascript', 'java', 'python', 'ruby', 'csharp', 'vscode', 'intellij'];
+const COMBINATIONS = { 'javascript': ['vscode'], 'java': ['vscode'], 'python': ['vscode'], 'ruby': ['vscode'], 'csharp': ['vscode'] };
+const SELECTION_CLASSES = ['macos', 'windows', 'linux', 'javascript', 'java', 'python', 'ruby', 'csharp', 'vscode'];
 const LANGUAGE_CLASSES = ['javascript', 'java', 'python', 'ruby', 'csharp'];
-const IDE_CLASSES = ['vscode', 'intellij'];
+const IDE_CLASSES = ['vscode'];
 
 const changeFilter = function () {
     let changeFilterBtn = document.getElementById("change-filter");

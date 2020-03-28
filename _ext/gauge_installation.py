@@ -6,8 +6,7 @@ from docutils.parsers.rst import Directive, directives
 from docutils.statemachine import StringList
 
 DISPLAY_SELECTION_MAP = {
-    'Visual Studio Code': 'vscode',
-    'IntelliJ IDEA': 'intellij',
+    'VS Code': 'vscode',
     'C#': 'csharp',
     'Javascript': 'javascript',
     'Java': 'java',

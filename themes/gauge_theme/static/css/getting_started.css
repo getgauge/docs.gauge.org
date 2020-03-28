@@ -116,11 +116,6 @@
     content: url(../img/ruby_icon.svg);
 }
 
-
-.selection-icon-intellij::before {
-    content: url(../img/intellij_icon.svg);
-}
-
 .selection-icon-vscode::before {
     content: url(../img/vs_code_icon.svg);
 }

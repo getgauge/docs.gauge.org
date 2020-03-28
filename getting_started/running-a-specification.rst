@@ -1,10 +1,9 @@
 .. meta::
     :description: A quick overview of how to run a Gauge project on different setups. It guides you through how to run a test project with Gauge on different os, in different languages, and on different ides...
-    :keywords: run specification testing project vscode idea automation
+    :keywords: run specification testing project vscode automation
 
 .. role:: heading
 .. role:: vscode
-.. role:: intellij
 .. cssclass:: topic
 
 :heading:`Running a Specification`
@@ -23,7 +22,7 @@ in a :highlighted-syntax:`.spec` file. To learn more about how specifications wo
 
 .. cssclass:: vscode dynamic-content
 
-:vscode:`Running a Specification using Visual Studio Code`
+:vscode:`Running a Specification using VS Code`
 ----------------------------------------------------------
 
 Step 1: Open Specification
@@ -37,41 +36,15 @@ Open the example spec. The Gauge specification file is present under :highlighte
 Step 2: Run Specification
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Run your Gauge specs in Visual Studio Code by choosing the option to :highlighted-syntax:`Run Spec`
+Run your Gauge specs in VS Code by choosing the option to :highlighted-syntax:`Run Spec`
 
 .. figure:: ../images/VSCode_run_code_lens.png
-      :alt: Visual Studio Code JavaScript run code lens
+      :alt: VS Code JavaScript run code lens
 
 You'll get immediate feedback in the output about what got executed.
 
 .. figure:: ../images/VSCode_execution_console.png
-      :alt: Visual Studio Code JavaScript execution console
-
-.. cssclass:: java intellij dynamic-content
-
-:intellij:`Running a Specification using Intellij`
---------------------------------------------------
-
-Step 1: Open Specification
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Open the example spec. The Gauge specification file is present under :highlighted-syntax:`/specs/example.spec`
-
-.. figure:: ../images/Intellij_open_example.spec.png
-      :alt: Open example.spec file
-
-Step 2: Run Specification
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Run your Gauge specs in Intellij by clicking on the :highlighted-syntax:`Run example.spec`.
-
-.. figure:: ../images/Intellij_run_spec.png
-      :alt: IntelliJ IDEA run code lens
-
-You'll get immediate feedback in the output about what got executed.
-
-.. figure:: ../images/Intellij_execution_console.png
-      :alt: IntelliJ IDEA execution console
+      :alt: VS Code JavaScript execution console
 
 Now that you have successfully run a Gauge specification, you can go ahead and view the report from VS code.
 
