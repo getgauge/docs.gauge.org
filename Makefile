@@ -32,5 +32,5 @@ prod-build:
 	find $(BUILDDIR)/_static/ -type f ! -name '*.min.css' -name '*.css' | xargs rm
 	find $(BUILDDIR)/_static/ -type f ! -name '*.min.js' -name '*.js' | xargs rm
 
-serve: preview-build
+serve: local-build
 	(cd $(BUILDDIR) && python3 -m http.server)

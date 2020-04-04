@@ -56,7 +56,6 @@ const isSelectionClass = className => SELECTION_CLASSES.includes(className);
 const selectedClasses = element => element.classList.value.split(" ").filter(isSelectionClass);
 const isLanguageClass = element => LANGUAGE_CLASSES.includes(element.value);
 const isIdeClass = element => IDE_CLASSES.includes(element.value);
-const isRelevantIde = (language, ide) => COMBINATIONS[language].includes(ide);
 const isSelectedIdeDisabled = (ideElement, selectedIde) => ideElement.value == selectedIde && ideElement.disabled;
 const hasAllSelectionClasses = (selectedClasses) => selectedClasses.every(isSelected);
 const isDynamicContent = (element) => element.classList && element.classList.contains('dynamic-content');
@@ -66,10 +65,6 @@ const disableNonRelevantIde = function (ideElement, languageBtn) {
     ideElement.parentElement.classList.remove('disabled');
     ideElement.disabled = false;
     const language = languageBtn.value || SELECTIONS.language;
-    if (!isRelevantIde(language, ideElement.value)) {
-        ideElement.parentElement.classList.add('disabled');
-        ideElement.disabled = true;
-    }
 }
 
 const makeSelections = function () {
