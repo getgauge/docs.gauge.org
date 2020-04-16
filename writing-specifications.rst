@@ -2064,10 +2064,11 @@ you can use appropriate driver APIs in the step implementation of the language r
     # Return a screenshot file name
     @custom_screenshot_writer
     def take_screenshot():
-        conetnt = Driver.driver.get_screenshot_as_png()
+        # Use appropriate webdriver instance
+        image = driver.get_screenshot_as_png()
         file_name = os.path.join(os.getenv("gauge_screenshots_dir"), "screenshot-{0}.png".format(uuid1().int))
-        file = open(file_name, "w")
-        file.write(conetnt)
+        file = open(file_name, "wb")
+        file.write(image)
         return os.path.basename(file_name)
 
 .. cssclass:: dynamic-content ruby
