@@ -1,6 +1,6 @@
 /*
-    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "no-referrer"
-    Feature-Policy = "microphone 'none'; geolocation 'none'"
+    X-Frame-Option: SAMEORIGIN
+    X-Content-Type-Options: nosniff
+    Referrer-Policy: no-referrer
+    Feature-Policy: microphone 'none'; geolocation 'none'
+    X-XSS-Protection: 1, mode=block
