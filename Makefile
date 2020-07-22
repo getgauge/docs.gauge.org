@@ -26,6 +26,7 @@ prod-build:
 	cp robots.txt $(BUILDDIR)/robots.txt
 	# copy verification file
 	cp googlefaad68ffc626de37.html $(BUILDDIR)
+	cp _headers $(BUILDDIR)
 	# minify and concat css and js
 	for i in $(CSS_FILES); do python3 -m csscompressor $$i >> $(BUILDDIR)/_static/css/app.min.css; done;
 	for i in $(JS_FILES); do python3 -m jsmin $$i >> $(BUILDDIR)/_static/js/app.min.js; done;
