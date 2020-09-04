@@ -8,7 +8,49 @@
 :heading:`Troubleshooting`
 ==========================
 
-.. _installtion-troubleshooting:
+.. _general-troubleshooting:
+
+General
+-------
+
+Keep Gauge and plugins upto date
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Gauge and it's plugins are released periodically. It is recommended that you update regularly to get the latest bug fixes/features.
+
+.. important::
+    It is recommended that you update gauge before updating plugins. The latest versions of the plugins may not be compatible
+    with older version of gauge.
+
+To update gauge, follow instructions of the package manager if you've used one. Ensure that gauge is updated using the same
+source it was originally installed from.
+
+.. code-block:: console
+
+    gauge update --check # check for all available updates.
+    gauge update <plugin> # updates <plugin> to the latest compatible version.
+
+Keep Visual Studio Code and gauge-vscode upto date    
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Microsoft releases new versions of VS Code periodically, and it is recommended to keep the software upto date. Ensure that gauge-vscode
+extension is also upto date. You may choose to `enable auto update of VScode extensions <https://code.visualstudio.com/docs/editor/extension-gallery#_extension-autoupdate>`__. 
+
+Install Langauge extensions for VSCode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Gauge extension for Visual Studio Code helps author gauge specifications, and has language features that are relevant in doing so. However, it does not have
+the capabilities to analyze the implementation langauge (i.e. Java/C#/javascript etc.) So it is recommended that you install and use these language plugins.
+
+Some suggestions:
+
+* Javascript - Built-in support
+* Java - `Java Extension Pack <https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack>`__
+* C# - `C# <https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp>`__
+* Python - `Python <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`__
+* Ruby - `Ruby <https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby>`__
+
+.. _installation-troubleshooting:
 
 Installation
 ------------
@@ -349,14 +391,8 @@ Or
 VS Code
 ------------------
 
-GAUGE-VSCode-001 : Language client is not ready yet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**Error:**
-
-.. code-block:: text
-
-    Language client is not ready yet
+Language client is not ready yet
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Cause:**
 
@@ -370,3 +406,28 @@ Install ``getgauge`` package by running the following command:
 
     [sudo] pip install getgauge
 
+
+Gauge could not initialize. For more information see Problems ...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Cause:**
+
+Gauge language server launched ok, but gauge runner crashed for some reason.
+
+The root cause for the above can be due to multiple reasons. Some of them are:
+
+* Check the 'Problems' view to identify possible errors.
+
+* If project is using java with maven/gradle, ensure that gauge-java versions in ``pom.xml``/``build.gradle`` are latest and match the ``gauge-java`` version installed. (run ``gauge -v`` to verify. 
+
+**Environment**
+
+.. note:: 
+
+    Environmental issues can be specific to individual setup and hence is not exhaustively documented. These are general guidelines to diagnose these.
+
+* Ensure dependencies for the runner are installed and accessible. Ex - For a java project a supported JDK is installed and ``JAVA_HOME``, ``PATH`` is set correctly.
+
+* Permissions are set appropriately.
+
+* Gauge writes log files honouring the log level set. Set ``--log-level debug`` to see additional information.
