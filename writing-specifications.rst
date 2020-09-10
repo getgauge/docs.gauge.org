@@ -1662,14 +1662,13 @@ Values are cleared after every scenario is executed.
 
 .. code-block:: java
 
-    import com.thoughtworks.gauge.datastore.*;
+    import com.thoughtworks.gauge.datastore.ScenarioDataStore;
 
     // Adding value
-    DataStore scenarioStore = DataStoreFactory.getScenarioDataStore();
-    scenarioStore.put("element-id", "455678");
+    ScenarioDataStore.put("element-id", "455678");
 
     // Fetching Value
-    String elementId = (String) scenarioStore.get("element-id");
+    String elementId = (String) ScenarioDataStore.get("element-id");
 
 .. cssclass:: dynamic-content javascript
 
@@ -1738,14 +1737,13 @@ Values are cleared after every specification is executed.
 .. code-block:: java
 
     // Import Package
-    import com.thoughtworks.gauge.datastore.*;
+    import com.thoughtworks.gauge.datastore.SpecDataStore;
 
     // Adding value
-    DataStore specStore = DataStoreFactory.getSpecDataStore();
-    specStore.put("key", "455678");
+    SpecDataStore.put("key", "455678");
 
     // Fetching value
-    String elementId = (String) specStore.get("key");
+    String elementId = (String) SpecDataStore.get("key");
 
 .. cssclass:: dynamic-content javascript
 
@@ -1817,15 +1815,13 @@ Values are cleared after the entire test suite is executed.
 .. code-block:: java
 
     // Import Package
-    import com.thoughtworks.gauge.datastore.*;
+    import com.thoughtworks.gauge.datastore.SuiteDataStore;
 
     // Adding value
-    DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
-    suiteStore.put("element-id", "455678");
+    SuiteDataStore.put("element-id", "455678");
 
     // Fetching value
-    DataStore suiteStore = DataStoreFactory.getSuiteDataStore();
-    String elementId = (String) suiteStore.get("element-id");
+    String elementId = (String) SuiteDataStore.get("element-id");
 
 .. cssclass:: dynamic-content javascript
 
