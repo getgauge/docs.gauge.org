@@ -15,16 +15,13 @@ The documents are written in RST and are built using [Sphinx](http://www.sphinx-
 #### Pre-requisites
 
 * Python 3
-* Nodejs
-* NPM
-* pip3 install -U Sphinx
 
 ## Building the documentation
 
 There are two formats of documentation built for every version.
 - `pip3 install -r requirements.txt` to install the pre-requisites for docs.gauge.org
 
-- `make local-build` will build `html` and zipped `singlehtml` documentation. The output is available in `_build` directory.
+- `make local-build` will build `html` documentation. The output is available in `_build` directory.
 
 - `make serve` will invoke zip and bring a local http server. `http://localhost:8000` will serve this documentation.
 
