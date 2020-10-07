@@ -117,11 +117,6 @@ Listed below are examples for using Gauge to set up test projects for Python lan
      - This is an example project for doing web automation testing with Gauge and Selenium.
      - `Read more <https://github.com/getgauge-examples/python-selenium>`__
 
-   * - :selenium_logo:`Selenium With Page Objects`
-     - This is an example project for doing web automation testing with Gauge and Selenium using Page Object pattern.
-     - `Read more <https://github.com/kashishm/gauge-example-python>`__
-
-
 .. cssclass:: dynamic-content ruby examples-table
 
 Listed below are examples for using Gauge to set up test projects for Ruby language along with different frameworks.
