@@ -1,11 +1,10 @@
 BUILDDIR = _build
-LATESTVERSION = $(shell cat data/gauge_version.txt)
 CSS_FILES = $(BUILDDIR)/_static/pygments.css $(BUILDDIR)/_static/css/change_filter.css $(BUILDDIR)/_static/css/examples.css $(BUILDDIR)/_static/css/font.css $(BUILDDIR)/_static/css/getting_started.css $(BUILDDIR)/_static/css/overview.css $(BUILDDIR)/_static/css/theme.css $(BUILDDIR)/_static/css/writing_specifications.css
 JS_FILES = $(BUILDDIR)/_static/js/filter.js $(BUILDDIR)/_static/js/installation.js $(BUILDDIR)/_static/js/site.js $(BUILDDIR)/_static/js/theme.js
 
 local-build:
 	rm -rf $(BUILDDIR)
-	GAUGE_LATEST_VERSION=$(LATESTVERSION) \
+	GAUGE_LATEST_VERSION=v0.0.0 \
 	sphinx-build -b html . $(BUILDDIR) -D site_url=file://$(shell pwd)/$(BUILDDIR)/
 	# copy preview-robots.txt
 	cp preview-robots.txt $(BUILDDIR)/robots.txt
@@ -20,7 +19,7 @@ local-build:
 
 prod-build:
 	rm -rf $(BUILDDIR)
-	GAUGE_LATEST_VERSION=$(LATESTVERSION) \
+	GAUGE_LATEST_VERSION=$(shell ./data/gauge_version.py) \
 	sphinx-build -b html . $(BUILDDIR) -D site_url=https://docs.gauge.org/
 	# copy robots.txt
 	cp robots.txt $(BUILDDIR)/robots.txt

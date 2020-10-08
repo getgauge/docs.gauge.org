@@ -1,5 +1,5 @@
 sphinx==2.2.0
-sphinx-sitemap==1.0.2
-sphinx-autobuild
+sphinx_sitemap==1.0.2
+sphinx_autobuild
 csscompressor
 jsmin
