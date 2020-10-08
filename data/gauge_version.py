@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 
-# This file parses data from github release webhook
-# to extract the current release version. The webhook
-# hits a netlify endpoint with release data in an
-# environment variable.
+# Makefile invokes this file
 
 import json
 import urllib.request
