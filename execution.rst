@@ -530,7 +530,7 @@ For more information about ``default.properties``, see :ref:`local_configuration
     Use thread-safe test code. Use a language runner that supports multithreading.
 
 .. note::
-   Currently, only the Java language runner supports parallel execution of specs by using threads.
+   Currently, only the Java and .NET language runners supports parallel execution of specs by using threads.
 
 Run specs before parallel execution
 -----------------------------------
