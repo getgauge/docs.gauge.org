@@ -1436,7 +1436,8 @@ p.feature-desc {
   }
 
   .localtoc-container>ul {
-      padding: 10px 25px;
+      padding: 10px;
+      border-left: 1px solid #ccc;
   }
 
   .doc-toc-group.collapsed>a:after {
@@ -2005,7 +2006,7 @@ p.feature-desc {
 
   .localtoc-container>ul {
     margin: 10px 0;
-    padding-left: 0px;
+    padding-left: 10px;
     display: block;
   }
 
