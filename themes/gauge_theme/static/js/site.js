@@ -70,26 +70,3 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 	});
 });
-
-function copyCode(elements) {
-	elements.forEach(function(element) {
-		let parentElement = element.parentElement.parentElement;
-		if (!parentElement) return;
-		parentElement.innerHTML += "<button class='copyBtn'>Copy</button>";
-		parentElement.innerHTML += "<input aria-label='clipboard' class='codeBox' value='none'> </input>";
-	});
-
-	document.querySelectorAll(".copyBtn").forEach(btn =>
-		btn.addEventListener("click", function() {
-			const value = this.parentElement.firstElementChild.innerText;
-			const codeBox = this.nextElementSibling;
-			codeBox.value = value;
-			codeBox.select();
-			document.execCommand("copy");
-			this.innerText = 'Copied'
-			setTimeout(() => {
-				this.innerText = 'Copy'
-			}, 3000);
-		})
-	);
-}

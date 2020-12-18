@@ -354,65 +354,24 @@ footer {
 
 .highlight {
   padding: 15px;
-  margin: 15px 0 15px 0;
   background-color: #222222 !important;
+  overflow: auto;
 }
 
 .highlight pre {
-  margin: 0px;
   min-height: 40px;
 }
+
 .line {
   overflow: hidden!important;
 }
+
 #proj-setup-filter-section .applied-filters .applied-filter {
   overflow: hidden;
 }
+
 span.go {
-  overflow: auto;
   padding-bottom: 5px;
-  position: relative;
-  top: 11px;
-}
-
-span.go::-webkit-scrollbar {
-  background: transparent;
-  height: 10px;
-}
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px transparent;
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px #ffffff;
-}
-
-.copyBtn {
-  float: right;
-  background: #D8D8D8;
-  outline: none;
-  border: none;
-  font-family: 'SourceCodePro-Medium';
-  color: #1e1e1e;
-  border-radius: 3px;
-  transition: all 0.25s;
-  padding: 5px 15px;
-  font-size: 13px;
-  top: -31px;
-}
-
-.copyBtn:hover {
-  cursor: pointer;
-  background: rgb(247, 247, 247);
-}
-
-
-.codeBox {
-  opacity: 0;
-  width: 10px;
-  top: -38px;
-  position: relative;
 }
 
 body {
@@ -1304,8 +1263,6 @@ p.experimental-feature::before {
 
 #configure-gauge div,#troubleshooting div,#installation-instructions div ,#tutorial-integrating-gauge-with-azure div,#tutorial-integrating-gauge-with-docker div,#tutorial-integrating-gauge-with-travis-ci div {
   width: auto;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: auto; 
 }
 
 .cancel.filter-action.docutils,.modify.filter-action.docutils {
@@ -2001,10 +1958,7 @@ p.feature-desc {
   }
 
   .highlight-console .highlight pre {
-    width: 88%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    width: 100%;
   }
   .selection-content {
     left: 25px;
