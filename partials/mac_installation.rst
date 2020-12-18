@@ -9,8 +9,8 @@
 
 This section gives specific instructions on setting up Gauge in a macOS environment.
 
-:installer-icon:`Install Using HomeBrew`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:installer-icon:`Install Using HomeBrew` (Preffered)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. admonition:: System Requirements
 
@@ -23,10 +23,7 @@ This section gives specific instructions on setting up Gauge in a macOS environm
     - Terminal
 
 
-1. Install brew if you haven't already: Go to the `brew website <https://brew.sh>`__, and follow the
-directions there.
-
-2. Run the brew command to install Gauge
+`Install brew <https://brew.sh>`__, and run the following command
 
 .. code-block:: console
 
@@ -45,9 +42,10 @@ if HomeBrew is working properly, you should see something similar to the followi
 
 .. cssclass:: alternate-installation
 
-:alternate-methods:`Alternate Installation Methods`
+:macos:`Alternate installation methods for MacOS`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. cssclass:: collapsible curl-installer first
+You can also use any of these other ways to install Gauge
 
 :installer-icon:`Install using CURL`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -65,22 +63,16 @@ if HomeBrew is working properly, you should see something similar to the followi
 
     Install Gauge to /usr/local/bin by running
 
-.. cssclass:: toggle collapsible-content
-
 .. code-block:: console
 
     curl -Ssl https://downloads.gauge.org/stable | sh
 
-.. cssclass:: toggle collapsible-content
 
 Or install Gauge to a [custom path] using
 
-.. cssclass:: toggle collapsible-content
 .. code-block:: console
 
     curl -Ssl https://downloads.gauge.org/stable | sh -- --location=[custom path]
-
-.. cssclass:: collapsible zip-installer
 
 :installer-icon:`Install using ZIP file`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -100,13 +92,9 @@ Or install Gauge to a [custom path] using
 
     2. Run the following command in your Commnad line tool to complete the installation.
 
-.. cssclass:: toggle collapsible-content
 .. code-block:: console
 
     unzip -o gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-darwin.x86_64.zip -d /usr/local/bin
-
-
-.. cssclass:: collapsible npm-installer
 
 :installer-icon:`Install using NPM installation`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -128,8 +116,6 @@ Or install Gauge to a [custom path] using
 
     You can install Gauge by running the following command in Terminal.
 
-
-.. cssclass:: toggle collapsible-content
 
 .. code-block:: console
 
