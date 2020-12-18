@@ -46,9 +46,6 @@ p ,a, ul li,ol li,.line{
   color:#1e1e1e;
   line-height: 1.6em;
 }
-.docs-container p,.docs-container a,.docs-container ul,.docs-container li,.docs-container ol,.docs-container .line,.docs-container pre,.docs-container span {
-  text-align: justify;
-}
 
 h1 {
   font-size: 28px;
