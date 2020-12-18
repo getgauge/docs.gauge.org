@@ -681,17 +681,11 @@ th, td {
 }
 
 header.top {
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  left: 0px;
   width: 100%;
-  z-index: 10;
   height: 65px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   border: none;
-  border-bottom: 5px solid #ffcc00;
   background: #1e1e1e !important;
 }
 
@@ -1299,6 +1293,10 @@ p.experimental-feature::before {
   padding: 0px;
 }
 
+.linenos pre {
+  background-color: #222 !important;
+}
+
 #validation-errors div {
   margin-bottom: 10px;
 }
@@ -1627,7 +1625,7 @@ p.feature-desc {
   .side-nav-header {
     border-bottom: 1px solid #ccc;
     padding: 27px 15px;
-    margin-top: 63px;
+    margin-top: 2px;
   }
 
   div.topic {
@@ -1645,9 +1643,7 @@ p.feature-desc {
   }
 
   .left-sidebar-container {
-    position: fixed;
     height: 100%;
-    z-index: 9;
     width: 260px;
     border-right:1px solid #ccc;
   }
@@ -1683,11 +1679,9 @@ p.feature-desc {
   }
 
   .left-sidebar-container nav {
-    position: absolute;
     background-color: white;
     width: 100%;
     left: -100%;
-    z-index: 1;
     transition: left .2s;
     transition-timing-function: ease-in-out;
   }
@@ -1797,14 +1791,11 @@ p.feature-desc {
   }
 
   .left-sidebar-container {
-    position: fixed;
     height: 100%;
-    z-index: 9;
   }
 
   .left-sidebar-container nav {
     position: initial;
-    padding-top: 10px;
     width: max-content;
   }
 
