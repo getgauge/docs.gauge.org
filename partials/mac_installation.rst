@@ -47,6 +47,31 @@ if HomeBrew is working properly, you should see something similar to the followi
 
 You can also use any of these other ways to install Gauge
 
+:installer-icon:`Install using NPM installation`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. cssclass:: toggle collapsible-content
+
+    .. admonition:: System Requirements
+
+        - `Node.js <nodejs.org>`__  >= 10.16.3 (LTS)
+
+        - `NPM <npmjs.org>`__ >= (6.9.0)
+
+        To install gauge using NPM you will need the latest node version.
+
+            - `If you have Node.js already installed - to get the latest version of npm use the following command:`
+
+            'npm install -g npm@latest'
+
+
+    You can install Gauge by running the following command in Terminal.
+
+
+.. code-block:: console
+
+    npm install -g @getgauge/cli
+
 :installer-icon:`Install using CURL`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -87,36 +112,10 @@ Or install Gauge to a [custom path] using
 
         - Terminal
 
-    1. For signed binaries first download the zip installer
-            `Zip Installer <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-darwin.x86_64.zip>`__
-
-    2. Run the following command in your Commnad line tool to complete the installation.
+Download the `Zip Installer <https://github.com/getgauge/gauge/releases/download/vGAUGE_LATEST_VERSION_PLACEHOLDER/gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-darwin.x86_64.zip>`__
+and run the following command to complete the installation.
 
 .. code-block:: console
 
     unzip -o gauge-GAUGE_LATEST_VERSION_PLACEHOLDER-darwin.x86_64.zip -d /usr/local/bin
 
-:installer-icon:`Install using NPM installation`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. cssclass:: toggle collapsible-content
-
-    .. admonition:: System Requirements
-
-        - `Node.js <nodejs.org>`__  >= 10.16.3 (LTS)
-
-        - `NPM <npmjs.org>`__ >= (6.9.0)
-
-        To install gauge using NPM you will need the latest node version.
-
-            - `If you have Node.js already installed - to get the latest version of npm use the following command:`
-
-            'npm install -g npm@latest'
-
-
-    You can install Gauge by running the following command in Terminal.
-
-
-.. code-block:: console
-
-    npm install -g @getgauge/cli
