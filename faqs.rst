@@ -85,7 +85,8 @@ Gauge Python
 I don't see my question here
 ----------------------------    
 
-If you have any questions that are not answered you can get help from our `Google group <//groups.google.com/forum/#!forum/getgauge>`__ or you can chat with fellow Gauge users in the `Gitter channel <//gitter.im/getgauge/chat>`__. You might also use `Stack Overflow <//stackoverflow.com/questions/tagged/getgauge>`__ for “HOW DO I” type questions. For other questions and discussions,
+If you have any questions that are not answered you can get help from
+our `Github <//github.com/getgauge/gauge/discussions>`__.
 
 .. cssclass:: category
 
