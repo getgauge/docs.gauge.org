@@ -1,7 +1,6 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", function() {
 	setGithubStar();
-	copyCode(document.querySelectorAll(".highlight .go"));
 
 	// mobile nav button
 
