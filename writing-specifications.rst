@@ -928,6 +928,12 @@ In the following example, “hobbit” and the table are step parameters.
     |456|bilbo  |
     |789|samwise|
 
+If this data is in an external csv file, pass it as table reference
+
+.. code-block:: gauge
+
+  * Create following "hobbit" characters <table:hobbits.csv>
+
 Implementation
 """"""""""""""
 
@@ -967,8 +973,9 @@ Implementation
 .. code-block:: javascript
 
     step("Create following <race> characters <table>", async function(race, table) {
-        table.rows.forEach(function (row) {
-            console.log(`Name ${row.cells[1]}`);
+        table.entries(function (entry) {
+            console.log(`ID ${entry["id"]}`);
+            console.log(`Name ${entry["name"]}`);
         });
     });
 
