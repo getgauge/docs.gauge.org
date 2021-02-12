@@ -168,7 +168,7 @@ var DOCUMENTATION_OPTIONS = {
       {% if pagename == 'index' %}
       <div class="docs-container no-right-bar containers">
       {% else %}
-      <div class="docs-container containers animate-fadeIn">
+      <div class="docs-container containers">
       {% endif %}
         {% if pagename == 'index' %}
         {% include '_landing.html' %}
@@ -184,7 +184,7 @@ var DOCUMENTATION_OPTIONS = {
       <!-- Right Sidebar -->
       {% if pagename != 'index' %}
       
-      <div id="right-sidebar" class="right-sidebar-container containers animate-fadeIn">
+      <div id="right-sidebar" class="right-sidebar-container containers">
         <div class="localtoc-container">
          <span class='mobile-local-toc collapsed' onclick="document.getElementsByClassName('mobile-local-toc')[0].classList.toggle('collapsed')" onkeypress="document.getElementsByClassName('mobile-local-toc')[0].classList.toggle('collapsed')">In this page</span>
            {{ toc }}
