@@ -1212,15 +1212,6 @@ p.experimental-feature::before {
   100% { transform: rotate(360deg); }
 }
 
-/* Add animation to "page content" */
-.animate-bottom {
-  position: relative;
-  -webkit-animation-name: fadeIn;
-  -webkit-animation-duration: 4s;
-  animation-name: fadeIn;
-  animation-duration: 4s;
-}
-
 /* @-webkit-keyframes animatebottom {
   from { bottom:-100px; opacity:0 } 
   to { bottom:0px; opacity:1 }
