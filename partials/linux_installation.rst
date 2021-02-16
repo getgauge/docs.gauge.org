@@ -19,7 +19,7 @@ linux distribution
     sudo apt-get update && sudo apt-get install gauge
 
 Deprecated APT-KEY
-====================
+""""""""""""""""""
 
 The command ``apt-key`` is now considered deprecated. If you installed Gauge before February 2021, you should remove the globally imported Gauge key using
 
