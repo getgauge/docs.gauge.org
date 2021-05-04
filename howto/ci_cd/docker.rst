@@ -38,8 +38,7 @@ DockerFile
         ca-certificates
 
     # Install gauge
-    RUN apt-key adv --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys 023EDB0B && \
-        echo deb https://dl.bintray.com/gauge/gauge-deb stable main | tee -a /etc/apt/sources.list
+    RUN curl -SsL https://downloads.gauge.org/stable | sh
 
     RUN apt-get update && apt-get install gauge
 

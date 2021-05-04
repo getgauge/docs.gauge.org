@@ -97,8 +97,6 @@
 .examples-table .taiko-logo::before,
 .cicd-table .gocd-logo::before,
 .cicd-table .teamcity-logo::before,
-.cicd-table .travis-logo::before,
-.cicd-table .circleci-logo::before,
 .cicd-table .jenkins-logo::before,
 .cicd-table .azure-logo::before,
 .cicd-table .docker-logo::before {
@@ -156,10 +154,6 @@
 
 .cicd-table .teamcity-logo::before {
     content: url(../img/teamcity.svg);
-}
-
-.cicd-table .travis-logo::before {
-    content: url(../img/travisci.svg);
 }
 
 .cicd-table .circleci-logo::before {
