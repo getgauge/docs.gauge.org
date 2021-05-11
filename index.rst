@@ -27,4 +27,3 @@ Gauge documentation
     howto/ci_cd/gocd
     howto/ci_cd/jenkins
     howto/ci_cd/teamcity
-    howto/ci_cd/travis

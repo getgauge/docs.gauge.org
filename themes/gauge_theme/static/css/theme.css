@@ -1235,7 +1235,7 @@ p.experimental-feature::before {
   }
 }
 
-#configure-gauge div,#troubleshooting div,#installation-instructions div ,#tutorial-integrating-gauge-with-azure div,#tutorial-integrating-gauge-with-docker div,#tutorial-integrating-gauge-with-travis-ci div {
+#configure-gauge div,#troubleshooting div,#installation-instructions div ,#tutorial-integrating-gauge-with-azure div,#tutorial-integrating-gauge-with-docker div {
   width: auto;
 }
 
