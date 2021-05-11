@@ -17,7 +17,6 @@
 
 .. role:: gocd_logo
 .. role:: teamcity_logo
-.. role:: travis_logo
 .. role:: circleci_logo
 .. role:: jenkins_logo
 .. role:: azure_logo
@@ -167,10 +166,6 @@ See below some examples demonstrating specific use cases using Gauge and integra
    * - :teamcity_logo:`TeamCity`
      - This tutorials explains how to integrate Gauge with TeamCity.
      - `Read more </howto/ci_cd/teamcity.html>`__
-
-   * - :travis_logo:`Travis-Ci`
-     - This tutorials explains how to integrate Gauge with Travis CI.
-     - `Read more </howto/ci_cd/travis.html>`__
 
    * - :circleci_logo:`CircleCI`
      - This tutorials explains how to integrate Gauge with Circle CI.
