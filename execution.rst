@@ -477,6 +477,68 @@ In the spec, the steps use the ``<name>`` column from the CSV file.
     ## Second Scenario
     * Say "namaste" to <name>
 
+Configuring table data per environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. versionadded:: 1.4.0
+
+Sometimes there are specifications that require input that depend on the environment that they execute against. In such cases the table cannot be inline (i.e. defined in the spec).
+The external table referenced cannot be a single file either. To accomodate this situation, Gauge allows a property ``gauge_data_dir`` which can be set to a location where Gauge would
+look for the data files.
+
+This property can be set in the property files and can be overridden per environment, thus allowing the project to have data files that are specific to each environment.
+
+
+.. note::
+    When set only in ``default.properties`` or as an environment variable ``gauge_data_dir`` affects all the execution uniformly.
+
+.. note::
+    This property is optional, and defaults to the Project Root location.
+
+.. cssclass:: example
+
+Example
+
+The following example shows an ``env`` directory structure with wo additional environments defined.
+
+.. code-block:: text
+
+    ├── data
+    ├── env
+      └── default
+         └── default.properties
+      └── qa
+         └── qa.properties
+      └── uat
+         └── uat.properties
+
+.. code-block:: text
+    :caption: qa.properties
+
+    gauge_data_dir = data/qa
+
+.. code-block:: text
+    :caption: uat.properties
+
+    gauge_data_dir = data/uat
+
+.. code-block:: gauge
+    :linenos:
+    :name: data_driven
+
+    # Table driven execution
+
+    <table:users.csv>
+
+    ## Scenario
+    * Say "hello" to <name>
+
+    ## Second Scenario
+    * Say "namaste" to <name>
+
+When the above spec is executed using ``--env=qa``, the ``users.csv`` is picked up from ``<PROJECT_ROOT>/data/qa`` and likewise for ``--env=uat`` the ``users.csv`` is resolved from
+``<PROJECT_ROOT>/data/uat``.
+
 .. _parallel_execution:
 
 Parallel execution

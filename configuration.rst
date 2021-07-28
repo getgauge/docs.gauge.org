@@ -333,8 +333,7 @@ You can use or change the key value pairs in these ``.properties`` files as per 
 Custom location for Environment Property files
 ----------------------------------------------
 
-.. admonition:: Version
-   Available in Gauge v1.4.0 or higher.
+.. versionadded:: 1.4.0
 
 Gauge allows you to choose a location within the project directory where the environment files are located. By default, Gauge looks for these files in ``env`` directory.
 
