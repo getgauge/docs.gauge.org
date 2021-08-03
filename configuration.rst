@@ -455,6 +455,10 @@ In the following example, the ``ci`` environment is loaded when Gauge runs a spe
 
     gauge run --env ci specs
 
+.. note::
+   The environment passed in via ``--env`` flag is available in the test code via ``gauge_environment`` environment variable.
+   When ``--env`` is not passed, ``gauge_environment`` is set to ``default`` which is gauge's default environment.
+
 .. Provide cross references to run a gauge specification file
 
 Run a Gauge specification with multiple environments
