@@ -483,7 +483,7 @@ Configuring table data per environment
 .. versionadded:: 1.4.0
 
 Sometimes there are specifications that require input that depend on the environment that they execute against. In such cases the table cannot be inline (i.e. defined in the spec).
-The external table referenced cannot be a single file either. To accomodate this situation, Gauge allows a property ``gauge_data_dir`` which can be set to a location where Gauge would
+The external table referenced cannot be a single file either. To accomodate this situation, Gauge allows a property ``gauge_data_dir`` which can be set to a location where Gauge
 look for the data files.
 
 This property can be set in the property files and can be overridden per environment, thus allowing the project to have data files that are specific to each environment.
