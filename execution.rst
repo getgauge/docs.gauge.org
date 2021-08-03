@@ -499,7 +499,7 @@ This property can be set in the property files and can be overridden per environ
 
 Example
 
-The following example shows an ``env`` directory structure with wo additional environments defined.
+The following example shows an ``env`` directory structure with two additional environments defined.
 
 .. code-block:: text
 
