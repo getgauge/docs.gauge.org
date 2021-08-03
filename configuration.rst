@@ -337,7 +337,7 @@ Custom location for Environment Property files
 
 Gauge allows you to choose a location within the project directory where the environment files are located. By default, Gauge looks for these files in ``env`` directory.
 
-The custom location can be using the below options
+To override Gauge's default location for reading environment property files use the following options
 
 * Set the location of the directory containing the environment property files in ``gauge_env_dir`` environment variable.
 * Set ``EnvironmentDir`` key in ``manifest.json`` to the location of the directory containing the environment property files.
@@ -627,4 +627,3 @@ Workflow : User runs ``gauge_reports_dir=newReportsDir gauge run --env “java_c
   If ``default`` is not present, Gauge internally sets the environment variables, which is the same as ``default.properties``.
 
 The value of ``gauge_reports_dir`` continues to be ``newReportsDir``.
-
