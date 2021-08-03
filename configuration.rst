@@ -330,6 +330,23 @@ You can use or change the key value pairs in these ``.properties`` files as per 
 .. attention::
    You can either create a new ``.properties`` file or use an existing file to add your custom key value pairs.
 
+Custom location for Environment Property files
+----------------------------------------------
+
+.. versionadded:: 1.4.0
+
+By default, Gauge looks for environment property files in the ``env`` directory of the project. 
+
+To override Gauge's default location for reading environment property files use the following options
+
+* Set the location of the directory containing the environment property files in ``gauge_env_dir`` environment variable.
+* Set ``EnvironmentDir`` key in ``manifest.json`` to the location of the directory containing the environment property files.
+
+If ``gauge_env_dir`` is unset and ``EnvironmentDir`` is missing in ``manifest.json``, gauge will default to ``env``.
+
+.. attention::
+   The ``gauge_env_dir`` environment variable will take highest precedence, followed by the ``manifest.json`` config.
+
 Create a new environment in a Gauge project
 -------------------------------------------
 
@@ -610,4 +627,3 @@ Workflow : User runs ``gauge_reports_dir=newReportsDir gauge run --env “java_c
   If ``default`` is not present, Gauge internally sets the environment variables, which is the same as ``default.properties``.
 
 The value of ``gauge_reports_dir`` continues to be ``newReportsDir``.
-
