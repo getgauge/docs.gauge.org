@@ -335,7 +335,7 @@ Custom location for Environment Property files
 
 .. versionadded:: 1.4.0
 
-Gauge allows you to choose a location within the project directory where the environment files are located. By default, Gauge looks for these files in ``env`` directory.
+By default, Gauge looks for environment property files in the ``env`` directory of the project. 
 
 To override Gauge's default location for reading environment property files use the following options
 
