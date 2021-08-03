@@ -342,7 +342,7 @@ To override Gauge's default location for reading environment property files use 
 * Set the location of the directory containing the environment property files in ``gauge_env_dir`` environment variable.
 * Set ``EnvironmentDir`` key in ``manifest.json`` to the location of the directory containing the environment property files.
 
-When both of the above are missing, or if ``gauge_env_dir`` is unset and ``manifest.json`` is missing, gauge will default to ``env``.
+If ``gauge_env_dir`` is unset and ``EnvironmentDir`` is missing in ``manifest.json``, gauge will default to ``env``.
 
 .. attention::
    The ``gauge_env_dir`` environment variable will take highest precedence, followed by the ``manifest.json`` config.
