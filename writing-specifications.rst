@@ -1901,10 +1901,9 @@ you can use appropriate driver APIs in the step implementation of the language r
         public String takeScreenshot() {
             TakesScreenshot driver = (TakesScreenshot) DriverFactory.getDriver();
             String screenshotFileName = String.format("screenshot-%s.png", UUID.randomUUID().toString());
-            File screenshotFile = new File(Paths.get(System.getenv("gauge_screenshots_dir"), screenshotFileName).toString());
-            File tmpFile = driver.getScreenshotAs(OutputType.FILE);
             try {
-                FileUtils.copyFile(tmpFile, screenshotFile);
+                Files.write(Path.of(System.getenv("gauge_screenshots_dir"), screenshotFileName),
+                        driver.getScreenshotAs(OutputType.BYTES));
             } catch (IOException e) {
                 e.printStackTrace();
             }
