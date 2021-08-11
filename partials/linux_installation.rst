@@ -22,7 +22,7 @@ Or install Gauge to a [custom path] using
 
 .. code-block:: console
 
-    curl -SsL https://downloads.gauge.org/stable | sh -s -- --location-[custom path]
+    curl -SsL https://downloads.gauge.org/stable | sh -s -- --location=[custom path]
 
 
 :installer-icon:`Install using NPM`
