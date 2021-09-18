@@ -28,7 +28,12 @@ This section gives specific instructions on setting up Gauge in a macOS environm
 
     brew install gauge
 
-if HomeBrew is working properly, you should see something similar to the following:
+To check the gauge is installed properly, run the following command, this will show you the version of successfully installed gauge.
+
+.. code-block:: console
+
+    gauge --version
+        
 
 You can also use any of these other ways to install Gauge
 
