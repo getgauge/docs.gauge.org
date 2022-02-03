@@ -8,7 +8,7 @@
 
 This section gives specific instructions on setting up Gauge in a macOS environment.
 
-:installer-icon:`Install Using HomeBrew` (Preffered)
+:installer-icon:`Install Using HomeBrew` (Preferred)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. admonition:: System Requirements
