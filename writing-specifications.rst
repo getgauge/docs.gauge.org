@@ -633,10 +633,15 @@ When the specification is run, all concepts and their steps are executed in the 
 
 Defining a concept
 ^^^^^^^^^^^^^^^^^^
-Concepts are defined in a ``.cpt`` file format at ``<project_root>/specs``, where ``<project_root>`` is the location at which the Gauge project is created. 
-Concepts can also be inside nested directories within the ``specs`` directory. 
+Concepts are defined in a ``.cpt`` file format. By default, Gauge will scan for concepts ``<project_root>`` directory, where ``<project_root>`` is the location at which the Gauge project is created.
+The recommended path for concepts at ``<project_root>/specs``.
+Concepts can also be inside nested directories within the ``specs`` directory.
 Multiple concept definitions can be invoked from within a concept definition.
 A concept definition consists of a concept header and concept steps.
+
+.. note::
+    The path and name of the ``concepts`` directory can be changed by using ``gauge_concepts_dir`` property in the ``default.properties`` file of your project.
+    E.g. ``gauge_concepts_dir=concepts``
 
 .. _concept_header:
 
