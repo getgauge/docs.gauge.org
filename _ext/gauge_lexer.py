@@ -13,10 +13,7 @@ def setup(app):
     """ Initializer for Sphinx extension API.
         See http://www.sphinx-doc.org/en/stable/extdev/index.html#dev-extensions.
     """
-    lexer = GaugeLexer()
-    for alias in lexer.aliases:
-        app.add_lexer(alias, lexer)
-
+    app.add_lexer("gauge", GaugeLexer)
     return dict(version=__version__)
 
 

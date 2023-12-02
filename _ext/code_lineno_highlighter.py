@@ -1,6 +1,6 @@
 from os import environ
 
-from sphinx.directives import CodeBlock
+from sphinx.directives.code import CodeBlock
 from sphinx.writers.html import HTMLTranslator
 
 
