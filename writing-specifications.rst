@@ -192,49 +192,6 @@ In the following example, the specification, ``Search specification`` contains t
     * Search for product "Cup Cakes"
     * "Cup Cakes" should show up in the search results
 
-Table driven scenario
-^^^^^^^^^^^^^^^^^^^^^^
-
-.. cssclass:: experimental-feature
-
-Experimental Feature
-
-Gauge 1.0.3 adds an experimental feature to provide a table at scenario level. Gauge will iterate over the table and run that particular scenario against each row.
-Set ``allow_scenario_datatable`` variable to ``true`` in ``/env/default/default.properties`` to enable this feature.
-
-Example
-
-.. code-block:: gauge
-
-    # Search specification
-
-    ## Vowel counts in multiple word
-
-     |Word  |Vowel Count|
-     |------|-----------|
-     |Gauge |3          |
-     |Mingle|2          |
-     |Snap  |1          |
-     |GoCD  |1          |
-     |Rhythm|0          |
-
-    This is the second scenario in this specification
-
-    Here's a step that takes a table
-
-    * The word <Word> has <Vowel Count> vowels.
-
-Since this is an experimental feature there are few cases in which currently do not work:
-
-* IDE plugins does not support this feature.
-* CSV files can not be used as table for scenario.
-* Reporting plugins does not accommodate this feature.
-
-.. note::
-    This feature is currently available in gauge >= 1.0.3,
-
-.. _longstart-steps:
-
 Step
 ~~~~
 
@@ -345,7 +302,7 @@ In the following examples, ``Cup Cakes``, ``gauge-java``, and ``100`` are values
 ^^^^^^^^^^^^^^^^^^^^^
 
 Dynamic parameters are used as placeholders instead of actual values. 
-These parameters are used when referring to a table column value of a data table. Data tables are defined at the beginning of a spec. 
+These parameters are used when referring to a table column value of a data table. Data tables are defined at the beginning of a spec or a scenario.
 Dynamic parameters are also used as values in a Concept.
 Dynamic parameters have the following syntax: ``<dynamic_param>``.
 
@@ -360,17 +317,49 @@ In the following example, ``<name>`` is a dynamic parameter.
 
     # Create projects
 
-        |id| name      |
-        |--|-----------|
-        |1 | Alice     |
-        |2 | Bob       |
-        |3 | Eve       |
+        | name      |
+        |-----------|
+        | Alice     |
+        | Bob       |
+        | Eve       |
 
     ## First scenario
     * Say "hello" to <name>.
 
     ## Second scenario
     * Say "namaste" to <name>.
+
+The scenarios above will execute three times. One time for each row in the spec data table.
+
+.. cssclass:: example
+
+Example: Dynamic Parameters used in a scenario which has a data table
+
+In the following example, ``<word>`` and ``<vowel count>`` are dynamic parameters for a specific scenario.
+
+.. code-block:: gauge
+
+    # Search specification
+
+    ## Vowel counts in multiple word
+
+     |word  |vowel count|
+     |------|-----------|
+     |Gauge |3          |
+     |Mingle|2          |
+     |Snap  |1          |
+     |GoCD  |1          |
+     |Rhythm|0          |
+
+    This is the second scenario in this specification
+
+    Here's a step that takes a table
+
+    * The word <word> has <vowel count> vowels.
+
+.. note::
+    It's possible define tables at spec and scenario level and refer to dynamic parameters from both tables within a scenario. This effectively achieves a nested loop of executions.
+
 
 .. cssclass:: example
 
